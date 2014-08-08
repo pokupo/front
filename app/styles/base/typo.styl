@@ -13,7 +13,7 @@ p
 	border none
 	outline none
 	border 3px solid transparent /* #dbd1ca */
-	transition border 0.2s ease-in-out
+	transition border, background 0.2s ease-in-out
 
 	&:focus
 		border 3px solid #ff5a00
@@ -113,6 +113,15 @@ p
 	&:active
 		color #333
 
+.btn-big
+	color #333
+	padding 18px 90px 16px
+	text-transform uppercase
+	font-weight bold
+
+	&:hover
+		color #fff
+
 ul.checked
 	position relative
 	text-align left
@@ -136,3 +145,63 @@ ul.checked
 	left 168px
 .third.column ul.checked
 	left 84px
+
+
+
+/* Inputs */
+
+.input-holder
+	margin 0 auto 20px
+	max-width 450px
+
+	&--divider
+		margin-top 5px
+
+input[type="checkbox"]
+input[type="radio"]
+	display none
+
+	& + label
+		cursor pointer
+
+		&:before
+			content ""
+			display inline-block
+			vertical-align middle
+			height 24px
+			width 27px
+			margin -4px 4px 0 0
+			background-image url('../images/ui/pokupo-ui.png')
+			background-repeat no-repeat
+
+input[type="checkbox"] 
+	& + label::before
+		background-position 0px 0px
+
+	&:hover + label::before
+		background-position -27px 0px
+
+	&:active + label::before
+		background-position -54px 0px
+
+	&:checked + label::before
+		background-position -81px 0px
+
+	&:checked:active + label::before
+		background-position -54px 0px
+
+input[type="radio"] + label::before
+	& + label::before
+		background-position 0px -24px
+
+	&:hover + label::before
+		background-position -27px -24px
+
+	&:active + label::before
+		background-position -54px -24px
+
+	&:checked + label::before
+		background-position -81px -24px
+
+	&:checked:active + label::before
+		background-position -54px -24px

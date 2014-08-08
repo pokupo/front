@@ -388,9 +388,9 @@ p {
 	border: none;
 	border: 3px solid transparent;
 	outline: none;
-	-webkit-transition: border .2s ease-in-out;
-	     -o-transition: border .2s ease-in-out;
-	        transition: border .2s ease-in-out;
+	-webkit-transition: border, background .2s ease-in-out;
+	     -o-transition: border, background .2s ease-in-out;
+	        transition: border, background .2s ease-in-out;
 }
 .inline-input:focus {
 	border: 3px solid #ff5a00;
@@ -498,6 +498,15 @@ p {
 .btn-orange:active {
 	color: #333;
 }
+.btn-big {
+	padding: 18px 90px 16px;
+	font-weight: bold;
+	text-transform: uppercase;
+	color: #333;
+}
+.btn-big:hover {
+	color: #fff;
+}
 ul.checked {
 	position: relative;
 	max-width: 250px;
@@ -518,13 +527,69 @@ ul.checked li:before {
 	height: 26px;
 	content: '';
 	background-image: url('../images/sprite.png');
-	background-position: -426px -714px;
+	background-position: -682px -625px;
 }
 .first.column ul.checked {
 	left: 168px;
 }
 .third.column ul.checked {
 	left: 84px;
+}
+.input-holder {
+	margin: 0 auto 20px;
+	max-width: 450px;
+}
+.input-holder--divider {
+	margin-top: 5px;
+}
+input[type='checkbox'],
+input[type='radio'] {
+	display: none;
+}
+input[type='checkbox'] + label,
+input[type='radio'] + label {
+	cursor: pointer;
+}
+input[type='checkbox'] + label:before,
+input[type='radio'] + label:before {
+	margin: -4px 4px 0 0;
+	display: inline-block;
+	width: 27px;
+	height: 24px;
+	content: '';
+	vertical-align: middle;
+	background-image: url('../images/ui/pokupo-ui.png');
+	background-repeat: no-repeat;
+}
+input[type='checkbox'] + label::before {
+	background-position: 0 0;
+}
+input[type='checkbox']:hover + label::before {
+	background-position: -27px 0;
+}
+input[type='checkbox']:active + label::before {
+	background-position: -54px 0;
+}
+input[type='checkbox']:checked + label::before {
+	background-position: -81px 0;
+}
+input[type='checkbox']:checked:active + label::before {
+	background-position: -54px 0;
+}
+input[type='radio'] + label::before + label::before {
+	background-position: 0 -24px;
+}
+input[type='radio'] + label::before:hover + label::before {
+	background-position: -27px -24px;
+}
+input[type='radio'] + label::before:active + label::before {
+	background-position: -54px -24px;
+}
+input[type='radio'] + label::before:checked + label::before {
+	background-position: -81px -24px;
+}
+input[type='radio'] + label::before:checked:active + label::before {
+	background-position: -54px -24px;
 }
 .benefits {
 	color: #fff;
@@ -640,7 +705,7 @@ ul.checked li:before {
 	width: 32px;
 	height: 62px;
 	background-image: url('../images/sprite.png');
-	background-position: -322px -148px;
+	background-position: -670px -541px;
 }
 .owl-prev:active {
 	width: 32px;
@@ -653,19 +718,19 @@ ul.checked li:before {
 	width: 32px;
 	height: 62px;
 	background-image: url('../images/sprite.png');
-	background-position: -552px -533px;
+	background-position: -322px -148px;
 }
 .owl-next:hover {
 	width: 32px;
 	height: 62px;
 	background-image: url('../images/sprite.png');
-	background-position: -380px -625px;
+	background-position: -340px -625px;
 }
 .owl-next:active {
 	width: 32px;
 	height: 62px;
 	background-image: url('../images/sprite.png');
-	background-position: -300px -625px;
+	background-position: -380px -625px;
 }
 .cases {
 	padding: 20px 0;
@@ -773,7 +838,7 @@ ul.checked li:before {
 	width: 84px;
 	height: 84px;
 	background-image: url('../images/sprite.png');
-	background-position: -368px -533px;
+	background-position: -460px -533px;
 }
 .steps li i.add {
 	width: 84px;
@@ -785,25 +850,25 @@ ul.checked li:before {
 	width: 84px;
 	height: 84px;
 	background-image: url('../images/sprite.png');
-	background-position: -628px 0;
+	background-position: -276px -533px;
 }
 .steps li i.get {
 	width: 84px;
 	height: 84px;
 	background-image: url('../images/sprite.png');
-	background-position: -460px -533px;
+	background-position: -516px -204px;
 }
 .steps li i.earn {
 	width: 84px;
 	height: 84px;
 	background-image: url('../images/sprite.png');
-	background-position: -516px -204px;
+	background-position: -516px -296px;
 }
 .steps li i.code {
 	width: 84px;
 	height: 84px;
 	background-image: url('../images/sprite.png');
-	background-position: -92px -533px;
+	background-position: -184px -533px;
 }
 ul.clients {
 	margin-top: 40px;
@@ -856,20 +921,27 @@ ul.clients li i.client.sberbank {
 	padding: 0 50px 8px 50px;
 	font-size: 44px;
 	line-height: 70px;
+	background: #333;
+}
+.create-shop .btn-create:hover {
+	background: #ffa800;
+}
+.create-shop .btn-create:active {
+	background: #cc8600;
 }
 .create-shop .btn-create:hover .icon-store,
 .create-shop .btn-create:active .icon-store {
 	width: 44px;
 	height: 40px;
 	background-image: url('../images/sprite.png');
-	background-position: -642px -625px;
+	background-position: -720px 0;
 }
 .create-shop .btn-create:disabled .icon-store,
 .create-shop .btn-create.disabled .icon-store {
 	width: 44px;
 	height: 40px;
 	background-image: url('../images/sprite.png');
-	background-position: -720px -48px;
+	background-position: -720px -96px;
 	opacity: .3;
 }
 .create-shop .btn-create .icon-store {
@@ -879,7 +951,7 @@ ul.clients li i.client.sberbank {
 	width: 44px;
 	height: 40px;
 	background-image: url('../images/sprite.png');
-	background-position: -720px 0;
+	background-position: -720px -48px;
 	-webkit-transition: none;
 	     -o-transition: none;
 	        transition: none;
@@ -907,19 +979,19 @@ ul.clients li i.client.sberbank {
 	width: 15px;
 	height: 14px;
 	background-image: url('../images/sprite.png');
-	background-position: -674px -602px;
+	background-position: -481px -296px;
 }
 .footer .contact-icon.email {
 	width: 15px;
 	height: 15px;
 	background-image: url('../images/sprite.png');
-	background-position: -651px -602px;
+	background-position: -365px -241px;
 }
 .footer .contact-icon.skype {
 	width: 15px;
 	height: 15px;
 	background-image: url('../images/sprite.png');
-	background-position: -628px -602px;
+	background-position: -365px -218px;
 }
 .footer a {
 	text-decoration: none;
@@ -972,13 +1044,13 @@ ul.clients li i.client.sberbank {
 	width: 35px;
 	height: 35px;
 	background-image: url('../images/sprite.png');
-	background-position: -720px -575px;
+	background-position: -720px -623px;
 }
 .footer .social .social__icon.fb {
 	width: 35px;
 	height: 35px;
 	background-image: url('../images/sprite.png');
-	background-position: -720px -446px;
+	background-position: -720px -408px;
 }
 .footer .social .social__icon.tw {
 	width: 35px;
@@ -1002,31 +1074,31 @@ ul.clients li i.client.sberbank {
 	width: 35px;
 	height: 35px;
 	background-image: url('../images/sprite.png');
-	background-position: -720px -231px;
+	background-position: -720px -236px;
 }
 .footer .social .social__icon:hover.vk {
 	width: 35px;
 	height: 35px;
 	background-image: url('../images/sprite.png');
-	background-position: -720px -403px;
+	background-position: -720px -537px;
 }
 .footer .social .social__icon:hover.fb {
 	width: 35px;
 	height: 35px;
 	background-image: url('../images/sprite.png');
-	background-position: -720px -188px;
+	background-position: -720px -494px;
 }
 .footer .social .social__icon:hover.tw {
 	width: 35px;
 	height: 35px;
 	background-image: url('../images/sprite.png');
-	background-position: -720px -618px;
+	background-position: -720px -666px;
 }
 .footer .social .social__icon:hover.lj {
 	width: 35px;
 	height: 35px;
 	background-image: url('../images/sprite.png');
-	background-position: -43px -714px;
+	background-position: -720px -365px;
 }
 .footer .social .social__icon:hover.ok {
 	width: 35px;
@@ -1038,31 +1110,31 @@ ul.clients li i.client.sberbank {
 	width: 35px;
 	height: 35px;
 	background-image: url('../images/sprite.png');
-	background-position: -720px -317px;
+	background-position: -720px -322px;
 }
 .footer .social .social__icon:active.vk {
 	width: 35px;
 	height: 35px;
 	background-image: url('../images/sprite.png');
-	background-position: -720px -532px;
+	background-position: -720px -580px;
 }
 .footer .social .social__icon:active.fb {
 	width: 35px;
 	height: 35px;
 	background-image: url('../images/sprite.png');
-	background-position: -720px -489px;
+	background-position: -720px -451px;
 }
 .footer .social .social__icon:active.tw {
 	width: 35px;
 	height: 35px;
 	background-image: url('../images/sprite.png');
-	background-position: -720px -661px;
+	background-position: -258px -714px;
 }
 .footer .social .social__icon:active.lj {
 	width: 35px;
 	height: 35px;
 	background-image: url('../images/sprite.png');
-	background-position: -720px -360px;
+	background-position: -43px -714px;
 }
 .footer .social .social__icon:active.ok {
 	width: 35px;
@@ -1074,7 +1146,7 @@ ul.clients li i.client.sberbank {
 	width: 35px;
 	height: 35px;
 	background-image: url('../images/sprite.png');
-	background-position: -720px -274px;
+	background-position: -720px -279px;
 }
 .footer .columns {
 	margin-right: -50px;
@@ -1133,7 +1205,7 @@ ul.clients li i.client.sberbank {
 	height: 11px;
 	content: '';
 	background-image: url('../images/sprite.png');
-	background-position: -704px -526px;
+	background-position: -608px -112px;
 }
 .header .menu-login a.menu-login__register {
 	color: #02903d;
@@ -1326,25 +1398,25 @@ ul.clients li i.client.sberbank {
 	width: 84px;
 	height: 84px;
 	background-image: url('../images/sprite.png');
-	background-position: -628px -92px;
+	background-position: -628px -184px;
 }
 .howitworks__steps .hiw-step__create:before {
 	width: 84px;
 	height: 84px;
 	background-image: url('../images/sprite.png');
-	background-position: 0 -533px;
+	background-position: -92px -533px;
 }
 .howitworks__steps .hiw-step__add:before {
 	width: 84px;
 	height: 84px;
 	background-image: url('../images/sprite.png');
-	background-position: -276px -533px;
+	background-position: -368px -533px;
 }
 .howitworks__steps .hiw-step__go:before {
 	width: 84px;
 	height: 84px;
 	background-image: url('../images/sprite.png');
-	background-position: -184px -533px;
+	background-position: -628px 0;
 }
 .howitworks__steps .hiw-step__finish {
 	padding-top: 150px;
@@ -1356,7 +1428,7 @@ ul.clients li i.client.sberbank {
 	width: 84px;
 	height: 84px;
 	background-image: url('../images/sprite.png');
-	background-position: -516px -296px;
+	background-position: 0 -533px;
 }
 .mission {
 	padding: 40px 0 50px;
@@ -1411,7 +1483,7 @@ ul.clients li i.client.sberbank {
 	height: 34px;
 	content: ' ';
 	background-image: url('../images/sprite.png');
-	background-position: -344px -714px;
+	background-position: -387px -714px;
 	/* background url('../images/ui/quote.png') 0 100% no-repeat*/
 }
 .mission .quote .author {
@@ -1452,7 +1524,7 @@ ul.clients li i.client.sberbank {
 	height: 25px;
 	content: '';
 	background-image: url('../images/sprite.png');
-	background-position: -513px -714px;
+	background-position: -519px -714px;
 }
 .price p {
 	font-size: 16px;
@@ -1526,7 +1598,7 @@ ul.clients li i.client.sberbank {
 	width: 44px;
 	height: 40px;
 	background-image: url('../images/sprite.png');
-	background-position: -720px -48px;
+	background-position: -720px -96px;
 	-webkit-transition: none;
 	     -o-transition: none;
 	        transition: none;
@@ -1536,14 +1608,14 @@ ul.clients li i.client.sberbank {
 	width: 44px;
 	height: 40px;
 	background-image: url('../images/sprite.png');
-	background-position: -590px -625px;
+	background-position: -630px -625px;
 }
 .register .btn-submit:disabled .icon-store,
 .register .btn-submit.disabled .icon-store {
 	width: 44px;
 	height: 40px;
 	background-image: url('../images/sprite.png');
-	background-position: -720px -48px;
+	background-position: -720px -96px;
 	opacity: .3;
 }
 .sign-in {
@@ -1614,37 +1686,37 @@ ul.clients li i.client.sberbank {
 	width: 18px;
 	height: 22px;
 	background-image: url('../images/sprite.png');
-	background-position: -362px -178px;
+	background-position: -362px -148px;
 }
 .sign-in .btn-group-item a .icon-google {
 	width: 31px;
 	height: 28px;
 	background-image: url('../images/sprite.png');
-	background-position: -427px -256px;
+	background-position: -388px -256px;
 }
 .sign-in .btn-group-item a .icon-zpay {
 	width: 37px;
 	height: 38px;
 	background-image: url('../images/sprite.png');
-	background-position: -720px -142px;
+	background-position: -720px -190px;
 }
 .sign-in .btn-group-item a:hover .icon-vk {
 	width: 18px;
 	height: 22px;
 	background-image: url('../images/sprite.png');
-	background-position: -362px -148px;
+	background-position: -362px -178px;
 }
 .sign-in .btn-group-item a:hover .icon-google {
 	width: 31px;
 	height: 28px;
 	background-image: url('../images/sprite.png');
-	background-position: -387px -714px;
+	background-position: -427px -256px;
 }
 .sign-in .btn-group-item a:hover .icon-zpay {
 	width: 37px;
 	height: 38px;
 	background-image: url('../images/sprite.png');
-	background-position: -720px -96px;
+	background-position: -720px -144px;
 }
 .sign-in .btn-group-item:hover,
 .sign-in .btn-group-item:active,
@@ -1666,19 +1738,19 @@ ul.clients li i.client.sberbank {
 	width: 18px;
 	height: 22px;
 	background-image: url('../images/sprite.png');
-	background-position: -362px -178px;
+	background-position: -362px -148px;
 }
 .sign-in .btn-group-item.disabled:hover .icon-google {
 	width: 31px;
 	height: 28px;
 	background-image: url('../images/sprite.png');
-	background-position: -427px -256px;
+	background-position: -388px -256px;
 }
 .sign-in .btn-group-item.disabled:hover .icon-zpay {
 	width: 37px;
 	height: 38px;
 	background-image: url('../images/sprite.png');
-	background-position: -720px -142px;
+	background-position: -720px -190px;
 }
 .split {
 	position: relative;
@@ -1747,13 +1819,13 @@ ul.clients li i.client.sberbank {
 	width: 39px;
 	height: 61px;
 	background-image: url('../images/sprite.png');
-	background-position: -500px -625px;
+	background-position: -540px -625px;
 }
 .split__mission blockquote:after {
 	width: 35px;
 	height: 34px;
 	background-image: url('../images/sprite.png');
-	background-position: -301px -714px;
+	background-position: -344px -714px;
 }
 .split__goal h2:before,
 .split__goal h2:after {
@@ -1764,7 +1836,7 @@ ul.clients li i.client.sberbank {
 	width: 68px;
 	height: 68px;
 	background-image: url('../images/sprite.png');
-	background-position: -628px -526px;
+	background-position: -552px -533px;
 }
 .split__goal .quote blockquote {
 	border-color: #000;
@@ -1775,7 +1847,7 @@ ul.clients li i.client.sberbank {
 	width: 35px;
 	height: 34px;
 	background-image: url('../images/sprite.png');
-	background-position: -258px -714px;
+	background-position: -301px -714px;
 }
 hgroup.with-icon {
 	position: relative;
@@ -1805,7 +1877,7 @@ section.start .with-icon:before {
 	width: 79px;
 	height: 79px;
 	background-image: url('../images/sprite.png');
-	background-position: -628px -362px;
+	background-position: -628px -454px;
 }
 section.howto .with-icon:before {
 	margin: 30px 0 0 -53px;
@@ -1819,7 +1891,7 @@ section.price .with-icon:before {
 	width: 34px;
 	height: 69px;
 	background-image: url('../images/sprite.png');
-	background-position: -628px -449px;
+	background-position: -628px -541px;
 }
 .team .grey {
 	padding: 40px 0;
@@ -1871,13 +1943,13 @@ section.price .with-icon:before {
 	width: 78px;
 	height: 81px;
 	background-image: url('../images/sprite.png');
-	background-position: -628px -273px;
+	background-position: -628px -276px;
 }
 .person__photo.person__photo--female:after {
 	width: 78px;
 	height: 81px;
 	background-image: url('../images/sprite.png');
-	background-position: -628px -184px;
+	background-position: -628px -365px;
 }
 .our-team {
 	position: relative;
@@ -1893,13 +1965,13 @@ section.price .with-icon:before {
 	width: 32px;
 	height: 62px;
 	background-image: url('../images/sprite.png');
-	background-position: -670px -449px;
+	background-position: -500px -625px;
 }
 .our-team .owl-next {
 	width: 32px;
 	height: 62px;
 	background-image: url('../images/sprite.png');
-	background-position: -340px -625px;
+	background-position: -300px -625px;
 }
 .video {
 	padding: 0;
@@ -2027,7 +2099,7 @@ section.price .with-icon:before {
 	width: 42px;
 	height: 25px;
 	background-image: url('../images/sprite.png');
-	background-position: -552px -714px;
+	background-position: -558px -714px;
 }
 .btn-social__vk:hover {
 	background-color: #577da2;
@@ -2037,7 +2109,7 @@ section.price .with-icon:before {
 	width: 42px;
 	height: 25px;
 	background-image: url('../images/sprite.png');
-	background-position: -463px -714px;
+	background-position: -469px -714px;
 }
 .btn-social__gp {
 	color: #d03f2c;
@@ -2051,7 +2123,7 @@ section.price .with-icon:before {
 	width: 31px;
 	height: 28px;
 	background-image: url('../images/sprite.png');
-	background-position: -466px -256px;
+	background-position: -430px -714px;
 }
 .btn-social__gp:hover {
 	background-color: #d03f2c;
@@ -2061,7 +2133,7 @@ section.price .with-icon:before {
 	width: 31px;
 	height: 28px;
 	background-image: url('../images/sprite.png');
-	background-position: -388px -256px;
+	background-position: -466px -256px;
 }
 .btn-social__lj {
 	color: #004359;
@@ -2085,7 +2157,7 @@ section.price .with-icon:before {
 	width: 35px;
 	height: 41px;
 	background-image: url('../images/sprite.png');
-	background-position: -547px -625px;
+	background-position: -587px -625px;
 }
 .btn-social__tw {
 	color: #55acee;
@@ -2204,7 +2276,7 @@ section.price .with-icon:before {
 	height: 11px;
 	content: '';
 	background-image: url('../images/sprite.png');
-	background-position: -697px -602px;
+	background-position: -194px -276px;
 }
 .btn-back:hover {
 	color: #ffa800;
@@ -2218,7 +2290,7 @@ section.price .with-icon:before {
 	width: 14px;
 	height: 11px;
 	background-image: url('../images/sprite.png');
-	background-position: -365px -218px;
+	background-position: -216px -276px;
 }
 h2.tagline {
 	margin-top: 20px;
@@ -2248,7 +2320,7 @@ h2.tagline {
 	width: 32px;
 	height: 62px;
 	background-image: url('../images/sprite.png');
-	background-position: -670px -449px;
+	background-position: -500px -625px;
 }
 .slider-control.prev:hover i.icon {
 	width: 32px;
@@ -2263,20 +2335,217 @@ h2.tagline {
 	width: 32px;
 	height: 62px;
 	background-image: url('../images/sprite.png');
-	background-position: -340px -625px;
+	background-position: -300px -625px;
 }
 .slider-control.next:hover i.icon {
 	width: 32px;
 	height: 62px;
 	background-image: url('../images/sprite.png');
-	background-position: -300px -625px;
+	background-position: -380px -625px;
+}
+.popup {
+	margin: 50px auto 100px;
+	max-width: 624px;
+	min-height: 670px;
+	box-shadow: 0 20px 200px -10px rgba(0,0,0,.6);
+}
+.popup header {
+	padding: 16px 0;
+	height: 170px;
+}
+.popup header h1.with-icon {
+	position: relative;
+	padding-top: 88px;
+}
+.popup header h1.with-icon:before {
+	position: absolute;
+	top: 0;
+	left: 50%;
+	margin-left: -42px;
+	display: block;
+	width: 84px;
+	height: 84px;
+	content: '';
+	background-image: url('../images/sprite.png');
+	background-position: -628px -92px;
+}
+.popup footer {
+	padding: 18px 0 35px;
+	border-top: 2px solid #efece7;
+}
+.popup footer ul {
+	font-size: 0;
+	text-align: center;
+}
+.popup footer ul li {
+	margin-right: 30px;
+	display: inline-block;
+	font-size: 15px;
+	line-height: 18px;
+}
+.popup footer ul li a {
+	text-decoration: none;
+	color: #177a93;
+	border-bottom: 1px solid rgba(23,122,147,.25);
+}
+.popup footer ul li a:hover {
+	color: #0b3d4a;
+	border-bottom-color: rgba(11,61,74,.4);
+}
+.popup footer ul:last-child {
+	margin-right: 0;
+}
+.popup .content {
+	padding: 30px 0;
+}
+.popup .inline-input {
+	background: #efece7;
+}
+.popup .inline-input:focus {
+	background: #fff;
+}
+.popup label {
+	font-size: 13px;
+	line-height: 24px;
+}
+.popup .input-holder--divider {
+	margin-top: 5px;
+	margin-bottom: 6px;
+}
+.popup .btn-big {
+	margin-top: 10px;
+	margin-bottom: 31px;
+}
+.popup .signin-with {
+	margin: 0 auto;
+}
+.popup .signin-with .social-btns {
+	margin: 5px 0 10px;
+	font-size: 0;
+}
+.popup .signin-with .social-btns li {
+	margin-right: 10px;
+	display: inline-block;
+	font-size: 16px;
+}
+.popup .signin-with .social-btns li:last-child {
+	margin-right: 0;
+}
+.popup .signin-with .social-btns .social-btn {
+	position: relative;
+	position: relative;
+	z-index: 1;
+	display: block;
+	width: 60px;
+	height: 60px;
+	background: transparent;
+	border: 2px solid;
+	border-radius: 40px;
+	-webkit-transition: background .1s ease-in-out;
+	     -o-transition: background .1s ease-in-out;
+	        transition: background .1s ease-in-out;
+}
+.popup .signin-with .social-btns .social-btn:before,
+.popup .signin-with .social-btns .social-btn:after {
+	position: absolute;
+	display: block;
+	content: '';
+}
+.popup .signin-with .social-btns .social-btn:before {
+	z-index: 2;
+	top: 50%;
+	left: 50%;
+}
+.popup .signin-with .social-btns .social-btn:after {
+	z-index: 3;
+	top: -2px;
+	right: -2px;
+	bottom: -2px;
+	left: -2px;
+	background: rgba(0,0,0,0);
+	border-radius: 60px;
+}
+.popup .signin-with .social-btns .social-btn:active {
+	top: 1px;
+}
+.popup .signin-with .social-btns .social-btn:active:after {
+	background: rgba(0,0,0,.5);
+}
+.popup .signin-with .social-btns .social-btn.vk {
+	border-color: #577da2;
+}
+.popup .signin-with .social-btns .social-btn.vk:before {
+	margin: -11px 0 0 -9px;
+	width: 18px;
+	height: 22px;
+	background-image: url('../images/sprite.png');
+	background-position: -362px -178px;
+}
+.popup .signin-with .social-btns .social-btn.vk:hover {
+	background-color: #577da2;
+}
+.popup .signin-with .social-btns .social-btn.vk:hover:before {
+	width: 18px;
+	height: 22px;
+	background-image: url('../images/sprite.png');
+	background-position: -362px -148px;
+}
+.popup .signin-with .social-btns .social-btn.gp {
+	border-color: #d03f2c;
+}
+.popup .signin-with .social-btns .social-btn.gp:before {
+	margin: -14px 0 0 -16px;
+	width: 31px;
+	height: 28px;
+	background-image: url('../images/sprite.png');
+	background-position: -427px -256px;
+}
+.popup .signin-with .social-btns .social-btn.gp:hover {
+	background-color: #d03f2c;
+}
+.popup .signin-with .social-btns .social-btn.gp:hover:before {
+	width: 31px;
+	height: 28px;
+	background-image: url('../images/sprite.png');
+	background-position: -388px -256px;
+}
+.popup .signin-with .social-btns .social-btn.zp {
+	border-color: #00a650;
+}
+.popup .signin-with .social-btns .social-btn.zp:before {
+	margin: -19px 0 0 -19px;
+	width: 37px;
+	height: 38px;
+	background-image: url('../images/sprite.png');
+	background-position: -720px -144px;
+}
+.popup .signin-with .social-btns .social-btn.zp:hover {
+	background-color: #00a650;
+}
+.popup .signin-with .social-btns .social-btn.zp:hover:before {
+	width: 37px;
+	height: 38px;
+	background-image: url('../images/sprite.png');
+	background-position: -720px -190px;
+}
+.popup .result h3 {
+	margin-bottom: 5px;
+	font-size: 16px;
+	font-weight: bold;
+	color: #ffa800;
+}
+.popup .result p {
+	font-size: 16px;
+	line-height: 24px;
 }
 .rates {
 	position: relative;
+	padding: 0 0 40px;
 	background: #f7f5f3;
 }
 .rates h1 {
-	margin-top: -6px;
+	margin-bottom: 38px;
+	padding-top: 65px;
 }
 .rates__bg-top {
 	position: absolute;
@@ -2296,8 +2565,13 @@ h2.tagline {
 	margin-top: 28px;
 }
 .rates .fotorama__shadows--left:after,
-.rates .fotorama__shadows--right:after {
-	top: 25px;
+.rates .fotorama__shadows--right:after,
+.rates .fotorama__shadows--left:before,
+.rates .fotorama__shadows--right:before {
+	top: 40px;
+}
+.rates .slider-control {
+	top: 57px;
 }
 .rate {
 	background: rgba(255,255,255,0);
@@ -2319,6 +2593,7 @@ h2.tagline {
 }
 .rate h1 {
 	margin: 26px 0 10px;
+	padding-top: 0;
 	font-size: 30px;
 }
 .rate h2 {
@@ -2489,6 +2764,12 @@ h2.tagline {
 	line-height: 18px;
 	text-transform: uppercase;
 	background: #333;
+}
+.rate__helper .btn-orange:hover {
+	background: #ffa800;
+}
+.rate__helper .btn-orange:active {
+	background: #cc8600;
 }
 .faq {
 	padding-top: 44px;

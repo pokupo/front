@@ -13,7 +13,7 @@
 		<link sizes="120x120" href="images/icons/apple-touch-icon-120x120.png" rel="apple-touch-icon">
 		<link sizes="144x144" href="images/icons/apple-touch-icon-144x144.png" rel="apple-touch-icon">
 		<link sizes="152x152" href="images/icons/apple-touch-icon-152x152.png" rel="apple-touch-icon">
-		<meta name="application-name" content="Новости платформы">
+		<meta name="application-name" content="Pokupo">
 		<meta name="msapplication-tooltip" content="Description for pokupo">
 		<meta name="msapplication-TileColor" content="#ffffff">
 		<meta name="msapplication-TileImage" content="images/icons/tile.png">
@@ -31,7 +31,7 @@
 		<meta name="HandheldFriendly" content="True">
 		<meta name="format-detection" content="telephone=no">
 		<meta name="format-detection" content="address=no">
-		<title>Новости платформы</title>
+		<title>Pokupo</title>
 		<meta name="description" content="Description for pokupo">
 		<meta name="keywords" content="pokupo, project">
 		<meta name="copyright" content="©tabrisov">
@@ -50,85 +50,52 @@
 					<a href="index.html" title="Pokupo.ru" class="logo"></a>
 					<div class="menu-login"><a href="javascript:void(0);" title="Войти" class="menu-login__login">Вход</a><a href="javascript:void(0);" title="Зарегистрироваться" class="menu-login__register">Регистрация</a>
 					</div>
-					<ul class="menu menu--opened">
-						<li class="menu__item with-submenu"><a href="#"><span>Платформа</span></a>
-							<ul class="submenu">
-								<li class="submenu__item"><a href="#"><span>Особенности</span></a>
+					<ul class="menu"></ul>
+					<div class="submenu-bg"></div>
+				</div>
+			</section>
+			<div class="popup signin">
+				<header class="patterned black">
+					<h1 class="with-icon">Войти</h1>
+					<a href="javascript:void(0);" class="close-popup js-close"></a>
+				</header>
+				<div class="content">
+					<form>
+						<div class="input-holder">
+							<input name="login" type="text" placeholder="Логин" class="inline-input">
+						</div>
+						<div class="input-holder">
+							<input name="password" type="password" placeholder="Пароль" class="inline-input">
+						</div>
+						<div class="input-holder input-holder--divider">
+							<input id="remember" name="remember" type="checkbox" class="checkbox">
+							<label for="remember">запомнить меня</label>
+						</div><a href="javascript:void(0);" class="btn btn-orange btn-big">Войти</a>
+						<div class="signin-with">
+							<label>Войти через</label>
+							<ul class="social-btns">
+								<li>
+									<a href="javascript:void(0);" class="social-btn vk"></a>
 								</li>
-								<li class="submenu__item"><a href="#"><span>Вопросы и ответы</span></a>
+								<li>
+									<a href="javascript:void(0);" class="social-btn gp"></a>
 								</li>
-								<li class="submenu__item"><a href="#"><span>Готовые решения</span></a>
-								</li>
-								<li class="submenu__item"><a href="#"><span>Торговая площадка</span></a>
-								</li>
-							</ul>
-						</li>
-						<li class="menu__item"><a href="rates.html"><span>Тарифы</span></a>
-						</li>
-						<li class="menu__item"><a href="community.html"><span>Сообщество</span></a>
-						</li>
-						<li class="menu__item with-submenu"><a href="#"><span>Помощь</span></a>
-							<ul class="submenu">
-								<li class="submenu__item"><a href="#"><span>Техническая поддержка</span></a>
-								</li>
-								<li class="submenu__item"><a href="#"><span>Видео курсы</span></a>
-								</li>
-								<li class="submenu__item"><a href="#"><span>Семинары</span></a>
-								</li>
-							</ul>
-						</li>
-						<li class="menu__item with-submenu active"><a href="#"><span>Компания</span></a>
-							<ul class="submenu active">
-								<li class="submenu__item active"><a href="#"><span>Новости</span></a>
-								</li>
-								<li class="submenu__item"><a href="#"><span>Контакты</span></a>
-								</li>
-								<li class="submenu__item"><a href="#"><span>О нас</span></a>
-								</li>
-								<li class="submenu__item"><a href="#"><span>Партнеры</span></a>
-								</li>
-								<li class="submenu__item"><a href="#"><span>Блог</span></a>
+								<li>
+									<a href="javascript:void(0);" class="social-btn zp"></a>
 								</li>
 							</ul>
+						</div>
+					</form>
+				</div>
+				<footer>
+					<ul>
+						<li><a href="javascript:void(0);">Восстановление пароля</a>
+						</li>
+						<li><a href="javascript:void(0);">Регистрация</a>
 						</li>
 					</ul>
-					<div class="submenu-bg active"></div>
-				</div>
-			</section>
-			<section class="events">
-				<div class="container">
-					<div class="document">
-						<h1>Новости платформы</h1>
-						<div class="event">
-							<p class="event__date">18 июня 2014</p>
-							<h1 class="event__title"><a href="event.html">Сегодня покупо будет представлен широкой публике</a></h1>
-							<p class="event__brief">В славном городе Екатеринбурге на IV Ежегодной конференции Интернет магазин и бизнес on-line. Мы являемся генеральным спонсором этого хорошего и полезного мероприятия для всех интернет предпринимателей. Это наше первое публичное мероприятие, и
-								мы подготовили доклад на тему "Служба поддержки пользователей".</p>
-							<a href="event.html" class="incut event__banner">
-								<img src="images/pages/events/banner-00.jpg">
-							</a>
-						</div>
-						<div class="event">
-							<p class="event__date">15 июня 2014</p>
-							<h1 class="event__title"><a href="event.html">Сегодня покупо будет представлен широкой публике</a></h1>
-							<p class="event__brief">Сегодня Pokupo будет представлен широкой публике в славном городе Екатеринбурге на IV Ежегодной конференции Интернет магазин и бизнес on-line. Мы являемся генеральным спонсором этого хорошего и полезного мероприятия для всех интернет предпринимателей.
-								Это наше первое публичное мероприятие, и мы подготовили доклад на тему "Служба поддержки пользователей".</p>
-							<a href="event.html" class="incut event__banner">
-								<img src="images/pages/events/banner-01.jpg">
-							</a>
-						</div>
-						<div class="event">
-							<p class="event__date">10 июня 2014</p>
-							<h1 class="event__title"><a href="event.html">Сегодня покупо будет представлен широкой публике</a></h1>
-							<p class="event__brief">Сегодня Pokupo будет представлен широкой публике в славном городе Екатеринбурге на IV Ежегодной конференции Интернет магазин и бизнес on-line. Мы являемся генеральным спонсором этого хорошего и полезного мероприятия для всех интернет предпринимателей.
-								Это наше первое публичное мероприятие, и мы подготовили доклад на тему "Служба поддержки пользователей".</p>
-							<a href="event.html" class="incut event__banner">
-								<img src="images/pages/events/banner-02.jpg">
-							</a>
-						</div><a href="javascript:void(0);" class="btn btn-orange btn-load">Ещё новости</a>
-					</div>
-				</div>
-			</section>
+				</footer>
+			</div>
 			<div class="footer-overlay"></div>
 		</div>
 		<footer class="footer">
@@ -200,6 +167,5 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 		<script src="scripts/libs/fotorama.js"></script>
 		<script src="scripts/libs/carousel.min.js"></script>
-		<script src="scripts/main.js"></script>
 	</body>
 </html>

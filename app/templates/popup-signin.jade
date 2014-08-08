@@ -1,0 +1,33 @@
+extends partials/layouts/inner
+
+block content
+	.popup.signin
+		header.patterned.black
+			h1.with-icon Войти
+			a(href=js0).close-popup.js-close
+		.content
+			form
+				.input-holder
+					input.inline-input(name="login" type="text" placeholder="Логин")
+				.input-holder
+					input.inline-input(name="password" type="password" placeholder="Пароль")
+				.input-holder.input-holder--divider
+					input#remember.checkbox(name="remember" type="checkbox")
+					label(for="remember") запомнить меня
+				a.btn.btn-orange.btn-big(href=js0) Войти
+
+				.signin-with
+					label Войти через
+					ul.social-btns
+						li
+							a.social-btn.vk(href=js0)
+						li
+							a.social-btn.gp(href=js0)
+						li
+							a.social-btn.zp(href=js0) 
+		footer
+			ul
+				li
+					a(href=js0) Восстановление пароля
+				li
+					a(href=js0) Регистрация

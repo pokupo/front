@@ -1,0 +1,162 @@
+.popup
+	margin 50px auto 100px
+	max-width 624px
+	min-height 670px
+	box-shadow 0 20px 200px -10px rgba(0,0,0,0.6)
+
+	header
+		height 170px
+		padding 16px 0
+
+		h1.with-icon
+			padding-top 88px
+			position relative
+
+			&:before
+				content ''
+				display block
+				position absolute
+				top 0
+				left 50%
+				margin-left -42px
+				sprite($step__signin)
+
+	footer
+		padding 18px 0 35px
+		border-top 2px solid $grey
+
+		ul
+			text-align center
+			font-size 0
+
+			li
+				display inline-block
+				margin-right 30px
+				font-size 15px
+				line-height 18px
+
+				a 
+					color $a__link
+					text-decoration none
+					border-bottom 1px solid rgba($a__link, 0.25)
+
+					&:hover
+						color $a__hover
+						border-bottom-color rgba($a__hover, 0.4)
+
+			&:last-child
+				margin-right 0
+
+
+	.content
+		padding 30px 0
+
+	.inline-input
+		background $grey
+
+		&:focus
+			background #fff
+
+	label
+		font-size 13px
+		line-height 24px
+
+	.input-holder--divider
+		margin-top 5px
+		margin-bottom 6px
+
+	.btn-big
+		margin-top 10px
+		margin-bottom 31px
+
+	.signin-with
+		margin 0 auto
+
+		.social-btns
+			margin 5px 0 10px
+			font-size 0
+
+			li
+				display inline-block
+				font-size 16px
+				margin-right 10px
+
+				&:last-child
+					margin-right 0
+
+			.social-btn
+				position relative
+				display block
+				border-radius 40px
+				width 60px
+				height 60px
+				border 2px solid
+				background transparent
+				transition background 0.1s ease-in-out
+				position relative
+				z-index 1
+
+				&:before
+				&:after
+					content ''
+					display block
+					position absolute
+					
+
+				&:before
+					top 50%
+					left 50%
+					z-index 2
+
+				&:after
+					left -2px
+					right -2px
+					top -2px
+					bottom -2px
+					border-radius 60px
+					background rgba(0,0,0,0)
+					z-index 3
+
+				&:active
+					top 1px
+					&:after
+						background rgba(0,0,0,0.5)
+
+				&.vk
+					border-color $vk_color
+					&:before
+						margin -11px 0 0 -9px
+						sprite($icon-vk__hover)
+					&:hover
+						background-color $vk_color
+						&:before
+							sprite($icon-vk)
+				&.gp
+					border-color $gp_color
+					&:before
+						margin -14px 0 0 -16px
+						sprite($icon-google__hover)
+					&:hover
+						background-color $gp_color
+						&:before
+							sprite($icon-google)
+				&.zp
+					border-color $zp_color
+					&:before
+						margin -19px 0 0 -19px
+						sprite($icon-zpay__hover)
+					&:hover
+						background-color $zp_color
+						&:before
+							sprite($icon-zpay)
+	
+	.result
+		h3 
+			color $orange
+			font-weight bold
+			font-size 16px
+			margin-bottom 5px
+		p
+			font-size 16px
+			line-height 24px
+
