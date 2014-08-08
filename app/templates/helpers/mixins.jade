@@ -1,0 +1,43 @@
+//- Подключение скриптов
+mixin script(scripts)
+	each src in scripts
+		- src = /^(https?:)?\/\//.test(src) ? src : page.assets + 'scripts/' + src;
+		script(src=src)
+
+
+mixin pages-list(list)
+	ol(style="list-style-type: decimal")
+		each item in list
+			if item.disabled
+				li(style="margin-bottom: 1em")
+					span(style="color: #bbb; cursor: default")= item.text
+			else
+				li(style="margin-bottom: 1em")
+					a(href=item.href)= item.text
+
+
+mixin menu-list(list)
+	if list
+		each item in list
+			if item.submenu
+				if item.active
+					- i = true
+		ul.menu(class=i ? "menu--opened" : "")
+			each item in list
+				if item.submenu
+					li.menu__item.with-submenu(class=item.active ? "active" : "")
+						a(href=item.href)
+							span= item.text
+						ul.submenu(class=item.active ? "active" : "")
+							each subitem in item.submenu
+								li.submenu__item(class=subitem.active ? "active" : "")
+									a(href=subitem.href)
+										span= subitem.text
+				else
+					li.menu__item(class=item.active ? "active" : "")
+						a(href=item.href)
+							span= item.text
+
+		.submenu-bg(class=i ? "active" : "")
+	else
+		p Нет данных

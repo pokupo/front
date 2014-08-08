@@ -1,0 +1,69 @@
+.team .grey
+	padding 40px 0
+	
+.person
+	position relative
+	width 270px
+	padding 0 20px 0 0
+	display inline-block
+
+	&__name
+		font-weight bold
+		font-size 18px
+		line-height 20px
+		margin-bottom 2px
+
+	p 
+		font-size 13px
+		line-height 20px
+
+	&__position
+		font-style italic
+
+	&__about
+		text-align center
+
+	&__photo
+		display block
+		position relative
+		margin 10px auto 25px
+		width 160px
+		height 160px
+		border-radius 100px
+		overflow hidden
+
+		&:after
+			content ''
+			display block
+			position absolute
+			top 50%
+			left 50%
+			margin -40px 0 0 -39px
+
+		&.person__photo--male 
+		&.person__photo--female 
+			border 2px solid $orange
+
+		&.person__photo--male 
+			&:after
+				sprite($male)
+		&.person__photo--female
+			&:after
+				sprite($female)
+
+
+.our-team
+	position relative
+	margin 30px auto 0
+	padding 0 40px 0px
+	width 920px
+
+	.owl-prev
+	.owl-next
+		top 85px
+
+	.owl-prev
+		sprite($arrow-prev__black)
+
+	.owl-next
+		sprite($arrow-next__black)

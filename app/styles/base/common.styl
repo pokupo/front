@@ -1,0 +1,150 @@
+html 
+body
+	height 100%
+
+body
+	font-family $font
+	font-weight 400
+	background #fff
+	font-size 14px
+	text-align center
+	-webkit-font-smoothing subpixel-antialiased!important
+	-webkit-backface-visibility: hidden
+
+	&.grey
+		section.header
+		footer.footer
+			background #fff
+
+.main
+	position relative
+	min-height 100%
+	overflow hidden
+
+.footer-overlay
+	height 140px
+
+section
+	padding 40px 0
+
+.patterned
+	background-image url('../images/bg/pattern.png') 
+	background-position 50% 50% 
+	background-repeat repeat
+
+.waved-top
+	background-image url('../images/bg/wave-grey-top.png') 
+	background-position 50% 0
+	background-repeat repeat-x
+	background-color transparent!important 
+	margin-top -4px
+	padding 4px 0 0
+	z-index 2
+	position relative
+	
+
+.waved-bottom
+	background-image url('../images/bg/wave-grey-bottom.png') 
+	background-position 50% 100%
+	background-repeat repeat-x
+	background-color transparent!important 
+	margin-bottom -4px
+	padding 0 0 4px
+	z-index 3
+	position relative
+
+
+.orange
+	background-color $orange
+.black
+	background-color #333
+	color #fff
+.grey
+	background-color $grey
+.white
+	background-color $white
+	
+.container 
+	position relative
+	width 978px
+	margin 0 auto
+	clearfix()
+
+
+h1 
+	font-weight 300
+	font-size 45px
+	-webkit-font-smoothing subpixel-antialiased
+
+h2
+	font-weight 400
+	font-size 36px
+	-webkit-font-smoothing subpixel-antialiased
+
+hgroup
+	margin 0 auto
+	text-align center
+		
+	h2.lead
+		font-size 13px
+		line-height 20px
+		
+	&+h3 
+		line-height 20px
+		font-size 18px 
+		font-weight 800
+		margin-bottom 37px
+		letter-spacing 1px
+
+.columns
+	clearfix()
+	margin-right: -20px;
+
+	.column
+		margin-right -100%
+		position relative
+		float left
+		width 25%
+
+		&.first
+			left 0
+		&.second
+			left 25%
+		&.third
+			left 50%
+		&.fourth
+			left 75%
+		&.double
+			width 50%
+		&.triple
+			width 75%
+		.content
+			margin-right 20px
+
+	&.triple
+		margin-right: -20px;
+		
+		.column
+			width 33.3333%
+			&.second
+				left 33.3333%
+			&.third
+				left 66.6667%
+			&.double
+				width 66.6667%
+			.content
+				margin-right 20px
+
+
+.document
+	padding 0 40px 60px
+	text-align left
+
+	.incut
+		display block
+		margin-left -40px
+		margin-right -40px
+		& > .content
+			padding 0 40px
+	p 
+		max-width 650px

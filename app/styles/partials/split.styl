@@ -1,0 +1,81 @@
+
+
+.split
+	background $green
+	position relative
+	padding-top 36px
+
+	.quote
+		margin 0 auto
+
+		blockquote
+			position relative
+			margin 28px 65px 35px
+			padding 20px 22px 24px
+			display inline-block
+			font-size 16px
+			font-style italic
+			line-height 24px
+			border 2px solid #fff
+			border-radius 28px
+
+			&:after
+				position absolute
+				right 75px
+				bottom -34px
+				display block
+				content ' '
+
+	.orange
+		position absolute
+		left 50%
+		right 0
+		top 0
+		bottom 0
+	h2
+		position relative
+		display inline-block
+		font-size 24px
+		font-weight 800
+		i.icon
+			display block
+			margin 0 auto
+		&:before
+		&:after
+			content ''
+			display block
+			position absolute
+			width 28px
+			border-top 1px solid #fff
+			top 94px
+		&:before
+			left -50px
+		&:after
+			right -50px
+
+	&__mission
+		color #fff
+		h2
+			i.icon
+				margin-top 2px
+				margin-bottom 17px
+				sprite($mission)
+		blockquote
+			&:after
+				sprite($quote__after--greenbg)
+	&__goal
+		h2
+			&:before
+			&:after
+				border-color #000
+			i.icon
+				margin-bottom 12px
+				sprite($goal)
+		.quote blockquote
+			border-color #000
+			&:after
+				right auto
+				left 75px
+				sprite($quote__after--left)
+
+

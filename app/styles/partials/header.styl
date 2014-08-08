@@ -1,0 +1,177 @@
+.header
+	position relative
+	padding 0
+	text-align left
+
+	.container 
+		position static
+
+	a 
+		text-decoration none
+
+	.logo
+		float left
+		display inline-block
+		width 150px
+		height 120px
+		margin 0 54px 0 0
+		background url('../images/logo/logo.png') 50% 50% no-repeat
+
+	.menu-login
+		float right
+		margin 0 -15px 0 -100%
+		height 120px
+		padding 57px 0 33px
+
+		a
+			margin-top 4px
+			padding 7px 15px
+			font-size 14px
+			font-weight 700
+			text-transform uppercase
+			transition 0.2s ease all
+
+			&.menu-login__login
+				color #000
+				border-right 1px solid #c5c6c8
+
+				&:before
+					content ''
+					display inline-block
+					sprite($icon__login)
+					margin-right 5px
+
+			&.menu-login__register
+				color $green
+
+			&:hover
+				color $orange
+		
+	.menu
+		display inline-block
+		height 120px
+		position relative
+		font-size 0
+
+		&--opened
+			margin-bottom 60px
+
+		a 
+			position relative
+			display inline-block
+			box-sizing border-box
+			height 120px
+			line-height 120px
+			float left
+			padding 0 5px
+			margin-right 15px
+			font-size 16px
+			color #000
+			transition 0.3s ease all
+			font-size 16px
+			border-bottom 3px solid transparent
+
+			&:after
+				content ''
+				display block
+				width 0
+				height 0
+				position absolute
+				bottom 0
+				left 50%
+				margin-left -8px
+				border 8px solid transparent
+				border-top none
+				transition 0.3s ease all
+
+			&:hover
+			&.bordered 
+				color #018F3C
+
+		&__item
+			display inline-block
+			height 120px
+			
+			a 
+				padding 54px 8px 40px
+				line-height 18px
+				font-size 16px
+				transition all .2s ease-in-out
+
+			&.with-submenu
+				a:hover
+				a.bordered
+					border-bottom-color #018F3C
+					&:after
+						border-bottom-color #018F3C
+			&.active
+				a
+					color #018F3C
+					border-bottom-color #018F3C
+					&:after
+						border-bottom-color #018F3C
+
+
+		.submenu
+			position absolute
+			top 120px
+			height 0
+			z-index 2
+			left -12px
+			width 790px
+			overflow hidden
+			transition 0.3s ease all
+
+			&.active
+				height 60px
+
+			&__item
+				float left
+				height 60px
+				padding-top 24px
+
+				a 
+					display inline-block
+					height 20px
+					padding 0 12px
+					margin-right 0px
+					font-size 14px
+					line-height 14px
+					color #000
+					text-align center
+					white-space nowrap
+					border-bottom none
+					span
+						transition all 0.3s ease-in-out
+						display inline-block
+						margin 0 auto
+						border-bottom 1px solid rgba(0,0,0,0)
+
+					&:hover
+						span
+							border-bottom-color rgba(0,0,0,0.3)
+
+					&:after 
+						display none
+				&.active
+					background $orange
+					a
+						color #fff
+						&:hover
+							span
+								border-bottom-color rgba(255,255,255,0.3)
+
+	.submenu-bg
+		width 100%
+		position absolute
+		top 120px
+		height 0
+		left 0
+		z-index 1
+		background $grey
+		transition all 0.3s ease-in-out
+
+		&.active
+			height 60px
+
+

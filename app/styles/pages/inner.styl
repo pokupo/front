@@ -1,0 +1,35 @@
+h2.tagline
+	text-transform uppercase
+	font-size 13px
+	line-height 20px
+	margin-top 20px
+
+.slider-control
+	display block
+	width 80px
+	height 80px
+	position absolute
+	top 17px
+	cursor pointer
+
+	i.icon
+		display block
+		margin -31px 0 0 -16px
+		position absolute
+		top 50%
+		left 50%
+
+	&.prev
+		left 108px 
+		i.icon
+			sprite($arrow-prev__black)
+		&:hover
+			i.icon
+				sprite($arrow-prev__active)
+	&.next
+		right 108px
+		i.icon
+			sprite($arrow-next__black)
+		&:hover
+			i.icon
+				sprite($arrow-next__active)

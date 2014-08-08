@@ -1,0 +1,61 @@
+extends partials/layouts/inner
+
+block head
+	- page.title = 'Новости платформы';
+
+block menu 
+	+menu-list([
+		{text:"Платформа",href:"#",submenu:[
+			{text:"Особенности",href:"#"},
+			{text:"Вопросы и ответы",href:"#"},
+			{text:"Готовые решения",href:"#"},
+			{text:"Торговая площадка",href:"#"}
+		]},
+		{text:"Тарифы",href:"rates.html"},
+		{text:"Сообщество",href:"community.html"},
+		{text:"Помощь",href:"#",submenu:[
+			{text:"Техническая поддержка",href:"#"},
+			{text:"Видео курсы",href:"#"},
+			{text:"Семинары",href:"#"}]},
+		{text:"Компания",href:"#", active:true, submenu:[
+			{text:"Новости",href:"#", active:true},
+			{text:"Контакты",href:"#"},
+			{text:"О нас",href:"#"},
+			{text:"Партнеры",href:"#"},
+			{text:"Блог",href:"#"}
+		]}
+	])
+
+block content
+	section.events
+		.container
+			.document
+				h1 Новости платформы
+				.event
+					p.event__date 18 июня 2014
+					h1.event__title
+						a(href="event.html") Сегодня покупо будет представлен широкой публике
+					p.event__brief В славном городе Екатеринбурге на IV Ежегодной конференции Интернет магазин и бизнес on-line. Мы являемся генеральным спонсором этого хорошего и полезного мероприятия для всех интернет предпринимателей. Это наше первое публичное мероприятие, и мы подготовили доклад на тему "Служба поддержки пользователей".
+					a.incut.event__banner(href="event.html")
+						img(src="images/pages/events/banner-00.jpg")
+
+				.event
+					p.event__date 15 июня 2014
+					h1.event__title
+						a(href="event.html") Сегодня покупо будет представлен широкой публике
+					p.event__brief Сегодня Pokupo будет представлен широкой публике в славном городе Екатеринбурге на IV Ежегодной конференции Интернет магазин и бизнес on-line. Мы являемся генеральным спонсором этого хорошего и полезного мероприятия для всех интернет предпринимателей. Это наше первое публичное мероприятие, и мы подготовили доклад на тему "Служба поддержки пользователей".
+					a.incut.event__banner(href="event.html")
+						img(src="images/pages/events/banner-01.jpg")
+				.event
+					p.event__date 10 июня 2014
+					h1.event__title
+						a(href="event.html") Сегодня покупо будет представлен широкой публике
+					p.event__brief Сегодня Pokupo будет представлен широкой публике в славном городе Екатеринбурге на IV Ежегодной конференции Интернет магазин и бизнес on-line. Мы являемся генеральным спонсором этого хорошего и полезного мероприятия для всех интернет предпринимателей. Это наше первое публичное мероприятие, и мы подготовили доклад на тему "Служба поддержки пользователей".
+					a.incut.event__banner(href="event.html")
+						img(src="images/pages/events/banner-02.jpg")
+
+				a.btn.btn-orange.btn-load(href=js0) Ещё новости
+
+
+block scripts
+	+script(['main.js'])

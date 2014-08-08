@@ -1,0 +1,43 @@
+include ../../helpers/variables
+include ../../helpers/mixins
+
+doctype html
+html(lang='ru')
+	include ../head
+	body
+		.main
+			<!-- header -->
+			include ../block/header
+			<!-- /header -->
+
+			<!-- start -->
+			include ../block/start
+			<!-- /start -->
+
+			<!-- start -->
+			include ../block/howitworks
+			<!-- /start -->
+
+			<!-- price -->
+			include ../block/price
+			<!-- /price -->
+
+			<!-- split -->
+			include ../block/split
+			<!-- /split -->
+
+			<!-- team -->
+			include ../block/team
+			<!-- /team -->
+
+			<!-- vision -->
+			include ../block/vision
+			<!-- /vision -->
+
+			.footer-overlay
+
+		<!-- footer -->
+		include ../footer
+		<!-- /footer -->
+
+		include ../scripts

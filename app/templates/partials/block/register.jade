@@ -1,0 +1,32 @@
+section.register.orange.patterned
+	.register-wrapper
+		.container
+			hgroup
+				h1 Создай магазин бесплатно
+				h2.lead Это очень просто и и не займёт больше минуты
+
+			form
+				.columns
+					.first.double.column
+						.content
+							input.inline-input(type="text" name="name" placeholder="Ваше имя" required="required" pattern="^[А-Яа-я\s\-\_0-9]+$")
+					.third.double.column
+						.content
+							input.inline-input(type="email" name="email" placeholder="Электронная почта" required="required")
+
+				button.btn.btn-submit(type="submit")
+					| Создать свой магазин &nbsp;
+					i.icon-store
+
+
+				h3 Создать магазин через:
+				ul.btn-group.sign-in
+					li.btn-group-item
+						a(href=js0)
+							i.icon.icon-vk
+					li.btn-group-item
+						a(href=js0)
+							i.icon.icon-google
+					li.btn-group-item
+						a(href=js0)
+							i.icon.icon-zpay

@@ -1,0 +1,60 @@
+.mission
+	background-color #ffa800
+	padding 40px 0 50px
+
+	h1
+		display inline-block
+		position relative
+		padding 0 55px
+		margin 0
+
+	h1:before, 
+	h1:after
+		display block
+		content ''
+		width 40px
+		height 2px
+		background #000
+		position absolute
+		top 55%
+
+	h1:before
+		left 0
+
+	h1:after
+		right 0
+
+	.quote
+		width 686px
+		margin 0 auto
+
+		blockquote
+			display inline-block
+			position relative
+			margin-top 28px
+			margin-bottom 50px
+			padding 36px 36px 40px
+			border 2px solid #FFF
+			border-radius 28px
+			behavior url('styles/libs/pie.htc')
+			font-size 18px
+			line-height 26px
+			font-style italic
+
+			&:after
+				content " "
+				display block
+				position absolute
+				bottom -34px
+				right 75px
+				sprite($quote__after)
+				/* background url('../images/ui/quote.png') 0 100% no-repeat*/
+
+
+		.author
+			float right
+			font-weight 800
+			font-size 14px
+			margin-right 10px
+			color #000
+			font-style italic

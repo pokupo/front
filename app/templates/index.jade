@@ -1,0 +1,19 @@
+extends partials/layouts/index
+
+
+block head
+	- page.title = 'Базис';
+	
+block content
+	h1 Содержание
+
+	.container
+		.pages(style = "text-align: left; padding-top: 40px")
+			+pages-list([
+				{text: 'Главная',    href: 'frontpage.html'},
+				{text: 'Тарифы',     href: 'rates.html'},
+				{text: 'Сообщество', href: 'community.html'},
+				{text: 'О проекте',  href: 'about.html'},
+				{text: 'Новости',    href: 'events.html'},
+				{text: 'Новость',    href: 'event.html'}
+			])

@@ -1,0 +1,16 @@
+include ../../helpers/variables
+include ../../helpers/mixins
+
+doctype html
+html(lang='ru')
+	include ../head
+	body.grey
+		.main
+			include ../block/header
+
+			block content
+
+			.footer-overlay
+
+		include ../footer
+		include ../scripts

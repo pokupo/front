@@ -1,0 +1,36 @@
+extends partials/layouts/promo__about
+
+block head
+	- page.title = 'О проекте';
+
+block menu 
+	+menu-list([
+		{text:"Платформа",href:"#",submenu:[
+			{text:"Особенности",href:"#"},
+			{text:"Вопросы и ответы",href:"#"},
+			{text:"Готовые решения",href:"#"},
+			{text:"Торговая площадка",href:"#"}
+		]},
+		{text:"Тарифы",href:"rates.html"},
+		{text:"Сообщество",href:"community.html"},
+		{text:"Помощь",href:"#",submenu:[
+			{text:"Техническая поддержка",href:"#"},
+			{text:"Видео курсы",href:"#"},
+			{text:"Семинары",href:"#"}]},
+		{text:"Компания",href:"#", active:true,submenu:[
+			{text:"Новости",href:"#"},
+			{text:"Контакты",href:"#"},
+			{text:"О нас",href:"#", active:true},
+			{text:"Партнеры",href:"#"},
+			{text:"Блог",href:"#"}
+		]}
+	])
+
+block content
+	section.community
+		.container
+			h1.with-icon Сообщество
+
+
+block scripts
+	+script(['main.js'])

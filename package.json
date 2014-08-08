@@ -1,0 +1,60 @@
+{
+	"name": "pokupo",
+	"version": "0.7.0",
+	"title": "Pokupo",
+	"description": "Description for pokupo",
+	"keywords": [
+		"pokupo",
+		"project"
+	],
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/pokupo/front.git"
+	},
+	"author": {
+		"name": "tabrisov",
+		"url": "https://github.com/tabrisov"
+	},
+	"copyright": "©tabrisov",
+	"bugs": {
+		"url": "https://github.com/pokupo/front/issues/",
+		"email": "jiexa@tabrisov.ru"
+	},
+	"homepage": "https://github.com/pokupo/front/",
+	"engines": {
+		"node": ">= 0.10.0"
+	},
+	"devDependencies": {
+		"grunt": "~0.4.5",
+		"grunt-autoprefixer": "^0.8.0",
+		"grunt-bump": "~0.0.14",
+		"grunt-contrib-clean": "0.5.0",
+		"grunt-contrib-connect": "~0.8.0",
+		"grunt-contrib-copy": "~0.5.0",
+		"grunt-contrib-imagemin": "~0.7.1",
+		"grunt-contrib-jade": "^0.11.0",
+		"grunt-contrib-jshint": "~0.10.0",
+		"grunt-contrib-stylus": "~0.17.0",
+		"grunt-contrib-uglify": "~0.5.0",
+		"grunt-contrib-watch": "~0.6.1",
+		"grunt-csscomb": "^3.0.0-1",
+		"grunt-newer": "~0.7.0",
+		"grunt-prettify": "~0.3.5",
+		"grunt-replace": "~0.7.8",
+		"grunt-spritesmith": "~2.1.1",
+		"load-grunt-tasks": "~0.6.0",
+		"grunt-devtools": "0.2.1"
+	},
+	"scripts": {
+		"preinstall": "npm cache clear"
+	},
+	"browsers": {
+		"android": 4,
+		"chrome": 34,
+		"firefox": 28,
+		"ie": 8,
+		"ios": 6,
+		"opera": 12,
+		"safari": 6
+	}
+}

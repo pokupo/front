@@ -1,0 +1,154 @@
+.footer
+	position relative
+	display block
+	padding 40px 0
+	background $grey
+	color #83827f
+	text-align left
+	font-size 13px
+	line-height 20px
+	margin-top -140px
+	overflow hidden
+
+	.contact-icon
+		display block
+		margin-right 5px
+		position relative
+		top 3px
+		float left
+
+		&.copyright
+			sprite($footer__copyright)
+
+		&.email
+			sprite($footer__email)
+
+		&.skype
+			sprite($footer__skype)
+
+	a
+		color #000
+		text-decoration none
+		opacity 0.6
+
+		&:hover
+			color $blue
+			opacity 1
+		
+
+	a.contact
+		color $blue
+		border-bottom 1px solid $blue
+		opacity 1
+		&:hover
+			color $orange
+			border-bottom-color $orange
+
+	.footer-box
+		float left
+		display inline-block
+		text-align left
+		padding 5px 35px
+		margin 40px 0
+		border-left 1px solid #ccc
+
+		&:first-child
+			border-left 0
+			padding-left 0
+
+	.social
+		white-space nowrap
+		font-size 0
+		margin-top 10px
+
+		li
+			display inline-block
+			font-size 16px
+			&:last-child
+				.social__icon
+					margin-right 0
+
+		.social__icon
+			margin-right 5px
+			opacity 1
+			display inline-block
+
+			&.vk
+				sprite($social__vk)
+			&.fb
+				sprite($social__fb)
+			&.tw
+				sprite($social__tw)
+			&.lj
+				sprite($social__lj)
+			&.ok
+				sprite($social__ok)
+			&.gp
+				sprite($social__gp)
+
+			&:hover
+				&.vk
+					sprite($social__vk__hover)
+				&.fb
+					sprite($social__fb__hover)
+				&.tw
+					sprite($social__tw__hover)
+				&.lj
+					sprite($social__lj__hover)
+				&.ok
+					sprite($social__ok__hover)
+				&.gp
+					sprite($social__gp__hover)
+
+			&:active
+				&.vk
+					sprite($social__vk__active)
+				&.fb
+					sprite($social__fb__active)
+				&.tw
+					sprite($social__tw__active)
+				&.lj
+					sprite($social__lj__active)
+				&.ok
+					sprite($social__ok__active)
+				&.gp
+					sprite($social__gp__active)
+
+	.columns 
+		margin-right -50px
+
+		.content
+			margin-right 50px
+			border-right 1px solid #ccc
+
+		.third.column
+		.fourth.column
+			.content
+				border-right none
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

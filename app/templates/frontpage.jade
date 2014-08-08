@@ -1,0 +1,30 @@
+extends partials/layouts/promo
+
+block head
+	- page.title = 'Покупо';
+
+block menu 
+	+menu-list([
+		{text:"Платформа",href:"#",submenu:[
+			{text:"Особенности",href:"#"},
+			{text:"Вопросы и ответы",href:"#"},
+			{text:"Готовые решения",href:"#"},
+			{text:"Торговая площадка",href:"#"}
+		]},
+		{text:"Тарифы",href:"rates.html"},
+		{text:"Сообщество",href:"community.html"},
+		{text:"Помощь",href:"#",submenu:[
+			{text:"Техническая поддержка",href:"#"},
+			{text:"Видео курсы",href:"#"},
+			{text:"Семинары",href:"#"}]},
+		{text:"Компания",href:"about.html",submenu:[
+			{text:"Новости",href:"#"},
+			{text:"Контакты",href:"#"},
+			{text:"О нас",href:"#"},
+			{text:"Партнеры",href:"#"},
+			{text:"Блог",href:"#"}
+		]}
+	])
+
+block scripts
+	+script(['main.js'])

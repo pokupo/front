@@ -1,0 +1,94 @@
+.benefits
+	background #333
+	color #fff
+
+.benefits-slider
+	font-size 13px;
+	line-height 20px;
+	font-weight 400;
+	color #fff;
+	width 880px;
+	padding 0 40px;
+	padding-bottom 10px;
+	margin 30px auto 0;
+	position relative;
+	-ms-touch-action pan-y;
+
+	.benefit
+		display inline-block;
+		width 160px;
+		height 160px;
+		border 2px solid $orange
+		border-radius 100px
+		behavior url('styles/libs/pie.htc')
+
+		i
+			margin 20px 0 0 20px
+			display block
+
+		i.simple
+			sprite($benefit__simple)
+
+		i.universal
+			sprite($benefit__universal)
+
+		i.profit
+			sprite($benefit__profit)
+
+		i.complex
+			sprite($benefit__complex)
+
+		i.open
+			sprite($benefit__open)
+
+	ul
+		font-weight 800
+		margin-bottom 20px
+
+	h2
+		font-weight 300;
+		font-size 30px;
+		line-height 30px;
+		padding 15px 0 30px 0;
+		color #02903d;
+
+
+.owl-wrapper
+	position relative;
+	cursor move;
+	cursor grab;
+	transform translate3d(0, 0, 0);
+	clearfix()
+
+.owl-wrapper-outer
+	overflow hidden;
+	position relative;
+	width 100%;
+
+.owl-item
+	float left;
+	-webkit-backface-visibility hidden
+	transform translate3d(0, 0, 0);
+
+.owl-next
+.owl-prev
+	display block;
+	position absolute;
+	top 50px;
+	cursor pointer;
+
+.owl-prev
+	left 0
+	sprite($arrow-prev)
+	&:hover
+		sprite($arrow-prev__hover)
+	&:active
+		sprite($arrow-prev__active)
+
+.owl-next
+	right 0
+	sprite($arrow-next)
+	&:hover
+		sprite($arrow-next__hover)
+	&:active
+		sprite($arrow-next__active)
