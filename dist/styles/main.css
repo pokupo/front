@@ -2574,7 +2574,7 @@ h2.tagline {
 	height: 187px;
 }
 .rates__bg-bottom {
-	position: absolute;
+	position: absolute !important;
 	bottom: 0;
 	left: 0;
 	width: 100%;
