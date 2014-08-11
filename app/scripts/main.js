@@ -50,7 +50,6 @@ PKP.Sliders = {
 				arrows: false,
 				shadows: true,
 				click: false
-
 			});
 
 		// Контролы
@@ -72,7 +71,21 @@ PKP.Sliders = {
 					$(this).siblings('.slider-status').text(fotorama.data[fotorama.activeIndex].title);
 				}
 			);
+
+		// При хавере останавливать слайдер
+		if(PKP.$rates) {
+			var slider = PKP.$rates.data('fotorama');
+
+			$('.slider').hover(
+				function () {
+					slider.stopAutoplay();
+				},
+				function () {
+					slider.startAutoplay(5000);
+				}
+			);
 		}
+	}
 };
 
 PKP.Toggle = {

@@ -238,6 +238,25 @@ section {
 	background-repeat: repeat;
 	background-position: 50% 50%;
 }
+.black.patterned {
+	position: relative;
+	z-index: 0;
+	background-image: none;
+}
+.black.patterned:after {
+	position: absolute;
+	z-index: -1;
+	top: 0;
+	left: 0;
+	display: block;
+	width: 100%;
+	height: 100%;
+	content: '';
+	background-image: url('../images/bg/pattern.png');
+	background-repeat: repeat;
+	background-position: 50% 50%;
+	opacity: .2;
+}
 .waved-top {
 	position: relative;
 	z-index: 2;
@@ -2572,6 +2591,10 @@ h2.tagline {
 }
 .rates .slider-control {
 	top: 57px;
+	-webkit-user-select: none;
+	   -moz-user-select: none;
+	    -ms-user-select: none;
+	        user-select: none;
 }
 .rate {
 	background: rgba(255,255,255,0);
@@ -2638,6 +2661,7 @@ h2.tagline {
 	top: 50%;
 	left: 50%;
 	display: block;
+	overflow: hidden;
 	-webkit-transition: all .3s ease-in-out;
 	     -o-transition: all .3s ease-in-out;
 	        transition: all .3s ease-in-out;

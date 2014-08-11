@@ -32,6 +32,26 @@ section
 	background-position 50% 50% 
 	background-repeat repeat
 
+.black.patterned
+	background-image none
+	position relative
+	z-index 0
+	
+	&:after
+		content ""
+		display block
+		position absolute
+		top 0
+		left 0
+		background-image url('../images/bg/pattern.png')
+		background-position 50% 50% 
+		background-repeat repeat
+		width 100%
+		height 100%
+		opacity  0.2
+		z-index -1
+
+
 .waved-top
 	background-image url('../images/bg/wave-grey-top.png') 
 	background-position 50% 0
