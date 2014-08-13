@@ -1,0 +1,430 @@
+section.store
+	padding 20px 0
+
+.b-sidebar
+	width 230px
+	float left
+	text-align left
+
+	&__title
+		font-size 18px
+		font-weight normal
+		line-height 24px
+		color #000
+		margin 0 0 0 19px
+
+	.menu
+		position relative
+
+		&__item
+			
+			a
+				display block
+				width 100%	
+				padding 4px 20px
+				color $a__link
+				font-size 13px
+				line-height 22px
+				text-decoration none
+				background transparent
+				transition background 0.1 ease-in-out
+
+				span
+					border-bottom 1px solid rgba($a__link, 0.5)
+
+				.num
+					vertical-align baseline
+					color #999
+					font-size 13px
+					font-weight normal
+					text-align right
+					margin-left 5px
+
+				&:hover
+					background $grey
+
+			&.active 
+				& > a
+					color $orange
+					font-weight 800
+
+					span
+						border-bottom none
+
+					&:hover
+						color $orange
+						cursor default
+
+				&.with-submenu > a
+					span
+						border-bottom-color rgba($orange, 0.5)
+
+			&.with-submenu
+				a
+					span
+						border-bottom 1px dotted
+
+
+	.submenu
+		display none
+		&.active
+			display block
+
+		&__item
+			a 
+				padding-left 36px
+
+			&.active > a
+				color $orange
+				font-weight 800
+
+				span
+					border-bottom none
+
+				&:hover
+					color $orange
+					cursor default
+
+
+.b-catalog
+	margin-left 250px
+	text-align left
+
+	&__controls
+
+		&-item
+			height 40px
+			line-height 40px
+			margin-left 20px
+			float right
+
+			&:first-child
+				margin-left 0
+				float left
+
+	&__items
+		padding-top 60px
+		font-size 0
+
+	&__item
+		display inline-block
+		vertical-align top
+
+.b-item
+	position relative
+
+	&__picture
+		height 240px
+		background url('../images/catalog/default.png') 50% 50% no-repeat
+		vertical-align middle
+		text-align center
+		line-height 240px
+
+		img 
+			display inline-block
+			vertical-align middle
+			max-width 100%
+			max-height 100%
+
+	&__title
+		font-size 18px
+		line-height 20px
+		padding-bottom 15px
+		.parameter
+			color #666
+
+	&__info
+		position relative
+		font-size 13px
+		line-height 20px
+		color #000
+		padding 0 0 18px
+		margin-bottom 8px
+
+		p 
+			margin-bottom 5px
+
+		&:after
+			content ''
+			display block
+			position absolute
+			left 50%
+			bottom 0
+			margin-left -25px
+			width 50px
+			border-bottom 1px solid $green
+
+	&__price
+		color $green
+		font-size 30px
+		font-weight 800
+
+		&--old
+			display inline-block
+			position relative
+			padding 0 5px
+			text-align center
+			color #999
+			font-size 15px
+			font-weight normal
+
+			&:after
+				content ''
+				display block
+				position absolute
+				top 50%
+				left 0
+				width 100%
+				border-top 1px solid #999
+
+			& + .b-price
+				margin-top -5px
+		
+	&__badges
+		display none
+
+.b-catalog__items
+	&.cards
+		.b-item
+			width 242px
+			text-align center
+			&__info
+			&__order-button
+				display none
+
+			&__popover
+				.b-item__info
+				.b-item__order-button
+					display block
+	&.magazine
+		padding-top 90px
+		.b-catalog__item
+			margin-bottom 40px
+		.b-item
+			width 726px
+
+			.responsive-holder
+				position relative
+
+			&.with_popover
+				.b-item__popover
+					padding 30px 0
+					top -30px
+
+			&__picture
+			&__order-button
+			.responsive-holder
+				position relative
+				float left
+				margin 0 -100% 0 0
+
+			&__picture
+				width 240px
+				height 220px
+				line-height 220px
+				margin -30px -100% -30px 0
+				left 0
+				background-image none
+				
+			.responsive-holder
+				width 230px
+				left 270px
+			&__order-button
+				left 500px
+			&__info:after
+				display none
+	&.titles
+		padding-top 90px
+
+		.b-catalog__item
+			margin-bottom 40px
+		.b-item
+			width 726px
+
+			.responsive-holder
+				position relative
+
+			&.with_popover
+				.b-item__popover
+					padding 25px 0
+					top -25px
+
+			&__picture
+			&__description
+			&__price
+			&__order-button
+				position relative
+				float left
+				margin 0 -100% 0 0
+
+			&__picture
+				width 160px
+				height 140px
+				line-height 190px
+				margin -25px -100% -25px 0
+				left 0
+				background-image none
+				
+			&__description
+				width 220px
+				left 180px
+			&__price
+				width 120px
+				left 370px
+			&__order-button
+				left 500px
+			&__info:after
+				display none
+
+
+
+.b-item.with_popover 
+	transition z-index .1s linear
+	z-index 0
+
+	.b-item__popover
+		position absolute
+		width 100%
+		left 0
+		top 0
+		visibility hidden
+	    opacity 0
+		transition opacity .1s linear,visibility .1s linear
+		z-index 4
+	
+	&:hover 
+		z-index 5
+
+		.b-item__popover
+			visibility visible
+			opacity 1
+
+
+
+.b-price
+	&__number
+		font-size 100%
+	&__thinsp
+		font-size 50%
+		line-height 1
+	&__rubl
+		font-family 'ALSRubl-Tahoma', Tahoma, sans-serif
+		line-height normal
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.inline-sorter 
+	display inline-block
+	padding 0 20px
+	margin-left -18px
+	min-width 120px
+	text-align left
+	line-height 16px
+
+	.menu 
+		border-top 1px solid $grey
+
+	.selector__current
+		color $a__link
+		font-weight 800
+		border-bottom 1px dotted rgba($a__link, 0.4)
+		&.active
+			border-bottom none
+
+	.dropdown__content
+		top -8px
+		padding-top 30px
+
+.radio-circles
+	display inline-block
+	vertical-align middle
+
+	.menu
+		font-size 0
+
+	.menu__item
+		display inline-block
+		vertical-align bottom
+		width 40px
+		height 40px
+		margin-left 10px
+		
+		a 
+			display block
+			position relative
+			width 100%
+			height 100%
+			text-decoration none
+			color #333
+			line-height 36px
+			text-align center
+			border-radius 40px
+			border 2px solid $orange
+			font-size 18px
+			&:after
+				content ''
+				position absolute
+				top -3px
+				left -3px
+				display block
+				width 40px
+				height 40px
+				border-radius 40px
+				background rgba(0,0,0,0)
+				transition background 0.1s ease-in-out
+
+			&:hover
+				border-width 3px
+				line-height 34px
+			&:active
+				top 1px
+				background $orange
+				&:after
+					background rgba(0,0,0,0.25)
+
+		&:first-child
+			margin-left 6px
+
+		&.active 
+			a
+				background $orange
+				&:hover
+					cursor default
+				&:active
+					top 0
+					&:after
+						display none
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,35 @@
+section.orange.search
+	.container
+		.b-search
+			.b-search-holder
+				input.b-search__input(type="search" placeholder="Поиск по каталогу...")
+
+			.b-location.dropdown.selector
+				a.b-location__current.dropdown__trigger.selector__current(href=js0 data-target="location") Все категории
+
+				.dropdown__content.hidden(data-target="location")
+					.b-location__catalog.selector__options
+						+search-list([
+							{text:"Все разделы",href:"#", active: true},
+							{text:"Компьютерная техника",href:"#"},
+							{text:"Бытовая техника",href:"#"},
+							{text:"Телефоны и связь",href:"#"},
+							{text:"Фото и оптика",href:"#"},
+							{text:"Одежда, обувь, акксессуары",href:"#", submenu:[
+								{text:"Кроссовки",href:"#"},
+								{text:"Кеды",href:"#"},
+								{text:"Босоножки",href:"#"},
+								{text:"Туфли",href:"#"},
+								{text:"Ботильоны",href:"#"},
+								{text:"Сандалии",href:"#"},
+								{text:"Балетки",href:"#"},
+								{text:"Сапоги",href:"#"},
+								{text:"Резиновая обувь",href:"#"}
+								]},
+							{text:"Подарки и праздники",href:"#"},
+							{text:"Книги, учебники и журналы",href:"#"},
+							{text:"Мебель, интерьеры и обиход",href:"#"},
+							{text:"Другое",href:"#"}])
+		
+			button.b-search__button(type="button") Найти
+

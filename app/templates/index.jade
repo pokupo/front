@@ -8,12 +8,36 @@ block content
 	h1 Содержание
 
 	.container
-		.pages(style = "text-align: left; padding-top: 40px")
-			+pages-list([
-				{text: 'Главная',    href: 'frontpage.html'},
-				{text: 'Тарифы',     href: 'rates.html'},
-				{text: 'Сообщество', href: 'community.html'},
-				{text: 'О проекте',  href: 'about.html'},
-				{text: 'События',    href: 'events.html'},
-				{text: 'Просмотр события',    href: 'event.html'}
-			])
+		.columns
+			.first.double.column
+				.content
+					.pages(style = "text-align: left; padding-top: 40px")
+						h3(style = "font-weight:bold; font-size: 16px; padding-bottom: 20px") Магазин
+						+pages-list([
+							{text: 'Главная магазина', href: 'store.html'},
+							{text: 'Расширенный поиск', href: '#', disabled:true},
+							{text: 'Меню', href: '#', disabled:true}
+						])
+
+			.third.double.column
+				.content
+					.pages(style = "text-align: left; padding-top: 40px")
+						h3(style = "font-weight:bold; font-size: 16px; padding-bottom: 20px") Промо-страницы
+						+pages-list([
+							{text: 'Посадочная страница',    href: 'frontpage.html'},
+							{text: 'Тарифы',     href: 'rates.html'},
+							{text: 'Сообщество', href: 'community.html'},
+							{text: 'О проекте',  href: 'about.html'},
+							{text: 'События',    href: 'events.html'},
+							{text: 'Просмотр события',    href: 'event.html'}
+						])
+						h3(style = "font-weight:bold; font-size: 16px; padding: 20px 0") Дополнительно
+						+pages-list([
+							{text: 'Авторизация',    href: 'popup-signin.html'},
+							{text: 'Сброс пароля',   href: 'popup-reset-password.html'}
+						])
+
+
+
+
+

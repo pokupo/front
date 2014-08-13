@@ -6,7 +6,7 @@ PKP.init = function() {
 	PKP.$body          = $('body');
 
 	PKP.Sliders.init();
-	PKP.Toggle.init();
+	PKP.UI.init();
 };
 
 PKP.Sliders = {
@@ -37,6 +37,12 @@ PKP.Sliders = {
 			theme: '',
 		});
 
+		if($('.rates').length){
+			PKP.Sliders.rates();
+		}
+	},
+	
+	rates: function() {
 		// Слайдер тарифов
 		PKP.$rates = $('.slider')
 			.fotorama({
@@ -51,6 +57,20 @@ PKP.Sliders = {
 				shadows: true,
 				click: false
 			});
+		
+		// При хавере останавливать слайдер
+		if(PKP.$rates) {
+			var slider = PKP.$rates.data('fotorama');
+
+			$('.slider').hover(
+				function () {
+					slider.stopAutoplay();
+				},
+				function () {
+					slider.startAutoplay(5000);
+				}
+			);
+		}
 
 		// Контролы
 		$('.slider-control').click(function() {
@@ -67,30 +87,17 @@ PKP.Sliders = {
 
 		// Заголовок
 		$('.slider').on('fotorama:show fotorama:load',
-				function (e, fotorama, extra) {
-					$(this).siblings('.slider-status').text(fotorama.data[fotorama.activeIndex].title);
-				}
-			);
-
-		// При хавере останавливать слайдер
-		if(PKP.$rates) {
-			var slider = PKP.$rates.data('fotorama');
-
-			$('.slider').hover(
-				function () {
-					slider.stopAutoplay();
-				},
-				function () {
-					slider.startAutoplay(5000);
-				}
-			);
-		}
+			function (e, fotorama, extra) {
+				$(this).siblings('.slider-status').text(fotorama.data[fotorama.activeIndex].title);
+			}
+		);
 	}
 };
 
-PKP.Toggle = {
+PKP.UI = {
 	init: function() {
-		$('.with-submenu').hover(
+		/* Главное меню */
+		$('.header .with-submenu').hover(
 			function() {
 				var $this = $(this);
 				$this.closest('.menu').find('.submenu.active').removeClass('active').addClass('current');
@@ -111,7 +118,77 @@ PKP.Toggle = {
 			}
 		);
 
+		/* Скрывалка */
+		PKP.$body.on("click", '.collapse-trigger', function(e) {
+			e.preventDefault();
+			$('#' + $(this).data('target')).slideToggle();
+		});
+
+		/* «Выпадайка» */
+		PKP.$body.on("click", '.dropdown__trigger', function(e) {
+			e.preventDefault();
+			var $this = $(this);
+
+			if(0 < $('.dropdown__trigger.active').length) {
+				$('.dropdown__trigger.active')
+					.not(this).removeClass('active').
+					siblings('.dropdown__content').addClass('hidden');   
+			}
+			
+			$this.
+				toggleClass('active').
+				siblings('.dropdown__content[data-target="' + $this.data('target') + '"]').toggleClass('hidden');
+		});
+
+		/* Скрываем выпадайку по клику мимо неё */
+		PKP.$document.click(function(e) {
+			var $this = $(e.target);
+
+			if($this.is('.dropdown__trigger')) {
+				//
+			} else {
+				if(1 !== $this.parents().filter('.dropdown__trigger.active').length) {
+					if($this.prop("tagName") === 'TEXTAREA') {
+						// если в выпадайке инпуты или текст.поле
+					} else {
+						$('.dropdown__trigger.active').
+							removeClass('active').
+							siblings('.dropdown__content').addClass('hidden');
+					}
+				}
+			}
+		});
+
+		/* По клику на внутреннюю ссылку «выпадайка» закрывается */
+		PKP.$body.on("click", '.dropdown__content a', function() {
+			$(this).
+				closest('.dropdown__content').toggleClass('hidden').
+				siblings('.dropdown__trigger').toggleClass('active');
+		});
+
+		/* Сортировка */
+		PKP.$body.on("click", '.selector__options a', function() {
+			var $this = $(this);
+			$this.
+				closest('.menu__item').addClass('active').
+				siblings().removeClass('active').
+				closest('.selector').find('.selector__current').text($this.text());
+		});
+
+		/* Радио-селектор */
+		PKP.$body.on("click", '.radio-circles a', function() {
+			$(this).
+				closest('.menu__item').addClass('active').
+				siblings().removeClass('active');
+		});
+
+		/* Радио-селектор */
+		PKP.$body.on("click", '.catalog-layout a', function() {
+			$('.b-catalog__items').
+				removeClass().
+				addClass('b-catalog__items ' + $(this).data('value'));
+		});
 	}
 };
 
-$($.proxy(PKP.init, PKP));        
+$($.proxy(PKP.init, PKP));

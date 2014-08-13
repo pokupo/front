@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+		<link href="images/icons/apple-touch-icon-152x152.png" rel="apple-touch-icon">
+		<link sizes="57x57" href="images/icons/apple-touch-icon-57x57.png" rel="apple-touch-icon">
+		<link sizes="72x72" href="images/icons/apple-touch-icon-72x72.png" rel="apple-touch-icon">
+		<link sizes="76x76" href="images/icons/apple-touch-icon-76x76.png" rel="apple-touch-icon">
+		<link sizes="114x114" href="images/icons/apple-touch-icon-114x114.png" rel="apple-touch-icon">
+		<link sizes="120x120" href="images/icons/apple-touch-icon-120x120.png" rel="apple-touch-icon">
+		<link sizes="144x144" href="images/icons/apple-touch-icon-144x144.png" rel="apple-touch-icon">
+		<link sizes="152x152" href="images/icons/apple-touch-icon-152x152.png" rel="apple-touch-icon">
+		<meta name="application-name" content="Pokupo">
+		<meta name="msapplication-tooltip" content="Description for pokupo">
+		<meta name="msapplication-TileColor" content="#ffffff">
+		<meta name="msapplication-TileImage" content="images/icons/tile.png">
+		<meta name="msapplication-square70x70logo" content="images/icons/tile.png">
+		<meta name="msapplication-square150x150logo" content="images/icons/tile.png">
+		<meta name="msapplication-square310x310logo" content="images/icons/tile.png">
+		<meta name="msapplication-wide310x150logo" content="images/icons/tile-wide.png">
+		<meta name="msapplication-tap-highlight" content="no">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<!--[if IE]> 
+<meta name="imagetoolbar" content="no"></script>
+<meta name="msthemecompatible" content="no"></script>
+<![endif]-->
+		<meta name="cleartype" content="on">
+		<meta name="HandheldFriendly" content="True">
+		<meta name="format-detection" content="telephone=no">
+		<meta name="format-detection" content="address=no">
+		<title>Магазин</title>
+		<meta name="description" content="Description for pokupo">
+		<meta name="keywords" content="pokupo, project">
+		<meta name="copyright" content="©tabrisov">
+		<meta name="reply-to" content="jiexa@tabrisov.ru">
+		<link href="images/icons/favicon.ico" rel="shortcut icon">
+		<link href="styles/main.css" rel="stylesheet">
+		<!--[if lt IE 9]> 
+<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+<script src="scripts/libs/nwmatcher.js"></script>
+<![endif]-->
+	</head>
+	<body>
+		<div class="main">
+			<!-- header -->
+			<section class="header">
+				<div class="container">
+					<a href="index.html" title="Pokupo.ru" class="logo"></a>
+					<div class="menu-login"><a href="javascript:void(0);" title="Войти" class="menu-login__login">Вход</a><a href="javascript:void(0);" title="Зарегистрироваться" class="menu-login__register">Регистрация</a>
+					</div>
+					<ul class="menu">
+						<li class="menu__item with-submenu"><a href="#"><span>Платформа</span></a>
+							<ul class="submenu">
+								<li class="submenu__item"><a href="#"><span>Особенности</span></a>
+								</li>
+								<li class="submenu__item"><a href="#"><span>Вопросы и ответы</span></a>
+								</li>
+								<li class="submenu__item"><a href="#"><span>Готовые решения</span></a>
+								</li>
+								<li class="submenu__item"><a href="#"><span>Торговая площадка</span></a>
+								</li>
+							</ul>
+						</li>
+						<li class="menu__item"><a href="rates.html"><span>Тарифы</span></a>
+						</li>
+						<li class="menu__item"><a href="community.html"><span>Сообщество</span></a>
+						</li>
+						<li class="menu__item with-submenu"><a href="#"><span>Помощь</span></a>
+							<ul class="submenu">
+								<li class="submenu__item"><a href="#"><span>Техническая поддержка</span></a>
+								</li>
+								<li class="submenu__item"><a href="#"><span>Видео курсы</span></a>
+								</li>
+								<li class="submenu__item"><a href="#"><span>Семинары</span></a>
+								</li>
+							</ul>
+						</li>
+						<li class="menu__item with-submenu"><a href="#"><span>Компания</span></a>
+							<ul class="submenu">
+								<li class="submenu__item"><a href="#"><span>Новости</span></a>
+								</li>
+								<li class="submenu__item"><a href="#"><span>Контакты</span></a>
+								</li>
+								<li class="submenu__item"><a href="#"><span>О нас</span></a>
+								</li>
+								<li class="submenu__item"><a href="#"><span>Партнеры</span></a>
+								</li>
+								<li class="submenu__item"><a href="#"><span>Блог</span></a>
+								</li>
+							</ul>
+						</li>
+					</ul>
+					<div class="submenu-bg"></div>
+				</div>
+			</section>
+			<!-- /header -->
+			<!-- search -->
+			<section class="orange search">
+				<div class="container">
+					<div class="b-search">
+						<div class="b-search-holder">
+							<input type="search" placeholder="Поиск по каталогу..." class="b-search__input">
+						</div>
+						<div class="b-location dropdown selector"><a href="javascript:void(0);" data-target="location" class="b-location__current dropdown__trigger selector__current">Все категории</a>
+							<div data-target="location" class="dropdown__content hidden">
+								<div class="b-location__catalog selector__options">
+									<ul class="menu">
+										<li class="menu__item active"><a href="#"><span>Все разделы</span></a>
+										</li>
+										<li class="menu__item"><a href="#"><span>Компьютерная техника</span></a>
+										</li>
+										<li class="menu__item"><a href="#"><span>Бытовая техника</span></a>
+										</li>
+										<li class="menu__item"><a href="#"><span>Телефоны и связь</span></a>
+										</li>
+										<li class="menu__item"><a href="#"><span>Фото и оптика</span></a>
+										</li>
+										<li class="menu__item with-submenu"><a href="#"><span>Одежда, обувь, акксессуары</span></a>
+											<ul class="submenu">
+												<li class="submenu__item"><a href="#"><span>Кроссовки</span></a>
+												</li>
+												<li class="submenu__item"><a href="#"><span>Кеды</span></a>
+												</li>
+												<li class="submenu__item"><a href="#"><span>Босоножки</span></a>
+												</li>
+												<li class="submenu__item"><a href="#"><span>Туфли</span></a>
+												</li>
+												<li class="submenu__item"><a href="#"><span>Ботильоны</span></a>
+												</li>
+												<li class="submenu__item"><a href="#"><span>Сандалии</span></a>
+												</li>
+												<li class="submenu__item"><a href="#"><span>Балетки</span></a>
+												</li>
+												<li class="submenu__item"><a href="#"><span>Сапоги</span></a>
+												</li>
+												<li class="submenu__item"><a href="#"><span>Резиновая обувь</span></a>
+												</li>
+											</ul>
+										</li>
+										<li class="menu__item"><a href="#"><span>Подарки и праздники</span></a>
+										</li>
+										<li class="menu__item"><a href="#"><span>Книги, учебники и журналы</span></a>
+										</li>
+										<li class="menu__item"><a href="#"><span>Мебель, интерьеры и обиход</span></a>
+										</li>
+										<li class="menu__item"><a href="#"><span>Другое</span></a>
+										</li>
+									</ul>
+									<div class="submenu-bg"></div>
+								</div>
+							</div>
+						</div>
+						<button type="button" class="b-search__button">Найти</button>
+					</div>
+				</div>
+			</section>
+			<!-- /search -->
+			<!-- filters -->
+			<!-- /filters -->
+			<!-- content -->
+			<section class="store">
+				<div class="container">
+					<aside class="b-sidebar">
+						<h1 class="b-sidebar__title">Пример каталога</h1>
+						<ul class="menu">
+							<li class="menu__item with-submenu"><a href="#"><span>Компьютерная техника</span></a>
+								<ul class="submenu">
+									<li class="submenu__item"><a href="#"><span>Ноутбуки</span><sup class="num">43</sup></a>
+									</li>
+									<li class="submenu__item"><a href="#"><span>Моноблоки</span><sup class="num">11</sup></a>
+									</li>
+									<li class="submenu__item"><a href="#"><span>Планшеты</span><sup class="num">24</sup></a>
+									</li>
+								</ul>
+							</li>
+							<li class="menu__item with-submenu"><a href="#"><span>Бытовая техника</span></a>
+								<ul class="submenu">
+									<li class="submenu__item"><a href="#"><span>Стиральные машины</span><sup class="num">51</sup></a>
+									</li>
+									<li class="submenu__item"><a href="#"><span>Телевизоры</span><sup class="num">13</sup></a>
+									</li>
+									<li class="submenu__item"><a href="#"><span>Кухонная техника</span><sup class="num">104</sup></a>
+									</li>
+									<li class="submenu__item"><a href="#"><span>Пылесосы</span><sup class="num">8</sup></a>
+									</li>
+								</ul>
+							</li>
+							<li class="menu__item"><a href="#"><span>Телефоны и связь</span><sup class="num">24</sup></a>
+							</li>
+							<li class="menu__item with-submenu"><a href="#"><span>Фото и оптика</span></a>
+								<ul class="submenu">
+									<li class="submenu__item"><a href="#"><span>Фотоаппараты</span><sup class="num">6</sup></a>
+									</li>
+									<li class="submenu__item"><a href="#"><span>Объективы</span><sup class="num">2</sup></a>
+									</li>
+									<li class="submenu__item"><a href="#"><span>Средства и химия</span><sup class="num">64</sup></a>
+									</li>
+								</ul>
+							</li>
+							<li class="menu__item with-submenu active"><a href="#"><span>Одежда, обувь, акксессуары</span></a>
+								<ul class="submenu active">
+									<li class="submenu__item"><a href="#"><span>Кроссовки</span><sup class="num">19</sup></a>
+									</li>
+									<li class="submenu__item active"><a href="#"><span>Кеды</span><sup class="num">134</sup></a>
+									</li>
+									<li class="submenu__item"><a href="#"><span>Босоножки</span><sup class="num">245</sup></a>
+									</li>
+									<li class="submenu__item"><a href="#"><span>Туфли</span><sup class="num">195</sup></a>
+									</li>
+									<li class="submenu__item"><a href="#"><span>Ботильоны</span><sup class="num">132</sup></a>
+									</li>
+									<li class="submenu__item"><a href="#"><span>Сандалии</span><sup class="num">72</sup></a>
+									</li>
+									<li class="submenu__item"><a href="#"><span>Балетки</span><sup class="num">36</sup></a>
+									</li>
+									<li class="submenu__item"><a href="#"><span>Сапоги</span><sup class="num">56</sup></a>
+									</li>
+									<li class="submenu__item"><a href="#"><span>Резиновая обувь</span><sup class="num">5</sup></a>
+									</li>
+								</ul>
+							</li>
+							<li class="menu__item with-submenu"><a href="#"><span>Подарки и праздники</span></a>
+								<ul class="submenu">
+									<li class="submenu__item"><a href="#"><span>Цветы</span><sup class="num">65</sup></a>
+									</li>
+									<li class="submenu__item"><a href="#"><span>Открытки</span><sup class="num">200</sup></a>
+									</li>
+									<li class="submenu__item"><a href="#"><span>Игрушки</span><sup class="num">31</sup></a>
+									</li>
+								</ul>
+							</li>
+							<li class="menu__item with-submenu"><a href="#"><span>Книги, учебники и журналы</span></a>
+								<ul class="submenu">
+									<li class="submenu__item"><a href="#"><span>Цветы</span><sup class="num">65</sup></a>
+									</li>
+									<li class="submenu__item"><a href="#"><span>Открытки</span><sup class="num">200</sup></a>
+									</li>
+									<li class="submenu__item"><a href="#"><span>Игрушки</span><sup class="num">31</sup></a>
+									</li>
+								</ul>
+							</li>
+							<li class="menu__item with-submenu"><a href="#"><span>Мебель, интерьеры и обиход</span></a>
+								<ul class="submenu">
+									<li class="submenu__item"><a href="#"><span>Цветы</span><sup class="num">65</sup></a>
+									</li>
+									<li class="submenu__item"><a href="#"><span>Открытки</span><sup class="num">200</sup></a>
+									</li>
+									<li class="submenu__item"><a href="#"><span>Игрушки</span><sup class="num">31</sup></a>
+									</li>
+								</ul>
+							</li>
+							<li class="menu__item with-submenu"><a href="#"><span>Другое</span></a>
+								<ul class="submenu">
+									<li class="submenu__item"><a href="#"><span>Цветы</span><sup class="num">65</sup></a>
+									</li>
+									<li class="submenu__item"><a href="#"><span>Открытки</span><sup class="num">200</sup></a>
+									</li>
+									<li class="submenu__item"><a href="#"><span>Игрушки</span><sup class="num">31</sup></a>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</aside>
+					<div class="b-catalog">
+						<h1>Кеды</h1>
+						<div class="b-catalog__controls">
+							<div class="b-catalog__controls-item">Сортировать
+								<div class="inline-sorter dropdown selector"><span data-target="sort" class="selector__current dropdown__trigger">по&nbsp;названию</span>
+									<div data-target="sort" class="dropdown__content selector__options hidden">
+										<ul class="menu">
+											<li class="menu__item active"><a href="javascript:void(0);">по&nbsp;названию</a>
+											</li>
+											<li class="menu__item"><a href="javascript:void(0);">по&nbsp;рейтингу</a>
+											</li>
+											<li class="menu__item"><a href="javascript:void(0);">по&nbsp;цене</a>
+											</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+							<div class="b-catalog__controls-item">Вид:
+								<div class="radio-circles catalog-layout">
+									<ul class="menu">
+										<li class="menu__item"><a href="javascript:void(0);" data-value="cards"><i class="icon icon__cards"></i></a>
+										</li>
+										<li class="menu__item"><a href="javascript:void(0);" data-value="magazine"><i class="icon icon__magazine"></i></a>
+										</li>
+										<li class="menu__item active"><a href="javascript:void(0);" data-value="titles"><i class="icon icon__list"></i></a>
+										</li>
+									</ul>
+								</div>
+							</div>
+							<div class="b-catalog__controls-item">Валюта:
+								<div class="radio-circles">
+									<ul class="menu">
+										<li class="menu__item active"><a href="javascript:void(0);">$</a>
+										</li>
+										<li class="menu__item"><a href="javascript:void(0);">¥</a>
+										</li>
+										<li class="menu__item"><a href="javascript:void(0);">€</a>
+										</li>
+										<li class="menu__item"><a href="javascript:void(0);">฿</a>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+						<div class="b-catalog__items titles">
+							<div class="b-catalog__item">
+								<div class="b-item with_popover">
+									<div class="b-item__picture">
+										<img src="images/catalog/goods01.jpg" />
+									</div>
+									<div class="responsive-holder">
+										<div class="b-item__description">
+											<h4 class="b-item__title"><a href="javascript:void(0);">Converse White</a></h4>
+											<div class="b-item__info">
+												<p><span class="parameter">Верх:</span> резина, текстиль
+													<br/><span class="parameter">Подошва:</span> резина
+													<br/><span class="parameter">Цвет:</span> белый</p>
+											</div>
+										</div>
+										<div class="b-item__price">
+											<div class="b-price"><span class="b-price__number">1800</span><span class="b-price__thinsp">&nbsp;</span><span class="b-price__rubl">Р</span>
+											</div>
+										</div>
+									</div>
+									<div class="b-item__order-button"><u class="btn btn-orange btn-order"><span class="sign">В&nbsp;корзину</span></u>
+									</div>
+									<div class="b-item__badges"><span class="bestseller">Хит!</span>
+									</div>
+									<div class="b-item__popover">
+										<div class="b-item--dublicate">
+											<div class="b-item__picture">
+												<img src="images/catalog/goods01.jpg" />
+											</div>
+											<div class="responsive-holder">
+												<div class="b-item__description">
+													<h4 class="b-item__title"><a href="javascript:void(0);">Converse White</a></h4>
+													<div class="b-item__info">
+														<p><span class="parameter">Верх:</span> резина, текстиль
+															<br/><span class="parameter">Подошва:</span> резина
+															<br/><span class="parameter">Цвет:</span> белый</p>
+													</div>
+												</div>
+												<div class="b-item__price">
+													<div class="b-price"><span class="b-price__number">1800</span><span class="b-price__thinsp">&nbsp;</span><span class="b-price__rubl">Р</span>
+													</div>
+												</div>
+											</div>
+											<div class="b-item__order-button"><u class="btn btn-orange btn-order"><span class="sign">В&nbsp;корзину</span></u>
+											</div>
+										</div>
+										<div class="b-item__badges"><span class="bestseller">Хит!</span>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="b-catalog__item">
+								<div class="b-item with_popover">
+									<div class="b-item__picture">
+										<img src="images/catalog/goods02.jpg" />
+									</div>
+									<div class="responsive-holder">
+										<div class="b-item__description">
+											<h4 class="b-item__title"><a href="javascript:void(0);">Converse Grey</a></h4>
+											<div class="b-item__info">
+												<p><span class="parameter">Верх:</span> резина, текстиль
+													<br/><span class="parameter">Подошва:</span> резина
+													<br/><span class="parameter">Цвет:</span> белый</p>
+											</div>
+										</div>
+										<div class="b-item__price">
+											<div class="b-price"><span class="b-price__number">2450</span><span class="b-price__thinsp">&nbsp;</span><span class="b-price__rubl">Р</span>
+											</div>
+										</div>
+									</div>
+									<div class="b-item__order-button"><u class="btn btn-orange btn-order"><span class="sign">В&nbsp;корзину</span></u>
+									</div>
+									<div class="b-item__badges"><span class="bestseller">Хит!</span>
+									</div>
+									<div class="b-item__popover">
+										<div class="b-item--dublicate">
+											<div class="b-item__picture">
+												<img src="images/catalog/goods02.jpg" />
+											</div>
+											<div class="responsive-holder">
+												<div class="b-item__description">
+													<h4 class="b-item__title"><a href="javascript:void(0);">Converse Grey</a></h4>
+													<div class="b-item__info">
+														<p><span class="parameter">Верх:</span> резина, текстиль
+															<br/><span class="parameter">Подошва:</span> резина
+															<br/><span class="parameter">Цвет:</span> белый</p>
+													</div>
+												</div>
+												<div class="b-item__price">
+													<div class="b-price"><span class="b-price__number">2450</span><span class="b-price__thinsp">&nbsp;</span><span class="b-price__rubl">Р</span>
+													</div>
+												</div>
+											</div>
+											<div class="b-item__order-button"><u class="btn btn-orange btn-order"><span class="sign">В&nbsp;корзину</span></u>
+											</div>
+										</div>
+										<div class="b-item__badges"><span class="bestseller">Хит!</span>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="b-catalog__item">
+								<div class="b-item with_popover">
+									<div class="b-item__picture">
+										<img src="images/catalog/goods03.jpg" />
+									</div>
+									<div class="responsive-holder">
+										<div class="b-item__description">
+											<h4 class="b-item__title"><a href="javascript:void(0);">Converse Red</a></h4>
+											<div class="b-item__info">
+												<p><span class="parameter">Верх:</span> резина, текстиль
+													<br/><span class="parameter">Подошва:</span> резина
+													<br/><span class="parameter">Цвет:</span> белый</p>
+											</div>
+										</div>
+										<div class="b-item__price">
+											<div class="b-price b-item__price--old"><span class="b-price__number">5600</span><span class="b-price__thinsp">&nbsp;</span><span class="b-price__rubl">Р</span>
+											</div>
+											<div class="b-price"><span class="b-price__number">3750</span><span class="b-price__thinsp">&nbsp;</span><span class="b-price__rubl">Р</span>
+											</div>
+										</div>
+									</div>
+									<div class="b-item__order-button"><u class="btn btn-orange btn-order"><span class="sign">В&nbsp;корзину</span></u>
+									</div>
+									<div class="b-item__badges"><span class="bestseller">Хит!</span>
+									</div>
+									<div class="b-item__popover">
+										<div class="b-item--dublicate">
+											<div class="b-item__picture">
+												<img src="images/catalog/goods03.jpg" />
+											</div>
+											<div class="responsive-holder">
+												<div class="b-item__description">
+													<h4 class="b-item__title"><a href="javascript:void(0);">Converse Red</a></h4>
+													<div class="b-item__info">
+														<p><span class="parameter">Верх:</span> резина, текстиль
+															<br/><span class="parameter">Подошва:</span> резина
+															<br/><span class="parameter">Цвет:</span> белый</p>
+													</div>
+												</div>
+												<div class="b-item__price">
+													<div class="b-price b-item__price--old"><span class="b-price__number">5600</span><span class="b-price__thinsp">&nbsp;</span><span class="b-price__rubl">Р</span>
+													</div>
+													<div class="b-price"><span class="b-price__number">3750</span><span class="b-price__thinsp">&nbsp;</span><span class="b-price__rubl">Р</span>
+													</div>
+												</div>
+											</div>
+											<div class="b-item__order-button"><u class="btn btn-orange btn-order"><span class="sign">В&nbsp;корзину</span></u>
+											</div>
+										</div>
+										<div class="b-item__badges"><span class="bestseller">Хит!</span>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="b-catalog__item">
+								<div class="b-item with_popover">
+									<div class="b-item__picture">
+										<img src="images/catalog/goods04.jpg" />
+									</div>
+									<div class="responsive-holder">
+										<div class="b-item__description">
+											<h4 class="b-item__title"><a href="javascript:void(0);">Converse Orange</a></h4>
+											<div class="b-item__info">
+												<p><span class="parameter">Верх:</span> резина, текстиль
+													<br/><span class="parameter">Подошва:</span> резина
+													<br/><span class="parameter">Цвет:</span> белый</p>
+											</div>
+										</div>
+										<div class="b-item__price">
+											<div class="b-price b-item__price--old"><span class="b-price__number">2490</span><span class="b-price__thinsp">&nbsp;</span><span class="b-price__rubl">Р</span>
+											</div>
+											<div class="b-price"><span class="b-price__number">1890</span><span class="b-price__thinsp">&nbsp;</span><span class="b-price__rubl">Р</span>
+											</div>
+										</div>
+									</div>
+									<div class="b-item__order-button"><u class="btn btn-orange btn-order"><span class="sign">В&nbsp;корзину</span></u>
+									</div>
+									<div class="b-item__badges"><span class="bestseller">Хит!</span>
+									</div>
+									<div class="b-item__popover">
+										<div class="b-item--dublicate">
+											<div class="b-item__picture">
+												<img src="images/catalog/goods04.jpg" />
+											</div>
+											<div class="responsive-holder">
+												<div class="b-item__description">
+													<h4 class="b-item__title"><a href="javascript:void(0);">Converse Orange</a></h4>
+													<div class="b-item__info">
+														<p><span class="parameter">Верх:</span> резина, текстиль
+															<br/><span class="parameter">Подошва:</span> резина
+															<br/><span class="parameter">Цвет:</span> белый</p>
+													</div>
+												</div>
+												<div class="b-item__price">
+													<div class="b-price b-item__price--old"><span class="b-price__number">2490</span><span class="b-price__thinsp">&nbsp;</span><span class="b-price__rubl">Р</span>
+													</div>
+													<div class="b-price"><span class="b-price__number">1890</span><span class="b-price__thinsp">&nbsp;</span><span class="b-price__rubl">Р</span>
+													</div>
+												</div>
+											</div>
+											<div class="b-item__order-button"><u class="btn btn-orange btn-order"><span class="sign">В&nbsp;корзину</span></u>
+											</div>
+										</div>
+										<div class="b-item__badges"><span class="bestseller">Хит!</span>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="b-catalog__item">
+								<div class="b-item with_popover">
+									<div class="b-item__picture">
+										<img src="images/catalog/goods05.jpg" />
+									</div>
+									<div class="responsive-holder">
+										<div class="b-item__description">
+											<h4 class="b-item__title"><a href="javascript:void(0);">Converse Green</a></h4>
+											<div class="b-item__info">
+												<p><span class="parameter">Верх:</span> резина, текстиль
+													<br/><span class="parameter">Подошва:</span> резина
+													<br/><span class="parameter">Цвет:</span> белый</p>
+											</div>
+										</div>
+										<div class="b-item__price">
+											<div class="b-price b-item__price--old"><span class="b-price__number">5600</span><span class="b-price__thinsp">&nbsp;</span><span class="b-price__rubl">Р</span>
+											</div>
+											<div class="b-price"><span class="b-price__number">3750</span><span class="b-price__thinsp">&nbsp;</span><span class="b-price__rubl">Р</span>
+											</div>
+										</div>
+									</div>
+									<div class="b-item__order-button"><u class="btn btn-orange btn-order"><span class="sign">В&nbsp;корзину</span></u>
+									</div>
+									<div class="b-item__badges"><span class="bestseller">Хит!</span>
+									</div>
+									<div class="b-item__popover">
+										<div class="b-item--dublicate">
+											<div class="b-item__picture">
+												<img src="images/catalog/goods05.jpg" />
+											</div>
+											<div class="responsive-holder">
+												<div class="b-item__description">
+													<h4 class="b-item__title"><a href="javascript:void(0);">Converse Green</a></h4>
+													<div class="b-item__info">
+														<p><span class="parameter">Верх:</span> резина, текстиль
+															<br/><span class="parameter">Подошва:</span> резина
+															<br/><span class="parameter">Цвет:</span> белый</p>
+													</div>
+												</div>
+												<div class="b-item__price">
+													<div class="b-price b-item__price--old"><span class="b-price__number">5600</span><span class="b-price__thinsp">&nbsp;</span><span class="b-price__rubl">Р</span>
+													</div>
+													<div class="b-price"><span class="b-price__number">3750</span><span class="b-price__thinsp">&nbsp;</span><span class="b-price__rubl">Р</span>
+													</div>
+												</div>
+											</div>
+											<div class="b-item__order-button"><u class="btn btn-orange btn-order"><span class="sign">В&nbsp;корзину</span></u>
+											</div>
+										</div>
+										<div class="b-item__badges"><span class="bestseller">Хит!</span>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="b-catalog__item">
+								<div class="b-item with_popover">
+									<div class="b-item__picture">
+										<img src="images/catalog/goods06.jpg" />
+									</div>
+									<div class="responsive-holder">
+										<div class="b-item__description">
+											<h4 class="b-item__title"><a href="javascript:void(0);">Converse Blue</a></h4>
+											<div class="b-item__info">
+												<p><span class="parameter">Верх:</span> резина, текстиль
+													<br/><span class="parameter">Подошва:</span> резина
+													<br/><span class="parameter">Цвет:</span> белый</p>
+											</div>
+										</div>
+										<div class="b-item__price">
+											<div class="b-price"><span class="b-price__number">3750</span><span class="b-price__thinsp">&nbsp;</span><span class="b-price__rubl">Р</span>
+											</div>
+										</div>
+									</div>
+									<div class="b-item__order-button"><u class="btn btn-orange btn-order"><span class="sign">В&nbsp;корзину</span></u>
+									</div>
+									<div class="b-item__badges"><span class="bestseller">Хит!</span>
+									</div>
+									<div class="b-item__popover">
+										<div class="b-item--dublicate">
+											<div class="b-item__picture">
+												<img src="images/catalog/goods06.jpg" />
+											</div>
+											<div class="responsive-holder">
+												<div class="b-item__description">
+													<h4 class="b-item__title"><a href="javascript:void(0);">Converse Blue</a></h4>
+													<div class="b-item__info">
+														<p><span class="parameter">Верх:</span> резина, текстиль
+															<br/><span class="parameter">Подошва:</span> резина
+															<br/><span class="parameter">Цвет:</span> белый</p>
+													</div>
+												</div>
+												<div class="b-item__price">
+													<div class="b-price"><span class="b-price__number">3750</span><span class="b-price__thinsp">&nbsp;</span><span class="b-price__rubl">Р</span>
+													</div>
+												</div>
+											</div>
+											<div class="b-item__order-button"><u class="btn btn-orange btn-order"><span class="sign">В&nbsp;корзину</span></u>
+											</div>
+										</div>
+										<div class="b-item__badges"><span class="bestseller">Хит!</span>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- /content -->
+			<div class="footer-overlay"></div>
+		</div>
+		<!-- footer -->
+		<footer class="footer">
+			<div class="container">
+				<div class="columns">
+					<div class="first column">
+						<div class="content">
+							<ul>
+								<li><span class="contact"><i class="contact-icon copyright"></i>Pokupo.ru&nbsp;2014</span>
+								</li>
+								<li><a href="javascript:void(0);" title="E-Mail" class="contact"><i class="contact-icon email"></i>support@pokupo.ru</a>
+								</li>
+								<li><a href="javascript:void(0);" title="Skype" class="contact"><i class="contact-icon skype"></i>pokupo.ru</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="second column">
+						<div class="content">
+							<ul>
+								<li><a href="javascript:void(0);" title="База знаний">База знаний</a>
+								</li>
+								<li><a href="javascript:void(0);" title="Техническая поддержка">Техническая поддержка</a>
+								</li>
+								<li><a href="javascript:void(0);" title="Форум">Форум</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="third column">
+						<div class="content">
+							<ul>
+								<li><a href="javascript:void(0);" title="Пользовательское соглашение">Пользовательское соглашение</a>
+								</li>
+								<li><a href="javascript:void(0);" title="Правила конфиденциальности"> Правила конфиденциальности</a>
+								</li>
+								<li><a href="javascript:void(0);" title="Политика возврата платежей"> Политика возврата платежей</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="fourth column">
+						<div class="content">
+							<ul class="social">
+								<li>
+									<a href="javascript:void(0);" class="social__icon vk"></a>
+								</li>
+								<li>
+									<a href="javascript:void(0);" class="social__icon fb"></a>
+								</li>
+								<li>
+									<a href="javascript:void(0);" class="social__icon tw"></a>
+								</li>
+								<li>
+									<a href="javascript:void(0);" class="social__icon lj"></a>
+								</li>
+								<li>
+									<a href="javascript:void(0);" class="social__icon ok"></a>
+								</li>
+								<li>
+									<a href="javascript:void(0);" class="social__icon gp"></a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</footer>
+		<!-- /footer -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+		<script src="scripts/libs/fotorama.js"></script>
+		<script src="scripts/libs/carousel.min.js"></script>
+		<script src="scripts/main.js"></script>
+	</body>
+</html>
