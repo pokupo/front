@@ -29,59 +29,68 @@ block menu
 block content
 	section.store
 		.container
-			aside.b-sidebar
-				h1.b-sidebar__title Пример каталога
-				+catalog-list([
-					{text:"Компьютерная техника",href:"#", submenu:[
-						{text:"Ноутбуки",href:"#", preview:43},
-						{text:"Моноблоки",href:"#", preview:11},
-						{text:"Планшеты",href:"#", preview:24}
+			aside.b-sidebar.dropdown
+				a.btn.btn-menu(href=js0 data-target="sidebar") Каталог
+				.b-sidebar__dropdown(data-target="sidebar")
+					h1.b-sidebar__title Пример каталога
+					+catalog-list([
+					{text:"Компьютерная техника",href:js0, submenu:[
+						{text:"Ноутбуки",href:js0, preview:43},
+						{text:"Моноблоки",href:js0, preview:11},
+						{text:"Планшеты",href:js0, preview:24}
 					]},
-					{text:"Бытовая техника",href:"#", submenu:[
-						{text:"Стиральные машины",href:"#", preview:51},
-						{text:"Телевизоры",href:"#", preview:13},
-						{text:"Кухонная техника",href:"#", preview:104},
-						{text:"Пылесосы",href:"#", preview:8}
+					{text:"Бытовая техника",href:js0, submenu:[
+						{text:"Стиральные машины",href:js0, preview:51},
+						{text:"Телевизоры",href:js0, preview:13},
+						{text:"Кухонная техника",href:js0, preview:104},
+						{text:"Пылесосы",href:js0, preview:8}
 					]},
-					{text:"Телефоны и связь",href:"#", preview:24},
-					{text:"Фото и оптика",href:"#", submenu:[
-						{text:"Фотоаппараты",href:"#", preview:6},
-						{text:"Объективы",href:"#", preview:2},
-						{text:"Средства и химия",href:"#", preview:64}
+					{text:"Телефоны и связь",href:js0, preview:24},
+					{text:"Фото и оптика",href:js0, submenu:[
+						{text:"Фотоаппараты",href:js0, preview:6},
+						{text:"Объективы",href:js0, preview:2},
+						{text:"Средства и химия",href:js0, preview:64}
 					]},
-					{text:"Одежда, обувь, акксессуары",href:"#", active: true, submenu:[
-						{text:"Кроссовки",href:"#", preview:19},
-						{text:"Кеды",href:"#", preview:134, active: true},
-						{text:"Босоножки",href:"#", preview:245},
-						{text:"Туфли",href:"#", preview:195},
-						{text:"Ботильоны",href:"#", preview:132},
-						{text:"Сандалии",href:"#", preview:72},
-						{text:"Балетки",href:"#", preview:36},
-						{text:"Сапоги",href:"#", preview:56},
-						{text:"Резиновая обувь",href:"#", preview:5}
+					{text:"Одежда, обувь, аксессуары",href:js0, active: true, submenu:[
+						{text:"Кроссовки",href:js0, preview:19},
+						{text:"Кеды",href:js0, preview:134, active: true},
+						{text:"Босоножки",href:js0, preview:245},
+						{text:"Туфли",href:js0, preview:195},
+						{text:"Ботильоны",href:js0, preview:132},
+						{text:"Сандалии",href:js0, preview:72},
+						{text:"Балетки",href:js0, preview:36},
+						{text:"Сапоги",href:js0, preview:56},
+						{text:"Резиновая обувь",href:js0, preview:5}
 						]},
-					{text:"Подарки и праздники",href:"#", submenu:[
-						{text:"Цветы",href:"#", preview:65},
-						{text:"Открытки",href:"#", preview:200},
-						{text:"Игрушки",href:"#", preview:31}
+					{text:"Подарки и праздники",href:js0, submenu:[
+						{text:"Цветы",href:js0, preview:65},
+						{text:"Открытки",href:js0, preview:200},
+						{text:"Игрушки",href:js0, preview:31}
 					]},
-					{text:"Книги, учебники и журналы",href:"#", submenu:[
-						{text:"Цветы",href:"#", preview:65},
-						{text:"Открытки",href:"#", preview:200},
-						{text:"Игрушки",href:"#", preview:31}
+					{text:"Книги, учебники и журналы",href:js0, submenu:[
+						{text:"Цветы",href:js0, preview:65},
+						{text:"Открытки",href:js0, preview:200},
+						{text:"Игрушки",href:js0, preview:31}
 					]},
-					{text:"Мебель, интерьеры и обиход",href:"#", submenu:[
-						{text:"Цветы",href:"#", preview:65},
-						{text:"Открытки",href:"#", preview:200},
-						{text:"Игрушки",href:"#", preview:31}
+					{text:"Мебель, интерьеры и обиход",href:js0, submenu:[
+						{text:"Цветы",href:js0, preview:65},
+						{text:"Открытки",href:js0, preview:200},
+						{text:"Игрушки",href:js0, preview:31}
 					]},
-					{text:"Другое",href:"#", submenu:[
-						{text:"Цветы",href:"#", preview: 65},
-						{text:"Открытки",href:"#", preview: 200},
-						{text:"Игрушки",href:"#", preview: 31}
+					{text:"Другое",href:js0, submenu:[
+						{text:"Цветы",href:js0, preview: 65},
+						{text:"Открытки",href:js0, preview: 200},
+						{text:"Игрушки",href:js0, preview: 31}
 					]}])
+			.b-thermometer
+				p 
+					a(href="index.html") Главная 
+					span.divider / 
+					a(href=js0) Одежда, обувь и аксессуары 
+					span.divider / 
+					span.current Кеды
 			.b-catalog
-				h1 Кеды
+				h1.b-catalog__title Кеды
 				.b-catalog__controls
 					.b-catalog__controls-item
 						| Сортировать
@@ -97,33 +106,40 @@ block content
 										a(href=js0) по&nbsp;цене
 
 					.b-catalog__controls-item
+						.radio-circles
+							ul.menu
+								li.menu__item
+									a#collapse-menu(href=js0) 4
+
+					.b-catalog__controls-item
 						| Вид:
 						.radio-circles.catalog-layout
 							ul.menu
-								li.menu__item
+								li.menu__item.active
 									a(href=js0 data-value="cards")
 										i.icon.icon__cards
 								li.menu__item
 									a(href=js0 data-value="magazine")
 										i.icon.icon__magazine
-								li.menu__item.active
+								li.menu__item
 									a(href=js0 data-value="titles")
-										i.icon.icon__list
+										i.icon.icon__titles
 
 					.b-catalog__controls-item
 						| Валюта:
 						.radio-circles
 							ul.menu
 								li.menu__item.active
-									a(href=js0) $
+									a(href=js0)
+										i.icon.icon__currency--rub
 								li.menu__item
-									a(href=js0) ¥
+									a(href=js0)
+										i.icon.icon__currency--dol
 								li.menu__item
-									a(href=js0) €
-								li.menu__item
-									a(href=js0) ฿
+									a(href=js0)
+										i.icon.icon__currency--btc
 
-				.b-catalog__items.titles
+				.b-catalog__items.cards
 					+catalog-items([
 						{title:"Converse White", price: "1800", img: "images/catalog/goods01.jpg"},
 						{title:"Converse Grey", price: "2450", img: "images/catalog/goods02.jpg"},
@@ -132,7 +148,6 @@ block content
 						{title:"Converse Green", price: "3750", oldPrice: "5600", img: "images/catalog/goods05.jpg"},
 						{title:"Converse Blue", price: "3750", img: "images/catalog/goods06.jpg"}
 						])
-
 
 
 block scripts

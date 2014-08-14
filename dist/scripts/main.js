@@ -148,13 +148,9 @@ PKP.UI = {
 				//
 			} else {
 				if(1 !== $this.parents().filter('.dropdown__trigger.active').length) {
-					if($this.prop("tagName") === 'TEXTAREA') {
-						// если в выпадайке инпуты или текст.поле
-					} else {
-						$('.dropdown__trigger.active').
-							removeClass('active').
-							siblings('.dropdown__content').addClass('hidden');
-					}
+					$('.dropdown__trigger.active').
+						removeClass('active').
+						siblings('.dropdown__content').addClass('hidden');
 				}
 			}
 		});
@@ -182,11 +178,37 @@ PKP.UI = {
 				siblings().removeClass('active');
 		});
 
-		/* Радио-селектор */
+		/* Переключение лэйаута */
 		PKP.$body.on("click", '.catalog-layout a', function() {
 			$('.b-catalog__items').
 				removeClass().
 				addClass('b-catalog__items ' + $(this).data('value'));
+		});
+		$('#collapse-menu').on('click', function () {
+			var li = $(this).closest('.menu__item');
+
+			$('aside.b-sidebar').
+				find('a.btn').
+					toggleClass('dropdown__trigger').
+				siblings('.b-sidebar__dropdown').
+					toggleClass('dropdown__content hidden');
+
+			if (li.is('.active')) {
+				li.toggleClass('active');
+			}
+
+			
+			PKP.$body.toggleClass('nosidebar');
+		});
+
+		/* Баян-меню */
+		$('.b-sidebar').on("click", '.with-submenu', function(e) {
+			var $this = $(e.target);
+			if(1 !== $this.parents().filter('.submenu').length) {
+				$(this).
+					toggleClass('active').
+					children('.submenu').toggleClass('active');
+			}
 		});
 	}
 };

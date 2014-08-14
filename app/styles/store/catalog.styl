@@ -1,27 +1,49 @@
 section.store
-	padding 20px 0
+	padding 15px 0 20px
 
 .b-sidebar
+	position relative
 	width 230px
 	float left
 	text-align left
+
+	.btn
+		display none
+
+	.btn-menu
+		text-align center
+		border 1px solid $orange
+		border-radius 0
+		height 60px
+		width 150px
+		color #000
+		text-tranform uppercase
+		font-size 16px
+		line-height 44px
+		font-weight bold
+		&:hover
+			border-width 3px
+			line-height 40px
+			background #fff
 
 	&__title
 		font-size 18px
 		font-weight normal
 		line-height 24px
 		color #000
-		margin 0 0 0 19px
+		margin 0 0 0 2px
 
 	.menu
 		position relative
 
 		&__item
+			position relative
 			
 			a
+			u
 				display block
 				width 100%	
-				padding 4px 20px
+				padding 4px 15px 4px 2px
 				color $a__link
 				font-size 13px
 				line-height 22px
@@ -41,10 +63,11 @@ section.store
 					margin-left 5px
 
 				&:hover
-					background $grey
+					color $orange
 
-			&.active 
+			&.current
 				& > a
+				& > u
 					color $orange
 					font-weight 800
 
@@ -56,11 +79,25 @@ section.store
 						cursor default
 
 				&.with-submenu > a
+				&.with-submenu > u
 					span
 						border-bottom-color rgba($orange, 0.5)
+			&.active
+				&.with-submenu 
+					&:before
+						transform rotate(180deg)
 
 			&.with-submenu
-				a
+				&:before
+					content ''
+					position absolute
+					display block
+					top 12px
+					left -20px
+					sprite($accordeon__group)
+					transition transform 0.2s ease-in-out
+				& > a
+				& > u
 					span
 						border-bottom 1px dotted
 
@@ -72,34 +109,67 @@ section.store
 
 		&__item
 			a 
-				padding-left 36px
+				padding-left 15px
+				span
+					border-bottom-style solid
+				&:hover
+					color $orange
+					span
+						border-bottom-color rgba($orange, 0.4)
 
 			&.active > a
+				position relative
 				color $orange
 				font-weight 800
+				background $grey
+				&:before
+				&:after
+					content ''
+					position absolute
+					display block
+					width 0
+					height 0
+					right -30px
+					border 30px solid transparent
+
+				&:before
+					top -30px
+					border-bottom-color #fff
+				&:after
+					bottom -30px
+					border-top-color #fff
 
 				span
 					border-bottom none
 
 				&:hover
-					color $orange
 					cursor default
 
+.store .b-sidebar
+	margin-top 56px
+	h1
+		margin-bottom 15px
 
 .b-catalog
-	margin-left 250px
+	margin-left 245px
 	text-align left
 
+	&__title
+		margin-bottom 10px
+
 	&__controls
+		height 40px
+		padding 0	
 
 		&-item
 			height 40px
+			font-size 13px
 			line-height 40px
 			margin-left 20px
 			float right
 
 			&:first-child
-				margin-left 0
+				margin-left 4px
 				float left
 
 	&__items
@@ -114,11 +184,12 @@ section.store
 	position relative
 
 	&__picture
-		height 240px
+		height 228px
+		line-height 228px
 		background url('../images/catalog/default.png') 50% 50% no-repeat
 		vertical-align middle
 		text-align center
-		line-height 240px
+		
 
 		img 
 			display inline-block
@@ -129,7 +200,7 @@ section.store
 	&__title
 		font-size 18px
 		line-height 20px
-		padding-bottom 15px
+		padding-bottom 12px
 		.parameter
 			color #666
 
@@ -138,7 +209,7 @@ section.store
 		font-size 13px
 		line-height 20px
 		color #000
-		padding 0 0 18px
+		padding 0 0 11px
 		margin-bottom 8px
 
 		p 
@@ -151,13 +222,14 @@ section.store
 			left 50%
 			bottom 0
 			margin-left -25px
-			width 50px
+			width 46px
 			border-bottom 1px solid $green
 
 	&__price
 		color $green
 		font-size 30px
 		font-weight 800
+		margin-top -9px
 
 		&--old
 			display inline-block
@@ -179,7 +251,7 @@ section.store
 
 			& + .b-price
 				margin-top -5px
-		
+
 	&__badges
 		display none
 
@@ -196,15 +268,15 @@ section.store
 				.b-item__info
 				.b-item__order-button
 					display block
+				.b-item__price
+					margin-top 0
 	&.magazine
-		padding-top 90px
+		padding-top 86px
 		.b-catalog__item
-			margin-bottom 40px
+			margin-bottom 70px
 		.b-item
-			width 726px
-
-			.responsive-holder
-				position relative
+			width 100%
+			min-width 726px
 
 			&.with_popover
 				.b-item__popover
@@ -228,18 +300,19 @@ section.store
 				
 			.responsive-holder
 				width 230px
-				left 270px
+				left 265px
 			&__order-button
 				left 500px
 			&__info:after
 				display none
 	&.titles
-		padding-top 90px
+		padding-top 86px
 
 		.b-catalog__item
 			margin-bottom 40px
 		.b-item
-			width 726px
+			width 100%
+			min-width 726px
 
 			.responsive-holder
 				position relative
@@ -277,7 +350,7 @@ section.store
 				display none
 
 
-
+/* Карточка при наведении */
 .b-item.with_popover 
 	transition z-index .1s linear
 	z-index 0
@@ -289,7 +362,7 @@ section.store
 		top 0
 		visibility hidden
 	    opacity 0
-		transition opacity .1s linear,visibility .1s linear
+		transition opacity .1s linear, visibility .1s linear
 		z-index 4
 	
 	&:hover 
@@ -299,8 +372,7 @@ section.store
 			visibility visible
 			opacity 1
 
-
-
+/* Форматирование цены */
 .b-price
 	&__number
 		font-size 100%
@@ -311,9 +383,58 @@ section.store
 		font-family 'ALSRubl-Tahoma', Tahoma, sans-serif
 		line-height normal
 		
+/* 4-й вид каталога */
+.nosidebar 
+	.b-sidebar
+		z-index 20
+		margin 0 -100% 0 0
 
+		.btn
+			display inline-block
+			margin 0
 
+		.dropdown__content
+			box-sizing content-box
+			padding 100px 30px 20px
+			margin -12px 0 0 -13px
 
+			li.active > a:after
+			li.active > a:before
+				display none
+
+	.b-thermometer
+		padding-left 165px
+		height 60px
+		margin-bottom: 6px;
+
+		p
+			line-height 60px
+			margin 0
+
+	.b-catalog
+		margin-left 0
+
+		&__controls
+			position relative
+			height 80px
+			padding 20px 0	
+			background $grey
+
+			&:before
+			&:after
+				content ''
+				position absolute
+				display block
+				width 100%
+				top 0
+				bottom 0
+				background $grey
+
+			&:before
+				right 100%
+			&:after
+				left 100%
+				
 
 
 
@@ -327,11 +448,12 @@ section.store
 
 .inline-sorter 
 	display inline-block
-	padding 0 20px
+	padding 0 30px 0 20px
 	margin-left -18px
 	min-width 120px
 	text-align left
 	line-height 16px
+	z-index 6
 
 	.menu 
 		border-top 1px solid $grey
@@ -407,14 +529,33 @@ section.store
 					&:after
 						display none
 
+		.icon
+			position absolute
+			top 50%
+			left 50%
+			margin -8px 0 0 -8px
 
-
-
-
-
-
-
-
+			&__currency--rub
+				margin -7px 0 0 -5px
+				sprite($icon__currency--rub)
+			&__currency--dol
+				margin -8px 0 0 -5px
+				sprite($icon__currency--dol)
+			&__currency--eur
+				margin -7px 0 0 -7px
+				sprite($icon__currency--eur)
+			&__currency--lcn
+				margin -7px 0 0 -7px
+				sprite($icon__currency--lcn)
+			&__currency--btc
+				margin -9px 0 0 -6px
+				sprite($icon__currency--btc)
+			&__cards
+				sprite($icon__cards)
+			&__magazine
+				sprite($icon__magazine)
+			&__titles
+				sprite($icon__titles)
 
 
 

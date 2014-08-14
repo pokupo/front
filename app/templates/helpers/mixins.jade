@@ -79,8 +79,8 @@ mixin catalog-list(list)
 		ul.menu
 			each item in list
 				if item.submenu
-					li.menu__item.with-submenu(class=item.active ? "active" : "")
-						a(href=item.href)
+					li.menu__item.with-submenu(class=item.active ? "current active" : "")
+						u
 							span= item.text
 						ul.submenu(class=item.active ? "active" : "")
 							each subitem in item.submenu

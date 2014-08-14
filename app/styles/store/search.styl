@@ -4,7 +4,7 @@ section.search
 .b-search
 	position relative
 	margin-right 190px
-	border-right 280px solid $orange
+	border-right 273px solid $orange
 
 	&-holder
 		float left
@@ -16,8 +16,8 @@ section.search
 		position relative
 		float right
 		margin-right -190px
-		right -280px
-		width 170px
+		right -273px
+		width 171px
 		height 52px
 		border none
 		background $green
@@ -25,6 +25,13 @@ section.search
 		text-transform uppercase
 		font-size 16px
 		line-height 52px
+		transition background 0.2s ease-in-out
+
+		&:hover
+			background darken($green, 25%)
+		&:active
+			top 1px
+			background darken($green, 50%)0
 
 	&__input
 		width 100%
@@ -32,20 +39,20 @@ section.search
 		font-size 18px
 		line-height 32px
 		border none
-		padding 5px 20px
+		padding 5px 18px
 		box-sizing border-box!important
 		color #333
 		
 .b-location
 	float right
-	margin-right -280px
-	width 280px
+	margin-right -273px
+	width 273px
 	height 52px
 	
-	position relative
 	background #fff
-	border-left 1px solid $grey
+	border-left 2px solid $grey
 	text-align left
+	z-index 9
 
 	&__current
 		position relative
@@ -64,8 +71,7 @@ section.search
 	&__catalog
 		.menu
 			position relative
-
-
+			
 	.dropdown__content
 		padding-top 52px
 		z-index 4
