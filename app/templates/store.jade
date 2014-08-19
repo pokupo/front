@@ -24,13 +24,15 @@ block menu
 			{text:"Партнеры",href:"#"},
 			{text:"Блог",href:"#"}
 		]}
-	])
+	])(class="b-navigation")
 
 block content
 	section.store
 		.container
 			aside.b-sidebar.dropdown
-				a.btn.btn-menu(href=js0 data-target="sidebar") Каталог
+				a.btn.btn-menu(href=js0 data-target="sidebar") 
+					i.icon.icon__catalog
+					| Каталог
 				.b-sidebar__dropdown(data-target="sidebar")
 					h1.b-sidebar__title Пример каталога
 					+catalog-list([
@@ -90,7 +92,7 @@ block content
 					span.divider / 
 					span.current Кеды
 			.b-catalog
-				h1.b-catalog__title Кеды
+				h1#js-nosidebar.b-catalog__title Кеды
 				.b-catalog__controls
 					.b-catalog__controls-item
 						| Сортировать
@@ -104,12 +106,6 @@ block content
 										a(href=js0) по&nbsp;рейтингу
 									li.menu__item
 										a(href=js0) по&nbsp;цене
-
-					.b-catalog__controls-item
-						.radio-circles
-							ul.menu
-								li.menu__item
-									a#collapse-menu(href=js0) 4
 
 					.b-catalog__controls-item
 						| Вид:

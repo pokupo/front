@@ -3,7 +3,41 @@ section.header
 		a.logo(href="index.html" title="Pokupo.ru")
 
 		.menu-login
-			a.menu-login__login(href=js0 title="Войти") Вход
-			a.menu-login__register(href=js0 title="Зарегистрироваться") Регистрация
+			.not-logged-in
+				a#js-login.menu-login__login(href=js0 title="Войти") Вход
+				a.menu-login__register(href=js0 title="Зарегистрироваться") Регистрация
+			.logged-in.hidden
+				.circles-menu
+					ul.menu
+						li.menu__item.dropdown
+							a.dropdown__trigger(href=js0 data-target="profile")
+								i.icon.icon__profile
+							.b-profile-menu.dropdown__content.hidden(data-target="profile")
+								p.b-profile-menu__name Сибилев Игорь
+								ul.submenu
+									li.submenu__item
+										a(href=js0) Профиль
+									li.submenu__item
+										a(href=js0) Избранное
+									li.submenu__item
+										a(href=js0) Заказы
+									li.submenu__item
+										a(href=js0) Выйти
+
+
+						li.menu__item.dropdown
+							a.dropdown__trigger(href=js0 data-target="cart")
+								i.icon.icon__cart
+							.dropdown__content.hidden(data-target="cart")
+								p дропдаун 1
+
+						li.menu__item.dropdown
+							a.dropdown__trigger(href=js0 data-target="mail")
+								i.icon.icon__mail
+							.dropdown__content.hidden(data-target="mail")
+								p дропдаун 2
+
 		block menu
 			+menu-list([])
+
+

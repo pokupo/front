@@ -1,17 +1,28 @@
-@import 'libs/fotorama.css'
-
+/* Хэлперы и переменные */
 @import 'helpers/sprite'
 @import 'helpers/variables'
 @import 'helpers/mixins'
 
+/* Статика и общие стили */
 @import 'base/fonts'
 @import 'base/normalize'
 @import 'base/common'
 @import 'base/typo'
 
+/* Секции промо-страниц */
 @import 'partials/**/*'
+
+/* Стили для каталога */
 @import 'store/**/*'
 
-@import 'components/**/*'
-
+/* Внутренние страницы */
 @import 'pages/**/*'
+
+
+
+
+/* скрипты для вспомогательных библиотек  */
+@import 'libs/fotorama.css'
+
+/* Кастомизация скриптов */
+@import 'components/**/*'

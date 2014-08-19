@@ -48,9 +48,42 @@
 			<section class="header">
 				<div class="container">
 					<a href="index.html" title="Pokupo.ru" class="logo"></a>
-					<div class="menu-login"><a href="javascript:void(0);" title="Войти" class="menu-login__login">Вход</a><a href="javascript:void(0);" title="Зарегистрироваться" class="menu-login__register">Регистрация</a>
+					<div class="menu-login">
+						<div class="not-logged-in"><a id="js-login" href="javascript:void(0);" title="Войти" class="menu-login__login">Вход</a><a href="javascript:void(0);" title="Зарегистрироваться" class="menu-login__register">Регистрация</a>
+						</div>
+						<div class="logged-in hidden">
+							<div class="circles-menu">
+								<ul class="menu">
+									<li class="menu__item dropdown"><a href="javascript:void(0);" data-target="profile" class="dropdown__trigger"><i class="icon icon__profile"></i></a>
+										<div data-target="profile" class="b-profile-menu dropdown__content hidden">
+											<p class="b-profile-menu__name">Сибилев Игорь</p>
+											<ul class="submenu">
+												<li class="submenu__item"><a href="javascript:void(0);">Профиль</a>
+												</li>
+												<li class="submenu__item"><a href="javascript:void(0);">Избранное</a>
+												</li>
+												<li class="submenu__item"><a href="javascript:void(0);">Заказы</a>
+												</li>
+												<li class="submenu__item"><a href="javascript:void(0);">Выйти</a>
+												</li>
+											</ul>
+										</div>
+									</li>
+									<li class="menu__item dropdown"><a href="javascript:void(0);" data-target="cart" class="dropdown__trigger"><i class="icon icon__cart"></i></a>
+										<div data-target="cart" class="dropdown__content hidden">
+											<p>дропдаун 1</p>
+										</div>
+									</li>
+									<li class="menu__item dropdown"><a href="javascript:void(0);" data-target="mail" class="dropdown__trigger"><i class="icon icon__mail"></i></a>
+										<div data-target="mail" class="dropdown__content hidden">
+											<p>дропдаун 2</p>
+										</div>
+									</li>
+								</ul>
+							</div>
+						</div>
 					</div>
-					<ul class="menu menu--opened">
+					<ul class="menu menu--opened b-navigation">
 						<li class="menu__item with-submenu"><a href="#"><span>Платформа</span></a>
 							<ul class="submenu">
 								<li class="submenu__item"><a href="#"><span>Особенности</span></a>

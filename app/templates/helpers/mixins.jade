@@ -22,7 +22,7 @@ mixin menu-list(list)
 			if item.submenu
 				if item.active
 					- i = true
-		ul.menu(class=i ? "menu--opened" : "")
+		ul.menu(class=i ? "menu--opened" : "", class!=attributes.class)
 			each item in list
 				if item.submenu
 					li.menu__item.with-submenu(class=item.active ? "active" : "")

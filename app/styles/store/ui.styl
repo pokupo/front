@@ -1,0 +1,214 @@
+/* Квадратная кнопка */
+.btn-menu
+	text-align center
+	border 1px solid $orange
+	border-radius 0
+	height 60px
+	width 151px
+	padding-left 42px
+	color #000
+	text-transform uppercase
+	font-size 16px
+	line-height 44px
+	font-weight bold
+	transition border-color 0.1s ease-in-out
+
+	&:after
+		content ''
+		position absolute
+		display block
+		sprite($icon__catalog)
+		top 17px
+		left 21px
+
+	&:hover
+		border 4px solid $orange
+		line-height 38px
+		background #fff
+		color #000
+
+		&:after
+			top 14px
+			left 18px
+
+	&:active
+		border 4px solid darken($orange, 25%)
+		line-height 38px
+		&:after
+			top 14px
+			left 18px
+
+/* Инлайновый дропдаун */
+.inline-sorter 
+	display inline-block
+	padding 0 30px 0 20px
+	margin-left -18px
+	min-width 120px
+	text-align left
+	line-height 16px
+	z-index 6
+
+	.menu 
+		border-top 1px solid $grey
+
+	.selector__current
+		color $a__link
+		font-weight 800
+		border-bottom 1px dotted rgba($a__link, 0.4)
+		&.active
+			border-bottom none
+
+	.dropdown__content
+		top -8px
+		padding-top 30px
+
+/* Круглые кнопки */
+.circles-menu
+.radio-circles
+	display inline-block
+	vertical-align middle
+
+	.menu
+		font-size 0
+
+	.menu__item
+		display inline-block
+		vertical-align bottom
+		width 40px
+		height 40px
+		margin-left 10px
+		
+		a 
+			display block
+			position relative
+			width 100%
+			height 100%
+			text-decoration none
+			color #333
+			line-height 36px
+			text-align center
+			border-radius 40px
+			border 2px solid $orange
+			font-size 18px
+			&:after
+				content ''
+				position absolute
+				top -3px
+				left -3px
+				display block
+				width 40px
+				height 40px
+				border-radius 40px
+				background rgba(0,0,0,0)
+				transition background 0.1s ease-in-out
+
+			&:hover
+				border-width 3px
+				line-height 34px
+			&:active
+				top 1px
+				background $orange
+				&:after
+					background rgba(0,0,0,0.25)
+
+		&:first-child
+			margin-left 6px
+
+		&.active 
+			a
+				background $orange
+				&:hover
+					cursor default
+				&:active
+					top 0
+					&:after
+						display none
+
+		.icon
+			position absolute
+			top 50%
+			left 50%
+			margin -8px 0 0 -8px
+
+			&__currency--rub
+				margin -7px 0 0 -5px
+				sprite($icon__currency--rub)
+			&__currency--dol
+				margin -8px 0 0 -5px
+				sprite($icon__currency--dol)
+			&__currency--eur
+				margin -7px 0 0 -7px
+				sprite($icon__currency--eur)
+			&__currency--lcn
+				margin -7px 0 0 -7px
+				sprite($icon__currency--lcn)
+			&__currency--btc
+				margin -9px 0 0 -6px
+				sprite($icon__currency--btc)
+			&__cards
+				sprite($icon__cards)
+			&__magazine
+				sprite($icon__magazine)
+			&__titles
+				sprite($icon__titles)
+			&__profile
+				margin -10px 0 0 -8px
+				sprite($icon__profile)
+			&__cart
+				margin -10px 0 0 -12px
+				sprite($icon__cart)
+			&__mail
+				margin -7px 0 0 -11px
+				sprite($icon__mail)
+
+.circles-menu
+	& > .menu
+		height 120px
+		line-height 120px
+
+		.menu__item
+			width 60px
+			height 60px
+			vertical-align middle
+
+			a
+				border-width 4px
+
+				&:after
+					display none
+				&:hover
+					border-width 4px
+				&:active
+					background $orange
+						&__profile
+							sprite($icon__profile)
+						&__cart
+							sprite($icon__cart)
+						&__mail
+							sprite($icon__mail)
+			&.active
+				a
+					background #fff
+					.icon
+						&__profile
+							sprite($icon__profile__hover)
+						&__cart
+							sprite($icon__cart__hover)
+						&__mail
+							sprite($icon__mail__hover)
+
+
+/* Форматирование цены */
+.b-price
+	&__number
+		font-size 100%
+	&__thinsp
+		font-size 50%
+		line-height 1
+	&__rubl
+		font-family $rubl
+		line-height normal
+		
+/* Убрать после тестирования! */
+#collapse-menu
+	cursor pointer

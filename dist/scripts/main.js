@@ -147,7 +147,7 @@ PKP.UI = {
 			if($this.is('.dropdown__trigger')) {
 				//
 			} else {
-				if(1 !== $this.parents().filter('.dropdown__trigger.active').length) {
+				if(1 !== $this.parents().filter('.dropdown__content').length) {
 					$('.dropdown__trigger.active').
 						removeClass('active').
 						siblings('.dropdown__content').addClass('hidden');
@@ -184,7 +184,19 @@ PKP.UI = {
 				removeClass().
 				addClass('b-catalog__items ' + $(this).data('value'));
 		});
-		$('#collapse-menu').on('click', function () {
+
+		/* Баян-меню */
+		$('.b-sidebar').on("click", '.with-submenu', function(e) {
+			var $this = $(e.target);
+			if(1 !== $this.parents().filter('.submenu').length) {
+				$(this).
+					toggleClass('active').
+					children('.submenu').toggleClass('active');
+			}
+		});
+
+		/* Вспомогательное, для тестирования */
+		$('#js-nosidebar').on('click', function () {
 			var li = $(this).closest('.menu__item');
 
 			$('aside.b-sidebar').
@@ -198,17 +210,14 @@ PKP.UI = {
 			}
 
 			
-			PKP.$body.toggleClass('nosidebar');
+			$('section.store').toggleClass('nosidebar');
 		});
 
-		/* Баян-меню */
-		$('.b-sidebar').on("click", '.with-submenu', function(e) {
-			var $this = $(e.target);
-			if(1 !== $this.parents().filter('.submenu').length) {
-				$(this).
-					toggleClass('active').
-					children('.submenu').toggleClass('active');
-			}
+		$('#js-login').on('click', function() {
+			var t = $(this).closest('.menu-login');
+			t.find('.not-logged-in').addClass('hidden');
+			t.find('.logged-in').removeClass('hidden');
+
 		});
 	}
 };

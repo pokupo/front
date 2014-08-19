@@ -20,37 +20,38 @@
 
 	.menu-login
 		float right
-		margin 0 -15px 0 -100%
 		height 120px
-		padding 57px 0 33px
+		margin 0 -15px 0 -100%
 
-		a
-			margin-top 4px
-			padding 7px 15px
-			font-size 14px
-			font-weight 700
-			text-transform uppercase
-			transition 0.2s ease all
+		.not-logged-in
+			padding 57px 0 33px
 
-			&.menu-login__login
-				color #000
-				border-right 1px solid #c5c6c8
+			a
+				margin-top 4px
+				padding 7px 15px
+				font-size 14px
+				font-weight 700
+				text-transform uppercase
+				transition 0.2s ease all
 
-				&:before
-					content ''
-					display inline-block
-					sprite($icon__login)
-					margin-right 5px
+				&.menu-login__login
+					color #000
+					border-right 1px solid #c5c6c8
 
-			&.menu-login__register
-				color $green
+					&:before
+						content ''
+						display inline-block
+						sprite($icon__login)
+						margin-right 5px
 
-			&:hover
-				color $orange
-		
+				&.menu-login__register
+					color $green
+
+				&:hover
+					color $orange
+
 	.menu
 		display inline-block
-		height 120px
 		position relative
 		font-size 0
 
@@ -61,11 +62,7 @@
 			position relative
 			display inline-block
 			box-sizing border-box
-			height 120px
-			line-height 120px
 			float left
-			padding 0 5px
-			margin-right 15px
 			font-size 16px
 			color #000
 			transition 0.3s ease all
@@ -88,29 +85,6 @@
 			&:hover
 			&.bordered 
 				color #018F3C
-
-		&__item
-			display inline-block
-			height 120px
-			
-			a 
-				padding 54px 8px 40px
-				line-height 18px
-				font-size 16px
-				transition all .2s ease-in-out
-
-			&.with-submenu
-				a:hover
-				a.bordered
-					border-bottom-color #018F3C
-					&:after
-						border-bottom-color #018F3C
-			&.active
-				a
-					color #018F3C
-					border-bottom-color #018F3C
-					&:after
-						border-bottom-color #018F3C
 
 
 		.submenu
@@ -174,5 +148,73 @@
 
 		&.active
 			height 60px
+
+
+
+.b-navigation
+	height 120px
+
+	a
+		height 120px
+		line-height 120px
+	& > a
+		padding 0 5px
+		margin-right 15px
+
+	.menu__item
+		height 120px
+		display inline-block
+		
+		a 
+			line-height 18px
+			font-size 16px
+			transition all .2s ease-in-out
+
+		&.with-submenu
+			a:hover
+			a.bordered
+				border-bottom-color #018F3C
+				&:after
+					border-bottom-color #018F3C
+		&.active
+			a
+				color #018F3C
+				border-bottom-color #018F3C
+				&:after
+					border-bottom-color #018F3C
+		
+
+		a
+			padding 54px 8px 40px
+
+.header .dropdown__trigger.active
+	z-index 151
+
+.b-profile-menu
+	width 150px
+	padding 100px 0 2px
+	top -20px
+	left -45px
+	z-index 150
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
