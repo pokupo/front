@@ -51,7 +51,6 @@
 					color $orange
 
 	.menu
-		display inline-block
 		position relative
 		font-size 0
 
@@ -68,19 +67,6 @@
 			transition 0.3s ease all
 			font-size 16px
 			border-bottom 3px solid transparent
-
-			&:after
-				content ''
-				display block
-				width 0
-				height 0
-				position absolute
-				bottom 0
-				left 50%
-				margin-left -8px
-				border 8px solid transparent
-				border-top none
-				transition 0.3s ease all
 
 			&:hover
 			&.bordered 
@@ -152,6 +138,7 @@
 
 
 .b-navigation
+	display inline-block
 	height 120px
 
 	a
@@ -169,6 +156,19 @@
 			line-height 18px
 			font-size 16px
 			transition all .2s ease-in-out
+
+			&:after
+				content ''
+				display block
+				width 0
+				height 0
+				position absolute
+				bottom 0
+				left 50%
+				margin-left -8px
+				border 8px solid transparent
+				border-top none
+				transition 0.3s ease all
 
 		&.with-submenu
 			a:hover
@@ -189,13 +189,172 @@
 
 .header .dropdown__trigger.active
 	z-index 151
+.header .dropdown__content
+	z-index 150
+	text-align center
 
+/* Выпадайка профиля */
 .b-profile-menu
 	width 150px
-	padding 100px 0 2px
+	padding 85px 0 2px
 	top -20px
 	left -45px
-	z-index 150
+	
+
+	&__name
+		color #808080
+		margin-bottom 13px
+		line-height 13px
+
+	.menu__item
+		border-top 1px solid $grey
+		padding 0
+
+		a
+			float none
+			display block
+			padding 8px 20px 9px
+			border-bottom none
+			color $a__link
+			&:hover 
+				color $a__hover
+
+	&__logout
+		position relative
+		&:after
+			content ''
+			position absolute
+			top 50%
+			right 10px
+			display block
+			margin-top -7px
+			sprite($icon__logout)
+
+/* Выпадайка корзины */
+.b-cart-menu
+	width 150px
+	padding 80px 0 2px
+	top -20px
+	left -45px
+
+	&__body
+		position absolute
+		top 110px
+		right -25px
+		width 527px
+		min-height 120px
+
+		.b-cart-menu__patch
+			position absolute
+			display block
+			top -5px
+			right 25px
+			height 10px
+			width 150px
+			background #fff
+
+		&__goods
+			width 100%
+
+.b-order-item
+	font-size 0
+	line-height 30px
+	border-top 1px solid $grey
+	height 60px
+	clearfix()
+	
+	& > div
+		font-size 16px
+		line-height 60px
+		display inline-block
+		vertical-align middle
+		
+
+	&__name
+		width 250px
+		padding 0 25px 0 30px
+		line-height 20px!important
+		span 
+			line-height 20px
+			color $a__link
+
+	&__qty
+		width 80px
+		padding 0 5px
+
+	&__price
+		padding 0 20px 0 30px
+		width 120px
+		font-size 18px!important
+		font-weight 800
+		color $green
+
+	&__drop
+		position relative
+
+
+
+			
+
+
+.b-increment-group
+	display inline-block
+	white-space nowrap
+	line-height 30px
+	vertical-align middle
+
+	&__darr
+	&__uarr
+		height 30px
+		width 20px
+		display inline-block
+		vertical-align top
+		cursor pointer
+		user-select none
+		text-align center
+		font-size 20px
+		font-weight 700
+		color $orange
+	
+		&:after
+			content ''
+			display block
+			position relative
+			width 0
+			height 0
+			top 50%
+			left 50%
+			border 5px solid transparent
+		
+	&__darr
+		&:after
+			margin -2px 0 0 -5px
+			border-top-color $orange
+		&:hover:after
+			border-top-color darken($orange, 50%)
+		&:active:after
+			margin-top -1px
+
+	&__uarr
+		&:after
+			margin -7px 0 0 -5px
+			border-bottom-color $orange
+		&:hover:after
+			border-bottom-color darken($orange, 50%)
+		&:active:after
+			margin-top -6px
+
+
+
+	&__qty
+		min-width 24px
+		display inline-block
+		text-align center
+		line-height 30px
+		height 30px
+		vertical-align top
+		
+
 
 
 

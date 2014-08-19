@@ -63,7 +63,6 @@
 		padding-top 30px
 
 /* Круглые кнопки */
-.circles-menu
 .radio-circles
 	display inline-block
 	vertical-align middle
@@ -162,40 +161,93 @@
 				sprite($icon__mail)
 
 .circles-menu
-	& > .menu
-		height 120px
-		line-height 120px
+	display inline-block
+	vertical-align middle
+	font-size 0
+	height 120px
+	line-height 120px
 
-		.menu__item
-			width 60px
-			height 60px
-			vertical-align middle
+	&__num
+		position absolute
+		top -4px
+		right -4px
+		font-weight normal
+		font-size 14px
+		line-height 14px
+		color #fff
+		display inline-block
+		text-align center
+		background $red
+		padding 3px 6px
+		border-radius 100px
 
-			a
-				border-width 4px
+	&__item
+		width 60px
+		height 60px
+		vertical-align middle
+		display inline-block
+		margin 12px 10px 0 0
 
-				&:after
-					display none
-				&:hover
-					border-width 4px
-				&:active
-					background $orange
-						&__profile
-							sprite($icon__profile)
-						&__cart
-							sprite($icon__cart)
-						&__mail
-							sprite($icon__mail)
+		&:last-child 
+			margin-right 0
+
+		& > a 
+			display block
+			position relative
+			width 100%
+			height 100%
+			text-decoration none
+			color #333
+			line-height 36px
+			text-align center
+			border-radius 40px
+			border 4px solid $orange
+			font-size 18px
+
+			&.with-icon
+				&:before
+					content ''
+					display block
+					position absolute
+					top 50%
+					left 50%
+
+				&.icon__profile
+					&:before
+						margin -10px 0 0 -8px
+						sprite($icon__profile)
+				&.icon__cart
+					&:before
+						margin -10px 0 0 -12px
+						sprite($icon__cart)
+				&.icon__mail
+					&:before
+						margin -7px 0 0 -11px
+						sprite($icon__mail)
+
+			&:after
+				display none
+			&:hover
+				border-width 5px
+				.circles-menu__num
+					right -5px
+					top -5px
+			&:active
+				top 1px
+				background $orange
+
 			&.active
-				a
+				&:active
 					background #fff
-					.icon
-						&__profile
-							sprite($icon__profile__hover)
-						&__cart
-							sprite($icon__cart__hover)
-						&__mail
-							sprite($icon__mail__hover)
+				&.icon__profile
+					&:before
+						sprite($icon__profile__hover)
+				&.icon__cart
+					&:before
+						sprite($icon__cart__hover)
+				&.icon__mail
+					&:before
+						sprite($icon__mail__hover)
 
 
 /* Форматирование цены */

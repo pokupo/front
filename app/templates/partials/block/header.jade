@@ -3,39 +3,86 @@ section.header
 		a.logo(href="index.html" title="Pokupo.ru")
 
 		.menu-login
-			.not-logged-in
+			.not-logged-in.hidden
 				a#js-login.menu-login__login(href=js0 title="Войти") Вход
 				a.menu-login__register(href=js0 title="Зарегистрироваться") Регистрация
-			.logged-in.hidden
+			.logged-in
 				.circles-menu
-					ul.menu
-						li.menu__item.dropdown
-							a.dropdown__trigger(href=js0 data-target="profile")
-								i.icon.icon__profile
-							.b-profile-menu.dropdown__content.hidden(data-target="profile")
-								p.b-profile-menu__name Сибилев Игорь
-								ul.submenu
-									li.submenu__item
-										a(href=js0) Профиль
-									li.submenu__item
-										a(href=js0) Избранное
-									li.submenu__item
-										a(href=js0) Заказы
-									li.submenu__item
-										a(href=js0) Выйти
+					.circles-menu__item.dropdown
+						a.with-icon.icon__profile.dropdown__trigger(href=js0 data-target="profile")
+						.b-profile-menu.dropdown__content.hidden(data-target="profile")
+							p.b-profile-menu__name Сибилев<br/>Игорь
+							ul.menu
+								li.menu__item
+									a(href=js0) Профиль
+								li.menu__item
+									a(href=js0) Избранное
+								li.menu__item
+									a(href=js0) Заказы
+								li.menu__item
+									a.b-profile-menu__logout#js-logout(href=js0) Выйти
+
+					.circles-menu__item.dropdown
+						a.with-icon.icon__cart.dropdown__trigger.active(href=js0 data-target="cart")
+							sup.circles-menu__num 3
+						.b-cart-menu.dropdown__content(data-target="cart")
+							p Корзина
+							.b-cart-menu__body
+								i.b-cart-menu__patch
+								
+								ol.b-cart-menu__goods
+									li.b-cart-menu__goods-item.b-order-item
+										.b-order-item__name
+											span Converse White
+										.b-order-item__qty
+											span.b-increment-group
+												span.b-increment-group__darr
+												span.b-increment-group__qty 6
+												span.b-increment-group__uarr
+										.b-order-item__price.b-price
+											span.b-price__number 750
+											span.b-price__thinsp &nbsp;
+											span.b-price__rubl Р
+										.b-order-item__drop
+											span.drop
+
+									li.b-cart-menu__goods-item.b-order-item
+										.b-order-item__name
+											span Converse Red
+										.b-order-item__qty
+											span.b-increment-group
+												span.b-increment-group__darr
+												span.b-increment-group__qty 2
+												span.b-increment-group__uarr
+										.b-order-item__price.b-price
+											span.b-price__number 3750
+											span.b-price__thinsp &nbsp;
+											span.b-price__rubl Р
+										.b-order-item__drop
+											span.drop
+
+									li.b-cart-menu__goods-item.b-order-item
+										.b-order-item__name
+											span Штукатурка гипсовая для&nbsp;наружных работ
+										.b-order-item__qty
+											span.b-increment-group
+												span.b-increment-group__darr
+												span.b-increment-group__qty 1
+												span.b-increment-group__uarr
+										.b-order-item__price.b-price
+											span.b-price__number 3750
+											span.b-price__thinsp &nbsp;
+											span.b-price__rubl Р
+										.b-order-item__drop
+											span.drop
+
+									
 
 
-						li.menu__item.dropdown
-							a.dropdown__trigger(href=js0 data-target="cart")
-								i.icon.icon__cart
-							.dropdown__content.hidden(data-target="cart")
-								p дропдаун 1
 
-						li.menu__item.dropdown
-							a.dropdown__trigger(href=js0 data-target="mail")
-								i.icon.icon__mail
-							.dropdown__content.hidden(data-target="mail")
-								p дропдаун 2
+					.circles-menu__item
+						a.with-icon.icon__mail(href=js0)
+							sup.circles-menu__num 25
 
 		block menu
 			+menu-list([])

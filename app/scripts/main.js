@@ -128,6 +128,7 @@ PKP.UI = {
 		PKP.$body.on("click", '.dropdown__trigger', function(e) {
 			e.preventDefault();
 			var $this = $(this);
+			// console.log($(e.target), $this);
 
 			if(0 < $('.dropdown__trigger.active').length) {
 				$('.dropdown__trigger.active')
@@ -213,10 +214,10 @@ PKP.UI = {
 			$('section.store').toggleClass('nosidebar');
 		});
 
-		$('#js-login').on('click', function() {
+		$('#js-login, #js-logout').on('click', function() {
 			var t = $(this).closest('.menu-login');
-			t.find('.not-logged-in').addClass('hidden');
-			t.find('.logged-in').removeClass('hidden');
+			t.find('.not-logged-in').toggleClass('hidden');
+			t.find('.logged-in').toggleClass('hidden');
 
 		});
 	}
