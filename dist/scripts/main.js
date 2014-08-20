@@ -7,6 +7,7 @@ PKP.init = function() {
 
 	PKP.Sliders.init();
 	PKP.UI.init();
+	PKP.UI.cart();
 };
 
 PKP.Sliders = {
@@ -128,7 +129,10 @@ PKP.UI = {
 		PKP.$body.on("click", '.dropdown__trigger', function(e) {
 			e.preventDefault();
 			var $this = $(this);
-			// console.log($(e.target), $this);
+
+			if($this.is('.disabled')) {
+				return false;
+			}
 
 			if(0 < $('.dropdown__trigger.active').length) {
 				$('.dropdown__trigger.active')
@@ -219,6 +223,128 @@ PKP.UI = {
 			t.find('.not-logged-in').toggleClass('hidden');
 			t.find('.logged-in').toggleClass('hidden');
 
+		});
+	},
+	formatNumber: function (number, dSeparator, fSeparator) {
+		// Default digits & fraction separators
+		if (!dSeparator) {
+			dSeparator = '<i class="b-price__separator"></i>';
+		}
+		if (!fSeparator) {
+			fSeparator = ',';
+		}
+	 
+		var str 		= number.toString(),
+			isNegative  = (number < 0),
+			intLength 	= str.lastIndexOf('.'),
+			output = '',
+			cnt    = -1;
+
+		intLength = (intLength > -1) ? intLength : str.length;
+		output    = str.substring(intLength);
+
+		if(intLength > 4) {
+			for (var i = intLength; i > 0; i--) {
+				cnt++;
+				if (((cnt % 3) === 0 ) && (i !== intLength) && (!isNegative || (i > 1))) {
+					output = dSeparator + output;
+				}
+				output = str.charAt(i - 1) + output;
+			}
+		} else {
+			output = str;
+		}
+
+		return output.replace('.', fSeparator);
+	},
+	cart: function () {
+		// Уменьшить
+		$(".b-increment-group__darr").on('click', function(){
+			var $this       = $(this),
+				$tr   	    = $this.closest(".b-order-item"),
+				$price 	    = $tr.find(".b-price__number"),
+				$qty        = $tr.find(".b-increment-group__qty"),
+				$total_sum  = $(".b-cart-menu__amount .b-price__number"),
+				$cartQty    = $('.dropdown__trigger[data-target="cart"]').find('.circles-menu__num');
+
+			var total_sum 	= Number( $total_sum.text() ),
+				item_sum 	= Number( $price.text() ),
+				num 		= Number( $qty.text() ),
+				cartNum 	= Number( $cartQty.text() ),
+				price 		= item_sum / num;
+
+			$price.html(PKP.UI.formatNumber(item_sum - price));
+			$total_sum.html(PKP.UI.formatNumber(total_sum - price));
+
+			num -= 1;
+			cartNum -= 1;
+
+			if(num <= 1) {
+				$this.addClass("invisible");
+			}
+
+			$qty.text(num);
+			$cartQty.text(cartNum);
+			return false;
+		});
+
+		// Увеличить
+		$(".b-increment-group__uarr").on('click', function(){
+			var $this 		= $(this),
+				$tr   		= $this.closest(".b-order-item"),
+				$price 	 	= $tr.find(".b-price__number"),
+				$qty       	= $tr.find(".b-increment-group__qty"),
+				$total_sum 	= $(".b-cart-menu__amount .b-price__number"),
+				$cartQty    = $('.dropdown__trigger[data-target="cart"]').find('.circles-menu__num');
+
+
+			var total_sum 	= Number( $total_sum.text() ),
+				item_sum 	= Number( $price.text() ),
+				num 		= Number( $qty.text() ),
+				cartNum 	= Number( $cartQty.text() ),
+				price 		= item_sum / num;
+
+			$price.html(PKP.UI.formatNumber(item_sum + price));
+			$total_sum.html(PKP.UI.formatNumber(total_sum + price));
+
+			num += 1;
+			cartNum += 1;
+
+			if(num > 1) {
+				$this.siblings(".b-increment-group__darr").removeClass("invisible");
+			}
+			$qty.text(num);
+			$cartQty.text(cartNum);
+
+			return false;
+		});
+
+		// Удалить
+		$(".b-order-item__drop").on('click', function(){
+			var $this = $(this),
+				$tr   = $this.closest(".b-order-item"),
+				$price 	 = $tr.find(".b-price__number"),
+				$qty       	= $tr.find(".b-increment-group__qty"),
+				$cartQty    = $('.dropdown__trigger[data-target="cart"]').find('.circles-menu__num');
+
+			var $total_sum = $(".b-cart-menu__amount .b-price__number"),
+				total_sum 		 = Number($total_sum.text()),
+				item_sum 		 = Number($price.text());
+
+			$total_sum.text(total_sum - item_sum);
+			$cartQty.text(Number($cartQty.text()) - Number($qty.text()));
+
+			$tr.fadeOut();
+			setTimeout(function(){
+				$tr.remove();
+
+				if($(".b-cart-menu__goods li").length == 0) {
+					var t = $('.dropdown__trigger[data-target="cart"]');
+					t.trigger('click').addClass('disabled').find('.circles-menu__num').addClass('invisible');
+				}
+			}, 500);
+
+			return false;
 		});
 	}
 };

@@ -237,6 +237,15 @@
 	top -20px
 	left -45px
 
+	&__patch
+		position absolute
+		display block
+		top -10px
+		right 25px
+		height 10px
+		width 150px
+		background #fff
+
 	&__body
 		position absolute
 		top 110px
@@ -244,24 +253,39 @@
 		width 527px
 		min-height 120px
 
-		.b-cart-menu__patch
-			position absolute
-			display block
-			top -5px
-			right 25px
-			height 10px
-			width 150px
-			background #fff
-
 		&__goods
 			width 100%
+
+	&__results
+		text-align left
+		line-height 60px
+		padding 20px 30px
+		margin-right 200px
+		margin-bottom 0
+		font-size 16px
+		color #000
+
+	&__amount
+		width 120px
+		font-size 18px!important
+		font-weight 800
+		color $green
+		margin-left 30px
+
+	&__order-button
+		float right
+		margin 30px 32px 30px 0
 
 .b-order-item
 	font-size 0
 	line-height 30px
-	border-top 1px solid $grey
-	height 60px
+	border-bottom 1px solid $grey
+	height 63px
+	cursor default
 	clearfix()
+
+	&:hover
+		background $white
 	
 	& > div
 		font-size 16px
@@ -291,6 +315,32 @@
 
 	&__drop
 		position relative
+		width 37px
+		height 37px
+		border 2px solid transparent
+		border-radius 40px
+		margin-left 10px
+		cursor pointer
+		opacity 0.5
+		transition border-color, opacity 0.2s ease-in-out
+
+		&:before
+			content ''
+			display block
+			position absolute
+			top 50%
+			left 50%
+			margin -7px 0 0 -7px
+			sprite($icon__drop)
+		&:hover
+			border-color $red1
+			opacity 1
+		&:active
+			top 1px
+			border-color #882626
+			&:before
+				sprite($icon__drop__active)
+
 
 
 

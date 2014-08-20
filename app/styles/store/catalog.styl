@@ -245,10 +245,25 @@ section.store
 				border-top 1px solid #999
 
 			& + .b-price
-				margin-top -5px
+				/* margin-top -5px */
 
 	&__badges
 		display none
+
+	&__order-button
+		.btn-border
+			position relative
+			font-size 16px
+			padding 19px 28px 17px 60px
+
+			&:after
+				content ''
+				position absolute
+				top 50%
+				left 37px
+				margin -11px 0 0 -11px
+				sprite($icon__cart)
+
 
 /* Каталог в разных состояниях */
 .b-catalog__items
@@ -348,6 +363,16 @@ section.store
 				left 500px
 			&__info:after
 				display none
+
+			&__order-button
+			.btn-border
+				font-size 13px
+				padding 13px 21px 12px 46px
+
+				&:after
+					left 20px
+					margin -9px 0 0 0
+					sprite($icon__cart__small)
 
 
 /* Карточка при наведении */

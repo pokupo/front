@@ -23,9 +23,9 @@ section.header
 									a.b-profile-menu__logout#js-logout(href=js0) Выйти
 
 					.circles-menu__item.dropdown
-						a.with-icon.icon__cart.dropdown__trigger.active(href=js0 data-target="cart")
-							sup.circles-menu__num 3
-						.b-cart-menu.dropdown__content(data-target="cart")
+						a.with-icon.icon__cart.dropdown__trigger(href=js0 data-target="cart")
+							sup.circles-menu__num 19
+						.b-cart-menu.dropdown__content.hidden(data-target="cart")
 							p Корзина
 							.b-cart-menu__body
 								i.b-cart-menu__patch
@@ -37,10 +37,10 @@ section.header
 										.b-order-item__qty
 											span.b-increment-group
 												span.b-increment-group__darr
-												span.b-increment-group__qty 6
+												span.b-increment-group__qty 5
 												span.b-increment-group__uarr
 										.b-order-item__price.b-price
-											span.b-price__number 750
+											span.b-price__number 9000
 											span.b-price__thinsp &nbsp;
 											span.b-price__rubl Р
 										.b-order-item__drop
@@ -55,7 +55,7 @@ section.header
 												span.b-increment-group__qty 2
 												span.b-increment-group__uarr
 										.b-order-item__price.b-price
-											span.b-price__number 3750
+											span.b-price__number 4900
 											span.b-price__thinsp &nbsp;
 											span.b-price__rubl Р
 										.b-order-item__drop
@@ -67,18 +67,28 @@ section.header
 										.b-order-item__qty
 											span.b-increment-group
 												span.b-increment-group__darr
-												span.b-increment-group__qty 1
+												span.b-increment-group__qty 12
 												span.b-increment-group__uarr
 										.b-order-item__price.b-price
-											span.b-price__number 3750
+											span.b-price__number
+												| 35
+												i.b-price__separator
+												| 880
 											span.b-price__thinsp &nbsp;
 											span.b-price__rubl Р
 										.b-order-item__drop
 											span.drop
-
-									
-
-
+								
+								a.btn.btn-orange.btn-border.b-cart-menu__order-button(href=js0) Оформить
+								p.b-cart-menu__results
+									| Итог:
+									span.b-cart-menu__amount.b-price
+										span.b-price__number 
+											| 49
+											i.b-price__separator
+											| 780
+										span.b-price__thinsp &nbsp;
+										span.b-price__rubl Р
 
 					.circles-menu__item
 						a.with-icon.icon__mail(href=js0)
