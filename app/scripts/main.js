@@ -222,8 +222,11 @@ PKP.UI = {
 			var t = $(this).closest('.menu-login');
 			t.find('.not-logged-in').toggleClass('hidden');
 			t.find('.logged-in').toggleClass('hidden');
-
 		});
+		$('#js-advanced-search').on('click', function () {
+			$('section.advanced-search').toggleClass('active');
+			$('.b-advanced-search').slideToggle(500);
+		})
 	},
 	formatNumber: function (number, dSeparator, fSeparator) {
 		// Default digits & fraction separators

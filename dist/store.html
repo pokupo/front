@@ -83,8 +83,7 @@
 													</div>
 													<div class="b-order-item__price b-price"><span class="b-price__number">9000</span><span class="b-price__thinsp">&nbsp;</span><span class="b-price__rubl">Р</span>
 													</div>
-													<div class="b-order-item__drop"><span class="drop"></span>
-													</div>
+													<div class="b-order-item__drop btn-close"></div>
 												</li>
 												<li class="b-cart-menu__goods-item b-order-item">
 													<div class="b-order-item__name"><span>Converse Red</span>
@@ -93,8 +92,7 @@
 													</div>
 													<div class="b-order-item__price b-price"><span class="b-price__number">4900</span><span class="b-price__thinsp">&nbsp;</span><span class="b-price__rubl">Р</span>
 													</div>
-													<div class="b-order-item__drop"><span class="drop"></span>
-													</div>
+													<div class="b-order-item__drop btn-close"></div>
 												</li>
 												<li class="b-cart-menu__goods-item b-order-item">
 													<div class="b-order-item__name"><span>Штукатурка гипсовая для&nbsp;наружных работ</span>
@@ -103,8 +101,7 @@
 													</div>
 													<div class="b-order-item__price b-price"><span class="b-price__number">35<i class="b-price__separator"></i>880</span><span class="b-price__thinsp">&nbsp;</span><span class="b-price__rubl">Р</span>
 													</div>
-													<div class="b-order-item__drop"><span class="drop"></span>
-													</div>
+													<div class="b-order-item__drop btn-close"></div>
 												</li>
 											</ol><a href="javascript:void(0);" class="btn btn-orange btn-border b-cart-menu__order-button">Оформить</a>
 											<p class="b-cart-menu__results">Итог:<span class="b-cart-menu__amount b-price"><span class="b-price__number">49<i class="b-price__separator"></i>780</span><span class="b-price__thinsp">&nbsp;</span><span class="b-price__rubl">Р</span></span>
@@ -220,6 +217,15 @@
 							</div>
 						</div>
 						<button type="button" class="b-search__button">Найти</button>
+					</div>
+				</div>
+			</section>
+			<section class="advanced-search">
+				<div class="container">
+					<div class="advanced-search-trigger"><span id="js-advanced-search" class="advanced-search-trigger__text">Расширенный поиск</span>
+					</div>
+					<div style="display:none" class="b-advanced-search">
+						<p>да, скоро здесь будет поиск</p>
 					</div>
 				</div>
 			</section>
@@ -339,6 +345,9 @@
 					<div class="b-catalog">
 						<h1 id="js-nosidebar" class="b-catalog__title">Кеды</h1>
 						<div class="b-catalog__controls">
+							<aside class="b-catalog__quick-filter">
+								<input type="text" name="quick-filter" placeholder="Быстрый поиск..." class="b-catalog__quick-filter__input"><i class="b-catalog__quick-filter__icon"></i>
+							</aside>
 							<div class="b-catalog__controls-item">Сортировать
 								<div class="inline-sorter dropdown selector"><span data-target="sort" class="selector__current dropdown__trigger">по&nbsp;названию</span>
 									<div data-target="sort" class="dropdown__content selector__options hidden">
