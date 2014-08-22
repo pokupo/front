@@ -1,3 +1,187 @@
 .video
-	background #333
-	padding 0
+	max-height 549px
+	padding 138px 0 151px
+	position relative
+	background url('../images/bg/video-bg.jpg') 50% 50% no-repeat
+
+	&:before
+		content ''
+		position absolute
+		display block
+		top 0
+		bottom 0
+		left 0
+		right 0
+		background url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAADCAYAAABWKLW/AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAB5JREFUeNpi+P//fwMQM4AwA5QBFmAEi0BAA0CAAQAXVBZtq84nSQAAAABJRU5ErkJggg==') 50% 50% repeat
+
+	hgroup
+		text-align left
+		width 600px
+		margin 0
+		float left
+		color #fff
+
+		h1
+			font-size 45px
+			line-height 60px
+			font-weight 300
+		h2
+			margin-top 30px
+			font-size 30px
+			line-height 30px
+			font-weight 300
+
+	.b-video-trigger
+		position relative
+		float right
+		display block
+		width 240px
+		height 240px
+		margin 10px 81px 10px 0
+
+		border 8px solid #fff
+		border-radius 240px
+		background transparent
+		transition all 0.1s ease-in-out
+
+		&:after
+		&:before
+			content ''
+			position absolute
+			display block
+			
+		&:after
+			bottom -119px
+			left -294px
+			width 279px
+			height 80px
+			background url('../images/pages/lookhere.png') 50% 50% no-repeat
+
+		&:before
+			top 50%
+			left 50%
+			width 0
+			height 0
+			margin -55px 0 0 -38px
+			border 56px solid transparent
+			border-width 56px 100px 56px
+			border-left-color #fff
+
+		.icon
+			position absolute
+			display block
+			transition all 0.15s ease-in-out
+
+			&__basket
+				margin 0 0 0 -27px
+				top -98px
+				left 114px
+				sprite($icon-basket)
+
+			&__bag
+				margin -26px 0 0 -21px
+				top 18px
+				left 280px
+				sprite($icon-bag)
+
+			&__cart
+				margin -24px 0 0 -22px
+				top 211px
+				left 280px
+				sprite($icon-cart)
+
+			&__coins
+				margin -22px 0 0 -25px
+				bottom -103px
+				left 113px
+				sprite($icon-coins)
+
+			&__store
+				margin -22px 0 0 -25px
+				top 208px
+				left -52px
+				sprite($icon-store)
+
+			&__tag
+				margin -26px 0 0 -23px
+				top 17px
+				left -52px
+				sprite($icon-tag)
+
+		&:hover
+			box-shadow 0 0 100px -15px rgba(#fff, 0.25);
+			background rgba(#fff, 0.05);
+				
+
+			.icon
+				&__basket
+					// -4
+					top -94px
+
+				&__bag
+					top 20px
+					left 276px
+
+				&__cart
+					top 209px
+					left 276px
+
+				&__coins
+					bottom -99px
+
+				&__store
+					top 206px
+					left -48px
+
+				&__tag
+					top 19px
+					left -48px
+		&:active
+			top 1px
+			&:after
+				bottom -118px
+		
+
+
+.video-holder
+	position fixed
+	z-index 500
+	top 0
+	right 0
+	bottom 0
+	left 0
+	width 100%
+	height 100%
+	overflow hidden
+	background #000
+	user-select none
+
+	video
+		overflow hidden
+		height auto
+		width 100%
+
+	.close-video
+		position absolute
+		top 20px
+		right 20px
+		z-index 1
+		&:active
+			top 21px
+
+body.locked
+	position absolute
+	top 0
+	left -8px
+	width 100%
+	height 100%
+	overflow hidden
+
+
+
+
+
+
+
+
+

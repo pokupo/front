@@ -316,7 +316,17 @@
 			border-color #808080
 			&:before
 				sprite($icon__drop--white__active)
-			
+	&--orange
+		border-color $orange
+		opacity 1
+		&:before
+			sprite($icon__drop--orange)
+		&:hover
+		&:active
+			border-color $orange
+			background $orange
+			&:before
+				sprite($icon__drop--black)
 
 
 .b-order-item
@@ -325,6 +335,7 @@
 	border-bottom 1px solid $grey
 	height 63px
 	cursor default
+	user-select none
 	clearfix()
 
 	&:hover

@@ -8,12 +8,12 @@ PKP.init = function() {
 	PKP.Sliders.init();
 	PKP.UI.init();
 	PKP.UI.cart();
+	PKP.Video.init();
 };
 
 PKP.Sliders = {
 	init: function() {
-		$('#cases')
-			.fotorama({
+		$('#cases').fotorama({
 				width: '100%',
 				height: 620,
 				allowfullscreen: false,
@@ -59,8 +59,9 @@ PKP.Sliders = {
 				click: false
 			});
 		
-		// При хавере останавливать слайдер
 		if(PKP.$rates) {
+
+			// При хавере останавливать слайдер
 			var slider = PKP.$rates.data('fotorama');
 
 			$('.slider').hover(
@@ -71,27 +72,27 @@ PKP.Sliders = {
 					slider.startAutoplay(5000);
 				}
 			);
-		}
+		
+			// Контролы
+			$('.slider-control').click(function() {
+				if(PKP.$rates) {
+					var slider = PKP.$rates.data('fotorama');
 
-		// Контролы
-		$('.slider-control').click(function() {
-			if(PKP.$rates) {
-				var slider = PKP.$rates.data('fotorama');
-
-				if($(this).is('.next')) {
-					slider.show('>');
-				} else {
-					slider.show('<');
+					if($(this).is('.next')) {
+						slider.show('>');
+					} else {
+						slider.show('<');
+					}
 				}
-			}
-		});
+			});
 
-		// Заголовок
-		$('.slider').on('fotorama:show fotorama:load',
-			function (e, fotorama, extra) {
-				$(this).siblings('.slider-status').text(fotorama.data[fotorama.activeIndex].title);
-			}
-		);
+			// Заголовок
+			$('.slider').on('fotorama:show fotorama:load',
+				function (e, fotorama, extra) {
+					$(this).siblings('.slider-status').text(fotorama.data[fotorama.activeIndex].title);
+				}
+			);
+		}
 	}
 };
 
@@ -351,5 +352,29 @@ PKP.UI = {
 		});
 	}
 };
+
+PKP.Video = {
+	init: function() {
+		var pkPlayer = videojs("intro-video", { 
+			"width" : "auto",
+			"height": "100%",
+			"controls": true, 
+			"autoplay": false, 
+			"preload": "auto" 
+		});
+
+		$('#js-video').on('click',function () {
+			$('.video-holder').fadeIn(500);
+			PKP.$body.addClass('locked');
+			pkPlayer.play();
+		});
+
+		$('#js-close-video').on('click',function () {
+			$('.video-holder').fadeOut(500);
+			PKP.$body.removeClass('locked');
+			pkPlayer.pause().currentTime(0);
+		});
+	}
+}
 
 $($.proxy(PKP.init, PKP));
