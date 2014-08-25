@@ -13,7 +13,7 @@
 		<link sizes="120x120" href="images/icons/apple-touch-icon-120x120.png" rel="apple-touch-icon">
 		<link sizes="144x144" href="images/icons/apple-touch-icon-144x144.png" rel="apple-touch-icon">
 		<link sizes="152x152" href="images/icons/apple-touch-icon-152x152.png" rel="apple-touch-icon">
-		<meta name="application-name" content="О нас">
+		<meta name="application-name" content="Партнёры">
 		<meta name="msapplication-tooltip" content="Description for pokupo">
 		<meta name="msapplication-TileColor" content="#ffffff">
 		<meta name="msapplication-TileImage" content="images/icons/tile.png">
@@ -31,7 +31,7 @@
 		<meta name="HandheldFriendly" content="True">
 		<meta name="format-detection" content="telephone=no">
 		<meta name="format-detection" content="address=no">
-		<title>Тарифы</title>
+		<title>Партнёры</title>
 		<meta name="description" content="Description for pokupo">
 		<meta name="keywords" content="pokupo, project">
 		<meta name="copyright" content="©tabrisov">
@@ -44,7 +44,7 @@
 <script src="scripts/libs/nwmatcher.js"></script>
 <![endif]-->
 	</head>
-	<body class="grey">
+	<body>
 		<div class="main">
 			<section class="header">
 				<div class="container">
@@ -114,71 +114,28 @@
 							</div>
 						</div>
 					</div>
-					<ul class="menu b-navigation">
-						<li class="menu__item with-submenu"><a href="#"><span>Платформа</span></a>
-							<ul class="submenu">
-								<li class="submenu__item"><a href="#"><span>Особенности</span></a>
-								</li>
-								<li class="submenu__item"><a href="#"><span>Вопросы и ответы</span></a>
-								</li>
-								<li class="submenu__item"><a href="#"><span>Готовые решения</span></a>
-								</li>
-								<li class="submenu__item"><a href="#"><span>Торговая площадка</span></a>
-								</li>
-							</ul>
-						</li>
-						<li class="menu__item"><a href="rates.html"><span>Тарифы</span></a>
-						</li>
-						<li class="menu__item active"><a href="community.html"><span>Сообщество</span></a>
-						</li>
-						<li class="menu__item with-submenu"><a href="#"><span>Помощь</span></a>
-							<ul class="submenu">
-								<li class="submenu__item"><a href="#"><span>Техническая поддержка</span></a>
-								</li>
-								<li class="submenu__item"><a href="#"><span>Видео курсы</span></a>
-								</li>
-								<li class="submenu__item"><a href="#"><span>Семинары</span></a>
-								</li>
-							</ul>
-						</li>
-						<li class="menu__item with-submenu"><a href="#"><span>Компания</span></a>
-							<ul class="submenu">
-								<li class="submenu__item"><a href="#"><span>Новости</span></a>
-								</li>
-								<li class="submenu__item"><a href="#"><span>Контакты</span></a>
-								</li>
-								<li class="submenu__item"><a href="#"><span>О нас</span></a>
-								</li>
-								<li class="submenu__item"><a href="#"><span>Партнеры</span></a>
-								</li>
-								<li class="submenu__item"><a href="#"><span>Блог</span></a>
-								</li>
-							</ul>
-						</li>
-					</ul>
+					<ul class="menu"></ul>
 					<div class="submenu-bg"></div>
 				</div>
 			</section>
-			<section class="community">
-				<div class="container">
-					<h1 class="with-icon">Сообщество</h1>
-					<p>Наша команда объединяет людей с общими принципами и общей миссией.</p>
-					<p>Для прямого контакта всех участников проекта мы используем различные сервисы и службы.
-						<br/>Нам очень важно постоянно быть в контакте друг с другом, с нашими партнерами и пользователями.
-						<br/>Мы искренне убеждены, что без общего участия в проекте всех заинтересованных сторон,
-						<br/>он не сможет эффективно развиваться и совешенствоваться.</p>
-					<ul class="socials">
-						<li><a href="javascript:void(0);" class="btn btn-social btn-social__vk">Посетить<i class="icon"></i></a>
-						</li>
-						<li><a href="javascript:void(0);" class="btn btn-social btn-social__gp">Посетить<i class="icon"></i></a>
-						</li>
-						<li><a href="javascript:void(0);" class="btn btn-social btn-social__lj">Посетить<i class="icon"></i></a>
-						</li>
-						<li><a href="javascript:void(0);" class="btn btn-social btn-social__tw">Посетить<i class="icon"></i></a>
-						</li>
-					</ul>
+			<div class="popup join">
+				<header class="patterned black">
+					<h1 class="with-icon">Заявка на партнёрство</h1><span class="close-popup btn-circle btn-circle--drop btn-circle--orange"></span>
+				</header>
+				<div class="content">
+					<form>
+						<div class="input-holder">
+							<input name="name" type="text" placeholder="Ваше имя" class="inline-input">
+						</div>
+						<div class="input-holder">
+							<input name="mail" type="email" placeholder="Ваш e-mail" class="inline-input">
+						</div>
+						<div class="input-holder">
+							<textarea name="text" rows="4" placeholder="Текст сообщение" class="inline-input"></textarea>
+						</div><a href="javascript:void(0);" class="btn btn-grey btn-big">Отмена</a><a href="javascript:void(0);" class="btn btn-orange btn-big">Отправить</a>
+					</form>
 				</div>
-			</section>
+			</div>
 			<div class="footer-overlay"></div>
 		</div>
 		<footer class="footer">
@@ -251,6 +208,5 @@
 		<script src="http://vjs.zencdn.net/4.7/video.js"></script>
 		<script src="scripts/libs/fotorama.js"></script>
 		<script src="scripts/libs/carousel.min.js"></script>
-		<script src="scripts/main.js"></script>
 	</body>
 </html>

@@ -13,7 +13,7 @@
 		<link sizes="120x120" href="images/icons/apple-touch-icon-120x120.png" rel="apple-touch-icon">
 		<link sizes="144x144" href="images/icons/apple-touch-icon-144x144.png" rel="apple-touch-icon">
 		<link sizes="152x152" href="images/icons/apple-touch-icon-152x152.png" rel="apple-touch-icon">
-		<meta name="application-name" content="О нас">
+		<meta name="application-name" content="О проекте">
 		<meta name="msapplication-tooltip" content="Description for pokupo">
 		<meta name="msapplication-TileColor" content="#ffffff">
 		<meta name="msapplication-TileImage" content="images/icons/tile.png">
@@ -31,7 +31,7 @@
 		<meta name="HandheldFriendly" content="True">
 		<meta name="format-detection" content="telephone=no">
 		<meta name="format-detection" content="address=no">
-		<title>Тарифы</title>
+		<title>О нас</title>
 		<meta name="description" content="Description for pokupo">
 		<meta name="keywords" content="pokupo, project">
 		<meta name="copyright" content="©tabrisov">
@@ -44,7 +44,7 @@
 <script src="scripts/libs/nwmatcher.js"></script>
 <![endif]-->
 	</head>
-	<body class="grey">
+	<body>
 		<div class="main">
 			<section class="header">
 				<div class="container">
@@ -114,7 +114,7 @@
 							</div>
 						</div>
 					</div>
-					<ul class="menu b-navigation">
+					<ul class="menu menu--opened b-navigation">
 						<li class="menu__item with-submenu"><a href="#"><span>Платформа</span></a>
 							<ul class="submenu">
 								<li class="submenu__item"><a href="#"><span>Особенности</span></a>
@@ -129,7 +129,7 @@
 						</li>
 						<li class="menu__item"><a href="rates.html"><span>Тарифы</span></a>
 						</li>
-						<li class="menu__item active"><a href="community.html"><span>Сообщество</span></a>
+						<li class="menu__item"><a href="community.html"><span>Сообщество</span></a>
 						</li>
 						<li class="menu__item with-submenu"><a href="#"><span>Помощь</span></a>
 							<ul class="submenu">
@@ -141,42 +141,101 @@
 								</li>
 							</ul>
 						</li>
-						<li class="menu__item with-submenu"><a href="#"><span>Компания</span></a>
-							<ul class="submenu">
-								<li class="submenu__item"><a href="#"><span>Новости</span></a>
+						<li class="menu__item with-submenu active"><a href="#"><span>Компания</span></a>
+							<ul class="submenu active">
+								<li class="submenu__item"><a href="events.html"><span>Новости</span></a>
 								</li>
 								<li class="submenu__item"><a href="#"><span>Контакты</span></a>
 								</li>
-								<li class="submenu__item"><a href="#"><span>О нас</span></a>
+								<li class="submenu__item active"><a href="#"><span>О нас</span></a>
 								</li>
-								<li class="submenu__item"><a href="#"><span>Партнеры</span></a>
+								<li class="submenu__item"><a href="partners.html"><span>Партнеры</span></a>
 								</li>
 								<li class="submenu__item"><a href="#"><span>Блог</span></a>
 								</li>
 							</ul>
 						</li>
 					</ul>
-					<div class="submenu-bg"></div>
+					<div class="submenu-bg active"></div>
 				</div>
 			</section>
-			<section class="community">
+			<section class="black team">
 				<div class="container">
-					<h1 class="with-icon">Сообщество</h1>
-					<p>Наша команда объединяет людей с общими принципами и общей миссией.</p>
-					<p>Для прямого контакта всех участников проекта мы используем различные сервисы и службы.
-						<br/>Нам очень важно постоянно быть в контакте друг с другом, с нашими партнерами и пользователями.
-						<br/>Мы искренне убеждены, что без общего участия в проекте всех заинтересованных сторон,
-						<br/>он не сможет эффективно развиваться и совешенствоваться.</p>
-					<ul class="socials">
-						<li><a href="javascript:void(0);" class="btn btn-social btn-social__vk">Посетить<i class="icon"></i></a>
-						</li>
-						<li><a href="javascript:void(0);" class="btn btn-social btn-social__gp">Посетить<i class="icon"></i></a>
-						</li>
-						<li><a href="javascript:void(0);" class="btn btn-social btn-social__lj">Посетить<i class="icon"></i></a>
-						</li>
-						<li><a href="javascript:void(0);" class="btn btn-social btn-social__tw">Посетить<i class="icon"></i></a>
-						</li>
-					</ul>
+					<h1>Наша команда</h1>
+					<p>Наша команда объединяет честных, профессиональных и активных
+						<br/>пользователей сети, мы всегда открыты к диалогу и поддержке новых участников.
+						<br/>Вы можете рассчитывать на нашу помощь и всестороннюю
+						<br/>поддержку, мы готовы учиться сами и обучать своих партнеров.</p>
+					<div class="team-list">
+						<div class="person">
+							<img src="images/pages/userpic.png" class="person__photo">
+							<h3 class="person__name">Константин Константинопольский</h3>
+							<p class="person__position">Генеральный директор</p>
+							<p class="person__about">Характер — нордический, выдержанный. С товарищами по работе поддерживает хорошие отношения. Безукоризненно выполняет служебный долг. Беспощаден к врагам Рейха.</p>
+						</div>
+						<div class="person"><i class="person__photo person__photo--female"></i>
+							<h3 class="person__name">Лия Матюхина-Иванова</h3>
+							<p class="person__position">Генеральный директор</p>
+							<p class="person__about">Характер — нордический, выдержанный. С товарищами по работе поддерживает хорошие отношения. Безукоризненно выполняет служебный долг. Беспощаден к врагам Рейха.</p>
+						</div>
+						<div class="person"><i class="person__photo person__photo--male"></i>
+							<h3 class="person__name">Аствацатур Гибарян</h3>
+							<p class="person__position">Генеральный директор</p>
+							<p class="person__about">Характер — нордический, выдержанный. С товарищами по работе поддерживает хорошие отношения. Безукоризненно выполняет служебный долг. Беспощаден к врагам Рейха.</p>
+						</div>
+						<div class="person"><i class="person__photo person__photo--male"></i>
+							<h3 class="person__name">Ян Баев</h3>
+							<p class="person__position">Генеральный директор</p>
+							<p class="person__about">Характер — нордический, выдержанный. С товарищами по работе поддерживает хорошие отношения. Безукоризненно выполняет служебный долг. Беспощаден к врагам Рейха.</p>
+						</div>
+						<div class="person"><i class="person__photo person__photo--female"></i>
+							<h3 class="person__name">Арья Старк</h3>
+							<p class="person__position">Генеральный директор</p>
+							<p class="person__about">Характер — нордический, выдержанный. С товарищами по работе поддерживает хорошие отношения. Безукоризненно выполняет служебный долг. Беспощаден к врагам Рейха.</p>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section class="contacts">
+				<div class="container">
+					<div class="columns">
+						<div class="first column">
+							<div class="content">
+								<h1>Контакты</h1>
+								<dl class="contacts__list"><dt>Главный офис</dt>
+									<dd>
+										<p>Иркутск, Литвинова 20</p>
+										<p><span class="label">Написать<br/></span><a href="mailto:support@pokupo.ru">support@pokupo.ru</a>
+										</p>
+										<p><span class="label">Skype консультанта<br/></span><a href="skype:pokupo?chat">pokupo</a>
+										</p>
+										<p><span class="label">Позвонить<br/></span><a href="tel:+73952201568">+7 395 220 15 68</a>
+										</p>
+									</dd><dt>Филиал</dt>
+									<dd>
+										<p>Новосибирск, Николаева 12, Технопарк</p>
+										<p><span class="label">Написать<br/></span><a href="mailto:support@pokupo.ru">support@pokupo.ru</a>
+										</p>
+										<p><span class="label">Skype консультанта<br/></span><a href="skype:pokupo?chat">pokupo</a>
+										</p>
+										<p><span class="label">Позвонить<br/></span><a href="tel:+73952201568">+7 395 220 15 68</a>
+										</p>
+									</dd>
+								</dl>
+							</div>
+						</div>
+						<div class="second triple column">
+							<div class="content">
+								<h1>Реквизиты</h1>
+								<p><b class="label">Номер расчетного счета в рублях<br/></b>р/сч 40702810300000000610
+									<br/>к/сч 30101810900000000848 в ОАО АКБ «Связь-Банк»
+									<br/>БИК 044525848</p>
+								<p><b class="label">Полное наименование учреждения банка клиента<br/></b>Межрегиональный коммерческий банк развития связи и информатики (открытое акционерное общество) «Связь-Банк»</p>
+								<p><b class="label">Местонахождение учреждения банка<br/></b>125375, г. Москва, ул. Тверская, д. 7 тел. +7 (495) 771-32-60</p>
+								<p><b class="label">Код причины постановки на учет (КПП)<br/></b>784001001</p>
+							</div>
+						</div>
+					</div>
 				</div>
 			</section>
 			<div class="footer-overlay"></div>

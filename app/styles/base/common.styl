@@ -302,6 +302,43 @@ hgroup
 	right 20px
 
 
+.full-width
+	position relative
+
+	&:after
+	&:before
+		position absolute
+		content ''
+		display block
+		top 0
+		bottom 0
+		width 100%
+		z-index 1
+
+	&:after
+		left 100%
+	&:before
+		right 100%
+
+	&.orange
+		background $orange
+		&:after
+		&:before
+			background $orange
+			
+	&.green
+		background $green
+		&:after
+		&:before
+			background $green
+	&.grey
+		background $grey
+		&:after
+		&:before
+			background $grey
+
+
+
 .hidden
 	display none
 

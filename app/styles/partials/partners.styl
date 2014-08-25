@@ -1,0 +1,139 @@
+.partnership
+	background $white
+	padding 40px 0 0
+	
+	hgroup
+		margin-bottom 55px
+
+		h1 
+			margin-bottom 20px
+
+		&.with-icon
+			margin-bottom 0
+			padding-bottom 15px
+
+			&.icon__chair
+				&:before
+					sprite($chair)
+					margin 38px 0 0 -34px
+
+				&:after
+					border-color #fff
+
+			&.icon__note
+				&:before
+					sprite($note)
+					margin 42px 0 0 -48px
+
+				&:after
+					border-color #fff
+
+.accordeon
+	background none
+
+	&__header
+		padding 32px 0 20px
+		background $green
+		position relative
+		cursor pointer
+
+	&__trigger
+		transform rotate(0deg)
+		transition transform 0.4s ease-in-out
+		&.active
+			transform rotate(180deg)
+			&:before
+				margin-top -13px
+	
+	&__content
+		display none
+		position relative
+		padding 50px 0 40px
+		text-align left
+
+		&:before
+			content ''
+			display block
+			position absolute
+			top 0
+			left 50%
+			margin 0 0 0 -12px
+			width 0
+			height 0
+			border-style solid
+			border-width 12px
+			border-color transparent
+
+		.columns.triple
+			margin-right -100px
+
+			.content
+				margin-right 100px
+		b 
+			font-weight 800
+
+
+	.orange.accordeon__header
+		color #000
+
+		& + .accordeon__content
+			&:before
+				border-top-color $orange
+		hgroup.with-icon:after
+			border-color #000
+
+	.green.accordeon__header
+		background $green
+		color #fff
+
+		& + .accordeon__content
+			&:before
+				border-top-color $green
+
+	
+
+.partners
+	padding 20px 0 40px
+
+.b-partners
+	font-size 0
+	margin-top 40px
+	border 1px solid $grey
+	border-width 1px 0 0 1px
+
+	&__item
+		display inline-block
+		vertical-align top
+		border 1px solid $grey
+		border-width 0 1px 1px 0
+		height 375px
+		width 33.3333%
+		padding 30px 40px
+
+.b-partner
+	font-size 13px
+
+	&__logo
+		height 140px
+		display inline-block
+		vertical-align middle
+		line-height 140px
+		img 
+			vertical-align middle
+			display inline-block
+
+	&__name
+		font-weight 800
+		font-size 13px
+		line-height 20px
+
+	&__link
+		margin-bottom 20px
+		display inline-block
+
+	&__descr
+		overflow hidden
+		max-height 9em
+
+	&:hover
+		background #fdfdfd

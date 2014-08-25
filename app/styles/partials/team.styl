@@ -1,11 +1,15 @@
-.team .grey
-	padding 40px 0
+.team 
+	.grey
+		padding 40px 0
+	h1
+		margin-bottom 20px
 	
 .person
 	position relative
 	width 270px
 	padding 0 20px 0 0
 	display inline-block
+	vertical-align top
 
 	&__name
 		font-weight bold
@@ -51,10 +55,20 @@
 			&:after
 				sprite($female)
 
+.team-list
+	padding-top 13px
+	margin-right -57px
+
+	.person
+		margin-right 57px
+
+	.person__about
+		color #ccc
+
 
 .our-team
 	position relative
-	margin 30px -20px 0 0
+	margin 10px -20px 0 0
 	padding 0 0 0
 	width 999px
 

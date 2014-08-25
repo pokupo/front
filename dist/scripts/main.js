@@ -127,6 +127,21 @@ PKP.UI = {
 		});
 
 		/* «Выпадайка» */
+		PKP.$body.on("click", '.accordeon__header', function(e) {
+			e.preventDefault();
+			var $this = $(this);
+			
+			$this
+				.find('.accordeon__trigger')
+				.toggleClass('active')
+				.closest('.accordeon')
+				.toggleClass('active')
+				.find('.accordeon__content')
+				.slideToggle(500)
+			;
+		});
+
+		/* «Выпадайка» */
 		PKP.$body.on("click", '.dropdown__trigger', function(e) {
 			e.preventDefault();
 			var $this = $(this);
@@ -355,26 +370,33 @@ PKP.UI = {
 
 PKP.Video = {
 	init: function() {
-		var pkPlayer = videojs("intro-video", { 
-			"width" : "auto",
-			"height": "100%",
-			"controls": true, 
-			"autoplay": false, 
-			"preload": "auto" 
-		});
+		if($('#intro-video').length > 0) {
+			var pkPlayer = videojs("intro-video", { 
+				"width" : "100%",
+				"height": "100%",
+				"controls": true, 
+				"autoplay": false, 
+				"preload": "auto" 
+			});
 
-		$('#js-video').on('click',function () {
-			$('.video-holder').fadeIn(500);
-			PKP.$body.addClass('locked');
-			pkPlayer.play();
-		});
+			$('#js-video').on('click',function () {
+				PKP.$body.addClass('locked');
+				$('.video-holder').fadeIn(400, function() {
+					// pkPlayer.requestFullscreen();
+					pkPlayer.play();
+				});
+			});
 
-		$('#js-close-video').on('click',function () {
-			$('.video-holder').fadeOut(500);
-			PKP.$body.removeClass('locked');
-			pkPlayer.pause().currentTime(0);
-		});
+			$('#js-close-video').on('click',function () {
+				$('.video-holder').fadeOut(400,function(){
+					PKP.$body.removeClass('locked');
+					pkPlayer.pause().currentTime(0);
+				});
+			});
+		}
 	}
 }
 
 $($.proxy(PKP.init, PKP));
+
+

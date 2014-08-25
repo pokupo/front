@@ -1,0 +1,137 @@
+extends partials/layouts/inner
+
+block head
+	- page.title = 'О нас';
+
+block menu 
+	+menu-list([
+		{text:"Платформа",href:"#",submenu:[
+			{text:"Особенности",href:"#"},
+			{text:"Вопросы и ответы",href:"#"},
+			{text:"Готовые решения",href:"#"},
+			{text:"Торговая площадка",href:"#"}
+		]},
+		{text:"Тарифы",href:"rates.html"},
+		{text:"Сообщество",href:"community.html"},
+		{text:"Помощь",href:"#",submenu:[
+			{text:"Техническая поддержка",href:"#"},
+			{text:"Видео курсы",href:"#"},
+			{text:"Семинары",href:"#"}]},
+		{text:"Компания", href:"#", active:true, submenu:[
+			{text:"Новости",href:"events.html"},
+			{text:"Контакты",href:"#"},
+			{text:"О нас",href:"#", active:true},
+			{text:"Партнеры",href:"partners.html"},
+			{text:"Блог",href:"#"}
+		]}
+	])(class="b-navigation")
+
+block content
+	section.black.team
+		.container
+			h1 Наша команда
+
+			p 
+				| Наша команда объединяет честных, профессиональных и активных<br/>
+				| пользователей сети, мы всегда открыты к диалогу и поддержке новых участников.<br/>
+				| Вы можете рассчитывать на нашу помощь и всестороннюю<br/>
+				| поддержку, мы готовы учиться сами и обучать своих партнеров.
+
+			
+			.team-list
+				div.person
+					img.person__photo(src="images/pages/userpic.png")
+					h3.person__name Константин Константинопольский
+					p.person__position Генеральный директор
+					p.person__about
+						| Характер — нордический, выдержанный. С товарищами по работе поддерживает хорошие отношения. Безукоризненно выполняет служебный долг. Беспощаден к врагам Рейха.
+
+				div.person
+					i.person__photo.person__photo--female
+					h3.person__name Лия Матюхина-Иванова
+					p.person__position Генеральный директор
+					p.person__about
+						| Характер — нордический, выдержанный. С товарищами по работе поддерживает хорошие отношения. Безукоризненно выполняет служебный долг. Беспощаден к врагам Рейха.
+
+				div.person
+					i.person__photo.person__photo--male
+					h3.person__name Аствацатур Гибарян
+					p.person__position Генеральный директор
+					p.person__about
+						| Характер — нордический, выдержанный. С товарищами по работе поддерживает хорошие отношения. Безукоризненно выполняет служебный долг. Беспощаден к врагам Рейха.
+				div.person
+					i.person__photo.person__photo--male
+					h3.person__name Ян Баев
+					p.person__position Генеральный директор
+					p.person__about
+						| Характер — нордический, выдержанный. С товарищами по работе поддерживает хорошие отношения. Безукоризненно выполняет служебный долг. Беспощаден к врагам Рейха.
+
+				div.person
+					i.person__photo.person__photo--female
+					h3.person__name Арья Старк
+					p.person__position Генеральный директор
+					p.person__about
+						| Характер — нордический, выдержанный. С товарищами по работе поддерживает хорошие отношения. Безукоризненно выполняет служебный долг. Беспощаден к врагам Рейха.
+	section.contacts
+		.container
+			.columns
+				.first.column
+					.content
+						h1 Контакты
+
+						dl.contacts__list
+							dt Главный офис
+							dd
+								p Иркутск, Литвинова 20
+
+								p 
+									span.label Написать<br/>
+									a(href="mailto:support@pokupo.ru") support@pokupo.ru
+
+								p 
+									span.label Skype консультанта<br/>
+									a(href="skype:pokupo?chat") pokupo
+								p
+									span.label Позвонить<br/>
+									a(href="tel:+73952201568") +7 395 220 15 68
+
+							dt Филиал
+							dd
+								p Новосибирск, Николаева 12, Технопарк
+
+								p 
+									span.label Написать<br/>
+									a(href="mailto:support@pokupo.ru") support@pokupo.ru
+
+								p 
+									span.label Skype консультанта<br/>
+									a(href="skype:pokupo?chat") pokupo
+								p
+									span.label Позвонить<br/>
+									a(href="tel:+73952201568") +7 395 220 15 68
+
+
+				.second.triple.column
+					.content
+						h1 Реквизиты
+						p 
+							b.label Номер расчетного счета в рублях<br/>
+							| р/сч 40702810300000000610<br/>
+							| к/сч 30101810900000000848 в ОАО АКБ «Связь-Банк» <br/>
+							| БИК 044525848
+						p
+							b.label Полное наименование учреждения банка клиента<br/>
+							| Межрегиональный коммерческий банк развития связи и информатики (открытое акционерное общество) «Связь-Банк»
+						p
+							b.label Местонахождение учреждения банка<br/>
+							| 125375, г. Москва, ул. Тверская, д. 7 тел. +7 (495) 771-32-60
+						p
+							b.label Код причины постановки на учет (КПП)<br/>
+							| 784001001
+
+
+
+
+
+block scripts
+	+script(['main.js'])
