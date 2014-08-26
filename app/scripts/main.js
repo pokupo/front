@@ -98,6 +98,7 @@ PKP.Sliders = {
 
 PKP.UI = {
 	init: function() {
+		PKP.UI.popup();
 		/* Главное меню */
 		$('.header .with-submenu').hover(
 			function() {
@@ -242,7 +243,12 @@ PKP.UI = {
 		$('#js-advanced-search').on('click', function () {
 			$('section.advanced-search').toggleClass('active');
 			$('.b-advanced-search').slideToggle(500);
-		})
+		});
+
+		/* Снимаем класс ошибки при фокусе */
+		$('input.error').on('focus', function() {
+			$(this).removeClass('error');
+		});
 	},
 	formatNumber: function (number, dSeparator, fSeparator) {
 		// Default digits & fraction separators
@@ -357,13 +363,86 @@ PKP.UI = {
 			setTimeout(function(){
 				$tr.remove();
 
-				if($(".b-cart-menu__goods li").length == 0) {
+				if($(".b-cart-menu__goods li").length === 0) {
 					var t = $('.dropdown__trigger[data-target="cart"]');
 					t.trigger('click').addClass('disabled').find('.circles-menu__num').addClass('invisible');
 				}
 			}, 500);
 
 			return false;
+		});
+	},
+	popup: function() {
+		// Форма "задать ворпос"
+		$("#js-join").click(function(){
+			var request_form = $("#request_form");
+
+			// Скрываем результаты отправки, если уже отправляли.
+			// Показываем форму, если была скрыта
+			request_form.find('.send_request_result').hide();
+			request_form.find('#request_form_wrapper').show();
+
+			request_form.show(); //.find("input").eq(0).focus();
+			
+			return false;
+		});
+		
+		$("#js-close_request_form").click(function(){
+			$("#request_form").hide();
+			return false;
+		});
+		
+		// Отправка заявки
+		$("#js-send-request").click(function(){
+			var request_name  = $("#request_name");
+			var request_email = $("#request_email");
+			var request 	  = $("#request_text");
+
+			if (request_name.val().length > 0 && request_email.val().length > 0) {
+				
+				$.ajax({
+					type: 'POST',
+					url: '/api',
+					data: {
+						name: request_name.val(), 
+						email: request_email.val(),
+						text: request.val()
+					},
+					success: function(result){
+						if (result === 'success') {
+							request.val('');
+							request_name.val('');
+							request_email.val('');
+							
+							$('#request_form_wrapper').hide();
+							$("#send_request_success").show();
+						} else {
+							$("#send_request_fail").show();
+						}
+					},
+					error: function (xhr, ajaxOptions, thrownError) {
+						console.error(xhr.status);
+						console.error(thrownError);
+						$('#request_form_wrapper').hide();
+						$("#send_request_fail").show();
+					},
+					dataType: 'html'
+				});
+			
+			} else {
+				request_name.focus(); // addClass('error');
+			}
+
+			return false;
+		});
+		
+		// Предотвращаем закрытие окна при клике внутри него
+		$(".popup").click(function(event){
+			event.stopPropagation();
+		});
+
+		PKP.$body.click(function(){
+			$("#request_form").hide();
 		});
 	}
 };
