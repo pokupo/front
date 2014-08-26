@@ -4487,6 +4487,12 @@ h2.tagline {
 .popup header .close-popup:active {
 	top: 11px;
 }
+.popup.join header h1.with-icon:before {
+	width: 84px;
+	height: 84px;
+	background-image: url('../images/sprite.png');
+	background-position: -629px 0;
+}
 .popup footer {
 	padding: 18px 0 35px;
 	border-top: 2px solid #efece7;
@@ -4661,11 +4667,11 @@ h2.tagline {
 	box-shadow: none;
 }
 .popup.join .btn-big.btn-orange {
+	margin-right: 30px;
 	padding-right: 60px;
 	padding-left: 60px;
 }
 .popup.join .btn-big.btn-grey {
-	margin-right: 25px;
 	padding-right: 30px;
 	padding-left: 30px;
 }
