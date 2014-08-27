@@ -37,4 +37,77 @@ section.advanced-search
 		.advanced-search-trigger
 			span.advanced-search-trigger__text#js-advanced-search Расширенный поиск
 		.b-advanced-search(style="display:none")
-			p да, скоро здесь будет поиск
+			.columns.triple
+				.first.column
+					.content
+						.b-location.dropdown.selector
+							a.b-location__current.dropdown__trigger.selector__current(href=js0 data-target="location") Все категории
+
+							.dropdown__content.hidden(data-target="location")
+								.b-location__catalog.selector__options
+									+search-list([
+										{text:"Все разделы",href:"#", active: true},
+										{text:"Компьютерная техника",href:"#"},
+										{text:"Бытовая техника",href:"#"},
+										{text:"Телефоны и связь",href:"#"},
+										{text:"Фото и оптика",href:"#"},
+										{text:"Одежда, обувь, акксессуары",href:"#", submenu:[
+											{text:"Кроссовки",href:"#"},
+											{text:"Кеды",href:"#"},
+											{text:"Босоножки",href:"#"},
+											{text:"Туфли",href:"#"},
+											{text:"Ботильоны",href:"#"},
+											{text:"Сандалии",href:"#"},
+											{text:"Балетки",href:"#"},
+											{text:"Сапоги",href:"#"},
+											{text:"Резиновая обувь",href:"#"}
+											]},
+										{text:"Подарки и праздники",href:"#"},
+										{text:"Книги, учебники и журналы",href:"#"},
+										{text:"Мебель, интерьеры и обиход",href:"#"},
+										{text:"Другое",href:"#"}])
+				.second.column
+					.content
+						.input-holder
+							input.inline-input(name="login" type="text" placeholder="Ключевые слова")
+						.input-holder
+							select(name="select")
+								option(value="0" selected) Любое из слов
+								option(value="1") Все слова
+						.input-holder
+							input.inline-input(name="login" type="text" placeholder="Исключить слова")
+				.third.column
+					.content
+						.input-holder
+							label(for="currency") Валюта
+							.radio-circles
+								ul.menu
+									li.menu__item.active
+										a(href=js0)
+											i.icon.icon__currency--rub
+									li.menu__item
+										a(href=js0)
+											i.icon.icon__currency--dol
+									li.menu__item
+										a(href=js0)
+											i.icon.icon__currency--btc
+						.input-holder
+							label(for="minPrice") Цена
+							input#minPrice.inline-input.inline-input--small(name="minPrice" type="text" placeholder="от")
+							label(for="maxPrice").separator —
+							input#maxPrice.inline-input.inline-input--small(name="maxPrice" type="text" placeholder="до")
+						.input-holder
+							select(name="select")
+								option(value="0" selected) Все продавцы
+								option(value="1") Частное лицо
+								option(value="2") Компания
+			span.btn.btn-orange.btn-big.b-advanced-search__submit
+				| Начать расширенный поиск 
+				i.icon
+
+
+
+
+
+
+

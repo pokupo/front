@@ -2,6 +2,34 @@
 section.search
 	padding 14px 0
 
+.b-location
+	height 52px
+	background #fff
+	border-left 2px solid $grey
+	text-align left
+
+	&__current
+		position relative
+		display block
+		width 100%
+		height 52px
+		padding 0 20px
+		z-index 5
+
+		color $a__link
+		font-size 13px
+		line-height 52px
+		font-weight 800
+		text-decoration none
+
+	&__catalog
+		.menu
+			position relative
+			
+	.dropdown__content
+		padding-top 52px
+		z-index 4
+
 .b-search
 	position relative
 	margin-right 190px
@@ -53,39 +81,13 @@ section.search
 		padding 5px 18px
 		box-sizing border-box!important
 		color #333
-		
-.b-location
-	float right
-	margin-right -273px
-	width 273px
-	height 52px
-	
-	background #fff
-	border-left 2px solid $grey
-	text-align left
-	z-index 9
 
-	&__current
-		position relative
-		display block
-		width 100%
-		height 52px
-		padding 0 20px
-		z-index 5
+	.b-location
+		float right
+		margin-right -273px
+		width 273px
+		z-index 9
 
-		color $a__link
-		font-size 13px
-		line-height 52px
-		font-weight 800
-		text-decoration none
-
-	&__catalog
-		.menu
-			position relative
-			
-	.dropdown__content
-		padding-top 52px
-		z-index 4
 
 /* Расширенный поиск */
 section.advanced-search
@@ -107,15 +109,56 @@ section.advanced-search
 		background $grey
 		margin-bottom 45px
 		padding-bottom 40px
+		& + .catalog-banner
+			margin-top -45px
+
+	.input-holder
+		height 52px
+		margin-bottom 17px
+
+		.radio-circles
+			height 52px
+			line-height 52px
+			.menu__item
+				vertical-align middle
+
+	.third.column
+		.input-holder
+			text-align right
+
+	.inline-input
+		height 52px
+		color #333
+		border-width 2px
+		padding 15px 19px
+		&--small
+			padding 15px
+
+	label
+		margin-right 8px
+
+		&.separator
+			margin 0 2px
+
 
 
 .b-advanced-search
-	height 200px
+	margin-top 30px
 
-	p
-		margin-top 15px
-		font-size 30px
-		color #999
-		line-height 140px
-		padding 30px
-		border 3px dashed #ccc
+	&__submit
+		width 100%
+		font-size 16px
+		margin-top 14px
+		padding 19px 90px 17px
+		font-weight bold
+
+		i.icon
+			display inline-block
+			margin -10px 0 -8px 6px
+			sprite($icon__search--black)
+		&:hover
+			i.icon
+				sprite($icon__search)
+
+
+	

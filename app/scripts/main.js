@@ -41,6 +41,26 @@ PKP.Sliders = {
 		if($('.rates').length){
 			PKP.Sliders.rates();
 		}
+
+		if($('.catalog-banner').length > 0){
+			PKP.Sliders.catalogBanner();
+		}
+	},
+
+	catalogBanner: function() {
+		$('.b-catalog-banner').fotorama({
+			width: '100%',
+			height: 330,
+			allowfullscreen: false,
+			loop: true,
+			autoplay: false,
+			stopautoplayontouch: true,
+			nav: 'dots',
+			arrows: false,
+			shadows: false,
+			transition: 'crossfade',
+			fit: 'cover'
+		});
 	},
 	
 	rates: function() {
@@ -99,6 +119,13 @@ PKP.Sliders = {
 PKP.UI = {
 	init: function() {
 		PKP.UI.popup();
+
+		/* Селекты */
+		$('select').chosen({
+			disable_search_threshold: 6,
+			width: '100%'
+		});
+
 		/* Главное меню */
 		$('.header .with-submenu').hover(
 			function() {

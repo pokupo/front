@@ -13,7 +13,7 @@
 		<link sizes="120x120" href="images/icons/apple-touch-icon-120x120.png" rel="apple-touch-icon">
 		<link sizes="144x144" href="images/icons/apple-touch-icon-144x144.png" rel="apple-touch-icon">
 		<link sizes="152x152" href="images/icons/apple-touch-icon-152x152.png" rel="apple-touch-icon">
-		<meta name="application-name" content="Тарифы">
+		<meta name="application-name" content="Pokupo">
 		<meta name="msapplication-tooltip" content="Description for pokupo">
 		<meta name="msapplication-TileColor" content="#ffffff">
 		<meta name="msapplication-TileImage" content="images/icons/tile.png">
@@ -38,7 +38,6 @@
 		<meta name="reply-to" content="jiexa@tabrisov.ru">
 		<link href="images/icons/favicon.ico" rel="shortcut icon">
 		<link href="styles/main.css" rel="stylesheet">
-		<link href="http://vjs.zencdn.net/4.7/video-js.css" rel="stylesheet">
 		<!--[if lt IE 9]> 
 <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
 <script src="scripts/libs/nwmatcher.js"></script>
@@ -226,11 +225,157 @@
 					<div class="advanced-search-trigger"><span id="js-advanced-search" class="advanced-search-trigger__text">Расширенный поиск</span>
 					</div>
 					<div style="display:none" class="b-advanced-search">
-						<p>да, скоро здесь будет поиск</p>
+						<div class="columns triple">
+							<div class="first column">
+								<div class="content">
+									<div class="b-location dropdown selector"><a href="javascript:void(0);" data-target="location" class="b-location__current dropdown__trigger selector__current">Все категории</a>
+										<div data-target="location" class="dropdown__content hidden">
+											<div class="b-location__catalog selector__options">
+												<ul class="menu">
+													<li class="menu__item active"><a href="#"><span>Все разделы</span></a>
+													</li>
+													<li class="menu__item"><a href="#"><span>Компьютерная техника</span></a>
+													</li>
+													<li class="menu__item"><a href="#"><span>Бытовая техника</span></a>
+													</li>
+													<li class="menu__item"><a href="#"><span>Телефоны и связь</span></a>
+													</li>
+													<li class="menu__item"><a href="#"><span>Фото и оптика</span></a>
+													</li>
+													<li class="menu__item with-submenu"><a href="#"><span>Одежда, обувь, акксессуары</span></a>
+														<ul class="submenu">
+															<li class="submenu__item"><a href="#"><span>Кроссовки</span></a>
+															</li>
+															<li class="submenu__item"><a href="#"><span>Кеды</span></a>
+															</li>
+															<li class="submenu__item"><a href="#"><span>Босоножки</span></a>
+															</li>
+															<li class="submenu__item"><a href="#"><span>Туфли</span></a>
+															</li>
+															<li class="submenu__item"><a href="#"><span>Ботильоны</span></a>
+															</li>
+															<li class="submenu__item"><a href="#"><span>Сандалии</span></a>
+															</li>
+															<li class="submenu__item"><a href="#"><span>Балетки</span></a>
+															</li>
+															<li class="submenu__item"><a href="#"><span>Сапоги</span></a>
+															</li>
+															<li class="submenu__item"><a href="#"><span>Резиновая обувь</span></a>
+															</li>
+														</ul>
+													</li>
+													<li class="menu__item"><a href="#"><span>Подарки и праздники</span></a>
+													</li>
+													<li class="menu__item"><a href="#"><span>Книги, учебники и журналы</span></a>
+													</li>
+													<li class="menu__item"><a href="#"><span>Мебель, интерьеры и обиход</span></a>
+													</li>
+													<li class="menu__item"><a href="#"><span>Другое</span></a>
+													</li>
+												</ul>
+												<div class="submenu-bg"></div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="second column">
+								<div class="content">
+									<div class="input-holder">
+										<input name="login" type="text" placeholder="Ключевые слова" class="inline-input">
+									</div>
+									<div class="input-holder">
+										<select name="select">
+											<option value="0" selected>Любое из слов</option>
+											<option value="1">Все слова</option>
+										</select>
+									</div>
+									<div class="input-holder">
+										<input name="login" type="text" placeholder="Исключить слова" class="inline-input">
+									</div>
+								</div>
+							</div>
+							<div class="third column">
+								<div class="content">
+									<div class="input-holder">
+										<label for="currency">Валюта</label>
+										<div class="radio-circles">
+											<ul class="menu">
+												<li class="menu__item active"><a href="javascript:void(0);"><i class="icon icon__currency--rub"></i></a>
+												</li>
+												<li class="menu__item"><a href="javascript:void(0);"><i class="icon icon__currency--dol"></i></a>
+												</li>
+												<li class="menu__item"><a href="javascript:void(0);"><i class="icon icon__currency--btc"></i></a>
+												</li>
+											</ul>
+										</div>
+									</div>
+									<div class="input-holder">
+										<label for="minPrice">Цена</label>
+										<input id="minPrice" name="minPrice" type="text" placeholder="от" class="inline-input inline-input--small">
+										<label for="maxPrice" class="separator">—</label>
+										<input id="maxPrice" name="maxPrice" type="text" placeholder="до" class="inline-input inline-input--small">
+									</div>
+									<div class="input-holder">
+										<select name="select">
+											<option value="0" selected>Все продавцы</option>
+											<option value="1">Частное лицо</option>
+											<option value="2">Компания</option>
+										</select>
+									</div>
+								</div>
+							</div>
+						</div><span class="btn btn-orange btn-big b-advanced-search__submit">Начать расширенный поиск <i class="icon"></i></span>
 					</div>
 				</div>
 			</section>
 			<!-- /search -->
+			<!-- content -->
+			<section class="catalog-banner">
+				<div class="b-catalog-banner">
+					<div style="background: url('/images/pages/sliders/1920-1.jpg')" class="b-catalog-banner__slide">
+						<div class="container">
+							<hgroup>
+								<h1>Промо / акции / баннеры</h1>
+								<h2 class="lead">Лучшее место для вашей рекламы</h2>
+							</hgroup>
+						</div>
+					</div>
+					<div style="background: url('/images/pages/sliders/1920-2.jpg')" class="b-catalog-banner__slide">
+						<div class="container">
+							<hgroup>
+								<h1>Промо / акции / баннеры</h1>
+								<h2 class="lead">Лучшее место для вашей рекламы</h2>
+							</hgroup>
+						</div>
+					</div>
+					<div style="background: url('/images/pages/sliders/1920-3.jpg')" class="b-catalog-banner__slide">
+						<div class="container">
+							<hgroup>
+								<h1>Промо / акции / баннеры</h1>
+								<h2 class="lead">Лучшее место для вашей рекламы</h2>
+							</hgroup>
+						</div>
+					</div>
+					<div style="background: url('/images/pages/sliders/1920-4.jpg')" class="b-catalog-banner__slide">
+						<div class="container">
+							<hgroup>
+								<h1>Промо / акции / баннеры</h1>
+								<h2 class="lead">Лучшее место для вашей рекламы</h2>
+							</hgroup>
+						</div>
+					</div>
+					<div style="background: url('/images/pages/sliders/1920-5.jpg')" class="b-catalog-banner__slide">
+						<div class="container">
+							<hgroup>
+								<h1>Промо / акции / баннеры</h1>
+								<h2 class="lead">Лучшее место для вашей рекламы</h2>
+							</hgroup>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- /content -->
 			<!-- filters -->
 			<!-- /filters -->
 			<!-- content -->
@@ -780,6 +925,7 @@
 		<script src="http://vjs.zencdn.net/4.7/video.js"></script>
 		<script src="scripts/libs/fotorama.js"></script>
 		<script src="scripts/libs/carousel.min.js"></script>
+		<script src="scripts/libs/chosen.jquery.js"></script>
 		<script src="scripts/main.js"></script>
 	</body>
 </html>
