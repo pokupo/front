@@ -1,7 +1,7 @@
 extends partials/layouts/store
 
 block head
-	- page.title = 'Магазин';
+	- page.title = 'Главная магазина';
 
 block menu 
 	+menu-list([
@@ -25,6 +25,35 @@ block menu
 			{text:"Блог",href:"#"}
 		]}
 	])(class="b-navigation")
+
+block banner
+	section.catalog-banner
+		.b-catalog-banner
+			.b-catalog-banner__slide(style="background: url('/images/pages/sliders/1920-1.jpg')")
+				.container
+					hgroup
+						h1 Промо / акции / баннеры
+						h2.lead Лучшее место для вашей рекламы
+			.b-catalog-banner__slide(style="background: url('/images/pages/sliders/1920-2.jpg')")
+				.container
+					hgroup
+						h1 Промо / акции / баннеры
+						h2.lead Лучшее место для вашей рекламы
+			.b-catalog-banner__slide(style="background: url('/images/pages/sliders/1920-3.jpg')")
+				.container
+					hgroup
+						h1 Промо / акции / баннеры
+						h2.lead Лучшее место для вашей рекламы
+			.b-catalog-banner__slide(style="background: url('/images/pages/sliders/1920-4.jpg')")
+				.container
+					hgroup
+						h1 Промо / акции / баннеры
+						h2.lead Лучшее место для вашей рекламы
+			.b-catalog-banner__slide(style="background: url('/images/pages/sliders/1920-5.jpg')")
+				.container
+					hgroup
+						h1 Промо / акции / баннеры
+						h2.lead Лучшее место для вашей рекламы
 
 block content
 	section.store
@@ -84,46 +113,11 @@ block content
 						{text:"Открытки",href:js0, preview: 200},
 						{text:"Игрушки",href:js0, preview: 31}
 					]}])
-			.b-thermometer
-				p 
-					a(href="index.html") Главная 
-					span.divider / 
-					a(href=js0) Одежда, обувь и аксессуары 
-					span.divider / 
-					span.current Кеды
+
 			.b-catalog
-				h1#js-nosidebar.b-catalog__title Кеды
-				.b-catalog__controls
-					aside.b-catalog__quick-filter
-						input.b-catalog__quick-filter__input(type="text" name="quick-filter" placeholder="Быстрый поиск...")
-						i.b-catalog__quick-filter__icon
-					.b-catalog__controls-item
-						| Сортировать
-						.inline-sorter.dropdown.selector
-							span.selector__current.dropdown__trigger(data-target="sort") по&nbsp;названию
-							.dropdown__content.selector__options.hidden(data-target="sort")
-								ul.menu
-									li.menu__item.active
-										a(href=js0) по&nbsp;названию
-									li.menu__item
-										a(href=js0) по&nbsp;рейтингу
-									li.menu__item
-										a(href=js0) по&nbsp;цене
+				h1.b-catalog__title Рекомендуем
 
-					.b-catalog__controls-item
-						| Вид:
-						.radio-circles.catalog-layout
-							ul.menu
-								li.menu__item.active
-									a(href=js0 data-value="cards")
-										i.icon.icon__cards
-								li.menu__item
-									a(href=js0 data-value="magazine")
-										i.icon.icon__magazine
-								li.menu__item
-									a(href=js0 data-value="titles")
-										i.icon.icon__titles
-
+				.b-catalog__controls.b-catalog__controls--pushedright
 					.b-catalog__controls-item
 						| Валюта:
 						.radio-circles
@@ -144,9 +138,38 @@ block content
 						{title:"Converse Grey", price: "2450", img: "images/catalog/goods02.jpg"},
 						{title:"Converse Red", price: "3750", oldPrice: "5600", img: "images/catalog/goods03.jpg"},
 						{title:"Converse Orange", price: "1890", oldPrice: "2490", img: "images/catalog/goods04.jpg"},
-						{title:"Converse Green", price: "3750", oldPrice: "5600", img: "images/catalog/goods05.jpg"},
+						{title:"Converse Green", price: "3750", oldPrice: "5600"},
 						{title:"Converse Blue", price: "3750", img: "images/catalog/goods06.jpg"}
 						])
+
+				h1.b-catalog__title Товары со скидкой
+				.b-catalog__controls.b-catalog__controls--pushedright
+					.b-catalog__controls-item.hidden
+						a.btn.btn-orange(style="margin:0") Смотреть все
+
+				.b-catalog__items.cards
+					+catalog-items([
+						{title:"Converse White", price: "1800"},
+						{title:"Converse Grey", price: "2450"},
+						{title:"Converse Red", price: "3750", oldPrice: "5600"}
+						])
+
+			h1.b-catalog__title Самые популярные
+			.b-catalog__items.cards.chain-slider
+				+catalog-items([
+					{title:"Converse White", price: "1800"},
+					{title:"Converse Grey", price: "2450", img: "images/catalog/goods02.jpg"},
+					{title:"Converse Red", price: "3750", oldPrice: "5600", img: "images/catalog/goods03.jpg"},
+					{title:"Converse Orange", price: "1890", oldPrice: "2490", img: "images/catalog/goods04.jpg"},
+					{title:"Converse Blue", price: "3750", img: "images/catalog/goods06.jpg"},
+					{title:"Converse Green", price: "3750", oldPrice: "5600"},
+					{title:"Converse 10", price: "3750", oldPrice: "5600", img: "images/catalog/goods01.jpg"},
+					{title:"Converse RD", price: "1890", oldPrice: "2490", img: "images/catalog/goods04.jpg"},
+					{title:"Converse RD2", price: "3750", oldPrice: "5600", img: "images/catalog/goods03.jpg"},
+					{title:"Converse T800", price: "6750", oldPrice: "5600"},
+					{title:"Converse Ultimate", price: "2490", img: "images/catalog/goods05.jpg"},
+					], flat=true)
+
 
 
 block scripts

@@ -53,7 +53,7 @@ PKP.Sliders = {
 			height: 330,
 			allowfullscreen: false,
 			loop: true,
-			autoplay: false,
+			autoplay: 3500,
 			stopautoplayontouch: true,
 			nav: 'dots',
 			arrows: false,

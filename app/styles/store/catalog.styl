@@ -165,6 +165,10 @@ section.store
 				margin-left 4px
 				float left
 
+		&--pushedright
+			float right
+			margin-top -55px
+
 	&__quick-filter
 		display none
 		position relative
@@ -195,6 +199,32 @@ section.store
 		padding-top 20px
 		padding-bottom 120px
 		font-size 0
+
+		&.chain-slider
+			padding-bottom 20px
+			margin 0 30px 100px
+
+			.b-item__price
+				margin-top -12px
+
+		.owl-prev
+		.owl-next
+			top 100px
+			
+		.owl-prev
+			left -30px
+			sprite($arrow-prev__black)
+			&:hover
+				sprite($arrow-prev__hover)
+			&:active
+				sprite($arrow-prev__active)
+		.owl-next
+			right -30px
+			sprite($arrow-next__black)
+			&:hover
+				sprite($arrow-next__hover)
+			&:active
+				sprite($arrow-next__active)
 
 	&__item
 		display inline-block

@@ -97,11 +97,12 @@ mixin catalog-list(list)
 		p Нет данных 
 
 
-mixin catalog-item(item)
+mixin catalog-item(item, flat)
 	.b-catalog__item
-		.b-item.with_popover
+		.b-item(class=flat ? "": "with_popover")
 			.b-item__picture
-				img(src="#{item.img}")
+				if item.img
+					img(src=item.img)
 			.responsive-holder
 				.b-item__description
 					h4.b-item__title
@@ -130,40 +131,42 @@ mixin catalog-item(item)
 			.b-item__badges
 				span.bestseller Хит!
 					//- img(src="images/textures/best-choice.png" alt="Хит!")
-			.b-item__popover
-				.b-item--dublicate
-					.b-item__picture
-						img(src=item.img)
-					.responsive-holder
-						.b-item__description
-							h4.b-item__title
-								a(href=js0)= item.title
-							.b-item__info
-								p 
-									span.parameter Верх:
-									|  резина, текстиль<br/>
-									span.parameter Подошва:
-									|  резина<br/>
-									span.parameter Цвет:
-									|  белый
-						.b-item__price
-							if item.oldPrice
-								.b-price.b-item__price--old
-									span.b-price__number= item.oldPrice
+			if !flat
+				.b-item__popover
+					.b-item--dublicate
+						.b-item__picture
+							if item.img
+								img(src=item.img)
+						.responsive-holder
+							.b-item__description
+								h4.b-item__title
+									a(href=js0)= item.title
+								.b-item__info
+									p 
+										span.parameter Верх:
+										|  резина, текстиль<br/>
+										span.parameter Подошва:
+										|  резина<br/>
+										span.parameter Цвет:
+										|  белый
+							.b-item__price
+								if item.oldPrice
+									.b-price.b-item__price--old
+										span.b-price__number= item.oldPrice
+										span.b-price__thinsp &nbsp;
+										span.b-price__rubl Р
+								.b-price
+									span.b-price__number= item.price
 									span.b-price__thinsp &nbsp;
 									span.b-price__rubl Р
-							.b-price
-								span.b-price__number= item.price
-								span.b-price__thinsp &nbsp;
-								span.b-price__rubl Р
-					.b-item__order-button
-						u.btn.btn-orange.btn-border
-							span.sign В&nbsp;корзину
-				.b-item__badges
-					span.bestseller Хит!
-						//- img(src="images/textures/best-choice.png" alt="Хит!")
+						.b-item__order-button
+							u.btn.btn-orange.btn-border
+								span.sign В&nbsp;корзину
+					.b-item__badges
+						span.bestseller Хит!
+							//- img(src="images/textures/best-choice.png" alt="Хит!")
 
 
-mixin catalog-items(list)
+mixin catalog-items(list, flat)
 	each item in list
-		+catalog-item(item)
+		+catalog-item(item, flat)
