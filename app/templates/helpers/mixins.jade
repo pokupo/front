@@ -64,8 +64,37 @@ mixin search-list(list)
 					li.menu__item(class=item.active ? "active" : "")
 						a(href=item.href)
 							span= item.text
+	else
+		p Нет данных
 
-		.submenu-bg(class=i ? "active" : "")
+
+mixin advanced-search-list(list)
+	if list
+		each item in list
+			if item.submenu
+				if item.selected
+					- i = true
+		ul.menu(class=i ? "menu--opened" : "")
+			each item in list
+				if item.submenu
+					li.menu__item.with-submenu(class=item.selected ? (item.selected=="partial" ? "partial":"selected") : "")
+						u.b-tree__node.b-tree__folder(class=item.selected ? "b-tree__expanded" : "")
+							span.b-tree__expander
+							span.b-tree__checkbox
+							span.b-tree__title= item.text
+							
+						ul.submenu(class=item.selected ? "selected" : "hidden")
+							each subitem in item.submenu
+								li.submenu__item(class=subitem.selected ? "selected" : "")
+									a.b-tree__node
+										span.b-tree__checkbox
+										span.b-tree__title= subitem.text
+				else
+					li.menu__item(class=item.selected ? "selected" : "")
+						a.b-tree__node
+							span.b-tree__expander
+							span.b-tree__checkbox
+							span.b-tree__title= item.text
 	else
 		p Нет данных
 

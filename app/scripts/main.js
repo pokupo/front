@@ -243,6 +243,15 @@ PKP.UI = {
 					children('.submenu').toggleClass('active');
 			}
 		});
+		$('.b-advanced-search').on("click", '.with-submenu', function(e) {
+			var $this = $(e.target);
+			if(1 !== $this.parents().filter('.submenu').length) {
+				$(this)
+					.find('.b-tree__folder').toggleClass('b-tree__expanded');
+				$(this)
+					.children('.submenu').toggleClass('hidden');
+			}
+		});
 
 		/* Вспомогательное, для тестирования */
 		$('#js-nosidebar').on('click', function () {
