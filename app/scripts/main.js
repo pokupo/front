@@ -1,5 +1,68 @@
 var PKP = {};
 
+var treeData = [
+			{title: "Компьютерная техника", folder: true,
+				children: [
+					{title: "Ноутбуки", selected: true},
+					{title: "Моноблоки"},
+					{title: "Планшеты"}
+				]
+			},
+			{title:"Бытовая техника", folder: true, selected: true,
+				children: [
+					{title:"Стиральные машины", selected: true},
+					{title:"Телевизоры", selected: true},
+					{title:"Кухонная техника", selected: true},
+					{title:"Пылесосы", selected: true}
+				]
+			},
+			{title: "Телефоны и связь"},
+			{title: "Фото и оптика", folder: true,
+				children: [
+					{title: "Фотоаппараты"},
+					{title: "Объективы"},
+					{title: "Средства и химия"}
+				]
+			},
+			{title: "Одежда, обувь, аксессуары", folder: true, expanded: true,
+				children:[
+					{title:"Кроссовки"},
+					{title:"Кеды", folder: true, expanded: true,
+						children: [
+							{title: "Ботильоны", selected: true},
+							{title: "Босоножки", selected: true},
+							{title: "Туфли", selected: true}
+						]
+					},
+					{title:"Сандалии"},
+					{title:"Балетки"},
+					{title:"Сапоги"},
+					{title:"Резиновая обувь"}
+				]
+			},
+			{title: "Подарки и праздники", folder: true,
+				children: [
+					{title: "Цветы"},
+					{title: "Открытки"},
+					{title: "Игрушки"}
+				]
+			},
+			{title: "Книги, учебники и журналы", folder: true,
+				children: [
+					{title: "Цветы"},
+					{title: "Открытки"},
+					{title: "Игрушки"}
+				]
+			},
+			{title: "Мебель, интерьеры и обиход", folder: true,
+				children: [
+					{title: "Цветы", selected: true},
+					{title: "Открытки", selected: true}
+				]
+			},
+			{title: "Другое", folder: true, lazy: true }
+];
+
 PKP.init = function() {
 	PKP.$window        = $(window);
 	PKP.$document      = $(document);
@@ -8,8 +71,38 @@ PKP.init = function() {
 	PKP.Sliders.init();
 	PKP.UI.init();
 	PKP.UI.cart();
+	PKP.UI.tree();
 	PKP.Video.init();
+	PKP.Canvas.init();
 };
+
+PKP.Canvas = {
+	init: function() {
+		function drawArc(progress) {
+			var canvas = document.getElementById('progressCircle'); 
+			if (canvas.getContext) {
+				var ctx = canvas.getContext('2d');
+				var cX = 80,
+					cY = 80,
+					radius = 80,
+					sAngle = 1.5 * Math.PI,
+					eAngle = (1.5 * Math.PI + (2*progress*Math.PI / 100)),
+					clockwise = false;
+
+				ctx.arc(cX, cY, radius, sAngle, eAngle, clockwise);
+				ctx.lineWidth = 13;
+				ctx.strokeStyle = "#ffa800"; 
+				ctx.stroke();
+			} else { 
+				console.error('браузер не поддерживает Canvas API');
+			}			
+		}
+
+		if($('#progressCircle').length > 0) {
+			drawArc(25);
+		}
+	}
+}
 
 PKP.Sliders = {
 	init: function() {
@@ -480,8 +573,72 @@ PKP.UI = {
 		PKP.$body.click(function(){
 			$("#request_form").hide();
 		});
+	},
+	tree: function() {
+		$("#multilocation").fancytree({
+			minExpandLevel: 1,
+			rootVisible: false,
+			checkbox: true,
+			selectMode: 3,
+			source: treeData,
+			icons: false,
+			clickFolderMode: 4,
+
+			loadChildren: function(event, ctx) {
+				// ctx.node.fixSelection3AfterClick();
+			},
+
+			select: function(event, data) {
+				// Get a list of all selected nodes, and convert to a key array:
+				var selKeys = $.map(data.tree.getSelectedNodes(), function(node) {
+					return node.key;
+				});
+
+				// Get a list of all selected TOP nodes
+				var selRootNodes = data.tree.getSelectedNodes(true);
+				// console.log(selRootNodes.length);
+
+				// ... and convert to a key array:
+				var selRootKeys = $.map(selRootNodes, function(node) {
+					return node.key;
+				});
+				$("#js-multilocation").removeClass('checked').addClass('part');
+				if(data.tree.getSelectedNodes().length === 0) {
+					$("#js-multilocation").removeClass('part');
+				}
+			},
+
+			keydown: function(event, data) {
+				if( event.which === 32 ) {
+					data.node.toggleSelected();
+					return false;
+				}
+			}
+		});
+
+
+		$("#js-multilocation").click(function(){
+			var $this  = $(this),
+				$tree  = $("#multilocation");
+			var is_clr = ($this.is('.checked') || $this.is('.part')) ? false : true
+			
+
+			$tree.fancytree("getTree").visit(function(node) {
+				node.setSelected( is_clr );
+			});
+
+			$this.removeClass('part');
+
+			if(is_clr) {
+				$this.addClass('checked');
+			}
+			
+			return false;
+		});
 	}
 };
+
+
 
 PKP.Video = {
 	init: function() {

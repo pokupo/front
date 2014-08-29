@@ -133,6 +133,7 @@ section.advanced-search
 		padding 15px 19px
 		&--small
 			padding 15px
+			width 104px
 
 	label
 		margin-right 8px
@@ -164,59 +165,41 @@ section.advanced-search
 		a 
 			padding-left 56px
 
-.b-tree
-	&__empty
-	&__expander
-	&__checkbox
-		width 21px
-		height 21px
-		display inline-block
-		vertical-align top
+#js-multilocation
+	margin-right 8px
+	margin-left 8px
 
-	&__title
-		cursor pointer
-
-	&__expander
-		width 0
-		height 0
-		margin 5px 4px 0 0
-		border 6px solid transparent
-		transition transform, margin 0.15s ease-in-out
-
-	&__checkbox
-		border 2px solid #ccc
-		margin-right 9px
-
-	&__expanded &__expander
-		margin 9px 2px 0 2px
-		transform rotate(45deg)
-
-.menu__item.selected > a .b-tree__checkbox
-.submenu__item.selected .b-tree__checkbox
-	position relative
-	&:before
-		position absolute
-		content ''
-		display block
-		top 50%
-		left 50%
-		sprite($icon__check)
-		margin -14px 0 0 -6px
-
-.menu__item.partial > u .b-tree__checkbox
-	position relative
-	&:before
-		position absolute
-		content ''
-		display block
-		top 50%
-		left 50%
-		width 9px
-		height 9px
-		background $green
-		margin -5px 0 0 -5px
+	&.checked
+		position relative
+		&:before
+			position absolute
+			content ''
+			display block
+			top 50%
+			left 50%
+			sprite($icon__check)
+			background none
+			margin -14px 0 0 -6px
+	&.part
+		&:before
+			position absolute
+			content ''
+			display block
+			top 50%
+			left 50%
+			width 9px
+			height 9px
+			background $green
+			margin -5px 0 0 -5px	
 
 
-.with-submenu
-	.b-tree__expander
-		border-left-color #999
+
+
+
+
+
+
+
+
+
+

@@ -13,7 +13,7 @@
 		<link sizes="120x120" href="images/icons/apple-touch-icon-120x120.png" rel="apple-touch-icon">
 		<link sizes="144x144" href="images/icons/apple-touch-icon-144x144.png" rel="apple-touch-icon">
 		<link sizes="152x152" href="images/icons/apple-touch-icon-152x152.png" rel="apple-touch-icon">
-		<meta name="application-name" content="Главная магазина">
+		<meta name="application-name" content="Pokupo">
 		<meta name="msapplication-tooltip" content="Description for pokupo">
 		<meta name="msapplication-TileColor" content="#ffffff">
 		<meta name="msapplication-TileImage" content="images/icons/tile.png">
@@ -115,7 +115,7 @@
 						</div>
 					</div>
 					<ul class="menu b-navigation">
-						<li class="menu__item with-submenu"><a href="#"><span>Платформа</span></a>
+						<li class="menu__item with-submenu"><a href="frontpage.html"><span>Платформа</span></a>
 							<ul class="submenu">
 								<li class="submenu__item"><a href="#"><span>Особенности</span></a>
 								</li>
@@ -143,13 +143,13 @@
 						</li>
 						<li class="menu__item with-submenu"><a href="#"><span>Компания</span></a>
 							<ul class="submenu">
-								<li class="submenu__item"><a href="#"><span>Новости</span></a>
+								<li class="submenu__item"><a href="events.html"><span>События</span></a>
 								</li>
 								<li class="submenu__item"><a href="#"><span>Контакты</span></a>
 								</li>
-								<li class="submenu__item"><a href="#"><span>О нас</span></a>
+								<li class="submenu__item"><a href="aboutus.html"><span>О нас</span></a>
 								</li>
-								<li class="submenu__item"><a href="#"><span>Партнеры</span></a>
+								<li class="submenu__item"><a href="partners.html"><span>Партнёры</span></a>
 								</li>
 								<li class="submenu__item"><a href="#"><span>Блог</span></a>
 								</li>
@@ -219,115 +219,18 @@
 					</div>
 				</div>
 			</section>
-			<section class="advanced-search active">
+			<section class="advanced-search">
 				<div class="container">
 					<div class="advanced-search-trigger"><span id="js-advanced-search" class="advanced-search-trigger__text">Расширенный поиск</span>
 					</div>
-					<div style="display:block" class="b-advanced-search">
+					<div style="display:none" class="b-advanced-search">
 						<div class="columns triple">
 							<div class="first column">
 								<div class="content">
-									<div class="b-location dropdown"><a href="javascript:void(0);" data-target="location" class="b-location__current dropdown__trigger">Все категории</a>
+									<div class="b-location dropdown"><a href="javascript:void(0);" data-target="location" class="b-location__current dropdown__trigger"><span id="js-multilocation" class="fancytree-checkbox part"></span>Все категории</a>
 										<div data-target="location" class="dropdown__content hidden">
 											<div class="b-location__catalog">
-												<ul class="menu menu--opened">
-													<li class="menu__item with-submenu"><u class="b-tree__node b-tree__folder"><span class="b-tree__expander"></span><span class="b-tree__checkbox"></span><span class="b-tree__title">Компьютерная техника</span></u>
-														<ul class="submenu hidden">
-															<li class="submenu__item"><a class="b-tree__node"><span class="b-tree__checkbox"></span><span class="b-tree__title">Ноутбуки</span></a>
-															</li>
-															<li class="submenu__item"><a class="b-tree__node"><span class="b-tree__checkbox"></span><span class="b-tree__title">Моноблоки</span></a>
-															</li>
-															<li class="submenu__item"><a class="b-tree__node"><span class="b-tree__checkbox"></span><span class="b-tree__title">Планшеты</span></a>
-															</li>
-														</ul>
-													</li>
-													<li class="menu__item with-submenu partial"><u class="b-tree__node b-tree__folder b-tree__expanded"><span class="b-tree__expander"></span><span class="b-tree__checkbox"></span><span class="b-tree__title">Бытовая техника</span></u>
-														<ul class="submenu selected">
-															<li class="submenu__item selected"><a class="b-tree__node"><span class="b-tree__checkbox"></span><span class="b-tree__title">Стиральные машины</span></a>
-															</li>
-															<li class="submenu__item"><a class="b-tree__node"><span class="b-tree__checkbox"></span><span class="b-tree__title">Телевизоры</span></a>
-															</li>
-															<li class="submenu__item selected"><a class="b-tree__node"><span class="b-tree__checkbox"></span><span class="b-tree__title">Кухонная техника</span></a>
-															</li>
-															<li class="submenu__item selected"><a class="b-tree__node"><span class="b-tree__checkbox"></span><span class="b-tree__title">Пылесосы</span></a>
-															</li>
-														</ul>
-													</li>
-													<li class="menu__item"><a class="b-tree__node"><span class="b-tree__expander"></span><span class="b-tree__checkbox"></span><span class="b-tree__title">Телефоны и связь</span></a>
-													</li>
-													<li class="menu__item with-submenu"><u class="b-tree__node b-tree__folder"><span class="b-tree__expander"></span><span class="b-tree__checkbox"></span><span class="b-tree__title">Фото и оптика</span></u>
-														<ul class="submenu hidden">
-															<li class="submenu__item"><a class="b-tree__node"><span class="b-tree__checkbox"></span><span class="b-tree__title">Фотоаппараты</span></a>
-															</li>
-															<li class="submenu__item"><a class="b-tree__node"><span class="b-tree__checkbox"></span><span class="b-tree__title">Объективы</span></a>
-															</li>
-															<li class="submenu__item"><a class="b-tree__node"><span class="b-tree__checkbox"></span><span class="b-tree__title">Средства и химия</span></a>
-															</li>
-														</ul>
-													</li>
-													<li class="menu__item with-submenu selected"><u class="b-tree__node b-tree__folder b-tree__expanded"><span class="b-tree__expander"></span><span class="b-tree__checkbox"></span><span class="b-tree__title">Одежда, обувь, аксессуары</span></u>
-														<ul class="submenu selected">
-															<li class="submenu__item"><a class="b-tree__node"><span class="b-tree__checkbox"></span><span class="b-tree__title">Кроссовки</span></a>
-															</li>
-															<li class="submenu__item selected"><a class="b-tree__node"><span class="b-tree__checkbox"></span><span class="b-tree__title">Кеды</span></a>
-															</li>
-															<li class="submenu__item"><a class="b-tree__node"><span class="b-tree__checkbox"></span><span class="b-tree__title">Босоножки</span></a>
-															</li>
-															<li class="submenu__item"><a class="b-tree__node"><span class="b-tree__checkbox"></span><span class="b-tree__title">Туфли</span></a>
-															</li>
-															<li class="submenu__item"><a class="b-tree__node"><span class="b-tree__checkbox"></span><span class="b-tree__title">Ботильоны</span></a>
-															</li>
-															<li class="submenu__item"><a class="b-tree__node"><span class="b-tree__checkbox"></span><span class="b-tree__title">Сандалии</span></a>
-															</li>
-															<li class="submenu__item"><a class="b-tree__node"><span class="b-tree__checkbox"></span><span class="b-tree__title">Балетки</span></a>
-															</li>
-															<li class="submenu__item"><a class="b-tree__node"><span class="b-tree__checkbox"></span><span class="b-tree__title">Сапоги</span></a>
-															</li>
-															<li class="submenu__item"><a class="b-tree__node"><span class="b-tree__checkbox"></span><span class="b-tree__title">Резиновая обувь</span></a>
-															</li>
-														</ul>
-													</li>
-													<li class="menu__item with-submenu"><u class="b-tree__node b-tree__folder"><span class="b-tree__expander"></span><span class="b-tree__checkbox"></span><span class="b-tree__title">Подарки и праздники</span></u>
-														<ul class="submenu hidden">
-															<li class="submenu__item"><a class="b-tree__node"><span class="b-tree__checkbox"></span><span class="b-tree__title">Цветы</span></a>
-															</li>
-															<li class="submenu__item"><a class="b-tree__node"><span class="b-tree__checkbox"></span><span class="b-tree__title">Открытки</span></a>
-															</li>
-															<li class="submenu__item"><a class="b-tree__node"><span class="b-tree__checkbox"></span><span class="b-tree__title">Игрушки</span></a>
-															</li>
-														</ul>
-													</li>
-													<li class="menu__item with-submenu"><u class="b-tree__node b-tree__folder"><span class="b-tree__expander"></span><span class="b-tree__checkbox"></span><span class="b-tree__title">Книги, учебники и журналы</span></u>
-														<ul class="submenu hidden">
-															<li class="submenu__item"><a class="b-tree__node"><span class="b-tree__checkbox"></span><span class="b-tree__title">Цветы</span></a>
-															</li>
-															<li class="submenu__item"><a class="b-tree__node"><span class="b-tree__checkbox"></span><span class="b-tree__title">Открытки</span></a>
-															</li>
-															<li class="submenu__item"><a class="b-tree__node"><span class="b-tree__checkbox"></span><span class="b-tree__title">Игрушки</span></a>
-															</li>
-														</ul>
-													</li>
-													<li class="menu__item with-submenu"><u class="b-tree__node b-tree__folder"><span class="b-tree__expander"></span><span class="b-tree__checkbox"></span><span class="b-tree__title">Мебель, интерьеры и обиход</span></u>
-														<ul class="submenu hidden">
-															<li class="submenu__item"><a class="b-tree__node"><span class="b-tree__checkbox"></span><span class="b-tree__title">Цветы</span></a>
-															</li>
-															<li class="submenu__item"><a class="b-tree__node"><span class="b-tree__checkbox"></span><span class="b-tree__title">Открытки</span></a>
-															</li>
-															<li class="submenu__item"><a class="b-tree__node"><span class="b-tree__checkbox"></span><span class="b-tree__title">Игрушки</span></a>
-															</li>
-														</ul>
-													</li>
-													<li class="menu__item with-submenu"><u class="b-tree__node b-tree__folder"><span class="b-tree__expander"></span><span class="b-tree__checkbox"></span><span class="b-tree__title">Другое</span></u>
-														<ul class="submenu hidden">
-															<li class="submenu__item"><a class="b-tree__node"><span class="b-tree__checkbox"></span><span class="b-tree__title">Цветы</span></a>
-															</li>
-															<li class="submenu__item"><a class="b-tree__node"><span class="b-tree__checkbox"></span><span class="b-tree__title">Открытки</span></a>
-															</li>
-															<li class="submenu__item"><a class="b-tree__node"><span class="b-tree__checkbox"></span><span class="b-tree__title">Игрушки</span></a>
-															</li>
-														</ul>
-													</li>
-												</ul>
+												<div id="multilocation" style="text-align:left"></div>
 											</div>
 										</div>
 									</div>
@@ -932,10 +835,12 @@
 		</footer>
 		<!-- /footer -->
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1/jquery-ui.min.js"></script>
 		<script src="http://vjs.zencdn.net/4.7/video.js"></script>
 		<script src="scripts/libs/fotorama.js"></script>
 		<script src="scripts/libs/carousel.min.js"></script>
 		<script src="scripts/libs/chosen.jquery.js"></script>
+		<script src="scripts/libs/jquery.fancytree-all.js"></script>
 		<script src="scripts/main.js"></script>
 	</body>
 </html>

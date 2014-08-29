@@ -1,0 +1,80 @@
+.tooltip
+	&__before
+	&__after
+		display block
+		height 14px
+		width 14px
+		background #fff
+		transform rotate(45deg)
+		position absolute
+		left -7px
+		top 40px
+
+	&__before
+		z-index 1
+
+	&__after
+		z-index -1
+		box-shadow 0 2px 3px rgba(#000, 0.3)
+
+	&__trigger
+		float left
+		margin 14px -100% 0 12px
+		position relative
+		left 100%
+		width 32px
+		height 32px
+		display block
+		border-radius 32px
+		border 2px solid $orange
+		font-size 18px
+		line-height 28px
+		text-align center
+		cursor help
+
+		&:hover
+		&.active
+			background $orange
+			.tooltip__content
+				display block
+				opacity 1
+				left 50px
+
+	&__content
+		display none
+		opacity 0
+		position absolute
+		top -32px
+		left 40px
+		width 210px
+		min-height 85px
+		padding 20px 10px 0
+		text-align left
+		transition opacity, left 0.2s ease-in-out
+
+	
+
+.b-small-text
+	line-height 20px
+	font-size 13px
+	color #333
+
+.pseudo-link 
+	color $a__link
+	border 0
+	text-decoration underline
+	cursor pointer
+	&:hover
+		color $a__hover
+
+#progressCircle
+	border 2px solid $orange
+	border-radius 100px
+	box-sizing border-box
+	&:after
+		sprite($register-user)
+		content ''
+		position absolute
+		top 50%
+		left 50%
+		margin -38px 0 0 -30px

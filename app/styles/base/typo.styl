@@ -294,6 +294,10 @@ ul.checked
 	max-width 450px
 	label 
 		font-size 18px
+	.b-small-text
+		line-height 20px
+		font-size 13px
+		color #333
 
 	&--divider
 		margin-top 5px
@@ -350,9 +354,12 @@ input[type="radio"] + label::before
 
 
 	
-.inline-input
+input[type="text"]
+input[type="email"]
+input[type="tel"]
+input[type="password"]
 	width 100%
-	max-width 350px
+	max-width 450px
 	height 60px
 	padding 14px 18px
 	font-size 18px
@@ -374,12 +381,32 @@ input[type="radio"] + label::before
 
 select
 	width 100%
-	max-width 350px
+	max-width 450px
 
 textarea 
 	resize vertical	
 
 	&.inline-input
 		height auto
+
+.block-input
+	background $grey
+	&:focus
+		background #fff
+
+input[type='checkbox']
+input[type='radio'] 
+	& + label.block-label
+		display block
+		text-align left
+		margin-left 30px
+
+		&:before
+			float left
+			margin-right -100%
+			position relative
+			left -30px
+
+
 
 

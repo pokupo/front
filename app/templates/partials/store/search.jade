@@ -33,68 +33,22 @@ section.orange.search
 		
 			button.b-search__button(type="button") Найти
 
-section.advanced-search.active
+section.advanced-search
 	.container
 		.advanced-search-trigger
 			span.advanced-search-trigger__text#js-advanced-search Расширенный поиск
-		.b-advanced-search(style="display:block")
+		.b-advanced-search(style="display:none")
 			.columns.triple
 				.first.column
 					.content
 						.b-location.dropdown
-							a.b-location__current.dropdown__trigger(href=js0 data-target="location") Все категории
+							a.b-location__current.dropdown__trigger(href=js0 data-target="location")
+								span#js-multilocation.fancytree-checkbox.part
+								| Все категории
 
 							.dropdown__content.hidden(data-target="location")
 								.b-location__catalog
-									+advanced-search-list([
-										{text:"Компьютерная техника",href:js0, submenu:[
-											{text:"Ноутбуки",href:js0, preview:43},
-											{text:"Моноблоки",href:js0, preview:11},
-											{text:"Планшеты",href:js0, preview:24}
-										]},
-										{text:"Бытовая техника",href:js0, selected: "partial", submenu:[
-											{text:"Стиральные машины",href:js0, preview:51, selected: true},
-											{text:"Телевизоры",href:js0, preview:13},
-											{text:"Кухонная техника",href:js0, preview:104, selected: true},
-											{text:"Пылесосы",href:js0, preview:8, selected: true}
-										]},
-										{text:"Телефоны и связь",href:js0, preview:24},
-										{text:"Фото и оптика",href:js0, submenu:[
-											{text:"Фотоаппараты",href:js0, preview:6},
-											{text:"Объективы",href:js0, preview:2},
-											{text:"Средства и химия",href:js0, preview:64}
-										]},
-										{text:"Одежда, обувь, аксессуары",href:js0, selected: true, submenu:[
-											{text:"Кроссовки",href:js0, preview:19},
-											{text:"Кеды",href:js0, preview:134, selected: true},
-											{text:"Босоножки",href:js0, preview:245},
-											{text:"Туфли",href:js0, preview:195},
-											{text:"Ботильоны",href:js0, preview:132},
-											{text:"Сандалии",href:js0, preview:72},
-											{text:"Балетки",href:js0, preview:36},
-											{text:"Сапоги",href:js0, preview:56},
-											{text:"Резиновая обувь",href:js0, preview:5}
-											]},
-										{text:"Подарки и праздники",href:js0, submenu:[
-											{text:"Цветы",href:js0, preview:65},
-											{text:"Открытки",href:js0, preview:200},
-											{text:"Игрушки",href:js0, preview:31}
-										]},
-										{text:"Книги, учебники и журналы",href:js0, submenu:[
-											{text:"Цветы",href:js0, preview:65},
-											{text:"Открытки",href:js0, preview:200},
-											{text:"Игрушки",href:js0, preview:31}
-										]},
-										{text:"Мебель, интерьеры и обиход",href:js0, submenu:[
-											{text:"Цветы",href:js0, preview:65},
-											{text:"Открытки",href:js0, preview:200},
-											{text:"Игрушки",href:js0, preview:31}
-										]},
-										{text:"Другое",href:js0, submenu:[
-											{text:"Цветы",href:js0, preview: 65},
-											{text:"Открытки",href:js0, preview: 200},
-											{text:"Игрушки",href:js0, preview: 31}
-										]}])
+									#multilocation(style="text-align:left")
 				.second.column
 					.content
 						.input-holder
