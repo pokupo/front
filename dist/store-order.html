@@ -301,7 +301,7 @@
 					<div class="doc">
 						<h1>Оформление заказа</h1>
 						<form action="#">
-							<div id="registerWizard" class="b-wizard">
+							<div id="orderWizard" class="b-wizard">
 								<ul class="b-wizard__steps">
 									<li>
 										<a href="#step-1">
@@ -309,8 +309,13 @@
 										</a>
 									</li>
 									<li>
-										<a href="#step-2">
-											<label class="b-wizard__step-num">2</label>
+										<a href="#step-21">
+											<label class="b-wizard__step-num">2.1</label>
+										</a>
+									</li>
+									<li>
+										<a href="#step-22">
+											<label class="b-wizard__step-num">2.2</label>
 										</a>
 									</li>
 									<li>
@@ -356,7 +361,7 @@
 										<label for="skip_personal" class="block-label b-small-text">Указать позже</label>
 									</div>
 								</div>
-								<div id="step-2">
+								<div id="step-21">
 									<h2 class="b-wizard__step-title">Адрес доставки</h2>
 									<p>Для доставки покупок требуется указать почтовый адрес</p>
 									<div class="input-holder">
@@ -389,50 +394,281 @@
 										<label for="set_main_address" class="block-label b-small-text">Основной адрес</label>
 									</div>
 								</div>
-								<div id="step-3"></div>
+								<div id="step-22">
+									<h2 class="b-wizard__step-title">Выберите адрес доставки</h2>
+									<table class="b-order-table">
+										<thead>
+											<tr>
+												<th class="b-order-table__action"></th>
+												<th>Адрес</th>
+												<th class="b-order-table__name">Получатель</th>
+												<th class="b-order-table__phone">Контактный телефон</th>
+												<th class="b-order-table__drop"></th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr class="b-order-table__item">
+												<td class="b-order-table__action">
+													<input id="tr_01" type="radio" value="1" name="radio">
+													<label for="tr_01">Выбрать</label>
+												</td>
+												<td>309070, Россия, г. Белгород, ул. Кривошеина 8, кв 13</td>
+												<td class="b-order-table__name">Сибилев Игорь</td>
+												<td class="b-order-table__phone">+7 913 123 45-67-89</td>
+												<td class="b-order-table__drop">
+													<div class="b-order-item__drop btn-circle btn-circle--drop"></div>
+												</td>
+											</tr>
+											<tr class="b-order-table__item active">
+												<td class="b-order-table__action">
+													<input id="tr_02" type="radio" value="2" name="radio" checked>
+													<label for="tr_02">Выбрать</label>
+												</td>
+												<td>309070, Россия, г. Белгород, ул. Ленина 15, кв 20</td>
+												<td class="b-order-table__name">Константин Константинопольский</td>
+												<td class="b-order-table__phone">+7 913 123 45-67-89</td>
+												<td class="b-order-table__drop">
+													<div class="b-order-item__drop btn-circle btn-circle--drop"></div>
+												</td>
+											</tr>
+											<tr class="b-order-table__item">
+												<td class="b-order-table__action">
+													<input id="tr_03" type="radio" value="3" name="radio">
+													<label for="tr_03">Выбрать</label>
+												</td>
+												<td>309070, Россия, г. Белгород, ул. Кривошеина 8, кв 13</td>
+												<td class="b-order-table__name">Сибилев Игорь</td>
+												<td class="b-order-table__phone">+7 913 123 45-67-89</td>
+												<td class="b-order-table__drop">
+													<div class="b-order-item__drop btn-circle btn-circle--drop"></div>
+												</td>
+											</tr>
+										</tbody>
+										<tfoot>
+											<tr>
+												<td colspan="5"><span class="btn btn-orange btn-aux">Добавить новый адрес</span>
+												</td>
+											</tr>
+										</tfoot>
+									</table>
+								</div>
+								<div id="step-3">
+									<h2 class="b-wizard__step-title">Выберите способ доставки</h2>
+									<table class="b-order-table">
+										<thead>
+											<tr>
+												<th class="b-order-table__logo"></th>
+												<th>Способ доставки</th>
+												<th class="b-order-table__price">Стоимость</th>
+												<th class="b-order-table__action"></th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr class="b-order-table__item active">
+												<td class="b-order-table__logo">
+													<img src="images/pages/order/ems.png">
+												</td>
+												<td><b>Доставка EMS почтой</b>
+													<br>Доставка по России и регионам выполняет EMS Почта России</td>
+												<td class="b-order-table__price">
+													<div class="b-price"><span class="b-price__number">800</span><span class="b-price__thinsp">&nbsp;</span><span class="b-price__rubl">Р</span>
+													</div>
+												</td>
+												<td class="b-order-table__action">
+													<input id="tr_11" type="radio" value="1" name="radio2" checked>
+													<label for="tr_11">Выбрать</label>
+												</td>
+											</tr>
+											<tr class="b-order-table__item">
+												<td class="b-order-table__logo">
+													<img src="images/pages/order/dl.png">
+												</td>
+												<td><b>Деловые Линии</b>
+													<br>Доставка по России и регионам выполняет транспортная компания Деловые Линиии</td>
+												<td class="b-order-table__price">
+													<div class="b-price"><span class="b-price__number">1200</span><span class="b-price__thinsp">&nbsp;</span><span class="b-price__rubl">Р</span>
+													</div>
+												</td>
+												<td class="b-order-table__action">
+													<input id="tr_12" type="radio" value="2" name="radio2">
+													<label for="tr_12">Выбрать</label>
+												</td>
+											</tr>
+											<tr class="b-order-table__item">
+												<td class="b-order-table__logo"></td>
+												<td><b>Курьерская доставка</b>
+													<br>В крупных городах это наиболее востребованный способ и популярнейшая служба доставки.</td>
+												<td class="b-order-table__price">
+													<div class="b-price"><span class="b-price__number">990</span><span class="b-price__thinsp">&nbsp;</span><span class="b-price__rubl">Р</span>
+													</div>
+												</td>
+												<td class="b-order-table__action">
+													<input id="tr_13" type="radio" value="3" name="radio2">
+													<label for="tr_13">Выбрать</label>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
 								<div id="step-4">
-									<h2 class="b-wizard__step-title">Адрес доставки</h2>
-									<p>Для доставки покупок требуется указать почтовый адрес</p>
-									<div class="input-holder">
-										<select name="country" value="" placeholder="Страна">
-											<option value="1" selected>Россия</option>
-											<option value="2">Украина</option>
-											<option value="3">Белорусь</option>
-										</select>
-									</div>
-									<div class="input-holder tooltip">
-										<div class="tooltip__trigger">?
-											<div class="tooltip__content">
-												<p>Введите ваше имя на сайте.</p>
-												<div class="tooltip__before"></div>
-												<div class="tooltip__after"></div>
-											</div>
-										</div>
-										<input type="text" name="family" value="" placeholder="Регион" class="block-input">
-									</div>
-									<div class="input-holder">
-										<input type="text" name="name" value="" placeholder="Город" class="block-input">
-									</div>
-									<div class="input-holder">
-										<input type="text" name="patronymic" value="" placeholder="Улица, дом, квартира" class="block-input">
-									</div>
-									<div class="input-holder">
-										<input type="text" name="date" value="" placeholder="Почтовый индекс" class="block-input">
-									</div>
-									<div style="padding-top:13px" class="input-holder">
-										<input id="skip_address" name="skip_address" type="checkbox" checked class="checkbox">
-										<label for="skip_address" class="block-label b-small-text">Указать позже</label>
-									</div>
+									<h2 class="b-wizard__step-title">Выберите способ оплаты</h2>
+									<table class="b-order-table">
+										<thead>
+											<tr>
+												<th class="b-order-table__logo"></th>
+												<th>Способ оплаты</th>
+												<th class="b-order-table__price">К оплате</th>
+												<th class="b-order-table__action"></th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr class="b-order-table__item">
+												<td class="b-order-table__logo">
+													<img src="images/pages/order/zpay.png">
+												</td>
+												<td>
+													<div class="b-order-table__text tooltip">
+														<div class="tooltip__trigger">?
+															<div class="tooltip__content">
+																<p>Описание для платёжной системы.</p>
+																<div class="tooltip__before"></div>
+																<div class="tooltip__after"></div>
+															</div>
+														</div><b>Z-Payment</b>
+														<br>Система приема и обработки платежей Z-Payment это шлюз для приема платежей из различных систем, в процессе оплаты предоставляется выбор любого способов оплаты, которых насчитывается более 30.</div>
+												</td>
+												<td class="b-order-table__price">
+													<div class="b-price"><span class="b-price__number">23<i class="b-price__separator"></i>800</span><span class="b-price__thinsp">&nbsp;</span><span class="b-price__rubl">Р</span>
+													</div>
+												</td>
+												<td class="b-order-table__action">
+													<input id="tr_31" type="radio" value="1" name="radio3">
+													<label for="tr_31">Выбрать</label>
+												</td>
+											</tr>
+										</tbody>
+									</table>
 								</div>
 								<div id="step-5">
-									<h2 class="b-wizard__step-title">Адрес доставки</h2>
-									<p>Для доставки покупок требуется указать почтовый адрес</p>
-									<div class="input-holder">
-										<select name="country" value="" placeholder="Страна">
-											<option value="1" selected>Россия</option>
-											<option value="2">Украина</option>
-											<option value="3">Белорусь</option>
-										</select>
+									<h2 class="b-wizard__step-title">Подтвердите заказ</h2>
+									<table class="b-order-table b-order-table--header b-cart-table">
+										<thead>
+											<tr>
+												<th class="b-order-table__thumb"></th>
+												<th>Наименование</th>
+												<th class="b-order-table__title">Цена</th>
+												<th class="b-order-table__action">Количество</th>
+												<th class="b-order-table__price">Сумма</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr class="b-order-table__item">
+												<td class="b-order-table__thumb">
+													<img src="images/catalog/goods01.jpg">
+												</td>
+												<td class="b-order-table__title"><a href="javascript:void(0);">Converse Red</a>
+												</td>
+												<td class="b-order-table__title">
+													<div class="b-price"><span class="b-price__number">2880</span><span class="b-price__thinsp">&nbsp;</span><span class="b-price__rubl">Р</span>
+													</div>
+												</td>
+												<td class="b-order-table__action">1</td>
+												<td class="b-order-table__price">
+													<div class="b-price"><span class="b-price__number">12<i class="b-price__separator"></i>440</span><span class="b-price__thinsp">&nbsp;</span><span class="b-price__rubl">Р</span>
+													</div>
+												</td>
+											</tr>
+											<tr class="b-order-table__item">
+												<td class="b-order-table__thumb">
+													<img src="images/catalog/goods02.jpg">
+												</td>
+												<td class="b-order-table__title"><a href="javascript:void(0);">Штукатурка гипсовая для&nbsp;наружных работ с&nbsp;нормальной влажностью</a>
+												</td>
+												<td class="b-order-table__title">
+													<div class="b-price"><span class="b-price__number">2400</span><span class="b-price__thinsp">&nbsp;</span><span class="b-price__rubl">Р</span>
+													</div>
+												</td>
+												<td class="b-order-table__action">1</td>
+												<td class="b-order-table__price">
+													<div class="b-price"><span class="b-price__number">27<i class="b-price__separator"></i>000</span><span class="b-price__thinsp">&nbsp;</span><span class="b-price__rubl">Р</span>
+													</div>
+												</td>
+											</tr>
+											<tr class="b-order-table__item">
+												<td class="b-order-table__thumb">
+													<img src="images/catalog/goods03.jpg">
+												</td>
+												<td class="b-order-table__title"><a href="javascript:void(0);">Converse Red</a>
+												</td>
+												<td class="b-order-table__title">
+													<div class="b-price"><span class="b-price__number">1800</span><span class="b-price__thinsp">&nbsp;</span><span class="b-price__rubl">Р</span>
+													</div>
+												</td>
+												<td class="b-order-table__action">1</td>
+												<td class="b-order-table__price">
+													<div class="b-price"><span class="b-price__number">18<i class="b-price__separator"></i>290</span><span class="b-price__thinsp">&nbsp;</span><span class="b-price__rubl">Р</span>
+													</div>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+									<ul class="b-tech">
+										<li class="b-tech__item">
+											<div class="b-tech__char"><span>Скидка: <i>30%</i></span>
+											</div>
+											<div class="b-tech__value">
+												<div class="b-price"><span class="b-price__number">-3700</span><span class="b-price__thinsp">&nbsp;</span><span class="b-price__rubl">Р</span>
+												</div>
+											</div>
+										</li>
+										<li class="b-tech__item">
+											<div class="b-tech__char"><span>Доставка: <i>EMS почтой</i></span>
+											</div>
+											<div class="b-tech__value">
+												<div class="b-price"><span class="b-price__number">880</span><span class="b-price__thinsp">&nbsp;</span><span class="b-price__rubl">Р</span>
+												</div>
+											</div>
+										</li>
+										<li class="b-tech__item">
+											<div class="b-tech__char"><span>Способ оплаты: <i>Z-Payment</i></span>
+											</div>
+											<div class="b-tech__value">0</div>
+										</li>
+										<li class="b-tech__item">
+											<div class="b-tech__char"><span>Всего: </span>
+											</div>
+											<div class="b-tech__value">
+												<div class="b-order__amount b-price"><span class="b-price__number">35<i class="b-price__separator"></i>880</span><span class="b-price__thinsp">&nbsp;</span><span class="b-price__rubl">Р</span>
+												</div>
+											</div>
+										</li>
+									</ul>
+									<h2 class="b-wizard__step-title">Доставка</h2>
+									<table class="b-order-table b-order-table--header">
+										<thead>
+											<tr>
+												<th colspan="2">Компания</th>
+												<th>Адрес</th>
+												<th class="b-order-table__price">Получатель</th>
+												<th class="b-order-table__phone">Телефон</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr class="b-order-table__item">
+												<td class="b-order-table__logo">
+													<img src="images/pages/order/ems.png">
+												</td>
+												<td class="b-order-table__title"><b>Доставка EMS-Post</b>
+												</td>
+												<td>309070, Россия, г. Белгород,
+													<br/>ул. Ленина 15, кв 20</td>
+												<td class="b-order-table__price">Сибилев Игорь</td>
+												<td class="b-order-table__phone">8 913 123-45-67</td>
+											</tr>
+										</tbody>
+									</table>
+									<div style="margin-bottom: 60px" class="comment">
+										<textarea name="comment" value="" placeholder="Примечания к заказу" width="100%" rows="2"></textarea>
 									</div>
 								</div>
 							</div>

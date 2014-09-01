@@ -309,47 +309,59 @@ input[type="radio"]
 	& + label
 		cursor pointer
 
-		&:before
-			content ""
-			display inline-block
-			vertical-align middle
-			height 24px
-			width 27px
-			margin -4px 4px 0 0
-			background-image url('../images/ui/pokupo-ui.png')
-			background-repeat no-repeat
+input[type="checkbox"]
+	& + label:before
+		content ""
+		display inline-block
+		vertical-align middle
+		height 24px
+		width 27px
+		margin -4px 4px 0 0
+		background-image url('../images/ui/pokupo-ui.png')
+		background-repeat no-repeat
+
+input[type="radio"]
+	& + label:before
+		content ""
+		display inline-block
+		vertical-align middle
+		height 36px
+		width 36px
+		margin -4px 6px 0 0
+		background-image url('../images/ui/pokupo-ui-radio.png')
+		background-repeat no-repeat
 
 input[type="checkbox"] 
-	& + label::before
-		background-position 0px 0px
+	& + label:before
+		background-position 0 0
 
-	&:hover + label::before
-		background-position -27px 0px
+	&:hover + label:before
+		background-position -27px 0
 
-	&:active + label::before
-		background-position -54px 0px
+	&:active + label:before
+		background-position -54px 0
 
-	&:checked + label::before
-		background-position -81px 0px
+	&:checked + label:before
+		background-position -81px 0
 
-	&:checked:active + label::before
-		background-position -54px 0px
+	&:checked:active + label:before
+		background-position -54px 0
 
-input[type="radio"] + label::before
-	& + label::before
-		background-position 0px -24px
+input[type="radio"]
+	& + label:before
+		background-position 0 0
 
-	&:hover + label::before
-		background-position -27px -24px
+	&:hover + label:before
+		background-position -36px 0
 
-	&:active + label::before
-		background-position -54px -24px
+	&:active + label:before
+		background-position -36px 0
 
-	&:checked + label::before
-		background-position -81px -24px
+	&:checked + label:before
+		background-position -72px 0
 
-	&:checked:active + label::before
-		background-position -54px -24px
+	&:checked:active + label:before
+		background-position -72px 0
 
 
 

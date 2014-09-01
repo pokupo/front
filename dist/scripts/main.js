@@ -747,6 +747,14 @@ PKP.Forms = {
 			onShowStep: null, 
 			onFinish: null 
 		});
+		$('#orderWizard').wizard({
+			labelFinish: 'Подтверждаю'
+		});
+		PKP.$body.on('click', '.b-order-table__action label', function(){
+			var $this = $(this);
+
+			$this.closest('tr').addClass('active').siblings().removeClass('active');
+		});
 	}
 };
 

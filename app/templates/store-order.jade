@@ -1,0 +1,407 @@
+extends partials/layouts/store
+
+block head
+	- page.title = 'Оформление заказа';
+
+block menu 
+	+menu-list([
+		{text:"Платформа",href:"frontpage.html",submenu:[
+			{text:"Особенности",href:"#"},
+			{text:"Вопросы и ответы",href:"#"},
+			{text:"Готовые решения",href:"#"},
+			{text:"Торговая площадка",href:"#"}
+		]},
+		{text:"Тарифы",href:"rates.html"},
+		{text:"Сообщество",href:"community.html"},
+		{text:"Помощь",href:"#",submenu:[
+			{text:"Техническая поддержка",href:"#"},
+			{text:"Видео курсы",href:"#"},
+			{text:"Семинары",href:"#"}]},
+		{text:"Компания",href:"#", submenu:[
+			{text:"События",href:"events.html"},
+			{text:"Контакты",href:"#"},
+			{text:"О нас",href:"aboutus.html"},
+			{text:"Партнёры",href:"partners.html"},
+			{text:"Блог",href:"#"}
+		]}
+	])(class="b-navigation")
+
+block content
+	section.register
+		.container
+			.b-thermometer
+				p 
+					a(href="index.html") Главная 
+					span.divider / 
+					a(href=js0) Регистрация покупателя
+					span.divider / 
+					span.current Шаг 1
+
+			.doc
+				h1 Оформление заказа
+
+
+				form(action="#")
+					#orderWizard.b-wizard
+						ul.b-wizard__steps
+							li
+								a(href="#step-1")
+									label.b-wizard__step-num 1
+							li
+								a(href="#step-21")
+									label.b-wizard__step-num 2.1
+							li
+								a(href="#step-22")
+									label.b-wizard__step-num 2.2
+							li
+								a(href="#step-3")
+									label.b-wizard__step-num 3
+							li
+								a(href="#step-4")
+									label.b-wizard__step-num 4
+							li
+								a(href="#step-5")
+									label.b-wizard__step-num 5
+
+						#step-1
+							h2.b-wizard__step-title Персональные данные
+							p Укажите свои персональные данные
+
+							.input-holder.tooltip
+								.tooltip__trigger ?
+									.tooltip__content
+										p Введите ваше имя на сайте.
+										.tooltip__before
+										.tooltip__after
+								input.block-input(type="text" name="family" value="" placeholder="Фамилия")
+
+							.input-holder
+								input.block-input(type="text" name="name" value="" placeholder="Имя")
+
+							.input-holder
+								input.block-input(type="text" name="patronymic" value="" placeholder="Отчество")									
+
+							.input-holder
+								input.block-input(type="text" name="date" value="" placeholder="Дата рождения")
+
+							.input-holder(style="padding-top:13px")
+								input#skip_personal.checkbox(name="skip_personal" type="checkbox" checked)
+								label.block-label.b-small-text(for="skip_personal") 
+									| Указать позже
+
+						#step-21
+							h2.b-wizard__step-title Адрес доставки
+							p Для доставки покупок требуется указать почтовый адрес
+
+							.input-holder
+								select(name="country" value="" placeholder="Страна")
+									option(value="1" selected) Россия
+									option(value="2") Украина
+									option(value="3") Белорусь
+
+							.input-holder
+								input.block-input(type="text" name="family" value="" placeholder="Регион")
+
+							.input-holder
+								input.block-input(type="text" name="name" value="" placeholder="Город")
+
+							.input-holder
+								input.block-input(type="text" name="patronymic" value="" placeholder="Улица, дом, квартира")									
+
+							.input-holder
+								input.block-input(type="text" name="date" value="" placeholder="Почтовый индекс")
+
+							.input-holder
+								input.block-input(type="text" name="fio" value="" placeholder="ФИО получателя")
+
+							.input-holder
+								input.block-input(type="text" name="phone" value="" placeholder="Телефон покупателя")
+
+							.input-holder(style="padding-top:13px")
+								input#set_main_address.checkbox(name="set_main_address" type="checkbox" checked)
+								label.block-label.b-small-text(for="set_main_address") 
+									| Основной адрес
+						
+						#step-22
+							h2.b-wizard__step-title Выберите адрес доставки
+
+							table.b-order-table
+								thead
+									tr
+										th.b-order-table__action
+										th Адрес
+										th.b-order-table__name Получатель
+										th.b-order-table__phone Контактный телефон
+										th.b-order-table__drop 
+								tbody
+									tr.b-order-table__item
+										td.b-order-table__action
+											input#tr_01(type="radio" value="1" name="radio")
+											label(for="tr_01") Выбрать
+										td 309070, Россия, г. Белгород, ул. Кривошеина 8, кв 13
+										td.b-order-table__name Сибилев Игорь
+										td.b-order-table__phone +7 913 123 45-67-89
+										td.b-order-table__drop
+											.b-order-item__drop.btn-circle.btn-circle--drop
+
+									tr.b-order-table__item.active
+										td.b-order-table__action
+											input#tr_02(type="radio" value="2" name="radio" checked)
+											label(for="tr_02") Выбрать
+										td 309070, Россия, г. Белгород, ул. Ленина 15, кв 20
+										td.b-order-table__name Константин Константинопольский
+										td.b-order-table__phone +7 913 123 45-67-89
+										td.b-order-table__drop
+											.b-order-item__drop.btn-circle.btn-circle--drop
+
+									tr.b-order-table__item
+										td.b-order-table__action
+											input#tr_03(type="radio" value="3" name="radio")
+											label(for="tr_03") Выбрать
+										td 309070, Россия, г. Белгород, ул. Кривошеина 8, кв 13
+										td.b-order-table__name Сибилев Игорь
+										td.b-order-table__phone +7 913 123 45-67-89
+										td.b-order-table__drop
+											.b-order-item__drop.btn-circle.btn-circle--drop
+								tfoot
+									tr
+										td(colspan=5) 
+											span.btn.btn-orange.btn-aux Добавить новый адрес
+
+						#step-3
+							h2.b-wizard__step-title Выберите способ доставки
+
+							table.b-order-table
+								thead
+									tr
+										th.b-order-table__logo
+										th Способ доставки
+										th.b-order-table__price Стоимость
+										th.b-order-table__action
+								tbody
+									tr.b-order-table__item.active
+										td.b-order-table__logo
+											img(src="images/pages/order/ems.png")
+										td 
+											b Доставка EMS почтой
+											br
+											| Доставка по России и регионам выполняет EMS Почта России
+										td.b-order-table__price
+											.b-price
+												span.b-price__number 800
+												span.b-price__thinsp &nbsp;
+												span.b-price__rubl Р
+										td.b-order-table__action
+											input#tr_11(type="radio" value="1" name="radio2" checked)
+											label(for="tr_11") Выбрать
+
+									tr.b-order-table__item
+										td.b-order-table__logo
+											img(src="images/pages/order/dl.png")
+										td
+											b Деловые Линии
+											br
+											| Доставка по России и регионам выполняет транспортная компания Деловые Линиии
+										td.b-order-table__price
+											.b-price
+												span.b-price__number 1200
+												span.b-price__thinsp &nbsp;
+												span.b-price__rubl Р
+										td.b-order-table__action
+											input#tr_12(type="radio" value="2" name="radio2")
+											label(for="tr_12") Выбрать	
+
+									tr.b-order-table__item
+										td.b-order-table__logo
+										td
+											b Курьерская доставка
+											br
+											| В крупных городах это наиболее востребованный способ и  популярнейшая служба доставки.
+										td.b-order-table__price
+											.b-price
+												span.b-price__number 990
+												span.b-price__thinsp &nbsp;
+												span.b-price__rubl Р
+										td.b-order-table__action
+											input#tr_13(type="radio" value="3" name="radio2")
+											label(for="tr_13") Выбрать
+
+						#step-4
+							h2.b-wizard__step-title Выберите способ оплаты
+
+							table.b-order-table
+								thead
+									tr
+										th.b-order-table__logo
+										th Способ оплаты
+										th.b-order-table__price К оплате
+										th.b-order-table__action
+								tbody
+									tr.b-order-table__item
+										td.b-order-table__logo
+											img(src="images/pages/order/zpay.png")
+										td
+											.b-order-table__text.tooltip
+												.tooltip__trigger ?
+													.tooltip__content
+														p Описание для платёжной системы.
+														.tooltip__before
+														.tooltip__after
+												b Z-Payment
+												br
+												| Система приема и обработки платежей Z-Payment это шлюз для приема платежей из различных систем, в процессе оплаты предоставляется выбор любого способов оплаты, которых насчитывается более 30.
+											
+										td.b-order-table__price
+											.b-price
+												span.b-price__number
+													| 23
+													i.b-price__separator
+													| 800
+												span.b-price__thinsp &nbsp;
+												span.b-price__rubl Р
+										td.b-order-table__action
+											input#tr_31(type="radio" value="1" name="radio3")
+											label(for="tr_31") Выбрать
+							
+						#step-5
+							h2.b-wizard__step-title Подтвердите заказ
+							table.b-order-table.b-order-table--header.b-cart-table
+								thead
+									tr
+										th.b-order-table__thumb
+										th Наименование
+										th.b-order-table__title Цена
+										th.b-order-table__action Количество
+										th.b-order-table__price Сумма
+								tbody
+									tr.b-order-table__item
+										td.b-order-table__thumb
+											img(src="images/catalog/goods01.jpg")
+										td.b-order-table__title
+											a(href=js0) Converse Red
+										td.b-order-table__title
+											.b-price
+												span.b-price__number 2880
+												span.b-price__thinsp &nbsp;
+												span.b-price__rubl Р
+										td.b-order-table__action 1
+										td.b-order-table__price
+											.b-price
+												span.b-price__number
+													| 12
+													i.b-price__separator
+													| 440
+												span.b-price__thinsp &nbsp;
+												span.b-price__rubl Р
+									tr.b-order-table__item
+										td.b-order-table__thumb
+											img(src="images/catalog/goods02.jpg")
+										td.b-order-table__title
+											a(href=js0)
+												| Штукатурка гипсовая для&nbsp;наружных работ с&nbsp;нормальной влажностью
+										td.b-order-table__title
+											.b-price
+												span.b-price__number 2400
+												span.b-price__thinsp &nbsp;
+												span.b-price__rubl Р
+										td.b-order-table__action 1
+										td.b-order-table__price
+											.b-price
+												span.b-price__number
+													| 27
+													i.b-price__separator
+													| 000
+												span.b-price__thinsp &nbsp;
+												span.b-price__rubl Р
+									tr.b-order-table__item
+										td.b-order-table__thumb
+											img(src="images/catalog/goods03.jpg")
+										td.b-order-table__title
+											a(href=js0) Converse Red
+										td.b-order-table__title
+											.b-price
+												span.b-price__number 1800
+												span.b-price__thinsp &nbsp;
+												span.b-price__rubl Р
+										td.b-order-table__action 1
+										td.b-order-table__price
+											.b-price
+												span.b-price__number
+													| 18
+													i.b-price__separator
+													| 290
+												span.b-price__thinsp &nbsp;
+												span.b-price__rubl Р
+
+							ul.b-tech
+								li.b-tech__item
+									.b-tech__char
+										span 
+											| Скидка: 
+											i 30%
+									.b-tech__value
+										.b-price
+											span.b-price__number -3700
+											span.b-price__thinsp &nbsp;
+											span.b-price__rubl Р
+								li.b-tech__item
+									.b-tech__char
+										span 
+											| Доставка: 
+											i EMS почтой
+									.b-tech__value
+										.b-price
+											span.b-price__number 880
+											span.b-price__thinsp &nbsp;
+											span.b-price__rubl Р
+								li.b-tech__item
+									.b-tech__char
+										span 
+											| Способ оплаты: 
+											i Z-Payment
+									.b-tech__value 0
+								li.b-tech__item
+									.b-tech__char
+										span 
+											| Всего: 
+									.b-tech__value
+										.b-order__amount.b-price
+											span.b-price__number
+												| 35
+												i.b-price__separator
+												| 880
+											span.b-price__thinsp &nbsp;
+											span.b-price__rubl Р
+
+
+							h2.b-wizard__step-title Доставка
+							table.b-order-table.b-order-table--header
+								thead
+									tr
+										th(colspan=2) Компания
+										th Адрес
+										th.b-order-table__price Получатель
+										th.b-order-table__phone Телефон
+								tbody
+									tr.b-order-table__item
+										td.b-order-table__logo
+											img(src="images/pages/order/ems.png")
+										td.b-order-table__title
+											b Доставка EMS-Post
+										td
+											| 309070, Россия, г. Белгород,<br/>
+											| ул. Ленина 15, кв 20
+										td.b-order-table__price Сибилев Игорь
+										td.b-order-table__phone 8 913 123-45-67
+
+							.comment(style="margin-bottom: 60px")
+								textarea(name="comment" value="" placeholder="Примечания к заказу" width="100%" rows=2)
+
+
+							
+
+
+
+
+block scripts
+	+script(['libs/jquery.wizard.js', 'main.js'])

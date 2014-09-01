@@ -1,0 +1,133 @@
+.b-order-table
+	margin 30px 0 40px
+	width 100%
+	padding 0
+	table-layout fixed
+
+	tr
+		vertical-align middle
+		border-bottom 1px solid #e5e5e5
+
+	thead
+		tr
+			th 
+				color #999
+				font-size 13px
+				line-height 20px
+				text-align left
+				height 50px
+				
+
+	tbody
+		tr
+			td
+				padding 15px 0
+				text-align left
+				height 100px
+				cursor default
+				font-size 13px
+				line-height 18px
+
+				&:first-child
+					padding-left 20px
+				&:last-child
+					padding-right 10px
+
+				b
+					font-weight 800
+
+			&:hover
+				background rgba($white, 0.4)
+
+			&.active
+			&.active:hover
+				background $grey
+
+	tfoot
+		tr
+			td
+				height 80px
+				text-align right
+
+	&.b-order-table--header
+		thead
+			tr
+				background $grey
+				th:first-child
+					padding-left 20px
+	&.b-cart-table
+		td 
+			font-size 15px
+			color #333
+		.b-order-table__price
+		.b-order-table__title
+			color #999
+		.b-order-table__title
+			a 
+				font-size 16px
+
+
+	&__action
+		width 163px
+		label
+			font-weight 800
+	&__logo
+		width 163px
+		text-align center!important
+
+		img 
+			display inline-block
+			margin 0 auto
+
+	&__thumb
+		width 93px
+		img
+			width 65px
+			display inline-block
+			margin 0 auto
+
+	&__price
+	&__name
+		width 185px
+
+	&__title
+	&__phone
+		width 170px
+
+	&__drop
+		width 70px
+
+.btn-aux
+	width 205px
+	height 40px
+	font-size 12px
+	line-height 18px
+	border-width 2px
+	text-transform uppercase
+	font-weight normal
+
+
+.b-order-table__text
+	margin-right 100px
+	.tooltip__trigger
+		margin-top 30px
+
+.b-wizard__holder
+	.b-tech
+		&__item
+			margin-bottom 27px
+		&__char
+			font-size 16px
+		&__value
+			font-size 15px
+			color #999
+			margin 0 0 0 793px
+
+.b-order__amount
+	color $green
+	font-size 30px
+	font-weight 800
+	line-height 20px
+	position relative
+	top -4px
+

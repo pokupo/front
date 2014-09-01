@@ -1065,8 +1065,7 @@ input[type="checkbox"] + label,
 input[type="radio"] + label {
   cursor: pointer;
 }
-input[type="checkbox"] + label:before,
-input[type="radio"] + label:before {
+input[type="checkbox"] + label:before {
   content: "";
   display: inline-block;
   vertical-align: middle;
@@ -1076,35 +1075,45 @@ input[type="radio"] + label:before {
   background-image: url("../images/ui/pokupo-ui.png");
   background-repeat: no-repeat;
 }
-input[type="checkbox"] + label::before {
-  background-position: 0px 0px;
+input[type="radio"] + label:before {
+  content: "";
+  display: inline-block;
+  vertical-align: middle;
+  height: 36px;
+  width: 36px;
+  margin: -4px 6px 0 0;
+  background-image: url("../images/ui/pokupo-ui-radio.png");
+  background-repeat: no-repeat;
 }
-input[type="checkbox"]:hover + label::before {
-  background-position: -27px 0px;
+input[type="checkbox"] + label:before {
+  background-position: 0 0;
 }
-input[type="checkbox"]:active + label::before {
-  background-position: -54px 0px;
+input[type="checkbox"]:hover + label:before {
+  background-position: -27px 0;
 }
-input[type="checkbox"]:checked + label::before {
-  background-position: -81px 0px;
+input[type="checkbox"]:active + label:before {
+  background-position: -54px 0;
 }
-input[type="checkbox"]:checked:active + label::before {
-  background-position: -54px 0px;
+input[type="checkbox"]:checked + label:before {
+  background-position: -81px 0;
 }
-input[type="radio"] + label::before + label::before {
-  background-position: 0px -24px;
+input[type="checkbox"]:checked:active + label:before {
+  background-position: -54px 0;
 }
-input[type="radio"] + label::before:hover + label::before {
-  background-position: -27px -24px;
+input[type="radio"] + label:before {
+  background-position: 0 0;
 }
-input[type="radio"] + label::before:active + label::before {
-  background-position: -54px -24px;
+input[type="radio"]:hover + label:before {
+  background-position: -36px 0;
 }
-input[type="radio"] + label::before:checked + label::before {
-  background-position: -81px -24px;
+input[type="radio"]:active + label:before {
+  background-position: -36px 0;
 }
-input[type="radio"] + label::before:checked:active + label::before {
-  background-position: -54px -24px;
+input[type="radio"]:checked + label:before {
+  background-position: -72px 0;
+}
+input[type="radio"]:checked:active + label:before {
+  background-position: -72px 0;
 }
 input[type="text"],
 input[type="email"],
@@ -1985,7 +1994,7 @@ section.header {
   border-bottom-color: #018f3c;
 }
 .b-navigation .menu__item a {
-  padding: 54px 8px 40px;
+  padding: 54px 15px 40px;
 }
 .header .dropdown__trigger.active {
   z-index: 151;
@@ -3431,7 +3440,7 @@ section.store {
 .b-sidebar .menu__item.current > a,
 .b-sidebar .menu__item.current > u {
   color: #ffa800;
-  font-weight: 800;
+/* font-weight 800 */
 }
 .b-sidebar .menu__item.current > a span,
 .b-sidebar .menu__item.current > u span {
@@ -4413,6 +4422,7 @@ body .b-share-popup__header_first {
 }
 .b-tech__item {
   margin-bottom: 6px;
+  text-align: left;
 }
 .b-tech__char {
   float: left;
@@ -4422,7 +4432,10 @@ body .b-share-popup__header_first {
   background: #fff;
   color: #000;
   padding-right: 8px;
-  font-weight: bold;
+  font-weight: 800;
+}
+.b-tech__char span i {
+  font-weight: normal;
 }
 .b-tech__value {
   background: #fff;
@@ -4483,6 +4496,135 @@ body .b-share-popup__header_first {
   padding: 6px 20px;
   border-width: 2px;
   vertical-align: top;
+}
+.b-order-table {
+  margin: 30px 0 40px;
+  width: 100%;
+  padding: 0;
+  table-layout: fixed;
+}
+.b-order-table tr {
+  vertical-align: middle;
+  border-bottom: 1px solid #e5e5e5;
+}
+.b-order-table thead tr th {
+  color: #999;
+  font-size: 13px;
+  line-height: 20px;
+  text-align: left;
+  height: 50px;
+}
+.b-order-table tbody tr td {
+  padding: 15px 0;
+  text-align: left;
+  height: 100px;
+  cursor: default;
+  font-size: 13px;
+  line-height: 18px;
+}
+.b-order-table tbody tr td:first-child {
+  padding-left: 20px;
+}
+.b-order-table tbody tr td:last-child {
+  padding-right: 10px;
+}
+.b-order-table tbody tr td b {
+  font-weight: 800;
+}
+.b-order-table tbody tr:hover {
+  background: rgba(247,245,243,0.4);
+}
+.b-order-table tbody tr.active,
+.b-order-table tbody tr.active:hover {
+  background: #efece7;
+}
+.b-order-table tfoot tr td {
+  height: 80px;
+  text-align: right;
+}
+.b-order-table.b-order-table--header thead tr {
+  background: #efece7;
+}
+.b-order-table.b-order-table--header thead tr th:first-child {
+  padding-left: 20px;
+}
+.b-order-table.b-cart-table td {
+  font-size: 15px;
+  color: #333;
+}
+.b-order-table.b-cart-table .b-order-table__price,
+.b-order-table.b-cart-table .b-order-table__title {
+  color: #999;
+}
+.b-order-table.b-cart-table .b-order-table__title a {
+  font-size: 16px;
+}
+.b-order-table__action {
+  width: 163px;
+}
+.b-order-table__action label {
+  font-weight: 800;
+}
+.b-order-table__logo {
+  width: 163px;
+  text-align: center !important;
+}
+.b-order-table__logo img {
+  display: inline-block;
+  margin: 0 auto;
+}
+.b-order-table__thumb {
+  width: 93px;
+}
+.b-order-table__thumb img {
+  width: 65px;
+  display: inline-block;
+  margin: 0 auto;
+}
+.b-order-table__price,
+.b-order-table__name {
+  width: 185px;
+}
+.b-order-table__title,
+.b-order-table__phone {
+  width: 170px;
+}
+.b-order-table__drop {
+  width: 70px;
+}
+.btn-aux {
+  width: 205px;
+  height: 40px;
+  font-size: 12px;
+  line-height: 18px;
+  border-width: 2px;
+  text-transform: uppercase;
+  font-weight: normal;
+}
+.b-order-table__text {
+  margin-right: 100px;
+}
+.b-order-table__text .tooltip__trigger {
+  margin-top: 30px;
+}
+.b-wizard__holder .b-tech__item {
+  margin-bottom: 27px;
+}
+.b-wizard__holder .b-tech__char {
+  font-size: 16px;
+}
+.b-wizard__holder .b-tech__value {
+  font-size: 15px;
+  color: #999;
+  margin: 0 0 0 793px;
+}
+.b-order__amount {
+  color: #02903d;
+  font-size: 30px;
+  font-weight: 800;
+  line-height: 20px;
+  position: relative;
+  top: -4px;
 }
 section.search {
   padding: 14px 0;
@@ -4684,7 +4826,7 @@ section.advanced-search label.separator {
   background-position: -720px -210px;
   width: 23px;
   height: 18px;
-  background: none;
+  background-color: none;
   margin: -14px 0 0 -6px;
 }
 #js-multilocation.part:before {
