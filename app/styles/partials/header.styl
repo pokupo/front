@@ -1,3 +1,6 @@
+section.header
+	padding 0
+	
 .header
 	position relative
 	padding 0
@@ -277,44 +280,63 @@
 		float right
 		margin 30px 32px 30px 0
 
-
-
 .b-order-item
 	font-size 0
 	line-height 30px
 	border-bottom 1px solid $grey
-	height 63px
 	cursor default
 	user-select none
 	clearfix()
 
 	&:hover
-		background $white
+		background rgba($white, 0.4)
 	
 	& > div
 		font-size 16px
-		line-height 60px
+		line-height 100px
 		display inline-block
 		vertical-align middle
+
+	&__checkbox
+		width 35px
+		padding-left 2px
+
+	&__img
+		width 81px
+		padding 0 8px
+		img
+			width 100%
+			height auto
+			vertical-align middle
+		& + .b-order-item__name
+			padding-left 0
 		
 	&__name
-		width 250px
+		width 280px
 		padding 0 25px 0 30px
 		line-height 20px!important
 		span 
 			line-height 20px
 			color $a__link
 
-	&__qty
-		width 80px
-		padding 0 5px
-
 	&__price
+		color #999
+
+	&__qty
+		width 225px
+		padding 0 0 0 20px
+
+	&__cost
 		padding 0 20px 0 30px
 		width 120px
 		font-size 18px!important
 		font-weight 800
 		color $green
+
+	&__delay
+		width 140px
+		padding 0 5px
+		text-align center
 
 	&__drop
 		margin-left 10px
@@ -330,9 +352,42 @@
 			&:before
 				sprite($icon__drop__active)
 
+	.b-catalog-item__limits
+		text-align center
 
+	/* Выпадайка меню */
+	&.b-cart-menu__goods-item
+		line-height 30px
+		height 63px
+		& > div
+			line-height 60px
+		.b-order-item__name
+			width 250px
+		.b-order-item__qty
+			width 80px
+			padding 0 5px
 
+.b-thead
+	height 50px
+	line-height 50px
 
+	& > div
+		line-height 50px
+		font-size 13px
+		color #999
+		font-weight normal
+	.b-order-item__qty
+		text-align center
+	.b-order-item__cost
+		width 200px
+		font-size 13px!important
+		
+.b-order-list__actions
+	border-bottom 1px solid $grey
+	padding 20px 0
+	.like_button
+	.drop_button
+		margin 0 22px 0 22px
 			
 
 

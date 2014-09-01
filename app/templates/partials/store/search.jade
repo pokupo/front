@@ -33,11 +33,11 @@ section.orange.search
 		
 			button.b-search__button(type="button") Найти
 
-section.advanced-search
+section.advanced-search.slidedown
 	.container
 		.advanced-search-trigger
-			span.advanced-search-trigger__text#js-advanced-search Расширенный поиск
-		.b-advanced-search(style="display:none")
+			span.advanced-search-trigger__text.slidedown__trigger(data-target="search") Расширенный поиск
+		.b-advanced-search.slidedown__content.hidden(data-target="search")
 			.columns.triple
 				.first.column
 					.content

@@ -358,6 +358,7 @@ input[type="text"]
 input[type="email"]
 input[type="tel"]
 input[type="password"]
+textarea 
 	width 100%
 	max-width 450px
 	height 60px
@@ -384,10 +385,14 @@ select
 	max-width 450px
 
 textarea 
+	max-width initial
 	resize vertical	
+	height auto
+	min-height 120px
+	background $grey
+	&:focus
+		background #fff
 
-	&.inline-input
-		height auto
 
 .block-input
 	background $grey

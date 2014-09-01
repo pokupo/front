@@ -1,0 +1,234 @@
+extends partials/layouts/store
+
+block head
+	- page.title = 'Корзина';
+
+block menu 
+	+menu-list([
+		{text:"Платформа",href:"frontpage.html",submenu:[
+			{text:"Особенности",href:"#"},
+			{text:"Вопросы и ответы",href:"#"},
+			{text:"Готовые решения",href:"#"},
+			{text:"Торговая площадка",href:"#"}
+		]},
+		{text:"Тарифы",href:"rates.html"},
+		{text:"Сообщество",href:"community.html"},
+		{text:"Помощь",href:"#",submenu:[
+			{text:"Техническая поддержка",href:"#"},
+			{text:"Видео курсы",href:"#"},
+			{text:"Семинары",href:"#"}]},
+		{text:"Компания",href:"#", submenu:[
+			{text:"События",href:"events.html"},
+			{text:"Контакты",href:"#"},
+			{text:"О нас",href:"aboutus.html"},
+			{text:"Партнёры",href:"partners.html"},
+			{text:"Блог",href:"#"}
+		]}
+	])(class="b-navigation")
+
+block content
+	section.store
+		.container
+			.b-thermometer
+				p 
+					a(href="index.html") Главная
+					span.divider  / 
+					span.current Моя корзина
+
+			.b-catalog-item
+				h1.b-catalog-item__title Моя корзина
+
+				.b-seller-info
+					.b-seller-info__actions
+						span.btn.btn-orange Задать вопрос
+						.b-support-info.dropdown
+							span.b-support-info__title
+								span.dropdown__trigger(data-target="support")  Поддержка
+							.b-support-info__content.dropdown__content.hidden(data-target="support")
+								p 
+									span.label Посетить сайт
+									a.action(href="http://pokupo.ru" target="_blank") pokupo.ru
+									span.label Написать
+									a.action(href="mailto:support@pokupo.ru") support@pokupo.ru
+									span.label Skype консультанта
+									a.action(href="skype:pokupo?chat" onclick="return skypeCheck()") pokupo
+									span.label ICQ консультанта
+									span.action 14112415151
+									span.label Позвонить
+									a.action(href="tel:+74953636393") +7 495 363-63-93
+
+					.b-seller-info__summary
+						.b-seller-info__photo
+							img(src="images/pages/catalog/seller-logo.png")
+						h1.b-seller-info__title Торговая платформа Pokupo
+						h2.b-seller-info__subtitle ID 19158495
+
+						ul.b-seller-info__characters-list
+							li 
+								span.char Рейтинг: 
+								span.value.value--orange +264
+							li
+								span.char Отзывы / претензии: 
+								span.value 
+									span.value--orange 12 
+									| / 
+									span.value--green 3
+							li
+								span.char Товаров: 
+								span.value 450
+
+				ol.b-order-list
+					li.b-order-item.b-thead
+						.b-order-item__checkbox
+							input#js-select-all(type="checkbox")
+							label(for="js-select-all")
+						.b-order-item__img
+						.b-order-item__name Наименование
+						.b-order-item__price Цена
+						.b-order-item__qty Количество
+						.b-order-item__cost Стоимость
+
+					li.b-order-item
+						.b-order-item__checkbox
+							input#input__00(type="checkbox")
+							label(for="input__00")
+						.b-order-item__img
+							img(src="images/catalog/goods01.jpg")
+						.b-order-item__name
+							span Converse White
+						.b-order-item__price.b-price
+							span.b-price__number 1800
+							span.b-price__thinsp &nbsp;
+							span.b-price__rubl Р
+						.b-order-item__qty
+							.b-increment-input
+								span.b-increment-input__darr &minus;
+								span.b-increment-input__input-wrapper 
+									input.inline-input.b-increment-input__input(type="text" data-name="qty" value="5" maxlength="3" autocomplete="off" data-min="1" data-max="5")
+								span.b-increment-input__uarr &plus;
+						.b-order-item__cost.b-price
+							span.b-price__number 9000
+							span.b-price__thinsp &nbsp;
+							span.b-price__rubl Р
+						.b-order-item__delay
+							.like_button.active
+								span.pseudo-link В избранное
+						.b-order-item__drop.btn-circle.btn-circle--drop
+
+					li.b-order-item
+						.b-order-item__checkbox
+							input#input__01(type="checkbox")
+							label(for="input__01")
+						.b-order-item__img
+							img(src="images/catalog/goods02.jpg")
+						.b-order-item__name
+							span Converse Red
+						.b-order-item__price.b-price
+							span.b-price__number 2450
+							span.b-price__thinsp &nbsp;
+							span.b-price__rubl Р
+						.b-order-item__qty
+							.b-increment-input
+								span.b-increment-input__darr &minus;
+								span.b-increment-input__input-wrapper 
+									input.inline-input.b-increment-input__input(type="text" data-name="qty" value="2" maxlength="3" autocomplete="off" data-min="1" data-max="5")
+								span.b-increment-input__uarr &plus;
+						.b-order-item__cost.b-price
+							span.b-price__number 4900
+							span.b-price__thinsp &nbsp;
+							span.b-price__rubl Р
+						.b-order-item__delay
+							.like_button
+								span.pseudo-link В избранное
+						.b-order-item__drop.btn-circle.btn-circle--drop
+
+					li.b-order-item
+						.b-order-item__checkbox
+							input#input__02(type="checkbox")
+							label(for="input__02")
+						.b-order-item__img
+							img(src="images/catalog/goods03.jpg")
+						.b-order-item__name
+							span Штукатурка гипсовая для&nbsp;наружных работ
+						.b-order-item__price.b-price
+							span.b-price__number 2990
+							span.b-price__thinsp &nbsp;
+							span.b-price__rubl Р
+						.b-order-item__qty
+							.b-increment-input
+								span.b-increment-input__darr &minus;
+								span.b-increment-input__input-wrapper 
+									input.inline-input.b-increment-input__input(type="text" data-name="qty" value="12" maxlength="3" autocomplete="off" data-min="1" data-max="5")
+								span.b-increment-input__uarr &plus;
+						.b-order-item__cost.b-price
+							span.b-price__number
+								| 35
+								i.b-price__separator
+								| 880
+							span.b-price__thinsp &nbsp;
+							span.b-price__rubl Р
+						.b-order-item__delay
+							.like_button
+								span.pseudo-link В избранное
+						.b-order-item__drop.btn-circle.btn-circle--drop
+
+				.b-order-list__actions
+					.like_button
+						span.pseudo-link Отложить выбранные товары
+					.drop_button
+						span.pseudo-link Удалить выбранные товары
+
+					.empty_button
+						span.pseudo-link Очистить корзину
+
+				.b-order-list__results
+					p.b-order-list__amount
+						| Итог:
+						span.b-price
+							span.b-price__number 49
+								i.b-price__separator
+								| 780
+							span.b-price__thinsp &nbsp;
+							span.b-price__rubl Р
+					p.b-order-list__tobepaid
+						| К оплате:
+						span.b-price
+							span.b-price__number 49
+								i.b-price__separator
+								| 780
+							span.b-price__thinsp &nbsp;
+							span.b-price__rubl Р
+
+				.b-order-list__buttons
+					a.btn.btn-grey.btn-big(href=js0) Продолжить покупки
+					a.btn.btn-orange.btn-big(href=js0) Оформить заказ
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+block scripts
+	+script(['main.js'])

@@ -21,11 +21,11 @@ body
 	min-height 100%
 	overflow hidden
 
+	& > section
+		padding 40px 0
+
 .footer-overlay
 	height 140px
-
-section
-	padding 40px 0
 
 .patterned
 	background-image url('../images/bg/pattern.png') 
@@ -100,6 +100,12 @@ h2
 	font-weight 400
 	font-size 36px
 	-webkit-font-smoothing subpixel-antialiased
+
+h3
+	line-height 20px
+	font-size 18px
+	font-weight normal
+	margin-bottom 20px
 
 hgroup
 	margin 0 auto
@@ -249,6 +255,90 @@ hgroup
 			a
 				padding-left 36px
 
+.slidedown
+	&__trigger
+		text-decoration none
+		cursor pointer
+		display inline-block
+		position relative
+		&:after
+			content ''
+			position absolute
+			display block
+			top 50%
+			right -18px
+			margin-top -2px
+			transform rotate(0)
+			sprite($icon__slidedown)
+			
+	&.active
+		.slidedown__trigger
+			&:after
+				transform rotate(180deg)
+				
+
+
+	span&__trigger
+		color $a__link
+		font-size 18px
+		border-bottom 1px dotted rgba($a__link, 0.4)
+
+		&:hover
+			border-bottom-color rgba($a__hover, 0.5)
+
+.tabs
+		width 100%
+		zoom 1
+		position relative
+		margin 0 0 30px
+		padding 0
+		clearfix()
+
+		&.&--skin
+			.tab__trigger
+				z-index 0
+				
+
+.tab
+	&__trigger
+		float left
+		line-height 35px
+		height 35px
+		position relative
+		left 0
+		margin-right 3px
+		padding 0 44px 0 0
+		font-size 30px
+		font-weight 300
+		
+		span
+			border-bottom 1px dotted rgba($a__link, 0.4)
+			color $a__link
+			cursor pointer
+
+		&:hover	
+			span
+				border-bottom-color rgba($a__hover,0.5)
+
+		&.selected	
+			span
+				color #000
+				cursor default
+				border-bottom 0
+
+	&__content
+		display none
+		float right
+		width 100%
+		position relative
+		z-index 2
+		margin 35px 0 0 -100%
+		.content
+			padding-top 50px
+
+		&.selected
+			display block
+
 
 .b-cart-menu__body
 .b-item__popover
@@ -304,7 +394,7 @@ hgroup
 
 .b-location .dropdown__trigger:after
 	right 20px
-
+	
 
 .full-width
 	position relative

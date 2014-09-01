@@ -150,6 +150,12 @@ section.store
 	&__title
 		margin-bottom 10px
 
+	&__subtitle
+		color #666
+		line-height 20px
+		font-size 13px
+		margin -10px 0 10px
+
 	&__controls
 		height 40px
 		padding 0	
@@ -337,6 +343,36 @@ section.store
 					display block
 				.b-item__price
 					margin-top 0
+
+		&.cards--small
+			padding-bottom 0
+
+			.b-item
+				width 150px
+				text-align center
+				&__info
+				&__order-button
+					display none
+				&__picture
+					height 150px
+					line-height 150px
+				&__title
+					font-size 13px
+					padding-bottom 3px
+
+				.b-item__price
+					font-size 18px
+				.b-item__price--old
+					font-size 10px
+					& + .b-price
+						margin-top 2px
+
+				&__popover
+					.b-item__info
+					.b-item__order-button
+						display block
+					.b-item__price
+						margin-top 0
 	&.magazine
 		padding 46px 0 70px
 		.b-catalog__item

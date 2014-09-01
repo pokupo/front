@@ -1,0 +1,77 @@
+extends partials/layouts/store
+
+block head
+	- page.title = 'Корзина';
+
+block menu 
+	+menu-list([
+		{text:"Платформа",href:"frontpage.html",submenu:[
+			{text:"Особенности",href:"#"},
+			{text:"Вопросы и ответы",href:"#"},
+			{text:"Готовые решения",href:"#"},
+			{text:"Торговая площадка",href:"#"}
+		]},
+		{text:"Тарифы",href:"rates.html"},
+		{text:"Сообщество",href:"community.html"},
+		{text:"Помощь",href:"#",submenu:[
+			{text:"Техническая поддержка",href:"#"},
+			{text:"Видео курсы",href:"#"},
+			{text:"Семинары",href:"#"}]},
+		{text:"Компания",href:"#", submenu:[
+			{text:"События",href:"events.html"},
+			{text:"Контакты",href:"#"},
+			{text:"О нас",href:"aboutus.html"},
+			{text:"Партнёры",href:"partners.html"},
+			{text:"Блог",href:"#"}
+		]}
+	])(class="b-navigation")
+
+block content
+	section.store
+		.container
+			.b-thermometer
+				p 
+					a(href="index.html") Главная
+					span.divider  / 
+					a(href="index.html") Моя корзина
+					span.divider  / 
+					a(href="index.html") Оформление заказа
+					span.divider  / 
+					span.current Оплата заказа
+
+			h1.b-catalog-item__title Оплата заказа
+
+			.b-invoice
+				.b-invoice__before
+				.content
+					.b-invoice__block
+						h2.b-invoice__title Данные счёта
+						ul.b-tech
+							li.b-tech__item
+								div.b-tech__char
+									span Номер счёта
+								div.b-tech__value 53
+							li.b-tech__item
+								div.b-tech__char
+									span Способ оплаты
+								div.b-tech__value Z-Payment
+							li.b-tech__item
+								div.b-tech__char
+									span Сумма к оплате
+								div.b-tech__value 23000
+
+					.b-invoice__block
+						h2.b-invoice__title Инструкция
+						p 
+							| Оплата счета через платежный шлюз Z-Payment предоставляет возмож-<br/>
+							| ность выбрать любой удобный для Вас метод оплаты. После перехода на сайт платежного сервиса выберите удобный способ оплаты и точно следуйте инструкциям на сайте платежной системы. 
+						p
+							b Внимание! 
+							| Для некоторых способов оплаты может взиматься дополнительная агентская комиссия.
+						p 
+							span.pseudo-link Распечатать инструкцию
+			
+			.b-wizard__actions
+				a.b-wizard__action.btn-prev-step Назад
+				a.b-wizard__action.btn-next-step Оплатить
+

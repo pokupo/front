@@ -1,79 +1,77 @@
 var PKP = {};
 
-var treeData = [
-			{title: "Компьютерная техника", folder: true,
-				children: [
-					{title: "Ноутбуки", selected: true},
-					{title: "Моноблоки"},
-					{title: "Планшеты"}
-				]
-			},
-			{title:"Бытовая техника", folder: true, selected: true,
-				children: [
-					{title:"Стиральные машины", selected: true},
-					{title:"Телевизоры", selected: true},
-					{title:"Кухонная техника", selected: true},
-					{title:"Пылесосы", selected: true}
-				]
-			},
-			{title: "Телефоны и связь"},
-			{title: "Фото и оптика", folder: true,
-				children: [
-					{title: "Фотоаппараты"},
-					{title: "Объективы"},
-					{title: "Средства и химия"}
-				]
-			},
-			{title: "Одежда, обувь, аксессуары", folder: true, expanded: true,
-				children:[
-					{title:"Кроссовки"},
-					{title:"Кеды", folder: true, expanded: true,
-						children: [
-							{title: "Ботильоны", selected: true},
-							{title: "Босоножки", selected: true},
-							{title: "Туфли", selected: true}
-						]
-					},
-					{title:"Сандалии"},
-					{title:"Балетки"},
-					{title:"Сапоги"},
-					{title:"Резиновая обувь"}
-				]
-			},
-			{title: "Подарки и праздники", folder: true,
-				children: [
-					{title: "Цветы"},
-					{title: "Открытки"},
-					{title: "Игрушки"}
-				]
-			},
-			{title: "Книги, учебники и журналы", folder: true,
-				children: [
-					{title: "Цветы"},
-					{title: "Открытки"},
-					{title: "Игрушки"}
-				]
-			},
-			{title: "Мебель, интерьеры и обиход", folder: true,
-				children: [
-					{title: "Цветы", selected: true},
-					{title: "Открытки", selected: true}
-				]
-			},
-			{title: "Другое", folder: true, lazy: true }
-];
-
 PKP.init = function() {
 	PKP.$window        = $(window);
 	PKP.$document      = $(document);
 	PKP.$body          = $('body');
+	PKP.catalogData = [
+		{title: "Компьютерная техника", folder: true,
+			children: [
+				{title: "Ноутбуки", selected: true},
+				{title: "Моноблоки"},
+				{title: "Планшеты"}
+			]
+		},
+		{title:"Бытовая техника", folder: true, selected: true,
+			children: [
+				{title:"Стиральные машины", selected: true},
+				{title:"Телевизоры", selected: true},
+				{title:"Кухонная техника", selected: true},
+				{title:"Пылесосы", selected: true}
+			]
+		},
+		{title: "Телефоны и связь"},
+		{title: "Фото и оптика", folder: true,
+			children: [
+				{title: "Фотоаппараты"},
+				{title: "Объективы"},
+				{title: "Средства и химия"}
+			]
+		},
+		{title: "Одежда, обувь, аксессуары", folder: true, expanded: true,
+			children:[
+				{title:"Кроссовки"},
+				{title:"Кеды", folder: true, expanded: true,
+					children: [
+						{title: "Ботильоны", selected: true},
+						{title: "Босоножки", selected: true},
+						{title: "Туфли", selected: true}
+					]
+				},
+				{title:"Сандалии"},
+				{title:"Балетки"},
+				{title:"Сапоги"},
+				{title:"Резиновая обувь"}
+			]
+		},
+		{title: "Подарки и праздники", folder: true,
+			children: [
+				{title: "Цветы"},
+				{title: "Открытки"},
+				{title: "Игрушки"}
+			]
+		},
+		{title: "Книги, учебники и журналы", folder: true,
+			children: [
+				{title: "Цветы"},
+				{title: "Открытки"},
+				{title: "Игрушки"}
+			]
+		},
+		{title: "Мебель, интерьеры и обиход", folder: true,
+			children: [
+				{title: "Цветы", selected: true},
+				{title: "Открытки", selected: true}
+			]
+		},
+		{title: "Другое", folder: true, lazy: true }
+	];
 
 	PKP.Sliders.init();
 	PKP.UI.init();
-	PKP.UI.cart();
-	PKP.UI.tree();
 	PKP.Video.init();
 	PKP.Canvas.init();
+	PKP.Forms.init();
 };
 
 PKP.Canvas = {
@@ -131,12 +129,48 @@ PKP.Sliders = {
 			theme: '',
 		});
 
+		$('.chain-slider--small').owlCarousel({
+			items: 6,
+			slideSpeed: 700,
+			rewindSpeed: 700,
+			navigation: true,
+			navigationText: ['',''],
+			scrollPerPage: true,
+			pagination: false,
+			responsive: false,
+			theme: '',
+		});
+
+		$('.b-recommended__slider').fotorama({
+			minheight: 440,
+			click: false,
+			arrows: false,
+			loop: true,
+			autoplay: 3500,
+			allowfullscreen: false,
+			nav: false
+		});
+
+		// Контролы
+		$('.b-recommended__slider-control').click(function() {
+			var slider = $('.b-recommended__slider').data('fotorama');
+
+			if($(this).is('.next')) {
+				slider.show('>');
+			} else {
+				slider.show('<');
+			}
+		});
+
 		if($('.rates').length){
 			PKP.Sliders.rates();
 		}
 
 		if($('.catalog-banner').length > 0){
 			PKP.Sliders.catalogBanner();
+		}
+		if($('.b-catalog-item').length > 0) {
+			PKP.Sliders.catalogItem();
 		}
 	},
 
@@ -147,12 +181,32 @@ PKP.Sliders = {
 			allowfullscreen: false,
 			loop: true,
 			autoplay: 3500,
+			transitionduration: 500,
 			stopautoplayontouch: true,
 			nav: 'dots',
 			arrows: false,
 			shadows: false,
 			transition: 'crossfade',
 			fit: 'cover'
+		});
+	},
+
+	catalogItem: function () {
+		$('.b-catalog-item__photos').fotorama({
+			width: '100%',
+			height: 330,
+			allowfullscreen: true,
+			loop: true,
+			autoplay: 5000,
+			stopautoplayontouch: true,
+			nav: 'thumbs',
+			thumbwidth: 65,
+			thumbheigth: 60,
+			thumbmargin: 5,
+			thumbborderwidth: 4,
+			arrows: false,
+			shadows: true,
+			transition: 'slide',
 		});
 	},
 	
@@ -212,6 +266,10 @@ PKP.Sliders = {
 PKP.UI = {
 	init: function() {
 		PKP.UI.popup();
+		PKP.UI.cart();
+		PKP.UI.tree();
+		PKP.UI.viewItem();
+		PKP.UI.voting();
 
 		/* Селекты */
 		$('select').chosen({
@@ -262,6 +320,17 @@ PKP.UI = {
 			;
 		});
 
+		/* Сворачивалка */
+		PKP.$body.on("click", '.slidedown__trigger', function(e) {
+			e.preventDefault();
+			var $this = $(this);
+			$(this)
+				.closest('.slidedown')
+				.toggleClass('active')
+				.find('.slidedown__content[data-target="' + $this.data('target') + '"]')
+				.slideToggle(500);
+		});
+
 		/* «Выпадайка» */
 		PKP.$body.on("click", '.dropdown__trigger', function(e) {
 			e.preventDefault();
@@ -273,13 +342,16 @@ PKP.UI = {
 
 			if(0 < $('.dropdown__trigger.active').length) {
 				$('.dropdown__trigger.active')
-					.not(this).removeClass('active').
-					siblings('.dropdown__content').addClass('hidden');   
+					.not(this).removeClass('active')
+					.closest('.dropdown')
+					.find('.dropdown__content').addClass('hidden');   
 			}
 			
-			$this.
-				toggleClass('active').
-				siblings('.dropdown__content[data-target="' + $this.data('target') + '"]').toggleClass('hidden');
+			$this
+				.toggleClass('active')
+				.closest('.dropdown')
+				.find('.dropdown__content[data-target="' + $this.data('target') + '"]')
+				.toggleClass('hidden');
 		});
 
 		/* Скрываем выпадайку по клику мимо неё */
@@ -304,36 +376,48 @@ PKP.UI = {
 				siblings('.dropdown__trigger').toggleClass('active');
 		});
 
+		/* Табы */
+		PKP.$body.on("click", '.tab__trigger', function() {
+			var $this = $(this);
+			$this
+				.siblings()
+					.removeClass('selected');
+			$this
+				.addClass('selected')
+				.next()
+					.addClass('selected');
+		});
+
 		/* Сортировка */
 		PKP.$body.on("click", '.selector__options a', function() {
 			var $this = $(this);
-			$this.
-				closest('.menu__item').addClass('active').
-				siblings().removeClass('active').
-				closest('.selector').find('.selector__current').text($this.text());
+			$this
+				.closest('.menu__item').addClass('active')
+				.siblings().removeClass('active')
+				.closest('.selector').find('.selector__current').text($this.text());
 		});
 
 		/* Радио-селектор */
 		PKP.$body.on("click", '.radio-circles a', function() {
-			$(this).
-				closest('.menu__item').addClass('active').
-				siblings().removeClass('active');
+			$(this)
+				.closest('.menu__item').addClass('active')
+				.siblings().removeClass('active');
 		});
 
 		/* Переключение лэйаута */
 		PKP.$body.on("click", '.catalog-layout a', function() {
-			$('.b-catalog__items').
-				removeClass().
-				addClass('b-catalog__items ' + $(this).data('value'));
+			$('.b-catalog__items')
+				.removeClass()
+				.addClass('b-catalog__items ' + $(this).data('value'));
 		});
 
 		/* Баян-меню */
 		$('.b-sidebar').on("click", '.with-submenu', function(e) {
 			var $this = $(e.target);
 			if(1 !== $this.parents().filter('.submenu').length) {
-				$(this).
-					toggleClass('active').
-					children('.submenu').toggleClass('active');
+				$(this)
+					.toggleClass('active')
+					.children('.submenu').toggleClass('active');
 			}
 		});
 		$('.b-advanced-search').on("click", '.with-submenu', function(e) {
@@ -350,11 +434,11 @@ PKP.UI = {
 		$('#js-nosidebar').on('click', function () {
 			var li = $(this).closest('.menu__item');
 
-			$('aside.b-sidebar').
-				find('a.btn').
-					toggleClass('dropdown__trigger').
-				siblings('.b-sidebar__dropdown').
-					toggleClass('dropdown__content hidden');
+			$('aside.b-sidebar')
+				.find('a.btn')
+					.toggleClass('dropdown__trigger')
+				.siblings('.b-sidebar__dropdown')
+					.toggleClass('dropdown__content hidden');
 
 			if (li.is('.active')) {
 				li.toggleClass('active');
@@ -368,10 +452,6 @@ PKP.UI = {
 			var t = $(this).closest('.menu-login');
 			t.find('.not-logged-in').toggleClass('hidden');
 			t.find('.logged-in').toggleClass('hidden');
-		});
-		$('#js-advanced-search').on('click', function () {
-			$('section.advanced-search').toggleClass('active');
-			$('.b-advanced-search').slideToggle(500);
 		});
 
 		/* Снимаем класс ошибки при фокусе */
@@ -503,7 +583,7 @@ PKP.UI = {
 	},
 	popup: function() {
 		// Форма "задать ворпос"
-		$("#js-join").click(function(){
+		$("#js-join, #js-addReview").click(function(){
 			var request_form = $("#request_form");
 
 			// Скрываем результаты отправки, если уже отправляли.
@@ -580,9 +660,8 @@ PKP.UI = {
 			rootVisible: false,
 			checkbox: true,
 			selectMode: 3,
-			source: treeData,
+			source: PKP.catalogData,
 			icons: false,
-			clickFolderMode: 4,
 
 			loadChildren: function(event, ctx) {
 				// ctx.node.fixSelection3AfterClick();
@@ -635,10 +714,41 @@ PKP.UI = {
 			
 			return false;
 		});
+	},
+	viewItem: function() {
+		PKP.$body.on("click", '.like_button span.pseudo-link', function() { 
+			$(this)
+				.closest('.like_button')
+				.toggleClass('active');
+		});
+	},
+	voting: function() {
+		var stars = $('ul.voting').find('a');
+
+		for(var i=0; i < stars.length; i++) {
+			stars
+				.eq(i)
+				.data('rating', i + 1)
+				.on('click', function() {
+					stars.removeClass();
+					$(this).addClass('current');
+					console.log('Получен рейтинг «' + $(this).data('rating') + '»');
+				})
+			;
+		}
 	}
 };
 
-
+PKP.Forms = {
+	init: function() {
+		$('#registerWizard').wizard({
+			// Events
+			onLeaveStep: null,
+			onShowStep: null, 
+			onFinish: null 
+		});
+	}
+};
 
 PKP.Video = {
 	init: function() {

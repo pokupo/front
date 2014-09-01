@@ -12,7 +12,7 @@
 .popup
 	margin 50px auto 100px
 	max-width 624px
-	min-height 670px
+	/* min-height 670px */
 	box-shadow 0 20px 200px -10px rgba(0,0,0,0.6)
 	z-index 16
 	position relative
@@ -34,6 +34,17 @@
 				left 50%
 				margin-left -42px
 				sprite($step__signin)
+
+		&.noheader
+			background #fff
+			height auto
+			padding 40px 40px 0
+			h1
+				font-size 30px
+				text-align left
+
+			& + .content
+				padding 20px 40px
 
 		.close-popup
 			position absolute
@@ -187,10 +198,10 @@
 			line-height 24px
 
 	&.join
+	&.review-form
 		box-shadow none
 
 		.btn-big
-			
 			&.btn-orange
 				padding-left 60px
 				padding-right 60px
@@ -199,7 +210,10 @@
 				padding-left 30px
 				padding-right 30px
 			
-
+	&.review-form
+		text-align: left;
+		
+		
 
 
 
