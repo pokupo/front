@@ -10,6 +10,7 @@ section.header
 				.circles-menu
 					.circles-menu__item.dropdown
 						a.with-icon.icon__profile.dropdown__trigger(href=js0 data-target="profile")
+							sup.circles-menu__num 4
 						.b-profile-menu.dropdown__content.hidden(data-target="profile")
 							p.b-profile-menu__name Сибилев<br/>Игорь
 							ul.menu
@@ -19,6 +20,10 @@ section.header
 									a(href=js0) Избранное
 								li.menu__item
 									a(href=js0) Заказы
+								li.menu__item
+									a(href=js0) 
+										| Сообщения
+										sup.menu__item__num 4
 								li.menu__item
 									a.b-profile-menu__logout#js-logout(href=js0) Выйти
 
@@ -86,10 +91,7 @@ section.header
 											| 780
 										span.b-price__thinsp &nbsp;
 										span.b-price__rubl Р
-
-					.circles-menu__item
-						a.with-icon.icon__mail(href=js0)
-							sup.circles-menu__num 25
+							
 
 		block menu
 			+menu-list([])

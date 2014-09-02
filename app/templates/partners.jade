@@ -6,23 +6,21 @@ block head
 block menu 
 	+menu-list([
 		{text:"Платформа",href:"frontpage.html",submenu:[
-			{text:"Особенности",href:"#"},
-			{text:"Вопросы и ответы",href:"#"},
-			{text:"Готовые решения",href:"#"},
-			{text:"Торговая площадка",href:"#"}
+			{text:"О проекте",href:"about.html"},
+			{text:"Торговый портал",href:"http://shop.pokupo.ru/", external:true}
 		]},
 		{text:"Тарифы",href:"rates.html"},
-		{text:"Сообщество",href:"community.html"},
-		{text:"Помощь",href:"#",submenu:[
-			{text:"Техническая поддержка",href:"#"},
-			{text:"Видео курсы",href:"#"},
-			{text:"Семинары",href:"#"}]},
-		{text:"Компания",href:"#", active:true, submenu:[
+		{text:"Компания",href:"#", submenu:[
 			{text:"События",href:"events.html"},
-			{text:"Контакты",href:"#"},
 			{text:"О нас",href:"aboutus.html"},
-			{text:"Партнёры",href:"partners.html", active:true},
-			{text:"Блог",href:"#"}
+			{text:"Сообщество",href:"community.html"},
+			{text:"Блог",href:"http://pokupo.livejournal.com/", external:true}
+		]},
+		{text:"Партнёры",href:"partners.html", active: true},
+		
+		{text:"Помощь", href:js0, submenu:[
+			{text:"Вопросы и ответы",href:"faq.html"},	
+			{text:"Техническая поддержка",href:"https://help.pokupo.ru", external:true}
 		]}
 	])(class="b-navigation")
 

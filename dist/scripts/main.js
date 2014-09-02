@@ -741,15 +741,18 @@ PKP.UI = {
 
 PKP.Forms = {
 	init: function() {
-		$('#registerWizard').wizard({
-			// Events
-			onLeaveStep: null,
-			onShowStep: null, 
-			onFinish: null 
-		});
-		$('#orderWizard').wizard({
-			labelFinish: 'Подтверждаю'
-		});
+		if($('#registerWizard, #orderWizard').length > 0) {
+			$('#registerWizard').wizard({
+				// Events
+				onLeaveStep: null,
+				onShowStep: null, 
+				onFinish: null 
+			});
+			$('#orderWizard').wizard({
+				labelFinish: 'Подтверждаю'
+			});
+		}
+		
 		PKP.$body.on('click', '.b-order-table__action label', function(){
 			var $this = $(this);
 

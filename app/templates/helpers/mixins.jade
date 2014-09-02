@@ -15,7 +15,7 @@ mixin pages-list(list)
 				li(style="margin-bottom: 1em")
 					a(href=item.href)= item.text
 
-
+//- Вывод списка меню
 mixin menu-list(list)
 	if list
 		each item in list
@@ -26,16 +26,16 @@ mixin menu-list(list)
 			each item in list
 				if item.submenu
 					li.menu__item.with-submenu(class=item.active ? "active" : "")
-						a(href=item.href)
+						a(href=item.href target=item.external ? "_blank" : "")
 							span= item.text
 						ul.submenu(class=item.active ? "active" : "")
 							each subitem in item.submenu
 								li.submenu__item(class=subitem.active ? "active" : "")
-									a(href=subitem.href)
+									a(href=subitem.href)(target=subitem.external ? "_blank" : "")
 										span= subitem.text
 				else
 					li.menu__item(class=item.active ? "active" : "")
-						a(href=item.href)
+						a(href=item.href target=item.external ? "_blank" : "")
 							span= item.text
 
 		.submenu-bg(class=i ? "active" : "")
@@ -43,6 +43,7 @@ mixin menu-list(list)
 		p Нет данных
 
 
+//- Вывод выпадайки для поиска
 mixin search-list(list)
 	if list
 		each item in list
@@ -68,6 +69,7 @@ mixin search-list(list)
 		p Нет данных
 
 
+//- Вывод правого аккордеон-меню
 mixin catalog-list(list)
 	if list
 		each item in list
@@ -95,6 +97,7 @@ mixin catalog-list(list)
 		p Нет данных 
 
 
+//- Вывод карточки товара
 mixin catalog-item(item, flat)
 	.b-catalog__item
 		.b-item(class=flat ? "": "with_popover")
@@ -165,6 +168,36 @@ mixin catalog-item(item, flat)
 							//- img(src="images/textures/best-choice.png" alt="Хит!")
 
 
+//- Вывод массива с карточками товаров
 mixin catalog-items(list, flat)
 	each item in list
 		+catalog-item(item, flat)
+
+//- Форматирование цены
+mixin price(price, oldprice)
+	if oldprice
+		span.b-price.b-item__price--old(class!=attributes.class)
+			if price > 9999
+				span.b-price__number
+					| #{Math.floor(price/1000)}
+					i.b-price__separator
+					| #{price%1000}
+			else
+				span.b-price__number= price
+			span.b-price__thinsp &nbsp;
+			span.b-price__rubl Р
+
+	span.b-price(class!=attributes.class)
+		if price > 9999
+			span.b-price__number
+				| #{Math.floor(price/1000)}
+				i.b-price__separator
+				| #{price%1000}
+		else
+			span.b-price__number= price
+		span.b-price__thinsp &nbsp;
+		span.b-price__rubl Р
+
+
+
+

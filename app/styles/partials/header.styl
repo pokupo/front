@@ -204,7 +204,6 @@ section.header
 	top -20px
 	left -45px
 	
-
 	&__name
 		color #808080
 		margin-bottom 13px
@@ -223,6 +222,20 @@ section.header
 			&:hover 
 				color $a__hover
 
+		&__num
+			position absolute
+			top 9px
+			right 4px
+			font-weight normal
+			font-size 14px
+			line-height 14px
+			color #FFF
+			display inline-block
+			text-align center
+			background #ED1C24
+			padding 3px 6px
+			border-radius 100px
+
 	&__logout
 		position relative
 		&:after
@@ -233,6 +246,11 @@ section.header
 			display block
 			margin-top -7px
 			sprite($icon__logout)
+
+
+.dropdown__trigger.icon__profile.active
+	.circles-menu__num
+		display none
 
 /* Выпадайка корзины */
 .b-cart-menu
