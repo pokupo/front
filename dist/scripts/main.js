@@ -762,7 +762,7 @@ PKP.UI = {
 /* Валидация форм и инициализация "визардов" */
 PKP.Forms = {
 	init: function() {
-		if($('#registerWizard, #orderWizard').length > 0) {
+		if($('#registerWizard').length > 0) {
 			var progress = 0;
 			var canvas = document.getElementById('progressCircle');
 
