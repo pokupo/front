@@ -246,6 +246,7 @@ PKP.UI = {
 		PKP.UI.cart();
 		PKP.UI.tree();
 		PKP.UI.voting();
+		PKP.UI.diagonalHover.init();
 
 		if($('#progressCircle').length > 0) {
 			PKP.UI.progressCircle.init();
@@ -256,28 +257,6 @@ PKP.UI = {
 			disable_search_threshold: 6,
 			width: '100%'
 		});
-
-		/* Главное меню */
-		$('.header .with-submenu').hover(
-			function() {
-				var $this = $(this);
-				$this.closest('.menu').find('.submenu.active').removeClass('active').addClass('current');
-				$this.children('a').addClass('bordered');
-				$this.children('.submenu').addClass('active');
-				$('.submenu-bg').addClass('active');
-			}, 
-			function() {
-				var $this = $(this);
-				$this.children('a').removeClass('bordered');
-				$this.children('.submenu').removeClass('active');
-
-				if($this.closest('.menu').is('.menu--opened')) {
-					$this.closest('.menu').find('.submenu.current').removeClass('current').addClass('active');
-				} else {
-					$('.submenu-bg').removeClass('active');
-				}
-			}
-		);
 
 		/* Скрывалка */
 		PKP.$body.on("click", '.collapse-trigger', function(e) {
@@ -445,6 +424,57 @@ PKP.UI = {
 		$('input.error').on('focus', function() {
 			$(this).removeClass('error');
 		});
+	},
+	/* Инициализация диагонального хавера */
+	diagonalHover: {
+		init: function() {
+			PKP.Aim.init();
+
+			var $this = this;
+			PKP.$menu = $(".b-navigation.menu");
+
+			PKP.$menu.aim({
+				activate:   $this.activateSubmenu,
+				deactivate: $this.deactivateSubmenu,
+				exitMenu: 	$this.exitMenu
+			});
+		},
+
+		activateSubmenu: function(row) {
+			var $this = $(row);
+
+			if($this.is('.with-submenu')) {
+				$this.closest('.menu').find('.submenu.active').removeClass('active').addClass('current');
+				$this.children('a').addClass('bordered');
+				$this.children('.submenu').addClass('active');
+				$('.submenu-bg').addClass('active');
+			}
+
+			$this.find("a").addClass("maintainHover");
+		},
+
+		deactivateSubmenu: function(row) {
+			var $this    = $(row);
+
+			$this.children('a').removeClass('bordered');
+			$this.children('.submenu').removeClass('active');
+
+			if($this.closest('.menu').is('.menu--opened')) {
+				$this.closest('.menu').find('.submenu.current').removeClass('current').addClass('active');
+			} 
+			
+			$('.submenu-bg').removeClass('active');
+		},
+
+		exitMenu: function(){
+			$(".submenu")
+				.removeClass('active')
+				.siblings("a.bordered")
+				.removeClass();
+
+			$(".submenu-bg").removeClass('active');
+			$("a.maintainHover").removeClass("maintainHover");
+		}
 	},
 	/* Вывод цены */
 	formatNumber: function (number, dSeparator, fSeparator) {
@@ -823,6 +853,189 @@ PKP.Video = {
 		}
 	}
 };
+
+/* Диагональный хавер */
+PKP.Aim = {
+	init: function() {
+		var $this = this;
+		$.fn.aim = function(opts) {
+			this.each(function() {
+				$this.process.call(this, opts);
+			});
+			return this;
+		};
+	},
+	process: function(opts) {
+		var $menu = $(this),
+			activeRow = null,
+			mouseLocs = [],
+			lastDelayLoc = null,
+			timeoutId = null,
+			options = $.extend({
+				rowSelector: "> li",
+				submenuSelector: "*",
+				submenuDirection: "below",
+				tolerance: 0,
+				enter: $.noop,
+				exit: $.noop,
+				activate: $.noop,
+				deactivate: $.noop,
+				exitMenu: $.noop
+			}, opts);
+
+		var MOUSE_LOCS_TRACKED = 3, 
+			DELAY = 300;
+
+		var mousemoveDocument = function(e) {
+				mouseLocs.push({x: e.pageX, y: e.pageY});
+
+				if (mouseLocs.length > MOUSE_LOCS_TRACKED) {
+					mouseLocs.shift();
+				}
+			};
+
+		var mouseleaveMenu = function() {
+				if (timeoutId) {
+					clearTimeout(timeoutId);
+				}
+
+				if (options.exitMenu(this)) {
+					if (activeRow) {
+						options.deactivate(activeRow);
+					}
+
+					activeRow = null;
+				}
+			};
+
+		var mouseenterRow = function() {
+				if (timeoutId) {
+					clearTimeout(timeoutId);
+				}
+
+				options.enter(this);
+				possiblyActivate(this);
+			},
+			mouseleaveRow = function() {
+				options.exit(this);
+			};
+
+		var clickRow = function() {
+				activate(this);
+			};
+
+		var activate = function(row) {
+				if (row === activeRow) {
+					return;
+				}
+
+				if (activeRow) {
+					options.deactivate(activeRow);
+				}
+
+				options.activate(row);
+				activeRow = row;
+			};
+
+		var possiblyActivate = function(row) {
+				var delay = activationDelay();
+
+				if (delay) {
+					timeoutId = setTimeout(function() {
+						possiblyActivate(row);
+					}, delay);
+				} else {
+					activate(row);
+				}
+			};
+
+		var activationDelay = function() {
+				if (!activeRow || !$(activeRow).is(options.submenuSelector)) {
+					return 0;
+				}
+
+				var offset = $menu.offset(),
+					upperLeft = {
+						x: offset.left,
+						y: offset.top - options.tolerance
+					},
+					upperRight = {
+						x: offset.left + $menu.outerWidth(),
+						y: upperLeft.y
+					},
+					lowerLeft = {
+						x: offset.left,
+						y: offset.top + $menu.outerHeight() + options.tolerance
+					},
+					lowerRight = {
+						x: offset.left + $menu.outerWidth(),
+						y: lowerLeft.y
+					},
+					loc = mouseLocs[mouseLocs.length - 1],
+					prevLoc = mouseLocs[0];
+
+				if (!loc) {
+					return 0;
+				}
+
+				if (!prevLoc) {
+					prevLoc = loc;
+				}
+
+				if (prevLoc.x < offset.left || prevLoc.x > lowerRight.x ||
+					prevLoc.y < offset.top || prevLoc.y > lowerRight.y) {
+					return 0;
+				}
+
+				if (lastDelayLoc && loc.x === lastDelayLoc.x && loc.y === lastDelayLoc.y) {
+					return 0;
+				}
+
+				function slope(a, b) {
+					return (b.y - a.y) / (b.x - a.x);
+				}
+
+				var decreasingCorner = upperRight,
+					increasingCorner = lowerRight;
+
+				if (options.submenuDirection === "left") {
+					decreasingCorner = lowerLeft;
+					increasingCorner = upperLeft;
+				} else if (options.submenuDirection === "below") {
+					decreasingCorner = lowerRight;
+					increasingCorner = lowerLeft;
+				} else if (options.submenuDirection === "above") {
+					decreasingCorner = upperLeft;
+					increasingCorner = upperRight;
+				}
+
+				var decreasingSlope = slope(loc, decreasingCorner),
+					increasingSlope = slope(loc, increasingCorner),
+					prevDecreasingSlope = slope(prevLoc, decreasingCorner),
+					prevIncreasingSlope = slope(prevLoc, increasingCorner);
+
+				if (decreasingSlope < prevDecreasingSlope &&
+						increasingSlope > prevIncreasingSlope) {
+					lastDelayLoc = loc;
+					return DELAY;
+				}
+
+				lastDelayLoc = null;
+				return 0;
+			};
+
+				$menu
+					.mouseleave(mouseleaveMenu)
+					.find(options.rowSelector)
+						.mouseenter(mouseenterRow)
+						.mouseleave(mouseleaveRow)
+						.click(clickRow);
+
+				PKP.$document.mousemove(mousemoveDocument);
+	}
+};
+
+
 
 /* Поехали! */
 $($.proxy(PKP.init, PKP));
