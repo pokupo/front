@@ -809,11 +809,12 @@ PKP.Forms = {
 			$('#progressCircle').hover(function(){
 				console.log(progress);
 			});
+		}
 
+		if($('#orderWizard').length > 0) {
 			$('#orderWizard').wizard({
 				labelFinish: 'Подтверждаю'
 			});
-
 		}
 		
 		PKP.$body.on('click', '.b-order-table__action label', function() {
