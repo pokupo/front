@@ -3706,6 +3706,7 @@ section.store {
   color: #ffa800;
   font-weight: 800;
   background: #efece7;
+  width: auto;
 }
 .b-sidebar .submenu__item.active > a:before,
 .b-sidebar .submenu__item.active > a:after {
@@ -3714,15 +3715,15 @@ section.store {
   display: block;
   width: 0;
   height: 0;
-  right: -45px;
+  right: -40px;
   border: 30px solid transparent;
 }
 .b-sidebar .submenu__item.active > a:before {
-  top: -30px;
+  top: -25px;
   border-bottom-color: #fff;
 }
 .b-sidebar .submenu__item.active > a:after {
-  bottom: -30px;
+  bottom: -25px;
   border-top-color: #fff;
 }
 .b-sidebar .submenu__item.active > a span {
@@ -3819,7 +3820,7 @@ section.store {
   top: 100px;
 }
 .b-catalog__items .owl-prev {
-  left: -30px;
+  left: -50px;
   background-image: url("../images/sprite.png");
   background-position: -720px 0px;
   width: 32px;
@@ -3838,7 +3839,7 @@ section.store {
   height: 62px;
 }
 .b-catalog__items .owl-next {
-  right: -30px;
+  right: -50px;
   background-image: url("../images/sprite.png");
   background-position: -607px -625px;
   width: 32px;
@@ -4376,7 +4377,24 @@ section.store {
 .b-catalog-item__aux {
   border-top: 1px solid #ccc;
   padding-top: 40px;
-  margin-top: 40px;
+  margin: 40px 50px 0;
+  position: relative;
+}
+.b-catalog-item__aux:before,
+.b-catalog-item__aux:after {
+  content: '';
+  position: absolute;
+  display: block;
+  top: -1px;
+  border-top: 1px solid #ccc;
+  width: 60px;
+  height: 0;
+}
+.b-catalog-item__aux:before {
+  left: -50px;
+}
+.b-catalog-item__aux:after {
+  right: -50px;
 }
 .b-catalog-item__aux h1 {
   font-size: 30px;
@@ -4981,6 +4999,9 @@ section.advanced-search .inline-input--small {
   padding: 15px;
   width: 104px;
 }
+section.advanced-search .b-location {
+  margin-bottom: 17px;
+}
 section.advanced-search label {
   margin-right: 8px;
 }
@@ -5044,6 +5065,15 @@ section.advanced-search label.separator {
   height: 9px;
   background: #02903d;
   margin: -5px 0 0 -5px;
+}
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+  .b-search .b-location {
+    width: 273px;
+  }
+  ::i-block-chrome,
+  .b-search .b-location {
+    width: 271px;
+  }
 }
 .btn-menu {
   text-align: center;
@@ -5462,12 +5492,14 @@ section.advanced-search label.separator {
   margin: 0 46px;
   height: 52px;
 }
-.b-increment-input__input {
+.b-increment-input__input[type="text"] {
   vertical-align: top;
   text-align: center;
   background: #efece7;
   width: 98px;
-  height: 52px !important;
+  height: 52px;
+  padding: 0 18px;
+  line-height: 52px;
 }
 #collapse-menu {
   cursor: pointer;

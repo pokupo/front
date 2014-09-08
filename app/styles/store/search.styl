@@ -138,6 +138,9 @@ section.advanced-search
 		&--small
 			padding 15px
 			width 104px
+			
+	.b-location
+		margin-bottom 17px
 
 	label
 		margin-right 8px
@@ -196,6 +199,13 @@ section.advanced-search
 			background $green
 			margin -5px 0 0 -5px	
 
+@media screen and (-webkit-min-device-pixel-ratio:0)
+	.b-search .b-location
+		width 273px
+	/* Safari 5 */
+	::i-block-chrome, .b-search .b-location
+		width 271px
+	
 
 
 

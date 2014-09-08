@@ -51,6 +51,10 @@ block content
 					span Персональные данные
 				dd.tab__content.selected 
 					.content
+						fieldset.b-fieldset
+							.personal-info
+								h2 Сибирев Игорь
+
 						h2.with-divider Регистрационные данные
 
 						fieldset.b-fieldset
@@ -102,6 +106,17 @@ block content
 											input#address__flat.suggestion-input.block-input(type="text" placeholder="Квартира" name="address__flat")
 
 						h2.with-divider Данные аккаунта
+						fieldset.b-fieldset
+							.columns
+								.first.double.column
+									.content
+										.input-holder
+											input#account__email.suggestion-input.block-input(type="email" placeholder="Электронная почта" name="account__email")
+
+								.third.double.column
+									.content
+										.input-holder
+											input#account__phone.block-input(type="tel" placeholder="Телефон" name="account__phone")
 
 
 				dt.tab__trigger 

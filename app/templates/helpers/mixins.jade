@@ -103,11 +103,12 @@ mixin catalog-item(item, flat)
 		.b-item(class=flat ? "": "with_popover")
 			.b-item__picture
 				if item.img
-					img(src=item.img)
+					a(href="store-item.html")
+						img(src=item.img)
 			.responsive-holder
 				.b-item__description
 					h4.b-item__title
-						a(href=js0)= item.title
+						a(href="store-item.html")= item.title
 					.b-item__info
 						p 
 							span.parameter Верх:
@@ -137,11 +138,12 @@ mixin catalog-item(item, flat)
 					.b-item--dublicate
 						.b-item__picture
 							if item.img
-								img(src=item.img)
+								a(href="store-item.html")
+									img(src=item.img)
 						.responsive-holder
 							.b-item__description
 								h4.b-item__title
-									a(href=js0)= item.title
+									a(href="store-item.html")= item.title
 								.b-item__info
 									p 
 										span.parameter Верх:

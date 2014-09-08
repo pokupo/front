@@ -67,6 +67,8 @@ PKP.init = function() {
 		{title: "Другое", folder: true, lazy: true }
 	];
 
+	/* Консоль */
+	PKP.IE.console();
 	/* Включаем модули */
 	PKP.UI.init();
 	PKP.Video.init();
@@ -74,6 +76,60 @@ PKP.init = function() {
 	PKP.Forms.init();
 };
 
+/* Предохранитель для необычных браузеров */
+PKP.IE = {
+	init: function() {
+		this.console();
+		this.placeholder();
+	},
+
+	console: function() {
+		if (!window.console) {
+			window.console = {};
+		}
+
+		var m = [
+			"log", "info", "warn", "error", "debug", "trace", "dir", "group",
+			"groupCollapsed", "groupEnd", "time", "timeEnd", "profile", "profileEnd",
+			"dirxml", "assert", "count", "markTimeline", "timeStamp", "clear"
+		];
+
+		for (var i = 0; i < m.length; i++) {
+			if (!window.console[m[i]]) {
+				window.console[m[i]] = function() {};
+			}    
+		} 
+	},
+	placeholder: function() {
+		$('[placeholder]')
+			.focus(function(){
+				var input = $(this);
+
+				if (input.val() === input.attr('placeholder')) {
+					input.val('');
+					input.removeClass('placeholder');
+				}
+			})
+			.blur(function(){
+				var input = $(this);
+				if (input.val() === '' || input.val() === input.attr('placeholder')) {
+				input.addClass('placeholder');
+				input.val(input.attr('placeholder'));
+				}
+			})
+			.blur()
+			.parents('form')
+			.submit(function() {
+				$(this).find('[placeholder]').each(function() {
+					var input = $(this);
+					if (input.val() === input.attr('placeholder')) {
+						input.val('');
+					}
+				})
+			});
+		// 
+	}
+};
 
 /* Инициализация галерей и слайдеров */
 PKP.Sliders = {
@@ -247,6 +303,7 @@ PKP.UI = {
 		PKP.UI.voting();
 		PKP.UI.diagonalHover.init();
 		PKP.UI.passwords();
+		PKP.UI.emulateShopping();
 
 		if($('#progressCircle').length > 0) {
 			PKP.UI.progressCircle.init();
@@ -772,10 +829,42 @@ PKP.UI = {
 		} 
 	},
 
-	progressCircle:{
-		init: function() {
-			
-		}
+	emulateShopping: function() {
+		$('.b-item__order-button .btn').on('click', function(){
+			var $this = $(this);
+			var item = $this.closest('.b-item__popover');
+
+			var x 	= item.offset().left,
+				y  	= item.offset().top,
+				tx 	= $('.menu-login').offset().left + 60;
+
+
+			item
+				.clone()
+				.appendTo(PKP.$body)
+				.addClass('hallucination')
+				.css({
+					position: 'absolute',
+					left: x,
+					top: y,
+					zIndex: 999
+				})
+				.animate({
+					opacity: 0.5,   
+					left: tx,
+					top: 0,
+					width: 50,   
+					height: 100
+				}, 
+					600, 
+					function(){
+						$(this).remove();  
+					}
+				);
+
+			console.log(item);
+			// $this.effect( "bounce", {times:3, distance:10}, 300 );
+		})
 	}
 };
 

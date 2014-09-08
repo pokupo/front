@@ -14,7 +14,7 @@
 		<link sizes="144x144" href="images/icons/apple-touch-icon-144x144.png" rel="apple-touch-icon">
 		<link sizes="152x152" href="images/icons/apple-touch-icon-152x152.png" rel="apple-touch-icon">
 		<!-- Windows 8-->
-		<meta name="application-name" content="Корзина">
+		<meta name="application-name" content="Pokupo">
 		<meta name="msapplication-tooltip" content="Description for pokupo">
 		<meta name="msapplication-TileColor" content="#ffffff">
 		<meta name="msapplication-TileImage" content="images/icons/tile.png">
@@ -47,6 +47,7 @@
 		<!--[if lt IE 9]> 
 <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
 <script src="scripts/libs/nwmatcher.js"></script>
+<script src="scripts/libs/ie8canvas.js"></script>
 <![endif]-->
 	</head>
 	<body>
@@ -231,18 +232,19 @@
 											</div>
 										</div>
 									</div>
+									<div class="input-holder">
+										<select name="select">
+											<option value="0" selected>Все продавцы</option>
+											<option value="1">Частное лицо</option>
+											<option value="2">Компания</option>
+										</select>
+									</div>
 								</div>
 							</div>
 							<div class="second column">
 								<div class="content">
 									<div class="input-holder">
 										<input name="login" type="text" placeholder="Ключевые слова" class="inline-input">
-									</div>
-									<div class="input-holder">
-										<select name="select">
-											<option value="0" selected>Любое из слов</option>
-											<option value="1">Все слова</option>
-										</select>
 									</div>
 									<div class="input-holder">
 										<input name="login" type="text" placeholder="Исключить слова" class="inline-input">
@@ -252,6 +254,12 @@
 							<div class="third column">
 								<div class="content">
 									<div class="input-holder">
+										<select name="select">
+											<option value="0" selected>Любое из слов</option>
+											<option value="1">Все слова</option>
+										</select>
+									</div>
+									<div class="input-holder hidden">
 										<label for="currency">Валюта</label>
 										<div class="radio-circles">
 											<ul class="menu">
@@ -269,13 +277,6 @@
 										<input id="minPrice" name="minPrice" type="text" placeholder="от" class="inline-input inline-input--small">
 										<label for="maxPrice" class="separator">—</label>
 										<input id="maxPrice" name="maxPrice" type="text" placeholder="до" class="inline-input inline-input--small">
-									</div>
-									<div class="input-holder">
-										<select name="select">
-											<option value="0" selected>Все продавцы</option>
-											<option value="1">Частное лицо</option>
-											<option value="2">Компания</option>
-										</select>
 									</div>
 								</div>
 							</div>
@@ -393,7 +394,7 @@
 						</div>
 					</aside>
 					<div class="b-thermometer">
-						<p><a href="index.html">Главная</a><span class="divider"> / </span><a href="javascript:void(0);">Одежда, обувь и аксессуары</a><span class="divider"> / </span><a href="javascript:void(0);">Кеды</a><span class="divider"> / </span><span class="current">Converse Red</span>
+						<p><a href="index.html">Главная</a><span class="divider"> / </span><a href="store-index.html">Одежда, обувь и аксессуары</a><span class="divider"> / </span><a href="store.html">Кеды</a><span class="divider"> / </span><span class="current">Converse Red</span>
 						</p>
 					</div>
 					<div class="b-catalog-item">
@@ -425,7 +426,7 @@
 														<div class="b-item__picture"></div>
 														<div class="responsive-holder">
 															<div class="b-item__description">
-																<h4 class="b-item__title"><a href="javascript:void(0);">Converse White</a></h4>
+																<h4 class="b-item__title"><a href="store-item.html">Converse White</a></h4>
 																<div class="b-item__info">
 																	<p><span class="parameter">Верх:</span> резина, текстиль
 																		<br/><span class="parameter">Подошва:</span> резина
@@ -446,11 +447,13 @@
 												<div class="b-catalog__item">
 													<div class="b-item">
 														<div class="b-item__picture">
-															<img src="images/catalog/goods02.jpg" />
+															<a href="store-item.html">
+																<img src="images/catalog/goods02.jpg" />
+															</a>
 														</div>
 														<div class="responsive-holder">
 															<div class="b-item__description">
-																<h4 class="b-item__title"><a href="javascript:void(0);">Converse Grey</a></h4>
+																<h4 class="b-item__title"><a href="store-item.html">Converse Grey</a></h4>
 																<div class="b-item__info">
 																	<p><span class="parameter">Верх:</span> резина, текстиль
 																		<br/><span class="parameter">Подошва:</span> резина
@@ -471,11 +474,13 @@
 												<div class="b-catalog__item">
 													<div class="b-item">
 														<div class="b-item__picture">
-															<img src="images/catalog/goods03.jpg" />
+															<a href="store-item.html">
+																<img src="images/catalog/goods03.jpg" />
+															</a>
 														</div>
 														<div class="responsive-holder">
 															<div class="b-item__description">
-																<h4 class="b-item__title"><a href="javascript:void(0);">Converse Red</a></h4>
+																<h4 class="b-item__title"><a href="store-item.html">Converse Red</a></h4>
 																<div class="b-item__info">
 																	<p><span class="parameter">Верх:</span> резина, текстиль
 																		<br/><span class="parameter">Подошва:</span> резина
@@ -498,11 +503,13 @@
 												<div class="b-catalog__item">
 													<div class="b-item">
 														<div class="b-item__picture">
-															<img src="images/catalog/goods04.jpg" />
+															<a href="store-item.html">
+																<img src="images/catalog/goods04.jpg" />
+															</a>
 														</div>
 														<div class="responsive-holder">
 															<div class="b-item__description">
-																<h4 class="b-item__title"><a href="javascript:void(0);">Converse Orange</a></h4>
+																<h4 class="b-item__title"><a href="store-item.html">Converse Orange</a></h4>
 																<div class="b-item__info">
 																	<p><span class="parameter">Верх:</span> резина, текстиль
 																		<br/><span class="parameter">Подошва:</span> резина
@@ -527,11 +534,13 @@
 												<div class="b-catalog__item">
 													<div class="b-item">
 														<div class="b-item__picture">
-															<img src="images/catalog/goods06.jpg" />
+															<a href="store-item.html">
+																<img src="images/catalog/goods06.jpg" />
+															</a>
 														</div>
 														<div class="responsive-holder">
 															<div class="b-item__description">
-																<h4 class="b-item__title"><a href="javascript:void(0);">Converse Blue</a></h4>
+																<h4 class="b-item__title"><a href="store-item.html">Converse Blue</a></h4>
 																<div class="b-item__info">
 																	<p><span class="parameter">Верх:</span> резина, текстиль
 																		<br/><span class="parameter">Подошва:</span> резина
@@ -554,7 +563,7 @@
 														<div class="b-item__picture"></div>
 														<div class="responsive-holder">
 															<div class="b-item__description">
-																<h4 class="b-item__title"><a href="javascript:void(0);">Converse Green</a></h4>
+																<h4 class="b-item__title"><a href="store-item.html">Converse Green</a></h4>
 																<div class="b-item__info">
 																	<p><span class="parameter">Верх:</span> резина, текстиль
 																		<br/><span class="parameter">Подошва:</span> резина
@@ -577,11 +586,13 @@
 												<div class="b-catalog__item">
 													<div class="b-item">
 														<div class="b-item__picture">
-															<img src="images/catalog/goods01.jpg" />
+															<a href="store-item.html">
+																<img src="images/catalog/goods01.jpg" />
+															</a>
 														</div>
 														<div class="responsive-holder">
 															<div class="b-item__description">
-																<h4 class="b-item__title"><a href="javascript:void(0);">Converse 10</a></h4>
+																<h4 class="b-item__title"><a href="store-item.html">Converse 10</a></h4>
 																<div class="b-item__info">
 																	<p><span class="parameter">Верх:</span> резина, текстиль
 																		<br/><span class="parameter">Подошва:</span> резина
@@ -604,11 +615,13 @@
 												<div class="b-catalog__item">
 													<div class="b-item">
 														<div class="b-item__picture">
-															<img src="images/catalog/goods04.jpg" />
+															<a href="store-item.html">
+																<img src="images/catalog/goods04.jpg" />
+															</a>
 														</div>
 														<div class="responsive-holder">
 															<div class="b-item__description">
-																<h4 class="b-item__title"><a href="javascript:void(0);">Converse RD</a></h4>
+																<h4 class="b-item__title"><a href="store-item.html">Converse RD</a></h4>
 																<div class="b-item__info">
 																	<p><span class="parameter">Верх:</span> резина, текстиль
 																		<br/><span class="parameter">Подошва:</span> резина
@@ -633,11 +646,13 @@
 												<div class="b-catalog__item">
 													<div class="b-item">
 														<div class="b-item__picture">
-															<img src="images/catalog/goods03.jpg" />
+															<a href="store-item.html">
+																<img src="images/catalog/goods03.jpg" />
+															</a>
 														</div>
 														<div class="responsive-holder">
 															<div class="b-item__description">
-																<h4 class="b-item__title"><a href="javascript:void(0);">Converse RD2</a></h4>
+																<h4 class="b-item__title"><a href="store-item.html">Converse RD2</a></h4>
 																<div class="b-item__info">
 																	<p><span class="parameter">Верх:</span> резина, текстиль
 																		<br/><span class="parameter">Подошва:</span> резина
@@ -662,7 +677,7 @@
 														<div class="b-item__picture"></div>
 														<div class="responsive-holder">
 															<div class="b-item__description">
-																<h4 class="b-item__title"><a href="javascript:void(0);">Converse T800</a></h4>
+																<h4 class="b-item__title"><a href="store-item.html">Converse T800</a></h4>
 																<div class="b-item__info">
 																	<p><span class="parameter">Верх:</span> резина, текстиль
 																		<br/><span class="parameter">Подошва:</span> резина
@@ -685,11 +700,13 @@
 												<div class="b-catalog__item">
 													<div class="b-item">
 														<div class="b-item__picture">
-															<img src="images/catalog/goods05.jpg" />
+															<a href="store-item.html">
+																<img src="images/catalog/goods05.jpg" />
+															</a>
 														</div>
 														<div class="responsive-holder">
 															<div class="b-item__description">
-																<h4 class="b-item__title"><a href="javascript:void(0);">Converse Ultimate</a></h4>
+																<h4 class="b-item__title"><a href="store-item.html">Converse Ultimate</a></h4>
 																<div class="b-item__info">
 																	<p><span class="parameter">Верх:</span> резина, текстиль
 																		<br/><span class="parameter">Подошва:</span> резина
@@ -721,7 +738,8 @@
 													<div class="b-support-info dropdown"><span class="b-support-info__title"><span data-target="support" class="dropdown__trigger"> Поддержка</span></span>
 														<div data-target="support" class="b-support-info__content dropdown__content hidden">
 															<p><span class="label">Посетить сайт</span><a href="http://pokupo.ru" target="_blank" class="action">pokupo.ru</a><span class="label">Написать</span><a href="mailto:support@pokupo.ru" class="action">support@pokupo.ru</a><span class="label">Skype консультанта</span>
-																<a href="skype:pokupo?chat" onclick="return skypeCheck()" class="action">pokupo</a><span class="label">ICQ консультанта</span><span class="action">14112415151</span><span class="label">Позвонить</span><a href="tel:+74953636393" class="action">+7 495 363-63-93</a>
+																<a
+																href="skype:pokupo?chat" onclick="return skypeCheck()" class="action">pokupo</a><span class="label">ICQ консультанта</span><span class="action">14112415151</span><span class="label">Позвонить</span><a href="tel:+74953636393" class="action">+7 495 363-63-93</a>
 															</p>
 														</div>
 													</div>
@@ -755,8 +773,9 @@
 													<p>Метки: <span class="pseudo-link">кеды</span>, <span class="pseudo-link">обувь</span>, <span class="pseudo-link">тапки</span>
 													</p>
 													<div class="b-item__price"><span class="b-price b-item__price--old"><span class="b-price__number">3750</span><span class="b-price__thinsp">&nbsp;</span><span class="b-price__rubl">Р</span></span><span class="b-price"><span class="b-price__number">3750</span><span class="b-price__thinsp">&nbsp;</span>
-														<span class="b-price__rubl">Р</span>
-														</span>
+														<span
+														class="b-price__rubl">Р</span>
+															</span>
 													</div>
 													<div class="b-item__price-comment">
 														<p>Ваша скидка 30%</p>
@@ -771,7 +790,8 @@
 												<p class="b-catalog-item__limits">На складе: <span class="value">5</span>
 												</p>
 												<div style="margin-bottom:20px" class="b-increment-input"><span class="b-increment-input__darr">&minus;</span><span class="b-increment-input__input-wrapper"><input type="text" data-name="qty" value="1" maxlength="3" autocomplete="off" data-min="1" data-max="5" class="inline-input b-increment-input__input"></span>
-													<span class="b-increment-input__uarr">&plus;</span>
+													<span
+													class="b-increment-input__uarr">+</span>
 												</div><u class="btn btn-orange btn-border btn-with-icon"><span class="sign">В&nbsp;корзину</span></u>
 												<br><u style="font-size:16px" class="btn btn-orange btn-border">Купить сразу</u>
 												<div class="like_button"><span class="pseudo-link">В избранное</span>
@@ -888,7 +908,7 @@
 										<div class="b-item__picture"></div>
 										<div class="responsive-holder">
 											<div class="b-item__description">
-												<h4 class="b-item__title"><a href="javascript:void(0);">Converse White</a></h4>
+												<h4 class="b-item__title"><a href="store-item.html">Converse White</a></h4>
 												<div class="b-item__info">
 													<p><span class="parameter">Верх:</span> резина, текстиль
 														<br/><span class="parameter">Подошва:</span> резина
@@ -909,11 +929,13 @@
 								<div class="b-catalog__item">
 									<div class="b-item">
 										<div class="b-item__picture">
-											<img src="images/catalog/goods02.jpg" />
+											<a href="store-item.html">
+												<img src="images/catalog/goods02.jpg" />
+											</a>
 										</div>
 										<div class="responsive-holder">
 											<div class="b-item__description">
-												<h4 class="b-item__title"><a href="javascript:void(0);">Converse Grey</a></h4>
+												<h4 class="b-item__title"><a href="store-item.html">Converse Grey</a></h4>
 												<div class="b-item__info">
 													<p><span class="parameter">Верх:</span> резина, текстиль
 														<br/><span class="parameter">Подошва:</span> резина
@@ -934,11 +956,13 @@
 								<div class="b-catalog__item">
 									<div class="b-item">
 										<div class="b-item__picture">
-											<img src="images/catalog/goods03.jpg" />
+											<a href="store-item.html">
+												<img src="images/catalog/goods03.jpg" />
+											</a>
 										</div>
 										<div class="responsive-holder">
 											<div class="b-item__description">
-												<h4 class="b-item__title"><a href="javascript:void(0);">Converse Red</a></h4>
+												<h4 class="b-item__title"><a href="store-item.html">Converse Red</a></h4>
 												<div class="b-item__info">
 													<p><span class="parameter">Верх:</span> резина, текстиль
 														<br/><span class="parameter">Подошва:</span> резина
@@ -961,11 +985,13 @@
 								<div class="b-catalog__item">
 									<div class="b-item">
 										<div class="b-item__picture">
-											<img src="images/catalog/goods04.jpg" />
+											<a href="store-item.html">
+												<img src="images/catalog/goods04.jpg" />
+											</a>
 										</div>
 										<div class="responsive-holder">
 											<div class="b-item__description">
-												<h4 class="b-item__title"><a href="javascript:void(0);">Converse Orange</a></h4>
+												<h4 class="b-item__title"><a href="store-item.html">Converse Orange</a></h4>
 												<div class="b-item__info">
 													<p><span class="parameter">Верх:</span> резина, текстиль
 														<br/><span class="parameter">Подошва:</span> резина
@@ -988,11 +1014,13 @@
 								<div class="b-catalog__item">
 									<div class="b-item">
 										<div class="b-item__picture">
-											<img src="images/catalog/goods06.jpg" />
+											<a href="store-item.html">
+												<img src="images/catalog/goods06.jpg" />
+											</a>
 										</div>
 										<div class="responsive-holder">
 											<div class="b-item__description">
-												<h4 class="b-item__title"><a href="javascript:void(0);">Converse Blue</a></h4>
+												<h4 class="b-item__title"><a href="store-item.html">Converse Blue</a></h4>
 												<div class="b-item__info">
 													<p><span class="parameter">Верх:</span> резина, текстиль
 														<br/><span class="parameter">Подошва:</span> резина
@@ -1015,7 +1043,7 @@
 										<div class="b-item__picture"></div>
 										<div class="responsive-holder">
 											<div class="b-item__description">
-												<h4 class="b-item__title"><a href="javascript:void(0);">Converse Green</a></h4>
+												<h4 class="b-item__title"><a href="store-item.html">Converse Green</a></h4>
 												<div class="b-item__info">
 													<p><span class="parameter">Верх:</span> резина, текстиль
 														<br/><span class="parameter">Подошва:</span> резина
@@ -1038,11 +1066,13 @@
 								<div class="b-catalog__item">
 									<div class="b-item">
 										<div class="b-item__picture">
-											<img src="images/catalog/goods01.jpg" />
+											<a href="store-item.html">
+												<img src="images/catalog/goods01.jpg" />
+											</a>
 										</div>
 										<div class="responsive-holder">
 											<div class="b-item__description">
-												<h4 class="b-item__title"><a href="javascript:void(0);">Converse 10</a></h4>
+												<h4 class="b-item__title"><a href="store-item.html">Converse 10</a></h4>
 												<div class="b-item__info">
 													<p><span class="parameter">Верх:</span> резина, текстиль
 														<br/><span class="parameter">Подошва:</span> резина
@@ -1065,11 +1095,13 @@
 								<div class="b-catalog__item">
 									<div class="b-item">
 										<div class="b-item__picture">
-											<img src="images/catalog/goods04.jpg" />
+											<a href="store-item.html">
+												<img src="images/catalog/goods04.jpg" />
+											</a>
 										</div>
 										<div class="responsive-holder">
 											<div class="b-item__description">
-												<h4 class="b-item__title"><a href="javascript:void(0);">Converse RD</a></h4>
+												<h4 class="b-item__title"><a href="store-item.html">Converse RD</a></h4>
 												<div class="b-item__info">
 													<p><span class="parameter">Верх:</span> резина, текстиль
 														<br/><span class="parameter">Подошва:</span> резина
@@ -1092,11 +1124,13 @@
 								<div class="b-catalog__item">
 									<div class="b-item">
 										<div class="b-item__picture">
-											<img src="images/catalog/goods03.jpg" />
+											<a href="store-item.html">
+												<img src="images/catalog/goods03.jpg" />
+											</a>
 										</div>
 										<div class="responsive-holder">
 											<div class="b-item__description">
-												<h4 class="b-item__title"><a href="javascript:void(0);">Converse RD2</a></h4>
+												<h4 class="b-item__title"><a href="store-item.html">Converse RD2</a></h4>
 												<div class="b-item__info">
 													<p><span class="parameter">Верх:</span> резина, текстиль
 														<br/><span class="parameter">Подошва:</span> резина
@@ -1121,7 +1155,7 @@
 										<div class="b-item__picture"></div>
 										<div class="responsive-holder">
 											<div class="b-item__description">
-												<h4 class="b-item__title"><a href="javascript:void(0);">Converse T800</a></h4>
+												<h4 class="b-item__title"><a href="store-item.html">Converse T800</a></h4>
 												<div class="b-item__info">
 													<p><span class="parameter">Верх:</span> резина, текстиль
 														<br/><span class="parameter">Подошва:</span> резина
@@ -1144,11 +1178,13 @@
 								<div class="b-catalog__item">
 									<div class="b-item">
 										<div class="b-item__picture">
-											<img src="images/catalog/goods05.jpg" />
+											<a href="store-item.html">
+												<img src="images/catalog/goods05.jpg" />
+											</a>
 										</div>
 										<div class="responsive-holder">
 											<div class="b-item__description">
-												<h4 class="b-item__title"><a href="javascript:void(0);">Converse Ultimate</a></h4>
+												<h4 class="b-item__title"><a href="store-item.html">Converse Ultimate</a></h4>
 												<div class="b-item__info">
 													<p><span class="parameter">Верх:</span> резина, текстиль
 														<br/><span class="parameter">Подошва:</span> резина
