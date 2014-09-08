@@ -44,36 +44,86 @@ block profile-nav
 						span Заказы
 
 block content
-	div
+	.profile-content
 		.container
 			dl.tabs.tabs--withline
-				dt.tab__trigger
+				dt.tab__trigger.selected 
 					span Персональные данные
-				dd.tab__content
+				dd.tab__content.selected 
 					.content
-						p хуй
+						h2.with-divider Регистрационные данные
+
+						fieldset.b-fieldset
+							input#fullname.block-input(type="text" placeholder="Введите ФИО в свободной форме")
+							.columns
+								.first.double.column
+									.content
+										.input-holder
+											input#fullname__surname.suggestion-input.block-input(type="text" placeholder="Фамилия" name="fullname__name")
+										.input-holder
+											input#fullname__name.suggestion-input.block-input(type="text" placeholder="Имя" name="fullname__surname")
+
+										.input-holder#fullname__gender
+											input#fullname__gender-male.inline(type="radio" name="fullname__gender" value="MALE")
+											label(for="fullname__gender-male") Мужской
+											input#fullname__gender-female.inline(type="radio" name="fullname__gender" value="FEMALE")
+											label(for="fullname__gender-female") Женский
+
+
+								.third.double.column
+									.content
+										.input-holder
+											input#fullname__patronymic.block-input(type="text" placeholder="Отчество" name="fullname__patronymic")
+
+						h2.with-divider Почтовый адрес
+
+						fieldset.b-fieldset
+							input#address.block-input(type="text" placeholder="Введите адрес в свободной форме")
+							.columns
+								.first.double.column
+									.content
+										.input-holder
+											input#address__country.suggestion-input.block-input(type="text" placeholder="Страна" name="address__country")
+										.input-holder
+											input#address__region.suggestion-input.block-input(type="text" placeholder="Регион" name="address__region")
+										.input-holder
+											input#address__city.suggestion-input.block-input(type="text" placeholder="Город" name="address__city")
+										.input-holder
+											input#address__postalcode.suggestion-input.block-input(type="text" placeholder="Почтовый индекс" name="address__postalcode")
+
+
+								.third.double.column
+									.content
+										.input-holder
+											input#address__street.suggestion-input.block-input(type="text" placeholder="Улица" name="address__city")
+										.input-holder
+											input#address__house.suggestion-input.block-input(type="text" placeholder="Дом" name="address__house")
+										.input-holder
+											input#address__flat.suggestion-input.block-input(type="text" placeholder="Квартира" name="address__flat")
+
+						h2.with-divider Данные аккаунта
+
 
 				dt.tab__trigger 
 					span Адреса доставки
 				dd.tab__content
 					.content
-						p Отвечая на вопрос о взаимоотношении идеального ли и материального ци, Дай Чжень заявлял, что хотя освобождение и подчеркивает естественный рекламоноситель, промоакция не рефлектирует процесс стратегического планирования. 
-						p Поэтому воздействие на потребителя позиционирует ролевой пресс-клиппинг, хотя в официозе принято обратное. Спонсорство одновременно заполняет язык образов, однако Зигварт считал критерием истинности необходимость и общезначимость, для которых нет никакой опоры в объективном мире. Размещение порождает и обеспечивает связанный закон исключённого третьего.
-						p Таргетирование, следовательно, контролирует дуализм, полагаясь только на инсайдерскую информацию.
-				dt.tab__trigger.selected 
+						h2 Выберете основной адрес доставки
+
+				dt.tab__trigger
 					span Безопасность
-				dd.tab__content.selected 
+				dd.tab__content
 					.content
 						h2 Изменить пароль
 
-						div(style="margin-bottom: 20px")
+						.input-holder
 							input#oldpassword.block-input(type="password" name="old_password" value="" placeholder="Текущий пароль")
 
-						div(style="margin-bottom: 20px")
+						.input-holder
 							input#newpassword.block-input(type="password" name="new_password" value="" placeholder="Новый пароль")
 
-						div(style="margin-bottom: 20px")
-							input.block-input(type="password" name="confirm_password" value="" placeholder="Ещё раз новый пароль")
+						a.btn.btn-grey.btn-big(href=js0) Отмена
+						a.btn.btn-orange.btn-big(href=js0) Отправить
 
 
 
@@ -101,4 +151,10 @@ block content
 
 
 block scripts
-	+script(['libs/jquery.password.js', 'main.js'])
+	+script([
+		'libs/jquery.password.js', 
+		'http://cdnjs.cloudflare.com/ajax/libs/jquery-ajaxtransport-xdomainrequest/1.0.1/jquery.xdomainrequest.min.js',
+		'https://dadata.ru/static/js/jquery.suggestions-4.6.min.js', 
+		'main.js'
+	])
+

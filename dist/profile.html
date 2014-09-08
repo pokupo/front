@@ -174,34 +174,92 @@
 			</section>
 			<!-- /profile-nav -->
 			<!-- content -->
-			<div>
+			<div class="profile-content">
 				<div class="container">
-					<dl class="tabs tabs--withline"><dt class="tab__trigger"><span>Персональные данные</span></dt>
-						<dd class="tab__content">
+					<dl class="tabs tabs--withline"><dt class="tab__trigger selected"><span>Персональные данные</span></dt>
+						<dd class="tab__content selected">
 							<div class="content">
-								<p>хуй</p>
+								<h2 class="with-divider">Регистрационные данные</h2>
+								<fieldset class="b-fieldset">
+									<input id="fullname" type="text" placeholder="Введите ФИО в свободной форме" class="block-input">
+									<div class="columns">
+										<div class="first double column">
+											<div class="content">
+												<div class="input-holder">
+													<input id="fullname__surname" type="text" placeholder="Фамилия" name="fullname__name" class="suggestion-input block-input">
+												</div>
+												<div class="input-holder">
+													<input id="fullname__name" type="text" placeholder="Имя" name="fullname__surname" class="suggestion-input block-input">
+												</div>
+												<div id="fullname__gender" class="input-holder">
+													<input id="fullname__gender-male" type="radio" name="fullname__gender" value="MALE" class="inline">
+													<label for="fullname__gender-male">Мужской</label>
+													<input id="fullname__gender-female" type="radio" name="fullname__gender" value="FEMALE" class="inline">
+													<label for="fullname__gender-female">Женский</label>
+												</div>
+											</div>
+										</div>
+										<div class="third double column">
+											<div class="content">
+												<div class="input-holder">
+													<input id="fullname__patronymic" type="text" placeholder="Отчество" name="fullname__patronymic" class="block-input">
+												</div>
+											</div>
+										</div>
+									</div>
+								</fieldset>
+								<h2 class="with-divider">Почтовый адрес</h2>
+								<fieldset class="b-fieldset">
+									<input id="address" type="text" placeholder="Введите адрес в свободной форме" class="block-input">
+									<div class="columns">
+										<div class="first double column">
+											<div class="content">
+												<div class="input-holder">
+													<input id="address__country" type="text" placeholder="Страна" name="address__country" class="suggestion-input block-input">
+												</div>
+												<div class="input-holder">
+													<input id="address__region" type="text" placeholder="Регион" name="address__region" class="suggestion-input block-input">
+												</div>
+												<div class="input-holder">
+													<input id="address__city" type="text" placeholder="Город" name="address__city" class="suggestion-input block-input">
+												</div>
+												<div class="input-holder">
+													<input id="address__postalcode" type="text" placeholder="Почтовый индекс" name="address__postalcode" class="suggestion-input block-input">
+												</div>
+											</div>
+										</div>
+										<div class="third double column">
+											<div class="content">
+												<div class="input-holder">
+													<input id="address__street" type="text" placeholder="Улица" name="address__city" class="suggestion-input block-input">
+												</div>
+												<div class="input-holder">
+													<input id="address__house" type="text" placeholder="Дом" name="address__house" class="suggestion-input block-input">
+												</div>
+												<div class="input-holder">
+													<input id="address__flat" type="text" placeholder="Квартира" name="address__flat" class="suggestion-input block-input">
+												</div>
+											</div>
+										</div>
+									</div>
+								</fieldset>
+								<h2 class="with-divider">Данные аккаунта</h2>
 							</div>
 						</dd><dt class="tab__trigger"><span>Адреса доставки</span></dt>
 						<dd class="tab__content">
 							<div class="content">
-								<p>Отвечая на вопрос о взаимоотношении идеального ли и материального ци, Дай Чжень заявлял, что хотя освобождение и подчеркивает естественный рекламоноситель, промоакция не рефлектирует процесс стратегического планирования.</p>
-								<p>Поэтому воздействие на потребителя позиционирует ролевой пресс-клиппинг, хотя в официозе принято обратное. Спонсорство одновременно заполняет язык образов, однако Зигварт считал критерием истинности необходимость и общезначимость, для которых
-									нет никакой опоры в объективном мире. Размещение порождает и обеспечивает связанный закон исключённого третьего.</p>
-								<p>Таргетирование, следовательно, контролирует дуализм, полагаясь только на инсайдерскую информацию.</p>
+								<h2>Выберете основной адрес доставки</h2>
 							</div>
-						</dd><dt class="tab__trigger selected"><span>Безопасность</span></dt>
-						<dd class="tab__content selected">
+						</dd><dt class="tab__trigger"><span>Безопасность</span></dt>
+						<dd class="tab__content">
 							<div class="content">
 								<h2>Изменить пароль</h2>
-								<div style="margin-bottom: 20px">
+								<div class="input-holder">
 									<input id="oldpassword" type="password" name="old_password" value="" placeholder="Текущий пароль" class="block-input">
 								</div>
-								<div style="margin-bottom: 20px">
+								<div class="input-holder">
 									<input id="newpassword" type="password" name="new_password" value="" placeholder="Новый пароль" class="block-input">
-								</div>
-								<div style="margin-bottom: 20px">
-									<input type="password" name="confirm_password" value="" placeholder="Ещё раз новый пароль" class="block-input">
-								</div>
+								</div><a href="javascript:void(0);" class="btn btn-grey btn-big">Отмена</a><a href="javascript:void(0);" class="btn btn-orange btn-big">Отправить</a>
 							</div>
 						</dd>
 					</dl>
@@ -286,6 +344,8 @@
 		<script src="scripts/libs/chosen.jquery.js"></script>
 		<script src="scripts/libs/jquery.fancytree-all.js"></script>
 		<script src="scripts/libs/jquery.password.js"></script>
+		<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-ajaxtransport-xdomainrequest/1.0.1/jquery.xdomainrequest.min.js"></script>
+		<script src="https://dadata.ru/static/js/jquery.suggestions-4.6.min.js"></script>
 		<script src="scripts/main.js"></script>
 	</body>
 </html>

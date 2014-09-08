@@ -75,7 +75,6 @@ PKP.init = function() {
 };
 
 
-
 /* Инициализация галерей и слайдеров */
 PKP.Sliders = {
 	init: function() {
@@ -783,6 +782,10 @@ PKP.UI = {
 /* Валидация форм и инициализация "визардов" */
 PKP.Forms = {
 	init: function() {
+		if(typeof ($.fn.suggestions) !== 'undefined') {
+			PKP.Suggestions.init();
+		}
+
 		if($('#registerWizard').length > 0) {
 			var progress = 0;
 			var canvas = document.getElementById('progressCircle');
@@ -1057,6 +1060,73 @@ PKP.Aim = {
 	}
 };
 
+PKP.Suggestions = {
+	init: function() {
+		$("#fullname").suggestions({
+			serviceUrl: "https://dadata.ru/api/v2",
+			token: "d89731fbdbf67193159dff06a06a50781df243af",
+			type: "NAME",
+			onSelect: function(suggestion) {
+				var data = suggestion.data;
+				$('#fullname .suggestion-input').val();
+
+				if(data.surname !== null) {
+					$('#fullname__surname').val(data.surname);
+				}
+
+				if(data.name !== null) {
+					$('#fullname__name').val(data.name);
+				}
+
+				if(data.patronymic !== null) {
+					$('#fullname__patronymic').val(data.patronymic);
+				}
+
+				if(data.gender !== null) {
+					$('#fullname__gender-' + data.gender.toLowerCase() ).attr('checked', true);
+				}			
+			}
+		});
+
+		$("#address").suggestions({
+			serviceUrl: "https://dadata.ru/api/v2",
+			token: "d89731fbdbf67193159dff06a06a50781df243af",
+			type: "ADDRESS",
+			onSelect: function(suggestion) {
+				var data = suggestion.data;
+				$('#address .suggestion-input').val();
+
+				if(data.postal_code !== null) {
+					$('#address__postalcode').val(data.postal_code);
+				}
+
+				if(data.country !== null) {
+					$('#address__country').val(data.country);
+				}
+
+				if(data.region !== null) {
+					$('#address__region').val(data.region);
+				}
+
+				if(data.city !== null) {
+					$('#address__city').val(data.city);
+				}
+
+				if(data.street !== null) {
+					$('#address__street').val(data.street);
+				}
+
+				if(data.house !== null) {
+					$('#address__house').val(data.house);
+				}
+
+				if(data.flat !== null) {
+					$('#address__flat').val(data.flat);
+				}
+			}
+		});
+	}
+};
 
 
 /* Поехали! */

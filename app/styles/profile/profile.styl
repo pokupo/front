@@ -1,3 +1,4 @@
+section.profile-content
 section.profile-nav
 	padding 0
 
@@ -86,6 +87,47 @@ section.profile-nav
 				a
 					cursor default
 
+.password-control
+	width 400px!important
+
+.profile-content
+	position relative
+
+	.input-holder
+		margin 0 0 20px
+
+	h2
+		font-size 30px
+		margin-bottom 40px
+		font-weight 300
+
+		&.with-divider
+			position relative
+			overflow hidden
+			
+			&:after
+				content ''
+				position absolute
+				width 100%
+				border-top 1px solid $grey  
+				margin-top .6em
+				margin-left .4em
 
 
+	.btn-big
+		padding 18px 50px 16px
+		margin-right 30px
 
+		&:last-child
+			margin-right 0
+
+
+.b-fieldset
+	margin 0 0 40px
+	border none
+
+#fullname
+#address
+	width 100%
+	max-width 949px
+	margin-bottom 20px
