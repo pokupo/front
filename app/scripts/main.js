@@ -247,6 +247,7 @@ PKP.UI = {
 		PKP.UI.tree();
 		PKP.UI.voting();
 		PKP.UI.diagonalHover.init();
+		PKP.UI.passwords();
 
 		if($('#progressCircle').length > 0) {
 			PKP.UI.progressCircle.init();
@@ -429,51 +430,65 @@ PKP.UI = {
 	diagonalHover: {
 		init: function() {
 			PKP.Aim.init();
-
-			var $this = this;
 			PKP.$menu = $(".b-navigation.menu");
+			PKP.$menu__item = false;
 
 			PKP.$menu.aim({
-				activate:   $this.activateSubmenu,
-				deactivate: $this.deactivateSubmenu,
-				exitMenu: 	$this.exitMenu
+				activate:   this.activateSubmenu,
+				deactivate: this.deactivateSubmenu,
+				exitMenu: 	this.exitMenu
 			});
 		},
 
 		activateSubmenu: function(row) {
 			var $this = $(row);
+			// console.log('Открыть меню ' + $this.find('> a span').text());
+
+			var submenu = PKP.$menu.find('.submenu.active');
 
 			if($this.is('.with-submenu')) {
-				$this.closest('.menu').find('.submenu.active').removeClass('active').addClass('current');
-				$this.children('a').addClass('bordered');
+				submenu.removeClass('active');
+
+				if(PKP.$menu.is('.menu--opened')){
+					submenu.addClass('current');
+				}
+
+				$this.children('a').addClass('bordered').addClass("maintainHover");
 				$this.children('.submenu').addClass('active');
 				$('.submenu-bg').addClass('active');
 			}
-
-			$this.find("a").addClass("maintainHover");
 		},
 
 		deactivateSubmenu: function(row) {
-			var $this    = $(row);
+			var $this = $(row);
+			// console.log('Закрыть меню ' + $this.find('> a span').text());
 
 			$this.children('a').removeClass('bordered');
-			$this.children('.submenu').removeClass('active');
 
-			if($this.closest('.menu').is('.menu--opened')) {
-				$this.closest('.menu').find('.submenu.current').removeClass('current').addClass('active');
-			} 
-			
-			$('.submenu-bg').removeClass('active');
+			if(PKP.$menu.find('.submenu.current').length > 0 ) {
+				$this.children('.submenu').removeClass('active');
+			}
+
+			if(PKP.$menu.is('.menu--opened')) {
+				PKP.$menu.find('.submenu.current').addClass('active').removeClass('current');
+			} else {
+				$this.children('.submenu').removeClass('active');
+				$(".submenu-bg").removeClass('active');	
+			}
 		},
 
-		exitMenu: function(){
-			$(".submenu")
-				.removeClass('active')
-				.siblings("a.bordered")
-				.removeClass();
+		exitMenu: function(row) {
+			// console.log('Выход');
 
-			$(".submenu-bg").removeClass('active');
-			$("a.maintainHover").removeClass("maintainHover");
+			if(PKP.$menu.is('.menu--opened')) {
+				if(PKP.$menu.find('.submenu.current').length > 0) {
+					PKP.$menu.find('.submenu.active').removeClass('active').siblings('a.bordered').removeClass();
+					PKP.$menu.find('.submenu.current').removeClass('current').addClass('active');
+				}
+			} else {
+				PKP.$menu.find('.submenu').removeClass('active').siblings('a.bordered').removeClass();
+				$(".submenu-bg").removeClass('active');	
+			}
 		}
 	},
 	/* Вывод цены */
@@ -752,6 +767,12 @@ PKP.UI = {
 		});
 	},
 
+	passwords: function() {
+		if (typeof ($.fn.hidePassword) !== 'undefined') {
+			$('input[type="password"]').hidePassword(true);
+		} 
+	},
+
 	progressCircle:{
 		init: function() {
 			
@@ -904,9 +925,9 @@ PKP.Aim = {
 					if (activeRow) {
 						options.deactivate(activeRow);
 					}
-
-					activeRow = null;
 				}
+				activeRow = null; // если нужно будет скрывать-показывать подменю по клику, внести эту строчку в условие
+				
 			};
 
 		var mouseenterRow = function() {

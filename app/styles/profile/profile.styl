@@ -1,0 +1,91 @@
+section.profile-nav
+	padding 0
+
+.profile-nav
+	text-align left
+
+	.btn
+		float right
+		margin 18px 0 0
+
+.b-profile-nav
+	font-size 0
+	width 75%
+
+	.menu__item
+		display inline-block
+		font-size 14px
+		height 80px
+
+		a
+			position relative
+			display block
+			padding 0 20px 0 50px
+			height 80px
+			line-height 80px
+			text-decoration none
+			border-bottom none
+			white-space nowrap
+
+			&:before
+				content ''
+				display block
+				position absolute
+				top 50%
+				left 20px
+
+			&.icon__profile
+				&:before
+					margin-top -11px
+					sprite($icon__profile)
+
+			&.icon__favorites
+				&:before
+					margin-top -8px
+					sprite($icon__favorites)
+
+			&.icon__cart
+				&:before
+					margin-top -12px
+					sprite($icon__cart)
+
+			&.icon__order
+				&:before
+					margin-top -9px
+					sprite($icon__order)
+
+
+		&:hover
+			background #e0ddd8
+
+		&.active
+			background $orange
+			color #fff
+			a
+				color #fff
+
+				&.icon__profile
+					&:before
+						sprite($icon__profile__white)
+
+				&.icon__favorites
+					&:before
+						sprite($icon__favorites__white)
+
+				&.icon__carts
+					&:before
+						sprite($icon__carts__white)
+
+				&.icon__order
+					&:before
+						sprite($icon__order__white)
+
+			&:hover
+				background $orange
+
+				a
+					cursor default
+
+
+
+

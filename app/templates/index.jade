@@ -22,6 +22,17 @@ block content
 							{text: 'Корзина (не весь js!)', href: 'store-cart.html'},
 							{text: 'Оплата', href: 'store-invoice.html'}
 						])
+						h3(style = "font-weight:bold; font-size: 16px; padding: 20px 0") Личный кабинет
+						+pages-list([
+							{text: 'Профиль', href: 'profile.html'},
+							{text: 'Адреса доставки', href: 'profile-addresses.html', disabled:true},
+							{text: 'Безопасность', href: 'profile-security.html', disabled:true},
+							{text: 'Избранное', href: 'profile-favorites.html', disabled:true},
+							{text: 'Корзина', href: 'profile-cart.html', disabled:true},
+							{text: 'Просмотр заказа', href: 'profile-order.html', disabled:true},
+							{text: 'Сообщения', href: 'profile-mail.html', disabled:true},
+							{text: 'Переписка', href: 'profile-chat.html', disabled:true}
+						])
 
 			.third.double.column
 				.content

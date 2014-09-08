@@ -86,7 +86,8 @@ body
 	
 .container 
 	position relative
-	width 978px
+	width 100%
+	max-width 978px
 	margin 0 auto
 	clearfix()
 
@@ -302,23 +303,14 @@ hgroup
 .tab
 	&__trigger
 		float left
-		line-height 35px
-		height 35px
 		position relative
 		left 0
-		margin-right 3px
-		padding 0 44px 0 0
-		font-size 30px
-		font-weight 300
+		padding 0
 		
 		span
-			border-bottom 1px dotted rgba($a__link, 0.4)
-			color $a__link
+			display block
+			height 100%
 			cursor pointer
-
-		&:hover	
-			span
-				border-bottom-color rgba($a__hover,0.5)
 
 		&.selected	
 			span
@@ -329,15 +321,111 @@ hgroup
 	&__content
 		display none
 		float right
+		text-align left
 		width 100%
 		position relative
 		z-index 2
-		margin 35px 0 0 -100%
+		margin-left -100%
+
 		.content
-			padding-top 50px
+			padding-top 20px
 
 		&.selected
 			display block
+
+
+.tabs.tabs--withline
+	.tab__trigger
+		line-height 70px
+		height 70px
+		margin-right 30px
+
+		&:hover
+			span
+				color $orange
+
+		&.selected
+			border-bottom 4px solid $orange
+			&:hover
+				span
+					color #000
+
+	.tab__content
+		border-top 1px solid $grey
+		margin-top 70px
+		
+
+.tabs.tabs--noskin
+	.tab__trigger
+		line-height 35px
+		height 35px
+		font-size 30px
+		font-weight 300
+		margin-right 3px
+		padding 0 44px 0 0
+
+		span
+			border-bottom 1px dotted rgba($a__link, 0.4)
+			color $a__link
+
+		&.selected
+			span
+				border-bottom none
+				color #000
+
+		&:hover	
+			span
+				border-bottom-color rgba($a__hover,0.5)
+		
+	.tab__content
+		margin-top 35px
+
+		.content
+			padding-top 50px
+		
+
+.password-control__trigger
+	float left
+	margin 10px -100% 0 8px
+	position relative
+	left 100%
+	width 40px
+	height 40px
+	display block
+	border-radius 40px
+	border 2px solid #FFA800
+	font-size 18px
+	line-height 36px
+	text-align center
+	cursor pointer
+	background #fff
+	overflow hidden
+	text-indent -999em
+
+	&:after
+		content ''
+		position absolute
+		display block
+		top 50%
+		left 50%
+		margin -8px 0 0 -10px
+
+	&--show
+		&:after
+			sprite($icon__eye--opened)
+	&--hide
+		&:after
+			margin 2px 0 0 -11px
+			sprite($icon__eye--closed)
+
+
+
+	&.active
+		&:after
+			margin 2px 0 0 -11px
+			sprite($icon__eye--closed)
+
+
 
 
 .b-cart-menu__body
@@ -439,3 +527,6 @@ hgroup
 .invisible
 	visibility hidden
 
+::-ms-reveal
+::-ms-clear
+	display none!important

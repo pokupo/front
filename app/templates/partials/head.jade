@@ -1,8 +1,8 @@
 head
 	meta(charset='utf-8')
-	meta(name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0')
+	//- meta(name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0')
 
-	//- iOS
+	// iOS
 	meta(name='apple-mobile-web-app-capable' content='yes')
 	meta(name='apple-mobile-web-app-status-bar-style' content='black-translucent')
 	link(href=page.assets + 'images/icons/apple-touch-icon-152x152.png' rel='apple-touch-icon')
@@ -14,7 +14,7 @@ head
 	link(sizes='144x144' href=page.assets + 'images/icons/apple-touch-icon-144x144.png' rel='apple-touch-icon')
 	link(sizes='152x152' href=page.assets + 'images/icons/apple-touch-icon-152x152.png' rel='apple-touch-icon')
 
-	//- Windows 8
+	// Windows 8
 	meta(name='application-name' content=page.title)
 	meta(name='msapplication-tooltip' content=page.description)
 	meta(name='msapplication-TileColor' content='#ffffff')
@@ -25,25 +25,25 @@ head
 	meta(name='msapplication-wide310x150logo' content=page.assets + 'images/icons/tile-wide.png')
 	meta(name='msapplication-tap-highlight' content='no')
 
-	//- Windows
+	// Windows
 	meta(http-equiv='X-UA-Compatible' content='IE=edge')
 
-	//- Windows Phone
+	// Windows Phone
 	| <!--[if IE]> 
 	| <meta name="imagetoolbar" content="no"></script>
 	| <meta name="msthemecompatible" content="no"></script>
 	| <![endif]-->
 
-	//- Blackberry and etc
+	// Blackberry and etc
 	meta(name='cleartype' content='on')
 	meta(name='HandheldFriendly' content='True')
 
-	//- No parse telephone and address
+	// No parse telephone and address
 	meta(name='format-detection' content='telephone=no')
 	meta(name='format-detection' content='address=no')
 
 	block head
-	//- SEO
+	// SEO
 	title= page.title
 	meta(name='description' content=page.description)
 	meta(name='keywords' content=page.keywords)
