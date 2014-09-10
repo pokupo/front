@@ -28,6 +28,9 @@ section.profile-nav
 			border-bottom none
 			white-space nowrap
 
+			span 
+				color #000
+
 			&:before
 				content ''
 				display block
@@ -64,6 +67,9 @@ section.profile-nav
 			color #fff
 			a
 				color #fff
+				
+				span
+					color #fff
 
 				&.icon__profile
 					&:before
@@ -93,6 +99,13 @@ section.profile-nav
 .profile-content
 	position relative
 
+	.b-seller-info__summary
+		margin-right 260px
+
+	.b-seller-info__actions
+		width 255px
+		margin-top 32px
+
 	.input-holder
 		margin 0 0 20px
 
@@ -113,6 +126,43 @@ section.profile-nav
 				margin-top .6em
 				margin-left .4em
 
+	.btn-border
+		font-size 12px
+		vertical-align top
+		padding 13px 23px 11px
+		border-width 2px
+		margin 0
+
+	.btn-circle
+		opacity 1
+		border-color $orange
+
+		&:hover
+			background $orange
+			border-color $orange
+
+		&:active
+			background darken($orange, 25%)
+			border-color darken($orange, 25%)
+
+		&--trash
+			width 40px
+			height 40px
+
+		&--drop
+			border-color $red1
+
+			&:hover
+				background $red1
+				border-color $red1
+				&:before
+					sprite($icon__drop--white)
+
+			&:active
+				background darken($red1, 25%)
+				border-color darken($red1, 25%)
+				&:before
+					sprite($icon__drop--white)
 
 	.btn-big
 		padding 18px 50px 16px
@@ -121,9 +171,18 @@ section.profile-nav
 		&:last-child
 			margin-right 0
 
+	.b-order-table tfoot tr
+		border-bottom none
+
+	.b-order-table__action
+		width 76px
+
+	.b-order-table__drop
+		width 110px
+
 
 .b-fieldset
-	margin 0 0 40px
+	margin 0 0 50px
 	border none
 
 #fullname
@@ -132,7 +191,11 @@ section.profile-nav
 	max-width 949px
 	margin-bottom 20px
 
-.icon__trash
+
+
+.btn-circle--trash
+	margin-left 10px
+
 	&:before
 		content ''
 		display block
@@ -142,7 +205,46 @@ section.profile-nav
 		margin -8px 0 0 -8px
 		sprite($icon__trash)
 
+.btn-circle--edit
+	&:before
+		content ''
+		display block
+		position absolute
+		top 50%
+		left 50%
+		margin -7px 0 0 -9px
+		sprite($icon__edit)	
 
 
+.input-status
+	position relative
+	display inline-block
+	line-height 20px
+	font-size 13px
+	font-weight 800
+	padding 3px 2px 3px 26px
+	margin-top 19px
 
+	&:before
+		content ''
+		display block
+		position absolute
+		top 50%
+		left 0
 
+	&--correct
+		&:before
+			sprite($icon__correct)
+			margin-top -9px
+
+	&--warning
+		padding-left 22px
+		&:before
+			sprite($icon__warning)
+			left 10px
+			margin-top -9px
+
+.input-action
+	&--right
+		float right
+		margin 25px 0 14px

@@ -102,6 +102,7 @@ PKP.IE = {
 			}    
 		} 
 	},
+
 	placeholder: function() {
 		$('[placeholder]')
 			.focus(function() {
@@ -226,11 +227,10 @@ PKP.Sliders = {
 
 	catalogItem: function () {
 		$('.b-catalog-item__photos').fotorama({
-			width: '100%',
-			height: 330,
+			width: 313,
 			allowfullscreen: true,
 			loop: true,
-			autoplay: 5000,
+			autoplay: false,
 			stopautoplayontouch: true,
 			nav: 'thumbs',
 			thumbwidth: 65,
@@ -933,7 +933,7 @@ PKP.Forms = {
 			});
 		}
 		
-		PKP.$body.on('click', '.b-order-table__action label', function() {
+		PKP.$body.on('click', '.b-order-table__item label', function() {
 			var $this = $(this);
 
 			$this.closest('tr').addClass('active').siblings().removeClass('active');

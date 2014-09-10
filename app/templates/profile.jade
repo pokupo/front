@@ -34,7 +34,6 @@ block profile-nav
 						span Профиль
 				li.menu__item
 					a.icon__favorites(href="profile-favorites.html")
-						span
 						span Избранное
 				li.menu__item
 					a.icon__cart(href="profile-cart")
@@ -44,6 +43,8 @@ block profile-nav
 						span Заказы
 
 block content
+	- var userID = 7 // Math.floor(Math.random() * 99 + 1)
+
 	.profile-content
 		.container
 			dl.tabs.tabs--withline
@@ -55,11 +56,11 @@ block content
 							.b-seller-info.b-seller-info--personal
 								.b-seller-info__actions
 									span.btn.btn-orange.btn-border Загрузить&nbsp;аватар
-									span.btn.btn-orange.btn-border.icon__trash
+									span.btn-circle.btn-circle--trash
 
 								.b-seller-info__summary
 									.b-seller-info__photo
-										img(src="images/pages/catalog/seller-logo.png")
+										img(src="http://api.randomuser.me/portraits/med/men/#{userID}.jpg")
 
 									h2.b-seller-info__title Игорь Сибилев
 									ul.b-seller-info__characters-list
@@ -129,11 +130,21 @@ block content
 									.content
 										.input-holder
 											input#account__email.suggestion-input.block-input(type="email" placeholder="Электронная почта" name="account__email")
+											.input-status.input-status--correct E-mail подтверждён
 
 								.third.double.column
 									.content
 										.input-holder
 											input#account__phone.block-input(type="tel" placeholder="Телефон" name="account__phone")
+											.input-status.input-status--warning Телефон не подтверждён
+
+										
+											span.pseudo-link.input-action.input-action--right Выслать код подтверждения
+
+										.input-holder
+											input#account__phone.block-input(type="text" placeholder="Код из смс-сообщения" name="account__sms")
+
+										span.input-action.pseudo-link Подтвердить
 
 
 				dt.tab__trigger 
@@ -141,6 +152,56 @@ block content
 				dd.tab__content
 					.content
 						h2 Выберете основной адрес доставки
+
+						table.b-order-table
+							thead
+								tr
+									th.b-order-table__action
+									th Адрес
+									th.b-order-table__name Получатель
+									th.b-order-table__phone Контактный телефон
+									th.b-order-table__drop 
+							tbody
+								tr.b-order-table__item
+									td.b-order-table__action
+										input#tr_01(type="radio" value="1" name="radio")
+										label(for="tr_01") &nbsp;
+									td 
+										label(for="tr_01") 309070, Россия, г. Белгород, ул. Кривошеина 8, кв 13
+									td.b-order-table__name Сибилев Игорь
+									td.b-order-table__phone +7 913 123 45-67-89
+									td.b-order-table__drop
+										.b-order-item__edit.btn-circle.btn-circle--edit
+										.b-order-item__drop.btn-circle.btn-circle--drop
+
+								tr.b-order-table__item.active
+									td.b-order-table__action
+										input#tr_02(type="radio" value="2" name="radio" checked)
+										label(for="tr_02") &nbsp;
+									td 
+										label(for="tr_02") 309070, Россия, г. Белгород, ул. Ленина 15, кв 20
+									td.b-order-table__name Константин Константинопольский
+									td.b-order-table__phone +7 913 123 45-67-89
+									td.b-order-table__drop
+										.b-order-item__edit.btn-circle.btn-circle--edit
+										.b-order-item__drop.btn-circle.btn-circle--drop
+
+								tr.b-order-table__item
+									td.b-order-table__action
+										input#tr_03(type="radio" value="3" name="radio")
+										label(for="tr_03") &nbsp;
+									td 
+										label(for="tr_03") 309070, Россия, г. Белгород, ул. Кривошеина 8, кв 13
+									td.b-order-table__name Сибилев Игорь
+									td.b-order-table__phone +7 913 123 45-67-89
+									td.b-order-table__drop
+										.b-order-item__edit.btn-circle.btn-circle--edit
+										.b-order-item__drop.btn-circle.btn-circle--drop
+							tfoot
+								tr
+									td(colspan=5) 
+										span.btn.btn-orange.btn-aux Добавить новый адрес
+
 
 				dt.tab__trigger
 					span Безопасность

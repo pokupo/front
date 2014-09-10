@@ -327,7 +327,7 @@ hgroup
 		z-index 2
 		margin-left -100%
 
-		.content
+		& > .content
 			padding-top 20px
 
 		&.selected
@@ -340,19 +340,29 @@ hgroup
 		height 70px
 		margin-right 30px
 
+		span
+			color $a__link
+
 		&:hover
 			span
 				color $orange
 
 		&.selected
-			border-bottom 4px solid $orange
+			z-index 2
+			border-bottom 3px solid $orange
+			span
+					color #000
 			&:hover
 				span
 					color #000
 
 	.tab__content
 		border-top 1px solid $grey
-		margin-top 70px
+		margin-top 69px
+		z-index 1
+
+		& > .content
+			padding-top 33px
 		
 
 .tabs.tabs--noskin
@@ -380,7 +390,7 @@ hgroup
 	.tab__content
 		margin-top 35px
 
-		.content
+		& > .content
 			padding-top 50px
 		
 

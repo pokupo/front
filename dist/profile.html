@@ -164,7 +164,7 @@
 					<ul class="menu b-profile-nav">
 						<li class="menu__item active"><a href="profile.html" class="icon__profile"><span>Профиль</span></a>
 						</li>
-						<li class="menu__item"><a href="profile-favorites.html" class="icon__favorites"><span></span><span>Избранное</span></a>
+						<li class="menu__item"><a href="profile-favorites.html" class="icon__favorites"><span>Избранное</span></a>
 						</li>
 						<li class="menu__item"><a href="profile-cart" class="icon__cart"><span>Корзина</span></a>
 						</li>
@@ -182,11 +182,11 @@
 							<div class="content">
 								<fieldset class="b-fieldset">
 									<div class="b-seller-info b-seller-info--personal">
-										<div class="b-seller-info__actions"><span class="btn btn-orange btn-border">Загрузить&nbsp;аватар</span><span class="btn btn-orange btn-border icon__trash"></span>
+										<div class="b-seller-info__actions"><span class="btn btn-orange btn-border">Загрузить&nbsp;аватар</span><span class="btn-circle btn-circle--trash"></span>
 										</div>
 										<div class="b-seller-info__summary">
 											<div class="b-seller-info__photo">
-												<img src="images/pages/catalog/seller-logo.png">
+												<img src="http://api.randomuser.me/portraits/med/men/7.jpg">
 											</div>
 											<h2 class="b-seller-info__title">Игорь Сибилев</h2>
 											<ul class="b-seller-info__characters-list">
@@ -271,6 +271,7 @@
 											<div class="content">
 												<div class="input-holder">
 													<input id="account__email" type="email" placeholder="Электронная почта" name="account__email" class="suggestion-input block-input">
+													<div class="input-status input-status--correct">E-mail подтверждён</div>
 												</div>
 											</div>
 										</div>
@@ -278,7 +279,11 @@
 											<div class="content">
 												<div class="input-holder">
 													<input id="account__phone" type="tel" placeholder="Телефон" name="account__phone" class="block-input">
+													<div class="input-status input-status--warning">Телефон не подтверждён</div><span class="pseudo-link input-action input-action--right">Выслать код подтверждения</span>
 												</div>
+												<div class="input-holder">
+													<input id="account__phone" type="text" placeholder="Код из смс-сообщения" name="account__sms" class="block-input">
+												</div><span class="input-action pseudo-link">Подтвердить</span>
 											</div>
 										</div>
 									</div>
@@ -288,6 +293,70 @@
 						<dd class="tab__content">
 							<div class="content">
 								<h2>Выберете основной адрес доставки</h2>
+								<table class="b-order-table">
+									<thead>
+										<tr>
+											<th class="b-order-table__action"></th>
+											<th>Адрес</th>
+											<th class="b-order-table__name">Получатель</th>
+											<th class="b-order-table__phone">Контактный телефон</th>
+											<th class="b-order-table__drop"></th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr class="b-order-table__item">
+											<td class="b-order-table__action">
+												<input id="tr_01" type="radio" value="1" name="radio">
+												<label for="tr_01">&nbsp;</label>
+											</td>
+											<td>
+												<label for="tr_01">309070, Россия, г. Белгород, ул. Кривошеина 8, кв 13</label>
+											</td>
+											<td class="b-order-table__name">Сибилев Игорь</td>
+											<td class="b-order-table__phone">+7 913 123 45-67-89</td>
+											<td class="b-order-table__drop">
+												<div class="b-order-item__edit btn-circle btn-circle--edit"></div>
+												<div class="b-order-item__drop btn-circle btn-circle--drop"></div>
+											</td>
+										</tr>
+										<tr class="b-order-table__item active">
+											<td class="b-order-table__action">
+												<input id="tr_02" type="radio" value="2" name="radio" checked>
+												<label for="tr_02">&nbsp;</label>
+											</td>
+											<td>
+												<label for="tr_02">309070, Россия, г. Белгород, ул. Ленина 15, кв 20</label>
+											</td>
+											<td class="b-order-table__name">Константин Константинопольский</td>
+											<td class="b-order-table__phone">+7 913 123 45-67-89</td>
+											<td class="b-order-table__drop">
+												<div class="b-order-item__edit btn-circle btn-circle--edit"></div>
+												<div class="b-order-item__drop btn-circle btn-circle--drop"></div>
+											</td>
+										</tr>
+										<tr class="b-order-table__item">
+											<td class="b-order-table__action">
+												<input id="tr_03" type="radio" value="3" name="radio">
+												<label for="tr_03">&nbsp;</label>
+											</td>
+											<td>
+												<label for="tr_03">309070, Россия, г. Белгород, ул. Кривошеина 8, кв 13</label>
+											</td>
+											<td class="b-order-table__name">Сибилев Игорь</td>
+											<td class="b-order-table__phone">+7 913 123 45-67-89</td>
+											<td class="b-order-table__drop">
+												<div class="b-order-item__edit btn-circle btn-circle--edit"></div>
+												<div class="b-order-item__drop btn-circle btn-circle--drop"></div>
+											</td>
+										</tr>
+									</tbody>
+									<tfoot>
+										<tr>
+											<td colspan="5"><span class="btn btn-orange btn-aux">Добавить новый адрес</span>
+											</td>
+										</tr>
+									</tfoot>
+								</table>
 							</div>
 						</dd><dt class="tab__trigger"><span>Безопасность</span></dt>
 						<dd class="tab__content">
