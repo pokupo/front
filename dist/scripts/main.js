@@ -68,7 +68,7 @@ PKP.init = function() {
 	];
 
 	/* Консоль */
-	PKP.IE.console();
+	PKP.IE.init();
 	/* Включаем модули */
 	PKP.UI.init();
 	PKP.Video.init();
@@ -80,7 +80,9 @@ PKP.init = function() {
 PKP.IE = {
 	init: function() {
 		this.console();
-		this.placeholder();
+		if(!!navigator.userAgent.match(/Trident\/7\./)) {
+			this.placeholder();
+		}
 	},
 
 	console: function() {
@@ -102,7 +104,7 @@ PKP.IE = {
 	},
 	placeholder: function() {
 		$('[placeholder]')
-			.focus(function(){
+			.focus(function() {
 				var input = $(this);
 
 				if (input.val() === input.attr('placeholder')) {
@@ -110,7 +112,7 @@ PKP.IE = {
 					input.removeClass('placeholder');
 				}
 			})
-			.blur(function(){
+			.blur(function() {
 				var input = $(this);
 				if (input.val() === '' || input.val() === input.attr('placeholder')) {
 				input.addClass('placeholder');
@@ -125,7 +127,7 @@ PKP.IE = {
 					if (input.val() === input.attr('placeholder')) {
 						input.val('');
 					}
-				})
+				});
 			});
 		// 
 	}
@@ -304,10 +306,6 @@ PKP.UI = {
 		PKP.UI.diagonalHover.init();
 		PKP.UI.passwords();
 		PKP.UI.emulateShopping();
-
-		if($('#progressCircle').length > 0) {
-			PKP.UI.progressCircle.init();
-		}
 
 		/* Селекты */
 		$('select').chosen({
@@ -583,7 +581,7 @@ PKP.UI = {
 	/* Выпадающий блок с корзиной */
 	cart: function () {
 		// Уменьшить
-		$(".b-increment-group__darr").on('click', function(){
+		$(".b-increment-group__darr").on('click', function() {
 			var $this       = $(this),
 				$tr   	    = $this.closest(".b-order-item"),
 				$price 	    = $tr.find(".b-price__number"),
@@ -613,7 +611,7 @@ PKP.UI = {
 		});
 
 		// Увеличить
-		$(".b-increment-group__uarr").on('click', function(){
+		$(".b-increment-group__uarr").on('click', function() {
 			var $this 		= $(this),
 				$tr   		= $this.closest(".b-order-item"),
 				$price 	 	= $tr.find(".b-price__number"),
@@ -644,7 +642,7 @@ PKP.UI = {
 		});
 
 		// Удалить
-		$(".b-order-item__drop").on('click', function(){
+		$(".b-order-item__drop").on('click', function() {
 			var $this = $(this),
 				$tr   = $this.closest(".b-order-item"),
 				$price 	 = $tr.find(".b-price__number"),
@@ -659,7 +657,7 @@ PKP.UI = {
 			$cartQty.text(Number($cartQty.text()) - Number($qty.text()));
 
 			$tr.fadeOut();
-			setTimeout(function(){
+			setTimeout(function() {
 				$tr.remove();
 
 				if($(".b-cart-menu__goods li").length === 0) {
@@ -674,7 +672,7 @@ PKP.UI = {
 	/* Всплываюющие окна */
 	popup: function() {
 		// Форма "задать ворпос"
-		$("#js-join, #js-addReview").click(function(){
+		$("#js-join, #js-addReview").click(function() {
 			var request_form = $("#request_form");
 
 			// Скрываем результаты отправки, если уже отправляли.
@@ -687,13 +685,13 @@ PKP.UI = {
 			return false;
 		});
 		
-		$("#js-close_request_form").click(function(){
+		$("#js-close_request_form").click(function() {
 			$("#request_form").hide();
 			return false;
 		});
 		
 		// Отправка заявки
-		$("#js-send-request").click(function(){
+		$("#js-send-request").click(function() {
 			var request_name  = $("#request_name");
 			var request_email = $("#request_email");
 			var request 	  = $("#request_text");
@@ -741,7 +739,7 @@ PKP.UI = {
 			event.stopPropagation();
 		});
 
-		PKP.$body.click(function(){
+		PKP.$body.click(function() {
 			$("#request_form").hide();
 		});
 	},
@@ -788,7 +786,7 @@ PKP.UI = {
 		});
 
 
-		$("#js-multilocation").click(function(){
+		$("#js-multilocation").click(function() {
 			var $this  = $(this),
 				$tree  = $("#multilocation");
 			var is_clr = ($this.is('.checked') || $this.is('.part')) ? false : true;
@@ -830,7 +828,7 @@ PKP.UI = {
 	},
 
 	emulateShopping: function() {
-		$('.b-item__order-button .btn').on('click', function(){
+		$('.b-item__order-button .btn').on('click', function() {
 			var $this = $(this);
 			var item = $this.closest('.b-item__popover');
 
@@ -857,14 +855,14 @@ PKP.UI = {
 					height: 100
 				}, 
 					600, 
-					function(){
+					function() {
 						$(this).remove();  
 					}
 				);
 
 			console.log(item);
 			// $this.effect( "bounce", {times:3, distance:10}, 300 );
-		})
+		});
 	}
 };
 
@@ -892,34 +890,39 @@ PKP.Forms = {
 
 			$('#registerWizard').wizard({
 				// Events
-				onShowStep: function(obj){
-					var current = (Number(obj[0].rel) * 25) / 100;
-
-					console.log(obj[0].rel, progress, current);
+				onShowStep: function(obj) {
+					var current = (Number(obj[0].rel) * 25) / 100,
+						intervalId;
 
 					if(progress < current) {
-						setInterval(function() {
+						intervalId = setInterval(function() {
+							if(progress < current) {
+								progress = progress + 0.015;
+							} else {
+								clearInterval(intervalId);
+							}
 							progress = (progress < current) ? progress + 0.015 : progress;
 						}, 30);
 
 					} else {
-						// @todo: fix it!
-						setInterval(function() {
-							progress = (progress > current) ? progress - 0.015 : progress;
+						intervalId = setInterval(function() {
+							if(progress > current) {
+								progress = progress - 0.015;
+							} else {
+								clearInterval(intervalId);
+							}
 						}, 30);
-						// console.log(progress, current);
 					}
 
 					return true;
 				}, 
 				onFinish: function() {
 					progress = 1;
-
 					return true;
 				}
 			});
 
-			$('#progressCircle').hover(function(){
+			$('#progressCircle').hover(function() {
 				console.log(progress);
 			});
 		}
@@ -959,7 +962,7 @@ PKP.Video = {
 			});
 
 			$('#js-close-video').on('click',function () {
-				$('.video-holder').fadeOut(400,function(){
+				$('.video-holder').fadeOut(400,function() {
 					PKP.$body.removeClass('locked');
 					pkPlayer.pause().currentTime(0);
 				});
@@ -1183,6 +1186,7 @@ PKP.Suggestions = {
 			type: "ADDRESS",
 			onSelect: function(suggestion) {
 				var data = suggestion.data;
+				console.log(data);
 				$('#address .suggestion-input').val();
 
 				if(data.postal_code !== null) {
@@ -1194,11 +1198,15 @@ PKP.Suggestions = {
 				}
 
 				if(data.region !== null) {
-					$('#address__region').val(data.region);
+					$('#address__region').val(data.region + ' ' + data.region_type + '.');
 				}
 
-				if(data.city !== null) {
-					$('#address__city').val(data.city);
+				if(data.city === null) {
+					if(data.settlement !== null) {
+						$('#address__city').val(data.settlement_type + '. ' + data.settlement);	
+					}
+				} else {
+					$('#address__city').val(data.city_type + '. ' + data.city);
 				}
 
 				if(data.street !== null) {

@@ -52,8 +52,25 @@ block content
 				dd.tab__content.selected 
 					.content
 						fieldset.b-fieldset
-							.personal-info
-								h2 Сибирев Игорь
+							.b-seller-info.b-seller-info--personal
+								.b-seller-info__actions
+									span.btn.btn-orange.btn-border Загрузить&nbsp;аватар
+									span.btn.btn-orange.btn-border.icon__trash
+
+								.b-seller-info__summary
+									.b-seller-info__photo
+										img(src="images/pages/catalog/seller-logo.png")
+
+									h2.b-seller-info__title Игорь Сибилев
+									ul.b-seller-info__characters-list
+										li
+											span На сайте с 12 марта 2012
+										li
+											span.char Псевдоним: 
+											span.value Isibilev
+										li
+											span.char Рейтинг: 
+											span.value.value--orange +264
 
 						h2.with-divider Регистрационные данные
 
@@ -138,7 +155,7 @@ block content
 							input#newpassword.block-input(type="password" name="new_password" value="" placeholder="Новый пароль")
 
 						a.btn.btn-grey.btn-big(href=js0) Отмена
-						a.btn.btn-orange.btn-big(href=js0) Отправить
+						a.btn.btn-orange.btn-big(href=js0) Сохранить
 
 
 
