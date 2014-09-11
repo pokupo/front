@@ -14,7 +14,7 @@
 		<link sizes="144x144" href="images/icons/apple-touch-icon-144x144.png" rel="apple-touch-icon">
 		<link sizes="152x152" href="images/icons/apple-touch-icon-152x152.png" rel="apple-touch-icon">
 		<!-- Windows 8-->
-		<meta name="application-name" content="Главная магазина">
+		<meta name="application-name" content="Pokupo">
 		<meta name="msapplication-tooltip" content="Description for pokupo">
 		<meta name="msapplication-TileColor" content="#ffffff">
 		<meta name="msapplication-TileImage" content="images/icons/tile.png">
@@ -37,7 +37,7 @@
 		<meta name="format-detection" content="telephone=no">
 		<meta name="format-detection" content="address=no">
 		<!-- SEO-->
-		<title>Оплата заказа</title>
+		<title>Личный кабинет: Заказы</title>
 		<meta name="description" content="Description for pokupo">
 		<meta name="keywords" content="pokupo, project">
 		<meta name="copyright" content="©tabrisov">
@@ -158,179 +158,132 @@
 				</div>
 			</section>
 			<!-- /header -->
-			<!-- search -->
-			<section class="orange search">
-				<div class="container">
-					<div class="b-search">
-						<div class="b-search-holder">
-							<input type="search" placeholder="Поиск по каталогу..." class="b-search__input">
-						</div>
-						<div class="b-location dropdown selector"><a href="javascript:void(0);" data-target="location" class="b-location__current dropdown__trigger selector__current">Все категории</a>
-							<div data-target="location" class="dropdown__content hidden">
-								<div class="b-location__catalog selector__options">
-									<ul class="menu">
-										<li class="menu__item active"><a href="#"><span>Все разделы</span></a>
-										</li>
-										<li class="menu__item"><a href="#"><span>Компьютерная техника</span></a>
-										</li>
-										<li class="menu__item"><a href="#"><span>Бытовая техника</span></a>
-										</li>
-										<li class="menu__item"><a href="#"><span>Телефоны и связь</span></a>
-										</li>
-										<li class="menu__item"><a href="#"><span>Фото и оптика</span></a>
-										</li>
-										<li class="menu__item with-submenu"><a href="#"><span>Одежда, обувь, акксессуары</span></a>
-											<ul class="submenu">
-												<li class="submenu__item"><a href="#"><span>Кроссовки</span></a>
-												</li>
-												<li class="submenu__item"><a href="#"><span>Кеды</span></a>
-												</li>
-												<li class="submenu__item"><a href="#"><span>Босоножки</span></a>
-												</li>
-												<li class="submenu__item"><a href="#"><span>Туфли</span></a>
-												</li>
-												<li class="submenu__item"><a href="#"><span>Ботильоны</span></a>
-												</li>
-												<li class="submenu__item"><a href="#"><span>Сандалии</span></a>
-												</li>
-												<li class="submenu__item"><a href="#"><span>Балетки</span></a>
-												</li>
-												<li class="submenu__item"><a href="#"><span>Сапоги</span></a>
-												</li>
-												<li class="submenu__item"><a href="#"><span>Резиновая обувь</span></a>
-												</li>
-											</ul>
-										</li>
-										<li class="menu__item"><a href="#"><span>Подарки и праздники</span></a>
-										</li>
-										<li class="menu__item"><a href="#"><span>Книги, учебники и журналы</span></a>
-										</li>
-										<li class="menu__item"><a href="#"><span>Мебель, интерьеры и обиход</span></a>
-										</li>
-										<li class="menu__item"><a href="#"><span>Другое</span></a>
-										</li>
-									</ul>
-								</div>
-							</div>
-						</div>
-						<button type="button" class="b-search__button">Найти</button>
-					</div>
+			<!-- profile-nav -->
+			<section class="profile-nav grey">
+				<div class="container"><a href="javascript:void(0);" class="btn btn-orange btn-border with-icon">Стать продавцом</a>
+					<ul class="menu b-profile-nav">
+						<li class="menu__item"><a href="profile.html" class="icon__profile"><span>Профиль</span></a>
+						</li>
+						<li class="menu__item"><a href="profile-favorites.html" class="icon__favorites"><span>Избранное</span></a>
+						</li>
+						<li class="menu__item"><a href="profile-cart" class="icon__cart"><span>Корзина</span></a>
+						</li>
+						<li class="menu__item active"><a href="profile-orders.html" class="icon__order"><span>Заказы</span></a>
+						</li>
+					</ul>
 				</div>
 			</section>
-			<section class="advanced-search slidedown">
-				<div class="container">
-					<div class="advanced-search-trigger"><span data-target="search" class="advanced-search-trigger__text slidedown__trigger">Расширенный поиск</span>
-					</div>
-					<div data-target="search" class="b-advanced-search slidedown__content hidden">
-						<div class="columns triple">
-							<div class="first column">
-								<div class="content">
-									<div class="b-location dropdown"><a href="javascript:void(0);" data-target="location" class="b-location__current dropdown__trigger"><span id="js-multilocation" class="fancytree-checkbox part"></span>Все категории</a>
-										<div data-target="location" class="dropdown__content hidden">
-											<div class="b-location__catalog">
-												<div id="multilocation" style="text-align:left"></div>
-											</div>
-										</div>
-									</div>
-									<div class="input-holder">
-										<select name="select">
-											<option value="0" selected>Все продавцы</option>
-											<option value="1">Частное лицо</option>
-											<option value="2">Компания</option>
-										</select>
-									</div>
-								</div>
-							</div>
-							<div class="second column">
-								<div class="content">
-									<div class="input-holder">
-										<input name="login" type="text" placeholder="Ключевые слова" class="inline-input">
-									</div>
-									<div class="input-holder">
-										<input name="login" type="text" placeholder="Исключить слова" class="inline-input">
-									</div>
-								</div>
-							</div>
-							<div class="third column">
-								<div class="content">
-									<div class="input-holder">
-										<select name="select">
-											<option value="0" selected>Любое из слов</option>
-											<option value="1">Все слова</option>
-										</select>
-									</div>
-									<div class="input-holder hidden">
-										<label for="currency">Валюта</label>
-										<div class="radio-circles">
-											<ul class="menu">
-												<li class="menu__item active"><a href="javascript:void(0);"><i class="icon icon__currency--rub"></i></a>
-												</li>
-												<li class="menu__item"><a href="javascript:void(0);"><i class="icon icon__currency--dol"></i></a>
-												</li>
-												<li class="menu__item"><a href="javascript:void(0);"><i class="icon icon__currency--btc"></i></a>
-												</li>
-											</ul>
-										</div>
-									</div>
-									<div class="input-holder">
-										<label for="minPrice">Цена</label>
-										<input id="minPrice" name="minPrice" type="text" placeholder="от" class="inline-input inline-input--small">
-										<label for="maxPrice" class="separator">—</label>
-										<input id="maxPrice" name="maxPrice" type="text" placeholder="до" class="inline-input inline-input--small">
-									</div>
-								</div>
-							</div>
-						</div><span class="btn btn-orange btn-big b-advanced-search__submit">Начать расширенный поиск <i class="icon"></i></span>
-					</div>
-				</div>
-			</section>
-			<!-- /search -->
+			<!-- /profile-nav -->
 			<!-- content -->
-			<!-- /content -->
-			<!-- content -->
-			<section class="store">
+			<section class="profile">
 				<div class="container">
-					<div class="b-thermometer">
-						<p><a href="index.html">Главная</a><span class="divider"> / </span><a href="index.html">Моя корзина</a><span class="divider"> / </span><a href="index.html">Оформление заказа</a><span class="divider"> / </span><span class="current">Оплата заказа</span>
-						</p>
-					</div>
-					<h1 class="b-catalog-item__title">Оплата заказа</h1>
-					<div class="b-invoice">
-						<div class="b-invoice__before"></div>
-						<div class="content">
-							<div class="b-invoice__block">
-								<h2 class="b-invoice__title">Данные счёта</h2>
-								<ul class="b-tech">
-									<li class="b-tech__item">
-										<div class="b-tech__char"><span>Номер счёта</span>
-										</div>
-										<div class="b-tech__value">53</div>
-									</li>
-									<li class="b-tech__item">
-										<div class="b-tech__char"><span>Способ оплаты</span>
-										</div>
-										<div class="b-tech__value">Z-Payment</div>
-									</li>
-									<li class="b-tech__item">
-										<div class="b-tech__char"><span>Сумма к оплате</span>
-										</div>
-										<div class="b-tech__value"><span class="b-price"><span class="b-price__number">35<i class="b-price__separator"></i>890</span><span class="b-price__thinsp">&nbsp;</span><span class="b-price__rubl">Р</span></span>
-										</div>
-									</li>
-								</ul>
-							</div>
-							<div class="b-invoice__block">
-								<h2 class="b-invoice__title">Инструкция</h2>
-								<p>Оплата счета через платежный шлюз Z-Payment предоставляет возмож-
-									<br/>ность выбрать любой удобный для Вас метод оплаты. После перехода на сайт платежного сервиса выберите удобный способ оплаты и точно следуйте инструкциям на сайте платежной системы.</p>
-								<p><b>Внимание! </b>Для некоторых способов оплаты может взиматься дополнительная агентская комиссия.</p>
-								<p><span class="pseudo-link">Распечатать инструкцию</span>
-								</p>
-							</div>
-						</div>
-					</div>
-					<div class="b-wizard__actions"><a class="b-wizard__action btn-prev-step">Назад</a><a class="b-wizard__action btn-next-step">Оплатить</a>
-					</div>
+					<h1 class="b-title">История заказов</h1>
+					<table class="b-order-table">
+						<thead>
+							<tr>
+								<th class="b-order-table__name">Заказ</th>
+								<th>Магазин</th>
+								<th class="b-order-table__price">Стоимость</th>
+								<th>Статус</th>
+								<th>Оплата</th>
+								<th class="b-order-table__actions"></th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr class="b-order-table__item">
+								<td class="b-order-table__name"><a href="profile-order.html">Заказ №65752 от&nbsp;26&nbsp;августа 2014</a>
+								</td>
+								<td>Торговая платформа Покупо</td>
+								<td class="b-order-table__price"><span class="b-price"><span class="b-price__number">5600</span><span class="b-price__thinsp">&nbsp;</span><span class="b-price__rubl">Р</span></span>
+								</td>
+								<td>
+									<div class="b-status b-status--new">Новый</div>
+								</td>
+								<td>
+									<div class="b-status b-status--waiting">Ожидает оплаты</div>
+								</td>
+								<td class="b-order-table__actions">
+									<div class="b-order-item__edit btn-circle btn-circle--edit"></div>
+									<div class="b-order-item__edit btn-circle btn-circle--cancel"></div>
+									<div class="b-order-item__drop btn-circle btn-circle--drop"></div>
+								</td>
+							</tr>
+							<tr class="b-order-table__item">
+								<td class="b-order-table__name"><a href="profile-order.html">Заказ №65752 от&nbsp;4&nbsp;мая 2014</a>
+								</td>
+								<td>Торговая платформа Покупо</td>
+								<td class="b-order-table__price"><span class="b-price"><span class="b-price__number">8900</span><span class="b-price__thinsp">&nbsp;</span><span class="b-price__rubl">Р</span></span>
+								</td>
+								<td>
+									<div class="b-status b-status--cancelled">Отменён</div>
+								</td>
+								<td>
+									<div class="b-status b-status--cancelled">Отменён</div>
+								</td>
+								<td class="b-order-table__actions">
+									<div class="b-order-item__edit btn-circle btn-circle--cart"></div>
+									<div class="b-order-item__edit btn-circle btn-circle--retry"></div>
+									<div class="b-order-item__drop btn-circle btn-circle--drop"></div>
+								</td>
+							</tr>
+							<tr class="b-order-table__item">
+								<td class="b-order-table__name"><a href="profile-order.html">Заказ №18048 от&nbsp;11&nbsp;апреля 2014</a>
+								</td>
+								<td>Торговая платформа Покупо</td>
+								<td class="b-order-table__price"><span class="b-price"><span class="b-price__number">4240</span><span class="b-price__thinsp">&nbsp;</span><span class="b-price__rubl">Р</span></span>
+								</td>
+								<td>
+									<div class="b-status b-status--done">Выполнен</div>
+								</td>
+								<td>
+									<div class="b-status b-status--done">Оплачен</div>
+								</td>
+								<td class="b-order-table__actions"></td>
+							</tr>
+							<tr class="b-order-table__item">
+								<td class="b-order-table__name"><a href="profile-order.html">Заказ №9523 от&nbsp;20&nbsp;февраля 2014</a>
+								</td>
+								<td>Торговая платформа Покупо</td>
+								<td class="b-order-table__price"><span class="b-price"><span class="b-price__number">12<i class="b-price__separator"></i>480</span><span class="b-price__thinsp">&nbsp;</span><span class="b-price__rubl">Р</span></span>
+								</td>
+								<td>
+									<div class="b-status b-status--forming">Формируется</div>
+								</td>
+								<td>
+									<div class="b-status b-status--checking">На проверке</div>
+								</td>
+								<td class="b-order-table__actions">
+									<div class="b-order-item__edit btn-circle btn-circle--edit"></div>
+									<div class="b-order-item__edit btn-circle btn-circle--cancel"></div>
+									<div class="b-order-item__drop btn-circle btn-circle--drop"></div>
+								</td>
+							</tr>
+							<tr class="b-order-table__item">
+								<td class="b-order-table__name"><a href="profile-order.html">Заказ №17894 от&nbsp;22&nbsp;декабря 2013</a>
+								</td>
+								<td>Торговая платформа Покупо</td>
+								<td class="b-order-table__price"><span class="b-price"><span class="b-price__number">1890</span><span class="b-price__thinsp">&nbsp;</span><span class="b-price__rubl">Р</span></span>
+								</td>
+								<td>
+									<div class="b-status b-status--return">Возвращён</div>
+								</td>
+								<td>
+									<div class="b-status b-status--warning">Платёж не прошёл</div>
+								</td>
+								<td class="b-order-table__actions">
+									<div class="b-order-item__edit btn-circle btn-circle--edit"></div>
+									<div class="b-order-item__edit btn-circle btn-circle--cancel"></div>
+									<div class="b-order-item__drop btn-circle btn-circle--drop"></div>
+								</td>
+							</tr>
+						</tbody>
+						<tfoot>
+							<tr>
+								<td colspan="6"><span class="btn btn-orange btn-big">Обновить данные</span>
+								</td>
+							</tr>
+						</tfoot>
+					</table>
 				</div>
 			</section>
 			<!-- /content -->
@@ -411,5 +364,9 @@
 		<script src="scripts/libs/carousel.min.js"></script>
 		<script src="scripts/libs/chosen.jquery.js"></script>
 		<script src="scripts/libs/jquery.fancytree-all.js"></script>
+		<script src="scripts/libs/jquery.password.js"></script>
+		<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-ajaxtransport-xdomainrequest/1.0.1/jquery.xdomainrequest.min.js"></script>
+		<script src="https://dadata.ru/static/js/jquery.suggestions-4.6.min.js"></script>
+		<script src="scripts/main.js"></script>
 	</body>
 </html>

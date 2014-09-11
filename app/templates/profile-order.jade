@@ -1,0 +1,216 @@
+extends partials/layouts/profile
+
+block head
+	- page.title = 'Личный кабинет: Просмотр заказа';
+
+block menu 
+	+menu-list([
+		{text:"Платформа",href:"frontpage.html",submenu:[
+			{text:"О проекте",href:"about.html"},
+			{text:"Торговый портал",href:"http://shop.pokupo.ru/", external:true}
+		]},
+		{text:"Тарифы",href:"rates.html"},
+		{text:"Компания",href:"#", submenu:[
+			{text:"События",href:"events.html"},
+			{text:"О нас",href:"aboutus.html"},
+			{text:"Сообщество",href:"community.html"},
+			{text:"Блог",href:"http://pokupo.livejournal.com/", external:true}
+		]},
+		{text:"Партнёры",href:"partners.html"},
+		
+		{text:"Помощь", href:js0, submenu:[
+			{text:"Вопросы и ответы",href:"faq.html"},	
+			{text:"Техническая поддержка",href:"https://help.pokupo.ru", external:true}
+		]}
+	])(class="b-navigation")
+
+block profile-nav
+	section.profile-nav.grey
+		.container
+			a(href=js0).btn.btn-orange.btn-border.with-icon Стать продавцом
+			ul.menu.b-profile-nav
+				li.menu__item
+					a.icon__profile(href="profile.html")
+						span Профиль
+				li.menu__item
+					a.icon__favorites(href="profile-favorites.html")
+						span Избранное
+				li.menu__item
+					a.icon__cart(href="profile-cart")
+						span Корзина
+				li.menu__item.active
+					a.icon__order(href="profile-orders.html")
+						span Заказы
+
+block content
+	section.profile
+		.container
+			a.btn.btn-orange.btn-back(href="profile-orders.html") назад к списку заказов
+
+			h2.b-title Заказ № 53 от 8 августа 2014
+			.b-order-info
+				.b-order-info__left
+					span.b-order-info__label Продавец:
+					span.b-order-info__value Торговая платформа Pokupo
+				.b-order-info__right
+					span.b-order-info__label Статус:
+					span.b-status.b-status--new Новый
+					span.b-status.b-status--waiting Ожидает оплаты
+
+
+
+			.b-fieldset
+				h2 Товары
+				table.b-order-table.b-order-table--header.b-cart-table
+					thead
+						tr
+							th.b-order-table__thumb
+							th Наименование
+							th.b-order-table__title Цена
+							th.b-order-table__title Количество
+							th.b-order-table__title Сумма
+					tbody
+						tr.b-order-table__item
+							td.b-order-table__thumb
+								img(src="images/catalog/goods01.jpg")
+							td.b-order-table__title
+								a(href=js0) Converse Red
+							td.b-order-table__title
+								+price(2880)
+							td.b-order-table__phone 1
+							td.b-order-table__title
+								+price(12440)
+						tr.b-order-table__item
+							td.b-order-table__thumb
+								img(src="images/catalog/goods02.jpg")
+							td.b-order-table__title
+								a(href=js0)
+									| Штукатурка гипсовая для&nbsp;наружных работ с&nbsp;нормальной влажностью
+							td.b-order-table__title
+								+price(2400)
+							td.b-order-table__phone 1
+							td.b-order-table__title
+								+price(27000)
+						tr.b-order-table__item
+							td.b-order-table__thumb
+								img(src="images/catalog/goods03.jpg")
+							td.b-order-table__title
+								a(href=js0) Converse Red
+							td.b-order-table__title
+								+price(1800)
+							td.b-order-table__phone 1
+							td.b-order-table__title
+								+price(18290)
+
+				ul.b-tech
+					li.b-tech__item
+						.b-tech__char
+							span 
+								| Скидка: 
+								i 30%
+						.b-tech__value
+							+price(-3700)
+					li.b-tech__item
+						.b-tech__char
+							span 
+								| Доставка: 
+								i EMS почтой
+						.b-tech__value
+							+price(880)
+					li.b-tech__item
+						.b-tech__char
+							span 
+								| Способ оплаты: 
+								i Z-Payment
+						.b-tech__value 0
+					li.b-tech__item
+						.b-tech__char
+							span 
+								| Всего: 
+						.b-tech__value
+							+price(23123)(class="b-order__amount")
+
+			.b-fieldset.hidden
+				h2 Примечания к заказу
+				.b-message
+					.b-message__userpic
+					.b-message__text
+						p Ещё раз что-то разобъётся при доставке,&nbsp;— ейбогу, огорчусь.
+
+			.b-fieldset
+				h2 Доставка
+				table.b-order-table.b-order-table--header
+					thead
+						tr
+							th(colspan=2) Компания
+							th Адрес
+							th.b-order-table__price Получатель
+							th.b-order-table__phone Телефон
+					tbody
+						tr.b-order-table__item
+							td.b-order-table__logo
+								img(src="images/pages/order/ems.png")
+							td.b-order-table__title
+								b Доставка EMS-Post
+							td
+								| 309070, Россия, г. Белгород,<br/>
+								| ул. Ленина 15, кв 20
+							td.b-order-table__price Сибилев Игорь
+							td.b-order-table__phone 8 913 123-45-67
+			
+			.b-fieldset
+				h2 Оплата
+				table.b-order-table.b-order-table--header
+					thead
+						tr
+							th.b-order-table__logo
+							th Система
+							th Обработка
+							th Комиссия
+							th Номер чека
+							th Статус
+					tbody
+						tr.b-order-table__item
+							td.b-order-table__logo
+								img(src="images/pages/order/zpay.png")
+							td 
+								b Z-Payment
+								br
+								| Система приема и обработки платежей Z-Payment это шлюз для приема платежей из различных систем, в процессе оплаты предоставляется выбор любого способов оплаты, которых насчитывается более 30.
+							td до 10 минут
+							td 
+								+price(0)
+							td №53
+							td 
+								span.b-status.b-status--waiting Ожидает оплаты
+								
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+block scripts
+	+script([
+		'libs/jquery.password.js', 
+		'http://cdnjs.cloudflare.com/ajax/libs/jquery-ajaxtransport-xdomainrequest/1.0.1/jquery.xdomainrequest.min.js',
+		'https://dadata.ru/static/js/jquery.suggestions-4.6.min.js', 
+		'main.js'
+	])
+

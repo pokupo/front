@@ -61,7 +61,7 @@
 						</div>
 						<div class="logged-in hidden">
 							<div class="circles-menu">
-								<div class="circles-menu__item dropdown"><a href="javascript:void(0);" data-target="profile" class="with-icon icon__profile dropdown__trigger"><sup class="circles-menu__num">4</sup></a>
+								<div class="circles-menu__item dropdown"><a href="javascript:void(0);" data-target="profile" class="with-icon icon__profile with-userpic dropdown__trigger"><sup class="circles-menu__num">4</sup></a>
 									<div data-target="profile" class="b-profile-menu dropdown__content hidden">
 										<p class="b-profile-menu__name">Сибилев
 											<br/>Игорь</p>
@@ -160,7 +160,7 @@
 			<!-- /header -->
 			<!-- profile-nav -->
 			<section class="profile-nav grey">
-				<div class="container"><a href="javascript:void(0);" class="btn btn-orange btn-border">Стать продавцом</a>
+				<div class="container"><a href="javascript:void(0);" class="btn btn-orange btn-border with-icon">Стать продавцом</a>
 					<ul class="menu b-profile-nav">
 						<li class="menu__item active"><a href="profile.html" class="icon__profile"><span>Профиль</span></a>
 						</li>
@@ -168,14 +168,14 @@
 						</li>
 						<li class="menu__item"><a href="profile-cart" class="icon__cart"><span>Корзина</span></a>
 						</li>
-						<li class="menu__item"><a href="profile-order.html" class="icon__order"><span>Заказы</span></a>
+						<li class="menu__item"><a href="profile-orders.html" class="icon__order"><span>Заказы</span></a>
 						</li>
 					</ul>
 				</div>
 			</section>
 			<!-- /profile-nav -->
 			<!-- content -->
-			<div class="profile-content">
+			<section class="profile">
 				<div class="container">
 					<dl class="tabs tabs--withline"><dt class="tab__trigger selected"><span>Персональные данные</span></dt>
 						<dd class="tab__content selected">
@@ -271,7 +271,7 @@
 											<div class="content">
 												<div class="input-holder">
 													<input id="account__email" type="email" placeholder="Электронная почта" name="account__email" class="suggestion-input block-input">
-													<div class="input-status input-status--correct">E-mail подтверждён</div>
+													<div class="b-status b-status--done">E-mail подтверждён</div>
 												</div>
 											</div>
 										</div>
@@ -279,7 +279,7 @@
 											<div class="content">
 												<div class="input-holder">
 													<input id="account__phone" type="tel" placeholder="Телефон" name="account__phone" class="block-input">
-													<div class="input-status input-status--warning">Телефон не подтверждён</div><span class="pseudo-link input-action input-action--right">Выслать код подтверждения</span>
+													<div class="b-status b-status--warning">Телефон не подтверждён</div><span class="pseudo-link input-action input-action--right">Выслать код подтверждения</span>
 												</div>
 												<div class="input-holder">
 													<input id="account__phone" type="text" placeholder="Код из смс-сообщения" name="account__sms" class="block-input">
@@ -372,7 +372,7 @@
 						</dd>
 					</dl>
 				</div>
-			</div>
+			</section>
 			<!-- /content -->
 			<div class="footer-overlay"></div>
 		</div>

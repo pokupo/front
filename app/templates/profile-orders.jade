@@ -1,0 +1,166 @@
+extends partials/layouts/profile
+
+block head
+	- page.title = 'Личный кабинет: Заказы';
+
+block menu 
+	+menu-list([
+		{text:"Платформа",href:"frontpage.html",submenu:[
+			{text:"О проекте",href:"about.html"},
+			{text:"Торговый портал",href:"http://shop.pokupo.ru/", external:true}
+		]},
+		{text:"Тарифы",href:"rates.html"},
+		{text:"Компания",href:"#", submenu:[
+			{text:"События",href:"events.html"},
+			{text:"О нас",href:"aboutus.html"},
+			{text:"Сообщество",href:"community.html"},
+			{text:"Блог",href:"http://pokupo.livejournal.com/", external:true}
+		]},
+		{text:"Партнёры",href:"partners.html"},
+		
+		{text:"Помощь", href:js0, submenu:[
+			{text:"Вопросы и ответы",href:"faq.html"},	
+			{text:"Техническая поддержка",href:"https://help.pokupo.ru", external:true}
+		]}
+	])(class="b-navigation")
+
+block profile-nav
+	section.profile-nav.grey
+		.container
+			a(href=js0).btn.btn-orange.btn-border.with-icon Стать продавцом
+			ul.menu.b-profile-nav
+				li.menu__item
+					a.icon__profile(href="profile.html")
+						span Профиль
+				li.menu__item
+					a.icon__favorites(href="profile-favorites.html")
+						span Избранное
+				li.menu__item
+					a.icon__cart(href="profile-cart")
+						span Корзина
+				li.menu__item.active
+					a.icon__order(href="profile-orders.html")
+						span Заказы
+
+block content
+	section.profile
+		.container
+			h1.b-title История заказов
+
+			table.b-order-table
+				thead
+					tr
+						th.b-order-table__name Заказ
+						th Магазин
+						th.b-order-table__price Стоимость
+						th Статус
+						th Оплата
+						th.b-order-table__actions
+				tbody
+					tr.b-order-table__item
+						td.b-order-table__name 
+							a(href="profile-order.html") Заказ №65752 от&nbsp;26&nbsp;августа 2014
+						td Торговая платформа Покупо
+						td.b-order-table__price
+							+price(5600)
+						td
+							.b-status.b-status--new Новый
+						td 
+							.b-status.b-status--waiting Ожидает оплаты
+						td.b-order-table__actions
+							.b-order-item__edit.btn-circle.btn-circle--edit
+							.b-order-item__edit.btn-circle.btn-circle--cancel
+							.b-order-item__drop.btn-circle.btn-circle--drop
+
+					tr.b-order-table__item
+						td.b-order-table__name 
+							a(href="profile-order.html") Заказ №65752 от&nbsp;4&nbsp;мая 2014
+						td Торговая платформа Покупо
+						td.b-order-table__price
+							+price(8900)
+						td
+							.b-status.b-status--cancelled Отменён
+						td 
+							.b-status.b-status--cancelled Отменён
+						td.b-order-table__actions
+							.b-order-item__edit.btn-circle.btn-circle--cart
+							.b-order-item__edit.btn-circle.btn-circle--retry
+							.b-order-item__drop.btn-circle.btn-circle--drop
+
+					tr.b-order-table__item
+						td.b-order-table__name 
+							a(href="profile-order.html") Заказ №18048 от&nbsp;11&nbsp;апреля 2014
+						td Торговая платформа Покупо
+						td.b-order-table__price
+							+price(4240)
+						td
+							.b-status.b-status--done Выполнен
+						td 
+							.b-status.b-status--done Оплачен
+						td.b-order-table__actions
+
+					tr.b-order-table__item
+						td.b-order-table__name 
+							a(href="profile-order.html") Заказ №9523 от&nbsp;20&nbsp;февраля 2014
+						td Торговая платформа Покупо
+						td.b-order-table__price
+							+price(12480)
+						td
+							.b-status.b-status--forming Формируется
+						td 
+							.b-status.b-status--checking На проверке
+						td.b-order-table__actions
+							.b-order-item__edit.btn-circle.btn-circle--edit
+							.b-order-item__edit.btn-circle.btn-circle--cancel
+							.b-order-item__drop.btn-circle.btn-circle--drop
+
+					tr.b-order-table__item
+						td.b-order-table__name 
+							a(href="profile-order.html") Заказ №17894 от&nbsp;22&nbsp;декабря 2013
+						td Торговая платформа Покупо
+						td.b-order-table__price
+							+price(1890)
+						td
+							.b-status.b-status--return Возвращён
+						td 
+							.b-status.b-status--warning Платёж не прошёл
+						td.b-order-table__actions
+							.b-order-item__edit.btn-circle.btn-circle--edit
+							.b-order-item__edit.btn-circle.btn-circle--cancel
+							.b-order-item__drop.btn-circle.btn-circle--drop
+				tfoot
+					tr
+						td(colspan=6) 
+							span.btn.btn-orange.btn-big Обновить данные
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+block scripts
+	+script([
+		'libs/jquery.password.js', 
+		'http://cdnjs.cloudflare.com/ajax/libs/jquery-ajaxtransport-xdomainrequest/1.0.1/jquery.xdomainrequest.min.js',
+		'https://dadata.ru/static/js/jquery.suggestions-4.6.min.js', 
+		'main.js'
+	])
+

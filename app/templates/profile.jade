@@ -27,7 +27,7 @@ block menu
 block profile-nav
 	section.profile-nav.grey
 		.container
-			a(href=js0).btn.btn-orange.btn-border Стать продавцом
+			a(href=js0).btn.btn-orange.btn-border.with-icon Стать продавцом
 			ul.menu.b-profile-nav
 				li.menu__item.active
 					a.icon__profile(href="profile.html")
@@ -39,13 +39,13 @@ block profile-nav
 					a.icon__cart(href="profile-cart")
 						span Корзина
 				li.menu__item
-					a.icon__order(href="profile-order.html")
+					a.icon__order(href="profile-orders.html")
 						span Заказы
 
 block content
 	- var userID = 7 // Math.floor(Math.random() * 99 + 1)
 
-	.profile-content
+	section.profile
 		.container
 			dl.tabs.tabs--withline
 				dt.tab__trigger.selected 
@@ -130,13 +130,13 @@ block content
 									.content
 										.input-holder
 											input#account__email.suggestion-input.block-input(type="email" placeholder="Электронная почта" name="account__email")
-											.input-status.input-status--correct E-mail подтверждён
+											.b-status.b-status--done E-mail подтверждён
 
 								.third.double.column
 									.content
 										.input-holder
 											input#account__phone.block-input(type="tel" placeholder="Телефон" name="account__phone")
-											.input-status.input-status--warning Телефон не подтверждён
+											.b-status.b-status--warning Телефон не подтверждён
 
 										
 											span.pseudo-link.input-action.input-action--right Выслать код подтверждения
