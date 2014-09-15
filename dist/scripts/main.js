@@ -685,16 +685,16 @@ PKP.UI = {
 			return false;
 		});
 		
-		$("#js-close_request_form").click(function() {
+		$("#js-close_request_form, #js-cancel-request").click(function() {
 			$("#request_form").hide();
 			return false;
 		});
 		
 		// Отправка заявки
 		$("#js-send-request").click(function() {
-			var request_name  = $("#request_name");
-			var request_email = $("#request_email");
-			var request 	  = $("#request_text");
+			var request_name  = $("#request_name"),
+				request_email = $("#request_email"),
+				request 	  = $("#request_text");
 
 			if (request_name.val().length > 0 && request_email.val().length > 0) {
 				

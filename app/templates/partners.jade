@@ -86,7 +86,7 @@ block content
 								p Служба поддержки пользователей Сегодня у нас Праздник — День рождения Pokupo! Больше года мы шли к этой дате, и вот опубликована первая версия системы, конечно, далеко не всё доступно сейчас и еще многое
 
 			.full-width.grey
-				a#js-join.btn.btn-orange.btn-huge
+				btn#js-join.btn.btn-huge(type="button")
 					| Присоединиться к команде 
 					span.inline-logo
 						i.green Pokupo
@@ -137,9 +137,9 @@ block content
 					a.b-partner__link(href=js0) pokupo.ru
 					p.b-partner__descr Нет абонентской платы, нет скрытых платежей, вы платите минимальную комиссию только когда сами получаете доход с продаж.
 
-			a#js-more-partners.btn.btn-orange.btn-load(href=js0) Показать ещё
+			button#js-more-partners.btn.btn-thin(type="button") Показать ещё
 
-	#request_form.fade.hidden
+	#request_form.fade(style="display:none")
 		.popup.join
 			header.patterned.black
 				h1.with-icon Заявка на партнёрство
@@ -154,8 +154,8 @@ block content
 						.input-holder
 							textarea#request_text.inline-input(name="text" rows="4"  placeholder="Текст сообщения")
 						
-						a#js-send-request.btn.btn-orange.btn-big(href=js0) Отправить
-						a.btn.btn-grey.btn-big(href=js0) Отмена
+						button#js-cancel-request.btn.btn-lg.btn-inline.btn-grey(type="reset") Отмена
+						button#js-send-request.btn.btn-lg.btn-inline(type="submit") Отправить
 				#send_request_success.hidden.send_request_result
 					h1 Ваша заявка отправлена
 					p &nbsp;

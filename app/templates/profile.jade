@@ -27,7 +27,9 @@ block menu
 block profile-nav
 	section.profile-nav.grey
 		.container
-			a(href=js0).btn.btn-orange.btn-border.with-icon Стать продавцом
+			a.btn.btn-sm(href=js0)
+				i.icon.icon-store--small
+				| Стать продавцом
 			ul.menu.b-profile-nav
 				li.menu__item.active
 					a.icon__profile(href="profile.html")
@@ -55,7 +57,7 @@ block content
 						fieldset.b-fieldset
 							.b-seller-info.b-seller-info--personal
 								.b-seller-info__actions
-									span.btn.btn-orange.btn-border Загрузить&nbsp;аватар
+									button.btn.btn-xs(type="button") Загрузить аватар
 									span.btn-circle.btn-circle--trash
 
 								.b-seller-info__summary
@@ -200,7 +202,7 @@ block content
 							tfoot
 								tr
 									td(colspan=5) 
-										span.btn.btn-orange.btn-aux Добавить новый адрес
+										button.btn.btn-xs(type="button") Добавить новый адрес
 
 
 				dt.tab__trigger
@@ -215,8 +217,8 @@ block content
 						.input-holder
 							input#newpassword.block-input(type="password" name="new_password" value="" placeholder="Новый пароль")
 
-						a.btn.btn-grey.btn-big(href=js0) Отмена
-						a.btn.btn-orange.btn-big(href=js0) Сохранить
+						// button.btn.btn-grey.btn-lg.btn-inline(type="reset") Отмена
+						button.btn.btn-lg(type="submit") Сохранить
 
 
 

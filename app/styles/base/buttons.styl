@@ -1,0 +1,428 @@
+/* ---------------------------- *\
+	# Кнопки и их модификаторы
+\* ============================ */
+
+/* Обычные кнопки */
+.btn
+	position relative
+	display inline-block
+	border-width 3px 
+	border-style solid
+	border-color $orange
+	border-radius 40px
+
+	padding 19px 33px 17px
+	text-align center
+	margin 10px 10px 10px 0
+	white-space nowrap
+
+	color #333
+	font-size 16px
+	font-weight 600
+	text-decoration none
+	text-transform uppercase
+	cursor pointer
+	user-select none
+	// transition background-color, background, border-color 0.1s ease-in-out
+
+	&:hover
+		background-color $orange
+		border-color $orange
+		color #333
+
+	&:active
+		top 1px
+		background-color darken($orange, 25%)
+		border-color darken($orange, 25%)
+
+	&.disabled
+	&:disabled
+		cursor default
+		background none
+		opacity 0.3
+
+		&:hover
+			color #ccc
+			box-shadow none
+
+		&:active
+			background none
+			color #ccc
+			box-shadow none
+
+/* Красная кнопка */
+.btn-red
+	border-width 3px
+	border-style solid
+	border-color $red
+	color $red
+	text-transform none
+	font-size 19px
+	
+	&:hover
+		background-color $red
+		border-color $red
+		color #fff
+
+	&:active
+		border-color darken($red, 50%)
+		background darken($red, 50%)
+
+	&.btn-lg
+		color $red
+		border-width 4px
+		padding 17px 56px 15px
+		text-transform uppercase
+		font-size 20px
+		font-weight 600
+
+		&:hover
+			color #fff
+			
+
+/* Серая кнопка */
+.btn-grey
+	border-width 3px
+	border-style solid
+	border-color $grey
+	color #333
+	
+	&:hover
+		background-color $grey
+		border-color $grey
+		color #333
+
+
+/* Большие кнопки */
+.btn-lg 
+	border-width 4px
+	font-size 19px
+	color #333
+	padding 18px 90px 16px
+
+	&.btn-inline
+		padding-left 30px
+		padding-right 30px
+
+
+/* Средние кнопки */
+.btn-md
+	font-size 14px
+	margin 28px auto 25px
+	padding 14px 24px
+	border-width 3px
+
+
+/* Маленькие кнопки */
+.btn-sm
+	text-transform none
+	position relative
+	text-transform uppercase
+	font-size 13px
+	line-height 1
+	color #000
+	padding 13px 30px 12px
+	font-weight 600
+
+
+/* Очень маленькие кнопки */
+.btn-xs
+	font-size 12px
+	vertical-align top
+	margin-top 0
+	padding 10px 23px 9px
+	border-width 2px
+	color #000
+
+	&.btn-inline
+		font-size 16px
+		font-weight normal
+		text-transform none
+		padding 9px 18px
+		border-width 2px
+
+
+/* Малюсенькие кнопочки */
+.btn-xxs
+	font-size 12px
+	line-height 18px
+	margin 0 0 10px
+	padding 10px 20px 8px
+	border-width 2px
+	color $orange
+
+
+/* Гигантские кнопки */
+.btn-huge
+	padding 0 50px 8px 50px
+	margin 30px 0
+	font-weight 300
+	font-size 44px
+	line-height 70px
+	text-transform none
+	color $orange
+
+	&:hover
+		color #333
+
+.black
+	.btn-huge
+		background #333
+		&:hover
+			background $orange
+		&:active
+			background darken($orange, 25%)
+
+/* Тонкие кнопки */
+.btn-thin
+	display block
+	margin 30px auto 0
+	padding 21px 100px 20px
+	font-size 15px
+	font-weight 400
+	border-width 2px
+	color $orange
+	border-color $orange
+
+	&:hover
+		background none
+		color $orange
+		border-color $orange
+
+	&:active
+		color darken($orange, 30%)
+		border-color darken($orange, 30%)
+
+	&.btn-sm
+		display inline-block
+		font-size 12px
+		padding 13px 40px 11px
+
+
+/* Блочные кнопки */	
+.btn-block
+	width 100%
+	padding 19px 90px 17px
+	font-weight bold
+
+
+/* ---------------------------- *\
+	# Круглые кнопки
+\* ============================ */
+
+.btn-circle
+	display inline-block
+	position relative
+	width 37px
+	height 37px
+	border 2px solid transparent
+	border-radius 40px
+	opacity 0.8
+	cursor pointer
+	user-select none
+
+	&:before
+		content ''
+		display block
+		position absolute
+		top 50%
+		left 50%
+
+	&:hover
+		opacity 1
+		border-color $red
+
+	&:active
+		top 1px
+		border-color darken($red, 50%)
+
+	&--big
+		width 60px
+		height 60px
+		
+	&--white
+		border-color #fff
+		&:hover
+			border-color #fff
+		&:active
+			border-color #fff
+
+	&--orange
+		border-color $orange
+		opacity 1
+		&:hover
+		&:active
+			border-color $orange
+			background $orange
+
+	&--black
+		border-color #000
+		opacity 1
+		&:hover
+			border-color #333
+			background #333
+		&:active
+			border-color #000
+			background #000
+
+	&--drop
+		&:before
+			margin -8px 0 0 -7px
+			sprite($icon__drop)
+		&:active
+			&:before
+				sprite($icon__drop__active)
+
+		&.btn-circle--white
+			&:before
+				sprite($icon__drop--white)
+			&:active
+				border-color #808080
+				&:before
+					sprite($icon__drop--white__active)
+
+		&.btn-circle--orange
+			&:before
+				sprite($icon__drop--orange)
+			&:hover
+			&:active
+				&:before
+					sprite($icon__drop--black)
+
+	&--darr
+		&:before
+			width 17px
+			height 17px
+			margin -11px 0 0 -8px
+			background transparent
+			border-width 0 0 3px 3px
+			border-style solid
+			transform rotate(-45deg)
+
+		&.btn-circle--white
+			&:before
+				border-color #fff
+			&:hover
+				background #fff
+				&:before
+					border-color $green
+			&:active
+				background #ccc
+				border-color #ccc
+				&:before
+					border-color $green
+
+		&.btn-circle--black
+			&:before
+				border-color #000
+			&:hover
+				background #333
+				border-color #333
+				&:before
+					border-color $orange
+			&:active
+				background #000
+				border-color #000
+				&:before
+					border-color $orange	
+
+
+/* ---------------------------- *\
+	# Квадратные кнопки
+\* ============================ */
+
+.btn-menu
+	padding 18px 0
+	border 1px solid $orange
+	border-radius 0
+	height 60px
+	width 151px
+	color #000
+	transition border-color 0.1s ease-in-out
+
+	&:hover
+		padding 15px 0
+		border-width 4px
+		background #fff
+		color #000
+
+	&:active
+		border-width 4px
+		border-color darken($orange, 25%)
+
+
+
+
+/* ---------------------------- *\
+	# Кнопки с иконками
+\* ============================ */
+
+i.icon
+	position relative
+	display inline-block
+	font normal normal normal 16px/1 FontAwesome
+	font-size inherit
+	text-rendering auto
+	-webkit-font-smoothing antialiased
+	-moz-osx-font-smoothing grayscale
+
+	&:before
+		content ''
+		display inline-block
+		vertical-align middle
+
+
+.icon-back
+	margin-left -22px
+	margin-right 8px
+
+	&:before
+		sprite($btn__backarrow)
+
+.btn:active	
+	i.icon.icon-back:before
+		sprite($btn__backarrow-hover)
+
+
+.icon-store
+	top -3px
+
+	&:before
+		sprite($icon-store__orange)
+
+	&--small
+		margin: -4px 6px -3px -6px
+		top -1px
+
+		&:before
+			sprite($icon-store__black--small)
+
+.btn:hover 
+.btn:active
+	i.icon.icon-store:before
+		sprite($icon-store__black)
+
+
+.icon-search
+	&:before
+		sprite($icon__search--black)
+
+
+.icon-cart
+	margin-right 8px
+	top -3px
+
+	&:before
+		sprite($icon__cart)
+
+.icon-catalog
+	margin-right 8px
+	top -3px
+
+	&:before
+		sprite($icon__catalog)
+
+
+
+
+

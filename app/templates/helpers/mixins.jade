@@ -128,8 +128,9 @@ mixin catalog-item(item, flat)
 						span.b-price__thinsp &nbsp;
 						span.b-price__rubl Р
 			.b-item__order-button
-					u.btn.btn-orange.btn-border
-						span.sign В&nbsp;корзину
+					button.btn(type="button")
+						i.icon.icon-cart
+						| В&nbsp;корзину
 			.b-item__badges
 				span.bestseller Хит!
 					//- img(src="images/textures/best-choice.png" alt="Хит!")
@@ -163,8 +164,9 @@ mixin catalog-item(item, flat)
 									span.b-price__thinsp &nbsp;
 									span.b-price__rubl Р
 						.b-item__order-button
-							u.btn.btn-orange.btn-border
-								span.sign В&nbsp;корзину
+							button.btn(type="button")
+								i.icon.icon-cart
+								| В&nbsp;корзину
 					.b-item__badges
 						span.bestseller Хит!
 							//- img(src="images/textures/best-choice.png" alt="Хит!")

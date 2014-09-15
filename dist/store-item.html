@@ -14,7 +14,7 @@
 		<link sizes="144x144" href="images/icons/apple-touch-icon-144x144.png" rel="apple-touch-icon">
 		<link sizes="152x152" href="images/icons/apple-touch-icon-152x152.png" rel="apple-touch-icon">
 		<!-- Windows 8-->
-		<meta name="application-name" content="Оплата заказа">
+		<meta name="application-name" content="Pokupo">
 		<meta name="msapplication-tooltip" content="Description for pokupo">
 		<meta name="msapplication-TileColor" content="#ffffff">
 		<meta name="msapplication-TileImage" content="images/icons/tile.png">
@@ -44,6 +44,7 @@
 		<meta name="reply-to" content="jiexa@tabrisov.ru">
 		<link href="images/icons/favicon.ico" rel="shortcut icon">
 		<link href="styles/main.css" rel="stylesheet">
+		<link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 		<!--[if lt IE 9]> 
 <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
 <script src="scripts/libs/nwmatcher.js"></script>
@@ -66,13 +67,13 @@
 										<p class="b-profile-menu__name">Сибилев
 											<br/>Игорь</p>
 										<ul class="menu">
-											<li class="menu__item"><a href="javascript:void(0);">Профиль</a>
+											<li class="menu__item"><a href="profile.html">Профиль</a>
 											</li>
-											<li class="menu__item"><a href="javascript:void(0);">Избранное</a>
+											<li class="menu__item"><a href="profile-favorite.html">Избранное</a>
 											</li>
-											<li class="menu__item"><a href="javascript:void(0);">Заказы</a>
+											<li class="menu__item"><a href="profile-orders.html">Заказы</a>
 											</li>
-											<li class="menu__item"><a href="javascript:void(0);">Сообщения<sup class="menu__item__num">4</sup></a>
+											<li class="menu__item"><a href="profile-mail.html">Сообщения<sup class="menu__item__num">4</sup></a>
 											</li>
 											<li class="menu__item"><a id="js-logout" href="javascript:void(0);" class="b-profile-menu__logout">Выйти</a>
 											</li>
@@ -111,7 +112,7 @@
 													</div>
 													<div class="b-order-item__drop btn-circle btn-circle--drop"></div>
 												</li>
-											</ol><a href="javascript:void(0);" class="btn btn-orange btn-border b-cart-menu__order-button">Оформить</a>
+											</ol><a href="javascript:void(0);" class="btn btn-md b-cart-menu__order-button">Оформить</a>
 											<p class="b-cart-menu__results">Итог:<span class="b-cart-menu__amount b-price"><span class="b-price__number">49<i class="b-price__separator"></i>780</span><span class="b-price__thinsp">&nbsp;</span><span class="b-price__rubl">Р</span></span>
 											</p>
 										</div>
@@ -280,7 +281,7 @@
 									</div>
 								</div>
 							</div>
-						</div><span class="btn btn-orange btn-big b-advanced-search__submit">Начать расширенный поиск <i class="icon"></i></span>
+						</div><span class="btn btn-block b-advanced-search__submit">Начать расширенный поиск <i class="icon icon-search"></i></span>
 					</div>
 				</div>
 			</section>
@@ -438,7 +439,8 @@
 																</div>
 															</div>
 														</div>
-														<div class="b-item__order-button"><u class="btn btn-orange btn-border"><span class="sign">В&nbsp;корзину</span></u>
+														<div class="b-item__order-button">
+															<button type="button" class="btn"><i class="icon icon-cart"></i>В&nbsp;корзину</button>
 														</div>
 														<div class="b-item__badges"><span class="bestseller">Хит!</span>
 														</div>
@@ -465,7 +467,8 @@
 																</div>
 															</div>
 														</div>
-														<div class="b-item__order-button"><u class="btn btn-orange btn-border"><span class="sign">В&nbsp;корзину</span></u>
+														<div class="b-item__order-button">
+															<button type="button" class="btn"><i class="icon icon-cart"></i>В&nbsp;корзину</button>
 														</div>
 														<div class="b-item__badges"><span class="bestseller">Хит!</span>
 														</div>
@@ -494,7 +497,8 @@
 																</div>
 															</div>
 														</div>
-														<div class="b-item__order-button"><u class="btn btn-orange btn-border"><span class="sign">В&nbsp;корзину</span></u>
+														<div class="b-item__order-button">
+															<button type="button" class="btn"><i class="icon icon-cart"></i>В&nbsp;корзину</button>
 														</div>
 														<div class="b-item__badges"><span class="bestseller">Хит!</span>
 														</div>
@@ -523,7 +527,8 @@
 																</div>
 															</div>
 														</div>
-														<div class="b-item__order-button"><u class="btn btn-orange btn-border"><span class="sign">В&nbsp;корзину</span></u>
+														<div class="b-item__order-button">
+															<button type="button" class="btn"><i class="icon icon-cart"></i>В&nbsp;корзину</button>
 														</div>
 														<div class="b-item__badges"><span class="bestseller">Хит!</span>
 														</div>
@@ -552,7 +557,8 @@
 																</div>
 															</div>
 														</div>
-														<div class="b-item__order-button"><u class="btn btn-orange btn-border"><span class="sign">В&nbsp;корзину</span></u>
+														<div class="b-item__order-button">
+															<button type="button" class="btn"><i class="icon icon-cart"></i>В&nbsp;корзину</button>
 														</div>
 														<div class="b-item__badges"><span class="bestseller">Хит!</span>
 														</div>
@@ -577,7 +583,8 @@
 																</div>
 															</div>
 														</div>
-														<div class="b-item__order-button"><u class="btn btn-orange btn-border"><span class="sign">В&nbsp;корзину</span></u>
+														<div class="b-item__order-button">
+															<button type="button" class="btn"><i class="icon icon-cart"></i>В&nbsp;корзину</button>
 														</div>
 														<div class="b-item__badges"><span class="bestseller">Хит!</span>
 														</div>
@@ -606,7 +613,8 @@
 																</div>
 															</div>
 														</div>
-														<div class="b-item__order-button"><u class="btn btn-orange btn-border"><span class="sign">В&nbsp;корзину</span></u>
+														<div class="b-item__order-button">
+															<button type="button" class="btn"><i class="icon icon-cart"></i>В&nbsp;корзину</button>
 														</div>
 														<div class="b-item__badges"><span class="bestseller">Хит!</span>
 														</div>
@@ -635,7 +643,8 @@
 																</div>
 															</div>
 														</div>
-														<div class="b-item__order-button"><u class="btn btn-orange btn-border"><span class="sign">В&nbsp;корзину</span></u>
+														<div class="b-item__order-button">
+															<button type="button" class="btn"><i class="icon icon-cart"></i>В&nbsp;корзину</button>
 														</div>
 														<div class="b-item__badges"><span class="bestseller">Хит!</span>
 														</div>
@@ -666,7 +675,8 @@
 																</div>
 															</div>
 														</div>
-														<div class="b-item__order-button"><u class="btn btn-orange btn-border"><span class="sign">В&nbsp;корзину</span></u>
+														<div class="b-item__order-button">
+															<button type="button" class="btn"><i class="icon icon-cart"></i>В&nbsp;корзину</button>
 														</div>
 														<div class="b-item__badges"><span class="bestseller">Хит!</span>
 														</div>
@@ -691,7 +701,8 @@
 																</div>
 															</div>
 														</div>
-														<div class="b-item__order-button"><u class="btn btn-orange btn-border"><span class="sign">В&nbsp;корзину</span></u>
+														<div class="b-item__order-button">
+															<button type="button" class="btn"><i class="icon icon-cart"></i>В&nbsp;корзину</button>
 														</div>
 														<div class="b-item__badges"><span class="bestseller">Хит!</span>
 														</div>
@@ -718,7 +729,8 @@
 																</div>
 															</div>
 														</div>
-														<div class="b-item__order-button"><u class="btn btn-orange btn-border"><span class="sign">В&nbsp;корзину</span></u>
+														<div class="b-item__order-button">
+															<button type="button" class="btn"><i class="icon icon-cart"></i>В&nbsp;корзину</button>
 														</div>
 														<div class="b-item__badges"><span class="bestseller">Хит!</span>
 														</div>
@@ -734,7 +746,8 @@
 									<div class="b-catalog-item__seller-info slidedown"><span data-target="info" class="slidedown__trigger">Информация о продавце</span>
 										<div data-target="info" class="slidedown__content hidden">
 											<div class="b-seller-info">
-												<div class="b-seller-info__actions"><span class="btn btn-orange">Задать вопрос</span>
+												<div class="b-seller-info__actions">
+													<button type="button" class="btn btn-xs btn-inline">Задать вопрос</button>
 													<div class="b-support-info dropdown"><span class="b-support-info__title"><span data-target="support" class="dropdown__trigger"> Поддержка</span></span>
 														<div data-target="support" class="b-support-info__content dropdown__content hidden">
 															<p><span class="label">Посетить сайт</span><a href="http://pokupo.ru" target="_blank" class="action">pokupo.ru</a><span class="label">Написать</span><a href="mailto:support@pokupo.ru" class="action">support@pokupo.ru</a><span class="label">Skype консультанта</span>
@@ -792,8 +805,10 @@
 												<div style="margin-bottom:20px" class="b-increment-input"><span class="b-increment-input__darr">&minus;</span><span class="b-increment-input__input-wrapper"><input type="text" data-name="qty" value="1" maxlength="3" autocomplete="off" data-min="1" data-max="5" class="inline-input b-increment-input__input"></span>
 													<span
 													class="b-increment-input__uarr">+</span>
-												</div><u class="btn btn-orange btn-border btn-with-icon"><span class="sign">В&nbsp;корзину</span></u>
-												<br><u style="font-size:16px" class="btn btn-orange btn-border">Купить сразу</u>
+												</div>
+												<button type="button" class="btn"><i class="icon icon-cart"></i>В&nbsp;корзину</button>
+												<br>
+												<button type="button" class="btn">Купить сразу</button>
 												<div class="like_button"><span class="pseudo-link">В избранное</span>
 												</div>
 											</div>
@@ -863,7 +878,8 @@
 										</dl>
 									</div>
 									<div class="b-catalog-item__aux b-reviews">
-										<h1 class="with-button">Отзывы</h1><span id="js-addReview" class="btn btn-orange btn-small">Написать</span>
+										<h1 class="with-button">Отзывы</h1>
+										<button id="js-addReview" type="button" class="btn btn-xxs">Написать</button>
 										<ul class="reviews-list">
 											<li class="b-review">
 												<div class="b-review__info">
@@ -920,7 +936,8 @@
 												</div>
 											</div>
 										</div>
-										<div class="b-item__order-button"><u class="btn btn-orange btn-border"><span class="sign">В&nbsp;корзину</span></u>
+										<div class="b-item__order-button">
+											<button type="button" class="btn"><i class="icon icon-cart"></i>В&nbsp;корзину</button>
 										</div>
 										<div class="b-item__badges"><span class="bestseller">Хит!</span>
 										</div>
@@ -947,7 +964,8 @@
 												</div>
 											</div>
 										</div>
-										<div class="b-item__order-button"><u class="btn btn-orange btn-border"><span class="sign">В&nbsp;корзину</span></u>
+										<div class="b-item__order-button">
+											<button type="button" class="btn"><i class="icon icon-cart"></i>В&nbsp;корзину</button>
 										</div>
 										<div class="b-item__badges"><span class="bestseller">Хит!</span>
 										</div>
@@ -976,7 +994,8 @@
 												</div>
 											</div>
 										</div>
-										<div class="b-item__order-button"><u class="btn btn-orange btn-border"><span class="sign">В&nbsp;корзину</span></u>
+										<div class="b-item__order-button">
+											<button type="button" class="btn"><i class="icon icon-cart"></i>В&nbsp;корзину</button>
 										</div>
 										<div class="b-item__badges"><span class="bestseller">Хит!</span>
 										</div>
@@ -1005,7 +1024,8 @@
 												</div>
 											</div>
 										</div>
-										<div class="b-item__order-button"><u class="btn btn-orange btn-border"><span class="sign">В&nbsp;корзину</span></u>
+										<div class="b-item__order-button">
+											<button type="button" class="btn"><i class="icon icon-cart"></i>В&nbsp;корзину</button>
 										</div>
 										<div class="b-item__badges"><span class="bestseller">Хит!</span>
 										</div>
@@ -1032,7 +1052,8 @@
 												</div>
 											</div>
 										</div>
-										<div class="b-item__order-button"><u class="btn btn-orange btn-border"><span class="sign">В&nbsp;корзину</span></u>
+										<div class="b-item__order-button">
+											<button type="button" class="btn"><i class="icon icon-cart"></i>В&nbsp;корзину</button>
 										</div>
 										<div class="b-item__badges"><span class="bestseller">Хит!</span>
 										</div>
@@ -1057,7 +1078,8 @@
 												</div>
 											</div>
 										</div>
-										<div class="b-item__order-button"><u class="btn btn-orange btn-border"><span class="sign">В&nbsp;корзину</span></u>
+										<div class="b-item__order-button">
+											<button type="button" class="btn"><i class="icon icon-cart"></i>В&nbsp;корзину</button>
 										</div>
 										<div class="b-item__badges"><span class="bestseller">Хит!</span>
 										</div>
@@ -1086,7 +1108,8 @@
 												</div>
 											</div>
 										</div>
-										<div class="b-item__order-button"><u class="btn btn-orange btn-border"><span class="sign">В&nbsp;корзину</span></u>
+										<div class="b-item__order-button">
+											<button type="button" class="btn"><i class="icon icon-cart"></i>В&nbsp;корзину</button>
 										</div>
 										<div class="b-item__badges"><span class="bestseller">Хит!</span>
 										</div>
@@ -1115,7 +1138,8 @@
 												</div>
 											</div>
 										</div>
-										<div class="b-item__order-button"><u class="btn btn-orange btn-border"><span class="sign">В&nbsp;корзину</span></u>
+										<div class="b-item__order-button">
+											<button type="button" class="btn"><i class="icon icon-cart"></i>В&nbsp;корзину</button>
 										</div>
 										<div class="b-item__badges"><span class="bestseller">Хит!</span>
 										</div>
@@ -1144,7 +1168,8 @@
 												</div>
 											</div>
 										</div>
-										<div class="b-item__order-button"><u class="btn btn-orange btn-border"><span class="sign">В&nbsp;корзину</span></u>
+										<div class="b-item__order-button">
+											<button type="button" class="btn"><i class="icon icon-cart"></i>В&nbsp;корзину</button>
 										</div>
 										<div class="b-item__badges"><span class="bestseller">Хит!</span>
 										</div>
@@ -1169,7 +1194,8 @@
 												</div>
 											</div>
 										</div>
-										<div class="b-item__order-button"><u class="btn btn-orange btn-border"><span class="sign">В&nbsp;корзину</span></u>
+										<div class="b-item__order-button">
+											<button type="button" class="btn"><i class="icon icon-cart"></i>В&nbsp;корзину</button>
 										</div>
 										<div class="b-item__badges"><span class="bestseller">Хит!</span>
 										</div>
@@ -1196,7 +1222,8 @@
 												</div>
 											</div>
 										</div>
-										<div class="b-item__order-button"><u class="btn btn-orange btn-border"><span class="sign">В&nbsp;корзину</span></u>
+										<div class="b-item__order-button">
+											<button type="button" class="btn"><i class="icon icon-cart"></i>В&nbsp;корзину</button>
 										</div>
 										<div class="b-item__badges"><span class="bestseller">Хит!</span>
 										</div>
@@ -1229,7 +1256,9 @@
 										<li class="voting__five"><a>5</a>
 										</li>
 									</ul>
-								</div><a id="js-send-request" href="javascript:void(0);" class="btn btn-orange btn-big">Оставить отзыв</a><a href="javascript:void(0);" class="btn btn-grey btn-big">Отмена</a>
+								</div>
+								<button id="js-cancel-request" type="reset" class="btn btn-grey btn-lg btn-inline">Отмена</button>
+								<button id="js-send-request" type="submit" class="btn btn-lg">Оставить отзыв</button>
 							</form>
 						</div>
 						<div id="send_request_success" class="hidden send_request_result">

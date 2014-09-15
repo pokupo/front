@@ -20,24 +20,26 @@
 		text-align center
 		cursor default
 
-	.btn-submit 
-		.icon-store
-			display inline-block
-			position relative
-			top 10px
+	.btn-lg.btn-red
+		margin 28px 0 25px
+
+		i.icon-store:before
 			sprite($icon-store__red)
-			transition none
+
+		&:hover
+			box-shadow 0 1px 0 0px rgba(154, 25, 21, 0.8)
+
+		&:active
+			box-shadow none
 
 		&:hover 
 		&:active
-			.icon-store
+			i.icon.icon-store:before
 				sprite($icon-store__white)
-		&:disabled
-		&.disabled
-			.icon-store
-				sprite($icon-store__red)
-				opacity 0.3
 
+
+
+		
 
 
 .sign-in

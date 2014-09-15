@@ -1,0 +1,87 @@
+extends partials/layouts/profile
+
+block head
+	- page.title = 'Личный кабинет: Заказы';
+
+block menu 
+	+menu-list([
+		{text:"Платформа",href:"frontpage.html",submenu:[
+			{text:"О проекте",href:"about.html"},
+			{text:"Торговый портал",href:"http://shop.pokupo.ru/", external:true}
+		]},
+		{text:"Тарифы",href:"rates.html"},
+		{text:"Компания",href:"#", submenu:[
+			{text:"События",href:"events.html"},
+			{text:"О нас",href:"aboutus.html"},
+			{text:"Сообщество",href:"community.html"},
+			{text:"Блог",href:"http://pokupo.livejournal.com/", external:true}
+		]},
+		{text:"Партнёры",href:"partners.html"},
+		
+		{text:"Помощь", href:js0, submenu:[
+			{text:"Вопросы и ответы",href:"faq.html"},	
+			{text:"Техническая поддержка",href:"https://help.pokupo.ru", external:true}
+		]}
+	])(class="b-navigation")
+
+block profile-nav
+	section.profile-nav.grey
+		.container
+			a.btn.btn-sm(href=js0)
+				i.icon.icon-store--small
+				| Стать продавцом
+			ul.menu.b-profile-nav
+				li.menu__item
+					a.icon__profile(href="profile.html")
+						span Профиль
+				li.menu__item
+					a.icon__favorites(href="profile-favorites.html")
+						span Избранное
+				li.menu__item
+					a.icon__cart(href="profile-cart")
+						span Корзина
+				li.menu__item
+					a.icon__order(href="profile-orders.html")
+						span Заказы
+
+block content
+	section.profile
+		.container
+			.columns.triple
+				.first.double.column
+					.content
+						h1.b-title Сообщения
+
+				.third.column
+					.content
+						.btn.btn-lg Новое сообщение
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+block scripts
+	+script([
+		'libs/jquery.password.js', 
+		'http://cdnjs.cloudflare.com/ajax/libs/jquery-ajaxtransport-xdomainrequest/1.0.1/jquery.xdomainrequest.min.js',
+		'https://dadata.ru/static/js/jquery.suggestions-4.6.min.js', 
+		'main.js'
+	])
+

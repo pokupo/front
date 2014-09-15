@@ -318,19 +318,12 @@ section.store
 		display none
 
 	&__order-button
-		.btn-border
-			position relative
-			font-size 16px
-			padding 19px 28px 17px 60px
-
-			&:after
-				content ''
-				position absolute
-				top 50%
-				left 37px
-				margin -11px 0 0 -11px
-				sprite($icon__cart)
-
+		.btn
+			padding 16px 28px 14px
+			margin 28px 0 25px
+			border-width 4px
+			&:hover
+				color #333			
 
 /* Каталог в разных состояниях */
 .b-catalog__items
@@ -462,14 +455,12 @@ section.store
 				display none
 
 			&__order-button
-			.btn-border
-				font-size 13px
-				padding 13px 21px 12px 46px
+			.btn
+					font-size 13px
+					padding 10px 20px
 
-				&:after
-					left 20px
-					margin -9px 0 0 0
-					sprite($icon__cart__small)
+					i.icon-cart:before
+						sprite($icon__cart__small)
 
 
 /* Карточка при наведении */

@@ -97,7 +97,7 @@ block content
 								.slidedown__content.hidden(data-target="info")
 									.b-seller-info
 										.b-seller-info__actions
-											span.btn.btn-orange Задать вопрос
+											button.btn.btn-xs.btn-inline(type="button") Задать вопрос
 											.b-support-info.dropdown
 												span.b-support-info__title
 													span.dropdown__trigger(data-target="support")  Поддержка
@@ -170,10 +170,11 @@ block content
 												input.inline-input.b-increment-input__input(type="text" data-name="qty" value="1" maxlength="3" autocomplete="off" data-min="1" data-max="5")
 											span.b-increment-input__uarr +
 
-										u.btn.btn-orange.btn-border.btn-with-icon
-												span.sign В&nbsp;корзину
+										button.btn(type="button")
+											i.icon.icon-cart
+											| В&nbsp;корзину
 										br
-										u.btn.btn-orange.btn-border(style="font-size:16px") Купить сразу
+										button.btn(type="button") Купить сразу
 
 										.like_button
 											span.pseudo-link В избранное
@@ -231,7 +232,7 @@ block content
 											p Таргетирование, следовательно, контролирует дуализм, полагаясь только на инсайдерскую информацию.
 							.b-catalog-item__aux.b-reviews
 								h1.with-button Отзывы
-								span#js-addReview.btn.btn-orange.btn-small Написать
+								button#js-addReview.btn.btn-xxs(type="button") Написать
 
 								ul.reviews-list
 									li.b-review
@@ -300,9 +301,8 @@ block content
 								li.voting__five
 									a 5
 
-						
-						a#js-send-request.btn.btn-orange.btn-big(href=js0) Оставить отзыв
-						a.btn.btn-grey.btn-big(href=js0) Отмена
+						button#js-cancel-request.btn.btn-grey.btn-lg.btn-inline(type="reset") Отмена
+						button#js-send-request.btn.btn-lg(type="submit") Оставить отзыв
 				#send_request_success.hidden.send_request_result
 					h1 Ваша заявка отправлена
 					p &nbsp;

@@ -1,18 +1,19 @@
 extends partials/layouts/inner
 
 block content
-	.popup.join
-		header.patterned.black
-			h1.with-icon Заявка на партнёрство
-			span.close-popup.btn-circle.btn-circle--drop.btn-circle--orange
-		.content
-			form
-				.input-holder
-					input.inline-input(name="name" type="text" placeholder="Ваше имя")
-				.input-holder
-					input.inline-input(name="mail" type="email" placeholder="Ваш e-mail")
-				.input-holder
-					textarea.inline-input(name="text" rows="4"  placeholder="Текст сообщение")
-				
-				a.btn.btn-grey.btn-big(href=js0) Отмена
-				a.btn.btn-orange.btn-big(href=js0) Отправить
+	.fade
+		.popup.join
+			header.patterned.black
+				h1.with-icon Заявка на партнёрство
+				span.close-popup.btn-circle.btn-circle--drop.btn-circle--orange
+			.content
+				form(method="get" action="index.html")
+					.input-holder
+						input.inline-input(name="name" type="text" placeholder="Ваше имя")
+					.input-holder
+						input.inline-input(name="mail" type="email" placeholder="Ваш e-mail")
+					.input-holder
+						textarea.inline-input(name="text" rows="4"  placeholder="Текст сообщение")
+					
+					button.btn.btn-lg.btn-inline.btn-grey(type="reset") Отмена
+					button.btn.btn-lg(type="submit") Отправить

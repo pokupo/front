@@ -27,7 +27,9 @@ block menu
 block profile-nav
 	section.profile-nav.grey
 		.container
-			a(href=js0).btn.btn-orange.btn-border.with-icon Стать продавцом
+			a.btn.btn-sm(href=js0)
+				i.icon.icon-store--small
+				| Стать продавцом
 			ul.menu.b-profile-nav
 				li.menu__item
 					a.icon__profile(href="profile.html")
@@ -45,7 +47,9 @@ block profile-nav
 block content
 	section.profile
 		.container
-			a.btn.btn-orange.btn-back(href="profile-orders.html") назад к списку заказов
+			a.btn.btn-sm.btn-thin(href="profile-orders.html")
+				i.icon.icon-back
+				| назад к списку заказов
 
 			h2.b-title Заказ № 53 от 8 августа 2014
 			.b-order-info
