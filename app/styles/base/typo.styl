@@ -55,11 +55,18 @@ ul.with-bullets
 
 /* Inputs */
 
+.floatlabel-wrapper
+	margin-top 20px
+
+
 .input-holder
 	margin 0 auto 20px
+	padding 0 0 20px
 	max-width 450px
+
 	label 
 		font-size 18px
+		
 	.b-small-text
 		line-height 20px
 		font-size 13px
@@ -158,6 +165,11 @@ textarea
 	&.error
 		border 3px solid $red
 		color $red
+		background #fff
+
+		& + .label-floatlabel
+			font-weight 600 !important
+			color $red !important
 
 	&--small
 		max-width auto
@@ -172,13 +184,15 @@ textarea
 	resize vertical	
 	height auto
 	min-height 120px
-	background $grey
+	background #ededed //
+
 	&:focus
 		background #fff
 
 
 .block-input
-	background $grey
+	background #ededed // $grey
+
 	&:focus
 		background #fff
 

@@ -44,7 +44,6 @@
 		<meta name="reply-to" content="jiexa@tabrisov.ru">
 		<link href="images/icons/favicon.ico" rel="shortcut icon">
 		<link href="styles/main.css" rel="stylesheet">
-		<link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 		<!--[if lt IE 9]> 
 <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
 <script src="scripts/libs/nwmatcher.js"></script>
@@ -171,6 +170,8 @@
 						</li>
 						<li class="menu__item"><a href="profile-orders.html" class="icon__order"><span>Заказы</span></a>
 						</li>
+						<li class="menu__item"><a href="profile-mail.html" class="icon__mail"><span>Сообщения<sup class="menu__item__num">25</sup></span></a>
+						</li>
 					</ul>
 				</div>
 			</section>
@@ -182,16 +183,16 @@
 						<dd class="tab__content selected">
 							<div class="content">
 								<fieldset class="b-fieldset">
-									<div class="b-seller-info b-seller-info--personal">
-										<div class="b-seller-info__actions">
+									<div class="b-profile-info b-profile-info--personal">
+										<div class="b-profile-info__actions">
 											<button type="button" class="btn btn-xs">Загрузить аватар</button><span class="btn-circle btn-circle--trash"></span>
 										</div>
-										<div class="b-seller-info__summary">
-											<div class="b-seller-info__photo">
+										<div class="b-profile-info__summary">
+											<div class="b-profile-info__photo">
 												<img src="http://api.randomuser.me/portraits/med/men/7.jpg">
 											</div>
-											<h2 class="b-seller-info__title">Игорь Сибилев</h2>
-											<ul class="b-seller-info__characters-list">
+											<h2 class="b-profile-info__title">Игорь Сибилев</h2>
+											<ul class="b-profile-info__characters-list">
 												<li><span>На сайте с 12 марта 2012</span>
 												</li>
 												<li><span class="char">Псевдоним: </span><span class="value">Isibilev</span>
@@ -202,9 +203,10 @@
 										</div>
 									</div>
 								</fieldset>
-								<h2 class="with-divider">Регистрационные данные</h2>
+								<div data-for="fieldset-id" class="b-status b-status--fieldset b-status--done">Данные проверены</div>
+								<h2 class="with-divider">Персональные данные</h2>
 								<fieldset class="b-fieldset">
-									<input id="fullname" type="text" placeholder="Введите ФИО в свободной форме" class="block-input">
+									<input id="fullname" type="text" placeholder="Введите ФИО в свободной форме" data-label="ФИО в свободной форме" class="block-input">
 									<div class="columns">
 										<div class="first double column">
 											<div class="content">
@@ -231,9 +233,10 @@
 										</div>
 									</div>
 								</fieldset>
+								<div data-for="another-fieldset-id" class="b-status b-status--fieldset b-status--done">Адрес подтверждён</div>
 								<h2 class="with-divider">Почтовый адрес</h2>
 								<fieldset class="b-fieldset">
-									<input id="address" type="text" placeholder="Введите адрес в свободной форме" class="block-input">
+									<input id="address" type="text" placeholder="Введите адрес в свободной форме" data-label="Адрес в свободной форме" class="no-label block-input">
 									<div class="columns">
 										<div class="first double column">
 											<div class="content">
@@ -280,7 +283,7 @@
 										<div class="third double column">
 											<div class="content">
 												<div class="input-holder">
-													<input id="account__phone" type="tel" placeholder="Телефон" name="account__phone" class="block-input">
+													<input id="account__phone" type="tel" placeholder="Телефон" name="account__phone" class="block-input masked-phone">
 													<div class="b-status b-status--warning">Телефон не подтверждён</div><span class="pseudo-link input-action input-action--right">Выслать код подтверждения</span>
 												</div>
 												<div class="input-holder">
@@ -309,7 +312,7 @@
 										<tr class="b-order-table__item">
 											<td class="b-order-table__action">
 												<input id="tr_01" type="radio" value="1" name="radio">
-												<label for="tr_01">&nbsp;</label>
+												<label for="tr_01" rel="tooltip" title="Выбрать">&nbsp;</label>
 											</td>
 											<td>
 												<label for="tr_01">309070, Россия, г. Белгород, ул. Кривошеина 8, кв 13</label>
@@ -317,14 +320,14 @@
 											<td class="b-order-table__name">Сибилев Игорь</td>
 											<td class="b-order-table__phone">+7 913 123 45-67-89</td>
 											<td class="b-order-table__drop">
-												<div class="b-order-item__edit btn-circle btn-circle--edit"></div>
-												<div class="b-order-item__drop btn-circle btn-circle--drop"></div>
+												<div rel="tooltip" title="Редактировать" class="b-order-item__edit btn-circle btn-circle--edit"></div>
+												<div rel="tooltip" title="Удалить адрес" class="b-order-item__drop btn-circle btn-circle--drop"></div>
 											</td>
 										</tr>
 										<tr class="b-order-table__item active">
 											<td class="b-order-table__action">
 												<input id="tr_02" type="radio" value="2" name="radio" checked>
-												<label for="tr_02">&nbsp;</label>
+												<label for="tr_02" rel="tooltip" title="Выбрать">&nbsp;</label>
 											</td>
 											<td>
 												<label for="tr_02">309070, Россия, г. Белгород, ул. Ленина 15, кв 20</label>
@@ -332,14 +335,14 @@
 											<td class="b-order-table__name">Константин Константинопольский</td>
 											<td class="b-order-table__phone">+7 913 123 45-67-89</td>
 											<td class="b-order-table__drop">
-												<div class="b-order-item__edit btn-circle btn-circle--edit"></div>
-												<div class="b-order-item__drop btn-circle btn-circle--drop"></div>
+												<div rel="tooltip" title="Редактировать" class="b-order-item__edit btn-circle btn-circle--edit"></div>
+												<div rel="tooltip" title="Удалить адрес" class="b-order-item__drop btn-circle btn-circle--drop"></div>
 											</td>
 										</tr>
 										<tr class="b-order-table__item">
 											<td class="b-order-table__action">
 												<input id="tr_03" type="radio" value="3" name="radio">
-												<label for="tr_03">&nbsp;</label>
+												<label for="tr_03" rel="tooltip" title="Выбрать">&nbsp;</label>
 											</td>
 											<td>
 												<label for="tr_03">309070, Россия, г. Белгород, ул. Кривошеина 8, кв 13</label>
@@ -347,8 +350,8 @@
 											<td class="b-order-table__name">Сибилев Игорь</td>
 											<td class="b-order-table__phone">+7 913 123 45-67-89</td>
 											<td class="b-order-table__drop">
-												<div class="b-order-item__edit btn-circle btn-circle--edit"></div>
-												<div class="b-order-item__drop btn-circle btn-circle--drop"></div>
+												<div rel="tooltip" title="Редактировать" class="b-order-item__edit btn-circle btn-circle--edit"></div>
+												<div rel="tooltip" title="Удалить адрес" class="b-order-item__drop btn-circle btn-circle--drop"></div>
 											</td>
 										</tr>
 									</tbody>
@@ -371,6 +374,7 @@
 								<div class="input-holder">
 									<input id="newpassword" type="password" name="new_password" value="" placeholder="Новый пароль" class="block-input">
 								</div>
+								<!-- button.btn.btn-grey.btn-lg.btn-inline(type="reset") Отмена-->
 								<button type="submit" class="btn btn-lg">Сохранить</button>
 							</div>
 						</dd>
@@ -455,6 +459,9 @@
 		<script src="scripts/libs/carousel.min.js"></script>
 		<script src="scripts/libs/chosen.jquery.js"></script>
 		<script src="scripts/libs/jquery.fancytree-all.js"></script>
+		<script src="scripts/libs/floatlabels.js"></script>
+		<script src="scripts/libs/masked-input.js"></script>
+		<script src="scripts/libs/tooltip.js"></script>
 		<script src="scripts/libs/jquery.password.js"></script>
 		<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-ajaxtransport-xdomainrequest/1.0.1/jquery.xdomainrequest.min.js"></script>
 		<script src="https://dadata.ru/static/js/jquery.suggestions-4.6.min.js"></script>

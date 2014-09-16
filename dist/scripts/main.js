@@ -304,7 +304,10 @@ PKP.UI = {
 		PKP.UI.tree();
 		PKP.UI.voting();
 		PKP.UI.diagonalHover.init();
+		PKP.UI.tooltip();
+		PKP.UI.inputLabels();
 		PKP.UI.passwords();
+		PKP.UI.maskedInputs();
 		PKP.UI.emulateShopping();
 
 		/* Селекты */
@@ -545,6 +548,7 @@ PKP.UI = {
 			}
 		}
 	},
+
 	/* Вывод цены */
 	formatNumber: function (number, dSeparator, fSeparator) {
 		// Default digits & fraction separators
@@ -578,6 +582,7 @@ PKP.UI = {
 
 		return output.replace('.', fSeparator);
 	},
+
 	/* Выпадающий блок с корзиной */
 	cart: function () {
 		// Уменьшить
@@ -669,6 +674,7 @@ PKP.UI = {
 			return false;
 		});
 	},
+
 	/* Всплываюющие окна */
 	popup: function() {
 		// Форма "задать ворпос"
@@ -743,6 +749,7 @@ PKP.UI = {
 			$("#request_form").hide();
 		});
 	},
+
 	/* Инициализация дерева с возможностью множественного выбора узлов */
 	tree: function() {
 		$("#multilocation").fancytree({
@@ -805,6 +812,7 @@ PKP.UI = {
 			return false;
 		});
 	},
+
 	/* Инициализация контрола для установки рейтинга */
 	voting: function() {
 		var stars = $('ul.voting').find('a');
@@ -821,12 +829,29 @@ PKP.UI = {
 		});
 	},
 
+	/* Инициализация вплывающих подписей к полям формы */
+	inputLabels: function() {
+		$(":input:not(:checkbox):not(:button):not([type=hidden]):not([type=search]):not(.no-label)").floatlabel();
+	},
+
+	/* Контрол для сокрытия и показа введённого пароля */
 	passwords: function() {
 		if (typeof ($.fn.hidePassword) !== 'undefined') {
 			$('input[type="password"]').hidePassword(true);
 		} 
 	},
 
+	/* Всплывающие подсказки */
+	tooltip: function() {
+		// if (typeof ($.fn.tooltip) !== 'undefined') $('[data-tooltip]').tooltip();
+	},
+
+	/* Маска для ввода телефона */
+	maskedInputs: function() {
+		$('.masked-phone').mask("+7 ?999 999 99 99");
+	},
+
+	/* Анимация при добавлении в корзину */
 	emulateShopping: function() {
 		$('.b-item__order-button .btn').on('click', function() {
 			var $this = $(this);
@@ -1160,18 +1185,18 @@ PKP.Suggestions = {
 			type: "NAME",
 			onSelect: function(suggestion) {
 				var data = suggestion.data;
-				$('#fullname .suggestion-input').val();
+				$('#fullname .suggestion-input').val('');
 
 				if(data.surname !== null) {
-					$('#fullname__surname').val(data.surname);
+					$('#fullname__surname').val(data.surname).trigger("change");
 				}
 
 				if(data.name !== null) {
-					$('#fullname__name').val(data.name);
+					$('#fullname__name').val(data.name).trigger("change");
 				}
 
 				if(data.patronymic !== null) {
-					$('#fullname__patronymic').val(data.patronymic);
+					$('#fullname__patronymic').val(data.patronymic).trigger("change");
 				}
 
 				if(data.gender !== null) {
@@ -1186,39 +1211,38 @@ PKP.Suggestions = {
 			type: "ADDRESS",
 			onSelect: function(suggestion) {
 				var data = suggestion.data;
-				console.log(data);
-				$('#address .suggestion-input').val();
+				$('#address .suggestion-input').val('');
 
 				if(data.postal_code !== null) {
-					$('#address__postalcode').val(data.postal_code);
+					$('#address__postalcode').val(data.postal_code).trigger("change");
 				}
 
 				if(data.country !== null) {
-					$('#address__country').val(data.country);
+					$('#address__country').val(data.country).trigger("change");
 				}
 
 				if(data.region !== null) {
-					$('#address__region').val(data.region + ' ' + data.region_type + '.');
+					$('#address__region').val(data.region + ' ' + data.region_type + '.').trigger("change");
 				}
 
 				if(data.city === null) {
 					if(data.settlement !== null) {
-						$('#address__city').val(data.settlement_type + '. ' + data.settlement);	
+						$('#address__city').val(data.settlement_type + '. ' + data.settlement).trigger("change");
 					}
 				} else {
-					$('#address__city').val(data.city_type + '. ' + data.city);
+					$('#address__city').val(data.city_type + '. ' + data.city).trigger("change");
 				}
 
 				if(data.street !== null) {
-					$('#address__street').val(data.street);
+					$('#address__street').val(data.street).trigger("change");
 				}
 
 				if(data.house !== null) {
-					$('#address__house').val(data.house);
+					$('#address__house').val(data.house).trigger("change");
 				}
 
 				if(data.flat !== null) {
-					$('#address__flat').val(data.flat);
+					$('#address__flat').val(data.flat).trigger("change");
 				}
 			}
 		});

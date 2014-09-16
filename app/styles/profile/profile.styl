@@ -7,8 +7,9 @@ section.profile-nav
 
 	.btn
 		float right
-		margin 18px 0 0
+		margin 17px 0 0
 		border-width 4px
+		padding 13px 23px 9px
 
 .b-profile-nav
 	font-size 0
@@ -59,6 +60,11 @@ section.profile-nav
 					margin-top -9px
 					sprite($icon__order)
 
+			&.icon__mail
+				&:before
+					margin-top -7px
+					sprite($icon__mail--small)
+
 
 		&:hover
 			background #e0ddd8
@@ -88,11 +94,18 @@ section.profile-nav
 					&:before
 						sprite($icon__order__white)
 
+				&.icon__mail
+					&:before
+						sprite($icon__mail--small--white)
+
 			&:hover
 				background $orange
 
 				a
 					cursor default
+	
+	.menu__item__num
+		right -8px
 
 .password-control
 	width 400px!important
@@ -100,12 +113,12 @@ section.profile-nav
 .profile
 	text-align left
 
-	.b-seller-info__summary
+	.b-profile-info__summary
 		margin-right 260px
 
-	.b-seller-info__actions
+	.b-profile-info__actions
 		width 255px
-		margin-top 32px
+		margin-top 30px
 
 	.input-holder
 		margin 0 0 20px
@@ -154,6 +167,7 @@ section.profile-nav
 		&--trash
 			width 40px
 			height 40px
+			margin-left 0
 
 		&--drop
 			border-color $red1
@@ -194,6 +208,11 @@ section.profile-nav
 .b-fieldset
 	margin 0 0 50px
 	border none
+
+	& > .floatlabel-wrapper
+		&:first-child
+			margin-top 0
+		
 
 #fullname
 #address
@@ -270,7 +289,7 @@ section.profile-nav
 
 	&--done
 		&:before
-			sprite($icon__done)
+			sprite($icon__new) /* done */
 			margin-top -9px
 
 	&--warning
@@ -319,6 +338,15 @@ section.profile-nav
 		&:before
 			sprite($icon__waiting)
 			margin-top -9px
+
+.b-status.b-status--fieldset
+	float right
+	top 7px
+	padding-left 32px
+	font-weight 800
+
+	&:before
+		left 6px
 
 .input-holder
 	.b-status

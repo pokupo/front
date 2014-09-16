@@ -43,6 +43,12 @@ block profile-nav
 				li.menu__item
 					a.icon__order(href="profile-orders.html")
 						span Заказы
+				li.menu__item
+					a.icon__mail(href="profile-mail.html")
+						span 
+							| Сообщения
+							sup.menu__item__num 25
+
 
 block content
 	- var userID = 7 // Math.floor(Math.random() * 99 + 1)
@@ -55,17 +61,17 @@ block content
 				dd.tab__content.selected 
 					.content
 						fieldset.b-fieldset
-							.b-seller-info.b-seller-info--personal
-								.b-seller-info__actions
+							.b-profile-info.b-profile-info--personal
+								.b-profile-info__actions
 									button.btn.btn-xs(type="button") Загрузить аватар
 									span.btn-circle.btn-circle--trash
 
-								.b-seller-info__summary
-									.b-seller-info__photo
+								.b-profile-info__summary
+									.b-profile-info__photo
 										img(src="http://api.randomuser.me/portraits/med/men/#{userID}.jpg")
 
-									h2.b-seller-info__title Игорь Сибилев
-									ul.b-seller-info__characters-list
+									h2.b-profile-info__title Игорь Сибилев
+									ul.b-profile-info__characters-list
 										li
 											span На сайте с 12 марта 2012
 										li
@@ -75,10 +81,11 @@ block content
 											span.char Рейтинг: 
 											span.value.value--orange +264
 
-						h2.with-divider Регистрационные данные
+						.b-status.b-status--fieldset.b-status--done(data-for="fieldset-id") Данные проверены
+						h2.with-divider Персональные данные
 
 						fieldset.b-fieldset
-							input#fullname.block-input(type="text" placeholder="Введите ФИО в свободной форме")
+							input#fullname.block-input(type="text" placeholder="Введите ФИО в свободной форме" data-label="ФИО в свободной форме")
 							.columns
 								.first.double.column
 									.content
@@ -99,10 +106,11 @@ block content
 										.input-holder
 											input#fullname__patronymic.block-input(type="text" placeholder="Отчество" name="fullname__patronymic")
 
+						.b-status.b-status--fieldset.b-status--done(data-for="another-fieldset-id") Адрес подтверждён
 						h2.with-divider Почтовый адрес
 
 						fieldset.b-fieldset
-							input#address.block-input(type="text" placeholder="Введите адрес в свободной форме")
+							input#address.no-label.block-input(type="text" placeholder="Введите адрес в свободной форме" data-label="Адрес в свободной форме")
 							.columns
 								.first.double.column
 									.content
@@ -137,7 +145,7 @@ block content
 								.third.double.column
 									.content
 										.input-holder
-											input#account__phone.block-input(type="tel" placeholder="Телефон" name="account__phone")
+											input#account__phone.block-input.masked-phone(type="tel" placeholder="Телефон" name="account__phone")
 											.b-status.b-status--warning Телефон не подтверждён
 
 										
@@ -167,38 +175,38 @@ block content
 								tr.b-order-table__item
 									td.b-order-table__action
 										input#tr_01(type="radio" value="1" name="radio")
-										label(for="tr_01") &nbsp;
+										label(for="tr_01" rel="tooltip" title="Выбрать") &nbsp;
 									td 
 										label(for="tr_01") 309070, Россия, г. Белгород, ул. Кривошеина 8, кв 13
 									td.b-order-table__name Сибилев Игорь
 									td.b-order-table__phone +7 913 123 45-67-89
 									td.b-order-table__drop
-										.b-order-item__edit.btn-circle.btn-circle--edit
-										.b-order-item__drop.btn-circle.btn-circle--drop
+										.b-order-item__edit.btn-circle.btn-circle--edit(rel="tooltip" title="Редактировать")
+										.b-order-item__drop.btn-circle.btn-circle--drop(rel="tooltip" title="Удалить адрес")
 
 								tr.b-order-table__item.active
 									td.b-order-table__action
 										input#tr_02(type="radio" value="2" name="radio" checked)
-										label(for="tr_02") &nbsp;
+										label(for="tr_02" rel="tooltip" title="Выбрать") &nbsp;
 									td 
 										label(for="tr_02") 309070, Россия, г. Белгород, ул. Ленина 15, кв 20
 									td.b-order-table__name Константин Константинопольский
 									td.b-order-table__phone +7 913 123 45-67-89
 									td.b-order-table__drop
-										.b-order-item__edit.btn-circle.btn-circle--edit
-										.b-order-item__drop.btn-circle.btn-circle--drop
+										.b-order-item__edit.btn-circle.btn-circle--edit(rel="tooltip" title="Редактировать")
+										.b-order-item__drop.btn-circle.btn-circle--drop(rel="tooltip" title="Удалить адрес")
 
 								tr.b-order-table__item
 									td.b-order-table__action
 										input#tr_03(type="radio" value="3" name="radio")
-										label(for="tr_03") &nbsp;
+										label(for="tr_03" rel="tooltip" title="Выбрать") &nbsp;
 									td 
 										label(for="tr_03") 309070, Россия, г. Белгород, ул. Кривошеина 8, кв 13
 									td.b-order-table__name Сибилев Игорь
 									td.b-order-table__phone +7 913 123 45-67-89
 									td.b-order-table__drop
-										.b-order-item__edit.btn-circle.btn-circle--edit
-										.b-order-item__drop.btn-circle.btn-circle--drop
+										.b-order-item__edit.btn-circle.btn-circle--edit(rel="tooltip" title="Редактировать")
+										.b-order-item__drop.btn-circle.btn-circle--drop(rel="tooltip" title="Удалить адрес")
 							tfoot
 								tr
 									td(colspan=5) 

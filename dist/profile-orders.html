@@ -44,7 +44,6 @@
 		<meta name="reply-to" content="jiexa@tabrisov.ru">
 		<link href="images/icons/favicon.ico" rel="shortcut icon">
 		<link href="styles/main.css" rel="stylesheet">
-		<link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 		<!--[if lt IE 9]> 
 <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
 <script src="scripts/libs/nwmatcher.js"></script>
@@ -171,6 +170,8 @@
 						</li>
 						<li class="menu__item active"><a href="profile-orders.html" class="icon__order"><span>Заказы</span></a>
 						</li>
+						<li class="menu__item"><a href="profile-mail.html" class="icon__mail"><span>Сообщения<sup class="menu__item__num">25</sup></span></a>
+						</li>
 					</ul>
 				</div>
 			</section>
@@ -204,9 +205,9 @@
 									<div class="b-status b-status--waiting">Ожидает оплаты</div>
 								</td>
 								<td class="b-order-table__actions">
-									<div class="b-order-item__edit btn-circle btn-circle--edit"></div>
-									<div class="b-order-item__edit btn-circle btn-circle--cancel"></div>
-									<div class="b-order-item__drop btn-circle btn-circle--drop"></div>
+									<div rel="tooltip" title="Изменить" class="b-order-item__edit btn-circle btn-circle--edit"></div>
+									<div rel="tooltip" title="Отменить" class="b-order-item__edit btn-circle btn-circle--cancel"></div>
+									<div rel="tooltip" title="Удалить" class="b-order-item__drop btn-circle btn-circle--drop"></div>
 								</td>
 							</tr>
 							<tr class="b-order-table__item">
@@ -222,9 +223,9 @@
 									<div class="b-status b-status--cancelled">Отменён</div>
 								</td>
 								<td class="b-order-table__actions">
-									<div class="b-order-item__edit btn-circle btn-circle--cart"></div>
-									<div class="b-order-item__edit btn-circle btn-circle--retry"></div>
-									<div class="b-order-item__drop btn-circle btn-circle--drop"></div>
+									<div rel="tooltip" title="Что-то сделать" class="b-order-item__edit btn-circle btn-circle--cart"></div>
+									<div rel="tooltip" title="Повторить" class="b-order-item__edit btn-circle btn-circle--retry"></div>
+									<div rel="tooltip" title="Удалить" class="b-order-item__drop btn-circle btn-circle--drop"></div>
 								</td>
 							</tr>
 							<tr class="b-order-table__item">
@@ -254,9 +255,9 @@
 									<div class="b-status b-status--checking">На проверке</div>
 								</td>
 								<td class="b-order-table__actions">
-									<div class="b-order-item__edit btn-circle btn-circle--edit"></div>
-									<div class="b-order-item__edit btn-circle btn-circle--cancel"></div>
-									<div class="b-order-item__drop btn-circle btn-circle--drop"></div>
+									<div rel="tooltip" title="Изменить" class="b-order-item__edit btn-circle btn-circle--edit"></div>
+									<div rel="tooltip" title="Отменить" class="b-order-item__edit btn-circle btn-circle--cancel"></div>
+									<div rel="tooltip" title="Удалить" class="b-order-item__drop btn-circle btn-circle--drop"></div>
 								</td>
 							</tr>
 							<tr class="b-order-table__item">
@@ -272,9 +273,9 @@
 									<div class="b-status b-status--warning">Платёж не прошёл</div>
 								</td>
 								<td class="b-order-table__actions">
-									<div class="b-order-item__edit btn-circle btn-circle--edit"></div>
-									<div class="b-order-item__edit btn-circle btn-circle--cancel"></div>
-									<div class="b-order-item__drop btn-circle btn-circle--drop"></div>
+									<div rel="tooltip" title="Изменить" class="b-order-item__edit btn-circle btn-circle--edit"></div>
+									<div rel="tooltip" title="Отменить" class="b-order-item__edit btn-circle btn-circle--cancel"></div>
+									<div rel="tooltip" title="Удалить" class="b-order-item__drop btn-circle btn-circle--drop"></div>
 								</td>
 							</tr>
 						</tbody>
@@ -365,6 +366,9 @@
 		<script src="scripts/libs/carousel.min.js"></script>
 		<script src="scripts/libs/chosen.jquery.js"></script>
 		<script src="scripts/libs/jquery.fancytree-all.js"></script>
+		<script src="scripts/libs/floatlabels.js"></script>
+		<script src="scripts/libs/masked-input.js"></script>
+		<script src="scripts/libs/tooltip.js"></script>
 		<script src="scripts/libs/jquery.password.js"></script>
 		<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-ajaxtransport-xdomainrequest/1.0.1/jquery.xdomainrequest.min.js"></script>
 		<script src="https://dadata.ru/static/js/jquery.suggestions-4.6.min.js"></script>

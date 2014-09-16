@@ -110,7 +110,7 @@ body .b-share-popup__header_first
 
 
 /* Блок с информацией о продавце */
-.b-seller-info
+.b-profile-info
 	background $grey
 	padding 20px
 	margin-top 12px
@@ -149,6 +149,9 @@ body .b-share-popup__header_first
 		font-size 13px
 		line-height 20px
 
+		span 
+			font-size 12px
+
 		.value
 			font-weight bold
 			font-size 14px
@@ -174,18 +177,19 @@ body .b-share-popup__header_first
 			margin-top 1em
 
 /* Блок с информацией в ЛК */
-.b-seller-info--personal
+.b-profile-info--personal
 	padding 0
 	margin-top 0
+	margin-bottom -5px
 	background none
 	width 626px
 
-	.b-seller-info__photo
+	.b-profile-info__photo
 		position relative
 		width 100px
 		height 100px
 		border 4px solid $orange
-		margin 2px 19px 0 0
+		margin 2px 20px 0 0
 		
 		&:after
 			content ''
@@ -197,7 +201,7 @@ body .b-share-popup__header_first
 			z-index -1
 			sprite($icon__profile--big)
 
-	.b-seller-info__title
+	.b-profile-info__title
 		margin-bottom 0
 		margin-left 118px
 		padding-top 8px
@@ -205,7 +209,7 @@ body .b-share-popup__header_first
 		position relative
 		left -2px
 
-	.b-seller-info__characters-list
+	.b-profile-info__characters-list
 		margin-top 16px
 		color #666
 

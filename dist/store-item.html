@@ -14,7 +14,7 @@
 		<link sizes="144x144" href="images/icons/apple-touch-icon-144x144.png" rel="apple-touch-icon">
 		<link sizes="152x152" href="images/icons/apple-touch-icon-152x152.png" rel="apple-touch-icon">
 		<!-- Windows 8-->
-		<meta name="application-name" content="Pokupo">
+		<meta name="application-name" content="Оплата заказа">
 		<meta name="msapplication-tooltip" content="Description for pokupo">
 		<meta name="msapplication-TileColor" content="#ffffff">
 		<meta name="msapplication-TileImage" content="images/icons/tile.png">
@@ -44,7 +44,6 @@
 		<meta name="reply-to" content="jiexa@tabrisov.ru">
 		<link href="images/icons/favicon.ico" rel="shortcut icon">
 		<link href="styles/main.css" rel="stylesheet">
-		<link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 		<!--[if lt IE 9]> 
 <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
 <script src="scripts/libs/nwmatcher.js"></script>
@@ -745,25 +744,24 @@
 								<div class="content">
 									<div class="b-catalog-item__seller-info slidedown"><span data-target="info" class="slidedown__trigger">Информация о продавце</span>
 										<div data-target="info" class="slidedown__content hidden">
-											<div class="b-seller-info">
-												<div class="b-seller-info__actions">
+											<div class="b-profile-info">
+												<div class="b-profile-info__actions">
 													<button type="button" class="btn btn-xs btn-inline">Задать вопрос</button>
 													<div class="b-support-info dropdown"><span class="b-support-info__title"><span data-target="support" class="dropdown__trigger"> Поддержка</span></span>
 														<div data-target="support" class="b-support-info__content dropdown__content hidden">
 															<p><span class="label">Посетить сайт</span><a href="http://pokupo.ru" target="_blank" class="action">pokupo.ru</a><span class="label">Написать</span><a href="mailto:support@pokupo.ru" class="action">support@pokupo.ru</a><span class="label">Skype консультанта</span>
-																<a
-																href="skype:pokupo?chat" onclick="return skypeCheck()" class="action">pokupo</a><span class="label">ICQ консультанта</span><span class="action">14112415151</span><span class="label">Позвонить</span><a href="tel:+74953636393" class="action">+7 495 363-63-93</a>
+																<a href="skype:pokupo?chat" onclick="return skypeCheck()" class="action">pokupo</a><span class="label">ICQ консультанта</span><span class="action">14112415151</span><span class="label">Позвонить</span><a href="tel:+74953636393" class="action">+7 495 363-63-93</a>
 															</p>
 														</div>
 													</div>
 												</div>
-												<div class="b-seller-info__summary">
-													<div class="b-seller-info__photo">
+												<div class="b-profile-info__summary">
+													<div class="b-profile-info__photo">
 														<img src="images/pages/catalog/seller-logo.png">
 													</div>
-													<h1 class="b-seller-info__title">Торговая платформа Pokupo</h1>
-													<h2 class="b-seller-info__subtitle">ID 19158495</h2>
-													<ul class="b-seller-info__characters-list">
+													<h1 class="b-profile-info__title">Торговая платформа Pokupo</h1>
+													<h2 class="b-profile-info__subtitle">ID 19158495</h2>
+													<ul class="b-profile-info__characters-list">
 														<li><span class="char">Рейтинг: </span><span class="value value--orange">+264</span>
 														</li>
 														<li><span class="char">Отзывы / претензии: </span><span class="value"><span class="value--orange">12 </span>/ <span class="value--green">3</span></span>
@@ -786,9 +784,8 @@
 													<p>Метки: <span class="pseudo-link">кеды</span>, <span class="pseudo-link">обувь</span>, <span class="pseudo-link">тапки</span>
 													</p>
 													<div class="b-item__price"><span class="b-price b-item__price--old"><span class="b-price__number">3750</span><span class="b-price__thinsp">&nbsp;</span><span class="b-price__rubl">Р</span></span><span class="b-price"><span class="b-price__number">3750</span><span class="b-price__thinsp">&nbsp;</span>
-														<span
-														class="b-price__rubl">Р</span>
-															</span>
+														<span class="b-price__rubl">Р</span>
+														</span>
 													</div>
 													<div class="b-item__price-comment">
 														<p>Ваша скидка 30%</p>
@@ -803,8 +800,7 @@
 												<p class="b-catalog-item__limits">На складе: <span class="value">5</span>
 												</p>
 												<div style="margin-bottom:20px" class="b-increment-input"><span class="b-increment-input__darr">&minus;</span><span class="b-increment-input__input-wrapper"><input type="text" data-name="qty" value="1" maxlength="3" autocomplete="off" data-min="1" data-max="5" class="inline-input b-increment-input__input"></span>
-													<span
-													class="b-increment-input__uarr">+</span>
+													<span class="b-increment-input__uarr">+</span>
 												</div>
 												<button type="button" class="btn"><i class="icon icon-cart"></i>В&nbsp;корзину</button>
 												<br>
@@ -1354,6 +1350,9 @@
 		<script src="scripts/libs/carousel.min.js"></script>
 		<script src="scripts/libs/chosen.jquery.js"></script>
 		<script src="scripts/libs/jquery.fancytree-all.js"></script>
+		<script src="scripts/libs/floatlabels.js"></script>
+		<script src="scripts/libs/masked-input.js"></script>
+		<script src="scripts/libs/tooltip.js"></script>
 		<script src="scripts/main.js"></script>
 		<script src="//yandex.st/share/share.js"></script>
 	</body>

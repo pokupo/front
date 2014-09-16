@@ -43,6 +43,11 @@ block profile-nav
 				li.menu__item.active
 					a.icon__order(href="profile-orders.html")
 						span Заказы
+				li.menu__item
+					a.icon__mail(href="profile-mail.html")
+						span 
+							| Сообщения
+							sup.menu__item__num 25
 
 block content
 	section.profile
@@ -70,9 +75,9 @@ block content
 						td 
 							.b-status.b-status--waiting Ожидает оплаты
 						td.b-order-table__actions
-							.b-order-item__edit.btn-circle.btn-circle--edit
-							.b-order-item__edit.btn-circle.btn-circle--cancel
-							.b-order-item__drop.btn-circle.btn-circle--drop
+							.b-order-item__edit.btn-circle.btn-circle--edit(rel="tooltip" title="Изменить")
+							.b-order-item__edit.btn-circle.btn-circle--cancel(rel="tooltip" title="Отменить")
+							.b-order-item__drop.btn-circle.btn-circle--drop(rel="tooltip" title="Удалить")
 
 					tr.b-order-table__item
 						td.b-order-table__name 
@@ -85,9 +90,9 @@ block content
 						td 
 							.b-status.b-status--cancelled Отменён
 						td.b-order-table__actions
-							.b-order-item__edit.btn-circle.btn-circle--cart
-							.b-order-item__edit.btn-circle.btn-circle--retry
-							.b-order-item__drop.btn-circle.btn-circle--drop
+							.b-order-item__edit.btn-circle.btn-circle--cart(rel="tooltip" title="Что-то сделать")
+							.b-order-item__edit.btn-circle.btn-circle--retry(rel="tooltip" title="Повторить")
+							.b-order-item__drop.btn-circle.btn-circle--drop(rel="tooltip" title="Удалить")
 
 					tr.b-order-table__item
 						td.b-order-table__name 
@@ -112,9 +117,9 @@ block content
 						td 
 							.b-status.b-status--checking На проверке
 						td.b-order-table__actions
-							.b-order-item__edit.btn-circle.btn-circle--edit
-							.b-order-item__edit.btn-circle.btn-circle--cancel
-							.b-order-item__drop.btn-circle.btn-circle--drop
+							.b-order-item__edit.btn-circle.btn-circle--edit(rel="tooltip" title="Изменить")
+							.b-order-item__edit.btn-circle.btn-circle--cancel(rel="tooltip" title="Отменить")
+							.b-order-item__drop.btn-circle.btn-circle--drop(rel="tooltip" title="Удалить")
 
 					tr.b-order-table__item
 						td.b-order-table__name 
@@ -127,9 +132,9 @@ block content
 						td 
 							.b-status.b-status--warning Платёж не прошёл
 						td.b-order-table__actions
-							.b-order-item__edit.btn-circle.btn-circle--edit
-							.b-order-item__edit.btn-circle.btn-circle--cancel
-							.b-order-item__drop.btn-circle.btn-circle--drop
+							.b-order-item__edit.btn-circle.btn-circle--edit(rel="tooltip" title="Изменить")
+							.b-order-item__edit.btn-circle.btn-circle--cancel(rel="tooltip" title="Отменить")
+							.b-order-item__drop.btn-circle.btn-circle--drop(rel="tooltip" title="Удалить")
 				tfoot
 					tr
 						td(colspan=6) 
