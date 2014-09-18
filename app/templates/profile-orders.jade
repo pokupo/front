@@ -52,7 +52,16 @@ block profile-nav
 block content
 	section.profile
 		.container
-			h1.b-profile__header История заказов
+			.columns.triple
+				.first.double.column
+					.content
+						h1.b-profile__header История заказов
+
+				.third.column
+					.content
+						button.btn.btn-lg.btn-inline.b-mail__addbtn.b-mail__addbtn--top(type="button")
+							i.icon.icon-reload
+							| Обновить данные
 
 			table.b-order-table
 				thead

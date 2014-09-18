@@ -457,6 +457,33 @@ PKP.UI = {
 				.toggleClass('active');
 		});
 
+
+		/* Свернуть-развернуть сообщения */
+		PKP.$body.on("click", '.b-chat .b-chat__item', function() { 
+			$(this).toggleClass('closed');
+		});
+
+		PKP.$body.on("click", '#js-toggleChat', function() {
+			var $this = $(this);
+
+			if($this.is('.active')) {
+				$('.b-chat__item')
+					.not('.closed')
+					.addClass('closed');
+				$this
+					.removeClass('active')
+					.text("Развернуть всё");
+			} else {
+				$('.b-chat__item.closed')
+					.removeClass('closed');
+				$this
+					.addClass('active')
+					.text("Свернуть всё");
+			}
+		});
+
+		
+
 		/* Вспомогательное, для тестирования */
 		$('#js-nosidebar').on('click', function () {
 			var li = $(this).closest('.menu__item');

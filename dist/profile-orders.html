@@ -14,7 +14,7 @@
 		<link sizes="144x144" href="images/icons/apple-touch-icon-144x144.png" rel="apple-touch-icon">
 		<link sizes="152x152" href="images/icons/apple-touch-icon-152x152.png" rel="apple-touch-icon">
 		<!-- Windows 8-->
-		<meta name="application-name" content="Личный кабинет: Просмотр заказа">
+		<meta name="application-name" content="Pokupo">
 		<meta name="msapplication-tooltip" content="Description for pokupo">
 		<meta name="msapplication-TileColor" content="#ffffff">
 		<meta name="msapplication-TileImage" content="images/icons/tile.png">
@@ -179,7 +179,18 @@
 			<!-- content -->
 			<section class="profile">
 				<div class="container">
-					<h1 class="b-profile__header">История заказов</h1>
+					<div class="columns triple">
+						<div class="first double column">
+							<div class="content">
+								<h1 class="b-profile__header">История заказов</h1>
+							</div>
+						</div>
+						<div class="third column">
+							<div class="content">
+								<button type="button" class="btn btn-lg btn-inline b-mail__addbtn b-mail__addbtn--top"><i class="icon icon-reload"></i>Обновить данные</button>
+							</div>
+						</div>
+					</div>
 					<table class="b-order-table">
 						<thead>
 							<tr>
@@ -360,7 +371,10 @@
 			</div>
 		</footer>
 		<!-- /footer -->
-		<script src="scripts/libs/jquery-1.11.1.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1/jquery-ui.min.js"></script>
+		<script src="scripts/libs/jquery.fancytree-all.js"></script>
+		<script src="http://vjs.zencdn.net/4.7/video.js"></script>
 		<script src="scripts/libs/fotorama.js"></script>
 		<script src="scripts/libs/carousel.min.js"></script>
 		<script src="scripts/libs/chosen.jquery.js"></script>

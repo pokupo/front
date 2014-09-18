@@ -52,11 +52,11 @@ block profile-nav
 block content
 	section.profile
 		.container
-			a.btn.btn-sm.btn-thin(href="profile-orders.html")
+			a.btn.btn-sm.btn-thin.btn__stepback(href="profile-orders.html")
 				i.icon.icon-back
 				| назад к списку заказов
 
-			h2.b-title Заказ № 53 от 8 августа 2014
+			h2.b-profile__headline Заказ № 53 от 8 августа 2014
 			.b-order-info
 				.b-order-info__left
 					span.b-order-info__label Продавец:
@@ -69,7 +69,7 @@ block content
 
 
 			.b-fieldset
-				h2 Товары
+				h2.b-profile__headline Товары
 				table.b-order-table.b-order-table--header.b-cart-table
 					thead
 						tr
@@ -94,12 +94,23 @@ block content
 								img(src="images/catalog/goods02.jpg")
 							td.b-order-table__title
 								a(href=js0)
-									| Штукатурка гипсовая для&nbsp;наружных работ с&nbsp;нормальной влажностью
+									| Митч Мейерсон, Мэри Скарборо.<br/>Основы интернет-маркетинга.
+								.b-order-table__info
+									p.b-order-table__label 
+										| Скачиваний 
+										b 1 
+										| из 
+										b 3
+										| ,  доступно до 25.09.2014
+									button.btn.btn-sm(type="button")
+										i.icon.icon-download
+										| Загрузить
+									span pdf, 10.4&nbsp;Мб
 							td.b-order-table__title
 								+price(2400)
 							td.b-order-table__phone 1
 							td.b-order-table__title
-								+price(27000)
+								+price(2700)
 						tr.b-order-table__item
 							td.b-order-table__thumb
 								img(src="images/catalog/goods03.jpg")
@@ -139,15 +150,18 @@ block content
 						.b-tech__value
 							+price(23123)(class="b-order__amount")
 
-			.b-fieldset.hidden
-				h2 Примечания к заказу
-				.b-message
-					.b-message__userpic
-					.b-message__text
-						p Ещё раз что-то разобъётся при доставке,&nbsp;— ейбогу, огорчусь.
+			.b-fieldset
+				h2.b-profile__headline Примечания к заказу
+				.b-chat__item.b-dialog.incoming.closed
+					.b-dialog__body
+						.b-dialog__userpic
+							.b-profile-info__photo
+								img(src="http://api.randomuser.me/portraits/med/men/7.jpg")
+						.b-dialog__text
+							p Ещё раз что-то разобъётся при доставке,&nbsp;— ейбогу, огорчусь.
 
 			.b-fieldset
-				h2 Доставка
+				h2.b-profile__headline Доставка
 				table.b-order-table.b-order-table--header
 					thead
 						tr
@@ -168,7 +182,7 @@ block content
 							td.b-order-table__phone 8 913 123-45-67
 			
 			.b-fieldset
-				h2 Оплата
+				h2.b-profile__headline Оплата
 				table.b-order-table.b-order-table--header
 					thead
 						tr
@@ -193,7 +207,12 @@ block content
 							td 
 								span.b-status.b-status--waiting Ожидает оплаты
 								
-
+			.b-order__actions
+				.btn.btn-xs.btn-solid Подтвердить заказ
+				.b-order-item__edit.btn-circle.btn-circle--edit(rel="tooltip" title="Изменить")
+				.b-order-item__edit.btn-circle.btn-circle--cart(rel="tooltip" title="В корзину")
+				.b-order-item__edit.btn-circle.btn-circle--cancel(rel="tooltip" title="Отменить")
+				.b-order-item__drop.btn-circle.btn-circle--drop(rel="tooltip" title="Удалить")
 
 
 

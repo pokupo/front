@@ -122,6 +122,7 @@
 	font-size 13px
 	line-height 1
 	color #000
+	height 46px
 	padding 13px 30px 12px
 	font-weight 600
 
@@ -198,6 +199,7 @@
 		display inline-block
 		font-size 12px
 		padding 13px 40px 11px
+		height 40px
 
 
 /* Блочные кнопки */	
@@ -206,6 +208,10 @@
 	padding 19px 90px 17px
 	font-weight bold
 
+
+.btn-solid
+	border-width 4px
+	font-weight 600
 
 /* ---------------------------- *\
 	# Круглые кнопки
@@ -361,8 +367,6 @@
 i.icon
 	position relative
 	display inline-block
-	font normal normal normal 16px/1 FontAwesome
-	font-size inherit
 	text-rendering auto
 	-webkit-font-smoothing antialiased
 	-moz-osx-font-smoothing grayscale
@@ -437,5 +441,16 @@ i.icon
 	&:before
 		sprite($icon__reload)
 
+.icon-download
+	top 1px
+	left -8px
 
+	&:before
+		sprite($icon__download)
 
+.icon-addmail
+	top -4px
+	left -8px
+
+	&:before
+		sprite($icon__addmail)

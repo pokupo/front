@@ -183,13 +183,14 @@ mixin price(price, oldprice)
 		span.b-price.b-item__price--old(class!=attributes.class)
 			if price > 9999
 				span.b-price__number
-					| #{Math.floor(price/1000)}
+					| #{Math.floor(oldprice/1000)}
 					i.b-price__separator
-					| #{price%1000}
+					| #{oldprice%1000}
 			else
-				span.b-price__number= price
+				span.b-price__number= oldprice
 			span.b-price__thinsp &nbsp;
 			span.b-price__rubl Р
+		br
 
 	span.b-price(class!=attributes.class)
 		if price > 9999

@@ -1,7 +1,7 @@
 extends partials/layouts/profile
 
 block head
-	- page.title = 'Личный кабинет: Заказы';
+	- page.title = 'Личный кабинет: Сообщения';
 
 block menu 
 	+menu-list([
@@ -55,14 +55,152 @@ block content
 			.columns.triple
 				.first.double.column
 					.content
-						h1.b-profile__header Сообщения
+						h1.b-profile__header.with-num
+							| Сообщения
+							sup.menu__item__num 25
+
+						.b-mail__selectall
+							input#select_all(type="checkbox" name="select_all")
+							label(for="select_all") Выбрать все
 
 				.third.column
 					.content
-						.btn.btn-lg Новое сообщение
+						button.btn.btn-lg.btn-inline.b-mail__addbtn.b-mail__addbtn--top(type="button")
+							i.icon.icon-addmail
+							| Новое сообщение
 
+			.b-mail
+				.b-mail__item.b-dialog.unread
+					.b-dialog__checkbox
+						input#i-01(type="checkbox" name="i-01")
+						label(for="i-01") &nbsp;
 
+					.b-dialog__drop
+						span.btn-circle.btn-circle--trash(rel="tooltip" title="Удалить")
 
+					.b-dialog__body
+						.b-dialog__userpic
+							a.b-profile-info__photo(href="profile-chat.html")
+
+						.b-dialog__author
+							| Команда Pokupo
+							span.b-dialog__date сегодня в 21:32
+
+						.b-dialog__title
+							a(href="profile-chat.html") Плановые технические работы
+							span.b-dialog__title-num (4)
+
+						.b-dialog__preview
+							p 
+								| Уважаемые пользователи Pokupo!<br/>
+								| Завтра, 28.08.2014, с 04:00 до 11:00 по московскому времени серверы портала будут 
+								| остановлены для проведения плановых технических работ.
+
+				.b-mail__item.b-dialog.unread
+					.b-dialog__checkbox
+						input#i-02(type="checkbox" name="i-02")
+						label(for="i-02") &nbsp;
+
+					.b-dialog__drop
+						span.btn-circle.btn-circle--trash(rel="tooltip" title="Удалить")
+
+					.b-dialog__body
+						.b-dialog__userpic
+							a.b-profile-info__photo(href="profile-chat.html")
+								img(src="http://api.randomuser.me/portraits/med/men/11.jpg")
+
+						.b-dialog__author
+							| Команда Pokupo
+							span.b-dialog__date 18 июня 2014 г.
+
+						.b-dialog__title
+							a(href="profile-chat.html") Политика России и Китая
+							span.b-dialog__title-num (4)
+
+						.b-dialog__preview
+							p 
+								| Если смотреть «с высоты птичьего полёта», политика России (как и политика большинства стран мира) определяется её местоположением. У России есть два «естественных» союзника — Евросоюз с одной стороны и Китай с другой. Такая ситуация сложилась не вчера и не позавчера: двуглавый орёл является гербом России со времён Ивана III.
+
+				.b-mail__item.b-dialog
+					.b-dialog__checkbox
+						input#i-03(type="checkbox" name="i-03")
+						label(for="i-03") &nbsp;
+
+					.b-dialog__drop
+						span.btn-circle.btn-circle--trash(rel="tooltip" title="Удалить")
+
+					.b-dialog__body
+						.b-dialog__userpic
+							a.b-profile-info__photo(href="profile-chat.html")
+								img(src="http://api.randomuser.me/portraits/med/men/7.jpg")
+
+						.b-dialog__author
+							| Игорь Сибилев
+							span.b-dialog__date 18 июня 2014 г.
+
+						.b-dialog__title
+							a(href="profile-chat.html") Плановые технические работы
+							span.b-dialog__title-num (4)
+
+						.b-dialog__preview
+							p 
+								| Уважаемые пользователи Pokupo!<br/>
+								| Завтра, 28.08.2014, с 04:00 до 11:00 по московскому времени серверы портала будут 
+								| остановлены для проведения плановых технических работ.
+
+				.b-mail__item.b-dialog
+					.b-dialog__checkbox
+						input#i-04(type="checkbox" name="i-04")
+						label(for="i-04") &nbsp;
+
+					.b-dialog__drop
+						span.btn-circle.btn-circle--trash(rel="tooltip" title="Удалить")
+
+					.b-dialog__body
+						.b-dialog__userpic
+							a.b-profile-info__photo(href="profile-chat.html")
+								img(src="http://api.randomuser.me/portraits/med/men/46.jpg")
+
+						.b-dialog__author
+							| Константин Константинопольский 
+							span.b-dialog__date 18 июня 2014 г.
+
+						.b-dialog__title
+							a(href="profile-chat.html") Плановые технические работы
+							span.b-dialog__title-num (4)
+
+						.b-dialog__preview
+							p 
+								| Уважаемые пользователи Pokupo!<br/>
+								| Завтра, 28.08.2014, с 04:00 до 11:00 по московскому времени серверы портала будут 
+								| остановлены для проведения плановых технических работ.
+
+				.b-order-list__actions
+					.check_button
+						span.pseudo-link Отметить как прочитанное
+					.drop_button
+						span.pseudo-link Удалить выбранные сообщения
+
+			.columns.triple
+				.first.double.column
+					.content
+						.input-holder.pagination
+							.radio-circles
+								ul.menu
+									li.menu__item.active
+										a(href=js0) 1
+									li.menu__item
+										a(href=js0) 2
+									li.menu__item
+										a(href=js0) 3
+									li.menu__item
+										a(href=js0) 4
+
+				.third.column
+					.content
+						button.btn.btn-lg.btn-inline.b-mail__addbtn(type="button")
+							i.icon.icon-addmail
+							| Новое сообщение
 
 
 
@@ -84,9 +222,6 @@ block content
 
 block scripts
 	+script([
-		'libs/jquery.password.js', 
-		'http://cdnjs.cloudflare.com/ajax/libs/jquery-ajaxtransport-xdomainrequest/1.0.1/jquery.xdomainrequest.min.js',
-		'https://dadata.ru/static/js/jquery.suggestions-4.6.min.js', 
 		'main.js'
 	])
 

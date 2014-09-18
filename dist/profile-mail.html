@@ -14,7 +14,7 @@
 		<link sizes="144x144" href="images/icons/apple-touch-icon-144x144.png" rel="apple-touch-icon">
 		<link sizes="152x152" href="images/icons/apple-touch-icon-152x152.png" rel="apple-touch-icon">
 		<!-- Windows 8-->
-		<meta name="application-name" content="Личный кабинет: Заказы">
+		<meta name="application-name" content="Pokupo">
 		<meta name="msapplication-tooltip" content="Description for pokupo">
 		<meta name="msapplication-TileColor" content="#ffffff">
 		<meta name="msapplication-TileImage" content="images/icons/tile.png">
@@ -37,7 +37,7 @@
 		<meta name="format-detection" content="telephone=no">
 		<meta name="format-detection" content="address=no">
 		<!-- SEO-->
-		<title>Личный кабинет: Заказы</title>
+		<title>Личный кабинет: Сообщения</title>
 		<meta name="description" content="Description for pokupo">
 		<meta name="keywords" content="pokupo, project">
 		<meta name="copyright" content="©tabrisov">
@@ -182,12 +182,139 @@
 					<div class="columns triple">
 						<div class="first double column">
 							<div class="content">
-								<h1 class="b-profile__header">Сообщения</h1>
+								<h1 class="b-profile__header with-num">Сообщения<sup class="menu__item__num">25</sup></h1>
+								<div class="b-mail__selectall">
+									<input id="select_all" type="checkbox" name="select_all">
+									<label for="select_all">Выбрать все</label>
+								</div>
 							</div>
 						</div>
 						<div class="third column">
 							<div class="content">
-								<div class="btn btn-lg">Новое сообщение</div>
+								<button type="button" class="btn btn-lg btn-inline b-mail__addbtn b-mail__addbtn--top"><i class="icon icon-addmail"></i>Новое сообщение</button>
+							</div>
+						</div>
+					</div>
+					<div class="b-mail">
+						<div class="b-mail__item b-dialog unread">
+							<div class="b-dialog__checkbox">
+								<input id="i-01" type="checkbox" name="i-01">
+								<label for="i-01">&nbsp;</label>
+							</div>
+							<div class="b-dialog__drop"><span rel="tooltip" title="Удалить" class="btn-circle btn-circle--trash"></span>
+							</div>
+							<div class="b-dialog__body">
+								<div class="b-dialog__userpic">
+									<a href="profile-chat.html" class="b-profile-info__photo"></a>
+								</div>
+								<div class="b-dialog__author">Команда Pokupo<span class="b-dialog__date">сегодня в 21:32</span>
+								</div>
+								<div class="b-dialog__title"><a href="profile-chat.html">Плановые технические работы</a><span class="b-dialog__title-num">(4)</span>
+								</div>
+								<div class="b-dialog__preview">
+									<p>Уважаемые пользователи Pokupo!
+										<br/>Завтра, 28.08.2014, с 04:00 до 11:00 по московскому времени серверы портала будут остановлены для проведения плановых технических работ.</p>
+								</div>
+							</div>
+						</div>
+						<div class="b-mail__item b-dialog unread">
+							<div class="b-dialog__checkbox">
+								<input id="i-02" type="checkbox" name="i-02">
+								<label for="i-02">&nbsp;</label>
+							</div>
+							<div class="b-dialog__drop"><span rel="tooltip" title="Удалить" class="btn-circle btn-circle--trash"></span>
+							</div>
+							<div class="b-dialog__body">
+								<div class="b-dialog__userpic">
+									<a href="profile-chat.html" class="b-profile-info__photo">
+										<img src="http://api.randomuser.me/portraits/med/men/11.jpg">
+									</a>
+								</div>
+								<div class="b-dialog__author">Команда Pokupo<span class="b-dialog__date">18 июня 2014 г.</span>
+								</div>
+								<div class="b-dialog__title"><a href="profile-chat.html">Политика России и Китая</a><span class="b-dialog__title-num">(4)</span>
+								</div>
+								<div class="b-dialog__preview">
+									<p>Если смотреть «с высоты птичьего полёта», политика России (как и политика большинства стран мира) определяется её местоположением. У России есть два «естественных» союзника — Евросоюз с одной стороны и Китай с другой. Такая ситуация сложилась
+										не вчера и не позавчера: двуглавый орёл является гербом России со времён Ивана III.</p>
+								</div>
+							</div>
+						</div>
+						<div class="b-mail__item b-dialog">
+							<div class="b-dialog__checkbox">
+								<input id="i-03" type="checkbox" name="i-03">
+								<label for="i-03">&nbsp;</label>
+							</div>
+							<div class="b-dialog__drop"><span rel="tooltip" title="Удалить" class="btn-circle btn-circle--trash"></span>
+							</div>
+							<div class="b-dialog__body">
+								<div class="b-dialog__userpic">
+									<a href="profile-chat.html" class="b-profile-info__photo">
+										<img src="http://api.randomuser.me/portraits/med/men/7.jpg">
+									</a>
+								</div>
+								<div class="b-dialog__author">Игорь Сибилев<span class="b-dialog__date">18 июня 2014 г.</span>
+								</div>
+								<div class="b-dialog__title"><a href="profile-chat.html">Плановые технические работы</a><span class="b-dialog__title-num">(4)</span>
+								</div>
+								<div class="b-dialog__preview">
+									<p>Уважаемые пользователи Pokupo!
+										<br/>Завтра, 28.08.2014, с 04:00 до 11:00 по московскому времени серверы портала будут остановлены для проведения плановых технических работ.</p>
+								</div>
+							</div>
+						</div>
+						<div class="b-mail__item b-dialog">
+							<div class="b-dialog__checkbox">
+								<input id="i-04" type="checkbox" name="i-04">
+								<label for="i-04">&nbsp;</label>
+							</div>
+							<div class="b-dialog__drop"><span rel="tooltip" title="Удалить" class="btn-circle btn-circle--trash"></span>
+							</div>
+							<div class="b-dialog__body">
+								<div class="b-dialog__userpic">
+									<a href="profile-chat.html" class="b-profile-info__photo">
+										<img src="http://api.randomuser.me/portraits/med/men/46.jpg">
+									</a>
+								</div>
+								<div class="b-dialog__author">Константин Константинопольский <span class="b-dialog__date">18 июня 2014 г.</span>
+								</div>
+								<div class="b-dialog__title"><a href="profile-chat.html">Плановые технические работы</a><span class="b-dialog__title-num">(4)</span>
+								</div>
+								<div class="b-dialog__preview">
+									<p>Уважаемые пользователи Pokupo!
+										<br/>Завтра, 28.08.2014, с 04:00 до 11:00 по московскому времени серверы портала будут остановлены для проведения плановых технических работ.</p>
+								</div>
+							</div>
+						</div>
+						<div class="b-order-list__actions">
+							<div class="check_button"><span class="pseudo-link">Отметить как прочитанное</span>
+							</div>
+							<div class="drop_button"><span class="pseudo-link">Удалить выбранные сообщения</span>
+							</div>
+						</div>
+					</div>
+					<div class="columns triple">
+						<div class="first double column">
+							<div class="content">
+								<div class="input-holder pagination">
+									<div class="radio-circles">
+										<ul class="menu">
+											<li class="menu__item active"><a href="javascript:void(0);">1</a>
+											</li>
+											<li class="menu__item"><a href="javascript:void(0);">2</a>
+											</li>
+											<li class="menu__item"><a href="javascript:void(0);">3</a>
+											</li>
+											<li class="menu__item"><a href="javascript:void(0);">4</a>
+											</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="third column">
+							<div class="content">
+								<button type="button" class="btn btn-lg btn-inline b-mail__addbtn"><i class="icon icon-addmail"></i>Новое сообщение</button>
 							</div>
 						</div>
 					</div>
@@ -264,16 +391,16 @@
 			</div>
 		</footer>
 		<!-- /footer -->
-		<script src="scripts/libs/jquery-1.11.1.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1/jquery-ui.min.js"></script>
+		<script src="scripts/libs/jquery.fancytree-all.js"></script>
+		<script src="http://vjs.zencdn.net/4.7/video.js"></script>
 		<script src="scripts/libs/fotorama.js"></script>
 		<script src="scripts/libs/carousel.min.js"></script>
 		<script src="scripts/libs/chosen.jquery.js"></script>
 		<script src="scripts/libs/floatlabels.js"></script>
 		<script src="scripts/libs/masked-input.js"></script>
 		<script src="scripts/libs/tooltip.js"></script>
-		<script src="scripts/libs/jquery.password.js"></script>
-		<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-ajaxtransport-xdomainrequest/1.0.1/jquery.xdomainrequest.min.js"></script>
-		<script src="https://dadata.ru/static/js/jquery.suggestions-4.6.min.js"></script>
 		<script src="scripts/main.js"></script>
 	</body>
 </html>

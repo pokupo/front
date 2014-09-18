@@ -1,0 +1,174 @@
+extends partials/layouts/profile
+
+block head
+	- page.title = 'Личный кабинет: Переписка';
+
+block menu 
+	+menu-list([
+		{text:"Платформа",href:"frontpage.html",submenu:[
+			{text:"О проекте",href:"about.html"},
+			{text:"Торговый портал",href:"http://shop.pokupo.ru/", external:true}
+		]},
+		{text:"Тарифы",href:"rates.html"},
+		{text:"Компания",href:"#", submenu:[
+			{text:"События",href:"events.html"},
+			{text:"О нас",href:"aboutus.html"},
+			{text:"Сообщество",href:"community.html"},
+			{text:"Блог",href:"http://pokupo.livejournal.com/", external:true}
+		]},
+		{text:"Партнёры",href:"partners.html"},
+		
+		{text:"Помощь", href:js0, submenu:[
+			{text:"Вопросы и ответы",href:"faq.html"},	
+			{text:"Техническая поддержка",href:"https://help.pokupo.ru", external:true}
+		]}
+	])(class="b-navigation")
+
+block profile-nav
+	section.profile-nav.grey
+		.container
+			a.btn.btn-sm(href=js0)
+				i.icon.icon-store--small
+				| Стать продавцом
+			ul.menu.b-profile-nav
+				li.menu__item
+					a.icon__profile(href="profile.html")
+						span Профиль
+				li.menu__item
+					a.icon__favorites(href="profile-favorites.html")
+						span Избранное
+				li.menu__item
+					a.icon__cart(href="profile-cart.html")
+						span Корзина
+				li.menu__item
+					a.icon__order(href="profile-orders.html")
+						span Заказы
+				li.menu__item.active
+					a.icon__mail(href="profile-mail.html")
+						span 
+							| Сообщения
+							sup.menu__item__num 25
+
+block content
+	section.profile
+		.container
+			a.btn.btn-sm.btn-thin.btn__stepback(href="profile-mail.html")
+				i.icon.icon-back
+				| назад к списку сообщений
+
+			.columns
+				.first.triple.column
+					.content
+						h2.b-profile__headline Плановые технические работы
+				.fourth.column
+					.content.b-chat-actions
+						span.b-chat-actions__item#js-toggleChat.close-all.active.pseudo-link(data-state="1") Свернуть всё
+						span.b-chat-actions__item.btn-circle.btn-circle--trash(rel="tooltip" title="Удалить")
+
+			.b-chat
+				.b-chat__item.b-dialog.incoming.unread
+					.b-dialog__body
+						.b-dialog__status
+							span.pseudo-link Не прочитано
+						.b-dialog__userpic
+							.b-profile-info__photo
+
+						.b-dialog__author
+							| Команда Pokupo
+							span.b-dialog__date 18 июня 2014
+
+						.b-dialog__text
+							p 
+								| Уважаемые пользователи Pokupo!<br/>
+								| Завтра, 28.08.2014, с 04:00 до 11:00 по московскому времени серверы портала будут остановлены для проведения плановых технических работ. Приносим извинения за возможные неудобства. Следите за новостями на сайте, в группе ВКонтакте и на странице Facebook.
+							p С уважением, команда Pokupo.ru
+
+				.b-chat__item.b-dialog.outgoing
+					.b-dialog__body
+						.b-dialog__status
+							span.pseudo-link Получатель прочёл
+						.b-dialog__userpic
+							.b-profile-info__photo
+								img(src="http://api.randomuser.me/portraits/med/men/7.jpg")
+
+						.b-dialog__author
+							| Игорь Сибилев
+							span.b-dialog__date сегодня в 21:32
+
+						.b-dialog__text
+							p 
+								| Как часто такие работы проводятся?
+
+				.b-chat__item.b-dialog.incoming
+					.b-dialog__body
+						.b-dialog__status
+							span.pseudo-link Прочитано
+						.b-dialog__userpic
+							.b-profile-info__photo
+								img(src="http://api.randomuser.me/portraits/med/men/19.jpg")
+
+						.b-dialog__author
+							| Аствацатур Высокозвонящинский
+							span.b-dialog__date сегодня в 21:47
+
+						.b-dialog__text
+							p 
+								| Пока сайт на стадии бета-тестирования — два раза в месяц.
+
+				.b-chat__item.b-dialog.outgoing.unread
+					.b-dialog__body
+						.b-dialog__status
+							span.pseudo-link Получатель не прочёл
+						.b-dialog__userpic
+							.b-profile-info__photo
+								img(src="http://api.randomuser.me/portraits/med/men/7.jpg")
+
+						.b-dialog__author
+							| Игорь Сибилев
+							span.b-dialog__date сегодня в 23:08
+
+						.b-dialog__text
+							p 
+								| Спасибо за ответ
+
+
+			h2.b-profile__headline Ответить
+
+			textarea(width="100%" rows="5" placeholder="Текст сообщения")
+
+			.input-holder
+				input#carboncopy(type="checkbox" name="carboncopy" checked="checked")
+				label(for="carboncopy") Выслать копию на e-mail
+
+			button.btn.btn-lg(type="submit") Отправить
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+block scripts
+	+script([
+		'main.js'
+	])

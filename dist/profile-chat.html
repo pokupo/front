@@ -14,7 +14,7 @@
 		<link sizes="144x144" href="images/icons/apple-touch-icon-144x144.png" rel="apple-touch-icon">
 		<link sizes="152x152" href="images/icons/apple-touch-icon-152x152.png" rel="apple-touch-icon">
 		<!-- Windows 8-->
-		<meta name="application-name" content="О проекте">
+		<meta name="application-name" content="Pokupo">
 		<meta name="msapplication-tooltip" content="Description for pokupo">
 		<meta name="msapplication-TileColor" content="#ffffff">
 		<meta name="msapplication-TileImage" content="images/icons/tile.png">
@@ -37,7 +37,7 @@
 		<meta name="format-detection" content="telephone=no">
 		<meta name="format-detection" content="address=no">
 		<!-- SEO-->
-		<title>О нас</title>
+		<title>Личный кабинет: Переписка</title>
 		<meta name="description" content="Description for pokupo">
 		<meta name="keywords" content="pokupo, project">
 		<meta name="copyright" content="©tabrisov">
@@ -52,6 +52,7 @@
 	</head>
 	<body>
 		<div class="main">
+			<!-- header -->
 			<section class="header">
 				<div class="container">
 					<a href="index.html" title="Pokupo.ru" class="logo"></a>
@@ -119,7 +120,7 @@
 							</div>
 						</div>
 					</div>
-					<ul class="menu menu--opened b-navigation">
+					<ul class="menu b-navigation">
 						<li class="menu__item with-submenu"><a href="frontpage.html" target=""><span>Платформа</span></a>
 							<ul class="submenu">
 								<li class="submenu__item"><a href="about.html" target=""><span>О проекте</span></a>
@@ -130,11 +131,11 @@
 						</li>
 						<li class="menu__item"><a href="rates.html" target=""><span>Тарифы</span></a>
 						</li>
-						<li class="menu__item with-submenu active"><a href="#" target=""><span>Компания</span></a>
-							<ul class="submenu active">
+						<li class="menu__item with-submenu"><a href="#" target=""><span>Компания</span></a>
+							<ul class="submenu">
 								<li class="submenu__item"><a href="events.html" target=""><span>События</span></a>
 								</li>
-								<li class="submenu__item active"><a href="aboutus.html" target=""><span>О нас</span></a>
+								<li class="submenu__item"><a href="aboutus.html" target=""><span>О нас</span></a>
 								</li>
 								<li class="submenu__item"><a href="community.html" target=""><span>Сообщество</span></a>
 								</li>
@@ -153,90 +154,122 @@
 							</ul>
 						</li>
 					</ul>
-					<div class="submenu-bg active"></div>
+					<div class="submenu-bg"></div>
 				</div>
 			</section>
-			<section class="black team">
-				<div class="container">
-					<h1>Наша команда</h1>
-					<p>Наша команда объединяет честных, профессиональных и активных
-						<br/>пользователей сети, мы всегда открыты к диалогу и поддержке новых участников.
-						<br/>Вы можете рассчитывать на нашу помощь и всестороннюю
-						<br/>поддержку, мы готовы учиться сами и обучать своих партнеров.</p>
-					<div class="team-list">
-						<div class="person">
-							<img src="images/pages/userpic.png" class="person__photo">
-							<h3 class="person__name">Константин Константинопольский</h3>
-							<p class="person__position">Генеральный директор</p>
-							<p class="person__about">Характер — нордический, выдержанный. С товарищами по работе поддерживает хорошие отношения. Безукоризненно выполняет служебный долг. Беспощаден к врагам Рейха.</p>
-						</div>
-						<div class="person"><i class="person__photo person__photo--female"></i>
-							<h3 class="person__name">Лия Матюхина-Иванова</h3>
-							<p class="person__position">Генеральный директор</p>
-							<p class="person__about">Характер — нордический, выдержанный. С товарищами по работе поддерживает хорошие отношения. Безукоризненно выполняет служебный долг. Беспощаден к врагам Рейха.</p>
-						</div>
-						<div class="person"><i class="person__photo person__photo--male"></i>
-							<h3 class="person__name">Аствацатур Гибарян</h3>
-							<p class="person__position">Генеральный директор</p>
-							<p class="person__about">Характер — нордический, выдержанный. С товарищами по работе поддерживает хорошие отношения. Безукоризненно выполняет служебный долг. Беспощаден к врагам Рейха.</p>
-						</div>
-						<div class="person"><i class="person__photo person__photo--male"></i>
-							<h3 class="person__name">Ян Баев</h3>
-							<p class="person__position">Генеральный директор</p>
-							<p class="person__about">Характер — нордический, выдержанный. С товарищами по работе поддерживает хорошие отношения. Безукоризненно выполняет служебный долг. Беспощаден к врагам Рейха.</p>
-						</div>
-						<div class="person"><i class="person__photo person__photo--female"></i>
-							<h3 class="person__name">Арья Старк</h3>
-							<p class="person__position">Генеральный директор</p>
-							<p class="person__about">Характер — нордический, выдержанный. С товарищами по работе поддерживает хорошие отношения. Безукоризненно выполняет служебный долг. Беспощаден к врагам Рейха.</p>
-						</div>
-					</div>
+			<!-- /header -->
+			<!-- profile-nav -->
+			<section class="profile-nav grey">
+				<div class="container"><a href="javascript:void(0);" class="btn btn-sm"><i class="icon icon-store--small"></i>Стать продавцом</a>
+					<ul class="menu b-profile-nav">
+						<li class="menu__item"><a href="profile.html" class="icon__profile"><span>Профиль</span></a>
+						</li>
+						<li class="menu__item"><a href="profile-favorites.html" class="icon__favorites"><span>Избранное</span></a>
+						</li>
+						<li class="menu__item"><a href="profile-cart.html" class="icon__cart"><span>Корзина</span></a>
+						</li>
+						<li class="menu__item"><a href="profile-orders.html" class="icon__order"><span>Заказы</span></a>
+						</li>
+						<li class="menu__item active"><a href="profile-mail.html" class="icon__mail"><span>Сообщения<sup class="menu__item__num">25</sup></span></a>
+						</li>
+					</ul>
 				</div>
 			</section>
-			<section class="contacts">
-				<div class="container">
+			<!-- /profile-nav -->
+			<!-- content -->
+			<section class="profile">
+				<div class="container"><a href="profile-mail.html" class="btn btn-sm btn-thin btn__stepback"><i class="icon icon-back"></i>назад к списку сообщений</a>
 					<div class="columns">
-						<div class="first column">
+						<div class="first triple column">
 							<div class="content">
-								<h1>Контакты</h1>
-								<dl class="contacts__list"><dt>Главный офис</dt>
-									<dd>
-										<p>Иркутск, Литвинова 20</p>
-										<p><span class="label">Написать<br/></span><a href="mailto:support@pokupo.ru">support@pokupo.ru</a>
-										</p>
-										<p><span class="label">Skype консультанта<br/></span><a href="skype:pokupo?chat">pokupo</a>
-										</p>
-										<p><span class="label">Позвонить<br/></span><a href="tel:+73952201568">+7 395 220 15 68</a>
-										</p>
-									</dd><dt>Филиал</dt>
-									<dd>
-										<p>Новосибирск, Николаева 12, Технопарк</p>
-										<p><span class="label">Написать<br/></span><a href="mailto:support@pokupo.ru">support@pokupo.ru</a>
-										</p>
-										<p><span class="label">Skype консультанта<br/></span><a href="skype:pokupo?chat">pokupo</a>
-										</p>
-										<p><span class="label">Позвонить<br/></span><a href="tel:+73952201568">+7 395 220 15 68</a>
-										</p>
-									</dd>
-								</dl>
+								<h2 class="b-profile__headline">Плановые технические работы</h2>
 							</div>
 						</div>
-						<div class="second triple column">
-							<div class="content">
-								<h1>Реквизиты</h1>
-								<p><b class="label">Номер расчетного счета в рублях<br/></b>р/сч 40702810300000000610
-									<br/>к/сч 30101810900000000848 в ОАО АКБ «Связь-Банк»
-									<br/>БИК 044525848</p>
-								<p><b class="label">Полное наименование учреждения банка клиента<br/></b>Межрегиональный коммерческий банк развития связи и информатики (открытое акционерное общество) «Связь-Банк»</p>
-								<p><b class="label">Местонахождение учреждения банка<br/></b>125375, г. Москва, ул. Тверская, д. 7 тел. +7 (495) 771-32-60</p>
-								<p><b class="label">Код причины постановки на учет (КПП)<br/></b>784001001</p>
+						<div class="fourth column">
+							<div class="content b-chat-actions"><span id="js-toggleChat" data-state="1" class="b-chat-actions__item close-all active pseudo-link">Свернуть всё</span><span rel="tooltip" title="Удалить" class="b-chat-actions__item btn-circle btn-circle--trash"></span>
 							</div>
 						</div>
 					</div>
+					<div class="b-chat">
+						<div class="b-chat__item b-dialog incoming unread">
+							<div class="b-dialog__body">
+								<div class="b-dialog__status"><span class="pseudo-link">Не прочитано</span>
+								</div>
+								<div class="b-dialog__userpic">
+									<div class="b-profile-info__photo"></div>
+								</div>
+								<div class="b-dialog__author">Команда Pokupo<span class="b-dialog__date">18 июня 2014</span>
+								</div>
+								<div class="b-dialog__text">
+									<p>Уважаемые пользователи Pokupo!
+										<br/>Завтра, 28.08.2014, с 04:00 до 11:00 по московскому времени серверы портала будут остановлены для проведения плановых технических работ. Приносим извинения за возможные неудобства. Следите за новостями на сайте, в группе ВКонтакте и на странице
+										Facebook.</p>
+									<p>С уважением, команда Pokupo.ru</p>
+								</div>
+							</div>
+						</div>
+						<div class="b-chat__item b-dialog outgoing">
+							<div class="b-dialog__body">
+								<div class="b-dialog__status"><span class="pseudo-link">Получатель прочёл</span>
+								</div>
+								<div class="b-dialog__userpic">
+									<div class="b-profile-info__photo">
+										<img src="http://api.randomuser.me/portraits/med/men/7.jpg">
+									</div>
+								</div>
+								<div class="b-dialog__author">Игорь Сибилев<span class="b-dialog__date">сегодня в 21:32</span>
+								</div>
+								<div class="b-dialog__text">
+									<p>Как часто такие работы проводятся?</p>
+								</div>
+							</div>
+						</div>
+						<div class="b-chat__item b-dialog incoming">
+							<div class="b-dialog__body">
+								<div class="b-dialog__status"><span class="pseudo-link">Прочитано</span>
+								</div>
+								<div class="b-dialog__userpic">
+									<div class="b-profile-info__photo">
+										<img src="http://api.randomuser.me/portraits/med/men/19.jpg">
+									</div>
+								</div>
+								<div class="b-dialog__author">Аствацатур Высокозвонящинский<span class="b-dialog__date">сегодня в 21:47</span>
+								</div>
+								<div class="b-dialog__text">
+									<p>Пока сайт на стадии бета-тестирования — два раза в месяц.</p>
+								</div>
+							</div>
+						</div>
+						<div class="b-chat__item b-dialog outgoing unread">
+							<div class="b-dialog__body">
+								<div class="b-dialog__status"><span class="pseudo-link">Получатель не прочёл</span>
+								</div>
+								<div class="b-dialog__userpic">
+									<div class="b-profile-info__photo">
+										<img src="http://api.randomuser.me/portraits/med/men/7.jpg">
+									</div>
+								</div>
+								<div class="b-dialog__author">Игорь Сибилев<span class="b-dialog__date">сегодня в 23:08</span>
+								</div>
+								<div class="b-dialog__text">
+									<p>Спасибо за ответ</p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<h2 class="b-profile__headline">Ответить</h2>
+					<textarea width="100%" rows="5" placeholder="Текст сообщения"></textarea>
+					<div class="input-holder">
+						<input id="carboncopy" type="checkbox" name="carboncopy" checked="checked">
+						<label for="carboncopy">Выслать копию на e-mail</label>
+					</div>
+					<button type="submit" class="btn btn-lg">Отправить</button>
 				</div>
 			</section>
+			<!-- /content -->
 			<div class="footer-overlay"></div>
 		</div>
+		<!-- footer -->
 		<footer class="footer">
 			<div class="container">
 				<div class="columns">
@@ -303,6 +336,7 @@
 				</div>
 			</div>
 		</footer>
+		<!-- /footer -->
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 		<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1/jquery-ui.min.js"></script>
 		<script src="scripts/libs/jquery.fancytree-all.js"></script>

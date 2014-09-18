@@ -325,6 +325,7 @@ body .b-share-popup__header_first
 .drop_button
 .like_button
 .cart_button
+.check_button
 	font-size 13px
 	cursor pointer
 	margin 0 auto
@@ -387,6 +388,19 @@ body .b-share-popup__header_first
 			margin-top -5px
 			sprite($icon__cart__small)
 
+.check_button
+	margin 0 30px
+	.pseudo-link
+		position relative
+
+		&:before
+			content ''
+			display block
+			position absolute
+			top 5px
+			left -25px
+			margin-top -5px
+			sprite($icon__check)
 
 .b-tech
 	&__item
@@ -464,7 +478,14 @@ body .b-share-popup__header_first
 	vertical-align: top;
 
 
+.limits-wrapper
+	line-height 20px
+	text-align center
+
+	.b-increment-input
+		
+		margin-bottom 20px
 
 
-
+		
 
