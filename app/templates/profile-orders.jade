@@ -38,7 +38,7 @@ block profile-nav
 					a.icon__favorites(href="profile-favorites.html")
 						span Избранное
 				li.menu__item
-					a.icon__cart(href="profile-cart")
+					a.icon__cart(href="profile-cart.html")
 						span Корзина
 				li.menu__item.active
 					a.icon__order(href="profile-orders.html")
@@ -52,7 +52,7 @@ block profile-nav
 block content
 	section.profile
 		.container
-			h1.b-title История заказов
+			h1.b-profile__header История заказов
 
 			table.b-order-table
 				thead
@@ -90,7 +90,7 @@ block content
 						td 
 							.b-status.b-status--cancelled Отменён
 						td.b-order-table__actions
-							.b-order-item__edit.btn-circle.btn-circle--cart(rel="tooltip" title="Что-то сделать")
+							.b-order-item__edit.btn-circle.btn-circle--cart(rel="tooltip" title="Скопировать в корзину")
 							.b-order-item__edit.btn-circle.btn-circle--retry(rel="tooltip" title="Повторить")
 							.b-order-item__drop.btn-circle.btn-circle--drop(rel="tooltip" title="Удалить")
 
@@ -138,7 +138,9 @@ block content
 				tfoot
 					tr
 						td(colspan=6) 
-							span.btn.btn-lg Обновить данные
+							button.btn.btn-lg.btn-inline(type="button" style="margin: 40px 0 0") 
+								i.icon.icon-reload
+								| Обновить данные
 
 
 
@@ -165,9 +167,6 @@ block content
 
 block scripts
 	+script([
-		'libs/jquery.password.js', 
-		'http://cdnjs.cloudflare.com/ajax/libs/jquery-ajaxtransport-xdomainrequest/1.0.1/jquery.xdomainrequest.min.js',
-		'https://dadata.ru/static/js/jquery.suggestions-4.6.min.js', 
 		'main.js'
 	])
 

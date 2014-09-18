@@ -311,10 +311,13 @@ PKP.UI = {
 		PKP.UI.emulateShopping();
 
 		/* Селекты */
-		$('select').chosen({
-			disable_search_threshold: 6,
-			width: '100%'
-		});
+		if(typeof($.fn.chosen) !== 'undefined') {
+			$('select').chosen({
+				disable_search_threshold: 6,
+				width: '100%'
+			});
+		}
+
 
 		/* Скрывалка */
 		PKP.$body.on("click", '.collapse-trigger', function(e) {
@@ -752,65 +755,67 @@ PKP.UI = {
 
 	/* Инициализация дерева с возможностью множественного выбора узлов */
 	tree: function() {
-		$("#multilocation").fancytree({
-			minExpandLevel: 1,
-			rootVisible: false,
-			checkbox: true,
-			selectMode: 3,
-			source: PKP.catalogData,
-			icons: false,
+		if (typeof ($.fn.fancytree) !== 'undefined') {
+			$("#multilocation").fancytree({
+				minExpandLevel: 1,
+				rootVisible: false,
+				checkbox: true,
+				selectMode: 3,
+				source: PKP.catalogData,
+				icons: false,
 
-			loadChildren: function(event, ctx) {
-				// ctx.node.fixSelection3AfterClick();
-			},
+				loadChildren: function(event, ctx) {
+					// ctx.node.fixSelection3AfterClick();
+				},
 
-			select: function(event, data) {
-				// Get a list of all selected nodes, and convert to a key array:
-				var selKeys = $.map(data.tree.getSelectedNodes(), function(node) {
-					return node.key;
-				});
+				select: function(event, data) {
+					// Get a list of all selected nodes, and convert to a key array:
+					var selKeys = $.map(data.tree.getSelectedNodes(), function(node) {
+						return node.key;
+					});
 
-				// Get a list of all selected TOP nodes
-				var selRootNodes = data.tree.getSelectedNodes(true);
-				// console.log(selRootNodes.length);
+					// Get a list of all selected TOP nodes
+					var selRootNodes = data.tree.getSelectedNodes(true);
+					// console.log(selRootNodes.length);
 
-				// ... and convert to a key array:
-				var selRootKeys = $.map(selRootNodes, function(node) {
-					return node.key;
-				});
-				$("#js-multilocation").removeClass('checked').addClass('part');
-				if(data.tree.getSelectedNodes().length === 0) {
-					$("#js-multilocation").removeClass('part');
+					// ... and convert to a key array:
+					var selRootKeys = $.map(selRootNodes, function(node) {
+						return node.key;
+					});
+					$("#js-multilocation").removeClass('checked').addClass('part');
+					if(data.tree.getSelectedNodes().length === 0) {
+						$("#js-multilocation").removeClass('part');
+					}
+				},
+
+				keydown: function(event, data) {
+					if( event.which === 32 ) {
+						data.node.toggleSelected();
+						return false;
+					}
 				}
-			},
-
-			keydown: function(event, data) {
-				if( event.which === 32 ) {
-					data.node.toggleSelected();
-					return false;
-				}
-			}
-		});
-
-
-		$("#js-multilocation").click(function() {
-			var $this  = $(this),
-				$tree  = $("#multilocation");
-			var is_clr = ($this.is('.checked') || $this.is('.part')) ? false : true;
-			
-
-			$tree.fancytree("getTree").visit(function(node) {
-				node.setSelected( is_clr );
 			});
 
-			$this.removeClass('part');
 
-			if(is_clr) {
-				$this.addClass('checked');
-			}
-			
-			return false;
-		});
+			$("#js-multilocation").click(function() {
+				var $this  = $(this),
+					$tree  = $("#multilocation");
+				var is_clr = ($this.is('.checked') || $this.is('.part')) ? false : true;
+				
+
+				$tree.fancytree("getTree").visit(function(node) {
+					node.setSelected( is_clr );
+				});
+
+				$this.removeClass('part');
+
+				if(is_clr) {
+					$this.addClass('checked');
+				}
+				
+				return false;
+			});
+		}
 	},
 
 	/* Инициализация контрола для установки рейтинга */
@@ -831,7 +836,7 @@ PKP.UI = {
 
 	/* Инициализация вплывающих подписей к полям формы */
 	inputLabels: function() {
-		$(":input:not(:checkbox):not(:button):not([type=hidden]):not([type=search]):not(.no-label)").floatlabel();
+		$(":input:not(:checkbox):not(:button):not([type=hidden]):not([type=search]):not(.no-label):not(.b-increment-input__input)").floatlabel();
 	},
 
 	/* Контрол для сокрытия и показа введённого пароля */
@@ -1209,6 +1214,7 @@ PKP.Suggestions = {
 			serviceUrl: "https://dadata.ru/api/v2",
 			token: "d89731fbdbf67193159dff06a06a50781df243af",
 			type: "ADDRESS",
+			geoLocation: true,
 			onSelect: function(suggestion) {
 				var data = suggestion.data;
 				$('#address .suggestion-input').val('');
@@ -1243,6 +1249,48 @@ PKP.Suggestions = {
 
 				if(data.flat !== null) {
 					$('#address__flat').val(data.flat).trigger("change");
+				}
+			}
+		});
+		$("#addAddress").suggestions({
+			serviceUrl: "https://dadata.ru/api/v2",
+			token: "d89731fbdbf67193159dff06a06a50781df243af",
+			type: "ADDRESS",
+			geoLocation: false,
+			onSelect: function(suggestion) {
+				var data = suggestion.data;
+				$('#addAddress .suggestion-input').val('');
+
+				if(data.postal_code !== null) {
+					$('#addAddress__postalcode').val(data.postal_code).trigger("change");
+				}
+
+				if(data.country !== null) {
+					$('#addAddress__country').val(data.country).trigger("change");
+				}
+
+				if(data.region !== null) {
+					$('#addAddress__region').val(data.region + ' ' + data.region_type + '.').trigger("change");
+				}
+
+				if(data.city === null) {
+					if(data.settlement !== null) {
+						$('#addAddress__city').val(data.settlement_type + '. ' + data.settlement).trigger("change");
+					}
+				} else {
+					$('#addAddress__city').val(data.city_type + '. ' + data.city).trigger("change");
+				}
+
+				if(data.street !== null) {
+					$('#addAddress__street').val(data.street).trigger("change");
+				}
+
+				if(data.house !== null) {
+					$('#addAddress__house').val(data.house).trigger("change");
+				}
+
+				if(data.flat !== null) {
+					$('#addAddress__flat').val(data.flat).trigger("change");
 				}
 			}
 		});

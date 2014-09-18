@@ -244,10 +244,10 @@
 							<div class="second column">
 								<div class="content">
 									<div class="input-holder">
-										<input name="login" type="text" placeholder="Ключевые слова" class="inline-input">
+										<input name="login" type="text" placeholder="Ключевые слова" class="no-label inline-input">
 									</div>
 									<div class="input-holder">
-										<input name="login" type="text" placeholder="Исключить слова" class="inline-input">
+										<input name="login" type="text" placeholder="Исключить слова" class="no-label inline-input">
 									</div>
 								</div>
 							</div>
@@ -274,9 +274,9 @@
 									</div>
 									<div class="input-holder">
 										<label for="minPrice">Цена</label>
-										<input id="minPrice" name="minPrice" type="text" placeholder="от" class="inline-input inline-input--small">
+										<input id="minPrice" name="minPrice" type="text" placeholder="от" class="no-label inline-input inline-input--small">
 										<label for="maxPrice" class="separator">—</label>
-										<input id="maxPrice" name="maxPrice" type="text" placeholder="до" class="inline-input inline-input--small">
+										<input id="maxPrice" name="maxPrice" type="text" placeholder="до" class="no-label inline-input inline-input--small">
 									</div>
 								</div>
 							</div>
@@ -302,7 +302,8 @@
 								<div class="b-support-info dropdown"><span class="b-support-info__title"><span data-target="support" class="dropdown__trigger"> Поддержка</span></span>
 									<div data-target="support" class="b-support-info__content dropdown__content hidden">
 										<p><span class="label">Посетить сайт</span><a href="http://pokupo.ru" target="_blank" class="action">pokupo.ru</a><span class="label">Написать</span><a href="mailto:support@pokupo.ru" class="action">support@pokupo.ru</a><span class="label">Skype консультанта</span>
-											<a href="skype:pokupo?chat" onclick="return skypeCheck()" class="action">pokupo</a><span class="label">ICQ консультанта</span><span class="action">14112415151</span><span class="label">Позвонить</span><a href="tel:+74953636393" class="action">+7 495 363-63-93</a>
+											<a
+											href="skype:pokupo?chat" onclick="return skypeCheck()" class="action">pokupo</a><span class="label">ICQ консультанта</span><span class="action">14112415151</span><span class="label">Позвонить</span><a href="tel:+74953636393" class="action">+7 495 363-63-93</a>
 										</p>
 									</div>
 								</div>
@@ -349,7 +350,8 @@
 								</div>
 								<div class="b-order-item__qty">
 									<div class="b-increment-input"><span class="b-increment-input__darr">&minus;</span><span class="b-increment-input__input-wrapper"><input type="text" data-name="qty" value="5" maxlength="3" autocomplete="off" data-min="1" data-max="5" class="inline-input b-increment-input__input"></span>
-										<span class="b-increment-input__uarr">+</span>
+										<span
+										class="b-increment-input__uarr">+</span>
 									</div>
 								</div>
 								<div class="b-order-item__cost"><span class="b-price"><span class="b-price__number">9000</span><span class="b-price__thinsp">&nbsp;</span><span class="b-price__rubl">Р</span></span>
@@ -374,7 +376,8 @@
 								</div>
 								<div class="b-order-item__qty">
 									<div class="b-increment-input"><span class="b-increment-input__darr">&minus;</span><span class="b-increment-input__input-wrapper"><input type="text" data-name="qty" value="2" maxlength="3" autocomplete="off" data-min="1" data-max="5" class="inline-input b-increment-input__input"></span>
-										<span class="b-increment-input__uarr">+</span>
+										<span
+										class="b-increment-input__uarr">+</span>
 									</div>
 								</div>
 								<div class="b-order-item__cost"><span class="b-price"><span class="b-price__number">4990</span><span class="b-price__thinsp">&nbsp;</span><span class="b-price__rubl">Р</span></span>
@@ -399,7 +402,8 @@
 								</div>
 								<div class="b-order-item__qty">
 									<div class="b-increment-input"><span class="b-increment-input__darr">&minus;</span><span class="b-increment-input__input-wrapper"><input type="text" data-name="qty" value="12" maxlength="3" autocomplete="off" data-min="1" data-max="5" class="inline-input b-increment-input__input"></span>
-										<span class="b-increment-input__uarr">+</span>
+										<span
+										class="b-increment-input__uarr">+</span>
 									</div>
 								</div>
 								<div class="b-order-item__cost"><span class="b-price"><span class="b-price__number">35<i class="b-price__separator"></i>890</span><span class="b-price__thinsp">&nbsp;</span><span class="b-price__rubl">Р</span></span>
@@ -411,7 +415,7 @@
 								<div class="b-order-item__drop btn-circle btn-circle--drop"></div>
 							</li>
 						</ol>
-						<div class="b-order-list__actions">
+						<div class="b-order-list__actions bordered">
 							<div class="like_button"><span class="pseudo-link">Отложить выбранные товары</span>
 							</div>
 							<div class="drop_button"><span class="pseudo-link">Удалить выбранные товары</span>
@@ -501,13 +505,10 @@
 			</div>
 		</footer>
 		<!-- /footer -->
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-		<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1/jquery-ui.min.js"></script>
-		<script src="http://vjs.zencdn.net/4.7/video.js"></script>
+		<script src="scripts/libs/jquery-1.11.1.js"></script>
 		<script src="scripts/libs/fotorama.js"></script>
 		<script src="scripts/libs/carousel.min.js"></script>
 		<script src="scripts/libs/chosen.jquery.js"></script>
-		<script src="scripts/libs/jquery.fancytree-all.js"></script>
 		<script src="scripts/libs/floatlabels.js"></script>
 		<script src="scripts/libs/masked-input.js"></script>
 		<script src="scripts/libs/tooltip.js"></script>

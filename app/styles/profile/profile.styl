@@ -86,9 +86,9 @@ section.profile-nav
 					&:before
 						sprite($icon__favorites__white)
 
-				&.icon__carts
+				&.icon__cart
 					&:before
-						sprite($icon__carts__white)
+						sprite($icon__cart__white)
 
 				&.icon__order
 					&:before
@@ -127,11 +127,11 @@ section.profile-nav
 		input 
 			max-width 100%
 
-	h1
+	.b-profile__header
 		text-align left
 		margin 40px 0
 
-	h2
+	.b-profile__headline
 		font-size 30px
 		margin-bottom 40px
 		font-weight 300
@@ -204,6 +204,29 @@ section.profile-nav
 	.b-order-table__drop
 		width 110px	
 
+	.b-profile__header + .b-catalog__controls--pushedright
+		margin-top -75px
+
+.b-profile-info--fullwidth
+	
+	.b-profile-info__summary
+		margin-right 170px
+
+	.b-profile-info__actions
+		width 160px
+		margin-top 70px
+
+	.b-profile-info__characters-list
+		float left
+		margin-right 60px
+
+		&:last-child
+			margin-right 0
+
+	.btn-xs
+		margin 0
+		padding 8px 25px 6px
+		font-weight 700
 
 .b-fieldset
 	margin 0 0 50px
@@ -216,6 +239,7 @@ section.profile-nav
 
 #fullname
 #address
+#addAddress	
 	width 100%
 	max-width 979px
 	margin-bottom 20px

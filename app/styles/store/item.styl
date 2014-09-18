@@ -324,6 +324,7 @@ body .b-share-popup__header_first
 .empty_button
 .drop_button
 .like_button
+.cart_button
 	font-size 13px
 	cursor pointer
 	margin 0 auto
@@ -351,6 +352,7 @@ body .b-share-popup__header_first
 				sprite($icon__like--active)
 
 .drop_button
+	opacity 1
 	.pseudo-link
 		position relative
 
@@ -358,7 +360,7 @@ body .b-share-popup__header_first
 			content ''
 			display block
 			position absolute
-			top 8px
+			top 6px
 			left -22px
 			margin-top -5px
 			sprite($icon__deleteall)
@@ -371,7 +373,19 @@ body .b-share-popup__header_first
 		&:hover
 			color darken($red,50%)
 			border-bottom-color rgba(darken($red,50%), 0.5)
-	
+
+.cart_button
+	.pseudo-link
+		position relative
+
+		&:before
+			content ''
+			display block
+			position absolute
+			top 6px
+			left -24px
+			margin-top -5px
+			sprite($icon__cart__small)
 
 
 .b-tech

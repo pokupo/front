@@ -38,7 +38,7 @@ block profile-nav
 					a.icon__favorites(href="profile-favorites.html")
 						span Избранное
 				li.menu__item
-					a.icon__cart(href="profile-cart")
+					a.icon__cart(href="profile-cart.html")
 						span Корзина
 				li.menu__item
 					a.icon__order(href="profile-orders.html")
@@ -70,7 +70,7 @@ block content
 									.b-profile-info__photo
 										img(src="http://api.randomuser.me/portraits/med/men/#{userID}.jpg")
 
-									h2.b-profile-info__title Игорь Сибилев
+									h2.b-profile__headline.b-profile-info__title Игорь Сибилев
 									ul.b-profile-info__characters-list
 										li
 											span На сайте с 12 марта 2012
@@ -82,7 +82,7 @@ block content
 											span.value.value--orange +264
 
 						.b-status.b-status--fieldset.b-status--done(data-for="fieldset-id") Данные проверены
-						h2.with-divider Персональные данные
+						h2.b-profile__headline.with-divider Персональные данные
 
 						fieldset.b-fieldset
 							input#fullname.block-input(type="text" placeholder="Введите ФИО в свободной форме" data-label="ФИО в свободной форме")
@@ -107,7 +107,7 @@ block content
 											input#fullname__patronymic.block-input(type="text" placeholder="Отчество" name="fullname__patronymic")
 
 						.b-status.b-status--fieldset.b-status--done(data-for="another-fieldset-id") Адрес подтверждён
-						h2.with-divider Почтовый адрес
+						h2.b-profile__headline.with-divider Почтовый адрес
 
 						fieldset.b-fieldset
 							input#address.no-label.block-input(type="text" placeholder="Введите адрес в свободной форме" data-label="Адрес в свободной форме")
@@ -133,7 +133,7 @@ block content
 										.input-holder
 											input#address__flat.suggestion-input.block-input(type="text" placeholder="Квартира" name="address__flat")
 
-						h2.with-divider Данные аккаунта
+						h2.b-profile__headline.with-divider Данные аккаунта
 						fieldset.b-fieldset
 							.columns
 								.first.double.column
@@ -161,7 +161,7 @@ block content
 					span Адреса доставки
 				dd.tab__content
 					.content
-						h2 Выберете основной адрес доставки
+						h2.b-profile__headline Выберете основной адрес доставки
 
 						table.b-order-table
 							thead
@@ -212,12 +212,43 @@ block content
 									td(colspan=5) 
 										button.btn.btn-xs(type="button") Добавить новый адрес
 
+						h2.b-profile__headline Добавление адреса доставки
+						fieldset.b-fieldset
+							input#addAddress.no-label.block-input(type="text" placeholder="Введите адрес в свободной форме" data-label="Адрес в свободной форме")
+							.columns
+								.first.double.column
+									.content
+										.input-holder
+											input#addAddress__country.suggestion-input.block-input(type="text" placeholder="Страна" name="addAddress__country")
+										.input-holder
+											input#addAddress__region.suggestion-input.block-input(type="text" placeholder="Регион" name="addAddress__region")
+										.input-holder
+											input#addAddress__city.suggestion-input.block-input(type="text" placeholder="Город" name="addAddress__city")
+										.input-holder
+											input#addAddress__postalcode.suggestion-input.block-input(type="text" placeholder="Почтовый индекс" name="addAddress__postalcode")
+
+
+								.third.double.column
+									.content
+										.input-holder
+											input#addAddress__street.suggestion-input.block-input(type="text" placeholder="Улица" name="addAddress__city")
+										.input-holder
+											input#addAddress__house.suggestion-input.block-input(type="text" placeholder="Дом" name="addAddress__house")
+										.input-holder
+											input#addAddress__flat.suggestion-input.block-input(type="text" placeholder="Квартира" name="addAddress__flat")
+										.input-holder
+											input(type="checkbox" name="makeDefault" id="makeDefault")
+											label(for="makeDefault") Сделать основным адресом
+
+										button.btn.btn-grey.btn-lg.btn-inline(type="reset") Назад
+										button.btn.btn-lg(type="submit") Сохранить
+
 
 				dt.tab__trigger
 					span Безопасность
 				dd.tab__content
 					.content
-						h2 Изменить пароль
+						h2.b-profile__headline Изменить пароль
 
 						.input-holder
 							input#oldpassword.block-input(type="password" name="old_password" value="" placeholder="Текущий пароль")

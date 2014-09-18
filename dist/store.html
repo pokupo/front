@@ -244,10 +244,10 @@
 							<div class="second column">
 								<div class="content">
 									<div class="input-holder">
-										<input name="login" type="text" placeholder="Ключевые слова" class="inline-input">
+										<input name="login" type="text" placeholder="Ключевые слова" class="no-label inline-input">
 									</div>
 									<div class="input-holder">
-										<input name="login" type="text" placeholder="Исключить слова" class="inline-input">
+										<input name="login" type="text" placeholder="Исключить слова" class="no-label inline-input">
 									</div>
 								</div>
 							</div>
@@ -274,9 +274,9 @@
 									</div>
 									<div class="input-holder">
 										<label for="minPrice">Цена</label>
-										<input id="minPrice" name="minPrice" type="text" placeholder="от" class="inline-input inline-input--small">
+										<input id="minPrice" name="minPrice" type="text" placeholder="от" class="no-label inline-input inline-input--small">
 										<label for="maxPrice" class="separator">—</label>
-										<input id="maxPrice" name="maxPrice" type="text" placeholder="до" class="inline-input inline-input--small">
+										<input id="maxPrice" name="maxPrice" type="text" placeholder="до" class="no-label inline-input inline-input--small">
 									</div>
 								</div>
 							</div>
@@ -401,7 +401,7 @@
 						<h1 id="js-nosidebar" class="b-catalog__title">Кеды</h1>
 						<div class="b-catalog__controls">
 							<aside class="b-catalog__quick-filter">
-								<input type="text" name="quick-filter" placeholder="Быстрый поиск..." class="b-catalog__quick-filter__input"><i class="b-catalog__quick-filter__icon"></i>
+								<input type="search" name="quick-filter" placeholder="Быстрый поиск..." class="b-catalog__quick-filter__input no-label"><i class="b-catalog__quick-filter__icon"></i>
 							</aside>
 							<div class="b-catalog__controls-item">Сортировать
 								<div class="inline-sorter dropdown selector"><span data-target="sort" class="selector__current dropdown__trigger">по&nbsp;названию</span>
@@ -866,13 +866,10 @@
 			</div>
 		</footer>
 		<!-- /footer -->
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-		<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1/jquery-ui.min.js"></script>
-		<script src="http://vjs.zencdn.net/4.7/video.js"></script>
+		<script src="scripts/libs/jquery-1.11.1.js"></script>
 		<script src="scripts/libs/fotorama.js"></script>
 		<script src="scripts/libs/carousel.min.js"></script>
 		<script src="scripts/libs/chosen.jquery.js"></script>
-		<script src="scripts/libs/jquery.fancytree-all.js"></script>
 		<script src="scripts/libs/floatlabels.js"></script>
 		<script src="scripts/libs/masked-input.js"></script>
 		<script src="scripts/libs/tooltip.js"></script>

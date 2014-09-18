@@ -14,7 +14,7 @@
 		<link sizes="144x144" href="images/icons/apple-touch-icon-144x144.png" rel="apple-touch-icon">
 		<link sizes="152x152" href="images/icons/apple-touch-icon-152x152.png" rel="apple-touch-icon">
 		<!-- Windows 8-->
-		<meta name="application-name" content="Pokupo">
+		<meta name="application-name" content="Личный кабинет: Просмотр заказа">
 		<meta name="msapplication-tooltip" content="Description for pokupo">
 		<meta name="msapplication-TileColor" content="#ffffff">
 		<meta name="msapplication-TileImage" content="images/icons/tile.png">
@@ -166,7 +166,7 @@
 						</li>
 						<li class="menu__item"><a href="profile-favorites.html" class="icon__favorites"><span>Избранное</span></a>
 						</li>
-						<li class="menu__item"><a href="profile-cart" class="icon__cart"><span>Корзина</span></a>
+						<li class="menu__item"><a href="profile-cart.html" class="icon__cart"><span>Корзина</span></a>
 						</li>
 						<li class="menu__item active"><a href="profile-orders.html" class="icon__order"><span>Заказы</span></a>
 						</li>
@@ -179,7 +179,7 @@
 			<!-- content -->
 			<section class="profile">
 				<div class="container">
-					<h1 class="b-title">История заказов</h1>
+					<h1 class="b-profile__header">История заказов</h1>
 					<table class="b-order-table">
 						<thead>
 							<tr>
@@ -223,7 +223,7 @@
 									<div class="b-status b-status--cancelled">Отменён</div>
 								</td>
 								<td class="b-order-table__actions">
-									<div rel="tooltip" title="Что-то сделать" class="b-order-item__edit btn-circle btn-circle--cart"></div>
+									<div rel="tooltip" title="Скопировать в корзину" class="b-order-item__edit btn-circle btn-circle--cart"></div>
 									<div rel="tooltip" title="Повторить" class="b-order-item__edit btn-circle btn-circle--retry"></div>
 									<div rel="tooltip" title="Удалить" class="b-order-item__drop btn-circle btn-circle--drop"></div>
 								</td>
@@ -281,7 +281,8 @@
 						</tbody>
 						<tfoot>
 							<tr>
-								<td colspan="6"><span class="btn btn-lg">Обновить данные</span>
+								<td colspan="6">
+									<button type="button" style="margin: 40px 0 0" class="btn btn-lg btn-inline"><i class="icon icon-reload"></i>Обновить данные</button>
 								</td>
 							</tr>
 						</tfoot>
@@ -359,19 +360,13 @@
 			</div>
 		</footer>
 		<!-- /footer -->
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-		<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1/jquery-ui.min.js"></script>
-		<script src="http://vjs.zencdn.net/4.7/video.js"></script>
+		<script src="scripts/libs/jquery-1.11.1.js"></script>
 		<script src="scripts/libs/fotorama.js"></script>
 		<script src="scripts/libs/carousel.min.js"></script>
 		<script src="scripts/libs/chosen.jquery.js"></script>
-		<script src="scripts/libs/jquery.fancytree-all.js"></script>
 		<script src="scripts/libs/floatlabels.js"></script>
 		<script src="scripts/libs/masked-input.js"></script>
 		<script src="scripts/libs/tooltip.js"></script>
-		<script src="scripts/libs/jquery.password.js"></script>
-		<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-ajaxtransport-xdomainrequest/1.0.1/jquery.xdomainrequest.min.js"></script>
-		<script src="https://dadata.ru/static/js/jquery.suggestions-4.6.min.js"></script>
 		<script src="scripts/main.js"></script>
 	</body>
 </html>

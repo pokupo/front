@@ -58,7 +58,7 @@ $( function() {
 					top: pos_top 
 				})
 				.animate({
-					top: '-=10',
+					top: '-=8',
 					opacity: 1 
 				}, 200);
 		};
@@ -66,7 +66,7 @@ $( function() {
 		var remove_tooltip = function() {
 			tooltip
 				.animate({
-					top: '+=10',
+					top: '+=8',
 					opacity: 0 
 				}, 50, function() {
 					$(this).remove();
