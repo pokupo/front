@@ -622,7 +622,7 @@ https://github.com/pokupo/front/commit/5e581f00be175945354cbd6f6f124fe4cbe56e2e
 		12:00 
 	(2)
 		13:00 Всплывающие окна
-		17:15 "коммит":
+		17:15 "коммит":https://github.com/pokupo/front/commit/6704642cf1bb6ade5f37189fafddb4eb0d42020f
 	(+4.25)
 
 
