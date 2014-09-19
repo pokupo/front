@@ -191,7 +191,7 @@
 						</div>
 						<div class="third column">
 							<div class="content">
-								<button type="button" class="btn btn-lg btn-inline b-mail__addbtn b-mail__addbtn--top"><i class="icon icon-addmail"></i>Новое сообщение</button>
+								<button type="button" data-target="modal-message" class="btn btn-lg btn-inline b-mail__addbtn b-mail__addbtn--top open-modal"><i class="icon icon-addmail"></i>Новое сообщение</button>
 							</div>
 						</div>
 					</div>
@@ -201,7 +201,7 @@
 								<input id="i-01" type="checkbox" name="i-01">
 								<label for="i-01">&nbsp;</label>
 							</div>
-							<div class="b-dialog__drop"><span rel="tooltip" title="Удалить" class="btn-circle btn-circle--trash"></span>
+							<div class="b-dialog__drop"><span rel="tooltip" title="Удалить" data-target="modal-confirm" class="open-modal btn-circle btn-circle--trash"></span>
 							</div>
 							<div class="b-dialog__body">
 								<div class="b-dialog__userpic">
@@ -222,7 +222,7 @@
 								<input id="i-02" type="checkbox" name="i-02">
 								<label for="i-02">&nbsp;</label>
 							</div>
-							<div class="b-dialog__drop"><span rel="tooltip" title="Удалить" class="btn-circle btn-circle--trash"></span>
+							<div class="b-dialog__drop"><span rel="tooltip" title="Удалить" data-target="modal-confirm" class="open-modal btn-circle btn-circle--trash"></span>
 							</div>
 							<div class="b-dialog__body">
 								<div class="b-dialog__userpic">
@@ -245,7 +245,7 @@
 								<input id="i-03" type="checkbox" name="i-03">
 								<label for="i-03">&nbsp;</label>
 							</div>
-							<div class="b-dialog__drop"><span rel="tooltip" title="Удалить" class="btn-circle btn-circle--trash"></span>
+							<div class="b-dialog__drop"><span rel="tooltip" title="Удалить" data-target="modal-confirm" class="open-modal btn-circle btn-circle--trash"></span>
 							</div>
 							<div class="b-dialog__body">
 								<div class="b-dialog__userpic">
@@ -268,7 +268,7 @@
 								<input id="i-04" type="checkbox" name="i-04">
 								<label for="i-04">&nbsp;</label>
 							</div>
-							<div class="b-dialog__drop"><span rel="tooltip" title="Удалить" class="btn-circle btn-circle--trash"></span>
+							<div class="b-dialog__drop"><span rel="tooltip" title="Удалить" data-target="modal-confirm" class="open-modal btn-circle btn-circle--trash"></span>
 							</div>
 							<div class="b-dialog__body">
 								<div class="b-dialog__userpic">
@@ -314,7 +314,75 @@
 						</div>
 						<div class="third column">
 							<div class="content">
-								<button type="button" class="btn btn-lg btn-inline b-mail__addbtn"><i class="icon icon-addmail"></i>Новое сообщение</button>
+								<button type="button" data-target="modal-message" class="btn btn-lg btn-inline b-mail__addbtn open-modal"><i class="icon icon-addmail"></i>Новое сообщение</button>
+							</div>
+						</div>
+					</div>
+					<h2 class="b-profile__headline">Всплывающие окна</h2>
+					<div data-target="modal-success" class="btn btn-sm open-modal">Успех</div>
+					<div data-target="modal-error" class="btn btn-red btn-sm open-modal">Ошибка</div>
+					<div id="modal-confirm" class="modal fade">
+						<div class="modal-dialog b-modal-info">
+							<div class="modal-content">
+								<div class="modal-header"><span class="close-modal btn-circle btn-circle--drop btn-circle--orange"></span>
+								</div>
+								<div class="modal-body">
+									<h3 class="b-modal-info__icon icon-warning">Вы действительно хотите удалить это сообщение?</h3>
+									<div class="b-modal-info__actions">
+										<button type="button" class="btn btn-lg btn-grey close-modal">Нет</button>
+										<button type="button" class="btn btn-lg">Да</button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div id="modal-success" class="modal fade">
+						<div class="modal-dialog b-modal-info">
+							<div class="modal-content">
+								<div class="modal-header"><span class="close-modal btn-circle btn-circle--drop btn-circle--orange"></span>
+								</div>
+								<div class="modal-body">
+									<h3 class="b-modal-info__icon icon-success">Сообщение об успешном действии</h3>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div id="modal-error" class="modal fade">
+						<div class="modal-dialog b-modal-info">
+							<div class="modal-content">
+								<div class="modal-header"><span class="close-modal btn-circle btn-circle--drop btn-circle--orange"></span>
+								</div>
+								<div class="modal-body">
+									<h3 class="b-modal-info__icon icon-error">Сообщение об ошибке</h3>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div id="modal-message" class="modal fade">
+						<div class="modal-dialog">
+							<div class="modal-content">
+								<div class="modal-header"><span class="close-modal btn-circle btn-circle--drop btn-circle--orange"></span>
+									<h2 class="b-profile__headline">Новое сообщение</h2>
+								</div>
+								<div class="modal-body">
+									<form>
+										<div class="input-holder">
+											<input type="text" placeholder="Адресат" name="msg_to" value="jiexa@tabrisov.ru" class="block-input">
+										</div>
+										<div class="input-holder">
+											<input type="text" placeholder="Тема беседы" name="msg_topic" value="" class="block-input">
+										</div>
+										<div style="padding:0" class="input-holder">
+											<textarea name="msg_text" rows="5"></textarea>
+										</div>
+										<div class="input-holder">
+											<input id="carboncopy" type="checkbox" name="carboncopy" checked="checked">
+											<label for="carboncopy">Выслать копию на e-mail</label>
+										</div>
+										<button type="button" class="btn btn-lg btn-grey btn-inline close-modal">Отмена</button>
+										<button type="reset" class="btn btn-lg">Отправить</button>
+									</form>
+								</div>
 							</div>
 						</div>
 					</div>

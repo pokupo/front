@@ -65,7 +65,7 @@ block content
 
 				.third.column
 					.content
-						button.btn.btn-lg.btn-inline.b-mail__addbtn.b-mail__addbtn--top(type="button")
+						button.btn.btn-lg.btn-inline.b-mail__addbtn.b-mail__addbtn--top.open-modal(type="button" data-target="modal-message")
 							i.icon.icon-addmail
 							| Новое сообщение
 
@@ -76,7 +76,7 @@ block content
 						label(for="i-01") &nbsp;
 
 					.b-dialog__drop
-						span.btn-circle.btn-circle--trash(rel="tooltip" title="Удалить")
+						span.open-modal.btn-circle.btn-circle--trash(rel="tooltip" title="Удалить" data-target="modal-confirm")
 
 					.b-dialog__body
 						.b-dialog__userpic
@@ -102,7 +102,7 @@ block content
 						label(for="i-02") &nbsp;
 
 					.b-dialog__drop
-						span.btn-circle.btn-circle--trash(rel="tooltip" title="Удалить")
+						span.open-modal.btn-circle.btn-circle--trash(rel="tooltip" title="Удалить" data-target="modal-confirm")
 
 					.b-dialog__body
 						.b-dialog__userpic
@@ -127,7 +127,7 @@ block content
 						label(for="i-03") &nbsp;
 
 					.b-dialog__drop
-						span.btn-circle.btn-circle--trash(rel="tooltip" title="Удалить")
+						span.open-modal.btn-circle.btn-circle--trash(rel="tooltip" title="Удалить" data-target="modal-confirm")
 
 					.b-dialog__body
 						.b-dialog__userpic
@@ -154,7 +154,7 @@ block content
 						label(for="i-04") &nbsp;
 
 					.b-dialog__drop
-						span.btn-circle.btn-circle--trash(rel="tooltip" title="Удалить")
+						span.open-modal.btn-circle.btn-circle--trash(rel="tooltip" title="Удалить" data-target="modal-confirm")
 
 					.b-dialog__body
 						.b-dialog__userpic
@@ -198,22 +198,63 @@ block content
 
 				.third.column
 					.content
-						button.btn.btn-lg.btn-inline.b-mail__addbtn(type="button")
+						button.btn.btn-lg.btn-inline.b-mail__addbtn.open-modal(type="button" data-target="modal-message")
 							i.icon.icon-addmail
 							| Новое сообщение
 
 
+			h2.b-profile__headline Всплывающие окна
+			.btn.btn-sm.open-modal(data-target="modal-success") Успех
+			.btn.btn-red.btn-sm.open-modal(data-target="modal-error") Ошибка
+
+			#modal-confirm.modal.fade
+				.modal-dialog.b-modal-info
+					.modal-content
+						.modal-header
+							span.close-modal.btn-circle.btn-circle--drop.btn-circle--orange
+						.modal-body
+							h3.b-modal-info__icon.icon-warning Вы действительно хотите удалить это сообщение?
+							.b-modal-info__actions
+								button.btn.btn-lg.btn-grey.close-modal(type="button") Нет
+								button.btn.btn-lg(type="button") Да
+
+			#modal-success.modal.fade
+				.modal-dialog.b-modal-info
+					.modal-content
+						.modal-header
+							span.close-modal.btn-circle.btn-circle--drop.btn-circle--orange
+						.modal-body
+							h3.b-modal-info__icon.icon-success Сообщение об успешном действии
+
+			#modal-error.modal.fade
+				.modal-dialog.b-modal-info
+					.modal-content
+						.modal-header
+							span.close-modal.btn-circle.btn-circle--drop.btn-circle--orange
+						.modal-body
+							h3.b-modal-info__icon.icon-error Сообщение об ошибке
 
 
+			#modal-message.modal.fade
+				.modal-dialog
+					.modal-content
+						.modal-header
+							span.close-modal.btn-circle.btn-circle--drop.btn-circle--orange
+							h2.b-profile__headline Новое сообщение
+						.modal-body
+							form
+								.input-holder
+									input.block-input(type="text" placeholder="Адресат" name="msg_to" value="jiexa@tabrisov.ru")
+								.input-holder
+									input.block-input(type="text" placeholder="Тема беседы" name="msg_topic" value="")
+								.input-holder(style="padding:0")
+									textarea(name="msg_text" rows="5")
+								.input-holder
+									input#carboncopy(type="checkbox" name="carboncopy" checked="checked")
+									label(for="carboncopy") Выслать копию на e-mail
 
-
-
-
-
-
-
-
-
+								button.btn.btn-lg.btn-grey.btn-inline.close-modal(type="button") Отмена
+								button.btn.btn-lg(type="reset") Отправить
 
 
 

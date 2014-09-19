@@ -76,226 +76,6 @@ PKP.init = function() {
 	PKP.Forms.init();
 };
 
-/* Предохранитель для необычных браузеров */
-PKP.IE = {
-	init: function() {
-		this.console();
-		if(!!navigator.userAgent.match(/Trident\/7\./)) {
-			this.placeholder();
-		}
-	},
-
-	console: function() {
-		if (!window.console) {
-			window.console = {};
-		}
-
-		var m = [
-			"log", "info", "warn", "error", "debug", "trace", "dir", "group",
-			"groupCollapsed", "groupEnd", "time", "timeEnd", "profile", "profileEnd",
-			"dirxml", "assert", "count", "markTimeline", "timeStamp", "clear"
-		];
-
-		for (var i = 0; i < m.length; i++) {
-			if (!window.console[m[i]]) {
-				window.console[m[i]] = function() {};
-			}    
-		} 
-	},
-
-	placeholder: function() {
-		$('[placeholder]')
-			.focus(function() {
-				var input = $(this);
-
-				if (input.val() === input.attr('placeholder')) {
-					input.val('');
-					input.removeClass('placeholder');
-				}
-			})
-			.blur(function() {
-				var input = $(this);
-				if (input.val() === '' || input.val() === input.attr('placeholder')) {
-				input.addClass('placeholder');
-				input.val(input.attr('placeholder'));
-				}
-			})
-			.blur()
-			.parents('form')
-			.submit(function() {
-				$(this).find('[placeholder]').each(function() {
-					var input = $(this);
-					if (input.val() === input.attr('placeholder')) {
-						input.val('');
-					}
-				});
-			});
-		// 
-	}
-};
-
-/* Инициализация галерей и слайдеров */
-PKP.Sliders = {
-	init: function() {
-		$('#cases').fotorama({
-				width: '100%',
-				height: 620,
-				allowfullscreen: false,
-				loop: true,
-				autoplay: 3500,
-				stopautoplayontouch: true,
-				nav: 'dots',
-				arrows: false,
-				shadows: false,
-				transition: 'crossfade'
-			});
-
-		$('.chain-slider').owlCarousel({
-			items: 3,
-			slideSpeed: 700,
-			rewindSpeed: 700,
-			navigation: true,
-			navigationText: ['',''],
-			scrollPerPage: true,
-			pagination: false,
-			responsive: false,
-			theme: '',
-		});
-
-		$('.chain-slider--small').owlCarousel({
-			items: 6,
-			slideSpeed: 700,
-			rewindSpeed: 700,
-			navigation: true,
-			navigationText: ['',''],
-			scrollPerPage: true,
-			pagination: false,
-			responsive: false,
-			theme: '',
-		});
-
-		$('.b-recommended__slider').fotorama({
-			minheight: 440,
-			click: false,
-			arrows: false,
-			loop: true,
-			autoplay: 3500,
-			allowfullscreen: false,
-			nav: false
-		});
-
-		// Контролы
-		$('.b-recommended__slider-control').click(function() {
-			var slider = $('.b-recommended__slider').data('fotorama');
-
-			if($(this).is('.next')) {
-				slider.show('>');
-			} else {
-				slider.show('<');
-			}
-		});
-
-		/* При необходимости инициализируем галереи на внутренних страницах */
-		if($('.rates').length) {
-			PKP.Sliders.rates();
-		}
-
-		if($('.catalog-banner').length > 0) {
-			PKP.Sliders.catalogBanner();
-		}
-		if($('.b-catalog-item').length > 0) {
-			PKP.Sliders.catalogItem();
-		}
-	},
-
-	catalogBanner: function() {
-		$('.b-catalog-banner').fotorama({
-			width: '100%',
-			height: 330,
-			allowfullscreen: false,
-			loop: true,
-			autoplay: 3500,
-			transitionduration: 500,
-			stopautoplayontouch: true,
-			nav: 'dots',
-			arrows: false,
-			shadows: false,
-			transition: 'crossfade',
-			fit: 'cover'
-		});
-	},
-
-	catalogItem: function () {
-		$('.b-catalog-item__photos').fotorama({
-			width: 313,
-			allowfullscreen: true,
-			loop: true,
-			autoplay: false,
-			stopautoplayontouch: true,
-			nav: 'thumbs',
-			thumbwidth: 65,
-			thumbheigth: 60,
-			thumbmargin: 5,
-			thumbborderwidth: 4,
-			arrows: false,
-			shadows: true,
-			transition: 'slide',
-		});
-	},
-	
-	rates: function() {
-		// Слайдер тарифов
-		PKP.$rates = $('.slider')
-			.fotorama({
-				width: '100%',
-				height: 657,
-				allowfullscreen: false,
-				loop: true,
-				autoplay: 5000,
-				stopautoplayontouch: true,
-				nav: false,
-				arrows: false,
-				shadows: true,
-				click: false
-			});
-		
-		if(PKP.$rates) {
-
-			// При хавере останавливать слайдер
-			var slider = PKP.$rates.data('fotorama');
-
-			$('.slider').hover(
-				function () {
-					slider.stopAutoplay();
-				},
-				function () {
-					slider.startAutoplay(5000);
-				}
-			);
-		
-			// Контролы
-			$('.slider-control').click(function() {
-				if(PKP.$rates) {
-					var slider = PKP.$rates.data('fotorama');
-
-					if($(this).is('.next')) {
-						slider.show('>');
-					} else {
-						slider.show('<');
-					}
-				}
-			});
-
-			// Заголовок
-			$('.slider').on('fotorama:show fotorama:load',
-				function (e, fotorama, extra) {
-					$(this).siblings('.slider-status').text(fotorama.data[fotorama.activeIndex].title);
-				}
-			);
-		}
-	}
-};
-
 /* Элементы интерфейса */
 PKP.UI = {
 	init: function() {
@@ -309,6 +89,7 @@ PKP.UI = {
 		PKP.UI.passwords();
 		PKP.UI.maskedInputs();
 		PKP.UI.emulateShopping();
+		PKP.UI.modal();
 
 		/* Селекты */
 		if(typeof($.fn.chosen) !== 'undefined') {
@@ -780,6 +561,42 @@ PKP.UI = {
 		});
 	},
 
+	modal: function() {
+		$('.open-modal').click(function() {
+			console.log('click!');
+			openModal($(this).data('target'));
+		});
+
+		$('.modal .close-modal').click(function() {
+			var modal = $(this).closest('.modal');
+
+			modal
+				.removeClass('in');
+
+			PKP.$body.removeClass('modal-open');
+
+		});
+
+		PKP.$document.click(function(event) {
+			console.log($(event.target));
+			if ( $(event.target).is('.modal')) {
+				closeModal();
+			}
+		});
+
+		function openModal(target) {
+			$('#' + target).addClass('in');
+			PKP.$body.addClass('modal-open');
+		}
+
+		function closeModal(target) {
+			var modal = (typeof(target) === 'undefined') ? $('.modal') : $('#' + target);
+
+			PKP.$body.removeClass('modal-open');
+			modal.removeClass('in');
+		}
+	},
+
 	/* Инициализация дерева с возможностью множественного выбора узлов */
 	tree: function() {
 		if (typeof ($.fn.fancytree) !== 'undefined') {
@@ -1209,6 +1026,227 @@ PKP.Aim = {
 	}
 };
 
+/* Предохранитель для необычных браузеров */
+PKP.IE = {
+	init: function() {
+		this.console();
+		if(!!navigator.userAgent.match(/Trident\/7\./)) {
+			this.placeholder();
+		}
+	},
+
+	console: function() {
+		if (!window.console) {
+			window.console = {};
+		}
+
+		var m = [
+			"log", "info", "warn", "error", "debug", "trace", "dir", "group",
+			"groupCollapsed", "groupEnd", "time", "timeEnd", "profile", "profileEnd",
+			"dirxml", "assert", "count", "markTimeline", "timeStamp", "clear"
+		];
+
+		for (var i = 0; i < m.length; i++) {
+			if (!window.console[m[i]]) {
+				window.console[m[i]] = function() {};
+			}    
+		} 
+	},
+
+	placeholder: function() {
+		$('[placeholder]')
+			.focus(function() {
+				var input = $(this);
+
+				if (input.val() === input.attr('placeholder')) {
+					input.val('');
+					input.removeClass('placeholder');
+				}
+			})
+			.blur(function() {
+				var input = $(this);
+				if (input.val() === '' || input.val() === input.attr('placeholder')) {
+				input.addClass('placeholder');
+				input.val(input.attr('placeholder'));
+				}
+			})
+			.blur()
+			.parents('form')
+			.submit(function() {
+				$(this).find('[placeholder]').each(function() {
+					var input = $(this);
+					if (input.val() === input.attr('placeholder')) {
+						input.val('');
+					}
+				});
+			});
+		// 
+	}
+};
+
+/* Инициализация галерей и слайдеров */
+PKP.Sliders = {
+	init: function() {
+		$('#cases').fotorama({
+				width: '100%',
+				height: 620,
+				allowfullscreen: false,
+				loop: true,
+				autoplay: 3500,
+				stopautoplayontouch: true,
+				nav: 'dots',
+				arrows: false,
+				shadows: false,
+				transition: 'crossfade'
+			});
+
+		$('.chain-slider').owlCarousel({
+			items: 3,
+			slideSpeed: 700,
+			rewindSpeed: 700,
+			navigation: true,
+			navigationText: ['',''],
+			scrollPerPage: true,
+			pagination: false,
+			responsive: false,
+			theme: '',
+		});
+
+		$('.chain-slider--small').owlCarousel({
+			items: 6,
+			slideSpeed: 700,
+			rewindSpeed: 700,
+			navigation: true,
+			navigationText: ['',''],
+			scrollPerPage: true,
+			pagination: false,
+			responsive: false,
+			theme: '',
+		});
+
+		$('.b-recommended__slider').fotorama({
+			minheight: 440,
+			click: false,
+			arrows: false,
+			loop: true,
+			autoplay: 3500,
+			allowfullscreen: false,
+			nav: false
+		});
+
+		// Контролы
+		$('.b-recommended__slider-control').click(function() {
+			var slider = $('.b-recommended__slider').data('fotorama');
+
+			if($(this).is('.next')) {
+				slider.show('>');
+			} else {
+				slider.show('<');
+			}
+		});
+
+		/* При необходимости инициализируем галереи на внутренних страницах */
+		if($('.rates').length) {
+			PKP.Sliders.rates();
+		}
+
+		if($('.catalog-banner').length > 0) {
+			PKP.Sliders.catalogBanner();
+		}
+		if($('.b-catalog-item').length > 0) {
+			PKP.Sliders.catalogItem();
+		}
+	},
+
+	catalogBanner: function() {
+		$('.b-catalog-banner').fotorama({
+			width: '100%',
+			height: 330,
+			allowfullscreen: false,
+			loop: true,
+			autoplay: 3500,
+			transitionduration: 500,
+			stopautoplayontouch: true,
+			nav: 'dots',
+			arrows: false,
+			shadows: false,
+			transition: 'crossfade',
+			fit: 'cover'
+		});
+	},
+
+	catalogItem: function () {
+		$('.b-catalog-item__photos').fotorama({
+			width: 313,
+			allowfullscreen: true,
+			loop: true,
+			autoplay: false,
+			stopautoplayontouch: true,
+			nav: 'thumbs',
+			thumbwidth: 65,
+			thumbheigth: 60,
+			thumbmargin: 5,
+			thumbborderwidth: 4,
+			arrows: false,
+			shadows: true,
+			transition: 'slide',
+		});
+	},
+	
+	rates: function() {
+		// Слайдер тарифов
+		PKP.$rates = $('.slider')
+			.fotorama({
+				width: '100%',
+				height: 657,
+				allowfullscreen: false,
+				loop: true,
+				autoplay: 5000,
+				stopautoplayontouch: true,
+				nav: false,
+				arrows: false,
+				shadows: true,
+				click: false
+			});
+		
+		if(PKP.$rates) {
+
+			// При хавере останавливать слайдер
+			var slider = PKP.$rates.data('fotorama');
+
+			$('.slider').hover(
+				function () {
+					slider.stopAutoplay();
+				},
+				function () {
+					slider.startAutoplay(5000);
+				}
+			);
+		
+			// Контролы
+			$('.slider-control').click(function() {
+				if(PKP.$rates) {
+					var slider = PKP.$rates.data('fotorama');
+
+					if($(this).is('.next')) {
+						slider.show('>');
+					} else {
+						slider.show('<');
+					}
+				}
+			});
+
+			// Заголовок
+			$('.slider').on('fotorama:show fotorama:load',
+				function (e, fotorama, extra) {
+					$(this).siblings('.slider-status').text(fotorama.data[fotorama.activeIndex].title);
+				}
+			);
+		}
+	}
+};
+
+/* Подсказки */
 PKP.Suggestions = {
 	init: function() {
 		$("#fullname").suggestions({
