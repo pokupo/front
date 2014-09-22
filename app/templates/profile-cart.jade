@@ -149,7 +149,7 @@ block content
 					.b-order-item__name
 						span Converse White
 					.b-order-item__price
-						+price(1800)
+						+price(1800, 2701)
 					.b-order-item__qty
 						.limits-wrapper
 							p.b-catalog-item__limits
@@ -162,6 +162,7 @@ block content
 								span.b-increment-input__uarr +
 
 					.b-order-item__cost
+						span.b-order-item__discount -30%
 						+price(9000)
 					.b-order-item__delay
 						.like_button.active
@@ -232,7 +233,7 @@ block content
 				p.b-order-list__amount
 					| Общая скидка:
 					span.b-price
-						b
+						b.b-order-item__discount
 							| -30%
 				p.b-order-list__tobepaid
 					| К оплате:

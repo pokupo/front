@@ -38,7 +38,7 @@ block content
 
 				.b-profile-info
 					.b-profile-info__actions
-						button.btn.btn-xs.btn-inline(type="button") Задать вопрос
+						button.btn.btn-xs.btn-inline.ask-question(type="button") Задать вопрос
 						.b-support-info.dropdown
 							span.b-support-info__title
 								span.dropdown__trigger(data-target="support")  Поддержка
@@ -70,7 +70,7 @@ block content
 								span.value 
 									span.value--orange 12 
 									| / 
-									span.value--green 3
+									span.value--red 3
 							li
 								span.char Товаров: 
 								span.value 450
@@ -97,11 +97,15 @@ block content
 						.b-order-item__price
 							+price(1800)
 						.b-order-item__qty
-							.b-increment-input
-								span.b-increment-input__darr &minus;
-								span.b-increment-input__input-wrapper 
-									input.inline-input.b-increment-input__input(type="text" data-name="qty" value="5" maxlength="3" autocomplete="off" data-min="1" data-max="5")
-								span.b-increment-input__uarr +
+							.limits-wrapper
+								p.b-catalog-item__limits
+									| На складе: 
+									span.value 5
+								.b-increment-input
+									span.b-increment-input__darr &minus;
+									span.b-increment-input__input-wrapper 
+										input.inline-input.b-increment-input__input(type="text" data-name="qty" value="5" maxlength="3" autocomplete="off" data-min="1" data-max="5")
+									span.b-increment-input__uarr +
 						.b-order-item__cost
 							+price(9000)
 						.b-order-item__delay
@@ -143,11 +147,15 @@ block content
 						.b-order-item__price
 							+price(2990)
 						.b-order-item__qty
-							.b-increment-input
-								span.b-increment-input__darr &minus;
-								span.b-increment-input__input-wrapper 
-									input.inline-input.b-increment-input__input(type="text" data-name="qty" value="12" maxlength="3" autocomplete="off" data-min="1" data-max="5")
-								span.b-increment-input__uarr +
+							.limits-wrapper
+								p.b-catalog-item__limits
+									| На складе: 
+									span.value 11
+								.b-increment-input
+									span.b-increment-input__darr &minus;
+									span.b-increment-input__input-wrapper 
+										input.inline-input.b-increment-input__input(type="text" data-name="qty" value="12" maxlength="3" autocomplete="off" data-min="1" data-max="5")
+									span.b-increment-input__uarr +
 						.b-order-item__cost
 							+price(35890)
 						.b-order-item__delay

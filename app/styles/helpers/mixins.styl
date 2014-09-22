@@ -43,3 +43,9 @@ fix-text-size-adjust()
 	background-image linear-gradient(transparent, transparent)
 
 /* /Вспомогательные классы */
+
+ie8(value)
+	return value unquote("\9")
+
+ie9(value)
+	return value unquote("\0")

@@ -1031,7 +1031,12 @@ PKP.IE = {
 	init: function() {
 		this.console();
 		if(!!navigator.userAgent.match(/Trident\/7\./)) {
-			this.placeholder();
+			// this.placeholder();
+		}
+		var isIE9 = document.all && !window.atob;
+
+		if(isIE9) {
+			$("input[type!='password'], textarea").placeholder();
 		}
 	},
 

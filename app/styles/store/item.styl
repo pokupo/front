@@ -163,10 +163,14 @@ body .b-share-popup__header_first
 			&--green
 				color $green
 
+			&--red
+				color #c64c1b
+
 
 	&__actions
 		width 192px
 		float right
+		text-align center
 
 		span.label
 		.action
@@ -176,6 +180,14 @@ body .b-share-popup__header_first
 
 		span.label
 			margin-top 1em
+
+		.btn.ask-question
+			padding-top 5px
+			padding-bottom 5px
+			margin 40px -28px 0 0
+
+		.dropdown__content
+			text-align left
 
 /* Блок с информацией в ЛК */
 .b-profile-info--personal
@@ -223,6 +235,7 @@ body .b-share-popup__header_first
 
 		span 
 			border-bottom 1px dotted rgba($a__link, 0.5)
+			font-size 16px
 
 			&:before
 				content ''
@@ -327,6 +340,7 @@ body .b-share-popup__header_first
 .like_button
 .cart_button
 .check_button
+.print-button	
 	font-size 13px
 	cursor pointer
 	margin 0 auto
@@ -366,6 +380,24 @@ body .b-share-popup__header_first
 			left -22px
 			margin-top -5px
 			sprite($icon__deleteall)
+
+.print-button
+	.pseudo-link
+		position relative
+
+		&:before
+			content ''
+			display block
+			position absolute
+			top 8px
+			left -18px
+			margin-top -5px
+			sprite($icon__file)
+
+:root .like_button .pseudo-link:before
+	margin-top ie9(-9px)
+:root .drop_button .pseudo-link:before
+	margin-top ie9(-7px)
 
 .empty_button
 	float right

@@ -29,7 +29,7 @@ block content
 		.container
 			aside.b-sidebar.dropdown
 				a.btn.btn-menu.dropdown__trigger(href=js0 data-target="sidebar") 
-					i.icon.icon__catalog
+					i.icon.icon-catalog
 					| Каталог
 				.b-sidebar__dropdown.dropdown__content.hidden(data-target="sidebar")
 					h1.b-sidebar__title Пример каталога
@@ -97,7 +97,7 @@ block content
 								.slidedown__content.hidden(data-target="info")
 									.b-profile-info
 										.b-profile-info__actions
-											button.btn.btn-xs.btn-inline(type="button") Задать вопрос
+											button.btn.btn-xs.btn-inline.ask-question(type="button") Задать вопрос
 											.b-support-info.dropdown
 												span.b-support-info__title
 													span.dropdown__trigger(data-target="support")  Поддержка
@@ -129,7 +129,7 @@ block content
 													span.value 
 														span.value--orange 12 
 														| / 
-														span.value--green 3
+														span.value--red 3
 												li
 													span.char Товаров: 
 													span.value 450
@@ -277,7 +277,7 @@ block content
 							{title:"Converse Ultimate", price: "2490", img: "images/catalog/goods05.jpg"}
 							], flat=true)
 		
-	#request_form.fade.hidden
+	#request_form.fade.in(style="display:none")
 		.popup.review-form
 			header.noheader
 				h1 Оставить отзыв от товаре
