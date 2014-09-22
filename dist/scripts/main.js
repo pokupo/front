@@ -563,7 +563,6 @@ PKP.UI = {
 
 	modal: function() {
 		$('.open-modal').click(function() {
-			console.log('click!');
 			openModal($(this).data('target'));
 		});
 
@@ -578,7 +577,6 @@ PKP.UI = {
 		});
 
 		PKP.$document.click(function(event) {
-			console.log($(event.target));
 			if ( $(event.target).is('.modal')) {
 				closeModal();
 			}
@@ -673,7 +671,7 @@ PKP.UI = {
 					stars.removeClass('current');
 					$(this).addClass('current');
 
-					console.log('Получен рейтинг «' + $(this).data('rating') + '»');
+					console.info('Получен рейтинг «' + $(this).data('rating') + '»');
 				});
 		});
 	},
@@ -734,7 +732,6 @@ PKP.UI = {
 					}
 				);
 
-			console.log(item);
 			// $this.effect( "bounce", {times:3, distance:10}, 300 );
 		});
 	}
@@ -794,10 +791,6 @@ PKP.Forms = {
 					progress = 1;
 					return true;
 				}
-			});
-
-			$('#progressCircle').hover(function() {
-				console.log(progress);
 			});
 		}
 

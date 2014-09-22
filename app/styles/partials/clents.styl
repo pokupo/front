@@ -1,19 +1,29 @@
 ul.clients
-	margin-top 40px
+	margin 40px 10px
 	display block
 	overflow hidden
 	text-align justify
+	height 62px
+	line-height 62px
 
 	&:after
 		content ''
 		display inline-block
 		width 100%
 		height 0
+		font-size 0
+		visibility hidden
 
 	li
 		display inline-block
-		width 180px
+		padding 0 20px
 		text-align center
+
+		&:first-child
+			padding-left 0
+
+		&:last-child
+			padding-right 0
 
 		i.client
 			display inline-block

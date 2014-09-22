@@ -1,22 +1,26 @@
 section.video
 	.container
-		hgroup
-			h1 
-				| Добро пожаловать<br/>на 
-				span.inline-logo
-					i.green Pokupo
-					i.yellow .ru
-				| ,
-			h2 торговую платформу<br/>полного цикла
-
-		a#js-video.b-video-trigger(href=js0)
-			i.icon.icon__no-1.icon__basket
-			i.icon.icon__no-2.icon__bag
-			i.icon.icon__no-3.icon__cart
-			i.icon.icon__no-4.icon__coins
-			i.icon.icon__no-5.icon__store
-			i.icon.icon__no-6.icon__tag
+		.columns
+			.third.double.column
+				.content
+					a#js-video.b-video-trigger(href=js0)
+						i.icon.icon__no-1.icon__basket
+						i.icon.icon__no-2.icon__bag
+						i.icon.icon__no-3.icon__cart
+						i.icon.icon__no-4.icon__coins
+						i.icon.icon__no-5.icon__store
+						i.icon.icon__no-6.icon__tag
+			.first.double.column
+				.content
+					hgroup
+						h1 
+							| Добро пожаловать<br/>на 
+							span.inline-logo
+								i.green Pokupo
+								i.yellow .ru
+							| ,
+						h2 торговую платформу<br/>полного цикла
 
 .video-holder(style="display:none")
-	video#intro-video.video-js.vjs-pokupo-skin(src="https://dl.dropboxusercontent.com/u/3902787/pokupo/pokupo-intro.mp4") //- webm
+	video#intro-video.video-js.vjs-pokupo-skin(src="https://dl.dropboxusercontent.com/u/3902787/pokupo/pokupo-intro.mp4")
 	span#js-close-video.close-video.btn-circle.btn-circle--drop.btn-circle--drop--orange
