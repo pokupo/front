@@ -66,6 +66,7 @@ PKP.init = function() {
 		},
 		{title: "Другое", folder: true, lazy: true }
 	];
+	PKP.sidebarState  = true;
 
 	/* Консоль */
 	PKP.IE.init();
@@ -74,6 +75,34 @@ PKP.init = function() {
 	PKP.Video.init();
 	PKP.Sliders.init();
 	PKP.Forms.init();
+	PKP.Responsive.init();
+
+	PKP.$window.on('load resize', function() {
+		PKP.windowHeight     = PKP.$window.height();
+		PKP.windowWidth      = PKP.$window.width();
+		PKP.windowScrollTop  = PKP.$window.scrollTop();
+		PKP.windowScrollLeft = PKP.$window.scrollLeft();
+
+		PKP.Responsive.reflow();
+	});
+};
+
+PKP.Responsive = {
+	init: function(){
+		$('#toggleNav').on('click', function(){
+			$('.menu.b-navigation').slideToggle(400);
+		});
+	},
+	reflow: function() {
+		var state = (768 > PKP.windowWidth) ? false : true;
+
+		if($('section.store .b-catalog').length > 0) {
+			PKP.UI.toggleSidebar(state);
+		}
+		if(!state) {
+			$('.menu.b-navigation').show();
+		}
+	}
 };
 
 /* Элементы интерфейса */
@@ -205,13 +234,6 @@ PKP.UI = {
 				.siblings().removeClass('active');
 		});
 
-		/* Переключение лэйаута */
-		PKP.$body.on("click", '.catalog-layout a', function() {
-			$('.b-catalog__items')
-				.removeClass()
-				.addClass('b-catalog__items ' + $(this).data('value'));
-		});
-
 		/* Баян-меню */
 		$('.b-sidebar').on("click", '.with-submenu', function(e) {
 			var $this = $(e.target);
@@ -266,23 +288,6 @@ PKP.UI = {
 		
 
 		/* Вспомогательное, для тестирования */
-		$('#js-nosidebar').on('click', function () {
-			var li = $(this).closest('.menu__item');
-
-			$('aside.b-sidebar')
-				.find('a.btn')
-					.toggleClass('dropdown__trigger')
-				.siblings('.b-sidebar__dropdown')
-					.toggleClass('dropdown__content hidden');
-
-			if (li.is('.active')) {
-				li.toggleClass('active');
-			}
-
-			
-			$('section.store').toggleClass('nosidebar');
-		});
-
 		$('#js-login, #js-logout').on('click', function() {
 			var t = $(this).closest('.menu-login');
 			t.find('.not-logged-in').toggleClass('hidden');
@@ -293,7 +298,46 @@ PKP.UI = {
 		$('input.error').on('focus', function() {
 			$(this).removeClass('error');
 		});
+
+		/* Переключение лэйаута */
+		PKP.$body.on("click", '.catalog-layout a', function() {
+			 PKP.UI.toggleCatalogView($(this).data('value'));
+		});
+
+		$('#js-nosidebar').on('click', function () {
+			if(640 < PKP.windowWidth){
+				PKP.UI.toggleSidebar(!PKP.sidebarState);
+			}
+		});
 	},
+
+	toggleCatalogView: function(mode){
+		$('.b-catalog__items')
+			.removeClass()
+			.addClass('b-catalog__items ' + mode);
+	},
+
+	toggleSidebar: function(state){
+		if(state === true) {
+			$('aside.b-sidebar')
+				.find('a.btn')
+					.removeClass('dropdown__trigger')
+				.siblings('.b-sidebar__dropdown')
+					.removeClass('dropdown__content hidden');
+
+			$('section.store').removeClass('nosidebar');
+		} else {
+			$('aside.b-sidebar')
+				.find('a.btn')
+					.addClass('dropdown__trigger')
+				.siblings('.b-sidebar__dropdown')
+					.addClass('dropdown__content hidden');
+
+			$('section.store').addClass('nosidebar');
+		}
+		PKP.sidebarState = state;
+	},
+
 	/* Инициализация диагонального хавера */
 	diagonalHover: {
 		init: function() {
@@ -1118,7 +1162,7 @@ PKP.Sliders = {
 			navigationText: ['',''],
 			scrollPerPage: true,
 			pagination: false,
-			responsive: false,
+			responsive: true,
 			theme: '',
 		});
 

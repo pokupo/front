@@ -1,7 +1,7 @@
-@media only screen and (min-width: 381px) and (max-width: 640px)
+@media only screen and (max-width: 640px)
 
 	body
-		// background blue
+		// background #cff
 
 	.container
 		max-width none
@@ -16,8 +16,13 @@
 			left 0!important
 
 			.content
-				margin 0 6px
+				margin 0 6px!important
 
+		&.triple
+			margin 0
+			.column.double
+				width 100%
+				
 		&.triple .column
 		.double.column
 			width 100%
@@ -29,6 +34,7 @@
 	input[type="tel"]
 	input[type="password"]
 	textarea
+	.input-holder
 		max-width none
 
 	.btn-huge
@@ -51,3 +57,10 @@
 		.b-inline-actions
 			margin 40px 0 0
 			clear both
+
+	.b-cart-menu__body
+		right 40px
+		width 460px
+
+		.b-cart-menu__patch
+			display none

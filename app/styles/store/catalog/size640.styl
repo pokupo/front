@@ -1,0 +1,122 @@
+@media only screen and (max-width: 640px)
+	.b-catalog__controls-item
+		float none
+		margin-left 0
+		margin-bottom 10px
+		text-align right
+		width 49%
+		display inline-block
+
+		&:nth-of-type(1)
+			margin-left 0
+			float none
+			width 100%
+
+	/* Каталог в разных состояниях */
+	.b-catalog__items
+		.b-item.with_popover
+			& > div
+				display none
+
+			.b-item__popover
+				display block
+				margin 0 0 20px
+				position relative
+				visibility visible
+
+		/* Карточки */
+		&.cards
+			text-align center
+
+			.b-item
+				width auto
+				min-width 340px
+
+			&.cards--small
+				display none
+
+		/* Журнал */
+		&.magazine
+			text-align center
+			.b-item
+				width auto
+				min-width 440px
+
+				.responsive-holder
+					float none
+					left 220px
+					text-align left
+
+				&__picture
+					width 200px
+
+				&__order-button
+					width 50%
+					float none
+					left 50%
+					text-align left
+
+				.b-item--dublicate
+					clearfix()
+
+			.b-catalog__item
+				margin-bottom 10px
+
+		/* Список */
+		&.titles
+			text-align center
+			.b-item
+				width auto
+				min-width 468px
+
+				.responsive-holder
+					float none
+					text-align left
+
+				&__description
+					width 180px
+
+				&__price
+					float none
+					left 360px
+					font-size 24px
+
+					.b-item__price--old
+						font-size 13px
+
+				&__order-button
+					width 100px
+					float none
+					left 360px
+					text-align left
+					padding 10px 0 0
+
+					.btn
+						font-size 11px
+						margin 0
+						padding 8px 12px
+						border-width 2px
+
+						i.icon
+							display none
+
+				.b-item--dublicate
+					clearfix()
+
+			.b-catalog__item
+				margin-bottom 10px
+
+
+
+	/* 4-й вид каталога */
+	.nosidebar 
+		.b-catalog__quick-filter
+			float none
+
+		.b-catalog__quick-filter
+		.b-catalog__quick-filter__input
+			width 100%
+
+
+		.b-catalog__controls
+			height auto

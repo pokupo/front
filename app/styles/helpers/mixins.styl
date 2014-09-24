@@ -16,6 +16,32 @@ pseudo()
 	position absolute
 	display block
 
+drop-shadow()
+	background-color #fff
+	border-bottom 1px solid #e2e2e2
+	box-shadow 0 4px 8px rgba(0,0,0,0.3)
+	padding-bottom 2px
+
+	&:before
+	&:after
+		content ''
+		position absolute
+		display block
+		left 0
+		right 0
+
+	&:before
+		height 2px
+		background #dcdcdc
+		border-top 1px solid #d6d6d6
+		bottom 0
+		z-index 0
+
+	&:after
+		height 50px
+		bottom -1px
+		box-shadow 0 10px 20px -7px rgba(0,0,0,0.3)
+		z-index -1
 
 
 

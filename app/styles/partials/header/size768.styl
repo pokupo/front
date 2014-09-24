@@ -1,0 +1,110 @@
+@media only screen and (min-width: 641px) and (max-width: 768px)
+	section.header
+		text-align center
+		border-bottom 1px solid #ccc
+		
+	#toggleNav
+		display inline-block
+
+	.b-navigation 
+		display none
+		height auto
+		clear left
+		drop-shadow()
+
+		.menu__item
+			display block
+			float none
+			height auto
+			min-height 40px
+			background #ddd
+			margin-top 2px
+
+			&:first-child
+				margin-top 0
+
+			a
+				font-weight 700
+				float none
+				padding 8px 0 8px 16px
+				display block
+				text-align left
+				height auto
+				min-height 40px
+				border-bottom none
+
+				&.bordered
+				&:hover
+					background $white
+					color $green
+					border-bottom none!important
+				&:after
+					display none
+
+			&.active
+				background $orange
+				color #333
+
+				& > a
+					background $orange
+					color #333
+
+				&:hover
+					background $orange
+
+	.header 
+		.logo
+			margin 0
+
+		.menu 
+			.submenu
+				position static
+				height auto
+				width auto
+
+				&.active
+					height auto
+
+				&__item
+					display block
+					padding 0
+					float none
+					height 40px
+					background #fff
+
+					&.active
+						background $grey!important
+
+						a
+							color $orange
+							font-weight 800
+
+						&:hover
+							background $grey
+
+						&:first-of-type
+							margin-left 0
+
+					a
+						padding 14px 5px 7px 32px
+						font-weight normal
+						float none
+						display block
+						text-align left
+						height 40px
+
+						&:hover
+							background $grey
+							color $orange
+							border-bottom none!important
+							span
+								border-bottom-color rgba($orange, 0.4)
+		.submenu-bg
+			display none!important
+			top 240px
+			&.active
+				top 240px
+
+
+
+

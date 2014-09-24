@@ -66,6 +66,16 @@ module.exports = function (grunt) {
 			}
 		},
 
+		cmq: {
+			dist: {
+				files: {
+					'dist/styles/main.css': [
+						'dist/styles/main.css'
+					]
+				}
+			}
+		},
+
 		csscomb: {
 			dist: {
 				options: {
@@ -210,6 +220,21 @@ module.exports = function (grunt) {
 			}
 		},
 
+		browserSync: {
+			dist: {
+				bsFiles: {
+					src: 'dist/**/*'
+				},
+				options: {
+					open: false,
+					server: {
+						baseDir: 'dist'
+					},
+					watchTask: true
+				}
+			}
+		},
+
 		replace: {
 			browsehappy: {
 				options: {
@@ -292,6 +317,12 @@ module.exports = function (grunt) {
 				},
 				tasks: ['newer:jshint:configFiles']
 			},
+			livereload: {
+				options: {
+					livereload: true
+				},
+				files: ['dist/**/*']
+			},
 			sprite: {
 				files: ['app/images/sprite/**/*.png'],
 				tasks: ['sprite']
@@ -305,7 +336,7 @@ module.exports = function (grunt) {
 			},
 			stylus: {
 				files: ['app/styles/**/*.styl'],
-				tasks: ['stylus', 'autoprefixer', 'csscomb']
+				tasks: ['stylus', 'autoprefixer', 'cmq', 'csscomb']
 			},
 			jade: {
 				files: ['app/templates/**/*.jade', '!app/templates/partials/**/*'],
@@ -377,6 +408,7 @@ module.exports = function (grunt) {
 		'imagemin',
 		'stylus',
 		'autoprefixer',
+		'cmq',
 		'csscomb',
 		'jade',
 		'prettify',
