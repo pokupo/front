@@ -81,7 +81,7 @@
 					'opacity'                       : '0',
 					'font-size'                     : '12px',
 					'font-weight'                   : 'normal',
-					'color'                         : '#999999'
+					'color'                         : 'rgba(0,0,0,0.2)'
 				});
 
 				if( !settings.slideInput ) {                    
@@ -92,15 +92,15 @@
 					self.checkValue( e );
 				});
 
-				thisElement.on('blur', function() { 
+				thisElement.on('blur', function() {
 					thisElement.next('label').css({ 
-						'color' : '#999999' 
+						'color' : 'rgba(0,0,0,0.2)' 
 					}); 
 				});
 
 				thisElement.on('focus', function() { 
 					thisElement.next('label').css({ 
-						'color' : '#333333' 
+						'color' : 'rgba(0,0,0,0.6)' 
 					}); 
 				});
 

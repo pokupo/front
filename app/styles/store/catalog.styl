@@ -223,14 +223,14 @@ section.store
 			top 100px
 			
 		.owl-prev
-			left -50px
+			left -30px
 			sprite($arrow-prev__black)
 			&:hover
 				sprite($arrow-prev__hover)
 			&:active
 				sprite($arrow-prev__active)
 		.owl-next
-			right -50px
+			right -30px
 			sprite($arrow-next__black)
 			&:hover
 				sprite($arrow-next__hover)
@@ -446,11 +446,28 @@ section.store
 			&__description
 				width 220px
 				left 180px
+
 			&__price
 				width 120px
 				left 370px
+				display table
+				min-height 120px
+
+				& > .b-price
+					display table-cell
+					vertical-align: middle;
+					height 100%
+
+					br
+						display none
+
+					.b-item__price--old
+						margin-top -16px
+						float left
+						
 			&__order-button
 				left 500px
+
 			&__info:after
 				display none
 

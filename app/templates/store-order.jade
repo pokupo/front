@@ -135,7 +135,7 @@ block content
 									tr.b-order-table__item
 										td.b-order-table__action
 											input#tr_01(type="radio" value="1" name="radio")
-											label(for="tr_01") Выбрать
+											label(for="tr_01" rel="tooltip" title="Выбрать") &nbsp;
 										td 309070, Россия, г. Белгород, ул. Кривошеина 8, кв 13
 										td.b-order-table__name Сибилев Игорь
 										td.b-order-table__phone +7 913 123 45-67-89
@@ -145,7 +145,7 @@ block content
 									tr.b-order-table__item.active
 										td.b-order-table__action
 											input#tr_02(type="radio" value="2" name="radio" checked)
-											label(for="tr_02") Выбрать
+											label(for="tr_02" rel="tooltip" title="Выбрать") &nbsp;
 										td 309070, Россия, г. Белгород, ул. Ленина 15, кв 20
 										td.b-order-table__name Константин Константинопольский
 										td.b-order-table__phone +7 913 123 45-67-89
@@ -155,7 +155,7 @@ block content
 									tr.b-order-table__item
 										td.b-order-table__action
 											input#tr_03(type="radio" value="3" name="radio")
-											label(for="tr_03") Выбрать
+											label(for="tr_03" rel="tooltip" title="Выбрать") &nbsp;
 										td 309070, Россия, г. Белгород, ул. Кривошеина 8, кв 13
 										td.b-order-table__name Сибилев Игорь
 										td.b-order-table__phone +7 913 123 45-67-89
@@ -188,7 +188,7 @@ block content
 											+price(800)
 										td.b-order-table__action
 											input#tr_11(type="radio" value="1" name="radio2" checked)
-											label(for="tr_11") Выбрать
+											label(for="tr_11" rel="tooltip" title="Выбрать") &nbsp;
 
 									tr.b-order-table__item
 										td.b-order-table__logo
@@ -201,7 +201,7 @@ block content
 											+price(1200)
 										td.b-order-table__action
 											input#tr_12(type="radio" value="2" name="radio2")
-											label(for="tr_12") Выбрать	
+											label(for="tr_12" rel="tooltip" title="Выбрать") &nbsp;	
 
 									tr.b-order-table__item
 										td.b-order-table__logo
@@ -213,7 +213,7 @@ block content
 											+price(900)
 										td.b-order-table__action
 											input#tr_13(type="radio" value="3" name="radio2")
-											label(for="tr_13") Выбрать
+											label(for="tr_13" rel="tooltip" title="Выбрать") &nbsp;
 
 						#step-4
 							h2.b-wizard__step-title Выберите способ оплаты
@@ -244,7 +244,7 @@ block content
 											+price(23800)
 										td.b-order-table__action
 											input#tr_31(type="radio" value="1" name="radio3")
-											label(for="tr_31") Выбрать
+											label(for="tr_31" rel="tooltip" title="Выбрать") &nbsp;
 							
 						#step-5
 							h2.b-wizard__step-title Подтвердите заказ
@@ -253,7 +253,7 @@ block content
 									tr
 										th.b-order-table__thumb
 										th Наименование
-										th.b-order-table__title Цена
+										th.b-order-table__price Цена
 										th.b-order-table__action Количество
 										th.b-order-table__price Сумма
 								tbody
@@ -262,7 +262,7 @@ block content
 											img(src="images/catalog/goods01.jpg")
 										td.b-order-table__title
 											a(href=js0) Converse Red
-										td.b-order-table__title
+										td.b-order-table__price
 											+price(2880)
 										td.b-order-table__action 1
 										td.b-order-table__price
@@ -273,7 +273,7 @@ block content
 										td.b-order-table__title
 											a(href=js0)
 												| Штукатурка гипсовая для&nbsp;наружных работ с&nbsp;нормальной влажностью
-										td.b-order-table__title
+										td.b-order-table__price
 											+price(2400)
 										td.b-order-table__action 1
 										td.b-order-table__price
@@ -283,7 +283,7 @@ block content
 											img(src="images/catalog/goods03.jpg")
 										td.b-order-table__title
 											a(href=js0) Converse Red
-										td.b-order-table__title
+										td.b-order-table__price
 											+price(1800)
 										td.b-order-table__action 1
 										td.b-order-table__price

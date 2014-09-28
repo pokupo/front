@@ -9,10 +9,14 @@ section.register.orange.patterned
 				.columns
 					.first.double.column
 						.content
-							input.inline-input(type="text" name="name" placeholder="Название магазина" required="required" pattern="^[А-Яа-я\s\-\_0-9]+$")
+							.input-holder
+								input.inline-input(type="text" name="name" placeholder="Название магазина" required="required" pattern="^[А-Яа-я\s\-\_0-9]+$")
 					.third.double.column
 						.content
-							input.inline-input(type="email" name="email" placeholder="Электронная почта" required="required")
+							.input-holder
+								input.error.inline-input(type="email" name="email" placeholder="Электронная почта" required="required")
+								.error__message
+									p Кажется, здесь что-то не так
 
 				button.btn.btn-lg.btn-red(type="submit")
 					| Создать свой магазин &nbsp;

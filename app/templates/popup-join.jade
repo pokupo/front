@@ -3,8 +3,10 @@ extends partials/layouts/inner
 block content
 	.fade.in
 		.popup.join
-			header.patterned.black
-				h1.with-icon Заявка на партнёрство
+			header.noheader
+				hgroup
+					h1 Заявка на партнёрство
+					h2.lead Заполните форму заявки
 				span.close-popup.btn-circle.btn-circle--drop.btn-circle--orange
 			.content
 				form(method="get" action="index.html")
@@ -17,3 +19,6 @@ block content
 					
 					button.btn.btn-lg.btn-inline.btn-grey(type="reset") Отмена
 					button.btn.btn-lg(type="submit") Отправить
+
+block scripts
+	+script(['main.js'])

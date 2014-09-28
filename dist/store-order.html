@@ -14,7 +14,7 @@
 		<link sizes="144x144" href="images/icons/apple-touch-icon-144x144.png" rel="apple-touch-icon">
 		<link sizes="152x152" href="images/icons/apple-touch-icon-152x152.png" rel="apple-touch-icon">
 		<!-- Windows 8-->
-		<meta name="application-name" content="Просмотр товара">
+		<meta name="application-name" content="Pokupo">
 		<meta name="msapplication-tooltip" content="Description for pokupo">
 		<meta name="msapplication-TileColor" content="#ffffff">
 		<meta name="msapplication-TileImage" content="images/icons/tile.png">
@@ -111,7 +111,7 @@
 													</div>
 													<div class="b-order-item__drop btn-circle btn-circle--drop"></div>
 												</li>
-											</ol><a href="javascript:void(0);" class="btn btn-md b-cart-menu__order-button">Оформить</a>
+											</ol><a href="javascript:void(0);" class="btn btn-md b-cart-menu__order-button">Оформить</a><a href="javascript:void(0);" class="b-cart-menu__cart-button">В корзину</a>
 											<p class="b-cart-menu__results">Итог:<span class="b-cart-menu__amount b-price"><span class="b-price__number">49<i class="b-price__separator"></i>780</span><span class="b-price__thinsp">&nbsp;</span><span class="b-price__rubl">Р</span></span>
 											</p>
 										</div>
@@ -406,7 +406,7 @@
 											<tr class="b-order-table__item">
 												<td class="b-order-table__action">
 													<input id="tr_01" type="radio" value="1" name="radio">
-													<label for="tr_01">Выбрать</label>
+													<label for="tr_01" rel="tooltip" title="Выбрать">&nbsp;</label>
 												</td>
 												<td>309070, Россия, г. Белгород, ул. Кривошеина 8, кв 13</td>
 												<td class="b-order-table__name">Сибилев Игорь</td>
@@ -418,7 +418,7 @@
 											<tr class="b-order-table__item active">
 												<td class="b-order-table__action">
 													<input id="tr_02" type="radio" value="2" name="radio" checked>
-													<label for="tr_02">Выбрать</label>
+													<label for="tr_02" rel="tooltip" title="Выбрать">&nbsp;</label>
 												</td>
 												<td>309070, Россия, г. Белгород, ул. Ленина 15, кв 20</td>
 												<td class="b-order-table__name">Константин Константинопольский</td>
@@ -430,7 +430,7 @@
 											<tr class="b-order-table__item">
 												<td class="b-order-table__action">
 													<input id="tr_03" type="radio" value="3" name="radio">
-													<label for="tr_03">Выбрать</label>
+													<label for="tr_03" rel="tooltip" title="Выбрать">&nbsp;</label>
 												</td>
 												<td>309070, Россия, г. Белгород, ул. Кривошеина 8, кв 13</td>
 												<td class="b-order-table__name">Сибилев Игорь</td>
@@ -471,7 +471,7 @@
 												</td>
 												<td class="b-order-table__action">
 													<input id="tr_11" type="radio" value="1" name="radio2" checked>
-													<label for="tr_11">Выбрать</label>
+													<label for="tr_11" rel="tooltip" title="Выбрать">&nbsp;</label>
 												</td>
 											</tr>
 											<tr class="b-order-table__item">
@@ -484,7 +484,7 @@
 												</td>
 												<td class="b-order-table__action">
 													<input id="tr_12" type="radio" value="2" name="radio2">
-													<label for="tr_12">Выбрать</label>
+													<label for="tr_12" rel="tooltip" title="Выбрать">&nbsp;</label>
 												</td>
 											</tr>
 											<tr class="b-order-table__item">
@@ -495,7 +495,7 @@
 												</td>
 												<td class="b-order-table__action">
 													<input id="tr_13" type="radio" value="3" name="radio2">
-													<label for="tr_13">Выбрать</label>
+													<label for="tr_13" rel="tooltip" title="Выбрать">&nbsp;</label>
 												</td>
 											</tr>
 										</tbody>
@@ -532,7 +532,7 @@
 												</td>
 												<td class="b-order-table__action">
 													<input id="tr_31" type="radio" value="1" name="radio3">
-													<label for="tr_31">Выбрать</label>
+													<label for="tr_31" rel="tooltip" title="Выбрать">&nbsp;</label>
 												</td>
 											</tr>
 										</tbody>
@@ -545,7 +545,7 @@
 											<tr>
 												<th class="b-order-table__thumb"></th>
 												<th>Наименование</th>
-												<th class="b-order-table__title">Цена</th>
+												<th class="b-order-table__price">Цена</th>
 												<th class="b-order-table__action">Количество</th>
 												<th class="b-order-table__price">Сумма</th>
 											</tr>
@@ -557,7 +557,7 @@
 												</td>
 												<td class="b-order-table__title"><a href="javascript:void(0);">Converse Red</a>
 												</td>
-												<td class="b-order-table__title"><span class="b-price"><span class="b-price__number">2880</span><span class="b-price__thinsp">&nbsp;</span><span class="b-price__rubl">Р</span></span>
+												<td class="b-order-table__price"><span class="b-price"><span class="b-price__number">2880</span><span class="b-price__thinsp">&nbsp;</span><span class="b-price__rubl">Р</span></span>
 												</td>
 												<td class="b-order-table__action">1</td>
 												<td class="b-order-table__price"><span class="b-price"><span class="b-price__number">12<i class="b-price__separator"></i>440</span><span class="b-price__thinsp">&nbsp;</span><span class="b-price__rubl">Р</span></span>
@@ -569,7 +569,7 @@
 												</td>
 												<td class="b-order-table__title"><a href="javascript:void(0);">Штукатурка гипсовая для&nbsp;наружных работ с&nbsp;нормальной влажностью</a>
 												</td>
-												<td class="b-order-table__title"><span class="b-price"><span class="b-price__number">2400</span><span class="b-price__thinsp">&nbsp;</span><span class="b-price__rubl">Р</span></span>
+												<td class="b-order-table__price"><span class="b-price"><span class="b-price__number">2400</span><span class="b-price__thinsp">&nbsp;</span><span class="b-price__rubl">Р</span></span>
 												</td>
 												<td class="b-order-table__action">1</td>
 												<td class="b-order-table__price"><span class="b-price"><span class="b-price__number">27<i class="b-price__separator"></i>0</span><span class="b-price__thinsp">&nbsp;</span><span class="b-price__rubl">Р</span></span>
@@ -581,7 +581,7 @@
 												</td>
 												<td class="b-order-table__title"><a href="javascript:void(0);">Converse Red</a>
 												</td>
-												<td class="b-order-table__title"><span class="b-price"><span class="b-price__number">1800</span><span class="b-price__thinsp">&nbsp;</span><span class="b-price__rubl">Р</span></span>
+												<td class="b-order-table__price"><span class="b-price"><span class="b-price__number">1800</span><span class="b-price__thinsp">&nbsp;</span><span class="b-price__rubl">Р</span></span>
 												</td>
 												<td class="b-order-table__action">1</td>
 												<td class="b-order-table__price"><span class="b-price"><span class="b-price__number">18<i class="b-price__separator"></i>290</span><span class="b-price__thinsp">&nbsp;</span><span class="b-price__rubl">Р</span></span>
@@ -666,6 +666,27 @@
 							</ul>
 						</div>
 					</div>
+					<div class="fourth column">
+						<div class="content">
+							<ul class="social">
+								<li>
+									<a href="https://vk.com/pokupo" target="_blank" title="Вконтакте" class="social__icon vk"></a>
+								</li>
+								<li>
+									<a href="https://twitter.com/pokupo_ru" target="_blank" title="Твиттер" class="social__icon tw"></a>
+								</li>
+								<li>
+									<a href="http://pokupo.livejournal.com/" target="_blank" title="Живой журнал" class="social__icon lj"></a>
+								</li>
+								<li>
+									<a href="http://habrahabr.ru/company/pokupo/" target="_blank" title="Хабрахабр" class="social__icon hh"></a>
+								</li>
+								<li>
+									<a href="https://groups.google.com/d/forum/pokupo_ru" target="_blank" title="Гугл-плюс" class="social__icon gp"></a>
+								</li>
+							</ul>
+						</div>
+					</div>
 					<div class="second column">
 						<div class="content">
 							<ul>
@@ -686,27 +707,6 @@
 								<li><a href="javascript:void(0);" title="Правила конфиденциальности"> Правила конфиденциальности</a>
 								</li>
 								<li><a href="javascript:void(0);" title="Политика возврата платежей"> Политика возврата платежей</a>
-								</li>
-							</ul>
-						</div>
-					</div>
-					<div class="fourth column">
-						<div class="content">
-							<ul class="social">
-								<li>
-									<a href="https://vk.com/pokupo" target="_blank" class="social__icon vk"></a>
-								</li>
-								<li>
-									<a href="https://twitter.com/pokupo_ru" target="_blank" class="social__icon tw"></a>
-								</li>
-								<li>
-									<a href="http://pokupo.livejournal.com/" target="_blank" class="social__icon lj"></a>
-								</li>
-								<li>
-									<a href="http://habrahabr.ru/company/pokupo/" target="_blank" class="social__icon ok"></a>
-								</li>
-								<li>
-									<a href="https://groups.google.com/d/forum/pokupo_ru" target="_blank" class="social__icon gp"></a>
 								</li>
 							</ul>
 						</div>

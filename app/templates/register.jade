@@ -70,6 +70,7 @@ block content
 										.tooltip__after
 								input.block-input(type="text" name="nickname" value="" placeholder="Псевдоним")
 
+
 							.input-holder.tooltip
 								.tooltip__trigger ?
 									.tooltip__content
@@ -77,7 +78,9 @@ block content
 										p На этот адрес будут приходить уведомления о статусе вашего заказа.
 										.tooltip__before
 										.tooltip__after
-								input.block-input(type="email" name="email" value="" placeholder="Ваш e-mail")
+								input.error.block-input(type="email" name="email" value="почта@мойбложик.рф" placeholder="Ваш e-mail")
+								.error__message
+									p Кажется, здесь что-то не так
 
 							.input-holder.tooltip
 								.tooltip__trigger ?

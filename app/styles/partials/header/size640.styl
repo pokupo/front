@@ -17,8 +17,9 @@
 			float none
 			height auto
 			min-height 40px
-			background #ddd
-			margin-top 2px
+			background $grey
+			margin-top 1px
+			transition none !important
 
 			&:first-child
 				margin-top 0
@@ -32,6 +33,7 @@
 				height auto
 				min-height 40px
 				border-bottom none
+				transition none !important
 
 				&.bordered
 				&:hover
@@ -41,16 +43,19 @@
 				&:after
 					display none
 
+				span
+					transition none !important				
+
 			&.active
-				background $orange
-				color #333
+				background $grey
+				color $green
 
 				& > a
-					background $orange
-					color #333
+					background $grey
+					color $green
 
 				&:hover
-					background $orange
+					background $grey
 
 	.header 
 		.logo
@@ -71,16 +76,25 @@
 					float none
 					height 40px
 					background #fff
+					border-bottom 1px solid $grey
+					transition none !important
+
+					&:last-child
+						border-bottom none
 
 					&.active
-						background $grey!important
+						background $orange!important
+						color #fff
 
 						a
-							color $orange
+							color #fff
 							font-weight 800
+							text-decoration none
+							transition none !important
 
 						&:hover
-							background $grey
+							background $orange
+							color #fff
 
 						&:first-of-type
 							margin-left 0
@@ -92,13 +106,16 @@
 						display block
 						text-align left
 						height 40px
+						transition none !important
 
 						&:hover
-							background $grey
-							color $orange
-							border-bottom none!important
+							background $orange
+							color #fff
+							border-bottom none !important
+
 							span
-								border-bottom-color rgba($orange, 0.4)
+								border-bottom-color rgba(#fff, 0.4)
+								transition none !important
 		.submenu-bg
 			display none!important
 			top 240px

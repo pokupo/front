@@ -111,7 +111,7 @@
 													</div>
 													<div class="b-order-item__drop btn-circle btn-circle--drop"></div>
 												</li>
-											</ol><a href="javascript:void(0);" class="btn btn-md b-cart-menu__order-button">Оформить</a>
+											</ol><a href="javascript:void(0);" class="btn btn-md b-cart-menu__order-button">Оформить</a><a href="javascript:void(0);">В корзину</a>
 											<p class="b-cart-menu__results">Итог:<span class="b-cart-menu__amount b-price"><span class="b-price__number">49<i class="b-price__separator"></i>780</span><span class="b-price__thinsp">&nbsp;</span><span class="b-price__rubl">Р</span></span>
 											</p>
 										</div>
@@ -193,12 +193,19 @@
 							<div class="columns">
 								<div class="first double column">
 									<div class="content">
-										<input type="text" name="name" placeholder="Название магазина" required="required" pattern="^[А-Яа-яs-_0-9]+$" class="inline-input">
+										<div class="input-holder">
+											<input type="text" name="name" placeholder="Название магазина" required="required" pattern="^[А-Яа-яs-_0-9]+$" class="inline-input">
+										</div>
 									</div>
 								</div>
 								<div class="third double column">
 									<div class="content">
-										<input type="email" name="email" placeholder="Электронная почта" required="required" class="inline-input">
+										<div class="input-holder">
+											<input type="email" name="email" placeholder="Электронная почта" required="required" class="error inline-input">
+											<div class="error__message">
+												<p>Кажется, здесь что-то не так</p>
+											</div>
+										</div>
 									</div>
 								</div>
 							</div>
@@ -229,12 +236,12 @@
 						<div class="slide">
 							<h1>Offline продавец</h1>
 							<div class="conditions">
-								<div class="status">
-									<div class="circle">
+								<div class="conditions__status">
+									<div class="conditions__circle">
 										<div class="icon goods"></div>
 									</div>Есть товар</div>
-								<div class="status">
-									<div class="circle no">
+								<div class="conditions__status">
+									<div class="conditions__circle no">
 										<div class="icon site"></div>
 									</div>Нет сайта</div>
 							</div>
@@ -251,12 +258,12 @@
 						<div class="slide">
 							<h1>Вебмастер</h1>
 							<div class="conditions">
-								<div class="status">
-									<div class="circle no">
+								<div class="conditions__status">
+									<div class="conditions__circle no">
 										<div class="icon goods"></div>
 									</div>Нет товара</div>
-								<div class="status">
-									<div class="circle">
+								<div class="conditions__status">
+									<div class="conditions__circle">
 										<div class="icon site"></div>
 									</div>Есть сайт</div>
 							</div>
@@ -273,12 +280,12 @@
 						<div class="slide">
 							<h1>Online продавец</h1>
 							<div class="conditions">
-								<div class="status">
-									<div class="circle">
+								<div class="conditions__status">
+									<div class="conditions__circle">
 										<div class="icon goods"></div>
 									</div>Есть товар</div>
-								<div class="status">
-									<div class="circle">
+								<div class="conditions__status">
+									<div class="conditions__circle">
 										<div class="icon site"></div>
 									</div>Есть сайт</div>
 							</div>
@@ -295,12 +302,12 @@
 						<div class="slide">
 							<h1>Online продавец</h1>
 							<div class="conditions">
-								<div class="status">
-									<div class="circle no">
+								<div class="conditions__status">
+									<div class="conditions__circle no">
 										<div class="icon goods"></div>
 									</div>Нет товара</div>
-								<div class="status">
-									<div class="circle no">
+								<div class="conditions__status">
+									<div class="conditions__circle no">
 										<div class="icon site"></div>
 									</div>Нет сайта</div>
 							</div>
@@ -471,6 +478,27 @@
 							</ul>
 						</div>
 					</div>
+					<div class="fourth column">
+						<div class="content">
+							<ul class="social">
+								<li>
+									<a href="https://vk.com/pokupo" target="_blank" title="Вконтакте" class="social__icon vk"></a>
+								</li>
+								<li>
+									<a href="https://twitter.com/pokupo_ru" target="_blank" title="Твиттер" class="social__icon tw"></a>
+								</li>
+								<li>
+									<a href="http://pokupo.livejournal.com/" target="_blank" title="Живой журнал" class="social__icon lj"></a>
+								</li>
+								<li>
+									<a href="http://habrahabr.ru/company/pokupo/" target="_blank" title="Хабрахабр" class="social__icon hh"></a>
+								</li>
+								<li>
+									<a href="https://groups.google.com/d/forum/pokupo_ru" target="_blank" title="Гугл-плюс" class="social__icon gp"></a>
+								</li>
+							</ul>
+						</div>
+					</div>
 					<div class="second column">
 						<div class="content">
 							<ul>
@@ -491,27 +519,6 @@
 								<li><a href="javascript:void(0);" title="Правила конфиденциальности"> Правила конфиденциальности</a>
 								</li>
 								<li><a href="javascript:void(0);" title="Политика возврата платежей"> Политика возврата платежей</a>
-								</li>
-							</ul>
-						</div>
-					</div>
-					<div class="fourth column">
-						<div class="content">
-							<ul class="social">
-								<li>
-									<a href="https://vk.com/pokupo" target="_blank" class="social__icon vk"></a>
-								</li>
-								<li>
-									<a href="https://twitter.com/pokupo_ru" target="_blank" class="social__icon tw"></a>
-								</li>
-								<li>
-									<a href="http://pokupo.livejournal.com/" target="_blank" class="social__icon lj"></a>
-								</li>
-								<li>
-									<a href="http://habrahabr.ru/company/pokupo/" target="_blank" class="social__icon ok"></a>
-								</li>
-								<li>
-									<a href="https://groups.google.com/d/forum/pokupo_ru" target="_blank" class="social__icon gp"></a>
 								</li>
 							</ul>
 						</div>

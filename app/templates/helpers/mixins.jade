@@ -119,12 +119,13 @@ mixin catalog-item(item, flat)
 							span.parameter Цвет:
 							|  белый
 				.b-item__price
-					if item.oldPrice
-						.b-price.b-item__price--old
-							span.b-price__number= item.oldPrice
-							span.b-price__thinsp &nbsp;
-							span.b-price__rubl Р
 					.b-price
+						if item.oldPrice
+							.b-price.b-item__price--old
+								span.b-price__number= item.oldPrice
+								span.b-price__thinsp &nbsp;
+								span.b-price__rubl Р
+							br
 						span.b-price__number= item.price
 						span.b-price__thinsp &nbsp;
 						span.b-price__rubl Р
@@ -155,12 +156,13 @@ mixin catalog-item(item, flat)
 										span.parameter Цвет:
 										|  белый
 							.b-item__price
-								if item.oldPrice
-									.b-price.b-item__price--old
-										span.b-price__number= item.oldPrice
-										span.b-price__thinsp &nbsp;
-										span.b-price__rubl Р
 								.b-price
+									if item.oldPrice
+										.b-price.b-item__price--old
+											span.b-price__number= item.oldPrice
+											span.b-price__thinsp &nbsp;
+											span.b-price__rubl Р
+										br
 									span.b-price__number= item.price
 									span.b-price__thinsp &nbsp;
 									span.b-price__rubl Р
@@ -180,20 +182,19 @@ mixin catalog-items(list, flat)
 
 //- Форматирование цены
 mixin price(price, oldprice)
-	if oldprice
-		span.b-price.b-item__price--old(class!=attributes.class)
-			if price > 9999
-				span.b-price__number
-					| #{Math.floor(oldprice/1000)}
-					i.b-price__separator
-					| #{oldprice%1000}
-			else
-				span.b-price__number= oldprice
-			span.b-price__thinsp &nbsp;
-			span.b-price__rubl Р
-		br
-
 	span.b-price(class!=attributes.class)
+		if oldprice
+			span.b-price.b-item__price--old(class!=attributes.class)
+				if price > 9999
+					span.b-price__number
+						| #{Math.floor(oldprice/1000)}
+						i.b-price__separator
+						| #{oldprice%1000}
+				else
+					span.b-price__number= oldprice
+				span.b-price__thinsp &nbsp;
+				span.b-price__rubl Р
+			br
 		if price > 9999
 			span.b-price__number
 				| #{Math.floor(price/1000)}

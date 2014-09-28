@@ -1,18 +1,19 @@
 /*
-	sm = small
-	md = medium
-	lg = large
-	xl = extra-large
+		sm = small
+		md = medium
+		lg = large
+		xl = extra-large
+
+	grid(screen = 'sm', grid = 12)
+		for width in (1 .. grid)
+			.col_{screen}_{width}
+				width (width / grid) * 100%
+
+	grid('sm',4)
+
+	@media (min-width: 48em)
+		grid('md',8)
+
+	@media (min-width: 64em)
+		grid('lg',12)
 */
-grid(screen = 'sm', grid = 12)
-	for width in (1 .. grid)
-		.col_{screen}_{width}
-			width (width / grid) * 100%
-
-grid('sm',4)
-
-@media (min-width: 48em)
-	grid('md',8)
-
-@media (min-width: 64em)
-	grid('lg',12)

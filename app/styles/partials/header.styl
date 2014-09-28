@@ -12,7 +12,10 @@ section.header
 	cursor pointer
 	text-transform uppercase
 	font-weight 700
-
+		
+	&.active
+		color $orange
+		
 .header
 	position relative
 	padding 0
@@ -282,7 +285,7 @@ section.header
 	&__results
 		text-align left
 		line-height 60px
-		padding 20px 30px
+		padding 23px 30px 20px
 		margin-right 200px
 		margin-bottom 0
 		font-size 16px
@@ -299,6 +302,14 @@ section.header
 		float right
 		margin 30px 32px 30px 0
 		line-height 1
+
+	&__cart-button
+		float right
+		line-height 1
+		margin 30px 15px 30px 0
+		font-size 13px
+		padding 18px 10px
+		text-decoration underline
 
 .b-order-item
 	font-size 0

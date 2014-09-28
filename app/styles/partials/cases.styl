@@ -39,7 +39,7 @@
 		background url('../images/ui/bracket.png') 50% 100% no-repeat
 		text-align center
 
-.status
+.conditions__status
 	display inline-block
 	width 180px
 	height 220px
@@ -47,37 +47,37 @@
 	font-size 16px
 	font-weight 700
 
-	.circle
-		margin-bottom 8px
-		background-color $orange
-		border-radius 100px
-		border 2px solid transparent
+.conditions__circle
+	margin-bottom 8px
+	background-color $orange
+	border-radius 100px
+	border 2px solid transparent
 
+	.icon
+		position relative
+		display inline-block
+		margin 38px
+		&.goods
+			sprite($case__goods)
+
+		&.site
+			sprite($case__site)
+		&:after
+			content ''
+			display block
+			position absolute
+			top -40px
+			right -40px
+			sprite($icon__check)
+
+
+	&.no
+		background-color transparent
+		border-color #000
+		opacity 0.3
 		.icon
-			position relative
-			display inline-block
-			margin 38px
-			&.goods
-				sprite($case__goods)
-
-			&.site
-				sprite($case__site)
 			&:after
-				content ''
-				display block
-				position absolute
-				top -40px
-				right -40px
-				sprite($icon__check)
-
-
-		&.no
-			background-color transparent
-			border-color #000
-			opacity 0.3
-			.icon
-				&:after
-					sprite($icon__cross)
+				sprite($icon__cross)
 
 .steps
 	display block

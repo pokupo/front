@@ -90,18 +90,30 @@ PKP.init = function() {
 PKP.Responsive = {
 	init: function(){
 		$('#toggleNav').on('click', function(){
+			$(this).toggleClass('active');
 			$('.menu.b-navigation').slideToggle(400);
 		});
 	},
 	reflow: function() {
-		var state = (768 > PKP.windowWidth) ? false : true;
+		var displ,
+			state = (768 > PKP.windowWidth) ? false : true;
+
+		if(state) {
+			displ = 'inline-block';
+		} else {
+			displ = 'none';
+
+			if( $('#toggleNav').is('.active') ){
+				displ = 'block';
+			}
+		}
 
 		if($('section.store .b-catalog').length > 0) {
 			PKP.UI.toggleSidebar(state);
 		}
-		if(!state) {
-			$('.menu.b-navigation').show();
-		}
+		
+		$('.menu.b-navigation').css({'display':displ});
+		
 	}
 };
 
@@ -297,6 +309,7 @@ PKP.UI = {
 		/* Снимаем класс ошибки при фокусе */
 		$('input.error').on('focus', function() {
 			$(this).removeClass('error');
+			$(this).closest(".input-holder").find('.error__message').hide();
 		});
 
 		/* Переключение лэйаута */
@@ -1150,7 +1163,7 @@ PKP.Sliders = {
 			navigationText: ['',''],
 			scrollPerPage: true,
 			pagination: false,
-			responsive: false,
+			responsive: true,
 			theme: '',
 		});
 

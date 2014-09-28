@@ -13,7 +13,7 @@ block content
 					.input-holder
 						input.inline-input(name="password" type="password" placeholder="Пароль")
 
-					.input-holder.input-holder--divider
+					div(style="margin: -20px 0 10px")
 						input#remember.checkbox(name="remember" type="checkbox")
 						label(for="remember") запомнить меня
 					button.btn.btn-lg(type="submit") Войти
@@ -33,3 +33,6 @@ block content
 						a(href="popup-reset-password.html") Восстановление пароля
 					li
 						a(href=js0) Регистрация
+
+block scripts
+	+script(['main.js'])
