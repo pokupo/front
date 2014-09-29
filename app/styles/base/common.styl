@@ -182,13 +182,25 @@ hgroup
 		text-decoration none
 		border-bottom 1px solid rgba($a__link, 0.25)
 		transition border-bottom-color 0.1s ease-in-out
+		display inline-block
+		overflow hidden
+		text-overflow ellipsis
+		white-space nowrap
+		line-height 20px
 
 		&:hover
 			color $a__hover
 			border-bottom 1px solid rgba($a__hover, 0.4)
+
+	.divider
+	.current
+		display inline-block
+		overflow hidden
+		line-height 20px
+
 	.divider
 		color #000
-		margin 0 2px
+		margin 0 4px
 
 	.current
 		color #999

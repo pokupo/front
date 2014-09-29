@@ -1,4 +1,7 @@
-@media only screen and (min-width: 641px) and (max-width: 768px)
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait), screen and (min-width: 641px) and (max-width: 800px)
+	.nosidebar .b-catalog
+		clear left
+
 	.b-catalog-item
 		.fotorama__wrap
 			margin 0 auto
@@ -29,7 +32,20 @@
 		.b-item
 			min-width 0
 
+	.columns.triple.columns--resp_fix
+		.column
+			width 33% 
+			float left !important
 
+			.content
+					margin-right 10px
+
+			&.double
+				width 66%
+
+			&.third
+				left 66.6667%
+				
 
 
 

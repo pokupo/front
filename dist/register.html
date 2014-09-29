@@ -2,6 +2,7 @@
 <html lang="ru">
 	<head>
 		<meta charset="utf-8">
+		<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0">
 		<!-- iOS-->
 		<meta name="apple-mobile-web-app-capable" content="yes">
 		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -328,48 +329,23 @@
 								<div id="step-1">
 									<h2 class="b-wizard__step-title">Данные аккаунта</h2>
 									<p>Укажите свой уникальный псевдоним, почту и телефон</p>
-									<div class="input-holder tooltip">
-										<div class="tooltip__trigger">?
-											<div class="tooltip__content">
-												<p>Введите ваше имя на сайте.</p>
-												<div class="tooltip__before"></div>
-												<div class="tooltip__after"></div>
-											</div>
-										</div>
+									<div class="input-holder">
+										<div rel="tooltip" title="Для входа в личный кабинет" class="tooltip__trigger">?</div>
 										<input type="text" name="nickname" value="" placeholder="Псевдоним" class="block-input">
 									</div>
-									<div class="input-holder tooltip">
-										<div class="tooltip__trigger">?
-											<div class="tooltip__content">
-												<p>Введите ваш адрес электронной почты. Он будет логином для входа в личный кабинет.</p>
-												<p>На этот адрес будут приходить уведомления о статусе вашего заказа.</p>
-												<div class="tooltip__before"></div>
-												<div class="tooltip__after"></div>
-											</div>
-										</div>
-										<input type="email" name="email" value="почта@мойбложик.рф" placeholder="Ваш e-mail" class="error block-input">
+									<div class="input-holder">
+										<div rel="tooltip" title="Для уведомлений о доставке заказа" class="tooltip__trigger">?</div>
+										<input type="email" name="email" value="почта#мойбложик.рф" placeholder="Ваш e-mail" class="error block-input">
 										<div class="error__message">
 											<p>Кажется, здесь что-то не так</p>
 										</div>
 									</div>
-									<div class="input-holder tooltip">
-										<div class="tooltip__trigger">?
-											<div class="tooltip__content">
-												<p>Укажите номер вашего телефона.</p>
-												<div class="tooltip__before"></div>
-												<div class="tooltip__after"></div>
-											</div>
-										</div>
+									<div class="input-holder">
+										<div rel="tooltip" title="Для связи с курьером" class="tooltip__trigger">?</div>
 										<input type="tel" name="phone" value="" placeholder="Номер телефона" class="block-input">
 									</div>
-									<div class="input-holder tooltip">
-										<div class="tooltip__trigger">?
-											<div class="tooltip__content">
-												<p>Ваш пароль должен содержать минимум одну цифру, заглавную букву, спецсимвол, иероглиф, коловрат, число зверя и кровь девственницы.</p>
-												<div class="tooltip__before"></div>
-												<div class="tooltip__after"></div>
-											</div>
-										</div>
+									<div class="input-holder">
+										<div rel="tooltip" title="Ваш пароль должен содержать минимум одну цифру, заглавную букву, спецсимвол, иероглиф, коловрат, число зверя и кровь девственницы." class="tooltip__trigger">?</div>
 										<input type="password" name="password" value="" placeholder="Пароль" class="block-input">
 									</div>
 									<div class="input-holder">
@@ -385,14 +361,8 @@
 								<div id="step-2">
 									<h2 class="b-wizard__step-title">Активация аккаунта</h2>
 									<p>Укажите код, высланный на почтовый адрес или телефон</p>
-									<div class="input-holder tooltip">
-										<div class="tooltip__trigger">?
-											<div class="tooltip__content">
-												<p>Код, высланный на почтовый адрес или телефон</p>
-												<div class="tooltip__before"></div>
-												<div class="tooltip__after"></div>
-											</div>
-										</div>
+									<div class="input-holder">
+										<div rel="tooltip" title="Код, высланный на почтовый адрес или телефон" class="tooltip__trigger">?</div>
 										<input type="text" name="code" value="" placeholder="Ваш e-mail код" class="block-input">
 									</div>
 									<div style="padding-top:13px" class="input-holder">
@@ -403,14 +373,8 @@
 								<div id="step-3">
 									<h2 class="b-wizard__step-title">Персональные данные</h2>
 									<p>Укажите свои персональные данные</p>
-									<div class="input-holder tooltip">
-										<div class="tooltip__trigger">?
-											<div class="tooltip__content">
-												<p>Введите ваше имя на сайте.</p>
-												<div class="tooltip__before"></div>
-												<div class="tooltip__after"></div>
-											</div>
-										</div>
+									<div class="input-holder">
+										<div rel="tooltip" title="Для доставки и выдачи заказов" class="tooltip__trigger">?</div>
 										<input type="text" name="family" value="" placeholder="Фамилия" class="block-input">
 									</div>
 									<div class="input-holder">
@@ -437,14 +401,7 @@
 											<option value="3">Белорусь</option>
 										</select>
 									</div>
-									<div class="input-holder tooltip">
-										<div class="tooltip__trigger">?
-											<div class="tooltip__content">
-												<p>Введите ваше имя на сайте.</p>
-												<div class="tooltip__before"></div>
-												<div class="tooltip__after"></div>
-											</div>
-										</div>
+									<div class="input-holder">
 										<input type="text" name="family" value="" placeholder="Регион" class="block-input">
 									</div>
 									<div class="input-holder">

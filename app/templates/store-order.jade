@@ -65,12 +65,8 @@ block content
 							h2.b-wizard__step-title Персональные данные
 							p Укажите свои персональные данные
 
-							.input-holder.tooltip
-								.tooltip__trigger ?
-									.tooltip__content
-										p Введите ваше имя на сайте.
-										.tooltip__before
-										.tooltip__after
+							.input-holder
+								.tooltip__trigger(rel="tooltip" title="Введите ваше имя на сайте") ?
 								input.block-input(type="text" name="family" value="" placeholder="Фамилия")
 
 							.input-holder
@@ -123,7 +119,7 @@ block content
 						#step-22
 							h2.b-wizard__step-title Выберите адрес доставки
 
-							table.b-order-table
+							table.b-order-table.responsive-table
 								thead
 									tr
 										th.b-order-table__action
@@ -133,33 +129,33 @@ block content
 										th.b-order-table__drop 
 								tbody
 									tr.b-order-table__item
-										td.b-order-table__action
+										td(data-title="Выбрать").b-order-table__action
 											input#tr_01(type="radio" value="1" name="radio")
 											label(for="tr_01" rel="tooltip" title="Выбрать") &nbsp;
-										td 309070, Россия, г. Белгород, ул. Кривошеина 8, кв 13
-										td.b-order-table__name Сибилев Игорь
-										td.b-order-table__phone +7 913 123 45-67-89
-										td.b-order-table__drop
+										td(data-title="Адрес") 309070, Россия, г. Белгород, ул. Кривошеина 8, кв 13
+										td(data-title="Получатель").b-order-table__name Сибилев Игорь
+										td(data-title="Телефон").b-order-table__phone +7 913 123 45-67-89
+										td(data-title="Удалить").b-order-table__drop
 											.b-order-item__drop.btn-circle.btn-circle--drop
 
 									tr.b-order-table__item.active
-										td.b-order-table__action
+										td(data-title="Выбрать").b-order-table__action
 											input#tr_02(type="radio" value="2" name="radio" checked)
 											label(for="tr_02" rel="tooltip" title="Выбрать") &nbsp;
-										td 309070, Россия, г. Белгород, ул. Ленина 15, кв 20
-										td.b-order-table__name Константин Константинопольский
-										td.b-order-table__phone +7 913 123 45-67-89
-										td.b-order-table__drop
+										td(data-title="Адрес") 309070, Россия, г. Белгород, ул. Ленина 15, кв 20
+										td(data-title="Получатель").b-order-table__name Константин Константинопольский
+										td(data-title="Телефон").b-order-table__phone +7 913 123 45-67-89
+										td(data-title="Удалить").b-order-table__drop
 											.b-order-item__drop.btn-circle.btn-circle--drop
 
 									tr.b-order-table__item
-										td.b-order-table__action
+										td(data-title="Выбрать").b-order-table__action
 											input#tr_03(type="radio" value="3" name="radio")
 											label(for="tr_03" rel="tooltip" title="Выбрать") &nbsp;
-										td 309070, Россия, г. Белгород, ул. Кривошеина 8, кв 13
-										td.b-order-table__name Сибилев Игорь
-										td.b-order-table__phone +7 913 123 45-67-89
-										td.b-order-table__drop
+										td(data-title="Адрес") 309070, Россия, г. Белгород, ул. Кривошеина 8, кв 13
+										td(data-title="Получатель").b-order-table__name Сибилев Игорь
+										td(data-title="Телефон").b-order-table__phone +7 913 123 45-67-89
+										td(data-title="Удалить").b-order-table__drop
 											.b-order-item__drop.btn-circle.btn-circle--drop
 								tfoot
 									tr
@@ -169,7 +165,7 @@ block content
 						#step-3
 							h2.b-wizard__step-title Выберите способ доставки
 
-							table.b-order-table
+							table.b-order-table.responsive-table
 								thead
 									tr
 										th.b-order-table__logo
@@ -178,40 +174,40 @@ block content
 										th.b-order-table__action
 								tbody
 									tr.b-order-table__item.active
-										td.b-order-table__logo
+										td(data-title="Лого").b-order-table__logo
 											img(src="images/pages/order/ems.png")
-										td 
+										td(data-title="Способ доставки") 
 											b Доставка EMS почтой
 											br
 											| Доставка по России и регионам выполняет EMS Почта России
-										td.b-order-table__price
+										td(data-title="Стоимость").b-order-table__price
 											+price(800)
-										td.b-order-table__action
+										td(data-title="Выбрать").b-order-table__action
 											input#tr_11(type="radio" value="1" name="radio2" checked)
 											label(for="tr_11" rel="tooltip" title="Выбрать") &nbsp;
 
 									tr.b-order-table__item
-										td.b-order-table__logo
+										td(data-title="Лого").b-order-table__logo
 											img(src="images/pages/order/dl.png")
-										td
+										td(data-title="Способ доставки")
 											b Деловые Линии
 											br
 											| Доставка по России и регионам выполняет транспортная компания Деловые Линиии
-										td.b-order-table__price
+										td(data-title="Стоимость").b-order-table__price
 											+price(1200)
-										td.b-order-table__action
+										td(data-title="Выбрать").b-order-table__action
 											input#tr_12(type="radio" value="2" name="radio2")
 											label(for="tr_12" rel="tooltip" title="Выбрать") &nbsp;	
 
 									tr.b-order-table__item
-										td.b-order-table__logo
-										td
+										td(data-title="Лого").b-order-table__logo
+										td(data-title="Способ доставки")
 											b Курьерская доставка
 											br
 											| В крупных городах это наиболее востребованный способ и  популярнейшая служба доставки.
-										td.b-order-table__price
+										td(data-title="Стоимость").b-order-table__price
 											+price(900)
-										td.b-order-table__action
+										td(data-title="Выбрать").b-order-table__action
 											input#tr_13(type="radio" value="3" name="radio2")
 											label(for="tr_13" rel="tooltip" title="Выбрать") &nbsp;
 
@@ -248,7 +244,7 @@ block content
 							
 						#step-5
 							h2.b-wizard__step-title Подтвердите заказ
-							table.b-order-table.b-order-table--header.b-cart-table
+							table.b-order-table.b-order-table--header.b-cart-table.responsive-table
 								thead
 									tr
 										th.b-order-table__thumb
@@ -258,35 +254,35 @@ block content
 										th.b-order-table__price Сумма
 								tbody
 									tr.b-order-table__item
-										td.b-order-table__thumb
+										td(data-title="").b-order-table__thumb
 											img(src="images/catalog/goods01.jpg")
-										td.b-order-table__title
+										td(data-title="Наименование").b-order-table__title
 											a(href=js0) Converse Red
-										td.b-order-table__price
+										td(data-title="Цена").b-order-table__price
 											+price(2880)
-										td.b-order-table__action 1
-										td.b-order-table__price
+										td(data-title="Количество").b-order-table__qty 1
+										td(data-title="Стоимость").b-order-table__price
 											+price(12440)
 									tr.b-order-table__item
-										td.b-order-table__thumb
+										td(data-title="").b-order-table__thumb
 											img(src="images/catalog/goods02.jpg")
-										td.b-order-table__title
+										td(data-title="Наименование").b-order-table__title
 											a(href=js0)
 												| Штукатурка гипсовая для&nbsp;наружных работ с&nbsp;нормальной влажностью
-										td.b-order-table__price
+										td(data-title="Цена").b-order-table__price
 											+price(2400)
-										td.b-order-table__action 1
-										td.b-order-table__price
+										td(data-title="Количество").b-order-table__qty 1
+										td(data-title="Стоимость").b-order-table__price
 											+price(27000)
 									tr.b-order-table__item
-										td.b-order-table__thumb
+										td(data-title="").b-order-table__thumb
 											img(src="images/catalog/goods03.jpg")
-										td.b-order-table__title
+										td(data-title="Наименование").b-order-table__title
 											a(href=js0) Converse Red
-										td.b-order-table__price
+										td(data-title="Цена").b-order-table__price
 											+price(1800)
-										td.b-order-table__action 1
-										td.b-order-table__price
+										td(data-title="Количество").b-order-table__qty 1
+										td(data-title="Стоимость").b-order-table__price
 											+price(18290)
 
 							ul.b-tech
@@ -319,7 +315,7 @@ block content
 
 
 							h2.b-wizard__step-title Доставка
-							table.b-order-table.b-order-table--header
+							table.b-order-table.b-order-table--header.responsive-table
 								thead
 									tr
 										th(colspan=2) Компания
@@ -328,15 +324,15 @@ block content
 										th.b-order-table__phone Телефон
 								tbody
 									tr.b-order-table__item
-										td.b-order-table__logo
+										td(data-title="").b-order-table__logo
 											img(src="images/pages/order/ems.png")
-										td.b-order-table__title
+										td(data-title="Компания").b-order-table__title
 											b Доставка EMS-Post
-										td
+										td(data-title="Адрес")
 											| 309070, Россия, г. Белгород,<br/>
 											| ул. Ленина 15, кв 20
-										td.b-order-table__price Сибилев Игорь
-										td.b-order-table__phone 8 913 123-45-67
+										td(data-title="Получатель").b-order-table__price Сибилев Игорь
+										td(data-title="Телефон").b-order-table__phone 8 913 123-45-67
 
 							.comment(style="margin-bottom: 60px")
 								textarea(name="comment" value="" placeholder="Примечания к заказу" width="100%" rows=2)

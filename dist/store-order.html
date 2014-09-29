@@ -2,6 +2,7 @@
 <html lang="ru">
 	<head>
 		<meta charset="utf-8">
+		<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0">
 		<!-- iOS-->
 		<meta name="apple-mobile-web-app-capable" content="yes">
 		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -14,7 +15,7 @@
 		<link sizes="144x144" href="images/icons/apple-touch-icon-144x144.png" rel="apple-touch-icon">
 		<link sizes="152x152" href="images/icons/apple-touch-icon-152x152.png" rel="apple-touch-icon">
 		<!-- Windows 8-->
-		<meta name="application-name" content="Pokupo">
+		<meta name="application-name" content="Просмотр товара">
 		<meta name="msapplication-tooltip" content="Description for pokupo">
 		<meta name="msapplication-TileColor" content="#ffffff">
 		<meta name="msapplication-TileImage" content="images/icons/tile.png">
@@ -333,14 +334,8 @@
 								<div id="step-1">
 									<h2 class="b-wizard__step-title">Персональные данные</h2>
 									<p>Укажите свои персональные данные</p>
-									<div class="input-holder tooltip">
-										<div class="tooltip__trigger">?
-											<div class="tooltip__content">
-												<p>Введите ваше имя на сайте.</p>
-												<div class="tooltip__before"></div>
-												<div class="tooltip__after"></div>
-											</div>
-										</div>
+									<div class="input-holder">
+										<div rel="tooltip" title="Введите ваше имя на сайте" class="tooltip__trigger">?</div>
 										<input type="text" name="family" value="" placeholder="Фамилия" class="block-input">
 									</div>
 									<div class="input-holder">
@@ -392,7 +387,7 @@
 								</div>
 								<div id="step-22">
 									<h2 class="b-wizard__step-title">Выберите адрес доставки</h2>
-									<table class="b-order-table">
+									<table class="b-order-table responsive-table">
 										<thead>
 											<tr>
 												<th class="b-order-table__action"></th>
@@ -404,38 +399,38 @@
 										</thead>
 										<tbody>
 											<tr class="b-order-table__item">
-												<td class="b-order-table__action">
+												<td data-title="Выбрать" class="b-order-table__action">
 													<input id="tr_01" type="radio" value="1" name="radio">
 													<label for="tr_01" rel="tooltip" title="Выбрать">&nbsp;</label>
 												</td>
-												<td>309070, Россия, г. Белгород, ул. Кривошеина 8, кв 13</td>
-												<td class="b-order-table__name">Сибилев Игорь</td>
-												<td class="b-order-table__phone">+7 913 123 45-67-89</td>
-												<td class="b-order-table__drop">
+												<td data-title="Адрес">309070, Россия, г. Белгород, ул. Кривошеина 8, кв 13</td>
+												<td data-title="Получатель" class="b-order-table__name">Сибилев Игорь</td>
+												<td data-title="Телефон" class="b-order-table__phone">+7 913 123 45-67-89</td>
+												<td data-title="Удалить" class="b-order-table__drop">
 													<div class="b-order-item__drop btn-circle btn-circle--drop"></div>
 												</td>
 											</tr>
 											<tr class="b-order-table__item active">
-												<td class="b-order-table__action">
+												<td data-title="Выбрать" class="b-order-table__action">
 													<input id="tr_02" type="radio" value="2" name="radio" checked>
 													<label for="tr_02" rel="tooltip" title="Выбрать">&nbsp;</label>
 												</td>
-												<td>309070, Россия, г. Белгород, ул. Ленина 15, кв 20</td>
-												<td class="b-order-table__name">Константин Константинопольский</td>
-												<td class="b-order-table__phone">+7 913 123 45-67-89</td>
-												<td class="b-order-table__drop">
+												<td data-title="Адрес">309070, Россия, г. Белгород, ул. Ленина 15, кв 20</td>
+												<td data-title="Получатель" class="b-order-table__name">Константин Константинопольский</td>
+												<td data-title="Телефон" class="b-order-table__phone">+7 913 123 45-67-89</td>
+												<td data-title="Удалить" class="b-order-table__drop">
 													<div class="b-order-item__drop btn-circle btn-circle--drop"></div>
 												</td>
 											</tr>
 											<tr class="b-order-table__item">
-												<td class="b-order-table__action">
+												<td data-title="Выбрать" class="b-order-table__action">
 													<input id="tr_03" type="radio" value="3" name="radio">
 													<label for="tr_03" rel="tooltip" title="Выбрать">&nbsp;</label>
 												</td>
-												<td>309070, Россия, г. Белгород, ул. Кривошеина 8, кв 13</td>
-												<td class="b-order-table__name">Сибилев Игорь</td>
-												<td class="b-order-table__phone">+7 913 123 45-67-89</td>
-												<td class="b-order-table__drop">
+												<td data-title="Адрес">309070, Россия, г. Белгород, ул. Кривошеина 8, кв 13</td>
+												<td data-title="Получатель" class="b-order-table__name">Сибилев Игорь</td>
+												<td data-title="Телефон" class="b-order-table__phone">+7 913 123 45-67-89</td>
+												<td data-title="Удалить" class="b-order-table__drop">
 													<div class="b-order-item__drop btn-circle btn-circle--drop"></div>
 												</td>
 											</tr>
@@ -451,7 +446,7 @@
 								</div>
 								<div id="step-3">
 									<h2 class="b-wizard__step-title">Выберите способ доставки</h2>
-									<table class="b-order-table">
+									<table class="b-order-table responsive-table">
 										<thead>
 											<tr>
 												<th class="b-order-table__logo"></th>
@@ -462,38 +457,38 @@
 										</thead>
 										<tbody>
 											<tr class="b-order-table__item active">
-												<td class="b-order-table__logo">
+												<td data-title="Лого" class="b-order-table__logo">
 													<img src="images/pages/order/ems.png">
 												</td>
-												<td><b>Доставка EMS почтой</b>
+												<td data-title="Способ доставки"><b>Доставка EMS почтой</b>
 													<br>Доставка по России и регионам выполняет EMS Почта России</td>
-												<td class="b-order-table__price"><span class="b-price"><span class="b-price__number">800</span><span class="b-price__thinsp">&nbsp;</span><span class="b-price__rubl">Р</span></span>
+												<td data-title="Стоимость" class="b-order-table__price"><span class="b-price"><span class="b-price__number">800</span><span class="b-price__thinsp">&nbsp;</span><span class="b-price__rubl">Р</span></span>
 												</td>
-												<td class="b-order-table__action">
+												<td data-title="Выбрать" class="b-order-table__action">
 													<input id="tr_11" type="radio" value="1" name="radio2" checked>
 													<label for="tr_11" rel="tooltip" title="Выбрать">&nbsp;</label>
 												</td>
 											</tr>
 											<tr class="b-order-table__item">
-												<td class="b-order-table__logo">
+												<td data-title="Лого" class="b-order-table__logo">
 													<img src="images/pages/order/dl.png">
 												</td>
-												<td><b>Деловые Линии</b>
+												<td data-title="Способ доставки"><b>Деловые Линии</b>
 													<br>Доставка по России и регионам выполняет транспортная компания Деловые Линиии</td>
-												<td class="b-order-table__price"><span class="b-price"><span class="b-price__number">1200</span><span class="b-price__thinsp">&nbsp;</span><span class="b-price__rubl">Р</span></span>
+												<td data-title="Стоимость" class="b-order-table__price"><span class="b-price"><span class="b-price__number">1200</span><span class="b-price__thinsp">&nbsp;</span><span class="b-price__rubl">Р</span></span>
 												</td>
-												<td class="b-order-table__action">
+												<td data-title="Выбрать" class="b-order-table__action">
 													<input id="tr_12" type="radio" value="2" name="radio2">
 													<label for="tr_12" rel="tooltip" title="Выбрать">&nbsp;</label>
 												</td>
 											</tr>
 											<tr class="b-order-table__item">
-												<td class="b-order-table__logo"></td>
-												<td><b>Курьерская доставка</b>
+												<td data-title="Лого" class="b-order-table__logo"></td>
+												<td data-title="Способ доставки"><b>Курьерская доставка</b>
 													<br>В крупных городах это наиболее востребованный способ и популярнейшая служба доставки.</td>
-												<td class="b-order-table__price"><span class="b-price"><span class="b-price__number">900</span><span class="b-price__thinsp">&nbsp;</span><span class="b-price__rubl">Р</span></span>
+												<td data-title="Стоимость" class="b-order-table__price"><span class="b-price"><span class="b-price__number">900</span><span class="b-price__thinsp">&nbsp;</span><span class="b-price__rubl">Р</span></span>
 												</td>
-												<td class="b-order-table__action">
+												<td data-title="Выбрать" class="b-order-table__action">
 													<input id="tr_13" type="radio" value="3" name="radio2">
 													<label for="tr_13" rel="tooltip" title="Выбрать">&nbsp;</label>
 												</td>
@@ -540,7 +535,7 @@
 								</div>
 								<div id="step-5">
 									<h2 class="b-wizard__step-title">Подтвердите заказ</h2>
-									<table class="b-order-table b-order-table--header b-cart-table">
+									<table class="b-order-table b-order-table--header b-cart-table responsive-table">
 										<thead>
 											<tr>
 												<th class="b-order-table__thumb"></th>
@@ -552,39 +547,39 @@
 										</thead>
 										<tbody>
 											<tr class="b-order-table__item">
-												<td class="b-order-table__thumb">
+												<td data-title="" class="b-order-table__thumb">
 													<img src="images/catalog/goods01.jpg">
 												</td>
-												<td class="b-order-table__title"><a href="javascript:void(0);">Converse Red</a>
+												<td data-title="Наименование" class="b-order-table__title"><a href="javascript:void(0);">Converse Red</a>
 												</td>
-												<td class="b-order-table__price"><span class="b-price"><span class="b-price__number">2880</span><span class="b-price__thinsp">&nbsp;</span><span class="b-price__rubl">Р</span></span>
+												<td data-title="Цена" class="b-order-table__price"><span class="b-price"><span class="b-price__number">2880</span><span class="b-price__thinsp">&nbsp;</span><span class="b-price__rubl">Р</span></span>
 												</td>
-												<td class="b-order-table__action">1</td>
-												<td class="b-order-table__price"><span class="b-price"><span class="b-price__number">12<i class="b-price__separator"></i>440</span><span class="b-price__thinsp">&nbsp;</span><span class="b-price__rubl">Р</span></span>
+												<td data-title="Количество" class="b-order-table__qty">1</td>
+												<td data-title="Стоимость" class="b-order-table__price"><span class="b-price"><span class="b-price__number">12<i class="b-price__separator"></i>440</span><span class="b-price__thinsp">&nbsp;</span><span class="b-price__rubl">Р</span></span>
 												</td>
 											</tr>
 											<tr class="b-order-table__item">
-												<td class="b-order-table__thumb">
+												<td data-title="" class="b-order-table__thumb">
 													<img src="images/catalog/goods02.jpg">
 												</td>
-												<td class="b-order-table__title"><a href="javascript:void(0);">Штукатурка гипсовая для&nbsp;наружных работ с&nbsp;нормальной влажностью</a>
+												<td data-title="Наименование" class="b-order-table__title"><a href="javascript:void(0);">Штукатурка гипсовая для&nbsp;наружных работ с&nbsp;нормальной влажностью</a>
 												</td>
-												<td class="b-order-table__price"><span class="b-price"><span class="b-price__number">2400</span><span class="b-price__thinsp">&nbsp;</span><span class="b-price__rubl">Р</span></span>
+												<td data-title="Цена" class="b-order-table__price"><span class="b-price"><span class="b-price__number">2400</span><span class="b-price__thinsp">&nbsp;</span><span class="b-price__rubl">Р</span></span>
 												</td>
-												<td class="b-order-table__action">1</td>
-												<td class="b-order-table__price"><span class="b-price"><span class="b-price__number">27<i class="b-price__separator"></i>0</span><span class="b-price__thinsp">&nbsp;</span><span class="b-price__rubl">Р</span></span>
+												<td data-title="Количество" class="b-order-table__qty">1</td>
+												<td data-title="Стоимость" class="b-order-table__price"><span class="b-price"><span class="b-price__number">27<i class="b-price__separator"></i>0</span><span class="b-price__thinsp">&nbsp;</span><span class="b-price__rubl">Р</span></span>
 												</td>
 											</tr>
 											<tr class="b-order-table__item">
-												<td class="b-order-table__thumb">
+												<td data-title="" class="b-order-table__thumb">
 													<img src="images/catalog/goods03.jpg">
 												</td>
-												<td class="b-order-table__title"><a href="javascript:void(0);">Converse Red</a>
+												<td data-title="Наименование" class="b-order-table__title"><a href="javascript:void(0);">Converse Red</a>
 												</td>
-												<td class="b-order-table__price"><span class="b-price"><span class="b-price__number">1800</span><span class="b-price__thinsp">&nbsp;</span><span class="b-price__rubl">Р</span></span>
+												<td data-title="Цена" class="b-order-table__price"><span class="b-price"><span class="b-price__number">1800</span><span class="b-price__thinsp">&nbsp;</span><span class="b-price__rubl">Р</span></span>
 												</td>
-												<td class="b-order-table__action">1</td>
-												<td class="b-order-table__price"><span class="b-price"><span class="b-price__number">18<i class="b-price__separator"></i>290</span><span class="b-price__thinsp">&nbsp;</span><span class="b-price__rubl">Р</span></span>
+												<td data-title="Количество" class="b-order-table__qty">1</td>
+												<td data-title="Стоимость" class="b-order-table__price"><span class="b-price"><span class="b-price__number">18<i class="b-price__separator"></i>290</span><span class="b-price__thinsp">&nbsp;</span><span class="b-price__rubl">Р</span></span>
 												</td>
 											</tr>
 										</tbody>
@@ -615,7 +610,7 @@
 										</li>
 									</ul>
 									<h2 class="b-wizard__step-title">Доставка</h2>
-									<table class="b-order-table b-order-table--header">
+									<table class="b-order-table b-order-table--header responsive-table">
 										<thead>
 											<tr>
 												<th colspan="2">Компания</th>
@@ -626,15 +621,15 @@
 										</thead>
 										<tbody>
 											<tr class="b-order-table__item">
-												<td class="b-order-table__logo">
+												<td data-title="" class="b-order-table__logo">
 													<img src="images/pages/order/ems.png">
 												</td>
-												<td class="b-order-table__title"><b>Доставка EMS-Post</b>
+												<td data-title="Компания" class="b-order-table__title"><b>Доставка EMS-Post</b>
 												</td>
-												<td>309070, Россия, г. Белгород,
+												<td data-title="Адрес">309070, Россия, г. Белгород,
 													<br/>ул. Ленина 15, кв 20</td>
-												<td class="b-order-table__price">Сибилев Игорь</td>
-												<td class="b-order-table__phone">8 913 123-45-67</td>
+												<td data-title="Получатель" class="b-order-table__price">Сибилев Игорь</td>
+												<td data-title="Телефон" class="b-order-table__phone">8 913 123-45-67</td>
 											</tr>
 										</tbody>
 									</table>

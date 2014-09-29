@@ -62,40 +62,23 @@ block content
 							h2.b-wizard__step-title Данные аккаунта
 							p Укажите свой уникальный псевдоним, почту и телефон
 
-							.input-holder.tooltip
-								.tooltip__trigger ?
-									.tooltip__content
-										p Введите ваше имя на сайте.
-										.tooltip__before
-										.tooltip__after
+							.input-holder
+								.tooltip__trigger(rel="tooltip" title="Для входа в личный кабинет") ?
 								input.block-input(type="text" name="nickname" value="" placeholder="Псевдоним")
 
 
-							.input-holder.tooltip
-								.tooltip__trigger ?
-									.tooltip__content
-										p Введите ваш адрес электронной почты. Он будет логином для входа в личный кабинет.
-										p На этот адрес будут приходить уведомления о статусе вашего заказа.
-										.tooltip__before
-										.tooltip__after
-								input.error.block-input(type="email" name="email" value="почта@мойбложик.рф" placeholder="Ваш e-mail")
+							.input-holder
+								.tooltip__trigger(rel="tooltip" title="Для уведомлений о доставке заказа") ?
+								input.error.block-input(type="email" name="email" value="почта#мойбложик.рф" placeholder="Ваш e-mail")
 								.error__message
 									p Кажется, здесь что-то не так
 
-							.input-holder.tooltip
-								.tooltip__trigger ?
-									.tooltip__content
-										p Укажите номер вашего телефона.
-										.tooltip__before
-										.tooltip__after
+							.input-holder
+								.tooltip__trigger(rel="tooltip" title="Для связи с курьером") ?
 								input.block-input(type="tel" name="phone" value="" placeholder="Номер телефона")
 
-							.input-holder.tooltip
-								.tooltip__trigger ?
-									.tooltip__content
-										p Ваш пароль должен содержать минимум одну цифру, заглавную букву, спецсимвол, иероглиф, коловрат, число зверя и кровь девственницы.
-										.tooltip__before
-										.tooltip__after
+							.input-holder
+								.tooltip__trigger(rel="tooltip" title="Ваш пароль должен содержать минимум одну цифру, заглавную букву, спецсимвол, иероглиф, коловрат, число зверя и кровь девственницы.") ?
 								input.block-input(type="password" name="password" value="" placeholder="Пароль")
 
 							.input-holder
@@ -115,12 +98,8 @@ block content
 							h2.b-wizard__step-title Активация аккаунта
 							p Укажите код, высланный на почтовый адрес или телефон
 
-							.input-holder.tooltip
-								.tooltip__trigger ?
-									.tooltip__content
-										p Код, высланный на почтовый адрес или телефон
-										.tooltip__before
-										.tooltip__after
+							.input-holder
+								.tooltip__trigger(rel="tooltip" title="Код, высланный на почтовый адрес или телефон") ?
 								input.block-input(type="text" name="code" value="" placeholder="Ваш e-mail код")
 
 							.input-holder(style="padding-top:13px")
@@ -132,12 +111,8 @@ block content
 							h2.b-wizard__step-title Персональные данные
 							p Укажите свои персональные данные
 
-							.input-holder.tooltip
-								.tooltip__trigger ?
-									.tooltip__content
-										p Введите ваше имя на сайте.
-										.tooltip__before
-										.tooltip__after
+							.input-holder
+								.tooltip__trigger(rel="tooltip" title="Для доставки и выдачи заказов") ?
 								input.block-input(type="text" name="family" value="" placeholder="Фамилия")
 
 							.input-holder
@@ -163,12 +138,7 @@ block content
 									option(value="2") Украина
 									option(value="3") Белорусь
 
-							.input-holder.tooltip
-								.tooltip__trigger ?
-									.tooltip__content
-										p Введите ваше имя на сайте.
-										.tooltip__before
-										.tooltip__after
+							.input-holder
 								input.block-input(type="text" name="family" value="" placeholder="Регион")
 
 							.input-holder
