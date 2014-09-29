@@ -3205,7 +3205,8 @@ section.header {
 
 .b-order-item.b-cart-menu__goods-item {
 	line-height: 30px;
-	height: 63px;
+	min-height: 63px;
+	padding: 4px 0;
 }
 
 .b-order-item.b-cart-menu__goods-item > div {
