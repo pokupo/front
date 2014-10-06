@@ -851,6 +851,56 @@ PKP.Forms = {
 			});
 		}
 
+		if($('#registerShopWizard').length > 0) {
+			var progress = 0;
+			var canvas = document.getElementById('progressCircle');
+
+			var circle = new ProgressCircle({
+				canvas: canvas,
+			});
+
+			circle
+				.addEntry({
+					fillColor: '#ffa800',
+					progressListener: function() {return progress;}
+				})
+				.start(30);
+
+			$('#registerShopWizard').wizard({
+				// Events
+				onShowStep: function(obj) {
+					var current = (Number(obj[0].rel) * 33.3333) / 100,
+						intervalId;
+
+					if(progress < current) {
+						intervalId = setInterval(function() {
+							if(progress < current) {
+								progress = progress + 0.015;
+							} else {
+								clearInterval(intervalId);
+							}
+							progress = (progress < current) ? progress + 0.015 : progress;
+						}, 30);
+
+					} else {
+						intervalId = setInterval(function() {
+							if(progress > current) {
+								progress = progress - 0.015;
+							} else {
+								clearInterval(intervalId);
+							}
+						}, 30);
+					}
+
+					return true;
+				}, 
+				onFinish: function() {
+					progress = 1;
+					return true;
+				}
+			});
+		}
+
 		if($('#orderWizard').length > 0) {
 			$('#orderWizard').wizard({
 				labelFinish: 'Подтверждаю'
