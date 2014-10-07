@@ -78,8 +78,6 @@
 		width 230px
 
 
-	
-	/* Force table to not be like tables anymore */
 	table.responsive-table, 
 	table.responsive-table thead,
 	table.responsive-table tfoot, 
@@ -89,7 +87,6 @@
 	table.responsive-table tr
 		display block !important
  
-	/* Hide table headers (but not display none;, for accessibility) */
 	table.responsive-table thead tr
 		position absolute
 		top -9999em
@@ -102,7 +99,6 @@
 		border none
  
 	table.responsive-table td
-		/* Behave  like a "row" */
 		border none
 		position relative
 		width 100%
@@ -111,9 +107,7 @@
 		text-align left
  
 		&:before
-			/* Now like a table header */
 			position absolute
-			/* Top/left values mimic padding */
 			top 6px
 			left 6px
 			width 45% 
@@ -122,6 +116,9 @@
 			text-align left
 			font-weight bold
 			content attr(data-title) 
+
+	.btn-lg
+		padding 18px 50px 16px
 
 
 

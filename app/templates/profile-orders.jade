@@ -27,9 +27,6 @@ block menu
 block profile-nav
 	section.profile-nav.grey
 		.container
-			a.btn.btn-sm(href=js0)
-				i.icon.icon-store--small
-				| Стать продавцом
 			ul.menu.b-profile-nav
 				li.menu__item
 					a.icon__profile(href="profile.html")
@@ -45,12 +42,14 @@ block profile-nav
 						span Заказы
 				li.menu__item
 					a.icon__mail(href="profile-mail.html")
-						span 
-							| Сообщения
-							sup.menu__item__num 25
+						span Сообщения
+						sup.menu__item__num 25
+			a.btn.btn-sm(href=js0)
+				i.icon.icon-store--small
+				| Стать продавцом
 
 block content
-	section.profile
+	section.profile.profile-orders
 		.container
 			.columns.triple
 				.first.double.column
@@ -79,9 +78,9 @@ block content
 						td Торговая платформа Покупо
 						td.b-order-table__price
 							+price(5600)
-						td
+						td.b-order-table__status
 							.b-status.b-status--new Новый
-						td 
+						td.b-order-table__status 
 							.b-status.b-status--waiting Ожидает оплаты
 						td.b-order-table__actions
 							.b-order-item__edit.btn-circle.btn-circle--edit(rel="tooltip" title="Изменить")
@@ -94,9 +93,9 @@ block content
 						td Торговая платформа Покупо
 						td.b-order-table__price
 							+price(8900)
-						td
+						td.b-order-table__status
 							.b-status.b-status--cancelled Отменён
-						td 
+						td.b-order-table__status 
 							.b-status.b-status--cancelled Отменён
 						td.b-order-table__actions
 							.b-order-item__edit.btn-circle.btn-circle--cart(rel="tooltip" title="Скопировать в корзину")
@@ -109,9 +108,9 @@ block content
 						td Торговая платформа Покупо
 						td.b-order-table__price
 							+price(4240)
-						td
+						td.b-order-table__status
 							.b-status.b-status--done Выполнен
-						td 
+						td.b-order-table__status 
 							.b-status.b-status--done Оплачен
 						td.b-order-table__actions
 
@@ -121,9 +120,9 @@ block content
 						td Торговая платформа Покупо
 						td.b-order-table__price
 							+price(12480)
-						td
+						td.b-order-table__status
 							.b-status.b-status--forming Формируется
-						td 
+						td.b-order-table__status 
 							.b-status.b-status--checking На проверке
 						td.b-order-table__actions
 							.b-order-item__edit.btn-circle.btn-circle--edit(rel="tooltip" title="Изменить")
@@ -136,9 +135,9 @@ block content
 						td Торговая платформа Покупо
 						td.b-order-table__price
 							+price(1890)
-						td
+						td.b-order-table__status
 							.b-status.b-status--return Возвращён
-						td 
+						td.b-order-table__status 
 							.b-status.b-status--warning Платёж не прошёл
 						td.b-order-table__actions
 							.b-order-item__edit.btn-circle.btn-circle--edit(rel="tooltip" title="Изменить")

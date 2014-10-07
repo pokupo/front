@@ -277,13 +277,49 @@
 		user-select none
 		background #fff
 
-	&__darr 
+		&:active
+			margin-top -17px
+
+		&.disabled
+			cursor default
+			opacity 0.2
+			pointer-events none
+
+
+	&__darr
 		left 0
 		color $red
+		&:before
+			pseudo__center()
+			width 16px
+			height 2px
+			margin -1px 0 0 -8px
+			background $red
+		&:hover
+			border-color $red
+		&:active
+			border-color darken($red, 24%)
 
 	&__uarr
 		right 0
 		color $green
+		&:before
+		&:after
+			pseudo__center()
+			background $green
+		&:before
+			width 16px
+			height 2px
+			margin -1px 0 0 -8px
+		&:after
+			width 2px
+			height 16px
+			margin -8px 0 0 -1px
+		&:hover
+			border-color $green
+		&:active
+			border-color darken($green, 24%)
+
 
 	&__input-wrapper
 		display inline-block

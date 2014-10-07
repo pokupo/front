@@ -27,9 +27,6 @@ block menu
 block profile-nav
 	section.profile-nav.grey
 		.container
-			a.btn.btn-sm(href=js0)
-				i.icon.icon-store--small
-				| Стать продавцом
 			ul.menu.b-profile-nav
 				li.menu__item.active
 					a.icon__profile(href="profile.html")
@@ -45,10 +42,11 @@ block profile-nav
 						span Заказы
 				li.menu__item
 					a.icon__mail(href="profile-mail.html")
-						span 
-							| Сообщения
-							sup.menu__item__num 25
-
+						span Сообщения
+						sup.menu__item__num 25
+			a.btn.btn-sm(href=js0)
+				i.icon.icon-store--small
+				| Стать продавцом
 
 block content
 	- var userID = 7 // Math.floor(Math.random() * 99 + 1)
@@ -179,7 +177,7 @@ block content
 									td 
 										label(for="tr_01") 309070, Россия, г. Белгород, ул. Кривошеина 8, кв 13
 									td.b-order-table__name Сибилев Игорь
-									td.b-order-table__phone +7 913 123 45-67-89
+									td.b-order-table__phone +7 913 45-67-89
 									td.b-order-table__drop
 										.b-order-item__edit.btn-circle.btn-circle--edit(rel="tooltip" title="Редактировать")
 										.b-order-item__drop.btn-circle.btn-circle--drop(rel="tooltip" title="Удалить адрес")
@@ -191,7 +189,7 @@ block content
 									td 
 										label(for="tr_02") 309070, Россия, г. Белгород, ул. Ленина 15, кв 20
 									td.b-order-table__name Константин Константинопольский
-									td.b-order-table__phone +7 913 123 45-67-89
+									td.b-order-table__phone +7 913 45-67-89
 									td.b-order-table__drop
 										.b-order-item__edit.btn-circle.btn-circle--edit(rel="tooltip" title="Редактировать")
 										.b-order-item__drop.btn-circle.btn-circle--drop(rel="tooltip" title="Удалить адрес")
@@ -203,7 +201,7 @@ block content
 									td 
 										label(for="tr_03") 309070, Россия, г. Белгород, ул. Кривошеина 8, кв 13
 									td.b-order-table__name Сибилев Игорь
-									td.b-order-table__phone +7 913 123 45-67-89
+									td.b-order-table__phone +7 913 45-67-89
 									td.b-order-table__drop
 										.b-order-item__edit.btn-circle.btn-circle--edit(rel="tooltip" title="Редактировать")
 										.b-order-item__drop.btn-circle.btn-circle--drop(rel="tooltip" title="Удалить адрес")

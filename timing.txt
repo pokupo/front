@@ -729,7 +729,7 @@ https://github.com/pokupo/front/commit/5e581f00be175945354cbd6f6f124fe4cbe56e2e
 		19:00
 	(+2)
 
-"коммит":
+"коммит":https://github.com/pokupo/front/commit/2ebc31e28ec04a45ff437144453a6022eb054a83
 7 часов
 
 

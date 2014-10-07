@@ -222,9 +222,9 @@
 	position relative
 	width 37px
 	height 37px
-	border 2px solid transparent
+	border 2px solid $red
 	border-radius 40px
-	opacity 0.8
+	opacity 1
 	cursor pointer
 	user-select none
 
@@ -236,7 +236,6 @@
 		left 50%
 
 	&:hover
-		opacity 1
 		border-color $red
 
 	&:active
@@ -276,6 +275,11 @@
 		&:before
 			margin -8px 0 0 -7px
 			sprite($icon__drop)
+		&:hover
+			background $red
+			&:before
+				sprite($icon__drop--white)
+				
 		&:active
 			&:before
 				sprite($icon__drop__active)

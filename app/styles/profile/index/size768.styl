@@ -1,0 +1,57 @@
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait), screen and (min-width: 641px) and (max-width: 800px)
+	.profile-nav.grey
+		background rgba($grey, 0.5)
+		text-align center
+
+	.b-profile-nav
+		width 100%
+		background $grey
+
+		.menu__item
+			width 20%
+
+			a
+				&:before
+					left 50%
+
+				&:after
+					pseudo()
+					width 2px
+					left 0
+					top 10px
+					bottom 10px
+					background #e0ddd8
+
+				&.icon__profile
+					&:before
+						margin-left -8px
+
+				&.icon__favorites
+					&:before
+						margin-left -10px
+
+				&.icon__cart
+					&:before
+						margin-left -10px
+
+				&.icon__order
+					&:before
+						margin-left -10px
+
+				&.icon__mail
+					&:before
+						margin-left -9px
+			&.active
+			&:first-child
+			&.active + .menu__item
+				a
+					&:after
+						display none
+
+
+	.profile-nav .btn
+		float none
+		margin 11px 0 12px
+
+	.b-profile-nav .menu__item a span
+		display none !important

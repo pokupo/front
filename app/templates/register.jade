@@ -25,7 +25,7 @@ block menu
 	])(class="b-navigation")
 
 block content
-	section.register
+	section.register-user
 		.container
 			.b-thermometer
 				p 
@@ -62,98 +62,103 @@ block content
 							h2.b-wizard__step-title Данные аккаунта
 							p Укажите свой уникальный псевдоним, почту и телефон
 
-							.input-holder
-								.tooltip__trigger(rel="tooltip" title="Для входа в личный кабинет") ?
-								input.block-input(type="text" name="nickname" value="" placeholder="Псевдоним")
+							.b-wizard__step-content
+								.input-holder
+									.tooltip__trigger(rel="tooltip" title="Для входа в личный кабинет") ?
+									input.block-input(type="text" name="nickname" value="" placeholder="Псевдоним")
 
 
-							.input-holder
-								.tooltip__trigger(rel="tooltip" title="Для уведомлений о доставке заказа") ?
-								input.error.block-input(type="email" name="email" value="почта#мойбложик.рф" placeholder="Ваш e-mail")
-								.error__message
-									p Кажется, здесь что-то не так
+								.input-holder
+									.tooltip__trigger(rel="tooltip" title="Для уведомлений о доставке заказа") ?
+									input.error.block-input(type="email" name="email" value="почта#мойбложик.рф" placeholder="Ваш e-mail")
+									.error__message
+										p Кажется, здесь что-то не так
 
-							.input-holder
-								.tooltip__trigger(rel="tooltip" title="Для связи с курьером") ?
-								input.block-input(type="tel" name="phone" value="" placeholder="Номер телефона")
+								.input-holder
+									.tooltip__trigger(rel="tooltip" title="Для связи с курьером") ?
+									input.block-input(type="tel" name="phone" value="" placeholder="Номер телефона")
 
-							.input-holder
-								.tooltip__trigger(rel="tooltip" title="Ваш пароль должен содержать минимум одну цифру, заглавную букву, спецсимвол, иероглиф, коловрат, число зверя и кровь девственницы.") ?
-								input.block-input(type="password" name="password" value="" placeholder="Пароль")
+								.input-holder
+									.tooltip__trigger(rel="tooltip" title="Ваш пароль должен содержать минимум одну цифру, заглавную букву, спецсимвол, иероглиф, коловрат, число зверя и кровь девственницы.") ?
+									input.block-input(type="password" name="password" value="" placeholder="Пароль")
 
-							.input-holder
-								input.block-input(type="password" name="password-double" value="" placeholder="Повторить пароль")
+								.input-holder
+									input.block-input(type="password" name="password-double" value="" placeholder="Повторить пароль")
 
-							.input-holder(style="padding-top:13px")
-								input#iagree.checkbox(name="iagree" type="checkbox")
-								label.block-label.b-small-text(for="iagree") 
-									| Я принимаю условия 
-									span.pseudo-link пользовательского соглашения
-									|,<br/>
-									span.pseudo-link правил конфиденциальности
-									|  и 
-									span.pseudo-link политики возврата платежей
+								.input-holder(style="padding-top:13px")
+									input#iagree.checkbox(name="iagree" type="checkbox")
+									label.block-label.b-small-text(for="iagree") 
+										| Я принимаю условия 
+										span.pseudo-link пользовательского соглашения
+										|,<br/>
+										span.pseudo-link правил конфиденциальности
+										|  и 
+										span.pseudo-link политики возврата платежей
 
 						#step-2
 							h2.b-wizard__step-title Активация аккаунта
 							p Укажите код, высланный на почтовый адрес или телефон
 
-							.input-holder
-								.tooltip__trigger(rel="tooltip" title="Код, высланный на почтовый адрес или телефон") ?
-								input.block-input(type="text" name="code" value="" placeholder="Ваш e-mail код")
+							.b-wizard__step-content
+								.input-holder
+									.tooltip__trigger(rel="tooltip" title="Код, высланный на почтовый адрес или телефон") ?
+									input.block-input(type="text" name="code" value="" placeholder="Ваш e-mail код")
 
-							.input-holder(style="padding-top:13px")
-								input#skip-email.checkbox(name="skip-email" type="checkbox" checked)
-								label.block-label.b-small-text(for="skip-email") 
-									| Подтвердить почтовый ящик позднее
+								.input-holder(style="padding-top:13px")
+									input#skip-email.checkbox(name="skip-email" type="checkbox" checked)
+									label.block-label.b-small-text(for="skip-email") 
+										| Подтвердить почтовый ящик позднее
 							
 						#step-3
 							h2.b-wizard__step-title Персональные данные
 							p Укажите свои персональные данные
 
-							.input-holder
-								.tooltip__trigger(rel="tooltip" title="Для доставки и выдачи заказов") ?
-								input.block-input(type="text" name="family" value="" placeholder="Фамилия")
+							.b-wizard__step-content
+								.input-holder
+									.tooltip__trigger(rel="tooltip" title="Для доставки и выдачи заказов") ?
+									input.block-input(type="text" name="family" value="" placeholder="Фамилия")
 
-							.input-holder
-								input.block-input(type="text" name="name" value="" placeholder="Имя")
+								.input-holder
+									input.block-input(type="text" name="name" value="" placeholder="Имя")
 
-							.input-holder
-								input.block-input(type="text" name="patronymic" value="" placeholder="Отчество")									
+								.input-holder
+									input.block-input(type="text" name="patronymic" value="" placeholder="Отчество")									
 
-							.input-holder
-								input.block-input(type="text" name="date" value="" placeholder="Дата рождения")
+								.input-holder
+									input.block-input(type="text" name="date" value="" placeholder="Дата рождения")
 
-							.input-holder(style="padding-top:13px")
-								input#skip_personal.checkbox(name="skip_personal" type="checkbox" checked)
-								label.block-label.b-small-text(for="skip_personal") 
-									| Указать позже
+								.input-holder(style="padding-top:13px")
+									input#skip_personal.checkbox(name="skip_personal" type="checkbox" checked)
+									label.block-label.b-small-text(for="skip_personal") 
+										| Указать позже
+
 						#step-4
 							h2.b-wizard__step-title Адрес доставки
 							p Для доставки покупок требуется указать почтовый адрес
 
-							.input-holder
-								select(name="country" value="" placeholder="Страна")
-									option(value="1" selected) Россия
-									option(value="2") Украина
-									option(value="3") Белорусь
+							.b-wizard__step-content
+								.input-holder
+									select(name="country" value="" placeholder="Страна")
+										option(value="1" selected) Россия
+										option(value="2") Украина
+										option(value="3") Белорусь
 
-							.input-holder
-								input.block-input(type="text" name="family" value="" placeholder="Регион")
+								.input-holder
+									input.block-input(type="text" name="family" value="" placeholder="Регион")
 
-							.input-holder
-								input.block-input(type="text" name="name" value="" placeholder="Город")
+								.input-holder
+									input.block-input(type="text" name="name" value="" placeholder="Город")
 
-							.input-holder
-								input.block-input(type="text" name="patronymic" value="" placeholder="Улица, дом, квартира")									
+								.input-holder
+									input.block-input(type="text" name="patronymic" value="" placeholder="Улица, дом, квартира")									
 
-							.input-holder
-								input.block-input(type="text" name="date" value="" placeholder="Почтовый индекс")
+								.input-holder
+									input.block-input(type="text" name="date" value="" placeholder="Почтовый индекс")
 
-							.input-holder(style="padding-top:13px")
-								input#skip_address.checkbox(name="skip_address" type="checkbox" checked)
-								label.block-label.b-small-text(for="skip_address") 
-									| Указать позже
+								.input-holder(style="padding-top:13px")
+									input#skip_address.checkbox(name="skip_address" type="checkbox" checked)
+									label.block-label.b-small-text(for="skip_address") 
+										| Указать позже
 							
 
 

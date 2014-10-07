@@ -1,0 +1,29 @@
+//- Генерация KO-кода
+
+mixin with(val)
+	<!-- ko with: !{val} -->
+	block
+	<!-- /ko -->
+
+mixin if(val)
+	<!-- ko if: !{val} -->
+	block
+	<!-- /ko -->
+
+mixin each(val)
+	<!-- ko foreach: !{val} -->
+	block
+	<!-- /ko -->
+
+
+//- Использование:
+
+		+with('param')
+			#item(data-bind="text: item-text")
+
+	компилируется в
+
+		<!-- ko with: param -->
+		<div id="item" data-bind="text: item-text"></div>
+		<!-- /ko -->
+//-

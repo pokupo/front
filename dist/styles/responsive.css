@@ -1,0 +1,145 @@
+/* Респонсив */
+@media only screen and (max-width: 640px) {
+  .container {
+    max-width: none;
+    padding: 0 4px;
+  }
+  .columns {
+    margin-right: 0;
+  }
+  .columns .column {
+    width: 100%;
+    float: none;
+    left: 0 !important;
+  }
+  .columns .column .content {
+    margin: 0 6px !important;
+  }
+  .columns.triple {
+    margin: 0;
+  }
+  .columns.triple .column.double {
+    width: 100%;
+  }
+  .columns.triple .column,
+  .columns .double.column {
+    width: 100%;
+    left: 0;
+  }
+  .b-thermometer a {
+    max-width: 80px;
+  }
+  .b-thermometer .current {
+    display: none;
+  }
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  input[type="password"],
+  textarea,
+  .input-holder {
+    max-width: none;
+  }
+  .btn-huge {
+    padding: 0 30px 8px 30px;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 60px;
+  }
+  .split .orange {
+    left: 0%;
+    top: 50%;
+    width: 100%;
+  }
+  .slider-control.prev {
+    left: 0;
+  }
+  .slider-control.next {
+    right: 0;
+  }
+  .b-page__footer .b-inline-actions {
+    margin: 40px 0 0;
+    clear: both;
+  }
+  .tabs.tabs--noskin .tab__trigger {
+    padding-right: 15px;
+  }
+  .b-cart-menu__body {
+    right: 40px;
+    max-width: 480px;
+  }
+  .b-cart-menu__body .b-cart-menu__patch {
+    display: none;
+  }
+  .b-order-item.b-cart-menu__goods-item .b-order-item__name {
+    width: 230px;
+  }
+  table.responsive-table,
+  table.responsive-table thead,
+  table.responsive-table tfoot,
+  table.responsive-table tbody,
+  table.responsive-table th,
+  table.responsive-table td,
+  table.responsive-table tr {
+    display: block !important;
+  }
+  table.responsive-table thead tr {
+    position: absolute;
+    top: -9999em;
+    left: -9999em;
+  }
+  table.responsive-table tr {
+    border: 1px solid #efece7;
+  }
+  table.responsive-table tfoot tr {
+    border: none;
+  }
+  table.responsive-table td {
+    border: none;
+    position: relative;
+    width: 100%;
+    padding: 10px 0 10px 50% !important;
+    white-space: normal;
+    text-align: left;
+  }
+  table.responsive-table td:before {
+    position: absolute;
+    top: 6px;
+    left: 6px;
+    width: 45%;
+    padding-right: 10px;
+    white-space: nowrap;
+    text-align: left;
+    font-weight: bold;
+    content: attr(data-title);
+  }
+  .btn-lg {
+    padding: 18px 50px 16px;
+  }
+}
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait), screen and (min-width: 641px) and (max-width: 800px) {
+  .container {
+    max-width: none;
+    padding: 0 4px;
+  }
+  .btn-huge {
+    font-size: 32px;
+    line-height: 64px;
+  }
+  .slider-control.prev {
+    left: 0;
+  }
+  .slider-control.next {
+    right: 0;
+  }
+  .b-cart-menu__body {
+    right: 40px;
+    max-width: 480px;
+  }
+  .b-cart-menu__body .b-cart-menu__patch {
+    display: none;
+  }
+  .b-order-item.b-cart-menu__goods-item .b-order-item__name {
+    width: 230px;
+  }
+}

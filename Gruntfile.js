@@ -41,7 +41,7 @@ module.exports = function (grunt) {
 			compile: {
 				files: [{
 					cwd: 'app/styles',
-					src: 'main.styl',
+					src: ['*.styl'],
 					dest: 'dist/styles',
 					expand: true,
 					ext: '.css'
@@ -196,7 +196,7 @@ module.exports = function (grunt) {
 				files: [{
 					expand: true,
 					cwd: 'app',
-					src: 'favicon.ico',
+					src: 'images/icons/favicon.ico',
 					dest: 'dist',
 					filter: 'isFile'
 				}]

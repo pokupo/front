@@ -6,24 +6,28 @@
 		<!-- iOS-->
 		<meta name="apple-mobile-web-app-capable" content="yes">
 		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-		<link href="images/icons/apple-touch-icon-152x152.png" rel="apple-touch-icon">
-		<link sizes="57x57" href="images/icons/apple-touch-icon-57x57.png" rel="apple-touch-icon">
-		<link sizes="72x72" href="images/icons/apple-touch-icon-72x72.png" rel="apple-touch-icon">
-		<link sizes="76x76" href="images/icons/apple-touch-icon-76x76.png" rel="apple-touch-icon">
-		<link sizes="114x114" href="images/icons/apple-touch-icon-114x114.png" rel="apple-touch-icon">
-		<link sizes="120x120" href="images/icons/apple-touch-icon-120x120.png" rel="apple-touch-icon">
-		<link sizes="144x144" href="images/icons/apple-touch-icon-144x144.png" rel="apple-touch-icon">
+		<link sizes="192x192" href="touch-icon-192x192.png" rel="icon">
+		<link sizes="180x180" href="images/icons/apple-touch-icon-180x180.png" rel="apple-touch-icon">
 		<link sizes="152x152" href="images/icons/apple-touch-icon-152x152.png" rel="apple-touch-icon">
+		<link sizes="144x144" href="images/icons/apple-touch-icon-144x144.png" rel="apple-touch-icon">
+		<link sizes="120x120" href="images/icons/apple-touch-icon-120x120.png" rel="apple-touch-icon">
+		<link sizes="114x114" href="images/icons/apple-touch-icon-114x114.png" rel="apple-touch-icon">
+		<link sizes="76x76" href="images/icons/apple-touch-icon-76x76.png" rel="apple-touch-icon">
+		<link sizes="72x72" href="images/icons/apple-touch-icon-72x72.png" rel="apple-touch-icon">
+		<link sizes="57x57" href="images/icons/apple-touch-icon-57x57.png" rel="apple-touch-icon">
+		<link href="images/icons/apple-touch-icon-152x152.png" rel="apple-touch-icon">
 		<!-- Windows 8-->
-		<meta name="application-name" content="Тарифы">
+		<meta name="application-name" content="Регистрация покупателя">
 		<meta name="msapplication-tooltip" content="Description for pokupo">
-		<meta name="msapplication-TileColor" content="#ffffff">
-		<meta name="msapplication-TileImage" content="images/icons/tile.png">
-		<meta name="msapplication-square70x70logo" content="images/icons/tile.png">
-		<meta name="msapplication-square150x150logo" content="images/icons/tile.png">
-		<meta name="msapplication-square310x310logo" content="images/icons/tile.png">
-		<meta name="msapplication-wide310x150logo" content="images/icons/tile-wide.png">
+		<meta name="msapplication-navbutton-color" content="#ffa800">
+		<meta name="msapplication-TileColor" content="#00883c">
+		<meta name="msapplication-TileImage" content="images/icons/win8-bg.png">
+		<meta name="msapplication-square70x70logo" content="images/icons/win8-logo-70x70.png">
+		<meta name="msapplication-square150x150logo" content="images/icons/win8-logo-150x150.png">
+		<meta name="msapplication-square310x310logo" content="images/icons/win8-logo-310x310.png">
+		<meta name="msapplication-wide310x150logo" content="images/icons/win8-logo-310x150.png">
 		<meta name="msapplication-tap-highlight" content="no">
+		<meta name="msapplication-window" content="width=1024;height=768">
 		<!-- Windows-->
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<!-- Windows Phone-->
@@ -34,6 +38,7 @@
 		<!-- Blackberry and etc-->
 		<meta name="cleartype" content="on">
 		<meta name="HandheldFriendly" content="True">
+		<meta http-equiv="x-rim-auto-match" content="none">
 		<!-- No parse telephone and address-->
 		<meta name="format-detection" content="telephone=no">
 		<meta name="format-detection" content="address=no">
@@ -43,8 +48,8 @@
 		<meta name="keywords" content="pokupo, project">
 		<meta name="copyright" content="©tabrisov">
 		<meta name="reply-to" content="jiexa@tabrisov.ru">
-		<link href="images/icons/favicon.ico" rel="shortcut icon">
 		<link href="styles/main.css" rel="stylesheet">
+		<link href="images/icons/favicon.ico" rel="shortcut icon">
 		<!--[if lt IE 9]> 
 <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
 <script src="scripts/libs/nwmatcher.js"></script>
@@ -289,7 +294,7 @@
 			<!-- content -->
 			<!-- /content -->
 			<!-- content -->
-			<section class="register">
+			<section class="register-user">
 				<div class="container">
 					<div class="b-thermometer">
 						<p><a href="index.html">Главная </a><span class="divider">/ </span><a href="javascript:void(0);">Регистрация покупателя</a><span class="divider">/ </span><span class="current">Шаг 1</span>
@@ -329,93 +334,101 @@
 								<div id="step-1">
 									<h2 class="b-wizard__step-title">Данные аккаунта</h2>
 									<p>Укажите свой уникальный псевдоним, почту и телефон</p>
-									<div class="input-holder">
-										<div rel="tooltip" title="Для входа в личный кабинет" class="tooltip__trigger">?</div>
-										<input type="text" name="nickname" value="" placeholder="Псевдоним" class="block-input">
-									</div>
-									<div class="input-holder">
-										<div rel="tooltip" title="Для уведомлений о доставке заказа" class="tooltip__trigger">?</div>
-										<input type="email" name="email" value="почта#мойбложик.рф" placeholder="Ваш e-mail" class="error block-input">
-										<div class="error__message">
-											<p>Кажется, здесь что-то не так</p>
+									<div class="b-wizard__step-content">
+										<div class="input-holder">
+											<div rel="tooltip" title="Для входа в личный кабинет" class="tooltip__trigger">?</div>
+											<input type="text" name="nickname" value="" placeholder="Псевдоним" class="block-input">
 										</div>
-									</div>
-									<div class="input-holder">
-										<div rel="tooltip" title="Для связи с курьером" class="tooltip__trigger">?</div>
-										<input type="tel" name="phone" value="" placeholder="Номер телефона" class="block-input">
-									</div>
-									<div class="input-holder">
-										<div rel="tooltip" title="Ваш пароль должен содержать минимум одну цифру, заглавную букву, спецсимвол, иероглиф, коловрат, число зверя и кровь девственницы." class="tooltip__trigger">?</div>
-										<input type="password" name="password" value="" placeholder="Пароль" class="block-input">
-									</div>
-									<div class="input-holder">
-										<input type="password" name="password-double" value="" placeholder="Повторить пароль" class="block-input">
-									</div>
-									<div style="padding-top:13px" class="input-holder">
-										<input id="iagree" name="iagree" type="checkbox" class="checkbox">
-										<label for="iagree" class="block-label b-small-text">Я принимаю условия <span class="pseudo-link">пользовательского соглашения</span>,
-											<br/><span class="pseudo-link">правил конфиденциальности</span> и <span class="pseudo-link">политики возврата платежей</span>
-										</label>
+										<div class="input-holder">
+											<div rel="tooltip" title="Для уведомлений о доставке заказа" class="tooltip__trigger">?</div>
+											<input type="email" name="email" value="почта#мойбложик.рф" placeholder="Ваш e-mail" class="error block-input">
+											<div class="error__message">
+												<p>Кажется, здесь что-то не так</p>
+											</div>
+										</div>
+										<div class="input-holder">
+											<div rel="tooltip" title="Для связи с курьером" class="tooltip__trigger">?</div>
+											<input type="tel" name="phone" value="" placeholder="Номер телефона" class="block-input">
+										</div>
+										<div class="input-holder">
+											<div rel="tooltip" title="Ваш пароль должен содержать минимум одну цифру, заглавную букву, спецсимвол, иероглиф, коловрат, число зверя и кровь девственницы." class="tooltip__trigger">?</div>
+											<input type="password" name="password" value="" placeholder="Пароль" class="block-input">
+										</div>
+										<div class="input-holder">
+											<input type="password" name="password-double" value="" placeholder="Повторить пароль" class="block-input">
+										</div>
+										<div style="padding-top:13px" class="input-holder">
+											<input id="iagree" name="iagree" type="checkbox" class="checkbox">
+											<label for="iagree" class="block-label b-small-text">Я принимаю условия <span class="pseudo-link">пользовательского соглашения</span>,
+												<br/><span class="pseudo-link">правил конфиденциальности</span> и <span class="pseudo-link">политики возврата платежей</span>
+											</label>
+										</div>
 									</div>
 								</div>
 								<div id="step-2">
 									<h2 class="b-wizard__step-title">Активация аккаунта</h2>
 									<p>Укажите код, высланный на почтовый адрес или телефон</p>
-									<div class="input-holder">
-										<div rel="tooltip" title="Код, высланный на почтовый адрес или телефон" class="tooltip__trigger">?</div>
-										<input type="text" name="code" value="" placeholder="Ваш e-mail код" class="block-input">
-									</div>
-									<div style="padding-top:13px" class="input-holder">
-										<input id="skip-email" name="skip-email" type="checkbox" checked class="checkbox">
-										<label for="skip-email" class="block-label b-small-text">Подтвердить почтовый ящик позднее</label>
+									<div class="b-wizard__step-content">
+										<div class="input-holder">
+											<div rel="tooltip" title="Код, высланный на почтовый адрес или телефон" class="tooltip__trigger">?</div>
+											<input type="text" name="code" value="" placeholder="Ваш e-mail код" class="block-input">
+										</div>
+										<div style="padding-top:13px" class="input-holder">
+											<input id="skip-email" name="skip-email" type="checkbox" checked class="checkbox">
+											<label for="skip-email" class="block-label b-small-text">Подтвердить почтовый ящик позднее</label>
+										</div>
 									</div>
 								</div>
 								<div id="step-3">
 									<h2 class="b-wizard__step-title">Персональные данные</h2>
 									<p>Укажите свои персональные данные</p>
-									<div class="input-holder">
-										<div rel="tooltip" title="Для доставки и выдачи заказов" class="tooltip__trigger">?</div>
-										<input type="text" name="family" value="" placeholder="Фамилия" class="block-input">
-									</div>
-									<div class="input-holder">
-										<input type="text" name="name" value="" placeholder="Имя" class="block-input">
-									</div>
-									<div class="input-holder">
-										<input type="text" name="patronymic" value="" placeholder="Отчество" class="block-input">
-									</div>
-									<div class="input-holder">
-										<input type="text" name="date" value="" placeholder="Дата рождения" class="block-input">
-									</div>
-									<div style="padding-top:13px" class="input-holder">
-										<input id="skip_personal" name="skip_personal" type="checkbox" checked class="checkbox">
-										<label for="skip_personal" class="block-label b-small-text">Указать позже</label>
+									<div class="b-wizard__step-content">
+										<div class="input-holder">
+											<div rel="tooltip" title="Для доставки и выдачи заказов" class="tooltip__trigger">?</div>
+											<input type="text" name="family" value="" placeholder="Фамилия" class="block-input">
+										</div>
+										<div class="input-holder">
+											<input type="text" name="name" value="" placeholder="Имя" class="block-input">
+										</div>
+										<div class="input-holder">
+											<input type="text" name="patronymic" value="" placeholder="Отчество" class="block-input">
+										</div>
+										<div class="input-holder">
+											<input type="text" name="date" value="" placeholder="Дата рождения" class="block-input">
+										</div>
+										<div style="padding-top:13px" class="input-holder">
+											<input id="skip_personal" name="skip_personal" type="checkbox" checked class="checkbox">
+											<label for="skip_personal" class="block-label b-small-text">Указать позже</label>
+										</div>
 									</div>
 								</div>
 								<div id="step-4">
 									<h2 class="b-wizard__step-title">Адрес доставки</h2>
 									<p>Для доставки покупок требуется указать почтовый адрес</p>
-									<div class="input-holder">
-										<select name="country" value="" placeholder="Страна">
-											<option value="1" selected>Россия</option>
-											<option value="2">Украина</option>
-											<option value="3">Белорусь</option>
-										</select>
-									</div>
-									<div class="input-holder">
-										<input type="text" name="family" value="" placeholder="Регион" class="block-input">
-									</div>
-									<div class="input-holder">
-										<input type="text" name="name" value="" placeholder="Город" class="block-input">
-									</div>
-									<div class="input-holder">
-										<input type="text" name="patronymic" value="" placeholder="Улица, дом, квартира" class="block-input">
-									</div>
-									<div class="input-holder">
-										<input type="text" name="date" value="" placeholder="Почтовый индекс" class="block-input">
-									</div>
-									<div style="padding-top:13px" class="input-holder">
-										<input id="skip_address" name="skip_address" type="checkbox" checked class="checkbox">
-										<label for="skip_address" class="block-label b-small-text">Указать позже</label>
+									<div class="b-wizard__step-content">
+										<div class="input-holder">
+											<select name="country" value="" placeholder="Страна">
+												<option value="1" selected>Россия</option>
+												<option value="2">Украина</option>
+												<option value="3">Белорусь</option>
+											</select>
+										</div>
+										<div class="input-holder">
+											<input type="text" name="family" value="" placeholder="Регион" class="block-input">
+										</div>
+										<div class="input-holder">
+											<input type="text" name="name" value="" placeholder="Город" class="block-input">
+										</div>
+										<div class="input-holder">
+											<input type="text" name="patronymic" value="" placeholder="Улица, дом, квартира" class="block-input">
+										</div>
+										<div class="input-holder">
+											<input type="text" name="date" value="" placeholder="Почтовый индекс" class="block-input">
+										</div>
+										<div style="padding-top:13px" class="input-holder">
+											<input id="skip_address" name="skip_address" type="checkbox" checked class="checkbox">
+											<label for="skip_address" class="block-label b-small-text">Указать позже</label>
+										</div>
 									</div>
 								</div>
 							</div>

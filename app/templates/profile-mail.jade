@@ -27,9 +27,6 @@ block menu
 block profile-nav
 	section.profile-nav.grey
 		.container
-			a.btn.btn-sm(href=js0)
-				i.icon.icon-store--small
-				| Стать продавцом
 			ul.menu.b-profile-nav
 				li.menu__item
 					a.icon__profile(href="profile.html")
@@ -45,12 +42,14 @@ block profile-nav
 						span Заказы
 				li.menu__item.active
 					a.icon__mail(href="profile-mail.html")
-						span 
-							| Сообщения
-							sup.menu__item__num 25
+						span Сообщения
+						sup.menu__item__num 25
+			a.btn.btn-sm(href=js0)
+				i.icon.icon-store--small
+				| Стать продавцом							
 
 block content
-	section.profile
+	section.profile.profile-mail
 		.container
 			.columns.triple
 				.first.double.column
@@ -64,7 +63,7 @@ block content
 							label(for="select_all") Выбрать все
 
 				.third.column
-					.content
+					.content.profile-mail__actions
 						button.btn.btn-lg.btn-inline.b-mail__addbtn.b-mail__addbtn--top.open-modal(type="button" data-target="modal-message")
 							i.icon.icon-addmail
 							| Новое сообщение
@@ -197,7 +196,7 @@ block content
 										a(href=js0) 4
 
 				.third.column
-					.content
+					.content.profile-mail__actions
 						button.btn.btn-lg.btn-inline.b-mail__addbtn.open-modal(type="button" data-target="modal-message")
 							i.icon.icon-addmail
 							| Новое сообщение
@@ -233,7 +232,6 @@ block content
 							span.close-modal.btn-circle.btn-circle--drop.btn-circle--orange
 						.modal-body
 							h3.b-modal-info__icon.icon-error Сообщение об ошибке
-
 
 			#modal-message.modal.fade
 				.modal-dialog

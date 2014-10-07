@@ -16,6 +16,14 @@ pseudo()
 	position absolute
 	display block
 
+pseudo__center()
+	content ''
+	display block
+	position absolute
+	left 50%
+	top 50%
+
+
 drop-shadow()
 	background-color #fff
 	border-bottom 1px solid #e2e2e2
@@ -42,36 +50,3 @@ drop-shadow()
 		bottom -1px
 		box-shadow 0 10px 20px -7px rgba(0,0,0,0.3)
 		z-index -1
-
-
-
-
-
-/* Вспомогательные классы */
-
-.hidden
-	display none
-
-.invisible
-	visibility hidden
-
-.center-block
-	display block
-	margin-left auto
-	margin-right auto
-
-::-ms-reveal
-::-ms-clear
-	display none!important
-
-// Fix no working `-webkit-text-size-adjust:100%;` in Android.
-fix-text-size-adjust()
-	background-image linear-gradient(transparent, transparent)
-
-/* /Вспомогательные классы */
-
-ie8(value)
-	return value unquote("\9")
-
-ie9(value)
-	return value unquote("\0")
