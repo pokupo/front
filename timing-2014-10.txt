@@ -65,9 +65,25 @@
 	12:30 
 	  (3.3 часа)
 	14:00 Правки по замечаниям Игоря и Александра
-	16:20 "коммит":
+	16:20 "коммит":https://github.com/pokupo/front/commit/bb27d6fb6979770f321116a14241154df47f824d
 	  (+2.3 часа)
 
+	17:00 Настройка grunt'a — jade + prettyfier
+	19:00  
+	
+	7.6 часов
+
+
+8 октября, среда
+
+	23:00 Шаблоны виджетов на knockoutJS + Jade
+	03:00 "начальный коммит":https://github.com/pokupo/client/commit/92c09afedcbab4c1df39e163661141572bab8e27
+	  (4 часа)
+	14:00 Шаблоны виджетов
+	18:00 "коммит":https://github.com/pokupo/client/commit/94088bb97c4efb99a4754a03dd6d8d0ffa71125f
+	  (+4 часа)
+
+	8 часов
 
 
 
