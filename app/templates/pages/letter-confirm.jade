@@ -1,0 +1,69 @@
+extends ../partials/layouts/letter
+
+
+block content
+    table(cellpadding="0" cellspacing="0" border="0" align="center" id="backgroundTable")
+        tr
+            td(valign="top")
+                #mailsub.pad_null
+                    div(style="width:520px; padding: 35px 40px 20px; margin: 0 auto;")
+                        img.image_fix(src="images/logo/example.png" title="[Название магазина]" alt="[Название магазина]" width="268" height="65")
+                    div(style="width:520px; padding: 40px 40px 20px; margin: 0 auto; background:#ffffff; word-break: break-word;")
+                        h1(style="font-size:30px") Приветствуем, админ!
+
+                        p 
+                            | Для подтверждения вашего почтового ящика пройдите по ссылке: 
+                            a(href="http://dev.pokupo.ru/#/registration/step=2&username=admin&mail_token=59r3831fuf40gwco0s00s8ss8okg8ck448k8okoowog0kgooog" target="_blank") http://dev.pokupo.ru#/registration/step=2&username=admin&mail_token=59r3831fuf40gwco0s00s8ss8okg8ck448k8okoowog0kgooog
+
+                        div
+                            | <!--[if mso]>
+                            | <v:roundrect href="http://dev.pokupo.ru/#!/" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" style="height:46px;v-text-anchor:middle;width:190px;" arcsize="87%" stroke="f" fillcolor="#ffa800">
+                            | <w:anchorlock/>
+                            | <center>
+                            | <![endif]-->
+                            a(href="http://dev.pokupo.ru/#!/" style="background-color:#ffa800;border-radius:40px;color:#000000;display:inline-block;font-family:sans-serif;font-size:13px;font-weight:bold;line-height:46px;text-align:center;text-decoration:none;width:190px;-webkit-text-size-adjust:none;") ПОДТВЕРДИТЬ ЯЩИК
+                            | <!--[if mso]>
+                            | </center>
+                            | </v:roundrect>
+                            | <![endif]-->
+
+                        p(style="margin-top:100px")
+                            | С наилучшими пожеланиями<br/>
+                            | администрация интернет-магазина «Депозитстрой»<br/>
+                            a(href="http://dev.pokupo.ru" target="_blank") http://dev.pokupo.ru
+
+                    div(style="width:520px; padding:  5px 40px 20px; margin: 0 auto; background:#ffffff; border-top: 2px solid #ededed; word-break: break-word;")
+                        table(cellpadding="0" cellspacing="0" border="0" align="center" width="520")
+                            tr
+                                td(valign="top" width="172")
+                                    p 
+                                        | Посетить сайт<br/>
+                                        a(href="http://pokupo.ru" target="_blank") http://pokupo.ru
+
+                                td(valign="top" width="176")
+                                    p
+                                        | Написать<br/>
+                                        a(href="mailto:support@pokupo.ru") support@pokupo.ru
+
+                                td(valign="top" width="172")
+                                    p
+                                        | Позвонить<br/>
+                                        a.mobile_link(href="tel:+74953636393") +7 (495) 363-63-93
+
+                    div(style="width:520px; padding: 20px 40px 20px; margin: 0 auto; ")
+                        table(cellpadding="0" cellspacing="0" border="0" align="center" width="520")
+                            tr
+                                td(valign="top" align="left" width="80")
+                                    a(href="http://pokupo.ru/" target="_blank")
+                                        img.image_fix(src="images/logo/logo__letter.jpg" title="Покупо" alt="Покупо" width="70" height="35")
+                                td(valign="top" style="font-size: 12px")
+                                    span 
+                                        | Магазин работает на базе торговой платформы 
+                                        b Pokupo 
+                                        | &copy; 2014
+                                    br
+                                    a(href="http://pokupo.ru/" title="Торговая платформа Pokupo" target="_blank") Pokupo.ru
+                                    | &nbsp; &nbsp;
+                                    a(href="http://help.pokupo.ru/" title="Помощь" target="_blank") Помощь
+                                    | &nbsp; &nbsp;
+                                    a(href="http://help.pokupo.ru/" title="Служба поддержки" target="_blank") Служба поддержки

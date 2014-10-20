@@ -1,0 +1,330 @@
+extends ../partials/layouts/store
+
+block head
+	- page.title = 'Просмотр товара';
+
+block menu 
+	+menu-list([
+		{text:"Платформа",href:"frontpage.html",submenu:[
+			{text:"О проекте",href:"about.html"},
+			{text:"Торговый портал",href:"http://shop.pokupo.ru/", external:true}
+		]},
+		{text:"Тарифы",href:"rates.html"},
+		{text:"Компания",href:"#", submenu:[
+			{text:"События",href:"events.html"},
+			{text:"О нас",href:"aboutus.html"},
+			{text:"Сообщество",href:"community.html"},
+			{text:"Блог",href:"http://pokupo.livejournal.com/", external:true}
+		]},
+		{text:"Партнёры",href:"partners.html"},
+		
+		{text:"Помощь", href:js0, submenu:[
+			{text:"Вопросы и ответы",href:"faq.html"},	
+			{text:"Техническая поддержка",href:"https://help.pokupo.ru", external:true}
+		]}
+	])(class="b-navigation")
+
+block content
+	section.store.nosidebar
+		.container
+			aside.b-sidebar.dropdown
+				a.btn.btn-menu.dropdown__trigger(href=js0 data-target="sidebar") 
+					i.icon.icon-catalog
+					| Каталог
+				.b-sidebar__dropdown.dropdown__content.hidden(data-target="sidebar")
+					h1.b-sidebar__title Пример каталога
+					+catalog-list([{text:"Компьютерная техника",href:js0, submenu:[{text:"Ноутбуки",href:js0, preview:43},{text:"Моноблоки",href:js0, preview:11}, {text:"Планшеты",href:js0, preview:24}]},{text:"Бытовая техника",href:js0, submenu:[{text:"Стиральные машины",href:js0, preview:51},{text:"Телевизоры",href:js0, preview:13},{text:"Кухонная техника",href:js0, preview:104},{text:"Пылесосы",href:js0, preview:8}]},{text:"Телефоны и связь",href:js0, preview:24},{text:"Фото и оптика",href:js0, submenu:[{text:"Фотоаппараты",href:js0, preview:6},{text:"Объективы",href:js0, preview:2},{text:"Средства и химия", href:js0, preview:64}]},{text: "Одежда, обувь и аксессуары ", href:js0, active: true, submenu:[{text:"Кроссовки",href:js0, preview:19},{text:"Кеды",href:js0, preview:134, active: true},{text:"Босоножки",href:js0, preview:245},{text:"Туфли",href:js0, preview:195},{text:"Ботильоны",href:js0, preview:132},{text:"Сандалии",href:js0, preview:72},{text:"Балетки",href:js0, preview:36},{text:"Сапоги",href:js0, preview:56},{text:"Резиновая обувь",href:js0, preview:5}]},{text:"Подарки и праздники",href:js0, submenu:[{text:"Цветы",href:js0, preview:65},{text:"Открытки",href:js0, preview:200},{text:"Игрушки",href:js0, preview:31}]},{text:"Книги, учебники и журналы",href:js0, submenu:[{text:"Цветы",href:js0, preview:65},{text:"Открытки",href:js0, preview:200},{text:"Игрушки",href:js0, preview:31}]},{text:"Мебель, интерьеры и обиход",href:js0, submenu:[{text:"Цветы",href:js0, preview:65},{text:"Открытки",href:js0, preview:200},{text:"Игрушки",href:js0, preview:31}]},{text:"Другое",href:js0, submenu:[{text:"Цветы",href:js0, preview: 65},{text:"Открытки",href:js0, preview: 200},{text:"Игрушки",href:js0, preview: 31}]}])
+			
+			.b-thermometer
+				p 
+					a(href="index.html") Главная
+					span.divider  / 
+					a(href="store-index.html") Одежда, обувь и аксессуары
+					span.divider  / 
+					a(href="store.html") Кеды
+					span.divider  / 
+					span.current Converse Red
+
+			.b-catalog-item
+				h1.b-catalog-item__title Converse Red
+				h2.b-catalog-item__subtitle ID 19158495
+				.columns.triple
+					.first.column
+						.content
+							.b-catalog-item__badges
+								.b-catalog-item__badge.b-catalog-item__badge--discount -30%
+							.b-catalog-item__photos
+								img(src="images/catalog/item0000/01.jpg" data-caption="Converse Red (Небольшое описание #1)")
+								img(src="images/catalog/item0000/02.jpg" data-caption="Converse Red (Небольшое описание #2)")
+								img(src="images/catalog/item0000/03.jpg" data-caption="Converse Red (Небольшое описание #3)")
+								img(src="images/catalog/item0000/04.jpg" data-caption="Converse Red (Небольшое описание #4)")
+								img(src="images/catalog/item0000/05.jpg" data-caption="Converse Red (Небольшое описание #5)")
+								img(src="images/catalog/item0000/06.jpg" data-caption="Converse Red (Небольшое описание #6)")
+								img(src="images/catalog/item0000/07.jpg" data-caption="Converse Red (Небольшое описание #7)")
+								
+							.b-recommended
+								.b-recommended__slider-control.prev
+								.b-recommended__slider-control.next
+								h3.b-recommended__title Рекомендуем
+
+
+								.b-recommended__slider
+									.b-catalog__items.cards.cards--small
+										+catalog-items([
+											{title:"Converse White", price: "1800"},
+											{title:"Converse Grey", price: "2450", img: "images/catalog/goods02.jpg"},
+											{title:"Converse Red", price: "3750", oldPrice: "5600", img: "images/catalog/goods03.jpg"},
+											{title:"Converse Orange", price: "1890", oldPrice: "2490", img: "images/catalog/goods04.jpg"}
+											], flat=true)
+									.b-catalog__items.cards.cards--small
+										+catalog-items([
+											{title:"Converse Blue", price: "3750", img: "images/catalog/goods06.jpg"},
+											{title:"Converse Green", price: "3750", oldPrice: "5600"},
+											{title:"Converse 10", price: "3750", oldPrice: "5600", img: "images/catalog/goods01.jpg"},
+											{title:"Converse RD", price: "1890", oldPrice: "2490", img: "images/catalog/goods04.jpg"}
+											], flat=true)
+									.b-catalog__items.cards.cards--small
+										+catalog-items([
+											{title:"Converse RD2", price: "3750", oldPrice: "5600", img: "images/catalog/goods03.jpg"},
+											{title:"Converse T800", price: "6750", oldPrice: "5600"},
+											{title:"Converse Ultimate", price: "2490", img: "images/catalog/goods05.jpg"}
+											], flat=true)
+
+					.second.double.column
+						.content
+							.b-catalog-item__seller-info.slidedown
+								span.slidedown__trigger(data-target="info") Информация о продавце
+								.slidedown__content.hidden(data-target="info")
+									.b-profile-info
+										.b-profile-info__actions
+											button.btn.btn-xs.ask-question(type="button") Задать вопрос
+											.b-support-info.dropdown
+												span.b-support-info__title
+													span.dropdown__trigger(data-target="support")  Поддержка
+												.b-support-info__content.dropdown__content.hidden(data-target="support")
+													p 
+														span.label Посетить сайт
+														a.action(href="http://pokupo.ru" target="_blank") pokupo.ru
+														span.label Написать
+														a.action(href="mailto:support@pokupo.ru") support@pokupo.ru
+														span.label Skype консультанта
+														a.action(href="skype:pokupo?chat" onclick="return skypeCheck()") pokupo
+														span.label ICQ консультанта
+														span.action 14112415151
+														span.label Позвонить
+														a.action(href="tel:+74953636393") +7 495 363-63-93
+
+										.b-profile-info__summary
+											.b-profile-info__photo
+												img(src="images/pages/catalog/seller-logo.png")
+											h1.b-profile-info__title Торговая платформа Pokupo
+											h2.b-profile-info__subtitle ID 19158495
+
+											ul.b-profile-info__characters-list
+												li 
+													span.char Рейтинг: 
+													span.value.value--orange +264
+												li
+													span.char Отзывы / претензии: 
+													span.value 
+														span.value--orange 12 
+														| / 
+														span.value--red 3
+												li
+													span.char Товаров: 
+													span.value 450
+							.columns.triple.columns--resp_fix
+								.first.double.column
+									.content
+										.b-catalog-item__description
+											.b-stars
+												.b-stars__rating(style="width:60%")
+											span.pseudo-link З отзыва
+
+											p Самая продаваемая модель кед Converse в мире. По подсчетам компании за всю историю кед Converse было продано уже более 500 000 000 пар.
+											p 
+												| Метки: 
+												span.pseudo-link кеды
+												| , 
+												span.pseudo-link обувь
+												| , 
+												span.pseudo-link тапки
+
+											.b-item__price
+												+price(3750, 5600)
+											.b-item__price-comment
+												p Ваша скидка 30%
+								.third.column
+									.content.b-catalog-item__actions
+										.increase
+											p.b-catalog-item__limits
+												| На складе: 
+												span.value 5
+											.b-increment-input(style="margin-bottom:20px")
+												span.b-increment-input__darr
+												span.b-increment-input__input-wrapper 
+													input.inline-input.b-increment-input__input(type="text" data-name="qty" value="1" maxlength="3" autocomplete="off" data-min="1" data-max="5")
+												span.b-increment-input__uarr
+
+										button.btn(type="button")
+											i.icon.icon-cart
+											| В&nbsp;корзину
+										br
+										button.btn(type="button") Купить сразу
+										br
+										.like_button
+											span.pseudo-link В избранное
+							.b-catalog-item__share.yashare-auto-init(
+								data-yashareL10n="ru" 
+								data-yashareType="link" 
+								data-yashareQuickServices="vkontakte,facebook,twitter,odnoklassniki,gplus")
+							
+							.b-catalog-item__aux
+								dl.tabs.tabs--noskin
+									dt.tab__trigger.selected 
+										span Описание
+									dd.tab__content.selected
+										.content
+											ul.b-tech
+												li.b-tech__item
+													div.b-tech__char
+														span Материал верха
+													div.b-tech__value резина, текстиль
+												li.b-tech__item
+													div.b-tech__char
+														span Внутренний материал	
+													div.b-tech__value текстиль
+												li.b-tech__item
+													div.b-tech__char
+														span Материал стельки
+													div.b-tech__value текстиль
+												li.b-tech__item
+													div.b-tech__char
+														span Материал подошвы
+													div.b-tech__value резина
+												li.b-tech__item
+													div.b-tech__char
+														span Высота голенища / задника
+													div.b-tech__value 7 см
+												li.b-tech__item
+													div.b-tech__char
+														span Цвет
+													div.b-tech__value красный
+												li.b-tech__item
+													div.b-tech__char
+														span Сезон
+													div.b-tech__value Лето
+												li.b-tech__item
+													div.b-tech__char
+														span Коллекция
+													div.b-tech__value Весна-лето 2014
+												li.b-tech__item
+													div.b-tech__char
+														span Артикул
+													div.b-tech__value ED003AUBBT59
+									dt.tab__trigger 
+										span Доставка
+									dd.tab__content
+										.content
+											p Отвечая на вопрос о взаимоотношении идеального ли и материального ци, Дай Чжень заявлял, что хотя освобождение и подчеркивает естественный рекламоноситель, промоакция не рефлектирует процесс стратегического планирования. 
+											p Поэтому воздействие на потребителя позиционирует ролевой пресс-клиппинг, хотя в официозе принято обратное. Спонсорство одновременно заполняет язык образов, однако Зигварт считал критерием истинности необходимость и общезначимость, для которых нет никакой опоры в объективном мире. Размещение порождает и обеспечивает связанный закон исключённого третьего.
+											p Таргетирование, следовательно, контролирует дуализм, полагаясь только на инсайдерскую информацию.
+							.b-catalog-item__aux.b-reviews
+								h1.with-button Отзывы
+								button#js-addReview.btn.btn-xxs(type="button") Написать
+
+								ul.reviews-list
+									li.b-review
+										.b-review__info
+											.b-stars
+												.b-stars__rating(style="width:80%")
+											span.b-review__author Борис
+											span.b-review__date | 18 сентября
+										.b-review__text
+											p Кеды действительно яркие как на фото.38 размера не было ,заказала 37.Думала что не подойдут,но оказалось что чуть-чуть даже большемерят самый раз чтоб носочками носить .А так то все сделано аккуратно,и спасибо вам за быструю доставку.
+									li.b-review
+										.b-review__info
+											.b-stars
+												.b-stars__rating(style="width:100%")
+											span.b-review__author Наталья
+											span.b-review__date | 16 сентября
+										.b-review__text
+											p Красные кеды яркие и красивые, очень нравятся, мой размер 36,5, приобрела 36 и оказались несколько свободны, можно было бы и 35 размер купить. Лучше чуть больше, чем маловаты, поэтому всё устраивает. 5 баллов.
+									li.b-review
+										.b-review__info
+											.b-stars
+												.b-stars__rating(style="width:100%")
+											span.b-review__author Аркадий
+											span.b-review__date | 9 сентября
+										.b-review__text
+											p Кеды классные, яркие, но очень большемерят, потому отказ, очень жаль((( подожду, может появится нужный размер.
+
+				.b-catalog-item__aux.b-lastviewed
+					h3 Недавно просмотренные
+					.b-catalog__items.cards.cards--small.chain-slider--small
+						+catalog-items([
+							{title:"Converse White", price: "1800"},
+							{title:"Converse Grey", price: "2450", img: "images/catalog/goods02.jpg"},
+							{title:"Converse Red", price: "3750", oldPrice: "5600", img: "images/catalog/goods03.jpg"},
+							{title:"Converse Orange", price: "1890", oldPrice: "2490", img: "images/catalog/goods04.jpg"},
+							{title:"Converse Blue", price: "3750", img: "images/catalog/goods06.jpg"},
+							{title:"Converse Green", price: "3750", oldPrice: "5600"},
+							{title:"Converse 10", price: "3750", oldPrice: "5600", img: "images/catalog/goods01.jpg"},
+							{title:"Converse RD", price: "1890", oldPrice: "2490", img: "images/catalog/goods04.jpg"},
+							{title:"Converse RD2", price: "3750", oldPrice: "5600", img: "images/catalog/goods03.jpg"},
+							{title:"Converse T800", price: "6750", oldPrice: "5600"},
+							{title:"Converse Ultimate", price: "2490", img: "images/catalog/goods05.jpg"}
+							], flat=true)
+		
+	#request_form.fade.in(style="display:none")
+		.popup.review-form
+			header.noheader
+				h1 Оставить отзыв от товаре
+				span#js-close_request_form.close-popup.btn-circle.btn-circle--drop.btn-circle--orange
+			.content
+				#request_form_wrapper
+					form
+						textarea#text(name="text" rows="4" placeholder="Текст сообщения")
+
+						.vote-input
+							span Оценить товар
+							ul.voting
+								li.voting__one
+									a 1
+								li.voting__two
+									a 2
+								li.voting__three
+									a 3
+								li.voting__four
+									a 4
+								li.voting__five
+									a 5
+
+						button#js-cancel-request.btn.btn-grey.btn-lg.btn-inline(type="reset") Отмена
+						button#js-send-request.btn.btn-lg(type="submit") Оставить отзыв
+				#send_request_success.hidden.send_request_result
+					h1 Ваша заявка отправлена
+					p &nbsp;
+					p Ответ на неё придёт на указанный вами адрес электронной почты.<br/>Спасибо за интерес к нашей работе!
+				#send_request_fail.hidden.send_request_result
+					h1 Ошибка!
+					p &nbsp;
+					p При отправке заявки произошла ошибка.<br/>Попытайтесь ещё раз или свяжитесь с нами удобным вам способом.
+
+
+
+																					
+
+
+
+
+
+
+
+
+
+
+
+
+block scripts
+	+script(['main.js', '//yandex.st/share/share.js'])

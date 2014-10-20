@@ -14,30 +14,30 @@ block content
 					.pages(style = "text-align: left; padding-top: 40px")
 						h3(style = "font-weight:bold; font-size: 16px; padding-bottom: 20px") Магазин
 						+pages-list([
-							{text: 'Главная магазина', href: 'store-index.html', descr: "+"},
-							{text: 'Страница каталога', href: 'store.html', descr: '+'},
-							{text: 'Регистрация', href: 'register.html', descr: '+'},
-							{text: 'Просмотр товара', href: 'store-item.html', descr: '+'},
-							{text: 'Оформление заказа', href: 'store-order.html', descr: "+"},
-							{text: 'Корзина', href: 'store-cart.html', descr: "+"},
-							{text: 'Оплата', href: 'store-invoice.html', descr: '+'}
+							{text: 'Главная магазина', href: 'pages/store-index.html', descr: "+"},
+							{text: 'Страница каталога', href: 'pages/store.html', descr: '+'},
+							{text: 'Регистрация', href: 'pages/register.html', descr: '+'},
+							{text: 'Просмотр товара', href: 'pages/store-item.html', descr: '+'},
+							{text: 'Оформление заказа', href: 'pages/store-order.html', descr: "+"},
+							{text: 'Корзина', href: 'pages/store-cart.html', descr: "+"},
+							{text: 'Оплата', href: 'pages/store-invoice.html', descr: '+'}
 						])
 						h3(style = "font-weight:bold; font-size: 16px; padding: 20px 0") Письма
 						+pages-list([
-							{text: 'Подтверждение почты',    href: 'letter-confirm.html', descr: ''},
-							{text: 'Рассылка',  href: 'letter-news.html', descr: ''},
-							{text: 'Пришёл заказ',     href: 'letter-new-order.html', descr: ''},
-							{text: 'Сделал заказ', href: 'letter-your-order.html', descr: ''},
+							{text: 'Подтверждение почты',    href: 'pages/letter-confirm.html', descr: ''},
+							{text: 'Рассылка',  href: 'pages/letter-news.html', descr: ''},
+							{text: 'Пришёл заказ',     href: 'pages/letter-new-order.html', descr: ''},
+							{text: 'Сделал заказ', href: 'pages/letter-your-order.html', descr: ''},
 						])						
 						h3(style = "font-weight:bold; font-size: 16px; padding: 20px 0") Личный кабинет
 						+pages-list([
-							{text: 'Профиль (перс. инф., адреса доставки, безопасность)', href: 'profile.html', descr: ''},
-							{text: 'Избранное', href: 'profile-favorites.html', descr: ''},
-							{text: 'Корзина', href: 'profile-cart.html', descr: ''},
-							{text: 'Заказы', href: 'profile-orders.html', descr: ''},
-							{text: 'Просмотр заказа', href: 'profile-order.html', descr: ''},
-							{text: 'Сообщения', href: 'profile-mail.html', descr: ''},
-							{text: 'Переписка', href: 'profile-chat.html', descr: ''}
+							{text: 'Профиль (перс. инф., адреса доставки, безопасность)', href: 'pages/profile.html', descr: ''},
+							{text: 'Избранное', href: 'pages/profile-favorites.html', descr: ''},
+							{text: 'Корзина', href: 'pages/profile-cart.html', descr: ''},
+							{text: 'Заказы', href: 'pages/profile-orders.html', descr: ''},
+							{text: 'Просмотр заказа', href: 'pages/profile-order.html', descr: ''},
+							{text: 'Сообщения', href: 'pages/profile-mail.html', descr: ''},
+							{text: 'Переписка', href: 'pages/profile-chat.html', descr: ''}
 						])
 
 			.third.double.column
@@ -45,24 +45,23 @@ block content
 					.pages(style = "text-align: left; padding-top: 40px")
 						h3(style = "font-weight:bold; font-size: 16px; padding-bottom: 20px") Промо-страницы
 						+pages-list([
-							{text: 'Посадочная страница',    href: 'frontpage.html', descr: '+'},
-							{text: 'Промо «О проекте»',  href: 'about.html', descr: '+'},
-							{text: 'Тарифы',     href: 'rates.html', descr: '(480px нет, 768px есть)'},
-							{text: 'Сообщество', href: 'community.html', descr: '+'},
-							{text: 'О проекте',  href: 'aboutus.html', descr: '+'},
-							{text: 'События',    href: 'events.html', descr: '+'},
-							{text: 'Просмотр события', href: 'event.html', descr: '+'},
-							{text: 'Партнёры',   href: 'partners.html', descr: '+'},
-							{text: 'Вопросы и ответы', href: 'faq.html', descr: '+'},
-							{text: 'Документы',  href: 'docs.html', descr: '+'}
+							{text: 'Посадочная страница',    href: 'pages/frontpage.html', descr: '+'},
+							{text: 'Промо «О проекте»',  href: 'pages/about.html', descr: '+'},
+							{text: 'Тарифы',     href: 'pages/rates.html', descr: '(480px нет, 768px есть)'},
+							{text: 'Сообщество', href: 'pages/community.html', descr: '+'},
+							{text: 'О проекте',  href: 'pages/aboutus.html', descr: '+'},
+							{text: 'События',    href: 'pages/events.html', descr: '+'},
+							{text: 'Просмотр события', href: 'pages/event.html', descr: '+'},
+							{text: 'Партнёры',   href: 'pages/partners.html', descr: '+'},
+							{text: 'Вопросы и ответы', href: 'pages/faq.html', descr: '+'},
+							{text: 'Документы',  href: 'pages/docs.html', descr: '+'}
 						])
 
 						h3(style = "font-weight:bold; font-size: 16px; padding: 20px 0") Дополнительно
 						+pages-list([
-							{text: 'Авторизация',    href: 'popup-signin.html', descr: '+'},
-							{text: 'Сброс пароля',   href: 'popup-reset-password.html', descr: '+'},
-							{text: 'Присоединиться', href: 'popup-join.html', descr: '+'},
-							{text: 'Единая система стилей', href: 'buttons.html'}
+							{text: 'Авторизация',    href: 'pages/popup-signin.html', descr: '+'},
+							{text: 'Сброс пароля',   href: 'pages/popup-reset-password.html', descr: '+'},
+							{text: 'Присоединиться', href: 'pages/popup-join.html', descr: '+'},
+							{text: 'Единая система стилей', href: 'pages/buttons.html'}
 						])
-
 						

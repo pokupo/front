@@ -1,0 +1,465 @@
+include ../../../templates/helpers/knockout
+
+script#orderListTmpl(type="text/html")
+    // version 1.0
+    .profile
+        .container
+            .columns.triple
+                .first.double.column
+                    .content
+                        h1.b-profile__header История заказов
+                .third.column
+                    .content
+                        button.btn.btn-lg.btn-inline.b-mail__addbtn.b-mail__addbtn--top(type='button', data-bind='click: ClickRefresh')
+                            i.icon.icon-reload
+                            | Обновить данные
+            table.b-order-table
+                thead
+                    tr
+                        th.b-order-table__name Заказ
+                        th Магазин
+                        th.b-order-table__price Стоимость
+                        th Статус
+                        th Оплата
+                        th.b-order-table__actions
+                tbody
+                    +each('list')
+                        // ko template: { name: 'orderListItemTmpl' }
+                        // /ko
+                tfoot
+                    tr
+                        td(colspan='6')
+                          // ko template: { name: 'orderListPagenationTmpl' }
+                          // /ko
+                    tr
+                        td(colspan='6')
+                            button.btn.btn-lg.btn-inline(type='button', style='margin: 40px 0 0', data-bind='click: ClickRefresh')
+                                i.icon.icon-reload
+                                | Обновить данные
+
+
+script#orderListItemTmpl(type="text/html")
+    tr.b-order-table__item
+        td.b-order-table__name
+            +if('viewShow')
+                a(href=js0, data-bind='click: ClickShow')
+                    | Заказ №
+                    // ko text: id 
+                    // /ko 
+                    | от
+                    // ko text: dateCreate 
+                    // /ko 
+           
+            +ifnot('viewShow')
+                | Заказ №
+                // ko text: id 
+                // /ko 
+                | от
+                // ko text: dateCreate 
+                // /ko 
+
+        td(data-bind='text: nameShop')
+        td.b-order-table__price
+            span.b-price
+                span.b-price__number(data-bind='text: finalCost')
+                span.b-price__thinsp &nbsp;
+                span.b-price__rubl Р
+        td
+            +if("statusOrder == 'init'")
+                .b-status.b-status--forming Формируется
+            
+            +if("statusOrder == 'new'")
+                .b-status.b-status--new Новый
+            
+            +if("statusOrder == 'process'")
+                .b-status.b-status--waiting В просессе обработки
+            
+            +if("statusOrder == 'cancel'")
+                .b-status.b-status--cancelled Отменён
+            
+            +if("statusOrder == 'send'")
+                .b-status.b-status--done Отправлен
+            
+            +if("statusOrder == 'delivered'")
+                .b-status.b-status--done Получен покупателем
+            
+        td
+            +if("statusPay == 'wait_check'")
+                .b-status.b-status--checking На проверке
+            
+            +if("statusPay == 'wait_pay'")
+                .b-status.b-status--waiting Ожидает оплаты
+            
+            +if("statusPay == 'paid'")
+                .b-status.b-status--done Оплачен
+            
+            +if("statusPay == 'cancel'")
+                .b-status.b-status--cancelled Отменён
+            
+            +if("statusPay == 'back'")
+                .b-status.b-status--return Возвращён
+            
+        td.b-order-table__actions
+            +if('viewEdit')
+                .b-order-item__edit.btn-circle.btn-circle--edit(rel='tooltip', title='Изменить', data-bind='click: ClickEdit')
+            
+            +if('viewReturn')
+                .b-order-item__edit.btn-circle.btn-circle--cart(rel='tooltip', title='Скопировать в корзину', data-bind='click: ClickReturn')
+            
+            +if('viewRepeat')
+                .b-order-item__edit.btn-circle.btn-circle--retry(rel='tooltip', title='Повторить', data-bind='click: ClickRepeat')
+            
+            +if('viewCanсel')
+                .b-order-item__edit.btn-circle.btn-circle--cancel(rel='tooltip', title='Отменить', data-bind='click: ClickCancel')
+            
+            +if('viewDelete')
+                .b-order-item__drop.btn-circle.btn-circle--drop(rel='tooltip', title='Удалить', data-bind='click: ClickDelete')
+            
+
+script#orderListPagenationTmpl(type="text/html")
+    +if('paging().length > 1')
+        .content(style='margin-top: 20px;')
+            .input-holder.pagination
+                .radio-circles
+                    ul.menu
+                        +each('paging ')
+                            +if('current')
+                                li.menu__item.active
+                                    +if("title == '...'")
+                                        | ...
+                                    +ifnot("title == '...'")
+                                        a(href=js0, data-bind='text: title, click: ClickLinkPage')
+
+                            +ifnot('current')
+                                +if('cssLink() == "first"')
+                                    li.menu__item
+                                      a(href=js0, data-bind='click: ClickLinkPage')
+                                +if('cssLink() == "last"')
+                                    li.menu__item
+                                      a(href=js0, data-bind='click: ClickLinkPage')
+                                +if('cssLink() != "last" && cssLink() != "first"')
+                                    li.menu__item
+                                      a(href=js0, data-bind='text: title, click: ClickLinkPage')
+
+
+script#orderEmptyListTmpl(type="text/html")
+    // version 1.0 
+    .profile
+        .container
+            .columns.triple
+                .first.double.column
+                    .content
+                        h1.b-profile__header История заказов
+                .third.column
+                    .content
+                        button.btn.btn-lg.btn-inline.b-mail__addbtn.b-mail__addbtn--top(type='button', data-bind='click: ClickRefresh')
+                            i.icon.icon-reload
+                            | Обновить данные
+            table.b-order-table
+                thead
+                    tr
+                        th.b-order-table__name Заказ
+                        th Магазин
+                        th.b-order-table__price Стоимость
+                        th Статус
+                        th Оплата
+                        th.b-order-table__actions
+                tbody
+                    tr
+                        td(calspan='6') У вас нет ни одной покупки.
+                tfoot
+                    tr
+                        td(colspan='6')
+                            button.btn.btn-lg.btn-inline(type='button', style='margin: 40px 0 0;', data-bind='click: ClickRefresh')
+                                i.icon.icon-reload
+                                | Обновить данные
+  
+
+script#orderDetailTmpl(type="text/html")
+    // version 1.1 
+    div.profile
+        .container
+            a.btn.btn-sm.btn-thin.btn__stepback(href=js0, data-bind='click: Back')
+                i.icon.icon-back
+                | назад к списку заказов
+            h2.b-profile__headline
+                | Заказ №
+                // ko text: id 
+                // /ko 
+                | от
+                // ko text: dateCreate 
+                // /ko 
+            .b-order-info
+                .b-order-info__left
+                    span.b-order-info__label Продавец:
+                    span.b-order-info__value(data-bind='text: nameOwnShop')
+                .b-order-info__right
+                    span.b-order-info__label Статус:
+                    +if("statusOrder() == 'init'")
+                        .b-status.b-status--forming Формируется
+
+                    +if("statusOrder() == 'new'")
+                        .b-status.b-status--new Новый
+
+                    +if("statusOrder() == 'process'")
+                        .b-status.b-status--waiting В просессе обработки
+
+                    +if("statusOrder() == 'cancel'")
+                        .b-status.b-status--cancelled Отменён
+
+                    +if("statusOrder() == 'send'")
+                        .b-status.b-status--done Отправлен
+
+                    +if("statusOrder() == 'delivered'")
+                        .b-status.b-status--done Получен покупателем
+
+                    +if("statusPay() == 'wait_check'")
+                        .b-status.b-status--checking На проверке
+
+                    +if("statusPay() == 'wait_pay'")
+                        .b-status.b-status--waiting Ожидает оплаты
+
+                    +if("statusPay() == 'paid'")
+                        .b-status.b-status--done Оплачен
+
+                    +if("statusPay() == 'cancel'")
+                        .b-status.b-status--cancelled Отменён
+
+                    +if("statusPay() == 'back'")
+                        .b-status.b-status--return Возвращён
+
+            .b-fieldset
+                h2.b-profile__headline Товары
+                table.b-order-table.b-order-table--header.b-cart-table
+                    thead
+                        tr
+                            th.b-order-table__thumb
+                            th Наименование
+                            th.b-order-table__title Цена
+                            th.b-order-table__title Количество
+                            th.b-order-table__title Сумма
+                    tbody
+                        +each('goods')
+                            // ko template: { name: 'orderDetailGoodsTmpl' }
+                            // /ko 
+                ul.b-tech
+                    +if('discount > 0')
+                        li.b-tech__item
+                            .b-tech__char
+                                span
+                                    | Скидка:
+                                    i(data-bind='text: discount')
+                            .b-tech__value
+                                span.b-price
+                                    span.b-price__number
+                                        | -
+                                        // ko text: discountSum 
+                                        // /ko 
+                                    span.b-price__thinsp &nbsp;
+                                    span.b-price__rubl Р
+
+                    +if('realShipping')
+                        li.b-tech__item
+                            .b-tech__char
+                                span
+                                    | Доставка:
+                                    i(data-bind='text: nameMethodShipping')
+                            .b-tech__value
+                                span.b-price
+                                    span.b-price__number(data-bind='text: costShipping')
+                                    span.b-price__thinsp &nbsp;
+                                    span.b-price__rubl Р
+
+                    li.b-tech__item
+                        .b-tech__char
+                            span
+                                | Способ оплаты:
+                                i(data-bind='text: namePayment')
+                        .b-tech__value(data-bind='text: costPayment')
+                    li.b-tech__item
+                        .b-tech__char
+                            span Всего: 
+                        .b-tech__value
+                            span.b-price.b-order__amount
+                                span.b-price__number(data-bind='text: itog')
+                                span.b-price__thinsp &nbsp;
+                                span.b-price__rubl Р
+            +if('commentBuyer() || commentOperator()')
+                .b-fieldset
+                    h2.b-profile__headline Примечания к заказу
+                    .b-chat__item.b-dialog.incoming.closed
+                        +if('commentBuyer()')
+                            .b-dialog__body
+                                .b-dialog__userpic
+                                    .b-profile-info__photo
+                                        img(src='', data-bind='attr: {src: avatar}')
+                                .b-dialog__text
+                                    p(data-bind='text: commentBuyer()')
+                        +if('commentOperator()')
+                            .b-dialog__body
+                                .b-dialog__userpic
+                                    .b-profile-info__photo
+                                        img(src='')
+                                .b-dialog__text
+                                    p(data-bind='text: commentOperator()')
+                
+            +if('realShipping')
+                // ko template: { name: 'orderDetailShippingTmpl' }
+                // /ko 
+            
+            // ko template: { name: 'orderDetailPaymentTmpl' }
+            // /ko 
+
+            .b-order__actions
+                +if('statusOrder() == "init"')
+                    .btn.btn-xs.btn-solid(data-bind='click: ClickCheck') Подтвердить заказ
+                    .b-order-item__edit.btn-circle.btn-circle--edit(rel='tooltip', title='Изменить', data-bind='click: ClickEdit')
+                    .b-order-item__edit.btn-circle.btn-circle--cart(rel='tooltip', title='В корзину', data-bind='click: ClickReturn')
+                    .b-order-item__edit.btn-circle.btn-circle--cancel(rel='tooltip', title='Отменить', data-bind='click: ClickCancel')
+                    .b-order-item__drop.btn-circle.btn-circle--drop(rel='tooltip', title='Удалить', data-bind='click: ClickDelete')
+                    +if("statusPay() == 'wait_pay'")
+                        .b-order-item__edit.btn-circle(style='padding: 9px 0 0 13px; top: -10px;', rel='tooltip', title='Обновить', data-bind='click: ClickRefresh')
+                            i.icon.icon-reload
+               
+                +if('statusOrder() == "new"')
+                    +ifnot('statusPay() == "paid"')
+                        div(style='display: inline;', data-bind='embedWidget :{ widget : \'ButtonPaymentWidget-1.1\', params : { title: \'Оплатить заказ\', orderId: id(),tmpl : {path: \'buttonPayment/buttonPaymentTmpl_promo.html\'}}}')
+                        .b-order-item__edit.btn-circle.btn-circle--cancel(rel='tooltip', title='Отменить', data-bind='click: ClickCancel')
+                        .b-order-item__edit.btn-circle(style='padding: 9px 0 0 13px; top: -10px;', rel='tooltip', title='Обновить', data-bind='click: ClickRefresh')
+                            i.icon.icon-reload
+                
+                +if('statusOrder() == "cancel"')
+                    .b-order-item__edit.btn-circle.btn-circle--retry(rel='tooltip', title='Повторить', data-bind='click: ClickRepeat')
+                    .b-order-item__drop.btn-circle.btn-circle--drop(rel='tooltip', title='Удалить', data-bind='click: ClickDelete')
+                    +if("statusPay() == 'wait_pay'")
+                        .b-order-item__edit.btn-circle(style='padding: 9px 0 0 13px; top: -10px;', rel='tooltip', title='Обновить', data-bind='click: ClickRefresh')
+                            i.icon.icon-reload
+                
+                +if('statusOrder() == "delivered" || statusOrder() == "send"')
+                    .b-order-item__edit.btn-circle.btn-circle--retry(rel='tooltip', title='Повторить', data-bind='click: ClickRepeat')
+                    +if("statusPay() == 'wait_pay'")
+                        .b-order-item__edit.btn-circle(style='padding: 9px 0 0 13px; top: -10px;', rel='tooltip', title='Обновить', data-bind='click: ClickRefresh')
+                            i.icon.icon-reload
+
+
+script#orderDetailGoodsTmpl(type="text/html")
+    tr.b-order-table__item
+        td.b-order-table__thumb
+            img(src='', data-bind='attr: {src: routeImage}')
+
+        td.b-order-table__title
+            a(href=js0, data-bind='text: fullName, click: ClickGoods')
+            +if('isEgoodsPaid()')
+                +each('EGoods')
+                    .b-order-table__info
+                        p.b-order-table__label
+                            | Скачиваний
+                            b
+                                // ko text: countUpload 
+                                // /ko 
+                            | из
+                            b
+                                // ko text: maxUpload 
+                                // /ko 
+                            +if('expiration')
+                                | , доступно до
+                                // ko text: expiration 
+                                // /ko 
+                            
+                        a.btn.btn-sm(data-bind='attr: {href: uploadFile}')
+                            i.icon.icon-download
+                            | Загрузить
+                        span
+                            // ko text: sizeFile 
+                            // /ko 
+
+        td.b-order-table__title
+            span.b-price
+                span.b-price__number(data-bind='text: sellCost')
+                span.b-price__thinsp &nbsp;
+                span.b-price__rubl Р
+        td.b-order-table__phone(data-bind='text: count')
+        td.b-order-table__title
+            span.b-price
+                span.b-price__number(data-bind='text: itogSellCost')
+                span.b-price__thinsp &nbsp;
+                span.b-price__rubl Р
+
+
+script#orderDetailShippingTmpl(type='text/html')
+    .b-fieldset
+        h2.b-profile__headline Доставка
+            table.b-order-table.b-order-table--header
+                thead
+                    tr
+                        th(colspan='2') Компания
+                        th Адрес
+                        th.b-order-table__price Получатель
+                        th.b-order-table__phone Телефон
+                tbody
+                    tr.b-order-table__item
+                        td.b-order-table__logo
+                            img(src='', data-bind='attr: {src: logoMethodShipping}')
+                        td.b-order-table__title
+                            b(data-bind='text: nameMethodShipping')
+                        td
+                            // ko text: shippingPostCode 
+                            // /ko 
+                            | ,
+                            // ko text: shippingCountry 
+                            // /ko 
+                            | ,
+                            // ko text: shippingRegion 
+                            // /ko 
+                            | ,
+                            br
+                            // ko text: shippingCity 
+                            // /ko 
+                            | ,
+                            // ko text: shippingAddress 
+                            // /ko 
+                        td.b-order-table__price(data-bind='text: shippingAddressee')
+                        td.b-order-table__phone(data-bind='text: shippingContactPhone')
+
+script#orderDetailPaymentTmpl(type="text/html")
+    .b-fieldset
+        h2.b-profile__headline Оплата
+            table.b-order-table.b-order-table--header
+                thead
+                    tr
+                        th.b-order-table__logo
+                        th Система
+                        th Обработка
+                        th Комиссия
+                        th Номер чека
+                        th Статус
+                tbody
+                    tr.b-order-table__item
+                        td.b-order-table__logo
+                            img(src='', data-bind='attr: {src: logoPayment()}')
+                        td
+                            b(data-bind='text: namePayment')
+                            br
+                            // ko text: descPayment 
+                            // /ko 
+                        td(data-bind='text: timePayment')
+                        td
+                            span.b-price
+                                span.b-price__number(data-bind='text: costPayment')
+                                span.b-price__thinsp &nbsp;
+                                span.b-price__rubl Р
+                        td
+                            | №
+                            // ko text: invoicePayment 
+                            // /ko 
+                        td
+                            +if("statusPay() == 'wait_check'")
+                                .b-status.b-status--checking На проверке
+                            +if("statusPay() == 'wait_pay'")
+                                .b-status.b-status--waiting Ожидает оплаты
+                            +if("statusPay() == 'paid'")
+                                .b-status.b-status--done Оплачен
+                            +if("statusPay() == 'cancel'")
+                                .b-status.b-status--cancelled Отменён
+                            +if("statusPay() == 'back'")
+                                .b-status.b-status--return Возвращён

@@ -1,0 +1,188 @@
+extends ../partials/layouts/inner
+
+block head
+	- page.title = 'Тарифы';
+
+block menu 
+	+menu-list([
+		{text:"Платформа",href:"frontpage.html",submenu:[
+			{text:"О проекте",href:"about.html"},
+			{text:"Торговый портал",href:"http://shop.pokupo.ru/", external:true}
+		]},
+		{text:"Тарифы",href:"rates.html", active:true},
+		{text:"Компания",href:"#", submenu:[
+			{text:"События",href:"events.html"},
+			{text:"О нас",href:"aboutus.html"},
+			{text:"Сообщество",href:"community.html"},
+			{text:"Блог",href:"http://pokupo.livejournal.com/", external:true}
+		]},
+		{text:"Партнёры",href:"partners.html"},
+		
+		{text:"Помощь", href:js0, submenu:[
+			{text:"Вопросы и ответы",href:"faq.html"},	
+			{text:"Техническая поддержка",href:"https://help.pokupo.ru", external:true}
+		]}
+	])(class="b-navigation")
+
+block content
+	section.rates
+		.rates__bg-top.orange.patterned
+		.rates__bg-bottom.black.patterned
+		.container
+			h1.slider-status Базовые тарифы
+			a.slider-control.prev
+				i.icon
+			a.slider-control.next
+				i.icon
+
+			.slider
+				.slide(data-title="Базовые тарифы")
+					.columns.triple.startup
+						.first.column
+							.content.rate.grade-1
+								.rate__icon
+									.icon
+								h1 Стартап I
+								h2 Оборот до 30 т.р.
+								p 
+									| Ежемесячных платежей нет<br/>
+									| Комиссия 
+									strong.num 1.5% 
+									| от суммы продаж
+								button.btn.btn-lg.btn-red(type="button") Регистрация
+						.second.column
+							.content.rate.grade-2
+								.rate__icon
+									.icon
+								h1 Стартап II
+								h2 Оборот 30&ndash;60&nbsp;т.р.
+								p 
+									| Ежемесячных платежей нет<br/>
+									| Комиссия 
+									strong.num 1.0% 
+									| от суммы продаж
+								button.btn.btn-lg.btn-red(type="button") Регистрация
+						.third.column
+							.content.rate.grade-3
+								.rate__icon
+									.icon
+								h1 Стартап III
+								h2 Оборот 60&ndash;100&nbsp;т.р.
+								p 
+									| Ежемесячных платежей нет<br/>
+									| Комиссия 
+									strong.num 0.5% 
+									| от суммы продаж
+								button.btn.btn-lg.btn-red(type="button") Регистрация
+				.slide(data-title="Продвинутые тарифы")
+					.columns.triple.business
+						.first.column
+							.content.rate.grade-1
+								.rate__icon
+									.icon
+								h1 Бизнес I
+								h2 Оборот 100&ndash;250&nbsp;т.р.
+								p 
+									| Ежемесячных платежей нет<br/>
+									| Комиссия 
+									strong.num 1.5% 
+									| от суммы продаж
+								button.btn.btn-lg.btn-red(type="button") Регистрация
+						.second.column
+							.content.rate.grade-2
+								.rate__icon
+									.icon
+								h1 Бизнес II
+								h2 Оборот 250&ndash;500&nbsp;т.р.
+								p 
+									| Ежемесячных платежей нет<br/>
+									| Комиссия 
+									strong.num 1.0% 
+									| от суммы продаж
+								button.btn.btn-lg.btn-red(type="button") Регистрация
+						.third.column
+							.content.rate.grade-3
+								.rate__icon
+									.icon
+								h1 Бизнес III
+								h2 Оборот 500&ndash;750&nbsp;т.р.
+								p 
+									| Ежемесячных платежей нет<br/>
+									| Комиссия 
+									strong.num 0.5% 
+									| от суммы продаж
+								button.btn.btn-lg.btn-red(type="button") Регистрация
+				.slide(data-title="Премиум тарифы")
+					.columns.triple.company
+						.first.column
+							.content.rate.grade-1
+								.rate__icon
+									.icon
+								h1 Компания I
+								h2 Оборот 750&ndash;1000&nbsp;т.р.
+								p 
+									| Ежемесячных платежей нет<br/>
+									| Комиссия 
+									strong.num 1.5% 
+									| от суммы продаж
+								button.btn.btn-lg.btn-red(type="button") Регистрация
+						.second.column
+							.content.rate.grade-2
+								.rate__icon
+									.icon
+								h1 Компания II
+								h2 Оборот 1000&ndash;1500&nbsp;т.р.
+								p 
+									| Ежемесячных платежей нет<br/>
+									| Комиссия 
+									strong.num 1.0% 
+									| от суммы продаж
+								button.btn.btn-lg.btn-red(type="button") Регистрация
+						.third.column
+							.content.rate.grade-3
+								.rate__icon
+									.icon
+								h1 Компания III
+								h2 Оборот от 1500 т.р.
+								p 
+									| Ежемесячных платежей нет<br/>
+									| Комиссия 
+									strong.num 0.5% 
+									| от суммы продаж
+								button.btn.btn-lg.btn-red(type="button") Регистрация
+			
+			.rate__helper
+				p.descr Нужна помощь в выборе правильного тарифа?
+				a.btn.btn-orange(href=js0) Запросить свой тариф
+	section
+		.container
+			h1 Вопросы и ответы
+
+			.columns.triple.faq
+				.first.column
+					.content
+						.faq__item
+							h1 Как Pokupo отличается от других платформ электронной коммерции?
+							p Pokupo могут быть добавлены к существующей веб-сайт и не требует от вас, чтобы начать все сначала. Кроме того, Ecwid имеет свободную планировку, а не бесплатная пробная версия.
+						.faq__item
+							h1 Могу ли я изменить или отменить планы?
+							p Да. Все планы доступны месяц к месяцу без каких-либо долгосрочных обязательств, так что вы можете изменить свой план в любое время.
+				.second.column
+					.content
+						.faq__item
+							h1 В какой валюте я буду рассчитывается с?
+							p Все планы тарифицируются в долларах США.
+						.faq__item
+							h1 Вы предлагаем возвраты?
+							p Мы не предлагаем возвраты, однако, наша Бесплатный план позволяет вам начать продавать на полнофункциональной магазине. Вы можете перейти на премии, когда вы будете готовы!
+				.third.column
+					.content
+						.faq__item
+							h1 Какие варианты оплаты вы поддерживаете?
+							p Pokupo поддерживает более 40 платежных провайдеров по всему миру, в том числе PayPal и Stripe, так что есть хороший шанс, мы поддерживаем нужный вариант.
+						.faq__item
+							h1 Вы предлагаете скидки для некоммерческих организаций?
+							p Да. Расскажите подробнее о вашей некоммерческой организации и получить 6 месяцев предприятие бесплатно.
+
+block scripts
+	+script(['main.js'])

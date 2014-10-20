@@ -1,0 +1,566 @@
+include ../../../templates/helpers/knockout
+
+script#orderFormStep1Tmpl(type="text/html")
+    // version 1.0
+    p test
+
+script#orderLoginFormStep1Tmpl(type="text/html")
+
+
+script#orderRegistrationFormStep1Tmpl(type="text/html")
+
+
+script#orderConfirmFormStep1Tmpl(type="text/html")
+    // version 1.0
+
+
+script#orderProfileFormStep1Tmpl(type="text/html")
+    // version 1.0
+    h1 Оформление заказа
+    #orderWizard.b-wizard
+
+        ul.b-wizard__steps
+            li
+                a.selected(href=js0)
+                    label.b-wizard__step-num 1
+                
+            li
+                a(href=js0)
+                    label.b-wizard__step-num 2
+                
+            li
+                a(href=js0)
+                    label.b-wizard__step-num 2.1
+                
+            li
+                a(href=js0)
+                    label.b-wizard__step-num 3
+                
+            li
+                a(href=js0)
+                    label.b-wizard__step-num 4
+                
+            li
+                a(href=js0)
+                    label.b-wizard__step-num 5
+                
+
+        #step-1
+            form(data-bind="attr: {id: cssRegistrationDataForm}" enctype="multipart/form-data" target="upload_target" method="POST")
+                h2.b-wizard__step-title Персональные данные
+                p Укажите свои персональные данные
+
+                .input-holder
+                    .tooltip__trigger(rel="tooltip" title="Введите ваше имя на сайте") ?
+                    input.block-input(type="text" name="sname" value="" placeholder="Фамилия" data-bind="value: lastName")
+                    +if('errorLastName')
+                        .form_error(data-bind="text: errorLastName")
+                    
+                .input-holder
+                    input.block-input(type="text" name="fname" value="" placeholder="Имя" data-bind="value: firstName")
+                    +if('errorFirstName')
+                        .form_error(data-bind="text: errorFirstName")
+
+                .input-holder
+                    input.block-input(type="text" name="mname" value="" placeholder="Отчество" data-bind="value: middleName")
+                    +if('errorMiddleName')
+                        .form_error(data-bind="text: errorMiddleName")
+
+                .input-holder
+                    input.block-input(placeholder="Дата рождения" data-bind="value: birthDay, attr: {id: cssBirthDay}")
+                    input(name="bdate" type="hidden" data-bind="value: birthDayHiddenField")
+                    +if('errorBirthDay')
+                        .form_error(data-bind="text: errorBirthDay")
+                    
+                .input-holder
+                    .floatlabel-wrapper(style="position:relative")
+                        label.block-label.b-small-text Ваш пол
+                        input.radio(name="gender" type="radio" value="m" data-bind="checked: gender")
+                        label.block-label.b-small-text(for="gender") Мужчина
+                        input.radio(name="gender" type="radio" value="w" data-bind="checked: gender")
+                        label.block-label.b-small-text(for="gender") Женщина
+                        +if('errorGender')
+                            .form_error(data-bind="text: errorGender")
+                        
+                .input-holder(style="padding-top:13px")
+                    input#skip_personal.checkbox(name="skip_personal" type="checkbox" checked data-bind="click: SpecifyLater")
+                    label.block-label.b-small-text(for="skip_personal") 
+                        | Указать позже
+        .b-wizard__actions
+            .b-wizard__loader Loading
+            a.b-wizard__action.btn-next-step(href=js0 data-bind="click: SubmitForm") Продолжить
+        
+
+script#orderFormStep2Tmpl(type="text/html")
+    // version 1.0
+    h1 Оформление заказа
+    #orderWizard.b-wizard
+
+        ul.b-wizard__steps
+            li
+                a.done(href=js0)
+                    label.b-wizard__step-num(data-bind="click: ClickStep1") 1
+            li
+                a.selected(href=js0)
+                    label.b-wizard__step-num 2.1
+                
+            li
+                a(href=js0)
+                    label.b-wizard__step-num 2.2
+                
+            li
+                a(href=js0)
+                    label.b-wizard__step-num 3
+                
+            li
+                a(href=js0)
+                    label.b-wizard__step-num 4
+                
+            li
+                a(href=js0)
+                    label.b-wizard__step-num 5
+                
+        #step-22
+            h2.b-wizard__step-title Выберите адрес доставки
+            table.b-order-table
+                thead
+                    tr
+                        th.b-order-table__action &nbsp;
+                        th Адрес
+                        th.b-order-table__name Получатель
+                        th.b-order-table__phone Контактный телефон
+                        th.b-order-table__drop &nbsp;
+
+                tbody
+                    +each(addressList)
+                        +if('isDefault')
+                            tr.b-order-table__item.active(data-bind="click: ClickItem, css: cssIsDefault()")
+                                // ko template: {name: 'orderFormRowStep2Tmpl' } 
+                                // /ko
+                        
+                        +ifnot('isDefault')
+                            tr.b-order-table__item(data-bind="click: ClickItem, css: cssIsDefault()")
+                                // ko template: {name: 'orderFormRowStep2Tmpl' }
+                                // /ko
+                tfoot
+                    tr
+                        td(colspan="5")
+                            button.btn.btn-xs(type="button" data-bind="click: ClickAddAddress") Добавить новый адрес
+
+
+        .b-wizard__actions
+            .b-wizard__loader Loading
+            a.b-wizard__action.btn-prev-step(href=js0 data-bind="click: Back") Назад
+            a.b-wizard__action.btn-next-step(href=js0 data-bind="click: Submit") Продолжить
+
+
+script#orderFormRowStep2Tmpl(type="text/html")
+    td.b-order-table__action
+        +if('isDefault()')
+            input(type="radio" checked="" data-bind="attr: {'name': 'is_default_' + id }")
+        +ifnot('isDefault()')
+            input(type="radio" data-bind="attr: {'name': 'is_default_' + id }")
+        label(rel="tooltip" title="Выбрать" data-bind="attr: {'for': 'is_default_' + id }") &nbsp;
+
+    td
+        // ko text: postCode
+        // /ko 
+        
+        // ko text: country
+        // /ko 
+        
+        // ko text: region
+        // /ko 
+        
+        // ko text: city
+        // /ko 
+        
+        // ko text: address
+        // /ko
+    td.b-order-table__name(data-bind="text: addressee")
+    td.b-order-table__phone(data-bind="text: contactPhone")
+    td.b-order-table__drop
+        .b-order-item__drop.btn-circle.btn-circle--drop(data-bind="click: Delete")
+
+
+script#orderDeliveryFormStep2Tmpl(type="text/html")
+    // version 1.0
+    h1 Оформление заказа
+    #orderWizard.b-wizard
+        ul.b-wizard__steps
+            li
+                a.done(href=js0)
+                    label.b-wizard__step-num(data-bind="click: ClickStep1") 1
+            li
+                a.done(href=js0)
+                    label.b-wizard__step-num(data-bind="click: ClickStep2") 2.1
+                
+            li
+                a.selected(href=js0)
+                    label.b-wizard__step-num 2.2
+                
+            li
+                a(href=js0)
+                    label.b-wizard__step-num 3
+                
+            li
+                a(href=js0)
+                    label.b-wizard__step-num 4
+                
+            li
+                a(href=js0)
+                    label.b-wizard__step-num 5
+
+
+        #step-21
+            h2.b-wizard__step-title Адрес доставки
+            p Для доставки покупок требуется указать почтовый адрес
+
+            .input-holder
+                select(name="country" placeholder="Страна" data-bind="value: idCountry, attr: {id: cssCountryList}")
+                    option(value="")
+                    +each('countryList')
+                        option(data-bind="text: name, value: id")
+                
+                +if('errorCountry')
+                    .form_error(data-bind="text: errorCountry")
+
+            .input-holder
+                input.block-input(type="text" placeholder="Регион" data-bind="value: customRegion, attr: {id: cssRegionList}, enable: country")
+                +if('errorRegion')
+                    .form_error(data-bind="text: errorRegion")
+                
+            .input-holder
+                input.block-input(type="text" placeholder="Город" data-bind="value: customCity, attr: {id: cssCityList}, enable: customRegion")
+                +if('errorCity')
+                    .form_error(data-bind="text: errorCity")
+                
+            .input-holder
+                input.block-input(type="text" placeholder="Улица, дом, квартира" data-bind="value: customAddress, attr: {id: cssAddress}, enable: customCity")
+                +if('errorAddress')
+                    .form_error(data-bind="text: errorAddress")
+                
+            .input-holder
+                input.block-input(type="text" placeholder="Почтовый индекс" data-bind="value: postCode, attr: {id: cssPostCode}")
+                +if('errorPostCode')
+                    .form_error(data-bind="text: errorPostCode")
+                
+            .input-holder
+                input.block-input(type="text" placeholder="ФИО получателя" data-bind="value: addressee")
+                +if('errorAddressee')
+                    .form_error(data-bind="text: errorAddressee")
+                
+            .input-holder
+                input.block-input.masked-phone(type="text" placeholder="Телефон покупателя" data-bind="value: contactPhone, attr:{id:cssContactPhone}")
+                +if('errorContactPhone')
+                    .form_error(data-bind="text: errorContactPhone")
+                
+            .input-holder(style="padding-top:13px")
+                input#set_main_address.checkbox(type="checkbox" checked="" data-bind="checked: isDefault")
+                label.block-label.b-small-text(for="set_main_address") Основной адрес
+
+        .b-wizard__actions
+            a.b-wizard__action.btn-prev-step(href=js0 data-bind="click: Back") Назад
+            a.b-wizard__action.btn-next-step(href=js0 data-bind="click: Submit") Продолжить
+
+
+script#orderFormStep3Tmpl(type="text/html")
+    // version 1.0
+    h1 Оформление заказа
+    #orderWizard.b-wizard
+        ul.b-wizard__steps
+            li
+                a.done(href=js0 data-bind="click: ClickStep1")
+                    label.b-wizard__step-num 1
+            li
+                a.done(href=js0 data-bind="click: ClickStep2")
+                    label.b-wizard__step-num 2.1
+                
+            li
+                a.selected(href=js0 data-bind="click: ClickAddAddress")
+                    label.b-wizard__step-num 2.2
+                
+            li
+                a(href=js0)
+                    label.b-wizard__step-num 3
+                
+            li
+                a(href=js0)
+                    label.b-wizard__step-num 4
+                
+            li
+                a(href=js0)
+                    label.b-wizard__step-num 5
+
+
+        #step-3
+            h2.b-wizard__step-title Выберите способ доставки
+            table.b-order-table
+                thead
+                    tr
+                        th.b-order-table__logo
+                        th Способ доставки
+                        th.b-order-table__price Стоимость
+                        th.b-order-table__action 
+                tbody
+                    +each('shipping()')
+                        tr.b-order-table__item(data-bind="click: ClickItem")
+                            td.b-order-table__logo
+                                img(src=js0 data-bind="attr: {src: logoShippingCompany}")
+                            td
+                                b(data-bind="text: nameMethodShipping")
+                                br
+                                // ko text: descMethodShipping
+                                // /ko
+                            td.b-order-table__price
+                                +if('costShipping')
+                                    span.b-price
+                                        span.b-price__number(data-bind="text: costShipping")
+                                        span.b-price__thinsp &nbsp;
+                                        span.b-price__rubl Р 
+
+                            td.b-order-table__action
+                                +if('isActive()')
+                                    input(type="radio" checked="" name="is_default")
+                                
+                                +ifnot('isActive()')
+                                    input(type="radio" name="is_default")
+                                
+                                label(for="tr_11") Выбрать
+
+        .b-wizard__actions
+            a.b-wizard__action.btn-prev-step(href=js0 data-bind="click: Back") Назад
+            a.b-wizard__action.btn-next-step(href=js0 data-bind="click: Submit") Продолжить
+       
+
+script#orderFormStep4Tmpl(type="text/html")
+    // version 1.0
+    h1 Оформление заказа
+    #orderWizard.b-wizard
+        ul.b-wizard__steps
+            li
+                a.done(href=js0 data-bind="click: ClickStep1")
+                    label.b-wizard__step-num 1
+            li
+                a.done(href=js0 data-bind="click: ClickStep2")
+                    label.b-wizard__step-num 2.1
+                
+            li
+                a.done(href=js0 data-bind="click: ClickAddAddress")
+                    label.b-wizard__step-num 2.2
+                
+            li
+                a.selected(href=js0 data-bind="click: ClickStep3")
+                    label.b-wizard__step-num 3
+                
+            li
+                a(href=js0)
+                    label.b-wizard__step-num 4
+                
+            li
+                a(href=js0)
+                    label.b-wizard__step-num 5
+
+        #step-4
+            h2.b-wizard__step-title Выберите способ оплаты
+            table.b-order-table
+                thead
+                    tr
+                        th.b-order-table__logo 
+                        th Способ оплаты
+                        th.b-order-table__price К оплате
+                        th.b-order-table__action 
+                tbody
+                    +each('payment')
+                        tr.b-order-table__item(data-bind="click: ClickItem, css: cssActive()")
+                            td.b-order-table__logo
+                                img(src=js0 data-bind="attr: {src: logoPayment }")
+                            
+                            td
+                                .b-order-table__text.tooltip
+                                    .tooltip__trigger ?
+                                        .tooltip__content
+                                            p(data-bind="text: instrPayment")
+                                    b(data-bind="text: namePayment")
+                                    br
+                                    // ko text: descPayment
+                                    // /ko
+
+                            td.b-order-table__price
+                                span.b-price
+                                    span.b-price__number(data-bind="text: costPayment")
+                                    span.b-price__thinsp &nbsp;
+                                    span.b-price__rubl Р
+
+                            td.b-order-table__action
+                                +if('isActive()')
+                                    input#is_default.addrN(type="radio" checked="checked" name="is_default")
+                                
+                                +ifnot('isActive()')
+                                    input#is_default.addrN(type="radio" name="is_default")
+                                
+                                label(for="is_default") Выбрать
+
+        .b-wizard__actions
+            a.b-wizard__action.btn-prev-step(href=js0 data-bind="click: Back") Назад
+            a.b-wizard__action.btn-next-step(href=js0 data-bind="click: Submit") Продолжить
+
+
+script#orderFormStep5Tmpl(type="text/html")
+    // version 1.0
+    h1 Оформление заказа
+    #orderWizard.b-wizard
+        ul.b-wizard__steps
+            li
+                a.done(href=js0 data-bind="click: ClickStep1")
+                    label.b-wizard__step-num 1
+            li
+                a.done(href=js0 data-bind="click: ClickStep2")
+                    label.b-wizard__step-num 2.1
+                
+            li
+                a.done(href=js0 data-bind="click: ClickAddAddress")
+                    label.b-wizard__step-num 2.2
+                
+            li
+                a.done(href=js0 data-bind="click: ClickStep3")
+                    label.b-wizard__step-num 3
+                
+            li
+                a.selected(href=js0 data-bind="click: ClickStep4")
+                    label.b-wizard__step-num 4
+                
+            li
+                a(href=js0)
+                    label.b-wizard__step-num 5
+
+        #step-5
+            h2.b-wizard__step-title Подтвердите заказ
+            table.b-order-table.b-order-table--header.b-cart-table
+                thead
+                    tr
+                        th.b-order-table__thumb
+                        th Наименование
+                        th.b-order-table__title Цена
+                        th.b-order-table__action Количество
+                        th.b-order-table__price Сумма
+                tbody
+                   +each('goods')
+                        tr.b-order-table__item
+                            td.b-order-table__thumb
+                                img(src="" data-bind="attr: {src: routeImage}")
+
+                            td.b-order-table__title
+                                a(href=js0 data-bind="click: ClickGoods, text: fullName")
+
+                            td.b-order-table__title
+                                span.b-price
+                                    span.b-price__number(data-bind="text: sellCost")
+                                    span.b-price__thinsp &nbsp;
+                                    span.b-price__rubl Р
+                                
+                            td.b-order-table__action(data-bind="text: count")
+                            td.b-order-table__price
+                                span.b-price
+                                    span.b-price__number(data-bind="text: itogSellCost")
+                                    span.b-price__thinsp &nbsp;
+                                    span.b-price__rubl Р
+                   
+            ul.b-tech
+                +if('discount')
+                    li.b-tech__item
+                        .b-tech__char
+                            span 
+                                | Скидка: 
+                                i 
+                                    // ko text: discount
+                                    // /ko
+                        .b-tech__value
+                            span.b-price
+                                span.b-price__number 
+                                    | -
+                                    // ko text: discountSum
+                                    // /ko
+                                span.b-price__thinsp &nbsp;
+                                span.b-price__rubl Р
+
+                +if('realShipping')
+                    li.b-tech__item
+                        .b-tech__char
+                            span 
+                                | Доставка:
+                                i
+                                    // ko text: nameMethodShipping
+                                    // /ko
+                        .b-tech__value
+                            span.b-price
+                                span.b-price__number(data-bind="text: costShipping")
+                                span.b-price__thinsp &nbsp;
+                                span.b-price__rubl Р
+
+                li.b-tech__item
+                    .b-tech__char
+                        span
+                            | Способ оплаты: 
+                            i
+                                // ko text: namePayment
+                                // /ko
+                    .b-tech__value(data-bind="text: costPayment")
+                
+                li.b-tech__item
+                    .b-tech__char
+                        span Всего:
+                    .b-tech__value
+                        span.b-price.b-order__amount
+                            span.b-price__number(data-bind="text: itog()")
+                            span.b-price__thinsp &nbsp;
+                            span.b-price__rubl Р
+                        
+           +if('realShipping')
+                h2.b-wizard__step-title Доставка
+                table.b-order-table.b-order-table--header
+                    thead
+                        tr
+                            th(colspan="2") Компания
+                            th Адрес
+                            th.b-order-table__price Получатель
+                            th.b-order-table__phone Телефон
+                    tbody
+                        tr.b-order-table__item
+                            td.b-order-table__logo
+                                img(src="" data-bind="attr: {src: logoMethodShipping}")
+                            td.b-order-table__title
+                                b
+                                    // ko text: nameMethodShipping
+                                    // /ko
+                            td
+                                // ko text: shippingPostCode
+                                // /ko
+                                | ,
+                                
+                                // ko text: shippingCountry
+                                // /ko
+                                | ,
+                                
+                                // ko text: shippingRegion
+                                // /ko
+                                | ,
+                                br
+                                
+                                // ko text: shippingCity
+                                // /ko
+                                | ,
+                                
+                                // ko text: shippingAddress
+                                // /ko
+                            td.b-order-table__price(data-bind="text: shippingAddressee")
+                            td.b-order-table__phone(data-bind="text: shippingContactPhone")
+
+            .comment(style="margin-bottom: 60px")
+                textarea(name="comment" value="" placeholder="Примечания к заказу" width="100%" rows="2" data-bind="value: commentBuyer")
+           
+        .b-wizard__actions
+            a.b-wizard__action.btn-prev-step(href=js0 data-bind="click: Back") Назад
+            a.b-wizard__action.btn-prev-step(href=js0 data-bind="click: ClickDelete") Отменить заказ
+            a.b-wizard__action.btn-next-step(href=js0 data-bind="click: ClickConfirm") Подтверждаю
+        

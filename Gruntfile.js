@@ -20,6 +20,18 @@ module.exports = function (grunt) {
 				imgOpts: {
 					format: 'png'
 				}
+			},
+			themes: {
+				src: 'app/themes/default/images/sprite/**/*.png',
+				destImg: 'app/themes/default/images/sprite.png',
+				imgPath: '../images/sprite.png',
+				destCSS: 'app/styles/helpers/default-theme-sprite.styl',
+				cssFormat: 'stylus',
+				algorithm: 'binary-tree',
+				padding: 8,
+				imgOpts: {
+					format: 'png'
+				}
 			}
 		},
 
@@ -30,6 +42,11 @@ module.exports = function (grunt) {
 					cwd: 'app/images',
 					src: ['**/*.{png,jpg,gif}', '!sprite/**/*'],
 					dest: 'dist/images'
+				}, {
+					expand: true,
+					cwd: 'app/themes/default/images',
+					src: ['**/*.{png,jpg,gif}', '!sprite/**/*'],
+					dest: 'dist/themes/default/images'
 				}]
 			}
 		},
@@ -43,6 +60,12 @@ module.exports = function (grunt) {
 					cwd: 'app/styles',
 					src: ['*.styl'],
 					dest: 'dist/styles',
+					expand: true,
+					ext: '.css'
+				}, {
+					cwd: 'app/themes',
+					src: ['**/*.styl'],
+					dest: 'dist/themes',
 					expand: true,
 					ext: '.css'
 				}]
@@ -62,7 +85,7 @@ module.exports = function (grunt) {
 				]
 			},
 			all: {
-				src: ['dist/styles/**/*.css']
+				src: ['dist/styles/**/*.css', 'dist/themes/**/*.css']
 			}
 		},
 
@@ -93,6 +116,7 @@ module.exports = function (grunt) {
 		jade: {
 			dist: {
 				options: {
+					pretty: false,
 					data: {
 						page: {
 							assets: '',
@@ -107,7 +131,13 @@ module.exports = function (grunt) {
 				files: [{
 					cwd: 'app/templates',
 					src: ['**/*.jade', '!{helpers,partials}/**/*'],
-					dest: 'dist',
+					dest: 'dist/',
+					expand: true,
+					ext: '.html'
+				}, {
+					cwd: 'app/themes',
+					src: ['**/*.jade'],
+					dest: 'dist/themes',
 					expand: true,
 					ext: '.html'
 				}]
@@ -126,7 +156,7 @@ module.exports = function (grunt) {
 				expand: true,
 				cwd: 'dist',
 				ext: '.html',
-				src: '**/*.html',
+				src: ['pages/*.html'],
 				dest: 'dist'
 			},
 		},
@@ -324,22 +354,27 @@ module.exports = function (grunt) {
 				files: ['dist/**/*']
 			},
 			sprite: {
-				files: ['app/images/sprite/**/*.png'],
+				files: [
+					'app/images/sprite/**/*.png',
+					'app/themes/default/images/sprite/**/*.png',
+				],
 				tasks: ['sprite']
 			},
 			imagemin: {
 				files: [
 					'app/images/**/*.{png,jpg,gif}',
-					'!app/images/sprite/**/*'
+					'!app/images/sprite/**/*',
+					'app/themes/default/images/**/*.{png,jpg,gif}',
+					'!app/themes/default/images/sprite/**/*',
 				],
 				tasks: ['newer:imagemin']
 			},
 			stylus: {
-				files: ['app/styles/**/*.styl'],
+				files: ['app/styles/**/*.styl', 'app/themes/**/*.styl'],
 				tasks: ['stylus', 'autoprefixer', 'cmq', 'csscomb']
 			},
 			jade: {
-				files: ['app/templates/**/*.jade', '!app/templates/partials/**/*'],
+				files: ['app/templates/**/*.jade', '!app/templates/partials/**/*', 'app/themes/**/*.jade'],
 				tasks: ['newer:jade', 'newer:prettify']
 			},
 			jadePartials: {

@@ -255,7 +255,7 @@
   margin: -17px 0 0 -13px;
   z-index: -1;
   background-image: url("../images/sprite.png");
-  background-position: -788px -84px;
+  background-position: -224px -140px;
   width: 28px;
   height: 34px;
 }
@@ -364,7 +364,7 @@
 .b-dialog.closed .b-dialog__userpic .b-profile-info__photo:after {
   margin: -10px 0 0 -8px;
   background-image: url("../images/sprite.png");
-  background-position: -800px -390px;
+  background-position: -193px -222px;
   width: 16px;
   height: 20px;
 }
@@ -403,7 +403,7 @@
   top: 5px;
   left: -15px;
   background-image: url("../images/sprite.png");
-  background-position: -824px -610px;
+  background-position: -379px -185px;
   width: 12px;
   height: 8px;
   -webkit-transition: -webkit-transform 0.15s ease-in-out;
@@ -593,35 +593,35 @@ section.profile-nav {
 .b-profile-nav .menu__item a.icon__profile:before {
   margin-top: -11px;
   background-image: url("../images/sprite.png");
-  background-position: -800px -390px;
+  background-position: -193px -222px;
   width: 16px;
   height: 20px;
 }
 .b-profile-nav .menu__item a.icon__favorites:before {
   margin-top: -8px;
   background-image: url("../images/sprite.png");
-  background-position: -707px -765px;
+  background-position: -781px -199px;
   width: 20px;
   height: 17px;
 }
 .b-profile-nav .menu__item a.icon__cart:before {
   margin-top: -11px;
   background-image: url("../images/sprite.png");
-  background-position: -481px -374px;
+  background-position: -781px -149px;
   width: 20px;
   height: 17px;
 }
 .b-profile-nav .menu__item a.icon__order:before {
   margin-top: -9px;
   background-image: url("../images/sprite.png");
-  background-position: -136px -808px;
+  background-position: -781px -273px;
   width: 20px;
   height: 16px;
 }
 .b-profile-nav .menu__item a.icon__mail:before {
   margin-top: -7px;
   background-image: url("../images/sprite.png");
-  background-position: -682px -604px;
+  background-position: -781px -433px;
   width: 18px;
   height: 13px;
 }
@@ -640,31 +640,31 @@ section.profile-nav {
 }
 .b-profile-nav .menu__item.active a.icon__profile:before {
   background-image: url("../images/sprite.png");
-  background-position: -800px -320px;
+  background-position: -145px -222px;
   width: 16px;
   height: 20px;
 }
 .b-profile-nav .menu__item.active a.icon__favorites:before {
   background-image: url("../images/sprite.png");
-  background-position: -595px -582px;
+  background-position: -781px -174px;
   width: 20px;
   height: 17px;
 }
 .b-profile-nav .menu__item.active a.icon__cart:before {
   background-image: url("../images/sprite.png");
-  background-position: -735px -765px;
+  background-position: -781px -224px;
   width: 20px;
   height: 17px;
 }
 .b-profile-nav .menu__item.active a.icon__order:before {
   background-image: url("../images/sprite.png");
-  background-position: -595px -558px;
+  background-position: -781px -249px;
   width: 20px;
   height: 16px;
 }
 .b-profile-nav .menu__item.active a.icon__mail:before {
   background-image: url("../images/sprite.png");
-  background-position: -628px -604px;
+  background-position: -781px -412px;
   width: 18px;
   height: 13px;
 }
@@ -752,7 +752,7 @@ section.profile-nav {
 }
 .profile .btn-circle--drop:hover:before {
   background-image: url("../images/sprite.png");
-  background-position: -824px -304px;
+  background-position: -297px -95px;
   width: 15px;
   height: 15px;
 }
@@ -762,7 +762,7 @@ section.profile-nav {
 }
 .profile .btn-circle--drop:active:before {
   background-image: url("../images/sprite.png");
-  background-position: -824px -304px;
+  background-position: -297px -95px;
   width: 15px;
   height: 15px;
 }
@@ -832,7 +832,7 @@ section.profile-nav {
   left: 50%;
   margin: -8px 0 0 -7px;
   background-image: url("../images/sprite.png");
-  background-position: -800px -418px;
+  background-position: -264px -155px;
   width: 15px;
   height: 17px;
 }
@@ -844,7 +844,7 @@ section.profile-nav {
   left: 50%;
   margin: -7px 0 0 -9px;
   background-image: url("../images/sprite.png");
-  background-position: -594px -808px;
+  background-position: -326px -141px;
   width: 17px;
   height: 14px;
 }
@@ -856,7 +856,7 @@ section.profile-nav {
   left: 50%;
   margin: -8px 0 0 -8px;
   background-image: url("../images/sprite.png");
-  background-position: -681px -765px;
+  background-position: -264px -180px;
   width: 18px;
   height: 17px;
 }
@@ -868,7 +868,7 @@ section.profile-nav {
   left: 50%;
   margin: -8px 0 0 -8px;
   background-image: url("../images/sprite.png");
-  background-position: -540px -808px;
+  background-position: -781px -321px;
   width: 17px;
   height: 15px;
 }
@@ -880,7 +880,7 @@ section.profile-nav {
   left: 50%;
   margin: -9px 0 0 -8px;
   background-image: url("../images/sprite.png");
-  background-position: -481px -349px;
+  background-position: -264px -130px;
   width: 17px;
   height: 17px;
 }
@@ -901,7 +901,7 @@ section.profile-nav {
 }
 .b-status--done:before {
   background-image: url("../images/sprite.png");
-  background-position: 0px -808px;
+  background-position: -264px -230px;
   width: 20px;
   height: 16px;
   margin-top: -9px;
@@ -911,7 +911,7 @@ section.profile-nav {
 }
 .b-status--warning:before {
   background-image: url("../images/sprite.png");
-  background-position: -800px -485px;
+  background-position: -264px -105px;
   width: 5px;
   height: 17px;
   left: 10px;
@@ -919,56 +919,56 @@ section.profile-nav {
 }
 .b-status--cancelled:before {
   background-image: url("../images/sprite.png");
-  background-position: -346px -252px;
+  background-position: -45px -254px;
   width: 16px;
   height: 16px;
   margin-top: -8px;
 }
 .b-status--checking:before {
   background-image: url("../images/sprite.png");
-  background-position: -824px -48px;
+  background-position: -213px -254px;
   width: 16px;
   height: 16px;
   margin-top: -7px;
 }
 .b-status--forming:before {
   background-image: url("../images/sprite.png");
-  background-position: -689px -578px;
+  background-position: -264px -79px;
   width: 19px;
   height: 18px;
   margin-top: -10px;
 }
 .b-status--inprogress:before {
   background-image: url("../images/sprite.png");
-  background-position: -481px -323px;
+  background-position: -264px -53px;
   width: 18px;
   height: 18px;
   margin-top: -9px;
 }
 .b-status--new:before {
   background-image: url("../images/sprite.png");
-  background-position: 0px -808px;
+  background-position: -264px -230px;
   width: 20px;
   height: 16px;
   margin-top: -9px;
 }
 .b-status--return:before {
   background-image: url("../images/sprite.png");
-  background-position: -824px -457px;
+  background-position: -297px -164px;
   width: 15px;
   height: 13px;
   margin-top: -5px;
 }
 .b-status--sent:before {
   background-image: url("../images/sprite.png");
-  background-position: -654px -604px;
+  background-position: -339px -164px;
   width: 20px;
   height: 13px;
   margin-top: -9px;
 }
 .b-status--waiting:before {
   background-image: url("../images/sprite.png");
-  background-position: -608px -208px;
+  background-position: -145px -254px;
   width: 12px;
   height: 16px;
   margin-top: -9px;

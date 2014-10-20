@@ -1,0 +1,35 @@
+include ../../../templates/helpers/knockout
+
+script#userInformationTmpl(type="text/html")
+    // version 1.0 
+    .logged-in
+        .circles-menu
+            .circles-menu__item.dropdown
+                a.with-icon.icon__profile.dropdown__trigger.user_information_dropdown__trigger(href=js0, data-target='profile', data-bind='attr: {style: background}')
+                    +if('countNewMessage() > 0')
+                        sup.circles-menu__num(data-bind='text: countNewMessage')
+                    
+                | click:
+                .b-profile-menu.dropdown__content.hidden.user_information_dropdown__content(data-target='profile')
+                    p.b-profile-menu__name(data-bind='text: login')
+                    ul.menu
+                        li.menu__item
+                            a(href='/shop#/profile/') Профиль
+                        li.menu__item
+                            a(href='/shop#/purchases/block=list') Заказы
+                        li.menu__item
+                            a(href='/shop#/messages/')
+                                | Сообщения
+                                +if('countNewMessage() > 0')
+                                    sup.menu__item__num(data-bind='text: countNewMessage')
+                                
+                        li.menu__item
+                            a#js-logout.b-profile-menu__logout(href=js0, data-bind='click: ClickLogout') Выйти
+
+
+
+script#authorizationLinkTmpl(type="text/html")
+    // version 1.0
+    .not-logged-in
+        a#js-login.menu-login__login(href="#" title="Войти" data-bind="click: ClickLogin") Вход
+        a.menu-login__register(title="Зарегистрироваться" data-bind="click: ClickRegistration") Регистрация

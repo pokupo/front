@@ -1,0 +1,37 @@
+include ../../../templates/helpers/knockout
+
+script#menuPersonalCabinetTmpl(type="text/html")
+    // version 1.1
+    div
+        .profile-nav.grey
+            .container
+                a.btn btn-sm(href=js0)
+                    i.icon.icon-store--small
+                        | Стать продавцом
+                ul.menu.b-profile-nav
+                    li(data-bind="attr: {class: 'menu__item ' + activeProfile()}")
+                        a.icon__profile(data-bind="click: ClickProfile" href=js0)
+                            span Профиль
+
+                    li.menu__item(data-bind="attr: {class: 'menu__item ' + activePurchases()}")
+                        a.icon__order(data-bind="click: ClickPurchases" href=js0)
+                            span Заказы
+
+                    li.menu__item(data-bind="attr: {class: 'menu__item ' + activeMessages()}")
+                        a.icon__mail(data-bind="click: ClickMessages" href=js0)
+                            span Сообщения
+                                +if('countNewMessage() > 0')
+                                    sup.menu__item__num(data-bind="text: countNewMessage")
+
+        .container
+            +if('subMenu().length > 0')
+                dl.tabs.tabs--withline
+                    +each('subMenu')
+                    +if('isActive')
+                        dt.tab__trigger.selected
+                            span(data-bind="css: activeSubMenu, click: ClickSubMenu, text: title")
+                        dd.tab__content.selected
+                       
+                    +ifnot('isActive')
+                        dt.tab__trigger
+                            span(data-bind="css: activeSubMenu, click: ClickSubMenu, text: title")

@@ -1,0 +1,187 @@
+/* Хэлперы и переменные */
+@import '../../../styles/helpers/*'
+
+/* Левый сайдбар */
+.b-sidebar
+	position relative
+	width 230px
+	float left
+	text-align left
+
+	.btn
+		display none
+
+	&__title
+		font-size 18px
+		font-weight normal
+		line-height 24px
+		color #000
+		margin 0 0 0 2px
+
+	.menu
+		position relative
+
+		&__item
+			position relative
+			
+			a
+			u
+				display block
+				width 100%	
+				padding 4px 15px 4px 2px
+				color $a__link
+				font-size 13px
+				line-height 22px
+				text-decoration none
+				background transparent
+				transition background 0.1 ease-in-out
+				cursor pointer
+
+				span
+					border-bottom 1px solid rgba($a__link, 0.5)
+
+				.num
+					vertical-align baseline
+					color #999
+					font-size 13px
+					font-weight normal
+					text-align right
+					margin-left 5px
+
+				&:hover
+					color $orange
+					span
+						border-bottom-color rgba($orange, 0.5)
+
+			&.current
+				& > a
+				& > u
+					color $orange
+					font-weight 800
+
+					span
+						border-bottom none
+
+					&:hover
+						color $orange
+						cursor default
+
+				&.with-submenu > a
+				&.with-submenu > u
+					span
+						border-bottom-color rgba($orange, 0.5)
+			&.active
+				&.with-submenu 
+					&:before
+						transform rotate(180deg)
+
+			&.with-submenu
+				&:before
+					content ''
+					position absolute
+					display block
+					top 12px
+					left -17px
+					sprite($accordeon__group)
+					transition transform 0.2s ease-in-out
+				& > a
+				& > u
+					span
+						border-bottom 1px dotted
+
+	.submenu
+		display none
+		&.active
+			display block
+
+		&__item
+			a 
+				padding-left 15px
+				span
+					border-bottom-style solid
+				&:hover
+					color $orange
+					span
+						border-bottom-color rgba($orange, 0.4)
+
+			&.active > a
+				position relative
+				margin-left -20px
+				padding-left 35px
+				color $orange
+				font-weight 800
+				background $grey
+				width auto
+
+				&:before
+				&:after
+					content ''
+					position absolute
+					display block
+					width 0
+					height 0
+					right -40px
+					border 30px solid transparent
+
+				&:before
+					top -25px
+					border-bottom-color #fff
+				&:after
+					bottom -25px
+					border-top-color #fff
+
+				span
+					border-bottom none
+
+				&:hover
+					cursor default
+
+
+
+/* Кастомизация сайдбара каталога */
+.store 
+	.b-sidebar
+		margin 56px 0 0 20px
+		h1
+			margin-bottom 15px
+
+/* 4-й вид каталога */
+.nosidebar 
+	.b-sidebar
+		width 151px
+		z-index 20
+		margin 0 -100% 0 0
+		top -30px
+
+		.btn
+			display inline-block
+			margin 0
+
+		.dropdown__content
+			width 183px
+			box-sizing content-box
+			padding 100px 30px 20px
+			margin -12px 0 0 -13px
+
+			li.active > a:after
+			li.active > a:before
+				display none
+
+		.menu
+			margin 0 -30px
+
+			&__item
+				a
+				u
+					padding-left 32px
+				&.with-submenu:before
+					left 10px
+
+		.submenu__item
+			a 
+				padding-left 50px
+				margin-left 0
+			&.active
+				a:hover
+					background $grey
+					color $orange

@@ -1,0 +1,379 @@
+include ../../../templates/helpers/knockout
+
+style.
+    .chosen-container-single .chosen-single{
+        height: 60px;
+        font-size: 18px;
+        line-height: 30px;
+        border: 3px solid transparent;
+        background: none repeat scroll 0 0 #ededed;
+    }
+    .chosen-container-single .chosen-single span{
+        line-height: 54px;
+    }
+
+script#personalInformationTmpl(type="text/html")
+    // version 1.0
+   .profile
+       .container
+           .content
+                // ko template: { name: 'registrationDataTmpl', data: registrationData }
+                // /ko
+
+                // ko template: { name: 'postDataTmpl', data: postalAddress }
+                // /ko
+                
+                // ko template: { name: 'contactsDataFormTmpl', data: contacts }
+                // /ko
+
+
+script#registrationDataTmpl(type="text/html")
+    style.
+        #avatar_file {
+            position: absolute;
+            top: 0;
+            right: 0;
+            margin: 0;
+            padding: 0;
+            font-size: 20px;
+            cursor: pointer;
+            opacity: 0;
+            filter: alpha(opacity=0);
+        }
+        #button_avatar_file {
+            position: relative;
+            overflow: hidden;
+            margin: 10px;
+        }
+
+    form(data-bind='attr: {id: cssRegistrationDataForm}', method='POST', target='upload_target', enctype='multipart/form-data')
+        fieldset.b-fieldset
+            .b-profile-info.b-profile-info--personal
+                .b-profile-info__actions
+                    span#button_avatar_file.btn.btn-xs(type='button')
+                        span Загрузить аватар
+                        input#avatar_file(name='avatar', type='file')
+                    span#button_trash_avatar_file.btn-circle.btn-circle--trash(style='display: none;')
+
+                .b-profile-info__summary
+                    .b-profile-info__photo
+                        img(src=js0, data-bind='attr: {src: iconUser}')
+                    h2.b-profile__headline.b-profile-info__title(data-bind='text: fullName')
+                    ul.b-profile-info__characters-list
+                        +if('dateRegistration')
+                            li
+                                span
+                                    | На сайте с
+                                    // ko text: dateRegistration 
+                                    // /ko 
+                    
+                        li
+                            span.char Псевдоним: 
+                            span.value(data-bind='text: username')
+                        li
+                            span.char Рейтинг: 
+                            span.value.value--orange
+                                +if('rating ')
+                                    | +
+                                // ko text: rating
+                                // /ko 
+        .b-status.b-status--fieldset.b-status--done(data-for='fieldset-id')
+            +if("checkInfo() == 'yes'")
+                | Данные проверены
+            
+            +if("checkInfo() == 'no'")
+                | Данные не проверены
+            
+        h2.b-profile__headline.with-divider Персональные данные
+        fieldset.b-fieldset
+            input#fullname.block-input(type='text', placeholder='Введите ФИО в свободной форме', data-label='ФИО в свободной форме')
+            .columns
+                .first.double.column
+                    .content
+                        .input-holder
+                            input#fullname__surname.suggestion-input.block-input(type='text', placeholder='Фамилия', name='sname', data-bind='value: lastNameField')
+                            +if('errorLastName')
+                                .form_error(data-bind='text: errorLastName')
+                            
+                        .input-holder
+                            input#fullname__name.suggestion-input.block-input(type='text', placeholder='Имя', name='fname', data-bind='value: firstNameField')
+                            +if('errorFirstName')
+                                .form_error(data-bind='text: errorFirstName')
+                            
+                        +ifnot('gender()')
+                            #fullname__gender.input-holder
+                                input#fullname__gender-male.inline(type='radio', name='gender', value='m', data-bind='checked: gender')
+                                label(for='gender') Мужской
+                                input#fullname__gender-female.inline(type='radio', name='gender', value='w', data-bind='checked: gender')
+                                label(for='gender') Женский
+                                +if('errorGender')
+                                    .form_error(data-bind='text: errorGender')
+
+                .third.double.column
+                    .content
+                        .input-holder
+                            input#fullname__patronymic.suggestion-input.block-input(type='text', placeholder='Отчество', name='mname', data-bind='value: middleNameField')
+                            +if('errorMiddleName')
+                                .form_error(data-bind='text: errorMiddleName')
+                            
+                        .input-holder
+                            input#birthDay.suggestion-input.block-input(type='text', placeholder='Дата рождения', data-bind='value: birthDayField, attr: {id: cssBirthDay}')
+                            input(name='bdate', type='hidden', data-bind='value: birthDayHiddenField')
+                            +if('errorBirthDay')
+                                .form_error(data-bind='text: errorBirthDay')
+                            
+                        a.input-action.pseudo-link(data-bind='click: Submit') Сохранить
+
+
+script#postDataTmpl(type="text/html")
+    .b-status.b-status--fieldset.b-status--done(data-for='another-fieldset-id')
+        +if("checkInfo() == 'yes'")
+            | Адрес подтверждён
+        
+        +if("checkInfo() == 'no'")
+            | Адрес не подтверждён
+        
+    h2.b-profile__headline.with-divider Почтовый адрес
+    fieldset.b-fieldset
+        // input.no-label.block-input#address(type="text" placeholder="Введите адрес в свободной форме" data-label="Адрес в свободной форме")
+        .columns
+            .first.double.column
+                .content
+                    .input-holder
+                        .floatlabel-wrapper(style='position: relative;')
+                            label.label-floatlabel(for='city_list', style='position: absolute; top: -20px; left: 20px; display: block; opacity: 1; font-size: 12px; font-weight: normal; color: rgb(153, 153, 153); transition: all 0.1s ease-in-out 0s;') Страна
+                            select#country_list_profile.suggestion-input.block-input(name='address__country', data-bind='value: idCountry, attr: {id: cssCountryList}')
+                                option(value='')
+                               +each('countryList ')
+                                    option(data-bind='text: name, value: id')
+                                
+                            if('errorCountry')
+                                .form_error(data-bind='text: errorCountry')
+                            
+                    .input-holder
+                        input#address__region.suggestion-input.block-input(type='text', placeholder='Регион', name='address__region', data-bind='value: customRegion, attr: {id: cssRegionList}, enable: country')
+                        +if('errorRegion')
+                            .form_error(data-bind='text: errorRegion')
+                        
+                    .input-holder
+                        input#address__city.suggestion-input.block-input(type='text', placeholder='Город', name='address__city', data-bind='value: customCity, attr: {id: cssCityList}, enable: customRegion')
+                        +if('errorCity')
+                            .form_error(data-bind='text: errorCity')
+                        
+            .third.double.column
+                .content
+                    .input-holder
+                        input#address__street.suggestion-input.block-input(type='text', placeholder='Улица', name='address__street', data-bind='value: customAddress, enable: customCity')
+                        +if('errorAddress')
+                            .form_error(data-bind='text: errorAddress')
+                        
+                    .input-holder
+                        input#address__postalcode.suggestion-input.block-input(type='text', placeholder='Почтовый индекс', name='address__postalcode', data-bind='value: postIndex')
+                        +if('errorPostIndex')
+                            .form_error(data-bind='text: errorPostIndex')
+                        
+                    a.input-action.pseudo-link(data-bind='click: Submit') Сохранить
+
+
+script#contactsDataFormTmpl(type="text/html")
+    h2.b-profile__headline.with-divider Данные аккаунта
+    fieldset.b-fieldset
+        .columns
+            .first.double.column
+                .content
+                    .input-holder
+                        +if('emailIsConfirm()')
+                            input#account__email.suggestion-input.block-input(type="email", placeholder="Электронная почта", data-bind="value: email", disabled="disabled")
+
+                        +ifnot('emailIsConfirm()')
+                            input#account__email.suggestion-input.block-input(type='email', placeholder='Электронная почта', data-bind='value: email', name='account__email')
+
+                        +if('errorEmail')
+                            .form_error(data-bind='text: errorEmail')
+                        
+                    .b-status.b-status--done(data-bind='visible: emailIsConfirm()') E-mail подтверждён
+                    div(data-bind='visible: !emailIsConfirm()')
+                        div(data-bind='visible: isExistEmail')
+                            span.pseudo-link.input-action.input-action--right(data-bind='click: SendMailToken') Выслать код подтверждения
+                        .input-holder(data-bind='visible: sentEmailCode')
+                            input.block-input(type='text', placeholder='Код из смс-сообщения', name='account__sms', data-bind='value:emailToken')
+                            +if('errorEmailToken')
+                                .form_error(data-bind='text: errorEmailToken')
+                                
+                    span.input-action.pseudo-link(data-bind='click: SubmitMailToken, visible: sentEmailCode') Подтвердить
+            .third.double.column
+                .content
+                    .input-holder
+                        +if('phoneIsConfirm()')
+                            input#account__phone.block-input(type="tel", placeholder="Телефон", name="account__phone", data-bind="value: phone", disabled="disabled")
+
+                        +ifnot('phoneIsConfirm() ')
+                            input#account__phone.masked-phone.block-input(type='tel', placeholder='Телефон', name='account__phone', data-bind='value: phone, attr: {id : cssPhone}')
+
+                        +if('errorPhone')
+                            .form_error(data-bind='text: errorPhone')
+                        
+                    .b-status.b-status--done(data-bind='visible: phoneIsConfirm()') Телефон подтвержден
+
+                    div(data-bind='visible: !phoneIsConfirm()')
+                        div(data-bind='visible: isExistPhone')
+                            span.pseudo-link.input-action.input-action--right(data-bind='click: SendPhoneToken') Выслать код подтверждения
+                        .input-holder(data-bind='visible: sentCode')
+                            input.block-input(type="text", placeholder="Код из смс-сообщения", name="account__sms", data-bind="value:phoneToken")
+                            +if('errorPhoneToken')
+                                .form_error(data-bind='text: errorPhoneToken')
+
+                    span.input-action.pseudo-link(data-bind='click: SubmitPhoneToken, visible: sentCode') Подтвердить
+                    div(data-bind='visible: !phoneIsConfirm() || !emailIsConfirm()')
+                        span.input-action.pseudo-link(data-bind='click: SubmitForm') Сохранить
+
+
+script#deliveryAddressTmpl(type="text/html")
+    // version 1.0 
+    .profile
+        .container
+            .content
+                h2.b-profile__headline Выберете основной адрес доставки
+                table.b-order-table
+                    thead
+                        tr
+                            th.b-order-table__action
+                            th Адрес
+                            th.b-order-table__name Получатель
+                            th.b-order-table__phone Контактный телефон
+                            th.b-order-table__drop
+                    tbody
+                        +each('addressList')
+                            +if('isDefault')
+                                tr.b-order-table__item.active
+                                    // ko template: { name: 'deliveryRowAddressTmpl'} 
+                                    // /ko 
+                            
+                            +ifnot('isDefault')
+                                tr.b-order-table__item
+                                    // ko template: { name: 'deliveryRowAddressTmpl'} 
+                                    // /ko 
+                            
+                    tfoot
+                        tr
+                            td(colspan='5')
+                                button.btn.btn-xs(type='button', data-bind='click: ClickAddAddress') Добавить новый адрес
+
+
+script#deliveryRowAddressTmpl(type="text/html")
+    td.b-order-table__action(data-bind='click: ClickItem')
+        +if('isDefault()')
+            input(type='radio', checked='', data-bind='attr: {\'name\': \'is_default_\' + id }')
+        +ifnot('isDefault()')
+            input(type='radio', data-bind='attr: {\'name\': \'is_default_\' + id }')
+        label(rel='tooltip', title='Выбрать', data-bind='attr: {\'for\': \'is_default_\' + id }')  
+    td(data-bind='click: ClickItem')
+        label(for='tr_01')
+            // ko text: postIndex 
+            // /ko 
+            | ,
+            // ko text: country 
+            // /ko 
+            | ,
+            // ko text: region 
+            // /ko 
+            | ,
+            // ko text: city 
+            // /ko 
+            | ,
+            // ko text: address 
+            // /ko 
+    td.b-order-table__name(data-bind='text: addressee, click: ClickItem')
+    td.b-order-table__phone(data-bind='text: contactPhone, click: ClickItem')
+    td.b-order-table__drop
+        .b-order-item__edit.btn-circle.btn-circle--edit(rel='tooltip', title='Редактировать', data-bind='click: Edit')
+        .b-order-item__drop.btn-circle.btn-circle--drop(rel='tooltip', title='Удалить адрес', data-bind='click: Delete')
+
+
+script#deliveryAddressFormTmpl(type="text/html")
+    // version 1.0 
+    .profile
+        .container
+            .content
+                h2.b-profile__headline Добавление адреса доставки
+                fieldset.b-fieldset
+                    .columns
+                        .first.double.column
+                            .content
+                                .input-holder
+                                    .floatlabel-wrapper(style='position: relative;')
+                                        label.label-floatlabel(for='city_list', style='position: absolute; top: -20px; left: 20px; display: block; opacity: 1; font-size: 12px; font-weight: normal; color: rgb(153, 153, 153); transition: all 0.1s ease-in-out 0s;') Страна
+                                        select#country_list_profile.suggestion-input.block-input(name='address__country', data-bind='value: idCountry, attr: {id: cssCountryList}')
+                                            option(value='')
+                                            +each('countryList ')
+                                                option(data-bind='text: name, value: id')
+                                           
+                                        +if('errorCountry')
+                                            .form_error(data-bind='text: errorCountry')
+
+                                .input-holder
+                                    input#address__region.suggestion-input.block-input(type='text', placeholder='Регион', name='address__region', data-bind='value: customRegion, attr: {id: cssRegionList}, enable: country')
+                                    +if('errorRegion')
+                                        .form_error(data-bind='text: errorRegion')
+
+                                .input-holder
+                                    input#address__city.suggestion-input.block-input(type='text', placeholder='Город', name='address__city', data-bind='value: customCity, attr: {id: cssCityList}, enable: customRegion')
+                                    +if('errorCity')
+                                        .form_error(data-bind='text: errorCity')
+
+                                .input-holder
+                                    input#address__street.suggestion-input.block-input(type='text', placeholder='Адрес', name='address__street', data-bind='value: customAddress, enable: customCity')
+                                    +if('errorAddress')
+                                        .form_error(data-bind='text: errorAddress')
+
+                        .third.double.column
+                            .content
+                                .input-holder
+                                    input#address__postalcode.suggestion-input.block-input(type='text', placeholder='Почтовый индекс', name='address__postalcode', data-bind='value: postIndex')
+                                    +if('errorPostCode')
+                                        .form_error(data-bind='text: errorPostCode')
+
+                                .input-holder
+                                    input#address__addressee.suggestion-input.block-input(type='text', placeholder='Получатель', name='address__street', data-bind='value: addressee')
+                                    +if('errorAddressee')
+                                        .form_error(data-bind='text: errorAddressee')
+
+                                .input-holder
+                                    input#address__phone.masked-phone.suggestion-input.block-input(type='text', placeholder='Контактный телефон', name='address__street', data-bind='value: contactPhone')
+                                    +if('errorContactPhone')
+                                        .form_error(data-bind='text: errorContactPhone')
+
+                                .input-holder
+                                    input#makeDefault(type='checkbox', name='makeDefault', data-bind='checked: isDefault')
+                                    label(for='makeDefault') Сделать основным адресом
+                                button.btn.btn-grey.btn-lg.btn-inline(type='reset', data-bind='click: Back') Назад
+                                +if('id')
+                                    button.btn.btn-lg(type='submit', data-bind='click: Edit') Сохранить
+
+                                +ifnot('id')
+                                    button.btn.btn-lg(type='submit', data-bind='click: Submit') Сохранить
+
+
+script#securityTmpl(type="text/html")
+    // version 1.0 
+    .profile
+        .container
+            .content
+                h2.b-profile__headline Изменить пароль
+                form(data-bind='attr: {id: cssSequrityForm}', method='POST', target='upload_target', enctype='multipart/form-data')
+                    .input-holder
+                        input#password.block-input(type='password', name='old_password', value='', placeholder='Текущий пароль', data-bind='value: oldPassword, attr : {id: cssOldPassword}')
+                        +if('errorOldPassword')
+                            .form_error(data-bind='text: errorOldPassword')
+                        
+                    .input-holder
+                        input#newpassword.block-input(value='', placeholder='Новый пароль', name='new_password', type='password', data-bind='value: newPassword, attr : {id: cssNewPassword}')
+                        +if('errorNewPassword')
+                            .form_error(data-bind='text: errorNewPassword')
+                        
+                    .input-holder
+                        input#newpassword.block-input(value='', placeholder='Повтор нового пароля', type='password', data-bind='value: newPassword, attr : {id: cssNewPassword}')
+                        +if('errorConfirmPassword')
+                            .form_error(data-bind='text: errorConfirmPassword')
+                        
+                    button.btn.btn-lg(type='submit', data-bind='click: Submit') Сохранить

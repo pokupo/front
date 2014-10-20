@@ -1,0 +1,126 @@
+include ../../../templates/helpers/knockout
+
+script#emptyCabinetCartGoodsTmpl(type='text/html')
+    // version 1.0 
+    .profile
+        .container
+            h1.b-profile__header Корзина
+            div
+                p В корзине нет ни одного товара.
+
+
+script#cabinetCartGoodsTmpl(type="text/html")
+    // version 1.0 
+    .profile
+        .container
+            h1.b-profile__header Корзина
+            +each('sellerBlock')
+                .b-profile-info.b-profile-info--fullwidth(data-bind="embedWidget :{ widget : 'InfoSellerWidget-1.0', params : {data : sellerInfo, tmpl : {path: 'infoSeller/infoSellerTmpl_promo_1.html', id : 'infoSeller_1Tmpl'}}}")
+                ol.b-order-list
+                    li.b-order-item.b-thead
+                        .b-order-item__checkbox
+                            input#js-select-all(type='checkbox', data-bind='attr: {id: cssSelectAll}')
+                            label(for='js-select-all', data-bind='click: ClickSelectAll')
+                        .b-order-item__img
+                        .b-order-item__name Наименование
+                        .b-order-item__price Цена
+                        .b-order-item__qty Количество
+                        .b-order-item__cost Стоимость
+                    +each('goods')
+                        // ko template: { name: 'cabinetCartGoodsGoodsBlockTmpl' } 
+                        // /ko 
+                    
+                .b-order-list__actions.bordered
+                    +ifnot('isDisabledButton')
+                        .like_button
+                            span.pseudo-link(data-bind='click: ClickButchFavorites') Отложить выбранные товары
+                        .drop_button
+                            span.pseudo-link(data-bind='click: ClickButchRemove') Удалить выбранные товары
+
+                    +if('isDisabledButton')
+                        .like_button
+                            span.pseudo-link Отложить выбранные товары
+                        .drop_button
+                            span.pseudo-link Удалить выбранные товары
+                        
+                    .empty_button
+                        span.pseudo-link(data-bind='click: ClickClearCurt') Очистить корзину
+
+                .b-order-list__results
+                   +if('tatalDiscount() > 0')
+                        p.b-order-list__amount
+                            | Общая скидка:
+                            span.b-price
+                                b.b-order-item__discount
+                                    | -
+                                    // ko text: tatalDiscount 
+                                    // /ko 
+                    p.b-order-list__tobepaid
+                        | К оплате:
+                        span.b-price
+                            span.b-price__number
+                                // ko text: tatalForPayment 
+                                // /ko 
+                            span.b-price__thinsp &nbsp;
+                            span.b-price__rubl Р
+                .b-order-list__buttons
+                    a.btn.btn-grey.btn-lg.btn-inline(href='javascript:void(0);', data-bind='click: ClickProceed') Продолжить покупки
+                    a.btn.btn-lg(href='javascript:void(0);', data-bind='click: ClickIssueOrder') Оформить заказ
+
+                #dialog-form-batch(style='display: none;', title='Добавить комментарий к избранному товару.')
+                    textarea(name='comment', rows='10', cols='50', data-bind='value : comment')
+
+
+script#cabinetCartGoodsGoodsBlockTmpl(type="text/html")
+    li.b-order-item
+        .b-order-item__checkbox
+            input(type='checkbox', data-bind='attr: {id: cssCheckboxGoods}')
+            label(for='', data-bind='click: ClickOrder')
+        .b-order-item__img
+            img(src='#', data-bind='attr: {src: routeImages, title: fullName }')
+        .b-order-item__name
+            a(href='#', data-bind='click: ClickGoods')
+                span(data-bind='text: fullName')
+        .b-order-item__price
+            +if('discount() != 0')
+                .b-price.b-item__price--old
+                    span.b-price__number(data-bind='text: sellEndCost')
+                    span.b-price__thinsp &nbsp;
+                    span.b-price__rubl Р
+                .b-price
+                    span.b-price__number(data-bind='text: sellCost')
+                    span.b-price__thinsp &nbsp;
+                    span.b-price__rubl Р
+            +if('discount() == 0')
+                .b-price
+                    span.b-price__number(data-bind='text: sellCost')
+                    span.b-price__thinsp &nbsp;
+                    span.b-price__rubl Р
+        .b-order-item__qty
+            .limits-wrapper
+                p.b-catalog-item__limits
+                    | На складе:
+                    span.value(data-bind='text: countReserv')
+                .b-increment-input
+                    span.b-increment-input__darr(data-bind='click: ClickMinus') −
+                    span.b-increment-input__input-wrapper
+                        input.inline-input.b-increment-input__input(type='text', data-name='qty', value='5', maxlength='3', autocomplete='off', data-min='1', data-max='5', data-bind='value: ordered')
+                    span.b-increment-input__uarr(data-bind='click: ClickPlus') +
+        .b-order-item__cost
+            +if('discount() != 0')
+                span.b-order-item__discount
+                    | -
+                    // ko text: discount() 
+                    // /ko 
+            span.b-price
+                span.b-price__number(data-bind='text: endSum')
+                span.b-price__thinsp &nbsp;
+                span.b-price__rubl Р
+        .b-order-item__delay
+            +if('IsFavorite')
+                .like_button.active
+                    span.pseudo-link(data-bind='click: ClickFavorites') Избранный товар
+            +ifnot('IsFavorite')
+                .like_button
+                    span.pseudo-link(data-bind='click: AddFavorites') В избранное
+        .b-order-item__drop.btn-circle.btn-circle--drop(data-bind='click: ClickRemove')

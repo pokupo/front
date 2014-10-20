@@ -1,0 +1,123 @@
+extends ../partials/layouts/store
+
+block head
+	- page.title = 'Регистрация покупателя';
+
+block menu 
+	+menu-list([
+		{text:"Платформа",href:"frontpage.html",submenu:[
+			{text:"О проекте",href:"about.html"},
+			{text:"Торговый портал",href:"http://shop.pokupo.ru/", external:true}
+		]},
+		{text:"Тарифы",href:"rates.html"},
+		{text:"Компания",href:"#", submenu:[
+			{text:"События",href:"events.html"},
+			{text:"О нас",href:"aboutus.html"},
+			{text:"Сообщество",href:"community.html"},
+			{text:"Блог",href:"http://pokupo.livejournal.com/", external:true}
+		]},
+		{text:"Партнёры",href:"partners.html"},
+		
+		{text:"Помощь", href:js0, submenu:[
+			{text:"Вопросы и ответы",href:"faq.html"},	
+			{text:"Техническая поддержка",href:"https://help.pokupo.ru", external:true}
+		]}
+	])(class="b-navigation")
+
+block content
+	section.register-user
+		.container
+			.b-thermometer
+				p 
+					a(href="index.html") Главная 
+					span.divider / 
+					a(href=js0) Регистрация покупателя
+					span.divider / 
+					span.current Шаг 1
+
+			.doc
+				.h1-with-progress-bar
+					canvas#progressCircle(width="160" height="160")
+						p Ваш браузер не поддерживает технологию canvas
+					h1 Регистрация нового аккаунта
+
+
+				form(action="#")
+					#registerShopWizard.b-wizard
+						ul.b-wizard__steps
+							li
+								a(href="#step-1")
+									label.b-wizard__step-num 1
+							li
+								a(href="#step-2")
+									label.b-wizard__step-num 2
+							li
+								a(href="#step-3")
+									label.b-wizard__step-num 3
+
+						#step-1
+							h2.b-wizard__step-title Данные аккаунта
+							p Укажите название магазина, почту и телефон
+
+							.b-wizard__step-content
+								.input-holder
+									input.block-input(type="text" name="nickname" value="" placeholder="Название магазина")
+
+
+								.input-holder
+									.tooltip__trigger(rel="tooltip" title="Для уведомлений о заказах") ?
+									input.block-input(type="email" name="email" value="почта#мойбложик.рф" placeholder="Ваш e-mail")
+
+								.input-holder
+									.tooltip__trigger(rel="tooltip" title="Для связи с курьером") ?
+									input.block-input(type="tel" name="phone" value="" placeholder="Номер телефона")
+
+								.input-holder(style="padding-top:13px")
+									input#iagree.checkbox(name="iagree" type="checkbox")
+									label.block-label.b-small-text(for="iagree") 
+										| Я принимаю условия 
+										span.pseudo-link пользовательского соглашения
+										|,<br/>
+										span.pseudo-link правил конфиденциальности
+										|  и 
+										span.pseudo-link политики возврата платежей
+
+						#step-2
+							h2.b-wizard__step-title Активация магазина
+							p Укажите код, высланный на почтовый адрес или телефон
+
+							.b-wizard__step-content
+								.input-holder
+									.tooltip__trigger(rel="tooltip" title="Код, высланный на почтовый адрес или телефон") ?
+									input.block-input(type="text" name="code" value="" placeholder="Ваш e-mail код")
+
+								.input-holder(style="padding-top:13px")
+									input#skip-email.checkbox(name="skip-email" type="checkbox" checked)
+									label.block-label.b-small-text(for="skip-email") 
+										| Подтвердить почтовый ящик позднее
+							
+						#step-3
+							h2.b-wizard__step-title Завершение регистрации
+
+							.b-wizard__step-content
+								.input-holder#clienttype
+									input#clienttype-private.inline(type="radio" name="clienttype" value="PRIVATE")
+									label(for="clienttype-private") Частное лицо
+									input#clienttype-corporate.inline(type="radio" name="clienttype" value="CORPORATE")
+									label(for="clienttype-corporate") Компания
+								.input-holder
+									input.block-input(type="text" name="family" value="" placeholder="Адрес сайта (если есть)")								
+
+								.input-holder
+									input.block-input(type="text" name="code" value="" placeholder="Код приглашения")
+
+								.input-holder(style="padding-top:13px")
+									input#skip_personal.checkbox(name="skip_personal" type="checkbox" checked)
+									label.block-label.b-small-text(for="skip_personal") 
+										| Указать позже
+
+
+
+
+block scripts
+	+script(['libs/jquery.wizard.js', 'libs/progress-circle.js', 'main.js'])

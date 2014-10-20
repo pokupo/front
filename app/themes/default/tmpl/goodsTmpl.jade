@@ -1,0 +1,182 @@
+include ../../../templates/helpers/knockout
+
+script#goodsTmpl(type="text/html")
+    // version 1.0
+    .b-catalog-item
+        h1.b-catalog-item__title(data-bind="text: blocks.main.chortName, attr: {id : blocks.main.cssTitleToCart}") Converse Red
+        h2.b-catalog-item__subtitle 
+            | ID 
+            // ko text: id 
+            // /ko
+
+        .columns.triple
+            .first.column
+                .content
+                    div(data-bind="template: { name: 'goodsGalleryBlockTmpl', data: blocks }")
+
+            .second.double.column
+                .content
+                    .b-catalog-item__seller-info.slidedown
+                        span.slidedown__trigger#user_information_slidedown(data-target="info") Информация о продавце
+                        .slidedown__content.hidden(data-target="info")
+                            .b-profile-info(data-bind="embedWidget :{ widget : 'InfoSellerWidget-1.0', params : {data : sellerInfo, tmpl : {path: 'infoSeller/infoSellerTmpl_promo.html'}}}")
+
+                    .columns.triple
+                        .first.double.column
+                            .content
+                                .b-catalog-item__description
+                                    .b-stars
+                                        .b-stars__rating(data-bind="attr: {style: 'width:' + blocks.main.ratingGoods + '%'}")
+
+                                    +each('moreBlock')
+                                        +if('key == "opinion"')
+                                            +if('content')
+                                                span.pseudo-link 
+                                                    // ko text: content.params.length 
+                                                    // /ko
+                                                    | отзыва
+
+                                    p(data-bind="html: blocks.main.fullName")
+                                    p 
+                                        | Метки: 
+                                        // ko text: blocks.main.keyWords 
+                                        // /ko
+                                    
+                                    .b-item__price
+                                        +if('blocks.main.discount() > 0')
+                                            .b-price.b-item__price--old
+                                                span.b-price__number(data-bind="text: blocks.main.sellGoods")
+                                                span.b-price__thinsp &nbsp;
+                                                span.b-price__rubl Р
+                                        
+                                            .b-price
+                                                span.b-price__number(data-bind="text: blocks.main.sellCost")
+                                                span.b-price__thinsp &nbsp;
+                                                span.b-price__rubl Р
+
+                                        +if('blocks.main.discount() == 0')
+                                            .b-price
+                                                span.b-price__number(data-bind="text: blocks.main.sellCost")
+                                                span.b-price__thinsp &nbsp;
+                                                span.b-price__rubl Р
+                                    
+                                    +if('blocks.main.discount() > 0')
+                                        .b-item__price-comment
+                                            p 
+                                                | Ваша скидка 
+                                                // ko text: blocks.main.discount 
+                                                // /ko
+
+                                    .b-catalog-item__share.yashare-auto-init(
+                                        data-yashareL10n="ru" 
+                                        data-yashareType="link" 
+                                        data-yashareQuickServices="vkontakte,facebook,twitter,odnoklassniki,gplus")
+
+
+                        .third.column
+                            .content.b-catalog-item__actions
+                                .increase
+                                    p.b-catalog-item__limits 
+                                        | На складе: 
+                                        span.value(data-bind="text: blocks.main.inStock")
+                                    
+                                    +if('blocks.main.showSelectionCount')
+                                        .b-increment-input(style="margin-bottom:20px")
+                                            span.b-increment-input__darr(data-bind="click: blocks.main.ClickMinus")
+                                            span.b-increment-input__input-wrapper
+                                                input.inline-input.b-increment-input__input(type="text" value="1" maxlength="3" autocomplete="off" data-bind="value: blocks.main.ordered")
+                                            span.b-increment-input__uarr(data-bind="click: blocks.main.ClickPlus")
+
+                                +if('blocks.main.showAddToCart')
+                                    button#btn_to_cart.btn(type="button" data-bind="click: blocks.main.AddToCart")
+                                        i.icon.icon-cart
+                                        | В&nbsp;корзину
+                                    br
+
+                                +if('blocks.main.showBuy')
+                                    button.btn(type="button" data-bind="click: blocks.main.Buy") Купить сразу
+
+                                +if('blocks.main.IsFavorite')
+                                    .like_button.active
+                                        a.pseudo-link(href=js0, data-bind="click: blocks.main.ClickFavorites") Избранный товар
+
+                                +ifnot('blocks.main.IsFavorite')
+                                    .like_button
+                                        a.pseudo-link(href=js0,  data-bind="click:blocks.main.AddFavorites") В избранное
+                                
+                                #dialog-form-batch(style="display: none" title="Добавить комментарий к избранному товару.")
+                                    textarea(name="comment" rows="10" cols="50" data-bind="value : blocks.main.comment")
+
+                    .b-catalog-item__aux(data-bind="template: { name: 'goodsMoreBlockTmpl' }")
+
+                    +each('moreBlock')
+                        +if('key == "opinion"')
+                            +if('content')
+                                .b-catalog-item__aux.b-reviews(data-bind="template: { name: 'goodsOpinionBlockTmpl' }")
+        div(data-bind="embedWidget :{ widget : 'RelatedGoodsWidget-1.0', params : {id : id, typeView: 'carousel', count: 6, countTile : 6, tmpl : {path: 'relatedGoods/relatedGoodsTmpl_promo.html'}}}")
+
+
+script#goodsGalleryBlockTmpl(type="text/html")
+    +if('main.discount() > 0')
+        .b-catalog-item__badges
+            .b-catalog-item__badge.b-catalog-item__badge--discount
+                // ko text: main.discount 
+                // /ko
+
+    .b-catalog-item__photos
+        img#main_img_goods(src="" data-bind="attr: {src: main.routeBigImages, title: main.chortName, id : main.cssToCart }")
+
+        +if('$parent.ShowGallery()')
+            +each('gallery')
+                img(src="" data-bind="attr: {src: image, title: title }")
+    
+
+script#goodsMoreBlockTmpl(type="text/html")
+    dl.tabs.tabs--noskin#more_block
+        +each('moreBlock')
+            +ifnot("key == 'opinion'")
+                +if('content')
+                    +if('$index() == 0')
+                        dt.tab__trigger.selected
+                            span(data-bind="text: title")
+                        dd.tab__content.selected
+                            .content(data-bind="template: { name: templateName }")
+                    +if('$index() != 0')
+                        dt.tab__trigger
+                            span(data-bind="text: title")
+                        dd.tab__content
+                            .content(data-bind="template: { name: templateName }")
+
+
+script#goodsDescriptionBlockTmpl(type="text/html")
+    div(data-bind="html:content")
+
+
+script#goodsShippingBlockTmpl(type="text/html")
+    +each('content.params')
+        div(style="width: 100%; margin-bottom: 20px;")
+            h3(style="margin-bottom: 10px" data-bind="text: nameMethodShipping")
+            div(style="float: left; width:70%")
+                p(data-bind="text: descMethodShipping")
+            +if('costShipping')
+                div(style="float: left;")
+                    b
+                        // ko text: costShipping 
+                        // /ko
+                        | руб.
+        div(style="clear: both; width: 100%;")
+
+
+script#goodsOpinionBlockTmpl(type="text/html")
+    h1.with-button Отзывы
+    ul.reviews-list
+        +each('content.params')
+            li.b-review
+                .b-review__info
+                    .b-stars
+                        .b-stars__rating(style="width:80%" data-bind="attr: {style: 'width: ' + value_opinion + '0%'}")
+                    span.b-review__author(data-bind="text: name_user")
+                .b-review__text
+                    p(data-bind="text: desc_opinion")
+
+

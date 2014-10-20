@@ -1,0 +1,79 @@
+extends ../partials/layouts/letter
+
+
+block content
+    table(cellpadding="0" cellspacing="0" border="0" align="center" id="backgroundTable")
+        tr
+            td(valign="top")
+                #mailsub.pad_null
+                    div(style="width:520px; padding: 35px 40px 20px; margin: 0 auto;")
+                        img.image_fix(src="images/logo/example.png" title="[Название магазина]" alt="[Название магазина]" width="268" height="65")
+                    div(style="width:520px; padding: 40px 40px 20px; margin: 0 auto; background:#ffffff; word-break: break-word;")
+                        h1(style="font-size:30px") Уважаемый %продавец%!
+
+                        p 
+                            | В вашем магазине «Депозитстрой» оформлен новый заказ:
+
+                        table(cellpadding="0" cellspacing="0" border="0" align="center" width="520" style="margin: 30px auto; background: #f7f5f3; color: #333333;")
+                            tr
+                                td(colspan=2 style="padding: 0 20px; height: 50px; border-bottom: 2px solid #ededed")
+                                    h2(style=" color: #333333!important;") Данные заказа
+                            tr
+                                td(valign="top" width="260" style="padding: 8px 10px 16px 20px;")
+                                    b Номер заказа<br/>
+                                    b Дата<br/>
+                                    b Сумма
+                                td(valign="top" width="260" style="padding: 8px 20px 16px 10px;")
+                                    span 2412<br/>
+                                    span 28 августа 2014 в 15:53<br/>
+                                    span 6655.30 руб.
+                            tr
+                                td(colspan=2 style="padding: 0 20px; height: 50px; border-top: 2px solid #ededed")
+                                    p(style=" color: #333333!important;") Заказ ожидает оплаты
+
+
+
+                        p 
+                            | Для просмотра заказа зайдите в личный кабинет продавца.
+                            a(href="https://dev.pokupo.ru/seller/order/314/" target="_blank") https://dev.pokupo.ru/seller/order/314/
+
+                        p(style="margin-top:100px")
+                            | С наилучшими пожеланиями<br/>
+                            | почтовый робот торговой платформы Pokupo<br/>
+                            a(href="http://dev.pokupo.ru" target="_blank") http://dev.pokupo.ru
+
+                    div(style="width:520px; padding:  5px 40px 20px; margin: 0 auto; background:#ffffff; border-top: 2px solid #ededed; word-break: break-word;")
+                        table(cellpadding="0" cellspacing="0" border="0" align="center" width="520")
+                            tr
+                                td(valign="top" width="172")
+                                    p 
+                                        | Посетить сайт<br/>
+                                        a(href="http://pokupo.ru" target="_blank") http://pokupo.ru
+
+                                td(valign="top" width="176")
+                                    p
+                                        | Написать<br/>
+                                        a(href="mailto:support@pokupo.ru") support@pokupo.ru
+
+                                td(valign="top" width="172")
+                                    p
+                                        | Позвонить<br/>
+                                        a.mobile_link(href="tel:+74953636393") +7 (495) 363-63-93
+
+                    div(style="width:520px; padding: 20px 40px 20px; margin: 0 auto; ")
+                        table(cellpadding="0" cellspacing="0" border="0" align="center" width="520")
+                            tr
+                                td(valign="top" align="left" width="80")
+                                    a(href="http://pokupo.ru/" target="_blank")
+                                        img.image_fix(src="images/logo/logo__letter.jpg" title="Покупо" alt="Покупо" width="70" height="35")
+                                td(valign="top" style="font-size: 12px")
+                                    span 
+                                        | Магазин работает на базе торговой платформы 
+                                        b Pokupo 
+                                        | &copy; 2014
+                                    br
+                                    a(href="http://pokupo.ru/" title="Торговая платформа Pokupo" target="_blank") Pokupo.ru
+                                    | &nbsp; &nbsp;
+                                    a(href="http://help.pokupo.ru/" title="Помощь" target="_blank") Помощь
+                                    | &nbsp; &nbsp;
+                                    a(href="http://help.pokupo.ru/" title="Служба поддержки" target="_blank") Служба поддержки

@@ -1,0 +1,65 @@
+include ../../../templates/helpers/knockout
+
+script#advancedSearchFormTmpl(type='text/html')
+	// version 1.1 
+	section.advanced-search.slidedown
+		.container
+			.advanced-search-trigger
+				span#advansed_search_form_slidedown.advanced-search-trigger__text.slidedown__trigger(data-target='search') Расширенный поиск
+			.b-advanced-search.slidedown__content.hidden(data-target='search')
+				form(action='', data-bind='submit: SubmitAdvancedSearchForm')
+					.columns.triple
+						.first.column
+							.content
+								.b-location.dropdown
+									a#advansed_search_form__category_dropdown__trigger.b-location__current.dropdown__trigger(href=js0, data-target='location')
+										span#js-multilocation.fancytree-checkbox.part
+										| Все категории
+									#advansed_search_form__category_dropdown__content.dropdown__content.hidden(data-target='location')
+										.b-location__catalog
+											#multilocation(style='text-align: left')
+												ul
+													+each('categories')
+														li
+															// ko text: title 
+															// /ko
+															+if('children')
+																ul
+																	+each("{ data: children, as: 'children1' }")
+																	li
+																		// ko text: children1.title 
+																		// /ko 
+																		+if('children1.children')
+																			ul
+																				+each("{ data: children1.children, as: 'children2' }")
+																					li
+																						// ko text: children2.title 
+																						// /ko 
+
+								.input-holder
+									select#typeSeller.form_select(name='typeSeller', data-bind='css: cssTypeSeller, value: typeSeller')
+										+each('typesSellers')
+											option(data-bind='text: title, value: key')
+
+						.second.column
+							.content
+								.input-holder
+									input.no-label.inline-input(name='keyWords', type='text', placeholder='Ключевые слова', data-bind='value: keyWords')
+								.input-holder
+									input.no-label.inline-input(name='exceptWords', type='text', placeholder='Исключить слова', data-bind='value: exceptWords')
+						.third.column
+							.content
+								.input-holder
+									select#typeSearch(name='typeSearch', data-bind='css: cssTypeSearch, value: typeSearch')
+										+each('typesSearch')
+											option(data-bind='text: title, value: key')
+
+								.input-holder
+									label(for='minPrice') Цена
+									input#minPrice.no-label.inline-input.inline-input--small(type='text', placeholder='от', name='startCost', data-bind='value: startCost')
+									label.separator(for='maxPrice') —
+									input#maxPrice.no-label.inline-input.inline-input--small(name='endCost', type='text', placeholder='до', data-bind='value: endCost')
+
+					button.btn.btn-block.b-advanced-search__submit(type='submit')
+						| Начать расширенный поиск
+						i.icon.icon-search

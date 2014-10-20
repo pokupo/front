@@ -1,0 +1,77 @@
+extends ../partials/layouts/inner
+
+block head
+	- page.title = 'Просмотр события';
+
+block menu 
+	+menu-list([
+		{text:"Платформа",href:"frontpage.html",submenu:[
+			{text:"О проекте",href:"about.html"},
+			{text:"Торговый портал",href:"http://shop.pokupo.ru/", external:true}
+		]},
+		{text:"Тарифы",href:"rates.html"},
+		{text:"Компания",href:"#", active: true, submenu:[
+			{text:"События",href:"events.html", active: true},
+			{text:"О нас",href:"aboutus.html"},
+			{text:"Сообщество",href:"community.html"},
+			{text:"Блог",href:"http://pokupo.livejournal.com/", external:true}
+		]},
+		{text:"Партнёры",href:"partners.html"},
+		
+		{text:"Помощь", href:js0, submenu:[
+			{text:"Вопросы и ответы",href:"faq.html"},	
+			{text:"Техническая поддержка",href:"https://help.pokupo.ru", external:true}
+		]}
+	])(class="b-navigation")
+
+block content
+	section
+		.container
+			.document
+				.incut.event__promo
+					img(src="images/pages/events/banner-00.jpg")
+
+				p.event__date 18 июня 2014
+				h1.event__title Сегодня покупо будет представлен широкой публике
+				p В славном городе Екатеринбурге на IV Ежегодной конференции Интернет магазин и бизнес on-line. Мы являемся генеральным спонсором этого хорошего и полезного мероприятия для всех интернет предпринимателей. Это наше первое публичное мероприятие, и мы подготовили доклад на тему "Служба поддержки пользователей".
+				p Сегодня у нас праздник - День рождения Pokupo! Больше года мы шли к этой дате, и вот опубликована первая версия системы, конечно, далеко не всё доступно сейчас и еще многое предстоит сделать, но основной функционал торговой платформы готов. Мы очень рады представить наше творение всем интернет предпринимателям. Для всех, кто не в курсе, что такое Pokupo, добро пожаловать в раздел О проекте.
+					
+				.incut.inline-gallery
+					.columns
+						.first.column
+							.content
+								a(href=js0 rel="event-gallery")
+									img(src="images/pages/events/gallery-01.jpg")
+
+						.second.column
+							.content
+								a(href=js0 rel="event-gallery")
+									img(src="images/pages/events/gallery-02.jpg")
+
+						.third.column
+							.content
+								a(href=js0 rel="event-gallery")
+									img(src="images/pages/events/gallery-03.jpg")
+
+						.fourth.column
+							.content
+								a(href=js0 rel="event-gallery")
+									img(src="images/pages/events/gallery-04.jpg")
+
+				p В славном городе Екатеринбурге на IV Ежегодной конференции Интернет магазин и бизнес on-line. Мы являемся генеральным спонсором этого хорошего и полезного мероприятия для всех интернет предпринимателей. Это наше первое публичное мероприятие, и мы подготовили доклад на тему "Служба поддержки пользователей".
+				p Сегодня у нас праздник - День рождения Pokupo! Больше года мы шли к этой дате, и вот опубликована первая версия системы, конечно, далеко не всё доступно сейчас и еще многое предстоит сделать, но основной функционал торговой платформы готов. Мы очень рады представить наше творение всем интернет предпринимателям. Для всех, кто не в курсе, что такое Pokupo, добро пожаловать в раздел О проекте.
+
+				.b-share
+					.social-likes
+						.facebook(title="Поделиться ссылкой на Фейсбуке") Facebook
+						.vkontakte(title="Поделиться ссылкой во Вконтакте") Вконтакте
+						.twitter(data-via="pokupo" title="Поделиться ссылкой в Твиттере") Twitter
+						.plusone(title="Поделиться ссылкой в Гугл-плюсе") Google+
+				
+				a.btn.btn-sm.btn-thin(href="events.html")
+					i.icon.icon-back
+					| назад к списку
+
+
+block scripts
+	+script(['libs/social-likes.min.js', 'main.js'])

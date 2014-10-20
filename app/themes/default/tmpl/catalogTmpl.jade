@@ -1,0 +1,31 @@
+include ../../../templates/helpers/knockout
+
+script#catalogTmpl(type="text/html")
+    // version 1.0
+    aside.b-sidebar.dropdown
+        .b-sidebar__dropdown(data-target="sidebar") 
+            //- По этому классу (.b-sidebar__dropdown) мы будем искать элемент, 
+            //- чтобы добавить ему .dropdown__content
+            //- data-target у него уже есть
+            
+            +each('tab')
+                h1.b-sidebar__title(data-bind="text: title, css: tabClass, click: ClickTab")
+
+            +each('tab')
+                ul.menu(data-bind='css: listClass, visible: isActive')
+                    +each('children')
+                        +ifnot('hasChildren')
+                            li.menu__item(data-bind="css : liClass")
+                                u
+                                    span(data-bind="html: titleWithCount, click: ClickItem")
+                            
+                        +if('hasChildren')
+                            li.menu__item.with-submenu(data-bind="css : liClass")
+                                u
+                                    span(data-bind="html: titleWithCount")
+                                ul.submenu
+                                    +each('children')
+                                        li.submenu__item
+                                            a(href=js0 data-bind="click: ClickItem")
+                                                span(data-bind="html: title")
+                                                sup.num(data-bind="text: countGoods")

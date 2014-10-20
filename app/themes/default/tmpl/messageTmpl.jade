@@ -1,0 +1,308 @@
+include ../../../templates/helpers/knockout
+
+script#messageTopicTmpl(type="text/html")
+    // version 1.0
+    .profile
+        .container
+            .columns.triple
+                .first.double.column
+                    .content
+                        h1.b-profile__header.with-num Сообщения
+                            +if('countNewMessage() > 0')
+                                sup.menu__item__num(data-bind="text: countNewMessage")
+                        .b-mail__selectall
+                            input#select_all(type="checkbox" name="select_all" data-bind="attr:{id: cssSelectAll}")
+                            label(for="select_all" data-bind="click: ClickSelectAll") Выбрать все
+
+                .third.column
+                    .content
+                        button.btn.btn-lg.btn-inline.b-mail__addbtn.b-mail__addbtn--top.open-modal.btn_add_message(type="button" data-target="modal-message")
+                            i.icon.icon-addmail
+                            | Новое сообщение
+            .b-mail
+                +each('messages')
+                    +if('IsNew')
+                        .b-mail__item.b-dialog.unread
+                            // ko template: {name: "messageOneTopicTmpl"} 
+                            // /ko
+                    +ifnot('IsNew')
+                        .b-mail__item.b-dialog
+                            // ko template: {name: "messageOneTopicTmpl"} 
+                            // /ko
+
+                .b-order-list__actions
+                    .check_button
+                        span.pseudo-link(data-bind="click: ClickRead") Отметить как прочитанное
+                    
+                    .drop_button
+                        span.pseudo-link(data-bind="click: ClickDelete") Удалить выбранные сообщения
+
+            .columns.triple
+                .first.double.column
+                    +if('paging().length > 1')
+                        // ko template: {name: "messagePaginateTmpl" } 
+                        // /ko -->
+                
+                .third.column
+                    .content
+                        button.btn.btn-lg.btn-inline.b-mail__addbtn.open-modal.btn_add_message(type="button" data-target="modal-message")
+                            i.icon.icon-addmail
+                            | Новое сообщение
+
+            // ko template: { name: 'messageModalFormTmpl', data: modalForm } 
+            // /ko
+
+
+script#messageOneTopicTmpl(type="text/html")
+    .b-dialog__checkbox
+        input#i-01(type="checkbox" data-bind="attr: {id: cssCheckboxMessage}")
+        label(for="i-01" data-bind="click: ClickCheckboxMessage") &nbsp;
+
+    .b-dialog__drop
+        span.open-modal.btn-circle.btn-circle--trash(rel="tooltip" title="Удалить" data-target="modal-confirm" data-bind="click:ClickDelete")
+
+    .b-dialog__body
+        .b-dialog__userpic
+            a.b-profile-info__photo(href=js0 data-bind="click: ClickTopic")
+                +ifnot('IsMy')
+                    +if('logoSrcUser')
+                        img(data-bind="attr: {src: logoSrcUser}" src="")
+
+                +if('IsMy')
+                    +if('logoSrcUser')
+                        img(data-bind="attr: {src: logoDstUser}" src="")
+
+        .b-dialog__author
+            +ifnot('IsMy')
+                // ko text: srcUser 
+                // /ko
+            
+            +if('IsMy')
+                // ko text: dstUser 
+                // /ko
+            
+            span.b-dialog__date
+                // ko text: FormatDateMessage()
+                // /ko
+
+        .b-dialog__title
+            a(href=js0 data-bind="click: ClickTopic, text: nameTopic")
+            span.b-dialog__title-num
+                | (
+                // ko text: countMessage 
+                // /ko
+                | )
+        .b-dialog__preview
+            p(data-bind="html: textMessage")
+
+
+script#messageListTmpl(type="text/html")
+    // version 1.0
+    section.profile
+        .container
+            a.btn.btn-sm.btn-thin.btn__stepback(href=js0 data-bind="click: ClickBack")
+                i.icon.icon-back
+                | назад к списку сообщений
+
+            .columns
+                .first.triple.column
+                    .content
+                        h2.b-profile__headline(data-bind="text: nameTopic")
+                .fourth.column
+                    .content.b-chat-actions
+                        span.b-chat-actions__item.close-all.pseudo-link#js-toggleChat-collapse(data-state="1" data-bind="click: ClickExpand") Развернуть всё
+                        span.b-chat-actions__item.close-all.active.pseudo-link#js-toggleChat-expand(data-state="1" style="display: none" data-bind="click: ClickCollapse") Свернуть всё
+                        span.b-chat-actions__item.btn-circle.btn-circle--trash(rel="tooltip" title="Удалить" data-bind="click: ClickDelete")
+            .b-chat
+                +each('messages')
+                    +if('IsNew')
+                        +if('IsMy')
+                            +if('isExpand')
+                                .b-chat__item.b-dialog.outgoing.unread(data-bind="click: ClickCollapse")
+                                    // ko template: {name: "messageItemTmpl"} 
+                                    // /ko
+                            
+                            +ifnot('isExpand')
+                                .b-chat__item.b-dialog.outgoing.closed.unread(data-bind="click: ClickExpand")
+                                    // ko template: {name: "messageItemTmpl"} 
+                                    // /ko
+
+                        +ifnot('IsMy')
+                            +if('isExpand')
+                                .b-chat__item.b-dialog.incoming.unread(data-bind="click: ClickCollapse")
+                                    // ko template: {name: "messageItemTmpl"} 
+                                    // /ko
+                            
+                            +ifnot('isExpand')
+                                .b-chat__item.b-dialog.incoming.closed.unread(data-bind="click: ClickExpand")
+                                    // ko template: {name: "messageItemTmpl"} 
+                                    // /ko
+
+                    +ifnot('IsNew')
+                        +if('IsMy')
+                            +if('isExpand')
+                                .b-chat__item.b-dialog.outgoing(data-bind="click: ClickCollapse")
+                                    // ko template: {name: "messageItemTmpl"} 
+                                    // /ko
+                            
+                            +ifnot('isExpand')
+                                .b-chat__item.b-dialog.outgoing.closed(data-bind="click: ClickExpand")
+                                    // ko template: {name: "messageItemTmpl"} 
+                                    // /ko
+                        
+
+                        +ifnot('IsMy')
+                            +if('isExpand')
+                                .b-chat__item.b-dialog.incoming(data-bind="click: ClickCollapse")
+                                    // ko template: {name: "messageItemTmpl"} 
+                                    // /ko
+                            
+                            +ifnot('isExpand')
+                                .b-chat__item.b-dialog.incoming.closed(data-bind="click: ClickExpand")
+                                    // ko template: {name: "messageItemTmpl"} 
+                                    // /ko
+            
+            // ko template: { name: 'messageSimpleFormTmpl', data: simpleForm } 
+            // /ko
+
+
+script#messageItemTmpl(type="text/html")
+    .b-dialog__body
+        .b-dialog__status
+            +if('IsNew')
+                span.pseudo-link Получатель не прочёл
+            
+            +ifnot('IsNew')
+                span.pseudo-link Получатель прочёл
+            
+        .b-dialog__userpic
+            .b-profile-info__photo
+                img(src="" data-bind="attr: {src : logoSrcUser}")
+
+        .b-dialog__author
+            // ko text: srcUser 
+            // /ko 
+            span.b-dialog__date
+                // ko text: FormatDateMessage() 
+                // /ko
+
+        .b-dialog__text
+            p
+                // ko text: textMessage 
+                // /ko
+
+
+script#messageEmptyListTmpl(type="text/html")
+    // version 1.0
+    .profile
+        .container
+            .columns.triple
+                .first.double.column
+                    .content
+                        h1.b-profile__header.with-num Сообщения
+                    
+                .third.column
+                    .content
+                        button.btn.btn-lg.btn-inline.b-mail__addbtn.b-mail__addbtn--top.open-modal.btn_add_message(type="button" data-target="modal-message")
+                            i.icon.icon-addmail
+                            | Новое сообщение
+            .b-mail
+                .b-mail__item b-dialog unread
+                    .b-dialog__body
+                        div(data-bind="html: messageError")
+                    
+            .columns.triple
+                .third.column
+                    .content
+                        button.btn.btn-lg.btn-inline.b-mail__addbtn.open-modal.btn_add_message(type="button" data-target="modal-message")
+                            i.icon.icon-addmail
+                            | Новое сообщение
+
+            //  ko template: { name: 'messageModalFormTmpl', data: modalForm }
+            // /ko
+        
+
+
+script#messageModalFormTmpl(type="text/html")
+    // version 1.0
+    #modal-message.modal.fade(#message_modal_form)
+        .modal-dialog
+            .modal-content
+                .modal-header
+                    span.close-modal.btn-circle.btn-circle--drop.btn-circle--orange
+                    h2.b-profile__headline Новое сообщение
+                .modal-body
+                    form
+                        .input-holder
+                            .floatlabel-wrapper
+                                input#topic_user.block-input.active-floatlabel(type="text" placeholder="Адресат" data-bind="value: dstUser, event: { blur: OnBlurEvent }")
+                                label.label-floatlabel(for="topic_user") Адресат
+                                +if('dstUserError')
+                                    .error(data-bind="text:dstUserError")
+
+                        .input-holder
+                            .floatlabel-wrapper
+                                input#topic_name.block-input(type="text" placeholder="Тема беседы" value="" data-bind="value: topicName")
+                                label.label-floatlabel(for="") Тема беседы
+                                +if('topicNameError')
+                                    .error(data-bind="text: topicNameError")
+                                
+                        .input-holder(style="padding:0")
+                            textarea#topic_text(name="msg_text" rows="5" data-bind="value: text")
+                            +if('textError')
+                                .error(data-bind="text: textError")
+
+                        .input-holder
+                            input#carboncopy(type="checkbox" name="carboncopy" checked="checked" data-bind="value: copyMail")
+                            label(for="carboncopy") Выслать копию на e-mail
+                        
+                        button.btn.btn-lg.btn-grey.btn-inline.close-modal(type="button") Отмена
+                        button#submit_modal_message_form.btn.btn-lg(type="reset" data-bind="click: ClickSend") Отправить
+
+
+script#messageSimpleFormTmpl(type="text/html")
+    // version 1.0
+    h2.b-profile__headline Ответить
+    textarea(width="100%" rows="5" placeholder="Текст сообщения" data-bind="value: text")
+    +if('textError')
+        .error(data-bind="text: textError")
+
+    .input-holder
+        +if('copyMail')
+            input#carboncopy(type="checkbox" name="carboncopy" checked="checked" data-bind="value: copyMail")
+        
+        +ifnot('copyMail')
+            input#carboncopy(type="checkbox" name="carboncopy" data-bind="value: copyMail")
+        
+        label(for="carboncopy") Выслать копию на e-mail
+
+    button.btn.btn-lg(type="submit" data-bind="click: ClickSend") Отправить
+
+
+script#messagePaginateTmpl(type="text/html")
+    .content
+        .input-holder.pagination
+            .radio-circles
+                ul.menu
+                    +each('paging')
+                        +if('current')
+                            li.menu__item.active
+                                +if("title == '...'")
+                                    | ...
+                                
+                                +ifnot("title == '...'")
+                                    a(href=js0 data-bind="text: title, click: ClickLinkPage")
+                        
+
+                        +ifnot('current')
+                            +if('cssLink() == "first"')
+                                li.menu__item
+                                    a(href=js0 data-bind="click: ClickLinkPage") <
+                            
+                            +if('cssLink() == "last"')
+                                li.menu__item
+                                    a(href=js0 data-bind="click: ClickLinkPage") >
+                            
+                        +if('cssLink() != "last" && cssLink() != "first"')
+                            li.menu__item
+                                a(href=js0 data-bind="text: title, click: ClickLinkPage")

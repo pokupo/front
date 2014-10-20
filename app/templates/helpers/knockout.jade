@@ -5,10 +5,18 @@ mixin with(val)
 	block
 	<!-- /ko -->
 
+
 mixin if(val)
 	<!-- ko if: !{val} -->
 	block
 	<!-- /ko -->
+
+
+mixin ifnot(val)
+	<!-- ko ifnot: !{val} -->
+	block
+	<!-- /ko -->
+
 
 mixin each(val)
 	<!-- ko foreach: !{val} -->
@@ -16,14 +24,17 @@ mixin each(val)
 	<!-- /ko -->
 
 
-//- Использование:
+//-  Использование:
+//- 
+//- 		+with('param')
+//- 			#item(data-bind="text: item-text")
+//- 
+//- 	компилируется в
+//- 
+//- 		<!-- ko with: param -->
+//- 		<div id="item" data-bind="text: item-text"></div>
+//- 		<!-- /ko -->
+//- 
 
-		+with('param')
-			#item(data-bind="text: item-text")
-
-	компилируется в
-
-		<!-- ko with: param -->
-		<div id="item" data-bind="text: item-text"></div>
-		<!-- /ko -->
-//-
+//- Заглушка для ссылок
+- var js0 = 'javascript:void(0);';

@@ -1,0 +1,172 @@
+extends ../partials/layouts/inner
+
+block head
+	- page.title = 'Все кнопки';
+
+block content
+	section.aux
+		.container
+			.document
+				h1(style="margin-bottom: 20px") Кнопки
+				div(style="margin-bottom: 40px")
+					p.lead У нас уже набралось столько разных кнопок, что я начал путаться в собственных стилях.
+					p Поэтому я буду собирать здесь все кнопки из макетов, чтобы было легче поддерживать систему.
+
+				h2(style="margin-bottom: 20px") 1. Большие кнопки
+				h3 
+					| .btn-lg и 
+					span(style="color:#ccc") &amp;
+					| .btn-grey
+
+				table(style="margin-bottom: 100px; text-align: left")
+					tr
+						td
+							.btn.btn-lg Большая кнопка
+
+						td(style="padding-left: 40px")
+							.btn.btn-grey.btn-lg Большая серая кнопка
+					tr
+						td(colspan=2)
+							h3 
+								span(style="color:#ccc") &amp;
+								| .btn-inline
+							.btn.btn-grey.btn-lg.btn-inline Отменить
+							.btn.btn-lg.btn-inline Сохранить
+							br
+							.btn.btn-grey.btn-lg.btn-inline Назад
+							.btn.btn-lg.btn-inline Продолжить
+
+					tr
+						td(colspan=2)
+							h3 
+								span(style="color:#ccc") &amp;
+								| .btn-red
+							.btn.btn-red.btn-lg Регистрация
+
+				h2(style="margin-bottom: 20px") 2. Обычные кнопки
+				h3 .btn
+				table(style="margin-bottom: 100px; text-align: left")
+					tr
+						td
+							.btn Купить сразу
+
+						td(style="padding-left: 40px")
+							.btn.btn-grey Обычная серая кнопка
+					tr
+						td(colspan=2)
+							h3 
+								span(style="color:#ccc") &amp;
+								| .btn-icon
+							.btn.btn-icon 
+								i.fa.fa-refresh
+								| В корзину
+							br
+							.btn.btn-icon
+								i.fa.fa-lg.fa-refresh
+								| Обновить данные
+
+				h2(style="margin-bottom: 20px") 3. Средние кнопки
+				h3 .btn-md
+				table(style="margin-bottom: 100px; text-align: left")
+					tr
+						td
+							.btn.btn-md Оформить
+							br
+
+
+						td(style="padding-left: 40px")
+							
+					tr
+						td(colspan=2)
+							h3 
+								span(style="color:#ccc") &amp;
+								| .btn-icon
+							.btn.btn-md.btn-icon В корзину
+
+
+				h2(style="margin-bottom: 20px") 4. Маленькие кнопки
+				h3 .btn-sm
+				table(style="margin-bottom: 100px; text-align: left")
+					tr
+						td
+							.btn.btn-sm Оформить
+							br
+
+
+						td(style="padding-left: 40px")
+							
+					tr
+						td(colspan=2)
+							h3 
+								span(style="color:#ccc") &amp;
+								| .btn-icon
+							.btn.btn-sm.btn-icon Стать продавцом
+
+				h2(style="margin-bottom: 20px") 5. Очень маленькие кнопки
+				h3 .btn-xs
+				table(style="margin-bottom: 100px; text-align: left")
+					tr
+						td
+							.btn.btn-xs Загрузить аватар
+							br
+							.btn.btn-xs Добавить новый адрес
+						td(style="padding-left: 40px")
+
+					tr
+						td(colspan=2)
+							h3 
+								span(style="color:#ccc") &amp;
+								| .btn-inline
+							.btn.btn-xs.btn-inline Задать вопрос
+
+
+				h2(style="margin-bottom: 20px") 6. Малюсенькие кнопочки
+				h3 .btn-xxs
+				table(style="margin-bottom: 100px; text-align: left")
+					tr
+						td
+							.btn.btn-xxs Написать
+						td(style="padding-left: 40px")
+
+				h2(style="margin-bottom: 20px") 7. Тонкие кнопки
+				h3 .btn-thin
+				table(style="margin-bottom: 100px; text-align: left")
+					tr
+						td
+							.btn.btn-thin Ещё новости
+						td(style="padding-left: 40px")
+					tr
+						td(colspan=2)
+							h3 
+								span(style="color:#ccc") &amp;
+								| .btn-sm
+							.btn.btn-thin.btn-sm Смотреть все
+					tr
+						td(colspan=2)
+							h3 
+								span(style="color:#ccc") &amp;.btn-sm
+								| .btn-icon
+							.btn.btn-thin.btn-sm.btn-icon Назад к списку
+							
+
+				h2(style="margin-bottom: 20px") 8. Гигантские кнопки
+				h3 .btn-xl
+				table(style="margin-bottom: 100px; text-align: left")
+					tr
+						td
+							.btn.btn-huge Создать магазин бесплатно
+						td(style="padding-left: 40px")
+
+				h2(style="margin-bottom: 20px") 9. Блочные кнопки
+				h3 .btn-block
+
+				.btn.btn-block Начать расширенный поиск
+
+
+
+
+
+
+
+
+

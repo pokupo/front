@@ -1,0 +1,79 @@
+extends ../partials/layouts/store
+
+block head
+	- page.title = 'Оплата заказа';
+
+block menu 
+	+menu-list([
+		{text:"Платформа",href:"frontpage.html",submenu:[
+			{text:"О проекте",href:"about.html"},
+			{text:"Торговый портал",href:"http://shop.pokupo.ru/", external:true}
+		]},
+		{text:"Тарифы",href:"rates.html"},
+		{text:"Компания",href:"#", submenu:[
+			{text:"События",href:"events.html"},
+			{text:"О нас",href:"aboutus.html"},
+			{text:"Сообщество",href:"community.html"},
+			{text:"Блог",href:"http://pokupo.livejournal.com/", external:true}
+		]},
+		{text:"Партнёры",href:"partners.html"},
+		
+		{text:"Помощь", href:js0, submenu:[
+			{text:"Вопросы и ответы",href:"faq.html"},	
+			{text:"Техническая поддержка",href:"https://help.pokupo.ru", external:true}
+		]}
+	])(class="b-navigation")
+
+block content
+	section.store
+		.container
+			.b-thermometer
+				p 
+					a(href="index.html") Главная
+					span.divider  / 
+					a(href="index.html") Моя корзина
+					span.divider  / 
+					a(href="index.html") Оформление заказа
+					span.divider  / 
+					span.current Оплата заказа
+
+			h1.b-catalog-item__title Оплата заказа
+
+			.b-invoice
+				.b-invoice__before
+				.content
+					.b-invoice__block
+						h2.b-invoice__title Данные счёта
+						ul.b-tech
+							li.b-tech__item
+								div.b-tech__char
+									span Номер счёта
+								div.b-tech__value 53
+							li.b-tech__item
+								div.b-tech__char
+									span Способ оплаты
+								div.b-tech__value Z-Payment
+							li.b-tech__item
+								div.b-tech__char
+									span Сумма к оплате
+								div.b-tech__value
+									+price(35890)
+
+					.b-invoice__block
+						h2.b-invoice__title Инструкция
+						p 
+							| Оплата счета через платежный шлюз Z-Payment предоставляет возмож-<br/>
+							| ность выбрать любой удобный для Вас метод оплаты. После перехода на сайт платежного сервиса выберите удобный способ оплаты и точно следуйте инструкциям на сайте платежной системы. 
+						p
+							b Внимание! 
+							| Для некоторых способов оплаты может взиматься дополнительная агентская комиссия.
+						p 
+							.print-button
+								span.pseudo-link Распечатать инструкцию
+			
+			.b-wizard__actions
+				a.b-wizard__action.btn-prev-step Назад
+				a.b-wizard__action.btn-next-step Оплатить
+
+block scripts
+	+script(['main.js'])

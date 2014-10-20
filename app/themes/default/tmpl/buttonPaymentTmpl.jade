@@ -1,0 +1,139 @@
+include ../../../templates/helpers/knockout
+
+script#buttonPaymentImpl(type="text/html")
+    // version 1.0
+    .btn.btn-xs.btn-solid(data-bind="click: ClickPay")
+        // ko text: title
+        // /ko
+
+script#paymentPageTmpl(type="text/html")
+    // version 1.0 
+    div
+        h1.b-catalog-item__title Оплата заказа
+        .b-invoice
+            .b-invoice__before
+            .content
+                .b-invoice__block
+                    h2.b-invoice__title Данные счёта
+                    ul.b-tech
+                        +each('outData')
+                            li.b-tech__item
+                                .b-tech__char
+                                    span(data-bind='text: label')
+                                .b-tech__value(data-bind='text: value')
+                .b-invoice__block
+                    h2.b-invoice__title Инструкция
+                    p(data-bind='html: instruction, attr: {id: cssInstruction }')
+                    p
+                    .print-button
+                        span.pseudo-link(data-bind='click: ClickPrintInstruction') Распечатать инструкцию
+                    p
+                +if('isInData()')
+                    .b-invoice__block
+                        from(data-bind='attr: {id: cssInDataForm}', method='POST', target='upload_target', enctype='multipart/form-data')
+                            h2.b-invoice__title Укажите данные
+                            +each('inData')
+                                +if('typeField() == "hidden"')
+                                    // ko template: { name: 'paymentTextFieldTmpl' } 
+                                    // /ko 
+
+                                +ifnot('typeField() == "hidden"')
+                                    .input-holder
+                                        +if('help()')
+                                            .tooltip__trigger(rel="tooltip" data-bind="attr: {title: help()}") ?
+
+                                        +if('typeField() == "select"')
+                                            // ko template: { name: 'paymentSelectFieldTmpl' } 
+                                            // /ko 
+                                        
+                                        +if('typeField() == "text" || typeField() == "password"')
+                                            // ko template: { name: 'paymentTextFieldTmpl' } 
+                                            // /ko 
+                                        
+                                        +if('typeField() == "textarea"')
+                                            // ko template: { name: 'paymentTextareaFieldTmpl' } 
+                                            // /ko 
+                                        
+                                        +if('typeField() == "checkbox"')
+                                            // ko template: { name: 'paymentCheckboxFieldTmpl' } 
+                                            // /ko 
+                                        
+                                        +if('typeField() == "radio"')
+                                            // ko template: { name: 'paymentRadioFieldTmpl' } 
+                                            // /ko 
+                                        
+                                        +if('error()')
+                                            .form_error(data-bind='text: error()')
+
+                +if('urlInvoice()')
+                    .b-invoice__block
+                        h2.b-invoice__title Квитанция для оплаты
+                        div
+                            img(src='', data-bind='attr: {id: cssInvoice, src: urlInvoice}')
+                        .print-button
+                            span.pseudo-link(data-bind='click: ClickPrintInvoice') Распечатать квитанцию
+
+        +if('!isPayForm() && isInData()')
+            .b-wizard__actions
+                a.b-wizard__action.btn-prev-step(data-bind='click: Back') Назад
+                a.b-wizard__action.btn-next-step(data-bind='click: ClickSubmit') Обновить
+            
+        +if('!isPayForm() && !isInData()')
+            .b-wizard__actions
+                a.b-wizard__action.btn-prev-step(data-bind='click: Back') Назад
+                a.b-wizard__action.btn-next-step(data-bind='click: ClickRefresh') Обновить
+            
+        +if('isPayForm()')
+            .b-wizard__actions
+                div
+                    +with('payForm')
+                        form(action='', method='', data-bind='attr: {method: method, action: action, target: target, id: cssPayForm}')
+                            +each('field')
+                                input(type='hidden', name='', value='', data-bind='attr: {name: name}, value: value')
+                        
+                    
+                a.b-wizard__action.btn-prev-step(data-bind='click: Back') Назад
+                a.b-wizard__action.btn-next-step(data-bind='click: ClickPay') Оплатить
+            
+
+
+script#paymentSelectFieldTmpl(type="text/html")
+    select(name="" data-bind="attr: { name: name(), placeholder: label()}")
+        +each('listSelect()')
+            +if('value == $parent.value()')
+                option(value="" data-bind="value: value, text: label" selected="selected")
+            +ifnot('value == $parent.value()')
+                option(value="" data-bind="value: value, text: label")
+
+
+script#paymentTextFieldTmpl(type="text/html")
+    input.block-input(type="text" value="" data-bind="value: value, attr: {type: typeField(), name: name(), id: cssField(), placeholder: label()}")
+
+
+script#paymentTextareaFieldTmpl(type="text/html")
+    textarea.block-input(name="" data-bind="attr: {name: name()}, text: value, placeholder: label()")
+
+
+script#paymentCheckboxFieldTmpl(type="text/html")
+    +if('listSelect().length > 0')
+        +each('listSelect')
+            +if('value == $parent.value()')
+                input.checkbox(type='checkbox', checked='checked', name='', value='', data-bind='value: value, attr: { name: $parent.name()}')
+            +ifnot('value == $parent.value()')
+                input.checkbox(type='checkbox', name='', value='', data-bind='value: value, attr: { name: $parent.name()}')
+            label.block-label.b-small-text(for='', data-bind="text: $parent.label(), attr: { 'for': $parent.name()}")
+
+    +if('listSelect().length == 0')
+        input.checkbox(type='checkbox', name='', value='', data-bind='value: value(), attr: { name: name()}')
+        label.block-label.b-small-text(for='', data-bind="text: label(), attr: {'for': name()}")
+
+
+script#paymentRadioFieldTmpl(type="text/html")
+    +each('listSelect')
+        +if('value == $parent.value()')
+            input.inline(type="radio" checked="checked" name="" value="" data-bind="value: value, attr: { name: $parent.name()}")
+
+        +ifnot('value == $parent.value()')
+            input.inline(type="radio" name="" value="" data-bind="value: value, attr: { name: $parent.name()}")
+
+        label(for="" data-bind="text: $parent.label(), attr: { 'for': $parent.name()}")

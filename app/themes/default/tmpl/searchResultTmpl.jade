@@ -1,0 +1,356 @@
+include ../../../templates/helpers/knockout
+
+script#searchResultTileTmpl(type="text/html")
+    // version 1.0 
+    .nosidebar
+        .b-catalog
+            h1#js-nosidebar.b-catalog__title
+                | Найдено
+                // ko text: countGoods 
+                // /ko 
+                | товаров
+            // ko template: { name: 'searchResultFiletrTmpl', data: filters } 
+            // /ko 
+            .b-catalog__items.cards
+               +each('content')
+                    +each('str')
+                        .b-catalog__item
+                            .b-item.with_popover
+                                .b-item__picture
+                                    a(href=js0, data-bind='click: ClickGoods')
+                                        img(src='', data-bind='attr: {src: routeImage, title: chortName, id : cssToCart}')
+                                .responsive-holder
+                                    .b-item__description
+                                        h4.b-item__title
+                                            a(href=js0, data-bind='text:chortName, click: ClickGoods, attr: {id : cssTitleToCart}')
+                                        .b-item__info
+                                            p(data-bind='html: description')
+                                    .b-item__price
+                                        +if('discount() > 0')
+                                            .b-price.b-item__price--old
+                                                span.b-price__number(data-bind='text: sellGoods')
+                                                span.b-price__thinsp &nbsp;
+                                                span.b-price__rubl Р
+                                            .b-price
+                                                span.b-price__number(data-bind='text: sellCost')
+                                                span.b-price__thinsp &nbsp;
+                                                span.b-price__rubl Р
+                                        +if('discount() == 0')
+                                            .b-price
+                                                span.b-price__number(data-bind='text: sellCost')
+                                                span.b-price__thinsp &nbsp;
+                                                span.b-price__rubl Р
+                                .b-item__order-button
+                                    button.btn(type='button', data-bind='click: ClickBuy')
+                                        i.icon.icon-cart
+                                        | В корзину
+                                .b-item__badges
+                                    span.bestseller Хит!
+                                .b-item__popover
+                                    .b-item--dublicate
+                                        .b-item__picture
+                                            a(href=js0, data-bind='click: ClickGoods')
+                                                img(src='', data-bind='attr: {src: routeImage, title: chortName, id : cssToCart}')
+                                        .responsive-holder
+                                            .b-item__description
+                                                h4.b-item__title
+                                                    a(href=js0, data-bind='text:chortName, click: ClickGoods, attr: {id : cssTitleToCart}')
+                                                .b-item__info
+                                                    p(data-bind='html: description')
+                                            .b-item__price
+                                                +if('discount() > 0')
+                                                    .b-price.b-item__price--old
+                                                        span.b-price__number(data-bind='text: sellGoods')
+                                                        span.b-price__thinsp &nbsp;
+                                                        span.b-price__rubl Р
+                                                    .b-price
+                                                        span.b-price__number(data-bind='text: sellCost')
+                                                        span.b-price__thinsp &nbsp;
+                                                        span.b-price__rubl Р
+                                                +if('discount() == 0')
+                                                    .b-price
+                                                        span.b-price__number(data-bind='text: sellCost')
+                                                        span.b-price__thinsp &nbsp;
+                                                        span.b-price__rubl Р
+                                        .b-item__order-button
+                                            button.btn(type='button', data-bind='click: ClickBuy')
+                                                i.icon.icon-cart
+                                                | В корзину
+                                    .b-item__badges
+                                        span.bestseller Хит!
+                   
+            +if('paging().length > 1')
+                // ko template: {name: "searchResultPaginatetionTmpl" } 
+                // /ko 
+
+
+script#searchResultTableTmpl(type="text/html")
+    // version 1.0 
+    .nosidebar
+        .b-catalog
+            h1#js-nosidebar.b-catalog__title
+                | Найдено
+                // ko text: countGoods 
+                // /ko 
+                | товаров
+            // ko template: { name: 'searchResultFiletrTmpl', data: filters } 
+            // /ko 
+            .b-catalog__items.magazine
+                +each('content')
+                    .b-catalog__item
+                        .b-item.with_popover
+                            .b-item__picture
+                                a(href=js0, data-bind='click: ClickGoods')
+                                    img(src='', data-bind='attr: {src: routeImage, title: chortName, id : cssToCart}')
+                            .responsive-holder
+                                .b-item__description
+                                    h4.b-item__title
+                                        a(href=js0, data-bind='text:chortName, click: ClickGoods, attr: {id : cssTitleToCart}')
+                                    .b-item__info
+                                        p(data-bind='html: description')
+                                .b-item__price
+                                    +if('discount() > 0')
+                                        .b-price.b-item__price--old
+                                            span.b-price__number(data-bind='text: sellGoods')
+                                            span.b-price__thinsp &nbsp;
+                                            span.b-price__rubl Р
+                                        .b-price
+                                            span.b-price__number(data-bind='text: sellCost')
+                                            span.b-price__thinsp &nbsp;
+                                            span.b-price__rubl Р
+                                    
+                                    +if('discount() == 0')
+                                        .b-price
+                                            span.b-price__number(data-bind='text: sellCost')
+                                            span.b-price__thinsp &nbsp;
+                                            span.b-price__rubl Р
+                                    
+                            .b-item__order-button
+                                button.btn(type='button', data-bind='click: ClickBuy')
+                                    i.icon.icon-cart
+                                    | В корзину
+                            .b-item__badges
+                                span.bestseller Хит!
+                            .b-item__popover
+                                .b-item--dublicate
+                                    .b-item__picture
+                                        a(href=js0, data-bind='click: ClickGoods')
+                                            img(src='', data-bind='attr: {src: routeImage, title: chortName, id : cssToCart}')
+                                    .responsive-holder
+                                        .b-item__description
+                                            h4.b-item__title
+                                                a(href=js0, data-bind='text:chortName, click: ClickGoods, attr: {id : cssTitleToCart}')
+                                            .b-item__info
+                                                p(data-bind='html: description')
+                                        .b-item__price
+                                            +if('discount() > 0')
+                                                .b-price.b-item__price--old
+                                                    span.b-price__number(data-bind='text: sellGoods')
+                                                    span.b-price__thinsp &nbsp;
+                                                    span.b-price__rubl Р
+                                                .b-price
+                                                    span.b-price__number(data-bind='text: sellCost')
+                                                    span.b-price__thinsp &nbsp;
+                                                    span.b-price__rubl Р
+                                            
+                                            +if('discount() == 0')
+                                                .b-price
+                                                    span.b-price__number(data-bind='text: sellCost')
+                                                    span.b-price__thinsp &nbsp;
+                                                    span.b-price__rubl Р
+                                            
+                                    .b-item__order-button
+                                        button.btn(type='button', data-bind='click: ClickBuy')
+                                            i.icon.icon-cart
+                                            | В корзину
+                                .b-item__badges
+                                    span.bestseller Хит!
+                   
+            +if('paging().length > 1')
+                // ko template: {name: "searchResultPaginatetionTmpl"} 
+                // /ko 
+
+
+script#searchResultListTmpl(type="text/html")
+    // version 1.0 
+    .nosidebar
+        .b-catalog
+            h1#js-nosidebar.b-catalog__title
+                | Найдено
+                // ko text: countGoods 
+                // /ko 
+                | товаров
+            // ko template: { name: 'searchResultFiletrTmpl', data: filters } 
+            // /ko 
+
+            .b-catalog__items.titles
+                +each('content')
+                    .b-catalog__item
+                        .b-item.with_popover
+                            .b-item__picture
+                                a(href=js0, data-bind='click: ClickGoods')
+                                    img(src='', data-bind='attr: {src: routeImage, title: chortName, id : cssToCart}')
+                            .responsive-holder
+                                .b-item__description
+                                    h4.b-item__title
+                                        a(href=js0, data-bind='text:chortName, click: ClickGoods, attr: {id : cssTitleToCart}')
+                                    .b-item__info
+                                        p(data-bind='html: description')
+                                .b-item__price
+                                    +if('discount() > 0')
+                                        .b-price.b-item__price--old
+                                            span.b-price__number(data-bind='text: sellGoods')
+                                            span.b-price__thinsp &nbsp;
+                                            span.b-price__rubl Р
+                                        .b-price
+                                            span.b-price__number(data-bind='text: sellCost')
+                                            span.b-price__thinsp &nbsp;
+                                            span.b-price__rubl Р
+                                    
+                                    +if('discount() == 0')
+                                        .b-price
+                                            span.b-price__number(data-bind='text: sellCost')
+                                            span.b-price__thinsp &nbsp;
+                                            span.b-price__rubl Р
+                                    
+                            .b-item__order-button
+                                button.btn(type='button', data-bind='click: ClickBuy')
+                                    i.icon.icon-cart
+                                    | В корзину
+                            .b-item__badges
+                                span.bestseller Хит!
+                            .b-item__popover
+                                .b-item--dublicate
+                                    .b-item__picture
+                                        a(href=js0, data-bind='click: ClickGoods')
+                                            img(src='', data-bind='attr: {src: routeImage, title: chortName, id : cssToCart}')
+                                    .responsive-holder
+                                        .b-item__description
+                                            h4.b-item__title
+                                                a(href=js0, data-bind='text:chortName, click: ClickGoods, attr: {id : cssTitleToCart}')
+                                            .b-item__info
+                                                p(data-bind='html: description')
+                                        .b-item__price
+                                            +if('discount() > 0')
+                                                .b-price.b-item__price--old
+                                                    span.b-price__number(data-bind='text: sellGoods')
+                                                    span.b-price__thinsp &nbsp;
+                                                    span.b-price__rubl Р
+                                                .b-price
+                                                    span.b-price__number(data-bind='text: sellCost')
+                                                    span.b-price__thinsp &nbsp;
+                                                    span.b-price__rubl Р
+                                            
+                                            +if('discount() == 0')
+                                                .b-price
+                                                    span.b-price__number(data-bind='text: sellCost')
+                                                    span.b-price__thinsp &nbsp;
+                                                    span.b-price__rubl Р
+                                                
+                                    .b-item__order-button
+                                        button.btn(type='button', data-bind='click: ClickBuy')
+                                            i.icon.icon-cart
+                                            | В корзину
+                                .b-item__badges
+                                    span.bestseller Хит!
+                    
+            +if('paging().length > 1')
+                // ko template: {name: "searchResultPaginatetionTmpl"} 
+                // /ko 
+            
+
+script#searchResultErrorTmpl(type="text/html")
+   .nosidebar
+       .b-catalog
+            h1#js-nosidebar.b-catalog__title По вашему запросу товаров не найдено
+        
+            //  ko template: { name: 'searchResultFiletrTmpl', data: filters }
+            // /ko
+
+           .b-catalog__items.titles
+                p Попробуйте изменить параметры поиска и попробуйте еще раз.
+            
+
+script#searchResultFiletrTmpl(type="text/html")
+    .b-catalog__controls
+        aside.b-catalog__quick-filter
+                input.b-catalog__quick-filter__input.no-label(type='search', name='quick-filter', placeholder='Быстрый поиск...', data-bind='value: filterName')
+                i.b-catalog__quick-filter__icon(data-bind='click: ClickFilterNameGoods')
+            .b-catalog__controls-item
+                | Сортировать
+                .inline-sorter.dropdown.selector
+                    span#content_sort.selector__current.dropdown__trigger(data-target='sort')
+                        +each('sort.list')
+                            +if('isActive')
+                                // ko text: title 
+                                // /ko 
+                           
+                    .dropdown__content.selector__options.hidden(data-target='sort')
+                        ul(data-bind='foreach: sort.list')
+                            +if('isActive')
+                                li.menu__item.active
+                                    a(href=js0, data-bind='click: ClickSort, text: title') по названию
+                            +ifnot('isActive')
+                                li.menu__item
+                                    a(href=js0, data-bind='click: ClickSort, text: title') по названию
+            .b-catalog__controls-item
+                | Вид:
+                .radio-circles.catalog-layout
+                    ul.menu
+                        +if("typeView == 'tile'")
+                            li.menu__item.active
+                                a(href=js0, data-value='cards', data-bind='click: selectTypeView.ClickTile')
+                                    i.icon.icon__cards
+                            li.menu__item
+                                a(href=js0, data-value='magazine', data-bind='click: selectTypeView.ClickTable')
+                                    i.icon.icon__magazine
+                            li.menu__item
+                                a(href=js0, data-value='titles', data-bind='click: selectTypeView.ClickList')
+                                    i.icon.icon__titles
+
+                        +if("typeView == 'table")
+                            li.menu__item
+                                a(href=js0, data-value='cards', data-bind='click: selectTypeView.ClickTile')
+                                    i.icon.icon__cards
+                            li.menu__item.active
+                                a(href=js0, data-value='magazine', data-bind='click: selectTypeView.ClickTable')
+                                    i.icon.icon__magazine
+                            li.menu__item
+                                a(href=js0, data-value='titles', data-bind='click: selectTypeView.ClickList')
+                                    i.icon.icon__titles
+
+                        +if("typeView == 'list'")
+                            li.menu__item
+                                a(href=js0, data-value='cards', data-bind='click: selectTypeView.ClickTile')
+                                    i.icon.icon__cards
+                            li.menu__item
+                                a(href=js0, data-value='magazine', data-bind='click: selectTypeView.ClickTable')
+                                    i.icon.icon__magazine
+                            li.menu__item.active
+                                a(href=js0, data-value='titles', data-bind='click: selectTypeView.ClickList')
+                                    i.icon.icon__titles
+
+
+
+script#searchResultPaginatetionTmpl(type="text/html")
+    .content
+        .input-holder.pagination
+            .radio-circles
+                ul.menu
+                    +each('paging')
+                        +if('current')
+                            li.menu__item.active
+                                +if("title == '...'")
+                                    | ...
+                                +ifnot("title == '...'")
+                                    a(href=js0, data-bind='text: title, click: ClickLinkPage')
+                        +ifnot('current')
+                            +if('cssLink() == "first"')
+                                li.menu__item
+                                    a(href=js0, data-bind='click: ClickLinkPage')
+                            +if('cssLink() == "last"')
+                                li.menu__item
+                                    a(href=js0, data-bind='click: ClickLinkPage')
+                            +if('cssLink() != "last" && cssLink() != "first"')
+                                li.menu__item
+                                    a(href=js0, data-bind='text: title, click: ClickLinkPage')

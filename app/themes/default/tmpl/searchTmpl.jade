@@ -1,0 +1,28 @@
+include ../../../templates/helpers/knockout
+
+script#searchTmpl(type="text/html")
+    // version 1.0 
+    section.orange.search
+        .container
+            .b-search
+                form(action='', data-bind='submit: SubmitSearchForm')
+                    .b-search-holder
+                        input.b-search__input(type='search', placeholder='Поиск по каталогу...', data-bind='value: text')
+
+                    .b-location.dropdown.selector
+                        a.b-location__current.dropdown__trigger.selector__current.search_dropdown__trigger(href=js0, data-target='location') Все категории
+                        .dropdown__content.hidden.search_dropdown__content(data-target='location')
+                            .b-location__catalog.selector__options
+                                ul.menu(data-bind='css: cssSelectList, value: selectedCatigoriesId')
+                                    +each('categoriesTree')
+                                        li.menu__item(data-bind="css: {'active': isSelected}")
+                                            a(href=js0, data-bind='click: ClickItem')
+                                                span(data-bind='text: title')
+                                            +if('children.length > 0')
+                                                ul.submenu
+                                                    +each('children')
+                                                        li.submenu__item(data-bind="css: {'active': isSelected}")
+                                                            a(href=js0, data-bind='click: ClickItem')
+                                                                span(data-bind='text: title')
+                                                
+                    button.b-search__button(type='submit', data-bind='click: ClickSearchForm') Найти

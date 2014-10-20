@@ -29,31 +29,31 @@
 }
 .benefits-slider .benefit i.simple {
   background-image: url("../images/sprite.png");
-  background-position: 0px -296px;
+  background-position: -194px -148px;
   width: 120px;
   height: 120px;
 }
 .benefits-slider .benefit i.universal {
   background-image: url("../images/sprite.png");
-  background-position: -128px -296px;
+  background-position: -388px -128px;
   width: 120px;
   height: 120px;
 }
 .benefits-slider .benefit i.profit {
   background-image: url("../images/sprite.png");
-  background-position: -388px -128px;
+  background-position: 0px -296px;
   width: 120px;
   height: 120px;
 }
 .benefits-slider .benefit i.complex {
   background-image: url("../images/sprite.png");
-  background-position: -194px -148px;
+  background-position: -388px 0px;
   width: 120px;
   height: 120px;
 }
 .benefits-slider .benefit i.open {
   background-image: url("../images/sprite.png");
-  background-position: -388px 0px;
+  background-position: -128px -296px;
   width: 120px;
   height: 120px;
 }
@@ -104,41 +104,41 @@
 }
 .owl-prev {
   left: 0;
-  background-image: url("../images/sprite.png");
-  background-position: -720px -320px;
-  width: 32px;
-  height: 62px;
+  background-image: url("");
+  background-position: ;
+  width: ;
+  height: ;
 }
 .owl-prev:hover {
-  background-image: url("../images/sprite.png");
-  background-position: -720px -530px;
-  width: 32px;
-  height: 62px;
+  background-image: url("");
+  background-position: ;
+  width: ;
+  height: ;
 }
 .owl-prev:active {
-  background-image: url("../images/sprite.png");
-  background-position: -720px -390px;
-  width: 32px;
-  height: 62px;
+  background-image: url("");
+  background-position: ;
+  width: ;
+  height: ;
 }
 .owl-next {
   right: 0;
-  background-image: url("../images/sprite.png");
-  background-position: -760px -320px;
-  width: 32px;
-  height: 62px;
+  background-image: url("");
+  background-position: ;
+  width: ;
+  height: ;
 }
 .owl-next:hover {
-  background-image: url("../images/sprite.png");
-  background-position: -760px -390px;
-  width: 32px;
-  height: 62px;
+  background-image: url("");
+  background-position: ;
+  width: ;
+  height: ;
 }
 .owl-next:active {
-  background-image: url("../images/sprite.png");
-  background-position: -762px -167px;
-  width: 32px;
-  height: 62px;
+  background-image: url("");
+  background-position: ;
+  width: ;
+  height: ;
 }
 @media only screen and (max-width: 640px) {
   .benefits-slider {
@@ -251,13 +251,13 @@
 }
 .conditions__circle .icon.goods {
   background-image: url("../images/sprite.png");
-  background-position: -256px -296px;
+  background-position: -516px 0px;
   width: 104px;
   height: 104px;
 }
 .conditions__circle .icon.site {
   background-image: url("../images/sprite.png");
-  background-position: -516px 0px;
+  background-position: -369px -296px;
   width: 104px;
   height: 104px;
 }
@@ -267,10 +267,10 @@
   position: absolute;
   top: -40px;
   right: -40px;
-  background-image: url("../images/sprite.png");
-  background-position: -689px -552px;
-  width: 23px;
-  height: 18px;
+  background-image: url("");
+  background-position: ;
+  width: ;
+  height: ;
 }
 .conditions__circle.no {
   background-color: transparent;
@@ -278,10 +278,10 @@
   opacity: 0.3;
 }
 .conditions__circle.no .icon:after {
-  background-image: url("../images/sprite.png");
-  background-position: -824px -96px;
-  width: 16px;
-  height: 16px;
+  background-image: url("");
+  background-position: ;
+  width: ;
+  height: ;
 }
 .steps {
   display: block;
@@ -309,37 +309,37 @@
 }
 .steps li i.signin {
   background-image: url("../images/sprite.png");
-  background-position: -516px -208px;
+  background-position: -628px 0px;
   width: 84px;
   height: 84px;
 }
 .steps li i.add {
   background-image: url("../images/sprite.png");
-  background-position: 0px -533px;
+  background-position: -516px -208px;
   width: 84px;
   height: 84px;
 }
 .steps li i.send {
   background-image: url("../images/sprite.png");
-  background-position: -92px -533px;
+  background-position: -276px -533px;
   width: 84px;
   height: 84px;
 }
 .steps li i.get {
   background-image: url("../images/sprite.png");
-  background-position: 0px -625px;
+  background-position: -92px -533px;
   width: 84px;
   height: 84px;
 }
 .steps li i.earn {
   background-image: url("../images/sprite.png");
-  background-position: -628px -460px;
+  background-position: -184px -533px;
   width: 84px;
   height: 84px;
 }
 .steps li i.code {
   background-image: url("../images/sprite.png");
-  background-position: -460px -533px;
+  background-position: -628px -184px;
   width: 84px;
   height: 84px;
 }
@@ -497,25 +497,25 @@ ul.clients li i.client.sberbank {
 }
 .howitworks__steps .hiw-step__register:before {
   background-image: url("../images/sprite.png");
-  background-position: -628px 0px;
+  background-position: -628px -92px;
   width: 84px;
   height: 84px;
 }
 .howitworks__steps .hiw-step__create:before {
   background-image: url("../images/sprite.png");
-  background-position: -628px -92px;
+  background-position: -628px -276px;
   width: 84px;
   height: 84px;
 }
 .howitworks__steps .hiw-step__add:before {
   background-image: url("../images/sprite.png");
-  background-position: -276px -533px;
+  background-position: -516px -300px;
   width: 84px;
   height: 84px;
 }
 .howitworks__steps .hiw-step__go:before {
   background-image: url("../images/sprite.png");
-  background-position: -184px -533px;
+  background-position: -460px -533px;
   width: 84px;
   height: 84px;
 }
@@ -527,7 +527,7 @@ ul.clients li i.client.sberbank {
 .howitworks__steps .hiw-step__finish:before {
   top: 40px;
   background-image: url("../images/sprite.png");
-  background-position: -628px -368px;
+  background-position: -368px -533px;
   width: 84px;
   height: 84px;
 }
@@ -597,7 +597,7 @@ ul.clients li i.client.sberbank {
   bottom: -34px;
   right: 75px;
   background-image: url("../images/sprite.png");
-  background-position: -258px -765px;
+  background-position: -516px -714px;
   width: 35px;
   height: 34px;
 /* background url('../images/ui/quote.png') 0 100% no-repeat*/
@@ -641,7 +641,7 @@ section.partners {
 }
 .partnership hgroup.with-icon.icon__note:before {
   background-image: url("../images/sprite.png");
-  background-position: -720px 0px;
+  background-position: -387px -625px;
   width: 96px;
   height: 76px;
   margin: 42px 0 0 -48px;
@@ -835,7 +835,7 @@ section.partners {
   display: inline-block;
   margin-right: 10px;
   background-image: url("../images/sprite.png");
-  background-position: -642px -765px;
+  background-position: -100px -757px;
   width: 31px;
   height: 25px;
 }
@@ -924,7 +924,7 @@ section.partners {
 }
 .register .btn-lg.btn-red i.icon-store:before {
   background-image: url("../images/sprite.png");
-  background-position: 0px -717px;
+  background-position: -720px -202px;
   width: 44px;
   height: 40px;
 }
@@ -939,7 +939,7 @@ section.partners {
 .register .btn-lg.btn-red:hover i.icon.icon-store:before,
 .register .btn-lg.btn-red:active i.icon.icon-store:before {
   background-image: url("../images/sprite.png");
-  background-position: -651px -625px;
+  background-position: -720px -346px;
   width: 44px;
   height: 40px;
 }
@@ -1005,37 +1005,37 @@ section.partners {
 }
 .sign-in .btn-group-item a .icon-vk {
   background-image: url("../images/sprite.png");
-  background-position: -796px -274px;
+  background-position: -781px -64px;
   width: 18px;
   height: 22px;
 }
 .sign-in .btn-group-item a .icon-google {
   background-image: url("../images/sprite.png");
-  background-position: -340px -765px;
+  background-position: -427px -256px;
   width: 31px;
   height: 28px;
 }
 .sign-in .btn-group-item a .icon-zpay {
   background-image: url("../images/sprite.png");
-  background-position: -156px -717px;
+  background-position: -720px -440px;
   width: 37px;
   height: 38px;
 }
 .sign-in .btn-group-item a:hover .icon-vk {
   background-image: url("../images/sprite.png");
-  background-position: -796px -244px;
+  background-position: -781px -94px;
   width: 18px;
   height: 22px;
 }
 .sign-in .btn-group-item a:hover .icon-google {
   background-image: url("../images/sprite.png");
-  background-position: -427px -765px;
+  background-position: -693px -714px;
   width: 31px;
   height: 28px;
 }
 .sign-in .btn-group-item a:hover .icon-zpay {
   background-image: url("../images/sprite.png");
-  background-position: -201px -717px;
+  background-position: -720px -394px;
   width: 37px;
   height: 38px;
 }
@@ -1057,19 +1057,19 @@ section.partners {
 }
 .sign-in .btn-group-item.disabled:hover .icon-vk {
   background-image: url("../images/sprite.png");
-  background-position: -796px -274px;
+  background-position: -781px -64px;
   width: 18px;
   height: 22px;
 }
 .sign-in .btn-group-item.disabled:hover .icon-google {
   background-image: url("../images/sprite.png");
-  background-position: -340px -765px;
+  background-position: -427px -256px;
   width: 31px;
   height: 28px;
 }
 .sign-in .btn-group-item.disabled:hover .icon-zpay {
   background-image: url("../images/sprite.png");
-  background-position: -156px -717px;
+  background-position: -720px -440px;
   width: 37px;
   height: 38px;
 }
@@ -1149,13 +1149,13 @@ section.partners {
   margin-top: 2px;
   margin-bottom: 17px;
   background-image: url("../images/sprite.png");
-  background-position: -760px -530px;
+  background-position: -670px -546px;
   width: 39px;
   height: 61px;
 }
 .split__mission blockquote:after {
   background-image: url("../images/sprite.png");
-  background-position: -172px -765px;
+  background-position: -559px -714px;
   width: 35px;
   height: 34px;
 }
@@ -1166,7 +1166,7 @@ section.partners {
 .split__goal h2 i.icon {
   margin-bottom: 12px;
   background-image: url("../images/sprite.png");
-  background-position: -720px -244px;
+  background-position: -491px -625px;
   width: 68px;
   height: 68px;
 }
@@ -1177,7 +1177,7 @@ section.partners {
   right: auto;
   left: 75px;
   background-image: url("../images/sprite.png");
-  background-position: -215px -765px;
+  background-position: -602px -714px;
   width: 35px;
   height: 34px;
 }
@@ -1207,21 +1207,21 @@ hgroup.with-icon:after {
 section.start .with-icon:before {
   margin: 45px 0 0 -45px;
   background-image: url("../images/sprite.png");
-  background-position: -564px -625px;
+  background-position: -300px -625px;
   width: 79px;
   height: 79px;
 }
 section.howto .with-icon:before {
   margin: 30px 0 0 -53px;
   background-image: url("../images/sprite.png");
-  background-position: -368px -296px;
+  background-position: -256px -296px;
   width: 105px;
   height: 104px;
 }
 section.price .with-icon:before {
   margin: 48px 0 0 -17px;
   background-image: url("../images/sprite.png");
-  background-position: -720px -167px;
+  background-position: -628px -546px;
   width: 34px;
   height: 69px;
 }
@@ -1291,13 +1291,13 @@ section.price .with-icon:before {
 }
 .person__photo.person__photo--male:after {
   background-image: url("../images/sprite.png");
-  background-position: -92px -625px;
+  background-position: -628px -368px;
   width: 78px;
   height: 81px;
 }
 .person__photo.person__photo--female:after {
   background-image: url("../images/sprite.png");
-  background-position: -178px -625px;
+  background-position: -628px -457px;
   width: 78px;
   height: 81px;
 }
@@ -1322,16 +1322,16 @@ section.price .with-icon:before {
   top: 85px;
 }
 .our-team .owl-prev {
-  background-image: url("../images/sprite.png");
-  background-position: -760px -460px;
-  width: 32px;
-  height: 62px;
+  background-image: url("");
+  background-position: ;
+  width: ;
+  height: ;
 }
 .our-team .owl-next {
-  background-image: url("../images/sprite.png");
-  background-position: -720px -460px;
-  width: 32px;
-  height: 62px;
+  background-image: url("");
+  background-position: ;
+  width: ;
+  height: ;
 }
 section.video {
   padding: 138px 0 151px;
@@ -1419,7 +1419,7 @@ section.video {
   top: -98px;
   left: 114px;
   background-image: url("../images/sprite.png");
-  background-position: -628px -552px;
+  background-position: -720px 0px;
   width: 53px;
   height: 44px;
 }
@@ -1428,7 +1428,7 @@ section.video {
   top: 18px;
   left: 280px;
   background-image: url("../images/sprite.png");
-  background-position: -773px -600px;
+  background-position: -322px -148px;
   width: 41px;
   height: 52px;
 }
@@ -1437,7 +1437,7 @@ section.video {
   top: 211px;
   left: 280px;
   background-image: url("../images/sprite.png");
-  background-position: -720px -660px;
+  background-position: -567px -625px;
   width: 44px;
   height: 47px;
 }
@@ -1446,7 +1446,7 @@ section.video {
   bottom: -103px;
   left: 113px;
   background-image: url("../images/sprite.png");
-  background-position: -322px -148px;
+  background-position: -619px -625px;
   width: 50px;
   height: 44px;
 }
@@ -1455,7 +1455,7 @@ section.video {
   top: 208px;
   left: -52px;
   background-image: url("../images/sprite.png");
-  background-position: -322px -200px;
+  background-position: -720px -52px;
   width: 50px;
   height: 44px;
 }
@@ -1464,7 +1464,7 @@ section.video {
   top: 17px;
   left: -52px;
   background-image: url("../images/sprite.png");
-  background-position: -720px -600px;
+  background-position: -322px -208px;
   width: 45px;
   height: 52px;
 }
@@ -1750,7 +1750,7 @@ body.locked {
 .btn-social__vk i.icon:before {
   margin: -12px 0 0 -21px;
   background-image: url("../images/sprite.png");
-  background-position: -592px -765px;
+  background-position: 0px -757px;
   width: 42px;
   height: 25px;
 }
@@ -1760,7 +1760,7 @@ body.locked {
 }
 .btn-social__vk:hover i.icon:before {
   background-image: url("../images/sprite.png");
-  background-position: -542px -765px;
+  background-position: -50px -757px;
   width: 42px;
   height: 25px;
 }
@@ -1774,7 +1774,7 @@ body.locked {
 .btn-social__gp i.icon:before {
   margin: -14px 0 0 -16px;
   background-image: url("../images/sprite.png");
-  background-position: -466px -765px;
+  background-position: -732px -714px;
   width: 31px;
   height: 28px;
 }
@@ -1784,7 +1784,7 @@ body.locked {
 }
 .btn-social__gp:hover i.icon:before {
   background-image: url("../images/sprite.png");
-  background-position: -301px -765px;
+  background-position: -388px -256px;
   width: 31px;
   height: 28px;
 }
@@ -1798,7 +1798,7 @@ body.locked {
 .btn-social__lj i.icon:before {
   margin: -21px 0 0 -18px;
   background-image: url("../images/sprite.png");
-  background-position: -772px -660px;
+  background-position: -720px -153px;
   width: 35px;
   height: 41px;
 }
@@ -1808,7 +1808,7 @@ body.locked {
 }
 .btn-social__lj:hover i.icon:before {
   background-image: url("../images/sprite.png");
-  background-position: -552px -533px;
+  background-position: -720px -104px;
   width: 35px;
   height: 41px;
 }
@@ -1822,7 +1822,7 @@ body.locked {
 .btn-social__tw i.icon:before {
   margin: -14px 0 0 -20px;
   background-image: url("../images/sprite.png");
-  background-position: -651px -673px;
+  background-position: -466px -256px;
   width: 40px;
   height: 28px;
 }
@@ -1832,7 +1832,7 @@ body.locked {
 }
 .btn-social__tw:hover i.icon:before {
   background-image: url("../images/sprite.png");
-  background-position: -379px -765px;
+  background-position: -645px -714px;
   width: 40px;
   height: 28px;
 }
@@ -1955,31 +1955,31 @@ h2.tagline {
   left: 108px;
 }
 .slider-control.prev i.icon {
-  background-image: url("../images/sprite.png");
-  background-position: -760px -460px;
-  width: 32px;
-  height: 62px;
+  background-image: url("");
+  background-position: ;
+  width: ;
+  height: ;
 }
 .slider-control.prev:hover i.icon {
-  background-image: url("../images/sprite.png");
-  background-position: -720px -390px;
-  width: 32px;
-  height: 62px;
+  background-image: url("");
+  background-position: ;
+  width: ;
+  height: ;
 }
 .slider-control.next {
   right: 108px;
 }
 .slider-control.next i.icon {
-  background-image: url("../images/sprite.png");
-  background-position: -720px -460px;
-  width: 32px;
-  height: 62px;
+  background-image: url("");
+  background-position: ;
+  width: ;
+  height: ;
 }
 .slider-control.next:hover i.icon {
-  background-image: url("../images/sprite.png");
-  background-position: -762px -167px;
-  width: 32px;
-  height: 62px;
+  background-image: url("");
+  background-position: ;
+  width: ;
+  height: ;
 }
 section.inner {
   background: #f7f5f3;
@@ -2003,16 +2003,16 @@ a.with-icon:before {
 }
 a.with-icon.with-icon--print:before {
   left: 1px;
-  background-image: url("../images/sprite.png");
-  background-position: -407px -808px;
-  width: 18px;
-  height: 15px;
+  background-image: url("");
+  background-position: ;
+  width: ;
+  height: ;
 }
 a.with-icon.with-icon--file:before {
-  background-image: url("../images/sprite.png");
-  background-position: -824px -281px;
-  width: 12px;
-  height: 15px;
+  background-image: url("");
+  background-position: ;
+  width: ;
+  height: ;
 }
 .b-inline-actions li {
   display: inline-block;
@@ -2098,10 +2098,10 @@ h1 + .b-inline-actions {
   border-color: #ffa800;
 }
 .modal .btn-circle--drop:before {
-  background-image: url("../images/sprite.png");
-  background-position: -824px -235px;
-  width: 15px;
-  height: 15px;
+  background-image: url("");
+  background-position: ;
+  width: ;
+  height: ;
 }
 .modal .btn-circle--drop:hover,
 .modal .btn-circle--drop:active {
@@ -2110,10 +2110,10 @@ h1 + .b-inline-actions {
 }
 .modal .btn-circle--drop:hover:before,
 .modal .btn-circle--drop:active:before {
-  background-image: url("../images/sprite.png");
-  background-position: -824px -235px;
-  width: 15px;
-  height: 15px;
+  background-image: url("");
+  background-position: ;
+  width: ;
+  height: ;
 }
 .b-modal-info {
   text-align: center;
@@ -2135,22 +2135,22 @@ h1 + .b-inline-actions {
   margin-left: -42px;
 }
 .b-modal-info .b-modal-info__icon.icon-warning:after {
-  background-image: url("../images/sprite.png");
-  background-position: -516px -300px;
-  width: 84px;
-  height: 84px;
+  background-image: url("");
+  background-position: ;
+  width: ;
+  height: ;
 }
 .b-modal-info .b-modal-info__icon.icon-success:after {
-  background-image: url("../images/sprite.png");
-  background-position: -368px -533px;
-  width: 84px;
-  height: 84px;
+  background-image: url("");
+  background-position: ;
+  width: ;
+  height: ;
 }
 .b-modal-info .b-modal-info__icon.icon-error:after {
-  background-image: url("../images/sprite.png");
-  background-position: -628px -276px;
-  width: 84px;
-  height: 84px;
+  background-image: url("");
+  background-position: ;
+  width: ;
+  height: ;
 }
 .modal-open {
   overflow: hidden;
@@ -2303,7 +2303,7 @@ h1 + .b-inline-actions {
   left: 50%;
   margin-left: -42px;
   background-image: url("../images/sprite.png");
-  background-position: -628px -184px;
+  background-position: 0px -533px;
   width: 84px;
   height: 84px;
 }
@@ -2332,7 +2332,7 @@ h1 + .b-inline-actions {
 }
 .popup.join header h1.with-icon:before {
   background-image: url("../images/sprite.png");
-  background-position: -516px -208px;
+  background-position: -628px 0px;
   width: 84px;
   height: 84px;
 }
@@ -2446,7 +2446,7 @@ h1 + .b-inline-actions {
 .popup .signin-with .social-btns .social-btn.vk:before {
   margin: -11px 0 0 -9px;
   background-image: url("../images/sprite.png");
-  background-position: -796px -244px;
+  background-position: -781px -94px;
   width: 18px;
   height: 22px;
 }
@@ -2455,7 +2455,7 @@ h1 + .b-inline-actions {
 }
 .popup .signin-with .social-btns .social-btn.vk:hover:before {
   background-image: url("../images/sprite.png");
-  background-position: -796px -274px;
+  background-position: -781px -64px;
   width: 18px;
   height: 22px;
 }
@@ -2465,7 +2465,7 @@ h1 + .b-inline-actions {
 .popup .signin-with .social-btns .social-btn.gp:before {
   margin: -14px 0 0 -16px;
   background-image: url("../images/sprite.png");
-  background-position: -427px -765px;
+  background-position: -693px -714px;
   width: 31px;
   height: 28px;
 }
@@ -2474,7 +2474,7 @@ h1 + .b-inline-actions {
 }
 .popup .signin-with .social-btns .social-btn.gp:hover:before {
   background-image: url("../images/sprite.png");
-  background-position: -340px -765px;
+  background-position: -427px -256px;
   width: 31px;
   height: 28px;
 }
@@ -2484,7 +2484,7 @@ h1 + .b-inline-actions {
 .popup .signin-with .social-btns .social-btn.zp:before {
   margin: -19px 0 0 -19px;
   background-image: url("../images/sprite.png");
-  background-position: -201px -717px;
+  background-position: -720px -394px;
   width: 37px;
   height: 38px;
 }
@@ -2493,7 +2493,7 @@ h1 + .b-inline-actions {
 }
 .popup .signin-with .social-btns .social-btn.zp:hover:before {
   background-image: url("../images/sprite.png");
-  background-position: -156px -717px;
+  background-position: -720px -440px;
   width: 37px;
   height: 38px;
 }
@@ -2671,19 +2671,19 @@ section.rates {
 }
 .startup .grade-1 .icon {
   background-image: url("../images/sprite.png");
-  background-position: -264px -625px;
+  background-position: -200px -625px;
   width: 92px;
   height: 81px;
 }
 .startup .grade-2 .icon {
   background-image: url("../images/sprite.png");
-  background-position: -364px -625px;
+  background-position: 0px -625px;
   width: 92px;
   height: 81px;
 }
 .startup .grade-3 .icon {
   background-image: url("../images/sprite.png");
-  background-position: -464px -625px;
+  background-position: -100px -625px;
   width: 92px;
   height: 81px;
 }
@@ -2699,13 +2699,13 @@ section.rates {
 }
 .business .grade-1 .icon {
   background-image: url("../images/sprite.png");
-  background-position: -352px -424px;
+  background-position: -487px -424px;
   width: 127px;
   height: 87px;
 }
 .business .grade-2 .icon {
   background-image: url("../images/sprite.png");
-  background-position: -487px -424px;
+  background-position: -352px -424px;
   width: 127px;
   height: 87px;
 }
@@ -2727,7 +2727,7 @@ section.rates {
 }
 .company .grade-1 .icon {
   background-image: url("../images/sprite.png");
-  background-position: 0px -148px;
+  background-position: 0px 0px;
   width: 186px;
   height: 140px;
 }
@@ -2739,7 +2739,7 @@ section.rates {
 }
 .company .grade-3 .icon {
   background-image: url("../images/sprite.png");
-  background-position: 0px 0px;
+  background-position: 0px -148px;
   width: 186px;
   height: 140px;
 }
@@ -2897,7 +2897,7 @@ section.register-user {
 }
 .h1-with-progress-bar h1:after {
   background-image: url("../images/sprite.png");
-  background-position: -720px -84px;
+  background-position: -552px -533px;
   width: 60px;
   height: 75px;
   content: '';

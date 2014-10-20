@@ -1,0 +1,22 @@
+include ../../../templates/helpers/knockout
+
+script#breadCrumbTmpl(type="text/html")
+    // version 1.0
+    
+    //- Содержимое блока div.b-thermometer
+    p
+        +if('showReturn')
+            a(href=js0, data-bind="click: Return") Назад
+            span.divider  / 
+            a(href=js0, data-bind="click: ToHomepage") Главная
+            span.divider  / 
+        
+        +ifnot('showReturn')
+            a(href=js0, data-bind="click: ToHomepage") Главная
+            span.divider  / 
+
+        +each('crumbs')
+            a(href=js0, data-bind="text: title, click: ClickItem")
+            span.divider  / 
+
+        span.current(data-bind="text: lastItem") Кеды

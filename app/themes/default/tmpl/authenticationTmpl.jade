@@ -1,0 +1,32 @@
+include ../../../templates/helpers/knockout
+
+script#authenticationFormTmpl(type="text/html")
+    // version 1.0
+    .fade.in
+        .popup.signin
+            header.patterned.black
+                h1.with-icon Войти
+                span.close-popup.btn-circle.btn-circle--drop.btn-circle--white(data-bind="click: CloseForm")
+
+            .content
+                .form_error(data-bind="text: error")
+                form(method="post" data-bind="submit: Login")
+                    .input-holder
+                        input.inline-input(name="username", type="text", placeholder="Логин", required="required", data-bind="value: username")
+
+                    .input-holder
+                        input.inline-input(name="password", type="password", placeholder="Пароль", data-bind="value: password")
+
+                    .input-holder.input-holder--divider
+                        input#remember.checkbox(name="remember_me", type="checkbox", data-bind="value: rememberMe")
+                        label(for="remember") запомнить меня
+
+                    button.btn.btn-lg(type="submit") Войти
+
+            footer
+                ul
+                    li
+                        a(href='https://seller.pokupo.ru/resetting/request', target='_blank') Восстановление пароля
+                    li
+                        a(href=js0 data-bind="click: ClickRegistration") Регистрация
+
