@@ -254,7 +254,7 @@
   left: 50%;
   margin: -17px 0 0 -13px;
   z-index: -1;
-  background-image: url("../images/sprite.png");
+  background-image: url("../themes/default/images/sprite.png");
   background-position: -224px -140px;
   width: 28px;
   height: 34px;
@@ -363,8 +363,8 @@
 }
 .b-dialog.closed .b-dialog__userpic .b-profile-info__photo:after {
   margin: -10px 0 0 -8px;
-  background-image: url("../images/sprite.png");
-  background-position: -193px -222px;
+  background-image: url("../themes/default/images/sprite.png");
+  background-position: -264px 0px;
   width: 16px;
   height: 20px;
 }
@@ -402,8 +402,8 @@
   display: block;
   top: 5px;
   left: -15px;
-  background-image: url("../images/sprite.png");
-  background-position: -379px -185px;
+  background-image: url("../themes/default/images/sprite.png");
+  background-position: -393px -138px;
   width: 12px;
   height: 8px;
   -webkit-transition: -webkit-transform 0.15s ease-in-out;
@@ -592,8 +592,8 @@ section.profile-nav {
 }
 .b-profile-nav .menu__item a.icon__profile:before {
   margin-top: -11px;
-  background-image: url("../images/sprite.png");
-  background-position: -193px -222px;
+  background-image: url("../themes/default/images/sprite.png");
+  background-position: -264px 0px;
   width: 16px;
   height: 20px;
 }
@@ -639,8 +639,8 @@ section.profile-nav {
   color: #fff;
 }
 .b-profile-nav .menu__item.active a.icon__profile:before {
-  background-image: url("../images/sprite.png");
-  background-position: -145px -222px;
+  background-image: url("../themes/default/images/sprite.png");
+  background-position: -210px -222px;
   width: 16px;
   height: 20px;
 }
@@ -751,8 +751,8 @@ section.profile-nav {
   border-color: #e23f3f;
 }
 .profile .btn-circle--drop:hover:before {
-  background-image: url("../images/sprite.png");
-  background-position: -297px -95px;
+  background-image: url("../themes/default/images/sprite.png");
+  background-position: -335px -94px;
   width: 15px;
   height: 15px;
 }
@@ -761,8 +761,8 @@ section.profile-nav {
   border-color: #bc1c1c;
 }
 .profile .btn-circle--drop:active:before {
-  background-image: url("../images/sprite.png");
-  background-position: -297px -95px;
+  background-image: url("../themes/default/images/sprite.png");
+  background-position: -335px -94px;
   width: 15px;
   height: 15px;
 }
@@ -831,8 +831,8 @@ section.profile-nav {
   top: 50%;
   left: 50%;
   margin: -8px 0 0 -7px;
-  background-image: url("../images/sprite.png");
-  background-position: -264px -155px;
+  background-image: url("../themes/default/images/sprite.png");
+  background-position: -264px -53px;
   width: 15px;
   height: 17px;
 }
@@ -843,8 +843,8 @@ section.profile-nav {
   top: 50%;
   left: 50%;
   margin: -7px 0 0 -9px;
-  background-image: url("../images/sprite.png");
-  background-position: -326px -141px;
+  background-image: url("../themes/default/images/sprite.png");
+  background-position: -358px -94px;
   width: 17px;
   height: 14px;
 }
@@ -855,8 +855,8 @@ section.profile-nav {
   top: 50%;
   left: 50%;
   margin: -8px 0 0 -8px;
-  background-image: url("../images/sprite.png");
-  background-position: -264px -180px;
+  background-image: url("../themes/default/images/sprite.png");
+  background-position: -142px -254px;
   width: 18px;
   height: 17px;
 }
@@ -879,8 +879,8 @@ section.profile-nav {
   top: 50%;
   left: 50%;
   margin: -9px 0 0 -8px;
-  background-image: url("../images/sprite.png");
-  background-position: -264px -130px;
+  background-image: url("../themes/default/images/sprite.png");
+  background-position: -117px -254px;
   width: 17px;
   height: 17px;
 }
@@ -900,8 +900,8 @@ section.profile-nav {
   left: 0;
 }
 .b-status--done:before {
-  background-image: url("../images/sprite.png");
-  background-position: -264px -230px;
+  background-image: url("../themes/default/images/sprite.png");
+  background-position: -216px -281px;
   width: 20px;
   height: 16px;
   margin-top: -9px;
@@ -910,65 +910,65 @@ section.profile-nav {
   padding-left: 22px;
 }
 .b-status--warning:before {
-  background-image: url("../images/sprite.png");
-  background-position: -264px -105px;
+  background-image: url("../themes/default/images/sprite.png");
+  background-position: -264px -103px;
   width: 5px;
   height: 17px;
   left: 10px;
   margin-top: -9px;
 }
 .b-status--cancelled:before {
-  background-image: url("../images/sprite.png");
-  background-position: -45px -254px;
+  background-image: url("../themes/default/images/sprite.png");
+  background-position: -264px -153px;
   width: 16px;
   height: 16px;
   margin-top: -8px;
 }
 .b-status--checking:before {
-  background-image: url("../images/sprite.png");
-  background-position: -213px -254px;
+  background-image: url("../themes/default/images/sprite.png");
+  background-position: -196px -254px;
   width: 16px;
   height: 16px;
   margin-top: -7px;
 }
 .b-status--forming:before {
-  background-image: url("../images/sprite.png");
-  background-position: -264px -79px;
+  background-image: url("../themes/default/images/sprite.png");
+  background-position: -64px -254px;
   width: 19px;
   height: 18px;
   margin-top: -10px;
 }
 .b-status--inprogress:before {
-  background-image: url("../images/sprite.png");
-  background-position: -264px -53px;
+  background-image: url("../themes/default/images/sprite.png");
+  background-position: -91px -254px;
   width: 18px;
   height: 18px;
   margin-top: -9px;
 }
 .b-status--new:before {
-  background-image: url("../images/sprite.png");
-  background-position: -264px -230px;
+  background-image: url("../themes/default/images/sprite.png");
+  background-position: -216px -281px;
   width: 20px;
   height: 16px;
   margin-top: -9px;
 }
 .b-status--return:before {
-  background-image: url("../images/sprite.png");
-  background-position: -297px -164px;
+  background-image: url("../themes/default/images/sprite.png");
+  background-position: -340px -117px;
   width: 15px;
   height: 13px;
   margin-top: -5px;
 }
 .b-status--sent:before {
-  background-image: url("../images/sprite.png");
-  background-position: -339px -164px;
+  background-image: url("../themes/default/images/sprite.png");
+  background-position: -312px -117px;
   width: 20px;
   height: 13px;
   margin-top: -9px;
 }
 .b-status--waiting:before {
-  background-image: url("../images/sprite.png");
-  background-position: -145px -254px;
+  background-image: url("../themes/default/images/sprite.png");
+  background-position: -264px -201px;
   width: 12px;
   height: 16px;
   margin-top: -9px;

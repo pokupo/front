@@ -1,0 +1,105 @@
+section.subheader
+	padding 0
+	background #333
+	position relative
+	z-index 1
+
+	.logo
+		display inline-block
+		height 100px
+		line-height 100px
+		margin-left 30px
+		float left
+		text-decoration none
+
+		.logo__title
+			line-height 100px
+			vertical-align middle
+			font-size 24px
+			color #fff
+			text-transform uppercase
+			white-space nowrap
+
+			br 
+				display none
+
+		img
+			display inline-block
+			line-height 100px
+			vertical-align middle
+			margin-top -10px
+			height 65px
+			width auto
+
+	.circles-menu
+		height 100px
+		line-height 100px
+
+	.menu-login 
+		height 100px
+
+		.not-logged-in 
+			padding 45px 0 45px
+
+			a
+				text-decoration none
+
+				&.menu-login__login
+					color #fff
+					border-right-color rgba(#fff,0.3)
+					&:hover
+						color $orange
+
+.b-user-navigation
+	text-align left
+	clear both
+	background #fff
+	height 65px
+	font-size 0
+
+	drop-shadow()
+	
+
+	a
+		height 65px
+		line-height 65px
+	& > a
+		padding 0 5px
+		margin-right 15px
+
+	.menu__item
+		height 65px
+		line-height 65px
+		display inline-block
+		
+		a 
+			line-height 18px
+			font-size 16px
+			transition all .2s ease-in-out
+
+		&.with-submenu
+			a:hover
+			a.bordered
+				border-bottom-color #018F3C
+				&:after
+					border-bottom-color #018F3C
+		&.active
+			& > a
+				color #018F3C
+				border-bottom-color #018F3C
+				&:after
+					border-bottom-color #018F3C
+		
+
+		a
+			padding 25px 20px 20px
+			display inline-block
+			font-size 14px
+			font-weight bold
+			color #000
+			text-decoration none
+			text-transform uppercase
+
+			&:hover
+				background $grey
+				color $orange

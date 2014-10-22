@@ -26,15 +26,15 @@ script#advancedSearchFormTmpl(type='text/html')
 															+if('children')
 																ul
 																	+each("{ data: children, as: 'children1' }")
-																	li
-																		// ko text: children1.title 
-																		// /ko 
-																		+if('children1.children')
-																			ul
-																				+each("{ data: children1.children, as: 'children2' }")
-																					li
-																						// ko text: children2.title 
-																						// /ko 
+																		li
+																			// ko text: children1.title 
+																			// /ko 
+																			+if('children1.children')
+																				ul
+																					+each("{ data: children1.children, as: 'children2' }")
+																						li
+																							// ko text: children2.title 
+																							// /ko 
 
 								.input-holder
 									select#typeSeller.form_select(name='typeSeller', data-bind='css: cssTypeSeller, value: typeSeller')

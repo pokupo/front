@@ -6,8 +6,7 @@ script#breadCrumbTmpl(type="text/html")
     //- Содержимое блока div.b-thermometer
     p
         +if('showReturn')
-            a(href=js0, data-bind="click: Return") Назад
-            span.divider  / 
+            a.backwards-arrow(href=js0, data-bind="click: Return")
             a(href=js0, data-bind="click: ToHomepage") Главная
             span.divider  / 
         

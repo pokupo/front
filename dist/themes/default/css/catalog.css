@@ -88,8 +88,8 @@
   display: block;
   top: 12px;
   left: -17px;
-  background-image: url("../images/sprite.png");
-  background-position: -379px -185px;
+  background-image: url("../themes/default/images/sprite.png");
+  background-position: -393px -138px;
   width: 12px;
   height: 8px;
   -webkit-transition: -webkit-transform 0.2s ease-in-out;

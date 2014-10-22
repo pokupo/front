@@ -801,11 +801,15 @@ PKP.Forms = {
 			PKP.Suggestions.init();
 		}
 
-		if($('#registerWizard').length > 0) {
-			var progress = 0;
-			var canvas = document.getElementById('progressCircle');
+		var progress = 0,
+			canvas,
+			circle;
 
-			var circle = new ProgressCircle({
+
+		if($('#registerWizard').length > 0) {
+			canvas = document.getElementById('progressCircle');
+
+			circle = new ProgressCircle({
 				canvas: canvas,
 			});
 
@@ -852,10 +856,9 @@ PKP.Forms = {
 		}
 
 		if($('#registerShopWizard').length > 0) {
-			var progress = 0;
-			var canvas = document.getElementById('progressCircle');
+			canvas = document.getElementById('progressCircle');
 
-			var circle = new ProgressCircle({
+			circle = new ProgressCircle({
 				canvas: canvas,
 			});
 

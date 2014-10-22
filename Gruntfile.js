@@ -24,7 +24,7 @@ module.exports = function (grunt) {
 			themes: {
 				src: 'app/themes/default/images/sprite/**/*.png',
 				destImg: 'app/themes/default/images/sprite.png',
-				imgPath: '../images/sprite.png',
+				imgPath: '../themes/default/images/sprite.png',
 				destCSS: 'app/styles/helpers/default-theme-sprite.styl',
 				cssFormat: 'stylus',
 				algorithm: 'binary-tree',
@@ -443,7 +443,7 @@ module.exports = function (grunt) {
 		'imagemin',
 		'stylus',
 		'autoprefixer',
-		'cmq',
+		//'cmq',
 		'csscomb',
 		'jade',
 		'prettify',
