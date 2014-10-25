@@ -17,7 +17,7 @@ script#blockCaruselTmpl(type="text/html")
     .promoBlocks.carouselBlock
         h1.b-catalog__title(data-bind="text: titleBlock")
         .b-catalog__items.cards.chain-slider.owl-carousel(data-bind="css: cssBlockContainer")
-            +each: contentBlock
+            +each('contentBlock')
                 .owl-item
                     .b-catalog__item
                         .b-item
@@ -76,7 +76,7 @@ script#blockTileTmpl(type="text/html")
                                     h4.b-item__title
                                         a(href=js0, data-bind="text: chortName, click: ClickGoods, attr: {id : cssTitleToCart}")
                                     .b-item__info
-                                        p(data-bind="html: descript")
+                                        p(data-bind="html: description")
                                     .b-item__price
                                         +if('discount() > 0')
                                             .b-price.b-item__price--old
