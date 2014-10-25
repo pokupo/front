@@ -1,1 +1,29 @@
-<script id="searchTmpl" type="text/html"><!-- version 1.0 --><section class="orange search"><div class="container"><div class="b-search"><form action="" data-bind="submit: SubmitSearchForm"><div class="b-search-holder"><input type="search" placeholder="Поиск по каталогу..." data-bind="value: text" class="b-search__input"/></div><div class="b-location dropdown selector"><a href="javascript:void(0);" data-target="location" class="b-location__current dropdown__trigger selector__current search_dropdown__trigger">Все категории</a><div data-target="location" class="dropdown__content hidden search_dropdown__content"><div class="b-location__catalog selector__options"><ul data-bind="css: cssSelectList, value: selectedCatigoriesId" class="menu"><!-- ko foreach: categoriesTree --><li data-bind="css: {'active': isSelected}" class="menu__item"><a href="javascript:void(0);" data-bind="click: ClickItem"><span data-bind="text: title"></span></a><!-- ko if: children.length > 0 --><ul class="submenu"><!-- ko foreach: children --><li data-bind="css: {'active': isSelected}" class="submenu__item"><a href="javascript:void(0);" data-bind="click: ClickItem"><span data-bind="text: title"></span></a></li><!-- /ko --></ul><!-- /ko --></li><!-- /ko --></ul></div></div></div><button type="submit" data-bind="click: ClickSearchForm" class="b-search__button">Найти</button></form></div></div></section></script>
+
+<script id="searchTmpl" type="text/html">
+  <!-- version 1.0 -->
+  <section class="orange search">
+    <div class="container">
+      <div class="b-search">
+        <form action="" data-bind="submit: SubmitSearchForm">
+          <div class="b-search-holder">
+            <input type="search" placeholder="Поиск по каталогу..." data-bind="value: text" class="b-search__input"/>
+          </div>
+          <div class="b-location dropdown selector"><a href="javascript:void(0);" data-target="location" class="b-location__current dropdown__trigger selector__current search_dropdown__trigger">Все категории</a>
+            <div data-target="location" class="dropdown__content hidden search_dropdown__content">
+              <div class="b-location__catalog selector__options">
+                <ul data-bind="css: cssSelectList, value: selectedCatigoriesId" class="menu"><!-- ko foreach: categoriesTree -->
+                  <li data-bind="css: {'active': isSelected}" class="menu__item"><a href="javascript:void(0);" data-bind="click: ClickItem"><span data-bind="text: title"></span></a><!-- ko if: children.length > 0 -->
+                    <ul class="submenu"><!-- ko foreach: children -->
+                      <li data-bind="css: {'active': isSelected}" class="submenu__item"><a href="javascript:void(0);" data-bind="click: ClickItem"><span data-bind="text: title"></span></a></li><!-- /ko -->
+                    </ul><!-- /ko -->
+                  </li><!-- /ko -->
+                </ul>
+              </div>
+            </div>
+          </div>
+          <button type="submit" data-bind="click: ClickSearchForm" class="b-search__button">Найти</button>
+        </form>
+      </div>
+    </div>
+  </section>
+</script>
