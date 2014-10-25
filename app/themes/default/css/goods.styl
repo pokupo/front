@@ -1,0 +1,209 @@
+/* Хэлперы и переменные */
+@import '../../../styles/helpers/*'
+
+/* Просмотр товара */
+.b-catalog-item
+	text-align left
+
+	/* Левая */
+	.fotorama__thumb-border
+		border-color #ccc
+
+	&__title
+		margin-bottom 10px
+
+	&__subtitle
+		color #666
+		line-height 20px
+		font-size 13px
+		margin 0px 0 10px
+
+	&__badges
+		position absolute
+		z-index 1
+
+	&__badge
+		display inline-block
+		vertical-align top
+		width 60px
+		height 60px
+		line-height 58px
+		font-size 20px
+		text-align center
+		color #fff
+		border-radius 60px
+		margin-left 10px
+		white-space nowrap
+		user-select none
+		cursor default
+
+		&:first-child
+			margin-left 0
+
+		&--discount
+			background $green
+		&--bestseller
+			background $red
+
+	/* Правая */
+	&__seller-info
+		margin-bottom 30px
+
+	&__description
+		font-size 13px
+		line-height 20px
+
+	.b-item__price--old + .b-price
+		margin-top 10px
+
+	&__share
+		a.b-share__handle
+			font-size 13px
+			color #000
+			&:hover .b-share__text
+				color #666
+
+	/* Самая правая */
+	&__limits
+		margin-bottom 1px
+		color #999
+		
+		.value
+			color #333
+
+	&__actions
+		text-align center
+
+		.btn
+			border-width 4px
+			padding 16px 30px 14px
+			margin 0 0 20px
+
+	/* Дополнительные блоки */
+	&__aux
+		border-top 1px solid #ccc
+		padding-top 40px
+		margin 40px 50px 0
+		position relative
+		&:before
+		&:after
+			content ''
+			position absolute
+			display block
+			top -1px
+			border-top 1px solid #ccc
+			width 60px
+			height 0
+		&:before
+			left -50px
+
+		&:after
+			right -50px
+
+
+		h1 
+			font-size 30px
+
+
+/* Звёздочки */
+.b-stars
+	display inline-block
+	margin-right 10px
+	overflow hidden
+	position relative
+	width 100px
+	height 16px
+	cursor default
+	background $grey
+	top 2px
+
+	&__rating
+	&:after
+		width 100%
+		height 100%
+		position absolute
+
+	&__rating
+		background $orange
+	&:after
+		content ''
+		display block
+		sprite($stars)
+
+
+/* Инпут-звездочек */
+.voting
+	display inline-block
+	position relative
+	overflow hidden
+	sprite($stars--grey)
+
+	
+	li
+		float left
+		
+	a
+		position absolute
+		top 0
+		left 0
+		display block
+		height 16px
+		text-indent -9999px
+		
+	a.current
+	a:hover
+	&:hover  a.current:hover
+	&:hover  a:hover
+		sprite($stars--orange)
+		
+		
+	.voting:hover a.current
+		background none
+		
+	&__one a
+		width 20px!important
+		z-index 5
+		
+	&__two a
+		width 40px!important
+		z-index 4
+		
+	&__three a
+		width 60px!important
+		z-index 3
+		
+	&__four a
+		width 80px!important
+		z-index 2
+		
+	&__five a
+		width 100px!important
+		z-index 1
+		
+.vote-input
+	text-align left
+	margin 25px 0 30px
+	.voting
+		margin-left 8px
+		top 2px
+
+a.b-share-popup__yandex
+	display none
+body .b-share-popup_up .b-share-popup_yandexed
+body .b-share-popup__header_first
+	padding-top 2px!important
+	
+/*  */
+.b-catalog-item__photos
+	.fotorama__caption
+		display none
+	
+.b-catalog-item__photos.fotorama--fullscreen
+	.fotorama__caption
+		display block
+		text-align center
+		top 0
+		bottom auto
+		font-size 30px
+		font-weight 300
+	

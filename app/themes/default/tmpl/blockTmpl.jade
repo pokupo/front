@@ -113,8 +113,8 @@ script#blockTileTmpl(type="text/html")
                                         .b-item__description
                                             h4.b-item__title
                                                 a(href=js0, data-bind="text: chortName, click: ClickGoods, attr: {id : cssTitleToCart}")
-                                                .b-item__info
-                                                    p(data-bind="html: description")
+                                            .b-item__info
+                                                p(data-bind="html: description")
                                         .b-item__price
                                             +if('discount() > 0')
                                                 .b-price.b-item__price--old
@@ -137,5 +137,5 @@ script#blockTileTmpl(type="text/html")
                                             i.icon.icon-cart
                                             | В&nbsp;корзину
 
-                                .b-item__badges
-                                    span.bestseller Хит!
+                                    .b-item__badges
+                                        span.bestseller Хит!

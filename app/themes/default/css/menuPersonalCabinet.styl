@@ -1,0 +1,279 @@
+/* Хэлперы и переменные */
+@import '../../../styles/helpers/*'
+
+.profile-nav
+	text-align left
+
+	.btn
+		float right
+		margin 17px 0 0
+		border-width 4px
+		padding 13px 23px 9px
+
+.b-profile-nav
+	font-size 0
+	width 75%
+	float left
+		
+	.menu__item
+		display inline-block
+		font-size 14px
+		height 80px
+
+		a
+			position relative
+			display block
+			padding 0 20px 0 50px
+			height 80px
+			line-height 80px
+			text-decoration none
+			border-bottom none
+			white-space nowrap
+
+			span 
+				color #000
+
+			&:before
+				content ''
+				display block
+				position absolute
+				top 50%
+				left 20px
+
+			&.icon__profile
+				&:before
+					margin-top -11px
+					sprite($icon__profile)
+
+			&.icon__favorites
+				&:before
+					margin-top -8px
+					sprite($icon__favorites)
+
+			&.icon__cart
+				&:before
+					margin-top -11px
+					sprite($icon__profile-cart)
+
+			&.icon__order
+				&:before
+					margin-top -9px
+					sprite($icon__order)
+
+			&.icon__mail
+				&:before
+					margin-top -7px
+					sprite($icon__mail--small)
+
+
+		&:hover
+			background #e0ddd8
+
+		&.active
+			background $orange
+			color #fff
+			a
+				color #fff
+
+				span
+					color #fff
+
+				&.icon__profile
+					&:before
+						sprite($icon__profile__white)
+
+				&.icon__favorites
+					&:before
+						sprite($icon__favorites__white)
+
+				&.icon__cart
+					&:before
+						sprite($icon__profile-cart__white)
+
+				&.icon__order
+					&:before
+						sprite($icon__order__white)
+
+				&.icon__mail
+					&:before
+						sprite($icon__mail--small--white)
+
+			&:hover
+				background $orange
+
+				a
+					cursor default
+	
+	.menu__item__num
+		right -8px
+
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait), screen and (min-width: 641px) and (max-width: 800px)
+	.profile-nav.grey
+		background rgba($grey, 0.5)
+		text-align center
+
+	.b-profile-nav
+		width 100%
+		background $grey
+
+		.menu__item
+			width 20%
+
+			a
+				&:before
+					left 50%
+
+				&:after
+					pseudo()
+					width 2px
+					left 0
+					top 10px
+					bottom 10px
+					background #e0ddd8
+
+				&.icon__profile
+					&:before
+						margin-left -8px
+
+				&.icon__favorites
+					&:before
+						margin-left -10px
+
+				&.icon__cart
+					&:before
+						margin-left -10px
+
+				&.icon__order
+					&:before
+						margin-left -10px
+
+				&.icon__mail
+					&:before
+						margin-left -9px
+			&.active
+			&:first-child
+			&.active + .menu__item
+				a
+					&:after
+						display none
+
+
+	.profile-nav .btn
+		float none
+		margin 11px 0 12px
+
+	.b-profile-nav .menu__item a span
+		display none !important
+
+
+
+
+
+
+@media only screen and (max-width: 640px)
+	.profile-nav.grey
+		background rgba($grey, 0.5)
+		text-align center
+
+	.b-profile-nav
+		width 100%
+		background $grey
+
+		.menu__item
+			width 20%
+
+			a
+				&:before
+					left 50%
+
+				&:after
+					pseudo()
+					width 2px
+					left 0
+					top 10px
+					bottom 10px
+					background #e0ddd8
+
+				&.icon__profile
+					&:before
+						margin-left -8px
+
+				&.icon__favorites
+					&:before
+						margin-left -10px
+
+				&.icon__cart
+					&:before
+						margin-left -10px
+
+				&.icon__order
+					&:before
+						margin-left -10px
+
+				&.icon__mail
+					&:before
+						margin-left -9px
+			&.active
+			&:first-child
+			&.active + .menu__item
+				a
+					&:after
+						display none
+
+
+	.profile-nav .btn
+		float none
+		margin 11px 0 12px
+
+	.b-profile-nav .menu__item a span
+		display none !important
+
+	/* Инфа о продавце */
+	.b-profile-info__actions
+		float none
+
+	.b-profile-info--fullwidth .b-profile-info__summary
+		margin-right 0
+
+	.b-profile-info__summary
+		.b-profile-info__title
+			clear none
+			margin-top 30px
+
+	.profile-cart
+		.b-profile-info__summary
+			.b-profile-info__title
+				margin-top 40px
+
+
+	.b-profile-info--fullwidth 
+		.b-profile-info__characters-list
+			width 50%
+			margin-right 0
+			padding-right 60px
+
+	.b-profile-info__characters-list
+		z-index auto
+
+		&:first-of-type
+			clear left
+			width 100%
+			padding-top 10px
+			margin-top 0
+
+	.profile-cart
+		.b-profile-info__characters-list:first-of-type
+			border-top 1px solid #ccc
+		
+
+	.b-profile-info--fullwidth .b-profile-info__actions
+		margin 0
+		float right
+		margin-top 170px
+		margin-left -100%
+
+	.b-order-list__buttons
+		text-align center
+
+

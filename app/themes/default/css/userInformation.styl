@@ -1,0 +1,78 @@
+/* Хэлперы и переменные */
+@import '../../../styles/helpers/*'
+
+.menu-login
+	float right
+	height 120px
+	margin 0 -15px 0 -100%
+
+	.not-logged-in
+		padding 57px 0 33px
+
+		a
+			margin-top 4px
+			padding 7px 15px
+			font-size 14px
+			font-weight 700
+			text-transform uppercase
+			transition 0.2s ease all
+
+			&.menu-login__login
+				color #000
+				border-right 1px solid #c5c6c8
+
+				&:before
+					content ''
+					display inline-block
+					sprite($icon__login)
+					margin-right 5px
+
+			&.menu-login__register
+				color $green
+
+			&:hover
+				color $orange
+	.logged-in
+		padding-right 15px
+
+.header
+	.logged-in
+		.btn
+			margin 40px 0 0 0
+
+
+/* Выпадайка профиля */
+.b-profile-menu
+	width 150px
+	padding 85px 0 2px
+	top -20px
+	left -45px
+	
+	&__name
+		color #808080
+		margin-bottom 13px
+		line-height 13px
+
+	.menu__item
+		border-top 1px solid $grey
+		padding 0
+
+		a
+			float none
+			display block
+			padding 8px 20px 9px
+			border-bottom none
+			color $a__link
+			&:hover 
+				color $a__hover
+
+	&__logout
+		position relative
+		&:after
+			content ''
+			position absolute
+			top 50%
+			right 10px
+			display block
+			margin-top -7px
+			sprite($icon__logout)

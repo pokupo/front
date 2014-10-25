@@ -1,0 +1,21 @@
+/* Хэлперы и переменные */
+@import '../../../styles/helpers/*'
+
+.h1-with-progress-bar
+	text-align center
+	h1
+		position relative
+		&:after
+			sprite($register-user)
+			content ''
+			position absolute
+			top -140px
+			left 50%
+			margin 0 0 0 -30px
+
+
+#progressCircle
+	border 2px solid $orange
+	border-radius 100px
+	box-sizing border-box
+	margin-bottom 12px

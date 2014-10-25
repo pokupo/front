@@ -1,0 +1,57 @@
+/* Хэлперы и переменные */
+@import '../../../styles/helpers/*'
+
+/* Выпадайка корзины */
+.b-cart-menu
+	width 150px
+	padding 80px 0 2px
+	top -20px
+	left -45px
+
+	&__patch
+		position absolute
+		display block
+		top -10px
+		right 25px
+		height 10px
+		width 150px
+		background #fff
+
+	&__body
+		position absolute
+		top 110px
+		right -25px
+		width 527px
+		min-height 120px
+
+		&__goods
+			width 100%
+
+	&__results
+		text-align left
+		line-height 60px
+		padding 23px 30px 20px
+		margin-right 200px
+		margin-bottom 0
+		font-size 16px
+		color #000
+
+	&__amount
+		width 120px
+		font-size 18px!important
+		font-weight 800
+		color $green
+		margin-left 30px
+
+	&__order-button
+		float right
+		margin 30px 32px 30px 0
+		line-height 1
+
+	&__cart-button
+		float right
+		line-height 1
+		margin 30px 15px 30px 0
+		font-size 13px
+		padding 18px 10px
+		text-decoration underline !important
