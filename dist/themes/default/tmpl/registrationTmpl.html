@@ -59,7 +59,7 @@
           </div>
           <div style="padding-top: 13px;" class="input-holder">
             <input id="iagree" name="iagree" type="checkbox" data-bind="checked: isChecked" class="checkbox"/>
-            <label for="iagree" class="block-label b-small-text">Я принимаю условия<a href="javascript:void(0);" target="_blank" data-bind="attr:{href: agreement}">пользовательского соглашения</a>,<br/><a href="javascript:void(0);" target="_blank" data-bind="attr:{href: police}">правил конфиденциальности</a>и<a href="javascript:void(0);" target="_blank" data-bind="attr:{href: refund}">политики возврата платежей</a></label><!-- ko if: errorIsChecked -->
+            <label for="iagree" class="block-label b-small-text">Я принимаю условия <a href="/rules" target="_blank" data-bind="attr:{href: agreement}">пользовательского соглашения</a>,<br/><a href="/police" target="_blank" data-bind="attr:{href: police}">правил конфиденциальности</a> и<a href="/refund" target="_blank" data-bind="attr:{href: refund}">политики возврата платежей</a></label><!-- ko if: errorIsChecked -->
             <div class="error__message">
               <p data-bind="text: errorIsChecked"></p>
             </div><!-- /ko -->

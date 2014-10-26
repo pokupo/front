@@ -62,13 +62,12 @@ script#registrationFromStep1Tmpl(type="text/html")
                     .input-holder(style='padding-top: 13px;')
                         input#iagree.checkbox(name='iagree', type='checkbox', data-bind='checked: isChecked')
                         label.block-label.b-small-text(for='iagree')
-                            | Я принимаю условия
-                            a(href=js0, target='_blank', data-bind='attr:{href: agreement}') пользовательского соглашения
-                            | ,
-                            br
-                            a(href=js0, target='_blank', data-bind='attr:{href: police}') правил конфиденциальности
-                            | и
-                            a(href=js0, target='_blank', data-bind='attr:{href: refund}') политики возврата платежей
+                            | Я принимаю условия 
+                            a(href="/rules", target='_blank', data-bind='attr:{href: agreement}') пользовательского соглашения
+                            | ,<br/>
+                            a(href="/police", target='_blank', data-bind='attr:{href: police}') правил конфиденциальности
+                            |  и
+                            a(href="/refund", target='_blank', data-bind='attr:{href: refund}') политики возврата платежей
                         +if('errorIsChecked')
                             .error__message
                                 p(data-bind='text: errorIsChecked')
