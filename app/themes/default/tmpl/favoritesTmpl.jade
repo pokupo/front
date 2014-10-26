@@ -8,7 +8,7 @@ script#emptyFavoritesTmpl(type='text/html')
 			div
 				p В избранном нет ни одного товара.
 
-				
+
 script#favoritesTmpl(type='text/html')
 	// version 1.0 
 	.profile
@@ -16,7 +16,7 @@ script#favoritesTmpl(type='text/html')
 			h1.b-profile__header Избранные товары
 			+each('content')
 				+if('showSellerInfo')
-					.b-profile-info.b-profile-info--fullwidth(data-bind="embedWidget :{ widget : 'InfoSellerWidget-1.0', params : {data : sellerInfo, tmpl : {path: 'infoSeller/infoSellerTmpl_promo_1.html', id : 'infoSeller_1Tmpl'}}}")
+					.b-profile-info.b-profile-info--fullwidth(data-bind="embedWidget : { widget : 'InfoSellerWidget-1.0', params : {data : sellerInfo, tmpl : {path: 'infoSellerTmpl.html', id : 'infoSeller_1Tmpl'}}}")
 				
 				ol.b-order-list
 					li.b-order-item.b-thead
@@ -29,9 +29,10 @@ script#favoritesTmpl(type='text/html')
 					+each('goods')
 						li.b-order-item
 							.b-order-item__checkbox
-								input(type='checkbox', data-bind="attr: {id: cssCheckboxGoods}') label(for='', data-bind='click: ClickOrder")
+								input(type='checkbox', data-bind='attr: {id: cssCheckboxGoods}')
+								label(for='', data-bind='click: ClickOrder')
 							.b-order-item__img
-								img(src='', data-bind='attr: {src: routeImages, title: fullName }')
+								img(src=js0, data-bind='attr: {src: routeImages, title: fullName }')
 							.b-order-item__name
 								a(href=js0, data-bind='click: ClickGoods')
 									span(data-bind='text: fullName')
@@ -48,9 +49,10 @@ script#favoritesTmpl(type='text/html')
 									button.btn.btn-sm(type='button', data-bind='click: AddToCart')
 										i.icon.icon-cart--small
 										| В корзину
+									
 								+if('showBuy')
 									button.btn.btn-sm(type='button', data-bind='click: Buy') Купить сразу
-
+								
 				.b-order-list__actions
 					+if('DisabledButton')
 						.drop_button
@@ -59,5 +61,8 @@ script#favoritesTmpl(type='text/html')
 					+ifnot('DisabledButton')
 						.drop_button
 							span.pseudo-link Удалить из избранного
+
 					.empty_button
 						span.pseudo-link(data-bind='click: ClickClearFavorites') Очистить избранное от товаров
+
+

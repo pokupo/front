@@ -1,60 +1,60 @@
 include ../../../templates/helpers/knockout
 
-script#infoSellerTmpl(type="text/html")
-    // version 1.0
-    div
-        .b-profile-info__actions
-            a.btn.btn-xs.btn-inline(type="button" data-bind="attr: {href: mailtoShop}") Задать вопрос
-            .b-support-info.dropdown
-                span.b-support-info__title
-                    span#info_seller_dropdown__trigger.dropdown__trigger(data-target="support") Поддержка
-                
-                #info_seller_dropdown__content.b-support-info__content.dropdown__content.hidden(data-target="support")
-                    p
-                        +if('siteSupportShop()')
-                            span.label Посетить сайт
-                            a.action(href=js0 target="_blank" data-bind="text: siteSupportShop, attr: {href : siteSupportShop}")
-                            
-                        span.label Написать
-                        a.action(href=js0 data-bind="attr: {href: mailtoShop}, text: mailtoShop")
+script#infoSeller_1Tmpl(type='text/html')
+	// version 1.0 
+	div
+		.b-profile-info__actions
+			button.btn.btn-xs(type='button', data-bind='attr: {href: mailtoShop}') Задать вопрос
+		.b-profile-info__summary
+			.b-profile-info__photo
+				img(src='', data-bind='attr: {src : routeLogoShop, title : nameShop}')
 
-                        +if('skypeSupportShop()')
-                            span.label Skype консультанта
-                            a.action(href="skype:pokupo?chat" onclick="return skypeCheck()" data-bind="text: skypeSupportShop")
+			h1.b-profile-info__title(data-bind='text: nameShop')
+			h2.b-profile-info__subtitle
+				| ID
+				// ko text: shopId 
+				// /ko 
 
-                        +if('icqSupportShop()')
-                            span.label ICQ консультанта
-                            span.action(data-bind="text: icqSupportShop")
+			ul.b-profile-info__characters-list
+				li
+					span.char Рейтинг: 
+					span.value.value--orange(data-bind='text: ratingShop')
+				li
+					span.char Отзывы / претензии: 
+					span.value
+						span.value--orange
+							// ko text: positiveOpinion
+							// /ko 
+						| /
+						span.value--green
+							// ko text: negativeOpinion 
+							// /ko 
+				li
+					span.char Товаров: 
+					span.value(data-bind='text: allGoods')
 
-                        +if('phonesSupportShop()')
-                            span.label Позвонить
-                            a.action(href="tel:+74953636393" data-bind="text: phonesSupportShop(), attr: {href: phonesSupportShop()}")
+			ul.b-profile-info__characters-list
+				+if('siteSupportShop()')
+					li
+						span.label Сайт: 
+						a.action(href=js0, target='_blank', data-bind='text: siteSupportShop, attr: {href : siteSupportShop}')
+					
+				li
+					span.char E-mail: 
+					a(href=js0, data-bind='attr: {href: mailtoShop}, text: mailtoShop')
 
-        .b-profile-info__summary
-            .b-profile-info__photo
-                img(src="" data-bind="attr: {src : routeLogoShop, title : nameShop}")
-           
-            h1.b-profile-info__title(data-bind="text: nameShop")
-            h2.b-profile-info__subtitle 
-                | ID 
-                // ko text: shopId 
-                // /ko
-                
-            ul.b-profile-info__characters-list
-                li
-                    span.char Рейтинг:
-                    span.value.value--orange(data-bind="text: ratingShop")
-                
-                li
-                    span.char Отзывы / претензии:
-                    span.value
-                        span.value--orange
-                            // ko text: positiveOpinion
-                            // /ko
-                        |  / 
-                        span.value--green
-                            // ko text: negativeOpinion 
-                            // /ko  
-                li
-                    span.char Товаров:
-                    span.value(data-bind="text: allGoods")
+				+if('skypeSupportShop()')
+					li
+						span.label Skype: 
+						a.action(href='skype:pokupo?chat', onclick='return skypeCheck()', data-bind='text: skypeSupportShop')
+				
+			ul.b-profile-info__characters-list
+				+if('icqSupportShop()')
+					li
+						span.label ICQ: 
+						span.action(data-bind='text: icqSupportShop')
+
+				+if('phonesSupportShop()')
+					li
+						span.char Тел.: 
+						span.value(data-bind='text: phonesSupportShop()')
