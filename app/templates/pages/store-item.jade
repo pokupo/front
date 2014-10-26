@@ -37,7 +37,7 @@ block content
 			
 			.b-thermometer
 				p 
-					a.backwards-arrow(href="js0")
+					a.backwards-arrow(href=js0)
 					a(href="index.html") Главная
 					span.divider  / 
 					a(href="store-index.html") Одежда, обувь и аксессуары
@@ -55,13 +55,13 @@ block content
 							.b-catalog-item__badges
 								.b-catalog-item__badge.b-catalog-item__badge--discount -30%
 							.b-catalog-item__photos
-								img(src="images/catalog/item0000/01.jpg" data-caption="Converse Red (Небольшое описание #1)")
-								img(src="images/catalog/item0000/02.jpg" data-caption="Converse Red (Небольшое описание #2)")
-								img(src="images/catalog/item0000/03.jpg" data-caption="Converse Red (Небольшое описание #3)")
-								img(src="images/catalog/item0000/04.jpg" data-caption="Converse Red (Небольшое описание #4)")
-								img(src="images/catalog/item0000/05.jpg" data-caption="Converse Red (Небольшое описание #5)")
-								img(src="images/catalog/item0000/06.jpg" data-caption="Converse Red (Небольшое описание #6)")
-								img(src="images/catalog/item0000/07.jpg" data-caption="Converse Red (Небольшое описание #7)")
+								img(src="/images/catalog/item0000/01.jpg" data-caption="Converse Red (Небольшое описание #1)")
+								img(src="/images/catalog/item0000/02.jpg" data-caption="Converse Red (Небольшое описание #2)")
+								img(src="/images/catalog/item0000/03.jpg" data-caption="Converse Red (Небольшое описание #3)")
+								img(src="/images/catalog/item0000/04.jpg" data-caption="Converse Red (Небольшое описание #4)")
+								img(src="/images/catalog/item0000/05.jpg" data-caption="Converse Red (Небольшое описание #5)")
+								img(src="/images/catalog/item0000/06.jpg" data-caption="Converse Red (Небольшое описание #6)")
+								img(src="/images/catalog/item0000/07.jpg" data-caption="Converse Red (Небольшое описание #7)")
 								
 							.b-recommended
 								.b-recommended__slider-control.prev
@@ -73,22 +73,22 @@ block content
 									.b-catalog__items.cards.cards--small
 										+catalog-items([
 											{title:"Converse White", price: "1800"},
-											{title:"Converse Grey", price: "2450", img: "images/catalog/goods02.jpg"},
-											{title:"Converse Red", price: "3750", oldPrice: "5600", img: "images/catalog/goods03.jpg"},
-											{title:"Converse Orange", price: "1890", oldPrice: "2490", img: "images/catalog/goods04.jpg"}
+											{title:"Converse Grey", price: "2450", img: "/images/catalog/goods02.jpg"},
+											{title:"Converse Red", price: "3750", oldPrice: "5600", img: "/images/catalog/goods03.jpg"},
+											{title:"Converse Orange", price: "1890", oldPrice: "2490", img: "/images/catalog/goods04.jpg"}
 											], flat=true)
 									.b-catalog__items.cards.cards--small
 										+catalog-items([
-											{title:"Converse Blue", price: "3750", img: "images/catalog/goods06.jpg"},
+											{title:"Converse Blue", price: "3750", img: "/images/catalog/goods06.jpg"},
 											{title:"Converse Green", price: "3750", oldPrice: "5600"},
-											{title:"Converse 10", price: "3750", oldPrice: "5600", img: "images/catalog/goods01.jpg"},
-											{title:"Converse RD", price: "1890", oldPrice: "2490", img: "images/catalog/goods04.jpg"}
+											{title:"Converse 10", price: "3750", oldPrice: "5600", img: "/images/catalog/goods01.jpg"},
+											{title:"Converse RD", price: "1890", oldPrice: "2490", img: "/images/catalog/goods04.jpg"}
 											], flat=true)
 									.b-catalog__items.cards.cards--small
 										+catalog-items([
-											{title:"Converse RD2", price: "3750", oldPrice: "5600", img: "images/catalog/goods03.jpg"},
+											{title:"Converse RD2", price: "3750", oldPrice: "5600", img: "/images/catalog/goods03.jpg"},
 											{title:"Converse T800", price: "6750", oldPrice: "5600"},
-											{title:"Converse Ultimate", price: "2490", img: "images/catalog/goods05.jpg"}
+											{title:"Converse Ultimate", price: "2490", img: "/images/catalog/goods05.jpg"}
 											], flat=true)
 
 					.second.double.column
@@ -117,7 +117,7 @@ block content
 
 										.b-profile-info__summary
 											.b-profile-info__photo
-												img(src="images/pages/catalog/seller-logo.png")
+												img(src="/images/pages/catalog/seller-logo.png")
 											h1.b-profile-info__title Торговая платформа Pokupo
 											h2.b-profile-info__subtitle ID 19158495
 
@@ -265,16 +265,16 @@ block content
 					.b-catalog__items.cards.cards--small.chain-slider--small
 						+catalog-items([
 							{title:"Converse White", price: "1800"},
-							{title:"Converse Grey", price: "2450", img: "images/catalog/goods02.jpg"},
-							{title:"Converse Red", price: "3750", oldPrice: "5600", img: "images/catalog/goods03.jpg"},
-							{title:"Converse Orange", price: "1890", oldPrice: "2490", img: "images/catalog/goods04.jpg"},
-							{title:"Converse Blue", price: "3750", img: "images/catalog/goods06.jpg"},
+							{title:"Converse Grey", price: "2450", img: "/images/catalog/goods02.jpg"},
+							{title:"Converse Red", price: "3750", oldPrice: "5600", img: "/images/catalog/goods03.jpg"},
+							{title:"Converse Orange", price: "1890", oldPrice: "2490", img: "/images/catalog/goods04.jpg"},
+							{title:"Converse Blue", price: "3750", img: "/images/catalog/goods06.jpg"},
 							{title:"Converse Green", price: "3750", oldPrice: "5600"},
-							{title:"Converse 10", price: "3750", oldPrice: "5600", img: "images/catalog/goods01.jpg"},
-							{title:"Converse RD", price: "1890", oldPrice: "2490", img: "images/catalog/goods04.jpg"},
-							{title:"Converse RD2", price: "3750", oldPrice: "5600", img: "images/catalog/goods03.jpg"},
+							{title:"Converse 10", price: "3750", oldPrice: "5600", img: "/images/catalog/goods01.jpg"},
+							{title:"Converse RD", price: "1890", oldPrice: "2490", img: "/images/catalog/goods04.jpg"},
+							{title:"Converse RD2", price: "3750", oldPrice: "5600", img: "/images/catalog/goods03.jpg"},
 							{title:"Converse T800", price: "6750", oldPrice: "5600"},
-							{title:"Converse Ultimate", price: "2490", img: "images/catalog/goods05.jpg"}
+							{title:"Converse Ultimate", price: "2490", img: "/images/catalog/goods05.jpg"}
 							], flat=true)
 		
 	#request_form.fade.in(style="display:none")

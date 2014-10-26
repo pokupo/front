@@ -92,8 +92,8 @@ module.exports = function (grunt) {
 		cmq: {
 			dist: {
 				files: {
-					'dist/styles/main.css': [
-						'dist/styles/main.css'
+					'dist/styles': [
+						'dist/styles/*.css'
 					]
 				}
 			}
@@ -443,7 +443,7 @@ module.exports = function (grunt) {
 		'imagemin',
 		'stylus',
 		'autoprefixer',
-		//'cmq',
+		'cmq',
 		'csscomb',
 		'jade',
 		'prettify',
