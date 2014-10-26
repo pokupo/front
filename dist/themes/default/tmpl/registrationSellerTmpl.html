@@ -23,22 +23,30 @@
         <div class="b-wizard__step-content">
           <div class="input-holder">
             <input type="text" name="nickname" value="" placeholder="Название магазина" data-bind="value: nameSeller" class="block-input"/><!-- ko if: errorNameSeller -->
-            <div data-bind="text: errorNameSeller" class="form_error"></div><!-- /ko -->
+            <div class="error__message">
+              <p data-bind="text: errorNameSeller"></p>
+            </div><!-- /ko -->
           </div>
           <div class="input-holder">
             <div rel="tooltip" title="Для уведомлений о заказах" class="tooltip__trigger">?</div>
             <input type="email" name="email" value="" placeholder="Ваш e-mail" data-bind="value: email" class="block-input"/><!-- ko if: errorEmail -->
-            <div data-bind="html: errorEmail" class="form_error"></div><!-- /ko -->
+            <div class="error__message">
+              <p data-bind="html: errorEmail"></p>
+            </div><!-- /ko -->
           </div>
           <div class="input-holder">
             <div rel="tooltip" title="Для связи с курьером" class="tooltip__trigger">?</div>
             <input type="tel" name="phone" value="" placeholder="Номер телефона" data-bind="value: phone, attr: {id : cssPhone}" class="block-input"/><!-- ko if: errorPhone -->
-            <div data-bind="html: errorPhone" class="form_error"></div><!-- /ko -->
+            <div class="error__message">
+              <p data-bind="html: errorPhone"></p>
+            </div><!-- /ko -->
           </div>
           <div style="padding-top: 13px;" class="input-holder">
             <input id="iagree" name="iagree" type="checkbox" data-bind="checked: isChecked" class="checkbox"/>
             <label for="iagree" class="block-label b-small-text">Я принимаю условия<a href="javascript:void(0);" target="_blank" data-bind="attr:{href: agreement}">пользовательского соглашения</a>,<br/><a href="javascript:void(0);" target="_blank" data-bind="attr:{href: police}">правил конфиденциальности</a>и<a href="javascript:void(0);" target="_blank" data-bind="attr:{href: refund}">политики возврата платежей</a></label><!-- ko if: errorIsChecked -->
-            <div data-bind="text: errorIsChecked" class="form_error"></div><!-- /ko -->
+            <div class="error__message">
+              <p data-bind="text: errorIsChecked"></p>
+            </div><!-- /ko -->
           </div>
         </div>
       </div>
@@ -76,7 +84,9 @@
               <label for="37" style="display: none;" class="label-floatlabel">Ваш e-mail код</label>
             </div><!-- ko if: mailIsConfirm -->
             <div class="b-status b-status--done">E-mail подтверждён</div><!-- /ko --><!-- ko if: errorEmailConfirm -->
-            <div data-bind="text: errorEmailConfirm" class="form_error"></div><!-- /ko -->
+            <div class="error__message">
+              <p data-bind="text: errorEmailConfirm"></p>
+            </div><!-- /ko -->
           </div><!-- /ko -->
           <div style="padding-top: 13px;" class="input-holder">
             <input id="skip-email" name="skip-email" type="checkbox" checked="" data-bind="checked: mailConfirmLater" class="checkbox"/>
@@ -89,7 +99,9 @@
               <label for="37" style="display: none;" class="label-floatlabel">Ваш SMS код</label>
             </div><!-- ko if: phoneIsConfirm -->
             <div class="b-status b-status--done">Телефон подтверждён</div><!-- /ko --><!-- ko if: errorPhoneConfirm -->
-            <div data-bind="text: errorPhoneConfirm" class="form_error"></div><!-- /ko -->
+            <div class="error__message">
+              <p data-bind="text: errorPhoneConfirm"></p>
+            </div><!-- /ko -->
           </div><!-- /ko -->
           <div style="padding-top: 13px;" class="input-holder">
             <input id="skip-phone" name="skip-email" type="checkbox" checked="" data-bind="checked: phoneConfirmLater" class="checkbox"/>
@@ -127,15 +139,21 @@
             <label for="clienttype-private">Частное лицо</label>
             <input id="clienttype-corporate" type="radio" name="clienttype" value="company" data-bind="checked: typeSeller" class="inline"/>
             <label for="clienttype-corporate">Компания</label><!-- ko if: errorTypeSeller -->
-            <div data-bind="text: errorTypeSeller" class="form_error"></div><!-- /ko -->
+            <div class="error__message">
+              <p data-bind="text: errorTypeSeller"></p>
+            </div><!-- /ko -->
           </div><!-- ko ifnot: confirmLater -->
           <div class="input-holder">
             <input type="text" name="family" value="" placeholder="Адрес сайта (если есть)" data-bind="value: site" class="block-input"/><!-- ko if: errorSite -->
-            <div data-bind="text: errorSite" class="form_error"></div><!-- /ko -->
+            <div class="error__message">
+              <p data-bind="text: errorSite"></p>
+            </div><!-- /ko -->
           </div>
           <div class="input-holder">
             <input type="text" name="code" value="" placeholder="Код приглашения" data-bind="value: invite" class="block-input"/><!-- ko if: errorTypeSeller -->
-            <div data-bind="text: errorInvite" class="form_error"></div><!-- /ko -->
+            <div class="error__message">
+              <p data-bind="text: errorInvite"></p>
+            </div><!-- /ko -->
           </div><!-- /ko -->
           <div style="padding-top: 13px;" class="input-holder">
             <input id="skip_personal" name="skip_personal" type="checkbox" data-bind="checked: confirmLater" class="checkbox"/>

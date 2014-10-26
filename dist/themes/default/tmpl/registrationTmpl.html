@@ -35,7 +35,9 @@
               <input id="i-77" type="text" name="nickname" value="" placeholder="Псевдоним" data-bind="value: username" class="block-input"/>
               <label for="i-77" style="display: none;" class="label-floatlabel">Псевдоним</label>
             </div><!-- ko if: errorUsername -->
-            <div data-bind="text: errorUsername" class="form_error"></div><!-- /ko -->
+            <div class="error__message">
+              <p data-bind="text: errorUsername"></p>
+            </div><!-- /ko -->
           </div>
           <div class="input-holder tooltip">
             <div class="tooltip__trigger">?
@@ -50,7 +52,9 @@
               <input id="i-93" type="email" name="email" value="" placeholder="Ваш e-mail" data-bind="value: email" class="block-input"/>
               <label for="93" style="display: none;" class="label-floatlabel">Ваш e-mail</label>
             </div><!-- ko if: errorEmail -->
-            <div data-bind="html: errorEmail" class="form_error"></div><!-- /ko -->
+            <div class="error__message">
+              <p data-bind="html: errorEmail"></p>
+            </div><!-- /ko -->
           </div>
           <div class="input-holder tooltip">
             <div class="tooltip__trigger">?
@@ -64,7 +68,9 @@
               <input id="i-5" type="tel" name="phone" value="" placeholder="Номер телефона" data-bind="value: phone, attr: {id : cssPhone}" class="block-input"/>
               <label for="5" style="display: none;" class="label-floatlabel">Номер телефона</label>
             </div><!-- ko if: errorPhone -->
-            <div data-bind="html: errorPhone" class="form_error"></div><!-- /ko -->
+            <div class="error__message">
+              <p data-bind="html: errorPhone"></p>
+            </div><!-- /ko -->
           </div>
           <div class="input-holder tooltip">
             <div class="tooltip__trigger">?
@@ -78,19 +84,25 @@
               <input id="i-48" type="password" name="password" value="" placeholder="Пароль" data-bind="value: firstPassword, attr : {id: cssFirstPassword}" class="block-input"/>
               <label for="48" style="display: none;" class="label-floatlabel">Пароль</label>
             </div><!-- ko if: errorFirstPassword -->
-            <div data-bind="text: errorFirstPassword" class="form_error"></div><!-- /ko -->
+            <div class="error__message">
+              <p data-bind="text: errorFirstPassword"></p>
+            </div><!-- /ko -->
           </div>
           <div class="input-holder">
             <div style="position: relative;" class="floatlabel-wrapper">
               <input id="i-73" type="password" name="password-double" value="" placeholder="Повторить пароль" data-bind="value: secondPassword, attr : {id: cssSecondPassword}" class="block-input"/>
               <label for="73" style="display: none;" class="label-floatlabel">Повторить пароль</label>
             </div><!-- ko if: errorSecondPassword -->
-            <div data-bind="text: errorSecondPassword" class="form_error"></div><!-- /ko -->
+            <div class="error__message">
+              <p data-bind="text: errorSecondPassword"></p>
+            </div><!-- /ko -->
           </div>
           <div style="padding-top: 13px;" class="input-holder">
             <input id="iagree" name="iagree" type="checkbox" data-bind="checked: isChecked" class="checkbox"/>
             <label for="iagree" class="block-label b-small-text">Я принимаю условия<a href="javascript:void(0);" target="_blank" data-bind="attr:{href: agreement}">пользовательского соглашения</a>,<br/><a href="javascript:void(0);" target="_blank" data-bind="attr:{href: police}">правил конфиденциальности</a>и<a href="javascript:void(0);" target="_blank" data-bind="attr:{href: refund}">политики возврата платежей</a></label><!-- ko if: errorIsChecked -->
-            <div data-bind="text: errorIsChecked" class="form_error"></div><!-- /ko -->
+            <div class="error__message">
+              <p data-bind="text: errorIsChecked"></p>
+            </div><!-- /ko -->
           </div>
         </div>
       </div>
@@ -138,7 +150,9 @@
               <label for="37" style="display: none;" class="label-floatlabel">Ваш e-mail код</label>
             </div><!-- ko if: mailIsConfirm  -->
             <div class="b-status b-status--done">E-mail подтверждён</div><!-- /ko --><!-- ko if: errorEmailConfirm -->
-            <div data-bind="text: errorEmailConfirm" class="form_error"></div><!-- /ko -->
+            <div class="error__message">
+              <p data-bind="text: errorEmailConfirm"></p>
+            </div><!-- /ko -->
           </div><!-- /ko -->
           <div style="padding-top: 13px;" class="input-holder">
             <input id="skip-email" name="skip-email" type="checkbox" checked="" data-bind="checked: mailConfirmLater" class="checkbox"/>
@@ -157,7 +171,9 @@
               <label for="37" style="display: none;" class="label-floatlabel">Ваш SMS код</label>
             </div><!-- ko if: phoneIsConfirm  -->
             <div class="b-status b-status--done">Телефон подтверждён</div><!-- /ko --><!-- ko if: errorPhoneConfirm -->
-            <div data-bind="text: errorPhoneConfirm" class="form_error"></div><!-- /ko -->
+            <div class="error__message">
+              <p data-bind="text: errorPhoneConfirm"></p>
+            </div><!-- /ko -->
           </div><!-- /ko --><!-- /ko -->
           <div style="padding-top: 13px;" class="input-holder">
             <input id="skip-phone" name="skip-email" type="checkbox" checked="" data-bind="checked: phoneConfirmLater" class="checkbox"/>
@@ -206,21 +222,27 @@
             <div style="position: relative;" class="floatlabel-wrapper">
               <input id="i-41" type="text" name="family" value="" placeholder="Фамилия" data-bind="value: lastName" class="block-input"/>
               <label for="41" style="display: none;" class="label-floatlabel">Фамилия</label><!-- ko if: errorLastName -->
-              <div data-bind="text: errorLastName" class="form_error"></div><!-- /ko -->
+              <div class="error__message">
+                <p data-bind="text: errorLastName"></p>
+              </div><!-- /ko -->
             </div>
           </div>
           <div class="input-holder">
             <div style="position: relative;" class="floatlabel-wrapper">
               <input id="i-24" type="text" name="name" value="" placeholder="Имя" data-bind="value: firstName" class="block-input"/>
               <label for="24" style="display: none;" class="label-floatlabel">Имя</label><!-- ko if: errorFirstName -->
-              <div data-bind="text: errorFirstName" class="form_error"></div><!-- /ko -->
+              <div class="error__message">
+                <p data-bind="text: errorFirstName"></p>
+              </div><!-- /ko -->
             </div>
           </div>
           <div class="input-holder">
             <div style="position: relative;" class="floatlabel-wrapper">
               <input id="i-85" type="text" name="patronymic" value="" placeholder="Отчество" data-bind="value: middleName" class="block-input"/>
               <label for="85" style="display: none;" class="label-floatlabel">Отчество</label><!-- ko if: errorMiddleName -->
-              <div data-bind="text: errorMiddleName" class="form_error"></div><!-- /ko -->
+              <div class="error__message">
+                <p data-bind="text: errorMiddleName"></p>
+              </div><!-- /ko -->
             </div>
           </div>
           <div class="input-holder">
@@ -228,7 +250,9 @@
               <input id="i-38" type="text" name="date" value="" placeholder="Дата рождения" data-bind="value: birthDay, attr: {id: cssBirthDay}" class="block-input"/>
               <input name="bdate" type="hidden" data-bind="value: birthDayHiddenField"/>
               <label for="38" style="display: none;" class="label-floatlabel">Дата рождения</label><!-- ko if: errorBirthDay -->
-              <div data-bind="text: errorBirthDay" class="form_error"></div><!-- /ko -->
+              <div class="error__message">
+                <p data-bind="text: errorBirthDay"></p>
+              </div><!-- /ko -->
             </div>
           </div>
           <div class="input-holder">
@@ -238,7 +262,9 @@
               <label for="gender" class="block-label b-small-text">Мужчина</label>
               <input name="gender" type="radio" value="ц" data-bind="checked: gender" class="radio"/>
               <label for="gender" class="block-label b-small-text">Женщина</label><!-- ko if: errorGender -->
-              <div data-bind="text: errorGender" class="form_error"></div><!-- /ko -->
+              <div class="error__message">
+                <p data-bind="text: errorGender"></p>
+              </div><!-- /ko -->
             </div>
           </div>
           <div style="padding-top: 13px;" class="input-holder">
@@ -282,7 +308,9 @@
               <option value=""></option><!-- ko foreach: countryList  -->
               <option data-bind="text: name, value: id"></option><!-- /ko -->
             </select><!-- ko if: errorCountry -->
-            <div data-bind="text: errorCountry" class="form_error"></div><!-- /ko -->
+            <div class="error__message">
+              <p data-bind="text: errorCountry"></p>
+            </div><!-- /ko -->
           </div>
           <div class="input-holder tooltip">
             <div class="tooltip__trigger">?
@@ -295,28 +323,36 @@
             <div style="position: relative;" class="floatlabel-wrapper">
               <input id="i-27" type="text" name="family" value="" placeholder="Регион" data-bind="value: customRegion, attr: {id: cssRegionList}, enable: country" class="block-input"/>
               <label for="27" style="display: none;" class="label-floatlabel">Регион</label><!-- ko if: errorRegion -->
-              <div data-bind="text: errorRegion" class="form_error"></div><!-- /ko -->
+              <div class="error__message">
+                <p data-bind="text: errorRegion"></p>
+              </div><!-- /ko -->
             </div>
           </div>
           <div class="input-holder">
             <div style="position: relative;" class="floatlabel-wrapper">
               <input id="i-4" type="text" name="name" value="" placeholder="Город" data-bind="value: customCity, attr: {id: cssCityList}, enable: customRegion" class="block-input"/>
               <label for="4" style="display: none;" class="label-floatlabel">Город</label><!-- ko if: errorCity -->
-              <div data-bind="text: errorCity" class="form_error"></div><!-- /ko -->
+              <div class="error__message">
+                <p data-bind="text: errorCity"></p>
+              </div><!-- /ko -->
             </div>
           </div>
           <div class="input-holder">
             <div style="position: relative;" class="floatlabel-wrapper">
               <input id="i-40" type="text" name="patronymic" value="" placeholder="Улица, дом, квартира" data-bind="value: customAddress, attr: {id: cssAddress}, enable: customCity" class="block-input"/>
               <label for="40" style="display: none;" class="label-floatlabel">Улица, дом, квартира</label><!-- ko if: errorAddress -->
-              <div data-bind="text: errorAddress" class="form_error"></div><!-- /ko -->
+              <div class="error__message">
+                <p data-bind="text: errorAddress"></p>
+              </div><!-- /ko -->
             </div>
           </div>
           <div class="input-holder">
             <div style="position: relative;" class="floatlabel-wrapper">
               <input id="i-3" type="text" name="date" value="" placeholder="Почтовый индекс" data-bind="value: postIndex, attr: {id: cssPostIndex}" class="block-input"/>
               <label for="3" style="display: none;" class="label-floatlabel">Почтовый индекс</label><!-- ko if: errorPostIndex -->
-              <div data-bind="text: errorPostIndex" class="form_error"></div><!-- /ko -->
+              <div class="error__message">
+                <p data-bind="text: errorPostIndex"></p>
+              </div><!-- /ko -->
             </div>
           </div>
           <div style="padding-top: 13px;" class="input-holder">

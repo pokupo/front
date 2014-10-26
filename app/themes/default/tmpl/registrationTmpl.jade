@@ -36,7 +36,8 @@ script#registrationFromStep1Tmpl(type="text/html")
                             input#i-77.block-input(type='text', name='nickname', value='', placeholder='Псевдоним', data-bind='value: username')
                             label.label-floatlabel(for='i-77', style='display: none;') Псевдоним
                         +if('errorUsername')
-                            .form_error(data-bind='text: errorUsername')
+                            .error__message
+                                p(data-bind='text: errorUsername')
                         
                     .input-holder.tooltip
                         .tooltip__trigger
@@ -51,7 +52,8 @@ script#registrationFromStep1Tmpl(type="text/html")
                             input#i-93.block-input(type='email', name='email', value='', placeholder='Ваш e-mail', data-bind='value: email')
                             label.label-floatlabel(for='93', style='display: none;') Ваш e-mail
                         +if('errorEmail')
-                            .form_error(data-bind='html: errorEmail')
+                            .error__message
+                                p(data-bind='html: errorEmail')
                         
                     .input-holder.tooltip
                         .tooltip__trigger
@@ -64,7 +66,8 @@ script#registrationFromStep1Tmpl(type="text/html")
                             input#i-5.block-input(type='tel', name='phone', value='', placeholder='Номер телефона', data-bind='value: phone, attr: {id : cssPhone}')
                             label.label-floatlabel(for='5', style='display: none;') Номер телефона
                         +if('errorPhone')
-                            .form_error(data-bind='html: errorPhone')
+                            .error__message
+                                p(data-bind='html: errorPhone')
                         
                     .input-holder.tooltip
                         .tooltip__trigger
@@ -78,14 +81,16 @@ script#registrationFromStep1Tmpl(type="text/html")
                             input#i-48.block-input(type='password', name='password', value='', placeholder='Пароль', data-bind='value: firstPassword, attr : {id: cssFirstPassword}')
                             label.label-floatlabel(for='48', style='display: none;') Пароль
                         +if('errorFirstPassword')
-                            .form_error(data-bind='text: errorFirstPassword')
+                            .error__message
+                                p(data-bind='text: errorFirstPassword')
                         
                     .input-holder
                         .floatlabel-wrapper(style='position: relative;')
                             input#i-73.block-input(type='password', name='password-double', value='', placeholder='Повторить пароль', data-bind='value: secondPassword, attr : {id: cssSecondPassword}')
                             label.label-floatlabel(for='73', style='display: none;') Повторить пароль
                         +if('errorSecondPassword')
-                            .form_error(data-bind='text: errorSecondPassword')
+                            .error__message
+                                p(data-bind='text: errorSecondPassword')
                         
                     .input-holder(style='padding-top: 13px;')
                         input#iagree.checkbox(name='iagree', type='checkbox', data-bind='checked: isChecked')
@@ -98,7 +103,8 @@ script#registrationFromStep1Tmpl(type="text/html")
                             | и
                             a(href=js0, target='_blank', data-bind='attr:{href: refund}') политики возврата платежей
                         +if('errorIsChecked')
-                            .form_error(data-bind='text: errorIsChecked')
+                            .error__message
+                                p(data-bind='text: errorIsChecked')
                         
             .b-wizard__actions
                 .b-wizard__loader Loading
@@ -149,7 +155,8 @@ script#registrationFromStep2Tmpl(type="text/html")
                                 .b-status.b-status--done E-mail подтверждён
 
                             +if('errorEmailConfirm')
-                                .form_error(data-bind='text: errorEmailConfirm')
+                                .error__message
+                                    p(data-bind='text: errorEmailConfirm')
                             
                     .input-holder(style='padding-top: 13px;')
                         input#skip-email.checkbox(name='skip-email', type='checkbox', checked='', data-bind='checked: mailConfirmLater')
@@ -169,7 +176,8 @@ script#registrationFromStep2Tmpl(type="text/html")
                                 +if('phoneIsConfirm ')
                                     .b-status.b-status--done Телефон подтверждён
                                 +if('errorPhoneConfirm')
-                                    .form_error(data-bind='text: errorPhoneConfirm')
+                                    .error__message
+                                        p(data-bind='text: errorPhoneConfirm')
                             
                     .input-holder(style='padding-top: 13px;')
                         input#skip-phone.checkbox(name='skip-email', type='checkbox', checked='', data-bind='checked: phoneConfirmLater')
@@ -216,21 +224,24 @@ script#registrationFromStep3Tmpl(type="text/html")
                             input#i-41.block-input(type='text', name='family', value='', placeholder='Фамилия', data-bind='value: lastName')
                             label.label-floatlabel(for='41', style='display: none;') Фамилия
                             +if('errorLastName')
-                                .form_error(data-bind='text: errorLastName')
+                                .error__message
+                                    p(data-bind='text: errorLastName')
 
                     .input-holder
                         .floatlabel-wrapper(style='position: relative;')
                             input#i-24.block-input(type='text', name='name', value='', placeholder='Имя', data-bind='value: firstName')
                             label.label-floatlabel(for='24', style='display: none;') Имя
                             +if('errorFirstName')
-                                .form_error(data-bind='text: errorFirstName')
+                                .error__message
+                                    p(data-bind='text: errorFirstName')
 
                     .input-holder
                         .floatlabel-wrapper(style='position: relative;')
                             input#i-85.block-input(type='text', name='patronymic', value='', placeholder='Отчество', data-bind='value: middleName')
                             label.label-floatlabel(for='85', style='display: none;') Отчество
                             +if('errorMiddleName')
-                                .form_error(data-bind='text: errorMiddleName')
+                                .error__message
+                                    p(data-bind='text: errorMiddleName')
 
                     .input-holder
                         .floatlabel-wrapper(style='position: relative;')
@@ -238,7 +249,8 @@ script#registrationFromStep3Tmpl(type="text/html")
                             input(name='bdate', type='hidden', data-bind='value: birthDayHiddenField')
                             label.label-floatlabel(for='38', style='display: none;') Дата рождения
                             +if('errorBirthDay')
-                                .form_error(data-bind='text: errorBirthDay')
+                                .error__message
+                                    p(data-bind='text: errorBirthDay')
 
                     .input-holder
                         .floatlabel-wrapper(style='position: relative;')
@@ -248,7 +260,8 @@ script#registrationFromStep3Tmpl(type="text/html")
                             input.radio(name='gender', type='radio', value='ц', data-bind='checked: gender')
                             label.block-label.b-small-text(for='gender') Женщина
                             +if('errorGender')
-                                .form_error(data-bind='text: errorGender')
+                                .error__message
+                                    p(data-bind='text: errorGender')
 
                     .input-holder(style='padding-top: 13px;')
                         input#skip_personal.checkbox(name='skip_personal', type='checkbox', data-bind='click: SpecifyLater')
@@ -290,7 +303,8 @@ script#registrationFromStep4Tmpl(type="text/html")
                             +each('countryList ')
                                 option(data-bind='text: name, value: id')
                         +if('errorCountry')
-                            .form_error(data-bind='text: errorCountry')
+                            .error__message
+                                p(data-bind='text: errorCountry')
 
                     .input-holder.tooltip
                         .tooltip__trigger
@@ -303,28 +317,32 @@ script#registrationFromStep4Tmpl(type="text/html")
                             input#i-27.block-input(type='text', name='family', value='', placeholder='Регион', data-bind='value: customRegion, attr: {id: cssRegionList}, enable: country')
                             label.label-floatlabel(for='27', style='display: none;') Регион
                             +if('errorRegion')
-                                .form_error(data-bind='text: errorRegion')
+                                .error__message
+                                    p(data-bind='text: errorRegion')
 
                     .input-holder
                         .floatlabel-wrapper(style='position: relative;')
                             input#i-4.block-input(type='text', name='name', value='', placeholder='Город', data-bind='value: customCity, attr: {id: cssCityList}, enable: customRegion')
                             label.label-floatlabel(for='4', style='display: none;') Город
                             +if('errorCity')
-                                .form_error(data-bind='text: errorCity')
+                                .error__message
+                                    p(data-bind='text: errorCity')
 
                     .input-holder
                         .floatlabel-wrapper(style='position: relative;')
                             input#i-40.block-input(type='text', name='patronymic', value='', placeholder='Улица, дом, квартира', data-bind='value: customAddress, attr: {id: cssAddress}, enable: customCity')
                             label.label-floatlabel(for='40', style='display: none;') Улица, дом, квартира
                             +if('errorAddress')
-                                .form_error(data-bind='text: errorAddress')
+                                .error__message
+                                    p(data-bind='text: errorAddress')
 
                     .input-holder
                         .floatlabel-wrapper(style='position: relative;')
                             input#i-3.block-input(type='text', name='date', value='', placeholder='Почтовый индекс', data-bind='value: postIndex, attr: {id: cssPostIndex}')
                             label.label-floatlabel(for='3', style='display: none;') Почтовый индекс
                             +if('errorPostIndex')
-                                .form_error(data-bind='text: errorPostIndex')
+                                .error__message
+                                    p(data-bind='text: errorPostIndex')
 
                     .input-holder(style='padding-top: 13px;')
                         input#skip_address.checkbox(name='skip_address', type='checkbox', data-bind='click: SpecifyLater')

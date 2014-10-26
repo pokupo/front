@@ -65,12 +65,14 @@ script#registrationDataTmpl(type="text/html")
                         .input-holder
                             input#fullname__surname.suggestion-input.block-input(type='text', placeholder='Фамилия', name='sname', data-bind='value: lastNameField')
                             +if('errorLastName')
-                                .form_error(data-bind='text: errorLastName')
+                                .error__message
+                                    p(data-bind="text: errorLastName")
                             
                         .input-holder
                             input#fullname__name.suggestion-input.block-input(type='text', placeholder='Имя', name='fname', data-bind='value: firstNameField')
                             +if('errorFirstName')
-                                .form_error(data-bind='text: errorFirstName')
+                                .error__message
+                                    p(data-bind="text: errorFirstName")
                             
                         +ifnot('gender()')
                             #fullname__gender.input-holder
@@ -79,20 +81,23 @@ script#registrationDataTmpl(type="text/html")
                                 input#fullname__gender-female.inline(type='radio', name='gender', value='w', data-bind='checked: gender')
                                 label(for='gender') Женский
                                 +if('errorGender')
-                                    .form_error(data-bind='text: errorGender')
+                                    .error__message
+                                        p(data-bind="text: errorGender")
 
                 .third.double.column
                     .content
                         .input-holder
                             input#fullname__patronymic.suggestion-input.block-input(type='text', placeholder='Отчество', name='mname', data-bind='value: middleNameField')
                             +if('errorMiddleName')
-                                .form_error(data-bind='text: errorMiddleName')
+                                .error__message
+                                    p(data-bind="text: errorMiddleName")
                             
                         .input-holder
                             input#birthDay.suggestion-input.block-input(type='text', placeholder='Дата рождения', data-bind='value: birthDayField, attr: {id: cssBirthDay}')
                             input(name='bdate', type='hidden', data-bind='value: birthDayHiddenField')
                             +if('errorBirthDay')
-                                .form_error(data-bind='text: errorBirthDay')
+                                .error__message
+                                    p(data-bind="text: errorBirthDay")
                             
                         a.input-action.pseudo-link(data-bind='click: Submit') Сохранить
 
@@ -120,29 +125,34 @@ script#postDataTmpl(type="text/html")
                                     option(data-bind='text: name, value: id')
                                 
                             if('errorCountry')
-                                .form_error(data-bind='text: errorCountry')
+                                .error__message
+                                    p(data-bind="text: errorCountry")
                             
                     .input-holder
                         input#address__region.suggestion-input.block-input(type='text', placeholder='Регион', name='address__region', data-bind='value: customRegion, attr: {id: cssRegionList}, enable: country')
                         +if('errorRegion')
-                            .form_error(data-bind='text: errorRegion')
+                            .error__message
+                                p(data-bind="text: errorRegion")
                         
                     .input-holder
                         input#address__city.suggestion-input.block-input(type='text', placeholder='Город', name='address__city', data-bind='value: customCity, attr: {id: cssCityList}, enable: customRegion')
                         +if('errorCity')
-                            .form_error(data-bind='text: errorCity')
+                            .error__message
+                                p(data-bind="text: errorCity")
                         
             .third.double.column
                 .content
                     .input-holder
                         input#address__street.suggestion-input.block-input(type='text', placeholder='Улица', name='address__street', data-bind='value: customAddress, enable: customCity')
                         +if('errorAddress')
-                            .form_error(data-bind='text: errorAddress')
+                            .error__message
+                                p(data-bind="text: errorAddress")
                         
                     .input-holder
                         input#address__postalcode.suggestion-input.block-input(type='text', placeholder='Почтовый индекс', name='address__postalcode', data-bind='value: postIndex')
                         +if('errorPostIndex')
-                            .form_error(data-bind='text: errorPostIndex')
+                            .error__message
+                                p(data-bind="text: errorPostIndex")
                         
                     a.input-action.pseudo-link(data-bind='click: Submit') Сохранить
 
@@ -161,7 +171,8 @@ script#contactsDataFormTmpl(type="text/html")
                             input#account__email.suggestion-input.block-input(type='email', placeholder='Электронная почта', data-bind='value: email', name='account__email')
 
                         +if('errorEmail')
-                            .form_error(data-bind='text: errorEmail')
+                            .error__message
+                                p(data-bind="text: errorEmail")
                         
                     .b-status.b-status--done(data-bind='visible: emailIsConfirm()') E-mail подтверждён
                     div(data-bind='visible: !emailIsConfirm()')
@@ -170,7 +181,8 @@ script#contactsDataFormTmpl(type="text/html")
                         .input-holder(data-bind='visible: sentEmailCode')
                             input.block-input(type='text', placeholder='Код из смс-сообщения', name='account__sms', data-bind='value:emailToken')
                             +if('errorEmailToken')
-                                .form_error(data-bind='text: errorEmailToken')
+                                .error__message
+                                    p(data-bind="text: errorEmailToken")
                                 
                     span.input-action.pseudo-link(data-bind='click: SubmitMailToken, visible: sentEmailCode') Подтвердить
             .third.double.column
@@ -183,7 +195,8 @@ script#contactsDataFormTmpl(type="text/html")
                             input#account__phone.masked-phone.block-input(type='tel', placeholder='Телефон', name='account__phone', data-bind='value: phone, attr: {id : cssPhone}')
 
                         +if('errorPhone')
-                            .form_error(data-bind='text: errorPhone')
+                            .error__message
+                                p(data-bind="text: errorPhone")
                         
                     .b-status.b-status--done(data-bind='visible: phoneIsConfirm()') Телефон подтвержден
 
@@ -193,7 +206,8 @@ script#contactsDataFormTmpl(type="text/html")
                         .input-holder(data-bind='visible: sentCode')
                             input.block-input(type="text", placeholder="Код из смс-сообщения", name="account__sms", data-bind="value:phoneToken")
                             +if('errorPhoneToken')
-                                .form_error(data-bind='text: errorPhoneToken')
+                                .error__message
+                                    p(data-bind="text: errorPhoneToken")
 
                     span.input-action.pseudo-link(data-bind='click: SubmitPhoneToken, visible: sentCode') Подтвердить
                     div(data-bind='visible: !phoneIsConfirm() || !emailIsConfirm()')
@@ -281,39 +295,46 @@ script#deliveryAddressFormTmpl(type="text/html")
                                                 option(data-bind='text: name, value: id')
                                            
                                         +if('errorCountry')
-                                            .form_error(data-bind='text: errorCountry')
+                                            .error__message
+                                                p(data-bind="text: errorCountry")
 
                                 .input-holder
                                     input#address__region.suggestion-input.block-input(type='text', placeholder='Регион', name='address__region', data-bind='value: customRegion, attr: {id: cssRegionList}, enable: country')
                                     +if('errorRegion')
-                                        .form_error(data-bind='text: errorRegion')
+                                        .error__message
+                                                p(data-bind="text: errorRegion")
 
                                 .input-holder
                                     input#address__city.suggestion-input.block-input(type='text', placeholder='Город', name='address__city', data-bind='value: customCity, attr: {id: cssCityList}, enable: customRegion')
                                     +if('errorCity')
-                                        .form_error(data-bind='text: errorCity')
+                                        .error__message
+                                                p(data-bind="text: errorCity")
 
                                 .input-holder
                                     input#address__street.suggestion-input.block-input(type='text', placeholder='Адрес', name='address__street', data-bind='value: customAddress, enable: customCity')
                                     +if('errorAddress')
-                                        .form_error(data-bind='text: errorAddress')
+                                        .error__message
+                                                p(data-bind="text: errorAddress")
 
                         .third.double.column
                             .content
                                 .input-holder
                                     input#address__postalcode.suggestion-input.block-input(type='text', placeholder='Почтовый индекс', name='address__postalcode', data-bind='value: postIndex')
                                     +if('errorPostCode')
-                                        .form_error(data-bind='text: errorPostCode')
+                                        .error__message
+                                            p(data-bind="text: errorPostCode")
 
                                 .input-holder
                                     input#address__addressee.suggestion-input.block-input(type='text', placeholder='Получатель', name='address__street', data-bind='value: addressee')
                                     +if('errorAddressee')
-                                        .form_error(data-bind='text: errorAddressee')
+                                        .error__message
+                                            p(data-bind="text: errorAddressee")
 
                                 .input-holder
                                     input#address__phone.masked-phone.suggestion-input.block-input(type='text', placeholder='Контактный телефон', name='address__street', data-bind='value: contactPhone')
                                     +if('errorContactPhone')
-                                        .form_error(data-bind='text: errorContactPhone')
+                                        .error__message
+                                            p(data-bind="text: errorContactPhone")
 
                                 .input-holder
                                     input#makeDefault(type='checkbox', name='makeDefault', data-bind='checked: isDefault')
@@ -336,16 +357,19 @@ script#securityTmpl(type="text/html")
                     .input-holder
                         input#password.block-input(type='password', name='old_password', value='', placeholder='Текущий пароль', data-bind='value: oldPassword, attr : {id: cssOldPassword}')
                         +if('errorOldPassword')
-                            .form_error(data-bind='text: errorOldPassword')
+                            .error__message
+                                p(data-bind="text: errorOldPassword")
                         
                     .input-holder
                         input#newpassword.block-input(value='', placeholder='Новый пароль', name='new_password', type='password', data-bind='value: newPassword, attr : {id: cssNewPassword}')
                         +if('errorNewPassword')
-                            .form_error(data-bind='text: errorNewPassword')
+                            .error__message
+                                p(data-bind="text: errorNewPassword")
                         
                     .input-holder
                         input#newpassword.block-input(value='', placeholder='Повтор нового пароля', type='password', data-bind='value: newPassword, attr : {id: cssNewPassword}')
                         +if('errorConfirmPassword')
-                            .form_error(data-bind='text: errorConfirmPassword')
+                            .error__message
+                                p(data-bind="text: errorConfirmPassword")
                         
                     button.btn.btn-lg(type='submit', data-bind='click: Submit') Сохранить

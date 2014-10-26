@@ -26,19 +26,22 @@ script#registrationSellerFromStep1Tmpl(type='text/html')
 					.input-holder
 						input.block-input(type='text', name='nickname', value='', placeholder='Название магазина', data-bind='value: nameSeller')
 						+if('errorNameSeller')
-							.form_error(data-bind='text: errorNameSeller')
+							.error__message
+								p(data-bind='text: errorNameSeller')
 
 					.input-holder
 						.tooltip__trigger(rel='tooltip', title='Для уведомлений о заказах') ?
 						input.block-input(type='email', name='email', value='', placeholder='Ваш e-mail', data-bind='value: email')
 						+if('errorEmail')
-							.form_error(data-bind='html: errorEmail')
+							.error__message
+								p(data-bind='html: errorEmail')
 						
 					.input-holder
 						.tooltip__trigger(rel='tooltip', title='Для связи с курьером') ?
 						input.block-input(type='tel', name='phone', value='', placeholder='Номер телефона', data-bind='value: phone, attr: {id : cssPhone}')
 						+if('errorPhone')
-							.form_error(data-bind='html: errorPhone')
+							.error__message
+								p(data-bind='html: errorPhone')
 						
 					.input-holder(style='padding-top: 13px;')
 						input#iagree.checkbox(name='iagree', type='checkbox', data-bind='checked: isChecked')
@@ -52,7 +55,8 @@ script#registrationSellerFromStep1Tmpl(type='text/html')
 							a(href=js0, target='_blank', data-bind='attr:{href: refund}') политики возврата платежей
 
 						+if('errorIsChecked')
-							.form_error(data-bind='text: errorIsChecked')
+							.error__message
+								p(data-bind='text: errorIsChecked')
 			.b-wizard__actions
 				a.b-wizard__action.btn-next-step(href=js0, data-bind='click: SubmitForm') Продолжить
 
@@ -95,7 +99,8 @@ script#registrationSellerFromStep2Tmpl(type='text/html')
 								.b-status.b-status--done E-mail подтверждён
 							
 							+if('errorEmailConfirm')
-								.form_error(data-bind='text: errorEmailConfirm')
+								.error__message
+									p(data-bind='text: errorEmailConfirm')
 
 					.input-holder(style='padding-top: 13px;')
 						input#skip-email.checkbox(name='skip-email', type='checkbox', checked='', data-bind='checked: mailConfirmLater')
@@ -114,7 +119,8 @@ script#registrationSellerFromStep2Tmpl(type='text/html')
 									.b-status.b-status--done Телефон подтверждён
 								
 								+if('errorPhoneConfirm')
-									.form_error(data-bind='text: errorPhoneConfirm')
+									.error__message
+										p(data-bind='text: errorPhoneConfirm')
 
 						.input-holder(style='padding-top: 13px;')
 							input#skip-phone.checkbox(name='skip-email', type='checkbox', checked='', data-bind='checked: phoneConfirmLater')
@@ -153,18 +159,21 @@ script#registrationSellerFromStep3Tmpl(type='text/html')
 						input#clienttype-corporate.inline(type='radio', name='clienttype', value='company', data-bind='checked: typeSeller')
 						label(for='clienttype-corporate') Компания
 						+if('errorTypeSeller')
-							.form_error(data-bind='text: errorTypeSeller')
+							.error__message
+								p(data-bind='text: errorTypeSeller')
 						
 					+ifnot('confirmLater')
 						.input-holder
 							input.block-input(type='text', name='family', value='', placeholder='Адрес сайта (если есть)', data-bind='value: site')
 							+if('errorSite')
-								.form_error(data-bind='text: errorSite')
+								.error__message
+									p(data-bind='text: errorSite')
 
 						.input-holder
 							input.block-input(type='text', name='code', value='', placeholder='Код приглашения', data-bind='value: invite')
 							+if('errorTypeSeller')
-								.form_error(data-bind='text: errorInvite')
+								.error__message
+									p(data-bind='text: errorInvite')
 
 					.input-holder(style='padding-top: 13px;')
 						input#skip_personal.checkbox(name='skip_personal', type='checkbox', data-bind='checked: confirmLater')

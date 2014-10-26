@@ -54,23 +54,27 @@ script#orderProfileFormStep1Tmpl(type="text/html")
                     .tooltip__trigger(rel="tooltip" title="Введите ваше имя на сайте") ?
                     input.block-input(type="text" name="sname" value="" placeholder="Фамилия" data-bind="value: lastName")
                     +if('errorLastName')
-                        .form_error(data-bind="text: errorLastName")
+                        .error__message
+                            p(data-bind="text: errorLastName")
                     
                 .input-holder
                     input.block-input(type="text" name="fname" value="" placeholder="Имя" data-bind="value: firstName")
                     +if('errorFirstName')
-                        .form_error(data-bind="text: errorFirstName")
+                        .error__message
+                            p(data-bind="text: errorFirstName")
 
                 .input-holder
                     input.block-input(type="text" name="mname" value="" placeholder="Отчество" data-bind="value: middleName")
                     +if('errorMiddleName')
-                        .form_error(data-bind="text: errorMiddleName")
+                        .error__message
+                            p(data-bind="text: errorMiddleName")
 
                 .input-holder
                     input.block-input(placeholder="Дата рождения" data-bind="value: birthDay, attr: {id: cssBirthDay}")
                     input(name="bdate" type="hidden" data-bind="value: birthDayHiddenField")
                     +if('errorBirthDay')
-                        .form_error(data-bind="text: errorBirthDay")
+                        .error__message
+                            p(data-bind="text: errorBirthDay")
                     
                 .input-holder
                     .floatlabel-wrapper(style="position:relative")
@@ -80,7 +84,8 @@ script#orderProfileFormStep1Tmpl(type="text/html")
                         input.radio(name="gender" type="radio" value="w" data-bind="checked: gender")
                         label.block-label.b-small-text(for="gender") Женщина
                         +if('errorGender')
-                            .form_error(data-bind="text: errorGender")
+                            .error__message
+                                p(data-bind="text: errorGender")
                         
                 .input-holder(style="padding-top:13px")
                     input#skip_personal.checkbox(name="skip_personal" type="checkbox" checked data-bind="click: SpecifyLater")
@@ -223,37 +228,44 @@ script#orderDeliveryFormStep2Tmpl(type="text/html")
                         option(data-bind="text: name, value: id")
                 
                 +if('errorCountry')
-                    .form_error(data-bind="text: errorCountry")
+                    .error__message
+                            p(data-bind="text: errorCountry")
 
             .input-holder
                 input.block-input(type="text" placeholder="Регион" data-bind="value: customRegion, attr: {id: cssRegionList}, enable: country")
                 +if('errorRegion')
-                    .form_error(data-bind="text: errorRegion")
+                    .error__message
+                            p(data-bind="text: errorRegion")
                 
             .input-holder
                 input.block-input(type="text" placeholder="Город" data-bind="value: customCity, attr: {id: cssCityList}, enable: customRegion")
                 +if('errorCity')
-                    .form_error(data-bind="text: errorCity")
+                    .error__message
+                            p(data-bind="text: errorCity")
                 
             .input-holder
                 input.block-input(type="text" placeholder="Улица, дом, квартира" data-bind="value: customAddress, attr: {id: cssAddress}, enable: customCity")
                 +if('errorAddress')
-                    .form_error(data-bind="text: errorAddress")
+                    .error__message
+                            p(data-bind="text: errorAddress")
                 
             .input-holder
                 input.block-input(type="text" placeholder="Почтовый индекс" data-bind="value: postCode, attr: {id: cssPostCode}")
                 +if('errorPostCode')
-                    .form_error(data-bind="text: errorPostCode")
+                    .error__message
+                            p(data-bind="text: errorPostCode")
                 
             .input-holder
                 input.block-input(type="text" placeholder="ФИО получателя" data-bind="value: addressee")
                 +if('errorAddressee')
-                    .form_error(data-bind="text: errorAddressee")
+                    .error__message
+                            p(data-bind="text: errorAddressee")
                 
             .input-holder
                 input.block-input.masked-phone(type="text" placeholder="Телефон покупателя" data-bind="value: contactPhone, attr:{id:cssContactPhone}")
                 +if('errorContactPhone')
-                    .form_error(data-bind="text: errorContactPhone")
+                    .error__message
+                            p(data-bind="text: errorContactPhone")
                 
             .input-holder(style="padding-top:13px")
                 input#set_main_address.checkbox(type="checkbox" checked="" data-bind="checked: isDefault")

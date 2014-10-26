@@ -9,10 +9,11 @@ script#authenticationFormTmpl(type="text/html")
                 span.close-popup.btn-circle.btn-circle--drop.btn-circle--white(data-bind="click: CloseForm")
 
             .content
-                .form_error(data-bind="text: error")
                 form(method="post" data-bind="submit: Login")
                     .input-holder
                         input.inline-input(name="username", type="text", placeholder="Логин", required="required", data-bind="value: username")
+                        .error__message
+                            p(data-bind="text: error")
 
                     .input-holder
                         input.inline-input(name="password", type="password", placeholder="Пароль", data-bind="value: password")
@@ -28,5 +29,5 @@ script#authenticationFormTmpl(type="text/html")
                     li
                         a(href='https://seller.pokupo.ru/resetting/request', target='_blank') Восстановление пароля
                     li
-                        a(href=js0 data-bind="click: ClickRegistration") Регистрация
+                        a(href="/#/registration_seller/" data-bind="click: ClickRegistration") Регистрация
 

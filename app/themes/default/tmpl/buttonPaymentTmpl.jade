@@ -63,7 +63,8 @@ script#paymentPageTmpl(type="text/html")
                                             // /ko 
                                         
                                         +if('error()')
-                                            .form_error(data-bind='text: error()')
+                                            .error__message
+                                                p(data-bind="text: error")
 
                 +if('urlInvoice()')
                     .b-invoice__block

@@ -46,7 +46,9 @@
               <!-- /ko --><!-- /ko --><!-- ko if: typeField() == "radio" -->
               <!-- ko template: { name: 'paymentRadioFieldTmpl' } -->
               <!-- /ko --><!-- /ko --><!-- ko if: error() -->
-              <div data-bind="text: error()" class="form_error"></div><!-- /ko -->
+              <div class="error__message">
+                <p data-bind="text: error"></p>
+              </div><!-- /ko -->
             </div><!-- /ko --><!-- /ko -->
           </from>
         </div><!-- /ko --><!-- ko if: urlInvoice() -->

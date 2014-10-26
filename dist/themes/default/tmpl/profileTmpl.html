@@ -45,18 +45,24 @@
           <div class="content">
             <div class="input-holder">
               <input id="fullname__surname" type="text" placeholder="Фамилия" name="sname" data-bind="value: lastNameField" class="suggestion-input block-input"/><!-- ko if: errorLastName -->
-              <div data-bind="text: errorLastName" class="form_error"></div><!-- /ko -->
+              <div class="error__message">
+                <p data-bind="text: errorLastName"></p>
+              </div><!-- /ko -->
             </div>
             <div class="input-holder">
               <input id="fullname__name" type="text" placeholder="Имя" name="fname" data-bind="value: firstNameField" class="suggestion-input block-input"/><!-- ko if: errorFirstName -->
-              <div data-bind="text: errorFirstName" class="form_error"></div><!-- /ko -->
+              <div class="error__message">
+                <p data-bind="text: errorFirstName"></p>
+              </div><!-- /ko -->
             </div><!-- ko ifnot: gender() -->
             <div id="fullname__gender" class="input-holder">
               <input id="fullname__gender-male" type="radio" name="gender" value="m" data-bind="checked: gender" class="inline"/>
               <label for="gender">Мужской</label>
               <input id="fullname__gender-female" type="radio" name="gender" value="w" data-bind="checked: gender" class="inline"/>
               <label for="gender">Женский</label><!-- ko if: errorGender -->
-              <div data-bind="text: errorGender" class="form_error"></div><!-- /ko -->
+              <div class="error__message">
+                <p data-bind="text: errorGender"></p>
+              </div><!-- /ko -->
             </div><!-- /ko -->
           </div>
         </div>
@@ -64,12 +70,16 @@
           <div class="content">
             <div class="input-holder">
               <input id="fullname__patronymic" type="text" placeholder="Отчество" name="mname" data-bind="value: middleNameField" class="suggestion-input block-input"/><!-- ko if: errorMiddleName -->
-              <div data-bind="text: errorMiddleName" class="form_error"></div><!-- /ko -->
+              <div class="error__message">
+                <p data-bind="text: errorMiddleName"></p>
+              </div><!-- /ko -->
             </div>
             <div class="input-holder">
               <input id="birthDay" type="text" placeholder="Дата рождения" data-bind="value: birthDayField, attr: {id: cssBirthDay}" class="suggestion-input block-input"/>
               <input name="bdate" type="hidden" data-bind="value: birthDayHiddenField"/><!-- ko if: errorBirthDay -->
-              <div data-bind="text: errorBirthDay" class="form_error"></div><!-- /ko -->
+              <div class="error__message">
+                <p data-bind="text: errorBirthDay"></p>
+              </div><!-- /ko -->
             </div><a data-bind="click: Submit" class="input-action pseudo-link">Сохранить</a>
           </div>
         </div>
@@ -93,16 +103,22 @@
                 <option value=""></option>
               </select><!-- ko foreach: countryList  -->
               <option data-bind="text: name, value: id"></option><!-- /ko -->
-              <div data-bind="text: errorCountry" class="form_error"></div>
+              <div class="error__message">
+                <p data-bind="text: errorCountry"></p>
+              </div>
             </div>
           </div>
           <div class="input-holder">
             <input id="address__region" type="text" placeholder="Регион" name="address__region" data-bind="value: customRegion, attr: {id: cssRegionList}, enable: country" class="suggestion-input block-input"/><!-- ko if: errorRegion -->
-            <div data-bind="text: errorRegion" class="form_error"></div><!-- /ko -->
+            <div class="error__message">
+              <p data-bind="text: errorRegion"></p>
+            </div><!-- /ko -->
           </div>
           <div class="input-holder">
             <input id="address__city" type="text" placeholder="Город" name="address__city" data-bind="value: customCity, attr: {id: cssCityList}, enable: customRegion" class="suggestion-input block-input"/><!-- ko if: errorCity -->
-            <div data-bind="text: errorCity" class="form_error"></div><!-- /ko -->
+            <div class="error__message">
+              <p data-bind="text: errorCity"></p>
+            </div><!-- /ko -->
           </div>
         </div>
       </div>
@@ -110,11 +126,15 @@
         <div class="content">
           <div class="input-holder">
             <input id="address__street" type="text" placeholder="Улица" name="address__street" data-bind="value: customAddress, enable: customCity" class="suggestion-input block-input"/><!-- ko if: errorAddress -->
-            <div data-bind="text: errorAddress" class="form_error"></div><!-- /ko -->
+            <div class="error__message">
+              <p data-bind="text: errorAddress"></p>
+            </div><!-- /ko -->
           </div>
           <div class="input-holder">
             <input id="address__postalcode" type="text" placeholder="Почтовый индекс" name="address__postalcode" data-bind="value: postIndex" class="suggestion-input block-input"/><!-- ko if: errorPostIndex -->
-            <div data-bind="text: errorPostIndex" class="form_error"></div><!-- /ko -->
+            <div class="error__message">
+              <p data-bind="text: errorPostIndex"></p>
+            </div><!-- /ko -->
           </div><a data-bind="click: Submit" class="input-action pseudo-link">Сохранить</a>
         </div>
       </div>
@@ -130,14 +150,18 @@
           <div class="input-holder"><!-- ko if: emailIsConfirm() -->
             <input id="account__email" type="email" placeholder="Электронная почта" data-bind="value: email" disabled="disabled" class="suggestion-input block-input"/><!-- /ko --><!-- ko ifnot: emailIsConfirm() -->
             <input id="account__email" type="email" placeholder="Электронная почта" data-bind="value: email" name="account__email" class="suggestion-input block-input"/><!-- /ko --><!-- ko if: errorEmail -->
-            <div data-bind="text: errorEmail" class="form_error"></div><!-- /ko -->
+            <div class="error__message">
+              <p data-bind="text: errorEmail"></p>
+            </div><!-- /ko -->
           </div>
           <div data-bind="visible: emailIsConfirm()" class="b-status b-status--done">E-mail подтверждён</div>
           <div data-bind="visible: !emailIsConfirm()">
             <div data-bind="visible: isExistEmail"><span data-bind="click: SendMailToken" class="pseudo-link input-action input-action--right">Выслать код подтверждения</span></div>
             <div data-bind="visible: sentEmailCode" class="input-holder">
               <input type="text" placeholder="Код из смс-сообщения" name="account__sms" data-bind="value:emailToken" class="block-input"/><!-- ko if: errorEmailToken -->
-              <div data-bind="text: errorEmailToken" class="form_error"></div><!-- /ko -->
+              <div class="error__message">
+                <p data-bind="text: errorEmailToken"></p>
+              </div><!-- /ko -->
             </div>
           </div><span data-bind="click: SubmitMailToken, visible: sentEmailCode" class="input-action pseudo-link">Подтвердить</span>
         </div>
@@ -147,14 +171,18 @@
           <div class="input-holder"><!-- ko if: phoneIsConfirm() -->
             <input id="account__phone" type="tel" placeholder="Телефон" name="account__phone" data-bind="value: phone" disabled="disabled" class="block-input"/><!-- /ko --><!-- ko ifnot: phoneIsConfirm()  -->
             <input id="account__phone" type="tel" placeholder="Телефон" name="account__phone" data-bind="value: phone, attr: {id : cssPhone}" class="masked-phone block-input"/><!-- /ko --><!-- ko if: errorPhone -->
-            <div data-bind="text: errorPhone" class="form_error"></div><!-- /ko -->
+            <div class="error__message">
+              <p data-bind="text: errorPhone"></p>
+            </div><!-- /ko -->
           </div>
           <div data-bind="visible: phoneIsConfirm()" class="b-status b-status--done">Телефон подтвержден</div>
           <div data-bind="visible: !phoneIsConfirm()">
             <div data-bind="visible: isExistPhone"><span data-bind="click: SendPhoneToken" class="pseudo-link input-action input-action--right">Выслать код подтверждения</span></div>
             <div data-bind="visible: sentCode" class="input-holder">
               <input type="text" placeholder="Код из смс-сообщения" name="account__sms" data-bind="value:phoneToken" class="block-input"/><!-- ko if: errorPhoneToken -->
-              <div data-bind="text: errorPhoneToken" class="form_error"></div><!-- /ko -->
+              <div class="error__message">
+                <p data-bind="text: errorPhoneToken"></p>
+              </div><!-- /ko -->
             </div>
           </div><span data-bind="click: SubmitPhoneToken, visible: sentCode" class="input-action pseudo-link">Подтвердить</span>
           <div data-bind="visible: !phoneIsConfirm() || !emailIsConfirm()"><span data-bind="click: SubmitForm" class="input-action pseudo-link">Сохранить</span></div>
@@ -245,20 +273,28 @@
                       <option value=""></option><!-- ko foreach: countryList  -->
                       <option data-bind="text: name, value: id"></option><!-- /ko -->
                     </select><!-- ko if: errorCountry -->
-                    <div data-bind="text: errorCountry" class="form_error"></div><!-- /ko -->
+                    <div class="error__message">
+                      <p data-bind="text: errorCountry"></p>
+                    </div><!-- /ko -->
                   </div>
                 </div>
                 <div class="input-holder">
                   <input id="address__region" type="text" placeholder="Регион" name="address__region" data-bind="value: customRegion, attr: {id: cssRegionList}, enable: country" class="suggestion-input block-input"/><!-- ko if: errorRegion -->
-                  <div data-bind="text: errorRegion" class="form_error"></div><!-- /ko -->
+                  <div class="error__message">
+                    <p data-bind="text: errorRegion"></p>
+                  </div><!-- /ko -->
                 </div>
                 <div class="input-holder">
                   <input id="address__city" type="text" placeholder="Город" name="address__city" data-bind="value: customCity, attr: {id: cssCityList}, enable: customRegion" class="suggestion-input block-input"/><!-- ko if: errorCity -->
-                  <div data-bind="text: errorCity" class="form_error"></div><!-- /ko -->
+                  <div class="error__message">
+                    <p data-bind="text: errorCity"></p>
+                  </div><!-- /ko -->
                 </div>
                 <div class="input-holder">
                   <input id="address__street" type="text" placeholder="Адрес" name="address__street" data-bind="value: customAddress, enable: customCity" class="suggestion-input block-input"/><!-- ko if: errorAddress -->
-                  <div data-bind="text: errorAddress" class="form_error"></div><!-- /ko -->
+                  <div class="error__message">
+                    <p data-bind="text: errorAddress"></p>
+                  </div><!-- /ko -->
                 </div>
               </div>
             </div>
@@ -266,15 +302,21 @@
               <div class="content">
                 <div class="input-holder">
                   <input id="address__postalcode" type="text" placeholder="Почтовый индекс" name="address__postalcode" data-bind="value: postIndex" class="suggestion-input block-input"/><!-- ko if: errorPostCode -->
-                  <div data-bind="text: errorPostCode" class="form_error"></div><!-- /ko -->
+                  <div class="error__message">
+                    <p data-bind="text: errorPostCode"></p>
+                  </div><!-- /ko -->
                 </div>
                 <div class="input-holder">
                   <input id="address__addressee" type="text" placeholder="Получатель" name="address__street" data-bind="value: addressee" class="suggestion-input block-input"/><!-- ko if: errorAddressee -->
-                  <div data-bind="text: errorAddressee" class="form_error"></div><!-- /ko -->
+                  <div class="error__message">
+                    <p data-bind="text: errorAddressee"></p>
+                  </div><!-- /ko -->
                 </div>
                 <div class="input-holder">
                   <input id="address__phone" type="text" placeholder="Контактный телефон" name="address__street" data-bind="value: contactPhone" class="masked-phone suggestion-input block-input"/><!-- ko if: errorContactPhone -->
-                  <div data-bind="text: errorContactPhone" class="form_error"></div><!-- /ko -->
+                  <div class="error__message">
+                    <p data-bind="text: errorContactPhone"></p>
+                  </div><!-- /ko -->
                 </div>
                 <div class="input-holder">
                   <input id="makeDefault" type="checkbox" name="makeDefault" data-bind="checked: isDefault"/>
@@ -300,15 +342,21 @@
         <form data-bind="attr: {id: cssSequrityForm}" method="POST" target="upload_target" enctype="multipart/form-data">
           <div class="input-holder">
             <input id="password" type="password" name="old_password" value="" placeholder="Текущий пароль" data-bind="value: oldPassword, attr : {id: cssOldPassword}" class="block-input"/><!-- ko if: errorOldPassword -->
-            <div data-bind="text: errorOldPassword" class="form_error"></div><!-- /ko -->
+            <div class="error__message">
+              <p data-bind="text: errorOldPassword"></p>
+            </div><!-- /ko -->
           </div>
           <div class="input-holder">
             <input id="newpassword" value="" placeholder="Новый пароль" name="new_password" type="password" data-bind="value: newPassword, attr : {id: cssNewPassword}" class="block-input"/><!-- ko if: errorNewPassword -->
-            <div data-bind="text: errorNewPassword" class="form_error"></div><!-- /ko -->
+            <div class="error__message">
+              <p data-bind="text: errorNewPassword"></p>
+            </div><!-- /ko -->
           </div>
           <div class="input-holder">
             <input id="newpassword" value="" placeholder="Повтор нового пароля" type="password" data-bind="value: newPassword, attr : {id: cssNewPassword}" class="block-input"/><!-- ko if: errorConfirmPassword -->
-            <div data-bind="text: errorConfirmPassword" class="form_error"></div><!-- /ko -->
+            <div class="error__message">
+              <p data-bind="text: errorConfirmPassword"></p>
+            </div><!-- /ko -->
           </div>
           <button type="submit" data-bind="click: Submit" class="btn btn-lg">Сохранить</button>
         </form>
