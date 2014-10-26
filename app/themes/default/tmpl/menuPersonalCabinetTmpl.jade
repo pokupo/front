@@ -29,7 +29,7 @@ script#menuPersonalCabinetTmpl(type="text/html")
 									sup.menu__item__num(data-bind='text: countNewMessage')
 
 		.container
-			+if: subMenu().length > 0 
+			+if('subMenu().length > 0')
 				dl.tabs.tabs--withline
 					+each('subMenu')
 						+if('isActive')

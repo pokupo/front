@@ -13,14 +13,12 @@
         </ul>
       </div>
     </div>
-    <div class="container"><!-- ko if:  -->
-      <subMenu class="length">> 0 
-        <dl class="tabs tabs--withline"><!-- ko foreach: subMenu --><!-- ko if: isActive -->
-          <dt class="tab__trigger selected"><span data-bind="css: activeSubMenu, click: ClickSubMenu, text: title"></span></dt>
-          <dd class="tab__content selected"></dd><!-- /ko --><!-- ko ifnot: isActive -->
-          <dt class="tab__trigger"><span data-bind="css: activeSubMenu, click: ClickSubMenu, text: title"></span></dt><!-- /ko --><!-- /ko -->
-        </dl>
-      </subMenu><!-- /ko -->
+    <div class="container"><!-- ko if: subMenu().length > 0 -->
+      <dl class="tabs tabs--withline"><!-- ko foreach: subMenu --><!-- ko if: isActive -->
+        <dt class="tab__trigger selected"><span data-bind="css: activeSubMenu, click: ClickSubMenu, text: title"></span></dt>
+        <dd class="tab__content selected"></dd><!-- /ko --><!-- ko ifnot: isActive -->
+        <dt class="tab__trigger"><span data-bind="css: activeSubMenu, click: ClickSubMenu, text: title"></span></dt><!-- /ko --><!-- /ko -->
+      </dl><!-- /ko -->
     </div>
   </div>
 </script>
