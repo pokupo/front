@@ -482,49 +482,6 @@ section.advanced-search label {
 section.advanced-search label.separator {
 	margin: 0 2px;
 }
-.b-advanced-search {
-	margin-top: 30px;
-}
-.b-advanced-search__submit {
-	margin-top: 14px;
-}
-.b-advanced-search .icon.icon-search {
-	margin-left: 6px;
-}
-.b-advanced-search .submenu__item a {
-	padding-left: 56px;
-}
-#js-multilocation {
-	margin-right: 8px;
-	margin-left: 8px;
-}
-#js-multilocation.checked {
-	position: relative;
-}
-#js-multilocation.checked:before {
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	margin: -14px 0 0 -6px;
-	display: block;
-	width: 23px;
-	height: 18px;
-	content: '';
-	background-color: none;
-	background-image: url('../themes/default/images/sprite.png');
-	background-position: -264px -136px;
-}
-#js-multilocation.part:before {
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	margin: -5px 0 0 -5px;
-	display: block;
-	width: 10px;
-	height: 10px;
-	content: '';
-	background: #02903d;
-}
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait), screen and (min-width: 641px) and (max-width: 800px) {
 	section.advanced-search .inline-input--small {
 		padding: 10px 0 10px 5px;
