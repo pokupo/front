@@ -25,69 +25,36 @@ script#registrationFromStep1Tmpl(type="text/html")
                 #step-1.content
                     h2.b-wizard__step-title Данные аккаунта
                     p Укажите свой уникальный псевдоним, почту и телефон
-                    .input-holder.tooltip
-                        .tooltip__trigger
-                            | ?
-                            .tooltip__content
-                                p Введите ваше имя на сайте.
-                                .tooltip__before
-                                .tooltip__after
-                        .floatlabel-wrapper(style='position: relative;')
-                            input#i-77.block-input(type='text', name='nickname', value='', placeholder='Псевдоним', data-bind='value: username')
-                            label.label-floatlabel(for='i-77', style='display: none;') Псевдоним
+                    .input-holder
+                        .tooltip__trigger(rel="tooltip" title="Введите ваше имя на сайте.") ?
+                        input.block-input(type="text" name="nickname" value="" placeholder="Псевдоним")
                         +if('errorUsername')
                             .error__message
                                 p(data-bind='text: errorUsername')
                         
-                    .input-holder.tooltip
-                        .tooltip__trigger
-                            | ?
-                            .tooltip__content
-                                p
-                                    | Введите ваш адрес электронной почты. Он будет логином для входа в личный кабинет.
-                                p На этот адрес будут приходить уведомления о статусе вашего заказа.
-                                .tooltip__before
-                                .tooltip__after
-                        .floatlabel-wrapper(style='position: relative;')
-                            input#i-93.block-input(type='email', name='email', value='', placeholder='Ваш e-mail', data-bind='value: email')
-                            label.label-floatlabel(for='93', style='display: none;') Ваш e-mail
+                    .input-holder
+                        .tooltip__trigger(rel="tooltip" title="На этот адрес будут приходить уведомления о статусе вашего заказа.") ?
+                        input.block-input(type='email', name='email', value='', placeholder='Ваш e-mail', data-bind='value: email')
                         +if('errorEmail')
                             .error__message
                                 p(data-bind='html: errorEmail')
                         
-                    .input-holder.tooltip
-                        .tooltip__trigger
-                            | ?
-                            .tooltip__content
-                                p Укажите номер вашего телефона.
-                                .tooltip__before
-                                .tooltip__after
-                        .floatlabel-wrapper(style='position: relative;')
-                            input#i-5.block-input(type='tel', name='phone', value='', placeholder='Номер телефона', data-bind='value: phone, attr: {id : cssPhone}')
-                            label.label-floatlabel(for='5', style='display: none;') Номер телефона
+                    .input-holder
+                        .tooltip__trigger(rel="tooltip" title="Укажите номер вашего телефона.") ?
+                        input.block-input(type='tel', name='phone', value='', placeholder='Номер телефона', data-bind='value: phone, attr: {id : cssPhone}')
                         +if('errorPhone')
                             .error__message
                                 p(data-bind='html: errorPhone')
                         
-                    .input-holder.tooltip
-                        .tooltip__trigger
-                            | ?
-                            .tooltip__content
-                                p
-                                    | Ваш пароль должен содержать минимум одну цифру, заглавную букву, спецсимвол, иероглиф, коловрат, число зверя и кровь девственницы.
-                                .tooltip__before
-                                .tooltip__after
-                        .floatlabel-wrapper(style='position: relative;')
-                            input#i-48.block-input(type='password', name='password', value='', placeholder='Пароль', data-bind='value: firstPassword, attr : {id: cssFirstPassword}')
-                            label.label-floatlabel(for='48', style='display: none;') Пароль
+                    .input-holder
+                        .tooltip__trigger(rel="tooltip" title="Ваш пароль должен содержать минимум одну цифру, заглавную букву, спецсимвол, иероглиф, коловрат, число зверя и кровь девственницы.") ?
+                        input.block-input(type='password', name='password', value='', placeholder='Пароль', data-bind='value: firstPassword, attr : {id: cssFirstPassword}')
                         +if('errorFirstPassword')
                             .error__message
                                 p(data-bind='text: errorFirstPassword')
                         
                     .input-holder
-                        .floatlabel-wrapper(style='position: relative;')
-                            input#i-73.block-input(type='password', name='password-double', value='', placeholder='Повторить пароль', data-bind='value: secondPassword, attr : {id: cssSecondPassword}')
-                            label.label-floatlabel(for='73', style='display: none;') Повторить пароль
+                        input.block-input(type='password', name='password-double', value='', placeholder='Повторить пароль', data-bind='value: secondPassword, attr : {id: cssSecondPassword}')
                         +if('errorSecondPassword')
                             .error__message
                                 p(data-bind='text: errorSecondPassword')
@@ -141,16 +108,9 @@ script#registrationFromStep2Tmpl(type="text/html")
                         .error_form(data-bind='text: errorConfirmLater')
                     
                     +ifnot('mailConfirmLater')
-                        .input-holder.tooltip
-                            .tooltip__trigger
-                                | ?
-                                .tooltip__content
-                                    p Код, высланный на почтовый адрес или телефон
-                                    .tooltip__before
-                                    .tooltip__after
-                            .floatlabel-wrapper(style='position: relative;')
-                                input#i-37.block-input(type='text', name='code', value='', placeholder='Ваш e-mail код', data-bind='value: mailToken')
-                                label.label-floatlabel(for='37', style='display: none;') Ваш e-mail код
+                        .input-holder
+                            .tooltip__trigger(rel="tooltip" title="Код, высланный на почтовый адрес или телефон") ?
+                            input.block-input(type='text', name='code', value='', placeholder='Ваш e-mail код', data-bind='value: mailToken')
                             +if('mailIsConfirm ')
                                 .b-status.b-status--done E-mail подтверждён
 
@@ -163,16 +123,9 @@ script#registrationFromStep2Tmpl(type="text/html")
                         label.block-label.b-small-text(for='skip-email') Подтвердить почтовый ящик позднее
                     +ifnot('isEmptyPhone ')
                         +ifnot('phoneConfirmLater')
-                            .input-holder.tooltip
-                                .tooltip__trigger
-                                    | ?
-                                    .tooltip__content
-                                        p Код, высланный в SMS
-                                        .tooltip__before
-                                        .tooltip__after
-                                .floatlabel-wrapper(style='position: relative;')
-                                    input#i-37.block-input(type='text', name='code', value='', placeholder='Ваш e-mail код', data-bind='value: phoneToken')
-                                    label.label-floatlabel(for='37', style='display: none;') Ваш SMS код
+                            .input-holder
+                                .tooltip__trigger(rel="tooltip" title="Код, высланный в SMS") ?
+                                input.block-input(type='text', name='code', value='', placeholder='Ваш e-mail код', data-bind='value: phoneToken')
                                 +if('phoneIsConfirm ')
                                     .b-status.b-status--done Телефон подтверждён
                                 +if('errorPhoneConfirm')
@@ -213,55 +166,41 @@ script#registrationFromStep3Tmpl(type="text/html")
                 #step-3.content
                     h2.b-wizard__step-title Персональные данные
                     p Укажите свои персональные данные
-                    .input-holder.tooltip
-                        .tooltip__trigger
-                            | ?
-                            .tooltip__content
-                                p Введите ваше имя на сайте.
-                                .tooltip__before
-                                .tooltip__after
-                        .floatlabel-wrapper(style='position: relative;')
-                            input#i-41.block-input(type='text', name='family', value='', placeholder='Фамилия', data-bind='value: lastName')
-                            label.label-floatlabel(for='41', style='display: none;') Фамилия
-                            +if('errorLastName')
-                                .error__message
-                                    p(data-bind='text: errorLastName')
+                    .input-holder
+                        .tooltip__trigger(rel="tooltip" title="Введите ваше имя на сайте.") ?
+                        input.block-input(type='text', name='family', value='', placeholder='Фамилия', data-bind='value: lastName')
+                        +if('errorLastName')
+                            .error__message
+                                p(data-bind='text: errorLastName')
 
                     .input-holder
-                        .floatlabel-wrapper(style='position: relative;')
-                            input#i-24.block-input(type='text', name='name', value='', placeholder='Имя', data-bind='value: firstName')
-                            label.label-floatlabel(for='24', style='display: none;') Имя
-                            +if('errorFirstName')
-                                .error__message
-                                    p(data-bind='text: errorFirstName')
+                        input.block-input(type='text', name='name', value='', placeholder='Имя', data-bind='value: firstName')
+                        +if('errorFirstName')
+                            .error__message
+                                p(data-bind='text: errorFirstName')
 
                     .input-holder
-                        .floatlabel-wrapper(style='position: relative;')
-                            input#i-85.block-input(type='text', name='patronymic', value='', placeholder='Отчество', data-bind='value: middleName')
-                            label.label-floatlabel(for='85', style='display: none;') Отчество
-                            +if('errorMiddleName')
-                                .error__message
-                                    p(data-bind='text: errorMiddleName')
+                        input.block-input(type='text', name='patronymic', value='', placeholder='Отчество', data-bind='value: middleName')
+                        +if('errorMiddleName')
+                            .error__message
+                                p(data-bind='text: errorMiddleName')
 
                     .input-holder
-                        .floatlabel-wrapper(style='position: relative;')
-                            input#i-38.block-input(type='text', name='date', value='', placeholder='Дата рождения', data-bind='value: birthDay, attr: {id: cssBirthDay}')
-                            input(name='bdate', type='hidden', data-bind='value: birthDayHiddenField')
-                            label.label-floatlabel(for='38', style='display: none;') Дата рождения
-                            +if('errorBirthDay')
-                                .error__message
-                                    p(data-bind='text: errorBirthDay')
+                        input.block-input(type='text', name='date', value='', placeholder='Дата рождения', data-bind='value: birthDay, attr: {id: cssBirthDay}')
+                        input(name='bdate', type='hidden', data-bind='value: birthDayHiddenField')
+                        +if('errorBirthDay')
+                            .error__message
+                                p(data-bind='text: errorBirthDay')
 
                     .input-holder
-                        .floatlabel-wrapper(style='position: relative;')
-                            label.block-label.b-small-text(for='85') Ваш пол
-                            input.radio(name='gender', type='radio', value='m', data-bind='checked: gender')
-                            label.block-label.b-small-text(for='gender') Мужчина
-                            input.radio(name='gender', type='radio', value='ц', data-bind='checked: gender')
-                            label.block-label.b-small-text(for='gender') Женщина
-                            +if('errorGender')
-                                .error__message
-                                    p(data-bind='text: errorGender')
+                        label.block-label.b-small-text(for='85') Ваш пол
+                        input.radio(name='gender', type='radio', value='m', data-bind='checked: gender')
+                        label.block-label.b-small-text(for='gender') Мужчина
+                        input.radio(name='gender', type='radio', value='ц', data-bind='checked: gender')
+                        label.block-label.b-small-text(for='gender') Женщина
+                        +if('errorGender')
+                            .error__message
+                                p(data-bind='text: errorGender')
 
                     .input-holder(style='padding-top: 13px;')
                         input#skip_personal.checkbox(name='skip_personal', type='checkbox', data-bind='click: SpecifyLater')
@@ -306,43 +245,30 @@ script#registrationFromStep4Tmpl(type="text/html")
                             .error__message
                                 p(data-bind='text: errorCountry')
 
-                    .input-holder.tooltip
-                        .tooltip__trigger
-                            | ?
-                            .tooltip__content
-                                p Введите ваш регион.
-                                .tooltip__before
-                                .tooltip__after
-                        .floatlabel-wrapper(style='position: relative;')
-                            input#i-27.block-input(type='text', name='family', value='', placeholder='Регион', data-bind='value: customRegion, attr: {id: cssRegionList}, enable: country')
-                            label.label-floatlabel(for='27', style='display: none;') Регион
-                            +if('errorRegion')
-                                .error__message
-                                    p(data-bind='text: errorRegion')
+                    .input-holder
+                        .tooltip__trigger(rel="tooltip" title="Введите ваш регион.") ?
+                        input.block-input(type='text', name='family', value='', placeholder='Регион', data-bind='value: customRegion, attr: {id: cssRegionList}, enable: country')
+                        +if('errorRegion')
+                            .error__message
+                                p(data-bind='text: errorRegion')
 
                     .input-holder
-                        .floatlabel-wrapper(style='position: relative;')
-                            input#i-4.block-input(type='text', name='name', value='', placeholder='Город', data-bind='value: customCity, attr: {id: cssCityList}, enable: customRegion')
-                            label.label-floatlabel(for='4', style='display: none;') Город
-                            +if('errorCity')
-                                .error__message
-                                    p(data-bind='text: errorCity')
+                        input.block-input(type='text', name='name', value='', placeholder='Город', data-bind='value: customCity, attr: {id: cssCityList}, enable: customRegion')
+                        +if('errorCity')
+                            .error__message
+                                p(data-bind='text: errorCity')
 
                     .input-holder
-                        .floatlabel-wrapper(style='position: relative;')
-                            input#i-40.block-input(type='text', name='patronymic', value='', placeholder='Улица, дом, квартира', data-bind='value: customAddress, attr: {id: cssAddress}, enable: customCity')
-                            label.label-floatlabel(for='40', style='display: none;') Улица, дом, квартира
-                            +if('errorAddress')
-                                .error__message
-                                    p(data-bind='text: errorAddress')
+                        input.block-input(type='text', name='patronymic', value='', placeholder='Улица, дом, квартира', data-bind='value: customAddress, attr: {id: cssAddress}, enable: customCity')
+                        +if('errorAddress')
+                            .error__message
+                                p(data-bind='text: errorAddress')
 
                     .input-holder
-                        .floatlabel-wrapper(style='position: relative;')
-                            input#i-3.block-input(type='text', name='date', value='', placeholder='Почтовый индекс', data-bind='value: postIndex, attr: {id: cssPostIndex}')
-                            label.label-floatlabel(for='3', style='display: none;') Почтовый индекс
-                            +if('errorPostIndex')
-                                .error__message
-                                    p(data-bind='text: errorPostIndex')
+                        input.block-input(type='text', name='date', value='', placeholder='Почтовый индекс', data-bind='value: postIndex, attr: {id: cssPostIndex}')
+                        +if('errorPostIndex')
+                            .error__message
+                                p(data-bind='text: errorPostIndex')
 
                     .input-holder(style='padding-top: 13px;')
                         input#skip_address.checkbox(name='skip_address', type='checkbox', data-bind='click: SpecifyLater')

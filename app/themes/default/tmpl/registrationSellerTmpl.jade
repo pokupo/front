@@ -89,12 +89,9 @@ script#registrationSellerFromStep2Tmpl(type='text/html')
 
 					+ifnot('mailConfirmLater')
 						.input-holder
-							.tooltip__trigger(rel="tooltip" title="Код, высланный на почтовый адрес или телефон") ?
-
-							.floatlabel-wrapper(style='position: relative;')
-								input#i-37.block-input(type='text', name='code', value='', placeholder='Ваш e-mail код', data-bind='value: mailToken')
-								label.label-floatlabel(for='37', style='display: none;') Ваш e-mail код
-
+							.tooltip__trigger(rel="tooltip", title="Код, высланный на почтовый адрес или телефон") ?
+							input.block-input(type='text', name='code', value='', placeholder='Ваш e-mail код', data-bind='value: mailToken')
+								
 							+if('mailIsConfirm')
 								.b-status.b-status--done E-mail подтверждён
 							
@@ -109,11 +106,8 @@ script#registrationSellerFromStep2Tmpl(type='text/html')
 					+ifnot('isEmptyPhone')
 						+ifnot('phoneConfirmLater')
 							.input-holder
-								.tooltip__trigger(rel="tooltip" title="Код, высланный в SMS") ?
-									
-								.floatlabel-wrapper(style='position: relative;')
-									input#i-37.block-input(type='text', name='code', value='', placeholder='Ваш SMS код', data-bind='value: phoneToken')
-									label.label-floatlabel(for='37', style='display: none;') Ваш SMS код
+								.tooltip__trigger(rel="tooltip", title="Код, высланный в SMS") ?
+								input.block-input(type='text', name='code', value='', placeholder='Ваш SMS код', data-bind='value: phoneToken')
 
 								+if('phoneIsConfirm')
 									.b-status.b-status--done Телефон подтверждён

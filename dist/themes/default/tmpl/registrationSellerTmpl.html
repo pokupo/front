@@ -79,10 +79,7 @@
           <div data-bind="text: errorConfirmLater" class="error_form"></div><!-- /ko --><!-- ko ifnot: mailConfirmLater -->
           <div class="input-holder">
             <div rel="tooltip" title="Код, высланный на почтовый адрес или телефон" class="tooltip__trigger">?</div>
-            <div style="position: relative;" class="floatlabel-wrapper">
-              <input id="i-37" type="text" name="code" value="" placeholder="Ваш e-mail код" data-bind="value: mailToken" class="block-input"/>
-              <label for="37" style="display: none;" class="label-floatlabel">Ваш e-mail код</label>
-            </div><!-- ko if: mailIsConfirm -->
+            <input type="text" name="code" value="" placeholder="Ваш e-mail код" data-bind="value: mailToken" class="block-input"/><!-- ko if: mailIsConfirm -->
             <div class="b-status b-status--done">E-mail подтверждён</div><!-- /ko --><!-- ko if: errorEmailConfirm -->
             <div class="error__message">
               <p data-bind="text: errorEmailConfirm"></p>
@@ -94,10 +91,7 @@
           </div><!-- ko ifnot: isEmptyPhone --><!-- ko ifnot: phoneConfirmLater -->
           <div class="input-holder">
             <div rel="tooltip" title="Код, высланный в SMS" class="tooltip__trigger">?</div>
-            <div style="position: relative;" class="floatlabel-wrapper">
-              <input id="i-37" type="text" name="code" value="" placeholder="Ваш SMS код" data-bind="value: phoneToken" class="block-input"/>
-              <label for="37" style="display: none;" class="label-floatlabel">Ваш SMS код</label>
-            </div><!-- ko if: phoneIsConfirm -->
+            <input type="text" name="code" value="" placeholder="Ваш SMS код" data-bind="value: phoneToken" class="block-input"/><!-- ko if: phoneIsConfirm -->
             <div class="b-status b-status--done">Телефон подтверждён</div><!-- /ko --><!-- ko if: errorPhoneConfirm -->
             <div class="error__message">
               <p data-bind="text: errorPhoneConfirm"></p>

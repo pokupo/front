@@ -314,12 +314,8 @@
           <tr data-bind="click: ClickItem, css: cssActive()" class="b-order-table__item">
             <td class="b-order-table__logo"><img src="javascript:void(0);" data-bind="attr: {src: logoPayment }"/></td>
             <td>
-              <div class="b-order-table__text tooltip">
-                <div class="tooltip__trigger">?
-                  <div class="tooltip__content">
-                    <p data-bind="text: instrPayment"></p>
-                  </div>
-                </div><b data-bind="text: namePayment"></b><br/>
+              <div class="b-order-table__text">
+                <div rel="tooltip" data-bind="attr:{title: instrPayment}" class="tooltip__trigger">?</div><b data-bind="text: namePayment"></b><br/>
                 <!-- ko text: descPayment-->
                 <!-- /ko-->
               </div>

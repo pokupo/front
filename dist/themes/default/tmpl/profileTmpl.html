@@ -97,16 +97,13 @@
       <div class="first double column">
         <div class="content">
           <div class="input-holder">
-            <div style="position: relative;" class="floatlabel-wrapper">
-              <label for="city_list" style="position: absolute; top: -20px; left: 20px; display: block; opacity: 1; font-size: 12px; font-weight: normal; color: rgb(153, 153, 153); transition: all 0.1s ease-in-out 0s;" class="label-floatlabel">Страна</label>
-              <select id="country_list_profile" name="address__country" data-bind="value: idCountry, attr: {id: cssCountryList}" class="suggestion-input block-input">
-                <option value=""></option>
-              </select><!-- ko foreach: countryList  -->
-              <option data-bind="text: name, value: id"></option><!-- /ko -->
-              <div class="error__message">
-                <p data-bind="text: errorCountry"></p>
-              </div>
-            </div>
+            <select id="country_list_profile" name="address__country" data-bind="value: idCountry, attr: {id: cssCountryList}" placeholder="Страна" class="suggestion-input block-input">
+              <option value=""></option>
+            </select><!-- ko foreach: countryList  -->
+            <option data-bind="text: name, value: id"></option><!-- /ko --><!-- ko if: errorCountry -->
+            <div class="error__message">
+              <p data-bind="text: errorCountry"></p>
+            </div><!-- /ko -->
           </div>
           <div class="input-holder">
             <input id="address__region" type="text" placeholder="Регион" name="address__region" data-bind="value: customRegion, attr: {id: cssRegionList}, enable: country" class="suggestion-input block-input"/><!-- ko if: errorRegion -->
@@ -268,7 +265,7 @@
               <div class="content">
                 <div class="input-holder">
                   <div style="position: relative;" class="floatlabel-wrapper">
-                    <label for="city_list" style="position: absolute; top: -20px; left: 20px; display: block; opacity: 1; font-size: 12px; font-weight: normal; color: rgb(153, 153, 153); transition: all 0.1s ease-in-out 0s;" class="label-floatlabel">Страна</label>
+                    <label for="country_list_profile" style="position: absolute; top: -20px; left: 20px; display: block; opacity: 1; font-size: 12px; font-weight: normal; color: rgb(153, 153, 153); transition: all 0.1s ease-in-out 0s;" class="label-floatlabel">Страна</label>
                     <select id="country_list_profile" name="address__country" data-bind="value: idCountry, attr: {id: cssCountryList}" class="suggestion-input block-input">
                       <option value=""></option><!-- ko foreach: countryList  -->
                       <option data-bind="text: name, value: id"></option><!-- /ko -->

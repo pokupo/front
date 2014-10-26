@@ -234,23 +234,22 @@ script#messageModalFormTmpl(type="text/html")
                 .modal-body
                     form
                         .input-holder
-                            .floatlabel-wrapper
-                                input#topic_user.block-input.active-floatlabel(type="text" placeholder="Адресат" data-bind="value: dstUser, event: { blur: OnBlurEvent }")
-                                label.label-floatlabel(for="topic_user") Адресат
-                                +if('dstUserError')
-                                    .error(data-bind="text:dstUserError")
+                            input#topic_user.block-input.active-floatlabel(type="text" placeholder="Адресат" data-bind="value: dstUser, event: { blur: OnBlurEvent }")
+                            +if('dstUserError')
+                                .error__message
+                                    p(data-bind="text:dstUserError")
 
                         .input-holder
-                            .floatlabel-wrapper
-                                input#topic_name.block-input(type="text" placeholder="Тема беседы" value="" data-bind="value: topicName")
-                                label.label-floatlabel(for="") Тема беседы
-                                +if('topicNameError')
-                                    .error(data-bind="text: topicNameError")
+                            input#topic_name.block-input(type="text" placeholder="Тема беседы" value="" data-bind="value: topicName")
+                            +if('topicNameError')
+                                .error__message
+                                    p(data-bind="text: topicNameError")
                                 
                         .input-holder(style="padding:0")
                             textarea#topic_text(name="msg_text" rows="5" data-bind="value: text")
                             +if('textError')
-                                .error(data-bind="text: textError")
+                                .error__message
+                                    p(data-bind="text: textError")
 
                         .input-holder
                             input#carboncopy(type="checkbox" name="carboncopy" checked="checked" data-bind="value: copyMail")

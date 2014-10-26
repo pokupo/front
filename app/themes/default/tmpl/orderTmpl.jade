@@ -389,10 +389,8 @@ script#orderFormStep4Tmpl(type="text/html")
                                 img(src=js0 data-bind="attr: {src: logoPayment }")
                             
                             td
-                                .b-order-table__text.tooltip
-                                    .tooltip__trigger ?
-                                        .tooltip__content
-                                            p(data-bind="text: instrPayment")
+                                .b-order-table__text
+                                    .tooltip__trigger(rel="tooltip" data-bind='attr:{title: instrPayment}') ?
                                     b(data-bind="text: namePayment")
                                     br
                                     // ko text: descPayment

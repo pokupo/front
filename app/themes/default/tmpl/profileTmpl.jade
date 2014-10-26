@@ -117,16 +117,13 @@ script#postDataTmpl(type="text/html")
             .first.double.column
                 .content
                     .input-holder
-                        .floatlabel-wrapper(style='position: relative;')
-                            label.label-floatlabel(for='city_list', style='position: absolute; top: -20px; left: 20px; display: block; opacity: 1; font-size: 12px; font-weight: normal; color: rgb(153, 153, 153); transition: all 0.1s ease-in-out 0s;') Страна
-                            select#country_list_profile.suggestion-input.block-input(name='address__country', data-bind='value: idCountry, attr: {id: cssCountryList}')
-                                option(value='')
-                               +each('countryList ')
-                                    option(data-bind='text: name, value: id')
-                                
-                            if('errorCountry')
-                                .error__message
-                                    p(data-bind="text: errorCountry")
+                        select#country_list_profile.suggestion-input.block-input(name='address__country', data-bind='value: idCountry, attr: {id: cssCountryList}' placeholder="Страна")
+                            option(value='')
+                           +each('countryList ')
+                                option(data-bind='text: name, value: id')
+                        +if('errorCountry')
+                            .error__message
+                                p(data-bind="text: errorCountry")
                             
                     .input-holder
                         input#address__region.suggestion-input.block-input(type='text', placeholder='Регион', name='address__region', data-bind='value: customRegion, attr: {id: cssRegionList}, enable: country')
@@ -185,6 +182,7 @@ script#contactsDataFormTmpl(type="text/html")
                                     p(data-bind="text: errorEmailToken")
                                 
                     span.input-action.pseudo-link(data-bind='click: SubmitMailToken, visible: sentEmailCode') Подтвердить
+
             .third.double.column
                 .content
                     .input-holder
@@ -288,7 +286,7 @@ script#deliveryAddressFormTmpl(type="text/html")
                             .content
                                 .input-holder
                                     .floatlabel-wrapper(style='position: relative;')
-                                        label.label-floatlabel(for='city_list', style='position: absolute; top: -20px; left: 20px; display: block; opacity: 1; font-size: 12px; font-weight: normal; color: rgb(153, 153, 153); transition: all 0.1s ease-in-out 0s;') Страна
+                                        label.label-floatlabel(for='country_list_profile', style='position: absolute; top: -20px; left: 20px; display: block; opacity: 1; font-size: 12px; font-weight: normal; color: rgb(153, 153, 153); transition: all 0.1s ease-in-out 0s;') Страна
                                         select#country_list_profile.suggestion-input.block-input(name='address__country', data-bind='value: idCountry, attr: {id: cssCountryList}')
                                             option(value='')
                                             +each('countryList ')
@@ -314,7 +312,7 @@ script#deliveryAddressFormTmpl(type="text/html")
                                     input#address__street.suggestion-input.block-input(type='text', placeholder='Адрес', name='address__street', data-bind='value: customAddress, enable: customCity')
                                     +if('errorAddress')
                                         .error__message
-                                                p(data-bind="text: errorAddress")
+                                            p(data-bind="text: errorAddress")
 
                         .third.double.column
                             .content
