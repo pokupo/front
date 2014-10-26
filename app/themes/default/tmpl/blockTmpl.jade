@@ -14,7 +14,7 @@ script#blockSliderTmpl(type="text/html")
 
 script#blockCaruselTmpl(type="text/html")
     // version 1.0
-    .promoBlocks.carouselBlock
+    .promoBlocks.carouselBlock.b-catalog
         h1.b-catalog__title(data-bind="text: titleBlock")
         .b-catalog__items.cards.chain-slider.owl-carousel(data-bind="css: cssBlockContainer")
             +each('contentBlock')
@@ -56,7 +56,7 @@ script#blockCaruselTmpl(type="text/html")
 
 script#blockTileTmpl(type="text/html")
     // version 1.0
-    .promoBlocks
+    .promoBlocks.b-catalog
         h1.b-catalog__title(data-bind="text: titleBlock", style="text-align: left;")
         .b-catalog__controls.b-catalog__controls--pushedright
             .b-catalog__controls-item
@@ -81,7 +81,7 @@ script#blockTileTmpl(type="text/html")
                                         +if('discount() > 0')
                                             .b-price.b-item__price--old
                                                 span.b-price__number(data-bind="text: sellGoods")
-                                                pan.b-price__thinsp
+                                                span.b-price__thinsp &nbsp;
                                                 span.b-price__rubl Р
                                             .b-price
                                                 span.b-price__number(data-bind="text: sellCost")
