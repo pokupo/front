@@ -10,23 +10,23 @@ script#menuPersonalCabinetTmpl(type="text/html")
 					| Стать продавцом
 				ul.menu.b-profile-nav
 					li(data-bind="attr: {class: 'menu__item ' + activeProfile()}")
-						a.icon__profile(href="/shop#/profile/")
+						a.icon__profile(href=js0, data-bind='click: ClickProfile')
 							span Профиль
 
 					li.menu__item(data-bind="attr: {class: 'menu__item ' + activeFavorites()}")
-						a.icon__favorites(href="/shop#/favorites/")
+						a.icon__favorites(href=js0, data-bind='click: ClickFavorites')
 							span Избранное
 
 					li.menu__item(data-bind="attr: {class: 'menu__item ' + activeCart()}")
-						a.icon__cart(href="/shop#/cabinet_cart/")
+						a.icon__cart(href=js0, data-bind='click: ClickCart')
 							span Корзина
 
 					li.menu__item(data-bind="attr: {class: 'menu__item ' + activePurchases()}")
-						a.icon__order(href="/shop#/purchases/block=list")
+						a.icon__order(href=js0, data-bind='click: ClickPurchases')
 							span Заказы
 							
 					li.menu__item(data-bind="attr: {class: 'menu__item ' + activeMessages()}")
-						a.icon__mail(href="/shop#/messages/")
+						a.icon__mail(href=js0, data-bind='click: ClickMessages')
 							span
 								| Сообщения
 								+if('countNewMessage() > 0')
@@ -45,4 +45,3 @@ script#menuPersonalCabinetTmpl(type="text/html")
 							dt.tab__trigger
 								span(data-bind='css: activeSubMenu, click: ClickSubMenu, text: title')
 						
-
