@@ -102,10 +102,11 @@ script#FooterBlockTmpl(type="text/html")
                 span.b-price__rubl Р
 
         p.b-order-list__tobepaid
-            | К оплате:span.b-price
-            span.b-price__number(data-bind="text: tatalForPayment")
-            span.b-price__thinsp &nbsp;
-            span.b-price__rubl Р
+            | К оплате:
+            span.b-price
+                span.b-price__number(data-bind="text: tatalForPayment")
+                span.b-price__thinsp &nbsp;
+                span.b-price__rubl Р
 
     .b-order-list__buttons
         a.btn.btn-grey.btn-lg.btn-inline(href=js0 data-bind="click: ClickProceed") Продолжить покупки

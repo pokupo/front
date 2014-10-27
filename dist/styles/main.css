@@ -9791,6 +9791,7 @@ section.profile .b-order-list__tobepaid .b-order-item__discount {
 }
 
 .b-order-item__price {
+	min-width: 80px;
 	color: #999;
 	line-height: 25px !important;
 }
