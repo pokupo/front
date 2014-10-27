@@ -13,6 +13,11 @@
 .b-advanced-search .submenu__item a {
   padding-left: 56px;
 }
+.b-advanced-search .chosen-container-single .chosen-single {
+  height: 52px;
+  border: none;
+  background: #fff;
+}
 /* ---------------------------------------- *
  * Стили для выпадающего дерева             *
  * ======================================== */
