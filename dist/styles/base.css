@@ -637,6 +637,8 @@ hgroup+h3 {
 	background-position: -216px -184px;
 	width: 25px;
 	height: 24px;
+	border-bottom: none;
+	text-decoration: none;
 }
 
 .document {

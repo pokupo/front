@@ -98,72 +98,72 @@ script#contentTableTmpl(type='text/html')
 				+each('content')
 					.b-catalog__item
 						.b-item.with_popover
-						.b-item__picture
-							a(href=js0, data-bind='click: ClickGoods')
-								img(src='', data-bind='attr: {src: routeImage, title: chortName, id : cssToCart}')
-						.responsive-holder
-							.b-item__description
-								h4.b-item__title
-									a(href=js0, data-bind='text:chortName, click: ClickGoods, attr: {id : cssTitleToCart}')
-								.b-item__info
-									p(data-bind='html: description')
-							.b-item__price
-								+if('discount() > 0')
-									.b-price.b-item__price--old
-										span.b-price__number(data-bind='text: sellGoods')
-										span.b-price__thinsp &nbsp;
-										span.b-price__rubl Р
-									.b-price
-										span.b-price__number(data-bind='text: sellCost')
-										span.b-price__thinsp &nbsp;
-										span.b-price__rubl Р
-								
-								+if('discount() == 0')
-									.b-price
-										span.b-price__number(data-bind='text: sellCost')
-										span.b-price__thinsp &nbsp;
-										span.b-price__rubl Р
-								
-						.b-item__order-button
-							button.btn(type='button', data-bind='click: ClickBuy')
-								i.icon.icon-cart
-								| В корзину
-						.b-item__badges
-							span.bestseller Хит!
-						.b-item__popover
-							.b-item--dublicate
-								.b-item__picture
-									a(href=js0, data-bind='click: ClickGoods')
-										img(src='', data-bind='attr: {src: routeImage, title: chortName, id : cssToCart}')
-								.responsive-holder
-									.b-item__description
-										h4.b-item__title
-											a(href=js0, data-bind='text:chortName, click: ClickGoods, attr: {id : cssTitleToCart}')
-										.b-item__info
-											p(data-bind='html: description')
-									.b-item__price
-										+if('discount() > 0')
-											.b-price.b-item__price--old
-												span.b-price__number(data-bind='text: sellGoods')
-												span.b-price__thinsp &nbsp;
-												span.b-price__rubl Р
-											.b-price
-												span.b-price__number(data-bind='text: sellCost')
-												span.b-price__thinsp &nbsp;
-												span.b-price__rubl Р
-										
-										+if('discount() == 0')
-											.b-price
-												span.b-price__number(data-bind='text: sellCost')
-												span.b-price__thinsp &nbsp;
-												span.b-price__rubl Р
-											
-								.b-item__order-button
-									button.btn(type='button', data-bind='click: ClickBuy')
-										i.icon.icon-cart
-										| В корзину
+							.b-item__picture
+								a(href=js0, data-bind='click: ClickGoods')
+									img(src='', data-bind='attr: {src: routeImage, title: chortName, id : cssToCart}')
+							.responsive-holder
+								.b-item__description
+									h4.b-item__title
+										a(href=js0, data-bind='text:chortName, click: ClickGoods, attr: {id : cssTitleToCart}')
+									.b-item__info
+										p(data-bind='html: description')
+								.b-item__price
+									+if('discount() > 0')
+										.b-price.b-item__price--old
+											span.b-price__number(data-bind='text: sellGoods')
+											span.b-price__thinsp &nbsp;
+											span.b-price__rubl Р
+										.b-price
+											span.b-price__number(data-bind='text: sellCost')
+											span.b-price__thinsp &nbsp;
+											span.b-price__rubl Р
+									
+									+if('discount() == 0')
+										.b-price
+											span.b-price__number(data-bind='text: sellCost')
+											span.b-price__thinsp &nbsp;
+											span.b-price__rubl Р
+									
+							.b-item__order-button
+								button.btn(type='button', data-bind='click: ClickBuy')
+									i.icon.icon-cart
+									| В корзину
 							.b-item__badges
 								span.bestseller Хит!
+							.b-item__popover
+								.b-item--dublicate
+									.b-item__picture
+										a(href=js0, data-bind='click: ClickGoods')
+											img(src='', data-bind='attr: {src: routeImage, title: chortName, id : cssToCart}')
+									.responsive-holder
+										.b-item__description
+											h4.b-item__title
+												a(href=js0, data-bind='text:chortName, click: ClickGoods, attr: {id : cssTitleToCart}')
+											.b-item__info
+												p(data-bind='html: description')
+										.b-item__price
+											+if('discount() > 0')
+												.b-price.b-item__price--old
+													span.b-price__number(data-bind='text: sellGoods')
+													span.b-price__thinsp &nbsp;
+													span.b-price__rubl Р
+												.b-price
+													span.b-price__number(data-bind='text: sellCost')
+													span.b-price__thinsp &nbsp;
+													span.b-price__rubl Р
+											
+											+if('discount() == 0')
+												.b-price
+													span.b-price__number(data-bind='text: sellCost')
+													span.b-price__thinsp &nbsp;
+													span.b-price__rubl Р
+												
+									.b-item__order-button
+										button.btn(type='button', data-bind='click: ClickBuy')
+											i.icon.icon-cart
+											| В корзину
+								.b-item__badges
+									span.bestseller Хит!
 			
 			+if('paging().length > 1')
 				// ko template: {name: "contentPaginatetionTmpl"} 
@@ -183,72 +183,72 @@ script#contentListTmpl(type='text/html')
 				+each('content')
 					.b-catalog__item
 						.b-item.with_popover
-						.b-item__picture
-							a(href=js0, data-bind='click: ClickGoods')
-								img(src='', data-bind='attr: {src: routeImage, title: chortName, id : cssToCart}')
-						.responsive-holder
-							.b-item__description
-								h4.b-item__title
-									a(href=js0, data-bind='text:chortName, click: ClickGoods, attr: {id : cssTitleToCart}')
-								.b-item__info
-									p(data-bind='html: description')
-							.b-item__price
-								+if('discount() > 0')
-									.b-price.b-item__price--old
-										span.b-price__number(data-bind='text: sellGoods')
-										span.b-price__thinsp &nbsp;
-										span.b-price__rubl Р
-									.b-price
-										span.b-price__number(data-bind='text: sellCost')
-										span.b-price__thinsp &nbsp;
-										span.b-price__rubl Р
-									
-								+if('discount() == 0')
-									.b-price
-										span.b-price__number(data-bind='text: sellCost')
-										span.b-price__thinsp &nbsp;
-										span.b-price__rubl Р
-									
-						.b-item__order-button
-							button.btn(type='button', data-bind='click: ClickBuy')
-								i.icon.icon-cart
-								| В корзину
-						.b-item__badges
-							span.bestseller Хит!
-						.b-item__popover
-							.b-item--dublicate
-								.b-item__picture
-									a(href=js0, data-bind='click: ClickGoods')
-										img(src='', data-bind='attr: {src: routeImage, title: chortName, id : cssToCart}')
-								.responsive-holder
-									.b-item__description
-										h4.b-item__title
-											a(href=js0, data-bind='text:chortName, click: ClickGoods, attr: {id : cssTitleToCart}')
-										.b-item__info
-											p(data-bind='html: description')
-									.b-item__price
-										+if('discount() > 0')
-											.b-price.b-item__price--old
-												span.b-price__number(data-bind='text: sellGoods')
-												span.b-price__thinsp &nbsp;
-												span.b-price__rubl Р
-											.b-price
-												span.b-price__number(data-bind='text: sellCost')
-												span.b-price__thinsp &nbsp;
-												span.b-price__rubl Р
+							.b-item__picture
+								a(href=js0, data-bind='click: ClickGoods')
+									img(src='', data-bind='attr: {src: routeImage, title: chortName, id : cssToCart}')
+							.responsive-holder
+								.b-item__description
+									h4.b-item__title
+										a(href=js0, data-bind='text:chortName, click: ClickGoods, attr: {id : cssTitleToCart}')
+									.b-item__info
+										p(data-bind='html: description')
+								.b-item__price
+									+if('discount() > 0')
+										.b-price.b-item__price--old
+											span.b-price__number(data-bind='text: sellGoods')
+											span.b-price__thinsp &nbsp;
+											span.b-price__rubl Р
+										.b-price
+											span.b-price__number(data-bind='text: sellCost')
+											span.b-price__thinsp &nbsp;
+											span.b-price__rubl Р
 										
-										+if('discount() == 0')
-											.b-price
-												span.b-price__number(data-bind='text: sellCost')
-												span.b-price__thinsp &nbsp;
-												span.b-price__rubl Р
-											
-								.b-item__order-button
-									button.btn(type='button', data-bind='click: ClickBuy')
-										i.icon.icon-cart
-										| В корзину
+									+if('discount() == 0')
+										.b-price
+											span.b-price__number(data-bind='text: sellCost')
+											span.b-price__thinsp &nbsp;
+											span.b-price__rubl Р
+										
+							.b-item__order-button
+								button.btn(type='button', data-bind='click: ClickBuy')
+									i.icon.icon-cart
+									| В корзину
 							.b-item__badges
 								span.bestseller Хит!
+							.b-item__popover
+								.b-item--dublicate
+									.b-item__picture
+										a(href=js0, data-bind='click: ClickGoods')
+											img(src='', data-bind='attr: {src: routeImage, title: chortName, id : cssToCart}')
+									.responsive-holder
+										.b-item__description
+											h4.b-item__title
+												a(href=js0, data-bind='text:chortName, click: ClickGoods, attr: {id : cssTitleToCart}')
+											.b-item__info
+												p(data-bind='html: description')
+										.b-item__price
+											+if('discount() > 0')
+												.b-price.b-item__price--old
+													span.b-price__number(data-bind='text: sellGoods')
+													span.b-price__thinsp &nbsp;
+													span.b-price__rubl Р
+												.b-price
+													span.b-price__number(data-bind='text: sellCost')
+													span.b-price__thinsp &nbsp;
+													span.b-price__rubl Р
+											
+											+if('discount() == 0')
+												.b-price
+													span.b-price__number(data-bind='text: sellCost')
+													span.b-price__thinsp &nbsp;
+													span.b-price__rubl Р
+												
+									.b-item__order-button
+										button.btn(type='button', data-bind='click: ClickBuy')
+											i.icon.icon-cart
+											| В корзину
+								.b-item__badges
+									span.bestseller Хит!
 
 			+if('paging().length > 1')
 				// ko template: {name: "contentPaginatetionTmpl"} 

@@ -24,6 +24,28 @@
   overflow: hidden;
   margin: 10px;
 }
+.b-profile-info__actions {
+  width: 192px;
+  float: right;
+  text-align: center;
+}
+.b-profile-info__actions span.label,
+.b-profile-info__actions .action {
+  display: block;
+  font-size: 13px;
+  line-height: 20px;
+}
+.b-profile-info__actions span.label {
+  margin-top: 1em;
+}
+.b-profile-info__actions .btn.ask-question {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  margin: 40px -28px 0 0;
+}
+.b-profile-info__actions .dropdown__content {
+  text-align: left;
+}
 /* Блок с информацией в ЛК */
 .b-profile-info--personal {
   padding: 0;

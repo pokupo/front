@@ -635,6 +635,8 @@ hgroup+h3 {
 	background-position: -216px -184px;
 	width: 25px;
 	height: 24px;
+	border-bottom: none;
+	text-decoration: none;
 }
 
 .document {
@@ -8084,6 +8086,83 @@ section.profile-nav {
 	margin-top: -75px;
 }
 
+.b-profile-info {
+	background: #efece7;
+	padding: 20px;
+	margin-top: 12px;
+}
+
+.b-profile-info__summary {
+	margin-right: 200px;
+}
+
+.b-profile-info__summary:before,
+.b-profile-info__summary:after {
+	content: '';
+	display: table;
+}
+
+.b-profile-info__summary:after {
+	clear: both;
+}
+
+.b-profile-info__photo {
+	width: 120px;
+	height: 120px;
+	border-radius: 120px;
+	overflow: hidden;
+	margin-right: 25px;
+	margin-bottom: 25px;
+	float: left;
+}
+
+.b-profile-info__photo img {
+	display: block;
+	margin: 0 auto;
+	width: 100%;
+	height: auto;
+}
+
+.b-profile-info__title {
+	font-size: 18px;
+	line-height: 20px;
+	margin-top: -2px;
+	font-weight: normal;
+}
+
+.b-profile-info__subtitle {
+	margin-top: 5px;
+	font-size: 13px;
+	color: #666;
+}
+
+.b-profile-info__characters-list {
+	margin-top: 22px;
+	font-size: 13px;
+	line-height: 20px;
+}
+
+.b-profile-info__characters-list span {
+	font-size: 12px;
+}
+
+.b-profile-info__characters-list .value {
+	font-weight: bold;
+	font-size: 14px;
+}
+
+.b-profile-info__characters-list .value--orange {
+	color: #7caa1f;
+}
+
+.b-profile-info__characters-list .value--green {
+	color: #02903d;
+}
+
+.b-profile-info__characters-list .value--red {
+	color: #c64c1b;
+}
+
 .b-profile-info--fullwidth .b-profile-info__summary {
 	margin-right: 170px;
 }
@@ -10875,6 +10954,33 @@ body .b-share-popup__header_first {
 	position: relative;
 	overflow: hidden;
 	margin: 10px;
+}
+
+.b-profile-info__actions {
+	width: 192px;
+	float: right;
+	text-align: center;
+}
+
+.b-profile-info__actions span.label,
+.b-profile-info__actions .action {
+	display: block;
+	font-size: 13px;
+	line-height: 20px;
+}
+
+.b-profile-info__actions span.label {
+	margin-top: 1em;
+}
+
+.b-profile-info__actions .btn.ask-question {
+	padding-top: 5px;
+	padding-bottom: 5px;
+	margin: 40px -28px 0 0;
+}
+
+.b-profile-info__actions .dropdown__content {
+	text-align: left;
 }
 
 .b-profile-info--personal {
