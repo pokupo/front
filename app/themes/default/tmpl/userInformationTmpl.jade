@@ -8,8 +8,7 @@ script#userInformationTmpl(type="text/html")
                 a.with-icon.icon__profile.dropdown__trigger.user_information_dropdown__trigger(href=js0, data-target='profile', data-bind='attr: {style: background}')
                     +if('countNewMessage() > 0')
                         sup.circles-menu__num(data-bind='text: countNewMessage')
-                    
-                | click:
+
                 .b-profile-menu.dropdown__content.hidden.user_information_dropdown__content(data-target='profile')
                     p.b-profile-menu__name(data-bind='text: login')
                     ul.menu
