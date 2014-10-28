@@ -2581,6 +2581,7 @@ section.header {
 }
 
 #search_block {
+	position: relative;
 	z-index: 1;
 }
 
