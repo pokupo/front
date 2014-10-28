@@ -323,7 +323,7 @@ script#orderDetailTmpl(type="text/html")
                
                 +if('statusOrder() == "new"')
                     +ifnot('statusPay() == "paid"')
-                        div(style='display: inline;', data-bind="embedWidget :{ widget : 'ButtonPaymentWidget-1.1', params : { title: 'Оплатить заказ', orderId: id(),tmpl : {path: 'buttonPayment/buttonPaymentTmpl_promo.html'}}}")
+                        div(style='display: inline;', data-bind="embedWidget :{ widget : 'ButtonPaymentWidget-1.1', params : { title: 'Оплатить заказ', orderId: id(),tmpl : {path: 'http://promodev.pokupo.ru/themes/default/tmpl/buttonPaymentTmpl.html'}}}")
                         .b-order-item__edit.btn-circle.btn-circle--cancel(rel='tooltip', title='Отменить', data-bind='click: ClickCancel')
                         .b-order-item__edit.btn-circle(style='padding: 9px 0 0 13px; top: -10px;', rel='tooltip', title='Обновить', data-bind='click: ClickRefresh')
                             i.icon.icon-reload

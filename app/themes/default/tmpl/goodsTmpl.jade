@@ -19,7 +19,7 @@ script#goodsTmpl(type="text/html")
                     .b-catalog-item__seller-info.slidedown
                         span.slidedown__trigger#user_information_slidedown(data-target="info") Информация о продавце
                         .slidedown__content.hidden(data-target="info")
-                            .b-profile-info(data-bind="embedWidget :{ widget : 'InfoSellerWidget-1.0', params : {data : sellerInfo, tmpl : {path: 'infoSeller/infoSellerTmpl_promo.html'}}}")
+                            .b-profile-info(data-bind="embedWidget :{ widget : 'InfoSellerWidget-1.0', params : {data : sellerInfo, tmpl : {path: 'http://promodev.pokupo.ru/themes/default/tmpl/infoSellerTmpl.html'}}}")
 
                     .columns.triple
                         .first.double.column
@@ -113,7 +113,7 @@ script#goodsTmpl(type="text/html")
                         +if('key == "opinion"')
                             +if('content')
                                 .b-catalog-item__aux.b-reviews(data-bind="template: { name: 'goodsOpinionBlockTmpl' }")
-        div(data-bind="embedWidget :{ widget : 'RelatedGoodsWidget-1.0', params : {id : id, typeView: 'carousel', count: 6, countTile : 6, tmpl : {path: 'relatedGoods/relatedGoodsTmpl_promo.html'}}}")
+        div(data-bind="embedWidget :{ widget : 'RelatedGoodsWidget-1.0', params : {id : id, typeView: 'carousel', count: 6, countTile : 6, tmpl : {path: 'http://promodev.pokupo.ru/themes/default/tmpl/relatedGoodsTmpl.html'}}}")
 
 
 script#goodsGalleryBlockTmpl(type="text/html")

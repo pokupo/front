@@ -17,7 +17,7 @@
         <div class="content">
           <div class="b-catalog-item__seller-info slidedown"><span id="user_information_slidedown" data-target="info" class="slidedown__trigger">Информация о продавце</span>
             <div data-target="info" class="slidedown__content hidden">
-              <div data-bind="embedWidget :{ widget : 'InfoSellerWidget-1.0', params : {data : sellerInfo, tmpl : {path: 'infoSeller/infoSellerTmpl_promo.html'}}}" class="b-profile-info"></div>
+              <div data-bind="embedWidget :{ widget : 'InfoSellerWidget-1.0', params : {data : sellerInfo, tmpl : {path: 'http://promodev.pokupo.ru/themes/default/tmpl/infoSellerTmpl.html'}}}" class="b-profile-info"></div>
             </div>
           </div>
           <div class="columns triple">
@@ -71,7 +71,7 @@
         </div>
       </div>
     </div>
-    <div data-bind="embedWidget :{ widget : 'RelatedGoodsWidget-1.0', params : {id : id, typeView: 'carousel', count: 6, countTile : 6, tmpl : {path: 'relatedGoods/relatedGoodsTmpl_promo.html'}}}"></div>
+    <div data-bind="embedWidget :{ widget : 'RelatedGoodsWidget-1.0', params : {id : id, typeView: 'carousel', count: 6, countTile : 6, tmpl : {path: 'http://promodev.pokupo.ru/themes/default/tmpl/relatedGoodsTmpl.html'}}}"></div>
   </div>
 </script>
 <script id="goodsGalleryBlockTmpl" type="text/html"><!-- ko if: main.discount() > 0 -->
