@@ -152,6 +152,7 @@ script#orderFormStep2Tmpl(type="text/html")
 
 
 script#orderFormRowStep2Tmpl(type="text/html")
+    // version 1.0
     td.b-order-table__action
         +if('isDefault()')
             input(type="radio", data-bind="attr: {'name': 'is_default_' + id }", checked="checked")

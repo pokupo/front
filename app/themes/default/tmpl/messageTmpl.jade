@@ -54,6 +54,7 @@ script#messageTopicTmpl(type="text/html")
 
 
 script#messageOneTopicTmpl(type="text/html")
+    // version 1.0
     .b-dialog__checkbox
         input#i-01(type="checkbox" data-bind="attr: {id: cssCheckboxMessage}")
         label(for="i-01" data-bind="click: ClickCheckboxMessage") &nbsp;
@@ -167,6 +168,7 @@ script#messageListTmpl(type="text/html")
 
 
 script#messageItemTmpl(type="text/html")
+    // version 1.0
     .b-dialog__body
         .b-dialog__status
             +if('IsNew')
@@ -279,6 +281,7 @@ script#messageSimpleFormTmpl(type="text/html")
 
 
 script#messagePaginateTmpl(type="text/html")
+    // version 1.0
     .content
         .input-holder.pagination
             .radio-circles

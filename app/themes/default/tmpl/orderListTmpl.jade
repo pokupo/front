@@ -39,6 +39,7 @@ script#orderListTmpl(type="text/html")
 
 
 script#orderListItemTmpl(type="text/html")
+    // version 1.0
     tr.b-order-table__item
         td.b-order-table__name
             +if('viewShow')
@@ -117,6 +118,7 @@ script#orderListItemTmpl(type="text/html")
             
 
 script#orderListPagenationTmpl(type="text/html")
+    // version 1.0
     +if('paging().length > 1')
         .content(style='margin-top: 20px;')
             .input-holder.pagination
@@ -343,6 +345,7 @@ script#orderDetailTmpl(type="text/html")
 
 
 script#orderDetailGoodsTmpl(type="text/html")
+    // version 1.0
     tr.b-order-table__item
         td.b-order-table__thumb
             img(src='', data-bind='attr: {src: routeImage}')
@@ -387,6 +390,7 @@ script#orderDetailGoodsTmpl(type="text/html")
 
 
 script#orderDetailShippingTmpl(type='text/html')
+    // version 1.0
     .b-fieldset
         h2.b-profile__headline Доставка
             table.b-order-table.b-order-table--header
@@ -422,6 +426,7 @@ script#orderDetailShippingTmpl(type='text/html')
                         td.b-order-table__phone(data-bind='text: shippingContactPhone')
 
 script#orderDetailPaymentTmpl(type="text/html")
+    // version 1.0
     .b-fieldset
         h2.b-profile__headline Оплата
             table.b-order-table.b-order-table--header

@@ -71,25 +71,30 @@
   </div>
 </script>
 <script id="paymentSelectFieldTmpl" type="text/html">
+  <!-- version 1.0-->
   <select name="" data-bind="attr: { name: name(), placeholder: label()}"><!-- ko foreach: listSelect() --><!-- ko if: value == $parent.value() -->
     <option value="" data-bind="value: value, text: label" selected="selected"></option><!-- /ko --><!-- ko ifnot: value == $parent.value() -->
     <option value="" data-bind="value: value, text: label"></option><!-- /ko --><!-- /ko -->
   </select>
 </script>
 <script id="paymentTextFieldTmpl" type="text/html">
+  <!-- version 1.0-->
   <input type="text" value="" data-bind="value: value, attr: {type: typeField(), name: name(), id: cssField(), placeholder: label()}" class="block-input"/>
 </script>
 <script id="paymentTextareaFieldTmpl" type="text/html">
+  <!-- version 1.0-->
   <textarea name="" data-bind="attr: {name: name()}, text: value, placeholder: label()" class="block-input"></textarea>
 </script>
-<script id="paymentCheckboxFieldTmpl" type="text/html"><!-- ko if: listSelect().length > 0 --><!-- ko foreach: listSelect --><!-- ko if: value == $parent.value() -->
+<script id="paymentCheckboxFieldTmpl" type="text/html">
+  <!-- version 1.0--><!-- ko if: listSelect().length > 0 --><!-- ko foreach: listSelect --><!-- ko if: value == $parent.value() -->
   <input type="checkbox" checked="checked" name="" value="" data-bind="value: value, attr: { name: $parent.name()}" class="checkbox"/><!-- /ko --><!-- ko ifnot: value == $parent.value() -->
   <input type="checkbox" name="" value="" data-bind="value: value, attr: { name: $parent.name()}" class="checkbox"/><!-- /ko -->
   <label for="" data-bind="text: $parent.label(), attr: { 'for': $parent.name()}" class="block-label b-small-text"></label><!-- /ko --><!-- /ko --><!-- ko if: listSelect().length == 0 -->
   <input type="checkbox" name="" value="" data-bind="value: value(), attr: { name: name()}" class="checkbox"/>
   <label for="" data-bind="text: label(), attr: {'for': name()}" class="block-label b-small-text"></label><!-- /ko -->
 </script>
-<script id="paymentRadioFieldTmpl" type="text/html"><!-- ko foreach: listSelect --><!-- ko if: value == $parent.value() -->
+<script id="paymentRadioFieldTmpl" type="text/html">
+  <!-- version 1.0--><!-- ko foreach: listSelect --><!-- ko if: value == $parent.value() -->
   <input type="radio" checked="checked" name="" value="" data-bind="value: value, attr: { name: $parent.name()}" class="inline"/><!-- /ko --><!-- ko ifnot: value == $parent.value() -->
   <input type="radio" name="" value="" data-bind="value: value, attr: { name: $parent.name()}" class="inline"/><!-- /ko -->
   <label for="" data-bind="text: $parent.label(), attr: { 'for': $parent.name()}"></label><!-- /ko -->

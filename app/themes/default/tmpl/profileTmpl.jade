@@ -18,6 +18,7 @@ script#personalInformationTmpl(type="text/html")
 
 
 script#registrationDataTmpl(type="text/html")
+    // version 1.0
     form(data-bind='attr: {id: cssRegistrationDataForm}', method='POST', target='upload_target', enctype='multipart/form-data')
         fieldset.b-fieldset
             .b-profile-info.b-profile-info--personal
@@ -50,7 +51,7 @@ script#registrationDataTmpl(type="text/html")
                                     | +
                                 // ko text: rating
                                 // /ko 
-                                
+
         .b-status.b-status--fieldset.b-status--done(data-for='fieldset-id')
             +if("checkInfo() == 'yes'")
                 | Данные проверены
@@ -105,6 +106,7 @@ script#registrationDataTmpl(type="text/html")
 
 
 script#postDataTmpl(type="text/html")
+    // version 1.0
     .b-status.b-status--fieldset.b-status--done(data-for='another-fieldset-id')
         +if("checkInfo() == 'yes'")
             | Адрес подтверждён
@@ -157,6 +159,7 @@ script#postDataTmpl(type="text/html")
 
 
 script#contactsDataFormTmpl(type="text/html")
+    // version 1.0
     h2.b-profile__headline.with-divider Данные аккаунта
     fieldset.b-fieldset
         .columns
@@ -247,6 +250,7 @@ script#deliveryAddressTmpl(type="text/html")
 
 
 script#deliveryRowAddressTmpl(type="text/html")
+    // version 1.0
     td.b-order-table__action(data-bind='click: ClickItem')
         +if('isDefault()')
             input(type='radio', checked='', data-bind='attr: {\'name\': \'is_default_\' + id }')

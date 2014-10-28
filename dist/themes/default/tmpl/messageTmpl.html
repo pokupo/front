@@ -51,6 +51,7 @@
   </div>
 </script>
 <script id="messageOneTopicTmpl" type="text/html">
+  <!-- version 1.0-->
   <div class="b-dialog__checkbox">
     <input id="i-01" type="checkbox" data-bind="attr: {id: cssCheckboxMessage}"/>
     <label for="i-01" data-bind="click: ClickCheckboxMessage">&nbsp;</label>
@@ -128,6 +129,7 @@
   </section>
 </script>
 <script id="messageItemTmpl" type="text/html">
+  <!-- version 1.0-->
   <div class="b-dialog__body">
     <div class="b-dialog__status"><!-- ko if: IsNew --><span class="pseudo-link">Получатель не прочёл</span><!-- /ko --><!-- ko ifnot: IsNew --><span class="pseudo-link">Получатель прочёл</span><!-- /ko -->
     </div>
@@ -236,6 +238,7 @@
   <button type="submit" data-bind="click: ClickSend" class="btn btn-lg">Отправить</button>
 </script>
 <script id="messagePaginateTmpl" type="text/html">
+  <!-- version 1.0-->
   <div class="content">
     <div class="input-holder pagination">
       <div class="radio-circles">

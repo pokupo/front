@@ -48,6 +48,7 @@
   </div>
 </script>
 <script id="orderListItemTmpl" type="text/html">
+  <!-- version 1.0-->
   <tr class="b-order-table__item">
     <td class="b-order-table__name"><!-- ko if: viewShow --><a href="javascript:void(0);" data-bind="click: ClickShow">Заказ №
         <!-- ko text: id -->
@@ -85,7 +86,8 @@
     </td>
   </tr>
 </script>
-<script id="orderListPagenationTmpl" type="text/html"><!-- ko if: paging().length > 1 -->
+<script id="orderListPagenationTmpl" type="text/html">
+  <!-- version 1.0--><!-- ko if: paging().length > 1 -->
   <div style="margin-top: 20px;" class="content">
     <div class="input-holder pagination">
       <div class="radio-circles">
@@ -252,6 +254,7 @@
   </div>
 </script>
 <script id="orderDetailGoodsTmpl" type="text/html">
+  <!-- version 1.0-->
   <tr class="b-order-table__item">
     <td class="b-order-table__thumb"><img src="" data-bind="attr: {src: routeImage}"/></td>
     <td class="b-order-table__title"><a href="javascript:void(0);" data-bind="text: fullName, click: ClickGoods"></a><!-- ko if: isEgoodsPaid() --><!-- ko foreach: EGoods -->
@@ -274,6 +277,7 @@
   </tr>
 </script>
 <script id="orderDetailShippingTmpl" type="text/html">
+  <!-- version 1.0-->
   <div class="b-fieldset">
     <h2 class="b-profile__headline">Доставка
       <table class="b-order-table b-order-table--header">

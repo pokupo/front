@@ -117,6 +117,7 @@ script#goodsTmpl(type="text/html")
 
 
 script#goodsGalleryBlockTmpl(type="text/html")
+    // version 1.0
     +if('main.discount() > 0')
         .b-catalog-item__badges
             .b-catalog-item__badge.b-catalog-item__badge--discount
@@ -132,6 +133,7 @@ script#goodsGalleryBlockTmpl(type="text/html")
     
 
 script#goodsMoreBlockTmpl(type="text/html")
+    // version 1.0
     dl.tabs.tabs--noskin#more_block
         +each('moreBlock')
             +ifnot("key == 'opinion'")
@@ -149,10 +151,12 @@ script#goodsMoreBlockTmpl(type="text/html")
 
 
 script#goodsDescriptionBlockTmpl(type="text/html")
+    // version 1.0
     div(data-bind="html:content")
 
 
 script#goodsShippingBlockTmpl(type="text/html")
+    // version 1.0
     +each('content.params')
         div(style="width: 100%; margin-bottom: 20px;")
             h3(style="margin-bottom: 10px" data-bind="text: nameMethodShipping")
@@ -168,6 +172,7 @@ script#goodsShippingBlockTmpl(type="text/html")
 
 
 script#goodsOpinionBlockTmpl(type="text/html")
+    // version 1.0
     h1.with-button Отзывы
     ul.reviews-list
         +each('content.params')

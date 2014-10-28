@@ -25,6 +25,7 @@ script#cartGoodsTmpl(type="text/html")
 
 
 script#HeaderBlockTmpl(type="text/html")
+    // version 1.0
     li.b-order-item.b-thead
         .b-order-item__checkbox
             input#js-select-all(type="checkbox" data-bind="attr: {id: cssSelectAll}")
@@ -37,6 +38,7 @@ script#HeaderBlockTmpl(type="text/html")
 
 
 script#GoodsBlockTmpl(type="text/html")
+    // version 1.0
     li.b-order-item
         .b-order-item__checkbox
             input(type="checkbox" data-bind="attr: {id: cssCheckboxGoods}")
@@ -77,6 +79,7 @@ script#GoodsBlockTmpl(type="text/html")
 
 
 script#FooterBlockTmpl(type="text/html")
+    // version 1.0
     .b-order-list__actions.bordered
         +ifnot('isDisabledButton')
             .like_button

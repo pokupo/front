@@ -15,6 +15,7 @@
   </div>
 </div>
 <script id="registrationDataTmpl" type="text/html">
+  <!-- version 1.0-->
   <form data-bind="attr: {id: cssRegistrationDataForm}" method="POST" target="upload_target" enctype="multipart/form-data">
     <fieldset class="b-fieldset">
       <div class="b-profile-info b-profile-info--personal">
@@ -88,6 +89,7 @@
   </form>
 </script>
 <script id="postDataTmpl" type="text/html">
+  <!-- version 1.0-->
   <div data-for="another-fieldset-id" class="b-status b-status--fieldset b-status--done"><!-- ko if: checkInfo() == 'yes' -->Адрес подтверждён<!-- /ko --><!-- ko if: checkInfo() == 'no' -->Адрес не подтверждён<!-- /ko -->
   </div>
   <h2 class="b-profile__headline with-divider">Почтовый адрес</h2>
@@ -139,6 +141,7 @@
   </fieldset>
 </script>
 <script id="contactsDataFormTmpl" type="text/html">
+  <!-- version 1.0-->
   <h2 class="b-profile__headline with-divider">Данные аккаунта</h2>
   <fieldset class="b-fieldset">
     <div class="columns">
@@ -227,6 +230,7 @@
   </div>
 </script>
 <script id="deliveryRowAddressTmpl" type="text/html">
+  <!-- version 1.0-->
   <td data-bind="click: ClickItem" class="b-order-table__action"><!-- ko if: isDefault() -->
     <input type="radio" checked="" data-bind="attr: {'name': 'is_default_' + id }"/><!-- /ko --><!-- ko ifnot: isDefault() -->
     <input type="radio" data-bind="attr: {'name': 'is_default_' + id }"/><!-- /ko -->
