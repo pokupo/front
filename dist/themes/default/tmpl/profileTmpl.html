@@ -1,19 +1,19 @@
 
 <script id="personalInformationTmpl" type="text/html">
   <!-- version 1.0-->
-</script>
-<div class="profile">
-  <div class="container">
-    <div class="content">
-      <!-- ko template: { name: 'registrationDataTmpl', data: registrationData }-->
-      <!-- /ko-->
-      <!-- ko template: { name: 'postDataTmpl', data: postalAddress }-->
-      <!-- /ko-->
-      <!-- ko template: { name: 'contactsDataFormTmpl', data: contacts }-->
-      <!-- /ko-->
+  <div class="profile">
+    <div class="container">
+      <div class="content">
+        <!-- ko template: { name: 'registrationDataTmpl', data: registrationData }-->
+        <!-- /ko-->
+        <!-- ko template: { name: 'postDataTmpl', data: postalAddress }-->
+        <!-- /ko-->
+        <!-- ko template: { name: 'contactsDataFormTmpl', data: contacts }-->
+        <!-- /ko-->
+      </div>
     </div>
   </div>
-</div>
+</script>
 <script id="registrationDataTmpl" type="text/html">
   <!-- version 1.0-->
   <form data-bind="attr: {id: cssRegistrationDataForm}" method="POST" target="upload_target" enctype="multipart/form-data">

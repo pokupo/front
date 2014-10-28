@@ -5,7 +5,7 @@ script#userInformationTmpl(type="text/html")
     .logged-in
         .circles-menu
             .circles-menu__item.dropdown
-                a.with-icon.icon__profile.dropdown__trigger.user_information_dropdown__trigger(href=js0, data-target='profile', data-bind='attr: {style: background}')
+                a.with-icon.icon__profile.dropdown__trigger.user_information_dropdown__trigger(href=js0, data-target='profile', data-bind='attr: {style: background-image}')
                     +if('countNewMessage() > 0')
                         sup.circles-menu__num(data-bind='text: countNewMessage')
                     
