@@ -81,7 +81,8 @@
               <div class="error__message">
                 <p data-bind="text: errorBirthDay"></p>
               </div><!-- /ko -->
-            </div><a data-bind="click: Submit" class="input-action pseudo-link">Сохранить</a>
+            </div>
+            <button data-bind="click: Submit" type="button" class="btn btn-lg input-action">Сохранить</button>
           </div>
         </div>
       </div>
@@ -134,7 +135,8 @@
             <div class="error__message">
               <p data-bind="text: errorPostIndex"></p>
             </div><!-- /ko -->
-          </div><a data-bind="click: Submit" class="input-action pseudo-link">Сохранить</a>
+          </div>
+          <button data-bind="click: Submit" type="button" class="btn btn-lg input-action">Сохранить</button>
         </div>
       </div>
     </div>
@@ -185,7 +187,9 @@
               </div><!-- /ko -->
             </div>
           </div><span data-bind="click: SubmitPhoneToken, visible: sentCode" class="input-action pseudo-link">Подтвердить</span>
-          <div data-bind="visible: !phoneIsConfirm() || !emailIsConfirm()"><span data-bind="click: SubmitForm" class="input-action pseudo-link">Сохранить</span></div>
+          <div data-bind="visible: !phoneIsConfirm() || !emailIsConfirm()">
+            <button data-bind="click: SubmitForm" type="button" class="btn btn-lg input-action">Сохранить</button>
+          </div>
         </div>
       </div>
     </div>

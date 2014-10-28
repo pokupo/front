@@ -101,7 +101,7 @@ script#registrationDataTmpl(type="text/html")
                                 .error__message
                                     p(data-bind="text: errorBirthDay")
                             
-                        a.input-action.pseudo-link(data-bind='click: Submit') Сохранить
+                        button.btn.btn-lg.input-action(data-bind='click: Submit', type="button") Сохранить
 
 
 script#postDataTmpl(type="text/html")
@@ -155,7 +155,7 @@ script#postDataTmpl(type="text/html")
                             .error__message
                                 p(data-bind="text: errorPostIndex")
                         
-                    a.input-action.pseudo-link(data-bind='click: Submit') Сохранить
+                    button.btn.btn-lg.input-action(data-bind='click: Submit', type="button") Сохранить
 
 
 script#contactsDataFormTmpl(type="text/html")
@@ -214,7 +214,7 @@ script#contactsDataFormTmpl(type="text/html")
 
                     span.input-action.pseudo-link(data-bind='click: SubmitPhoneToken, visible: sentCode') Подтвердить
                     div(data-bind='visible: !phoneIsConfirm() || !emailIsConfirm()')
-                        span.input-action.pseudo-link(data-bind='click: SubmitForm') Сохранить
+                        button.btn.btn-lg.input-action(data-bind='click: SubmitForm', type="button") Сохранить
 
 
 script#deliveryAddressTmpl(type="text/html")
