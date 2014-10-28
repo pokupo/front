@@ -30,6 +30,7 @@ script#registrationDataTmpl(type="text/html")
                 .b-profile-info__summary
                     .b-profile-info__photo
                         img(src=js0, data-bind='attr: {src: iconUser}')
+
                     h2.b-profile__headline.b-profile-info__title(data-bind='text: fullName')
                     ul.b-profile-info__characters-list
                         +if('dateRegistration')
@@ -49,6 +50,7 @@ script#registrationDataTmpl(type="text/html")
                                     | +
                                 // ko text: rating
                                 // /ko 
+                                
         .b-status.b-status--fieldset.b-status--done(data-for='fieldset-id')
             +if("checkInfo() == 'yes'")
                 | Данные проверены
