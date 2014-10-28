@@ -131,7 +131,7 @@ script#orderFormStep2Tmpl(type="text/html")
                         th.b-order-table__drop &nbsp;
 
                 tbody
-                    +each(addressList)
+                    +each('addressList')
                         +if('isDefault')
                             tr.b-order-table__item.active(data-bind="click: ClickItem, css: cssIsDefault()")
                                 // ko template: {name: 'orderFormRowStep2Tmpl' } 

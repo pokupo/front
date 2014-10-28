@@ -109,7 +109,7 @@
             <th class="b-order-table__drop">&nbsp;</th>
           </tr>
         </thead>
-        <tbody><!-- ko foreach:  --><!-- ko if: isDefault -->
+        <tbody><!-- ko foreach: addressList --><!-- ko if: isDefault -->
           <tr data-bind="click: ClickItem, css: cssIsDefault()" class="b-order-table__item active">
             <!-- ko template: {name: 'orderFormRowStep2Tmpl' } -->
             <!-- /ko-->
