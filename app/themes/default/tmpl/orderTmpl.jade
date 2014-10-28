@@ -30,10 +30,6 @@ script#orderProfileFormStep1Tmpl(type="text/html")
                 
             li
                 a(href=js0)
-                    label.b-wizard__step-num 2.1
-                
-            li
-                a(href=js0)
                     label.b-wizard__step-num 3
                 
             li
@@ -107,11 +103,7 @@ script#orderFormStep2Tmpl(type="text/html")
                     label.b-wizard__step-num(data-bind="click: ClickStep1") 1
             li
                 a.selected(href=js0)
-                    label.b-wizard__step-num 2.1
-                
-            li
-                a(href=js0)
-                    label.b-wizard__step-num 2.2
+                    label.b-wizard__step-num 2
                 
             li
                 a(href=js0)
@@ -162,24 +154,25 @@ script#orderFormStep2Tmpl(type="text/html")
 script#orderFormRowStep2Tmpl(type="text/html")
     td.b-order-table__action
         +if('isDefault()')
-            input(type="radio" checked="" data-bind="attr: {'name': 'is_default_' + id }")
+            input(type="radio", data-bind="attr: {'name': 'is_default_' + id }", checked="checked")
         +ifnot('isDefault()')
-            input(type="radio" data-bind="attr: {'name': 'is_default_' + id }")
-        label(rel="tooltip" title="Выбрать" data-bind="attr: {'for': 'is_default_' + id }") &nbsp;
+            input(type="radio", data-bind="attr: {'name': 'is_default_' + id }")
+
+        label(rel="tooltip", title="Выбрать", data-bind="attr: {'for': 'is_default_' + id }") &nbsp;
 
     td
         // ko text: postCode
         // /ko 
-        
+        | ,
         // ko text: country
         // /ko 
-        
+        | ,
         // ko text: region
         // /ko 
-        
+        | ,
         // ko text: city
         // /ko 
-        
+        | ,
         // ko text: address
         // /ko
     td.b-order-table__name(data-bind="text: addressee")
@@ -196,13 +189,11 @@ script#orderDeliveryFormStep2Tmpl(type="text/html")
             li
                 a.done(href=js0)
                     label.b-wizard__step-num(data-bind="click: ClickStep1") 1
-            li
-                a.done(href=js0)
-                    label.b-wizard__step-num(data-bind="click: ClickStep2") 2.1
-                
+  
             li
                 a.selected(href=js0)
-                    label.b-wizard__step-num 2.2
+                    label.b-wizard__step-num(data-bind="click: ClickAddAddress") 2 
+                    // (data-bind="click: ClickStep2")
                 
             li
                 a(href=js0)
@@ -286,11 +277,7 @@ script#orderFormStep3Tmpl(type="text/html")
                     label.b-wizard__step-num 1
             li
                 a.done(href=js0 data-bind="click: ClickStep2")
-                    label.b-wizard__step-num 2.1
-                
-            li
-                a.selected(href=js0 data-bind="click: ClickAddAddress")
-                    label.b-wizard__step-num 2.2
+                    label.b-wizard__step-num 2
                 
             li
                 a(href=js0)
@@ -355,11 +342,7 @@ script#orderFormStep4Tmpl(type="text/html")
                     label.b-wizard__step-num 1
             li
                 a.done(href=js0 data-bind="click: ClickStep2")
-                    label.b-wizard__step-num 2.1
-                
-            li
-                a.done(href=js0 data-bind="click: ClickAddAddress")
-                    label.b-wizard__step-num 2.2
+                    label.b-wizard__step-num 2
                 
             li
                 a.selected(href=js0 data-bind="click: ClickStep3")
@@ -426,11 +409,7 @@ script#orderFormStep5Tmpl(type="text/html")
                     label.b-wizard__step-num 1
             li
                 a.done(href=js0 data-bind="click: ClickStep2")
-                    label.b-wizard__step-num 2.1
-                
-            li
-                a.done(href=js0 data-bind="click: ClickAddAddress")
-                    label.b-wizard__step-num 2.2
+                    label.b-wizard__step-num 2
                 
             li
                 a.done(href=js0 data-bind="click: ClickStep3")

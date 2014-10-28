@@ -18,8 +18,6 @@
       <li><a href="javascript:void(0);">
           <label class="b-wizard__step-num">2</label></a></li>
       <li><a href="javascript:void(0);">
-          <label class="b-wizard__step-num">2.1</label></a></li>
-      <li><a href="javascript:void(0);">
           <label class="b-wizard__step-num">3</label></a></li>
       <li><a href="javascript:void(0);">
           <label class="b-wizard__step-num">4</label></a></li>
@@ -87,9 +85,7 @@
       <li><a href="javascript:void(0);" class="done">
           <label data-bind="click: ClickStep1" class="b-wizard__step-num">1</label></a></li>
       <li><a href="javascript:void(0);" class="selected">
-          <label class="b-wizard__step-num">2.1</label></a></li>
-      <li><a href="javascript:void(0);">
-          <label class="b-wizard__step-num">2.2</label></a></li>
+          <label class="b-wizard__step-num">2</label></a></li>
       <li><a href="javascript:void(0);">
           <label class="b-wizard__step-num">3</label></a></li>
       <li><a href="javascript:void(0);">
@@ -135,19 +131,19 @@
 </script>
 <script id="orderFormRowStep2Tmpl" type="text/html">
   <td class="b-order-table__action"><!-- ko if: isDefault() -->
-    <input type="radio" checked="" data-bind="attr: {'name': 'is_default_' + id }"/><!-- /ko --><!-- ko ifnot: isDefault() -->
+    <input type="radio" data-bind="attr: {'name': 'is_default_' + id }" checked="checked"/><!-- /ko --><!-- ko ifnot: isDefault() -->
     <input type="radio" data-bind="attr: {'name': 'is_default_' + id }"/><!-- /ko -->
     <label rel="tooltip" title="Выбрать" data-bind="attr: {'for': 'is_default_' + id }">&nbsp;</label>
   </td>
   <td>
     <!-- ko text: postCode-->
-    <!-- /ko -->
+    <!-- /ko -->,
     <!-- ko text: country-->
-    <!-- /ko -->
+    <!-- /ko -->,
     <!-- ko text: region-->
-    <!-- /ko -->
+    <!-- /ko -->,
     <!-- ko text: city-->
-    <!-- /ko -->
+    <!-- /ko -->,
     <!-- ko text: address-->
     <!-- /ko-->
   </td>
@@ -164,10 +160,9 @@
     <ul class="b-wizard__steps">
       <li><a href="javascript:void(0);" class="done">
           <label data-bind="click: ClickStep1" class="b-wizard__step-num">1</label></a></li>
-      <li><a href="javascript:void(0);" class="done">
-          <label data-bind="click: ClickStep2" class="b-wizard__step-num">2.1</label></a></li>
       <li><a href="javascript:void(0);" class="selected">
-          <label class="b-wizard__step-num">2.2</label></a></li>
+          <label data-bind="click: ClickAddAddress" class="b-wizard__step-num">2 </label>
+          <!-- (data-bind="click: ClickStep2")--></a></li>
       <li><a href="javascript:void(0);">
           <label class="b-wizard__step-num">3</label></a></li>
       <li><a href="javascript:void(0);">
@@ -239,9 +234,7 @@
       <li><a href="javascript:void(0);" data-bind="click: ClickStep1" class="done">
           <label class="b-wizard__step-num">1</label></a></li>
       <li><a href="javascript:void(0);" data-bind="click: ClickStep2" class="done">
-          <label class="b-wizard__step-num">2.1</label></a></li>
-      <li><a href="javascript:void(0);" data-bind="click: ClickAddAddress" class="selected">
-          <label class="b-wizard__step-num">2.2</label></a></li>
+          <label class="b-wizard__step-num">2</label></a></li>
       <li><a href="javascript:void(0);">
           <label class="b-wizard__step-num">3</label></a></li>
       <li><a href="javascript:void(0);">
@@ -289,9 +282,7 @@
       <li><a href="javascript:void(0);" data-bind="click: ClickStep1" class="done">
           <label class="b-wizard__step-num">1</label></a></li>
       <li><a href="javascript:void(0);" data-bind="click: ClickStep2" class="done">
-          <label class="b-wizard__step-num">2.1</label></a></li>
-      <li><a href="javascript:void(0);" data-bind="click: ClickAddAddress" class="done">
-          <label class="b-wizard__step-num">2.2</label></a></li>
+          <label class="b-wizard__step-num">2</label></a></li>
       <li><a href="javascript:void(0);" data-bind="click: ClickStep3" class="selected">
           <label class="b-wizard__step-num">3</label></a></li>
       <li><a href="javascript:void(0);">
@@ -341,9 +332,7 @@
       <li><a href="javascript:void(0);" data-bind="click: ClickStep1" class="done">
           <label class="b-wizard__step-num">1</label></a></li>
       <li><a href="javascript:void(0);" data-bind="click: ClickStep2" class="done">
-          <label class="b-wizard__step-num">2.1</label></a></li>
-      <li><a href="javascript:void(0);" data-bind="click: ClickAddAddress" class="done">
-          <label class="b-wizard__step-num">2.2</label></a></li>
+          <label class="b-wizard__step-num">2</label></a></li>
       <li><a href="javascript:void(0);" data-bind="click: ClickStep3" class="done">
           <label class="b-wizard__step-num">3</label></a></li>
       <li><a href="javascript:void(0);" data-bind="click: ClickStep4" class="selected">
