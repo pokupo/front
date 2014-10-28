@@ -121,9 +121,10 @@ script#postDataTmpl(type="text/html")
                 .content
                     .input-holder
                         select#country_list_profile.suggestion-input.block-input(name='address__country', data-bind='value: idCountry, attr: {id: cssCountryList}' placeholder="Страна")
-                            option(value='')
                            +each('countryList ')
                                 option(data-bind='text: name, value: id')
+                            option(value='' selected='selected')
+
                         +if('errorCountry')
                             .error__message
                                 p(data-bind="text: errorCountry")

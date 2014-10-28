@@ -99,10 +99,10 @@
       <div class="first double column">
         <div class="content">
           <div class="input-holder">
-            <select id="country_list_profile" name="address__country" data-bind="value: idCountry, attr: {id: cssCountryList}" placeholder="Страна" class="suggestion-input block-input">
-              <option value=""></option>
-            </select><!-- ko foreach: countryList  -->
-            <option data-bind="text: name, value: id"></option><!-- /ko --><!-- ko if: errorCountry -->
+            <select id="country_list_profile" name="address__country" data-bind="value: idCountry, attr: {id: cssCountryList}" placeholder="Страна" class="suggestion-input block-input"><!-- ko foreach: countryList  -->
+              <option data-bind="text: name, value: id"></option><!-- /ko -->
+              <option value="" selected="selected"></option>
+            </select><!-- ko if: errorCountry -->
             <div class="error__message">
               <p data-bind="text: errorCountry"></p>
             </div><!-- /ko -->
