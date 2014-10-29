@@ -5,8 +5,8 @@ script#registrationSellerFromStep1Tmpl(type='text/html')
 	.h1-with-progress-bar
 		canvas#progressCircle(width='160', height='160')
 			p Ваш браузер не поддерживает технологию canvas
+		h1 Регистрация продавца
 
-	h1 Регистрация нового аккаунта
 	form(action='')
 		#registerShopWizard.b-wizard
 			ul.b-wizard__steps
@@ -46,12 +46,11 @@ script#registrationSellerFromStep1Tmpl(type='text/html')
 					.input-holder(style='padding-top: 13px;')
 						input#iagree.checkbox(name='iagree', type='checkbox', data-bind='checked: isChecked')
 						label.block-label.b-small-text(for='iagree')
-							| Я принимаю условия
+							| Я принимаю условия 
 							a(href=js0, target='_blank', data-bind='attr:{href: agreement}') пользовательского соглашения
-							| ,
-							br
+							| , <br/>
 							a(href=js0, target='_blank', data-bind='attr:{href: police}') правил конфиденциальности
-							| и
+							|  и 
 							a(href=js0, target='_blank', data-bind='attr:{href: refund}') политики возврата платежей
 
 						+if('errorIsChecked')
@@ -66,8 +65,8 @@ script#registrationSellerFromStep2Tmpl(type='text/html')
 	.h1-with-progress-bar
 		canvas#progressCircle(width='160', height='160')
 			p Ваш браузер не поддерживает технологию canvas
+		h1 Регистрация продавца
 
-	h1 Регистрация нового аккаунта
 	form(action='')
 		#registerShopWizard.b-wizard
 			ul.b-wizard__steps
@@ -91,6 +90,9 @@ script#registrationSellerFromStep2Tmpl(type='text/html')
 						.input-holder
 							.tooltip__trigger(rel="tooltip", title="Код, высланный на почтовый адрес или телефон") ?
 							input.block-input(type='text', name='code', value='', placeholder='Ваш e-mail код', data-bind='value: mailToken')
+
+							input#skip-email.checkbox(name='skip-email', type='checkbox', checked='', data-bind='checked: mailConfirmLater')
+							label.block-label.b-small-text(for='skip-email') Подтвердить почтовый ящик позднее
 								
 							+if('mailIsConfirm')
 								.b-status.b-status--done E-mail подтверждён
@@ -99,15 +101,14 @@ script#registrationSellerFromStep2Tmpl(type='text/html')
 								.error__message
 									p(data-bind='text: errorEmailConfirm')
 
-					.input-holder(style='padding-top: 13px;')
-						input#skip-email.checkbox(name='skip-email', type='checkbox', checked='', data-bind='checked: mailConfirmLater')
-						label.block-label.b-small-text(for='skip-email') Подтвердить почтовый ящик позднее
-
 					+ifnot('isEmptyPhone')
 						+ifnot('phoneConfirmLater')
 							.input-holder
 								.tooltip__trigger(rel="tooltip", title="Код, высланный в SMS") ?
 								input.block-input(type='text', name='code', value='', placeholder='Ваш SMS код', data-bind='value: phoneToken')
+								
+								input#skip-phone.checkbox(name='skip-email', type='checkbox', checked='', data-bind='checked: phoneConfirmLater')
+								label.block-label.b-small-text(for='skip-phone') Подтвердить телефон позднее
 
 								+if('phoneIsConfirm')
 									.b-status.b-status--done Телефон подтверждён
@@ -115,10 +116,7 @@ script#registrationSellerFromStep2Tmpl(type='text/html')
 								+if('errorPhoneConfirm')
 									.error__message
 										p(data-bind='text: errorPhoneConfirm')
-
-						.input-holder(style='padding-top: 13px;')
-							input#skip-phone.checkbox(name='skip-email', type='checkbox', checked='', data-bind='checked: phoneConfirmLater')
-							label.block-label.b-small-text(for='skip-phone') Подтвердить телефон позднее
+							
 					
 			.b-wizard__actions
 				a.b-wizard__action.btn-prev-step(href=js0, data-bind='click: Back') Назад
@@ -130,16 +128,16 @@ script#registrationSellerFromStep3Tmpl(type='text/html')
 	.h1-with-progress-bar
 		canvas#progressCircle(width='160', height='160')
 			p Ваш браузер не поддерживает технологию canvas
+		h1 Регистрация продавца
 
-	h1 Регистрация нового аккаунта
 	form(action='')
 		#registerShopWizard.b-wizard
 			ul.b-wizard__steps
 				li
-					a.selected(href='#step-1')
+					a.done(href='#step-1')
 						label.b-wizard__step-num 1
 				li
-					a.selected(href='#step-2')
+					a.done(href='#step-2')
 						label.b-wizard__step-num 2
 				li
 					a.selected(href='#step-3')

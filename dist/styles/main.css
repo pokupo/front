@@ -3761,6 +3761,7 @@ body.vjs-full-window {
 
 .b-wizard {
 	position: relative;
+	padding-bottom: 50px;
 }
 
 .b-wizard__holder .content {
