@@ -25,7 +25,7 @@
           <p>Укажите свой уникальный псевдоним, почту и телефон</p>
           <div class="input-holder">
             <div rel="tooltip" title="Введите ваше имя на сайте." class="tooltip__trigger">?</div>
-            <input type="text" name="nickname" value="" placeholder="Псевдоним" class="block-input"/><!-- ko if: errorUsername -->
+            <input type="text" name="nickname" value="" placeholder="Псевдоним" data-bind="value: username" class="block-input"/><!-- ko if: errorUsername -->
             <div class="error__message">
               <p data-bind="text: errorUsername"></p>
             </div><!-- /ko -->
@@ -226,9 +226,10 @@
           <h2 class="b-wizard__step-title">Адрес доставки</h2>
           <p>Для доставки покупок требуется указать почтовый адрес</p>
           <div class="input-holder">
-            <select name="country" placeholder="Страна" data-bind="value: country, attr:{id: cssCountryList}">
-              <option value=""></option><!-- ko foreach: countryList  -->
-              <option data-bind="text: name, value: id"></option><!-- /ko -->
+            <select name="country" placeholder="Страна" data-bind="value: country, attr:{id: cssCountryList}"><!-- ko foreach: countryList --><!-- ko if: $parent.country() --><!-- ko if: $parent.country().id  == id -->
+              <option data-bind="text: name, value: id" selected="selected"></option><!-- /ko --><!-- ko ifnot: $parent.country().id  == id -->
+              <option data-bind="text: name, value: id"></option><!-- /ko --><!-- /ko --><!-- ko ifnot: $parent.country() -->
+              <option data-bind="text: name, value: id"> </option><!-- /ko --><!-- /ko -->
             </select><!-- ko if: errorCountry -->
             <div class="error__message">
               <p data-bind="text: errorCountry"></p>
