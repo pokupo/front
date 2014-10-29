@@ -128,11 +128,6 @@ script#postDataTmpl(type="text/html")
                                 
                                 +ifnot('$parent.country().id  == id')
                                     option(data-bind="text: name, value: id")
-                                
-                        select#country_list_profile.suggestion-input.block-input(name='address__country', data-bind='value: idCountry, attr: {id: cssCountryList}' placeholder="Страна")
-                           +each('countryList ')
-                                option(data-bind='text: name, value: id')
-                            option(value='' selected='selected')
 
                         +if('errorCountry')
                             .error__message
