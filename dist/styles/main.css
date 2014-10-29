@@ -1212,6 +1212,10 @@ ul.with-bullets li {
 	margin-top: 5px;
 }
 
+.b-fieldset .chosen-container {
+	padding-top: 20px;
+}
+
 input[type="checkbox"],
 input[type="radio"] {
 	display: none;
@@ -8979,6 +8983,7 @@ span.fancytree-node.fancytree-error span.fancytree-title {
 	width: 242px;
 	text-align: center;
 	padding: 0 5px;
+	margin-bottom: 60px;
 }
 
 .b-catalog__items.cards .b-item__info,

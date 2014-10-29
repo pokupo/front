@@ -565,6 +565,7 @@ span.fancytree-node.fancytree-error span.fancytree-title {
 	width: 242px;
 	text-align: center;
 	padding: 0 5px;
+	margin-bottom: 60px;
 }
 
 .b-catalog__items.cards .b-item__info,
