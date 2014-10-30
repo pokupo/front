@@ -953,11 +953,47 @@ span.fancytree-node.fancytree-error span.fancytree-title {
 }
 
 .b-catalog-banner {
+	position: relative;
 	margin-bottom: 20px;
+	padding-bottom: 0 !important;
+	border-bottom: none !important;
+	background-color: #fff;
+	border-bottom: 1px solid #e2e2e2;
+	-webkit-box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+	box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+	padding-bottom: 2px;
+}
+
+.b-catalog-banner:before,
+.b-catalog-banner:after {
+	content: '';
+	position: absolute;
+	display: block;
+	left: 0;
+	right: 0;
+}
+
+.b-catalog-banner:before {
+	height: 2px;
+	background: #dcdcdc;
+	border-top: 1px solid #d6d6d6;
+	bottom: 0;
+	z-index: 0;
+}
+
+.b-catalog-banner:after {
+	height: 50px;
+	bottom: -1px;
+	-webkit-box-shadow: 0 10px 20px -7px rgba(0,0,0,0.3);
+	box-shadow: 0 10px 20px -7px rgba(0,0,0,0.3);
+	z-index: -1;
 }
 
 .b-catalog-banner__slide {
 	height: 100%;
+	background-repeat: no-repeat !important;
+	background-position: 50% 0 !important;
+	background-size: auto 100% !important;
 }
 
 .b-catalog-banner__slide hgroup {
@@ -968,6 +1004,11 @@ span.fancytree-node.fancytree-error span.fancytree-title {
 
 .b-catalog-banner__slide h1 {
 	margin-bottom: 20px;
+}
+
+.b-catalog-banner__link {
+	text-decoration: none;
+	border-bottom: 0;
 }
 
 .b-catalog-banner .fotorama__nav-wrap {

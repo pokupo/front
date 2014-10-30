@@ -398,10 +398,17 @@
 	transition margin-top 0.5s ease-in-out
 
 .b-catalog-banner
+	position relative
 	margin-bottom 20px
+	padding-bottom 0!important
+	border-bottom none!important
+	drop-shadow()
 
 	&__slide
 		height 100%
+		background-repeat no-repeat !important
+		background-position 50% 0 !important
+		background-size auto 100% !important
 		
 		hgroup
 			color #fff
@@ -409,6 +416,10 @@
 			text-shadow 0 1px rgba(#000, 0.6)
 		h1
 			margin-bottom 20px
+	
+	&__link
+		text-decoration none
+		border-bottom 0
 
 .b-catalog-banner
 	.fotorama__nav-wrap

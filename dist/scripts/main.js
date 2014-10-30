@@ -1276,7 +1276,9 @@ PKP.Sliders = {
 			transitionduration: 500,
 			stopautoplayontouch: true,
 			nav: 'dots',
-			arrows: false,
+			click: false,
+			swipe: true,
+			arrows: true,
 			shadows: false,
 			transition: 'crossfade',
 			fit: 'cover'

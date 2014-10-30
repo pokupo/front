@@ -6,7 +6,7 @@ script#blockSliderTmpl(type="text/html")
         .b-catalog-banner.promoBlocks(data-bind="css: cssBlockContainer")
             +each('contentBlock')
                 .b-catalog-banner__slide(data-bind="css: cssBlock, attr: {style: backgroundImage}")
-                    .container
+                    a.container(href=js0)
                         hgroup
                             h1(data-bind="text: $parent.titleBlock")
                             h2.lead(data-bind='title: chortName')                               

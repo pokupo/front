@@ -3,14 +3,11 @@
   <!-- version 1.0-->
   <section class="catalog-banner">
     <div data-bind="css: cssBlockContainer" class="b-catalog-banner promoBlocks"><!-- ko foreach: contentBlock -->
-      <div data-bind="css: cssBlock, attr: {style: backgroundImage}" class="b-catalog-banner__slide">
-        <div class="container">
+      <div data-bind="css: cssBlock, attr: {style: backgroundImage}" class="b-catalog-banner__slide"><a href="javascript:void(0);" class="container">
           <hgroup>
             <h1 data-bind="text: $parent.titleBlock"></h1>
             <h2 data-bind="title: chortName" class="lead">                              </h2>
-          </hgroup>
-        </div>
-      </div><!-- /ko -->
+          </hgroup></a></div><!-- /ko -->
     </div>
   </section>
 </script>
