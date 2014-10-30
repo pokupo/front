@@ -9426,6 +9426,8 @@ span.fancytree-node.fancytree-error span.fancytree-title {
 }
 
 .b-catalog-banner__link {
+	height: 100%;
+	display: block;
 	text-decoration: none;
 	border-bottom: 0;
 }
