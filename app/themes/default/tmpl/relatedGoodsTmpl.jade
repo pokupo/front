@@ -69,7 +69,7 @@ script#relatedGoodsTileTmpl(type="text/html")
                             .b-item.with_popover
                                 .b-item__picture
                                     +if('routeImage()')
-                                        a(href=js0, data-bind="text: chortName, click: ClickGoods, attr: {id : cssTitleToCart, href: 'http://pokupo.ru/shop#/goods/id=' + id}")
+                                        a(href=js0, data-bind="click: ClickGoods, attr: {id : cssTitleToCart, href: 'http://pokupo.ru/shop#/goods/id=' + id}")
                                             img(src='', data-bind='attr: {src: routeImage(), title: chortName, id : cssToCart}')
                                    
                                 .responsive-holder
@@ -104,7 +104,7 @@ script#relatedGoodsTileTmpl(type="text/html")
                                     .b-item--dublicate
                                         .b-item__picture
                                             +if('routeImage()')
-                                                a(href=js0, data-bind="text: chortName, click: ClickGoods, attr: {id : cssTitleToCart, href: 'http://pokupo.ru/shop#/goods/id=' + id}")
+                                                a(href=js0, data-bind="click: ClickGoods, attr: {id : cssTitleToCart, href: 'http://pokupo.ru/shop#/goods/id=' + id}")
                                                     img(src='', data-bind='attr: {src: routeImage(), title: chortName, id : cssToCart}')
                                         .responsive-holder
                                             .b-item__description
@@ -146,7 +146,7 @@ script#relatedGoodsTableTmpl(type="text/html")
                         .b-item.with_popover
                             .b-item__picture
                                 // ko if: routeImage() 
-                                a(href=js0, data-bind="text: chortName, click: ClickGoods, attr: {id : cssTitleToCart, href: 'http://pokupo.ru/shop#/goods/id=' + id}")
+                                a(href=js0, data-bind="click: ClickGoods, attr: {id : cssTitleToCart, href: 'http://pokupo.ru/shop#/goods/id=' + id}")
                                     img(src='', data-bind='attr: {src: routeImage(), title: chortName, id : cssToCart}')
                                 // /ko 
                             .responsive-holder
@@ -182,7 +182,7 @@ script#relatedGoodsTableTmpl(type="text/html")
                                 .b-item--dublicate
                                     .b-item__picture
                                         +if('routeImage()')
-                                            a(href=js0, data-bind="text: chortName, click: ClickGoods, attr: {id : cssTitleToCart, href: 'http://pokupo.ru/shop#/goods/id=' + id}")
+                                            a(href=js0, data-bind="click: ClickGoods, attr: {id : cssTitleToCart, href: 'http://pokupo.ru/shop#/goods/id=' + id}")
                                                 img(src='', data-bind='attr: {src: routeImage(), title: chortName, id : cssToCart}')
                                         
                                     .responsive-holder
@@ -227,7 +227,7 @@ script#relatedGoodsListTmpl(type="text/html")
                     .b-item.with_popover
                         .b-item__picture
                             +if('routeImage()')
-                                a(href=js0, data-bind="text: chortName, click: ClickGoods, attr: {id : cssTitleToCart, href: 'http://pokupo.ru/shop#/goods/id=' + id}")
+                                a(href=js0, data-bind="click: ClickGoods, attr: {id : cssTitleToCart, href: 'http://pokupo.ru/shop#/goods/id=' + id}")
                                     img(src='', data-bind='attr: {src: routeImage(), title: chortName, id : cssToCart}')
 
                         .responsive-holder
@@ -263,7 +263,7 @@ script#relatedGoodsListTmpl(type="text/html")
                             .b-item--dublicate
                                 .b-item__picture
                                    +if('routeImage()')
-                                        a(href=js0, data-bind="text: chortName, click: ClickGoods, attr: {id : cssTitleToCart, href: 'http://pokupo.ru/shop#/goods/id=' + id}")
+                                        a(href=js0, data-bind="click: ClickGoods, attr: {id : cssTitleToCart, href: 'http://pokupo.ru/shop#/goods/id=' + id}")
                                             img(src='', data-bind='attr: {src: routeImage(), title: chortName, id : cssToCart}')
                                     
                                 .responsive-holder
