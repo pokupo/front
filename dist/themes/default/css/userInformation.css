@@ -39,6 +39,12 @@
 .menu-login .logged-in {
   padding-right: 15px;
 }
+section.subheader .menu-login .not-logged-in a.menu-login__login:before {
+  background-image: url("../images/sprite.png");
+  background-position: -804px -169px;
+  width: 8px;
+  height: 11px;
+}
 .header .logged-in .btn {
   margin: 40px 0 0 0;
 }
