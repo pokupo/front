@@ -1083,6 +1083,11 @@ span.slidedown__trigger:hover {
 	background: #efece7;
 }
 
+body.loading {
+	-webkit-filter: blur(4px);
+	filter: blur(4px);
+}
+
 #loadingContainer {
 	position: absolute;
 	top: 0;
