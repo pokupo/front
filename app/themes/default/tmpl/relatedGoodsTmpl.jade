@@ -145,10 +145,9 @@ script#relatedGoodsTableTmpl(type="text/html")
                     .b-catalog__item
                         .b-item.with_popover
                             .b-item__picture
-                                // ko if: routeImage() 
-                                a(href=js0, data-bind="click: ClickGoods, attr: {id : cssTitleToCart, href: 'http://pokupo.ru/shop#/goods/id=' + id}")
-                                    img(src='', data-bind='attr: {src: routeImage(), title: chortName, id : cssToCart}')
-                                // /ko 
+                                +if('routeImage()')
+                                    a(href=js0, data-bind="click: ClickGoods, attr: {id : cssTitleToCart, href: 'http://pokupo.ru/shop#/goods/id=' + id}")
+                                        img(src='', data-bind='attr: {src: routeImage(), title: chortName, id : cssToCart}')
                             .responsive-holder
                                 .b-item__description
                                     h4.b-item__title

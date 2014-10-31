@@ -106,9 +106,7 @@
     <div class="b-catalog__items magazine"><!-- ko foreach: content -->
       <div class="b-catalog__item">
         <div class="b-item with_popover">
-          <div class="b-item__picture">
-            <!-- ko if: routeImage() --><a href="javascript:void(0);" data-bind="click: ClickGoods, attr: {id : cssTitleToCart, href: 'http://pokupo.ru/shop#/goods/id=' + id}"><img src="" data-bind="attr: {src: routeImage(), title: chortName, id : cssToCart}"/></a>
-            <!-- /ko -->
+          <div class="b-item__picture"><!-- ko if: routeImage() --><a href="javascript:void(0);" data-bind="click: ClickGoods, attr: {id : cssTitleToCart, href: 'http://pokupo.ru/shop#/goods/id=' + id}"><img src="" data-bind="attr: {src: routeImage(), title: chortName, id : cssToCart}"/></a><!-- /ko -->
           </div>
           <div class="responsive-holder">
             <div class="b-item__description">

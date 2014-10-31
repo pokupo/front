@@ -536,6 +536,19 @@ hgroup
 		&:before
 			background $grey
 
+body.loading
+	-webkit-filter blur(4px)
+	filter blur(4px)
+
+#loadingContainer
+	position absolute
+	top 0
+	bottom 0
+	left 0
+	right 0
+	z-index 3
+	background rgba(255, 255, 255, 0.6) url('../images/loader_32px.gif') 50% 50% no-repeat
+	
 
 /* Вспомогательные классы */
 
