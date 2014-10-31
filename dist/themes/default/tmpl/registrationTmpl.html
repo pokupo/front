@@ -181,9 +181,9 @@
           </div>
           <div id="fullname__gender" class="input-holder">
             <input id="fullname__gender-male" type="radio" name="gender" value="m" data-bind="checked: gender" class="inline"/>
-            <label for="fullname__gender-male" data-bind="click: ClickItem.bind($data, 'm')">Мужской</label>
+            <label for="fullname__gender-male">Мужской</label>
             <input id="fullname__gender-female" type="radio" name="gender" value="w" data-bind="checked: gender" class="inline"/>
-            <label for="fullname__gender-female" data-bind="click: ClickItem.bind($data, 'w')">Женский</label><!-- ko if: errorGender -->
+            <label for="fullname__gender-female">Женский</label><!-- ko if: errorGender -->
             <div class="error__message">
               <p data-bind="text: errorGender"></p>
             </div><!-- /ko -->

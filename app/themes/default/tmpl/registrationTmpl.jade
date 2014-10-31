@@ -194,9 +194,9 @@ script#registrationFromStep3Tmpl(type="text/html")
 
                     #fullname__gender.input-holder
                         input#fullname__gender-male.inline(type="radio" name="gender" value="m" data-bind="checked: gender")
-                        label(for="fullname__gender-male" data-bind="click: ClickItem.bind($data, 'm')") Мужской
+                        label(for="fullname__gender-male") Мужской
                         input#fullname__gender-female.inline(type="radio" name="gender" value="w" data-bind="checked: gender")
-                        label(for="fullname__gender-female" data-bind="click: ClickItem.bind($data, 'w')") Женский
+                        label(for="fullname__gender-female") Женский
 
                         +if('errorGender')
                             .error__message
