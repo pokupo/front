@@ -10,7 +10,7 @@ script#cartGoodsTmpl(type="text/html")
     .b-catalog-item
         h1.b-catalog-item__title Моя корзина
         +each('sellerBlock')
-            .b-profile-info(data-bind="embedWidget :{ widget : 'InfoSellerWidget-1.0', params : {data : sellerInfo, tmpl : {path: 'http://promodev.pokupo.ru/themes/default/tmpl/infoSellerTmpl.html'}}}")
+            .b-profile-info.b-profile-info--fullwidth(data-bind="embedWidget :{ widget : 'InfoSellerWidget-1.0', params : {data : sellerInfo, tmpl : {path: 'http://promodev.pokupo.ru/themes/default/tmpl/infoSellerTmpl.html'}}}")
 
             ol.b-order-list
                 //  ko template: { name: 'HeaderBlockTmpl' }
