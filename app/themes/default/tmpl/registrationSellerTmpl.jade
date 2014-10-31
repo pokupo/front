@@ -173,3 +173,30 @@ script#registrationSellerFromStep3Tmpl(type='text/html')
 			.b-wizard__actions
 				a.b-wizard__action.btn-prev-step(href=js0, data-bind='click: Back') Назад
 				a.b-wizard__action.btn-next-step(href=js0, data-bind='click: SubmitForm') Продолжить
+
+script#registrationSellerFromStep4Tmpl(type='text/html')
+	// version 1.0 
+	.h1-with-progress-bar
+		canvas#progressCircle(width='160', height='160')
+			p Ваш браузер не поддерживает технологию canvas
+		h1 Регистрация нового аккаунта
+
+	form(action='')
+		#registerShopWizard.b-wizard
+			ul.b-wizard__steps
+				li
+					a.done(href='#step-1')
+						label.b-wizard__step-num 1
+				li
+					a.done(href='#step-2')
+						label.b-wizard__step-num 2
+				li
+					a.done(href='#step-3')
+						label.b-wizard__step-num 3
+			#step-4
+				h2.b-wizard__step-title Завершение регистрации
+				.b-wizard__step-content
+					p Вы успешно зарегистрировались в качестве продавца, на вашу почту высланы пароли доступа, для управления своим магазином зайдите в личный кабинет
+
+			.b-wizard__actions
+				a.b-wizard__action.btn-next-step(href='https://seller.pokupo.ru/login') Настроить магазин
