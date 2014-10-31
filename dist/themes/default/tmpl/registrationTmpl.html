@@ -111,7 +111,7 @@
           </div><!-- ko ifnot: isEmptyPhone  --><!-- ko ifnot: phoneConfirmLater -->
           <div class="input-holder">
             <div rel="tooltip" title="Код, высланный в SMS" class="tooltip__trigger">?</div>
-            <input type="text" name="code" value="" placeholder="Ваш e-mail код" data-bind="value: phoneToken" class="block-input"/><!-- ko if: phoneIsConfirm  -->
+            <input type="text" name="code" value="" placeholder="Ваш SMS код" data-bind="value: phoneToken" class="block-input"/><!-- ko if: phoneIsConfirm  -->
             <div class="b-status b-status--done">Телефон подтверждён</div><!-- /ko --><!-- ko if: errorPhoneConfirm -->
             <div class="error__message">
               <p data-bind="text: errorPhoneConfirm"></p>
@@ -179,12 +179,11 @@
               <p data-bind="text: errorBirthDay"></p>
             </div><!-- /ko -->
           </div>
-          <div class="input-holder">
-            <label for="85" class="block-label b-small-text">Ваш пол</label>
-            <input name="gender" type="radio" value="m" data-bind="checked: gender" class="radio"/>
-            <label for="gender" class="block-label b-small-text">Мужчина</label>
-            <input name="gender" type="radio" value="ц" data-bind="checked: gender" class="radio"/>
-            <label for="gender" class="block-label b-small-text">Женщина</label><!-- ko if: errorGender -->
+          <div id="fullname__gender" class="input-holder">
+            <input id="fullname__gender-male" type="radio" name="gender" value="m" data-bind="checked: gender" class="inline"/>
+            <label for="fullname__gender-male" data-bind="click: ClickItem.bind($data, 'm')">Мужской</label>
+            <input id="fullname__gender-female" type="radio" name="gender" value="w" data-bind="checked: gender" class="inline"/>
+            <label for="fullname__gender-female" data-bind="click: ClickItem.bind($data, 'w')">Женский</label><!-- ko if: errorGender -->
             <div class="error__message">
               <p data-bind="text: errorGender"></p>
             </div><!-- /ko -->

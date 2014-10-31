@@ -120,11 +120,12 @@ script#registrationFromStep2Tmpl(type="text/html")
                     .input-holder(style='padding-top: 13px;')
                         input#skip-email.checkbox(name='skip-email', type='checkbox', checked='', data-bind='checked: mailConfirmLater')
                         label.block-label.b-small-text(for='skip-email') Подтвердить почтовый ящик позднее
+
                     +ifnot('isEmptyPhone ')
                         +ifnot('phoneConfirmLater')
                             .input-holder
                                 .tooltip__trigger(rel="tooltip" title="Код, высланный в SMS") ?
-                                input.block-input(type='text', name='code', value='', placeholder='Ваш e-mail код', data-bind='value: phoneToken')
+                                input.block-input(type='text', name='code', value='', placeholder='Ваш SMS код', data-bind='value: phoneToken')
                                 +if('phoneIsConfirm ')
                                     .b-status.b-status--done Телефон подтверждён
                                 +if('errorPhoneConfirm')
@@ -191,15 +192,15 @@ script#registrationFromStep3Tmpl(type="text/html")
                             .error__message
                                 p(data-bind='text: errorBirthDay')
 
-                    .input-holder
-                        label.block-label.b-small-text(for='85') Ваш пол
-                        input.radio(name='gender', type='radio', value='m', data-bind='checked: gender')
-                        label.block-label.b-small-text(for='gender') Мужчина
-                        input.radio(name='gender', type='radio', value='ц', data-bind='checked: gender')
-                        label.block-label.b-small-text(for='gender') Женщина
+                    #fullname__gender.input-holder
+                        input#fullname__gender-male.inline(type="radio" name="gender" value="m" data-bind="checked: gender")
+                        label(for="fullname__gender-male" data-bind="click: ClickItem.bind($data, 'm')") Мужской
+                        input#fullname__gender-female.inline(type="radio" name="gender" value="w" data-bind="checked: gender")
+                        label(for="fullname__gender-female" data-bind="click: ClickItem.bind($data, 'w')") Женский
+
                         +if('errorGender')
                             .error__message
-                                p(data-bind='text: errorGender')
+                                p(data-bind="text: errorGender")
 
                     .input-holder(style='padding-top: 13px;')
                         input#skip_personal.checkbox(name='skip_personal', type='checkbox', data-bind='click: SpecifyLater')
