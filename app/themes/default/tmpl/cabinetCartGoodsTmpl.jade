@@ -104,10 +104,10 @@ script#cabinetCartGoodsGoodsBlockTmpl(type="text/html")
                     | На складе:
                     span.value(data-bind='text: countReserv')
                 .b-increment-input
-                    span.b-increment-input__darr(data-bind='click: ClickMinus') −
+                    span.b-increment-input__darr(data-bind='click: ClickMinus')
                     span.b-increment-input__input-wrapper
                         input.inline-input.b-increment-input__input(type='text', data-name='qty', value='5', maxlength='3', autocomplete='off', data-min='1', data-max='5', data-bind='value: ordered')
-                    span.b-increment-input__uarr(data-bind='click: ClickPlus') +
+                    span.b-increment-input__uarr(data-bind='click: ClickPlus')
         .b-order-item__cost
             +if('discount() != 0')
                 span.b-order-item__discount
