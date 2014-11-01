@@ -1093,13 +1093,16 @@ section.profile-nav {
 	margin-right: 25px;
 	margin-bottom: 25px;
 	float: left;
+	line-height: 120px;
+	vertical-align: middle;
 }
 
 .b-profile-info__photo img {
-	display: block;
+	display: inline-block;
 	margin: 0 auto;
 	width: 100%;
 	height: auto;
+	vertical-align: middle;
 }
 
 .b-profile-info__title {

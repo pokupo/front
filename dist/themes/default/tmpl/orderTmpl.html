@@ -59,7 +59,7 @@
           </div><!-- /ko -->
         </div>
         <div class="input-holder">
-          <div style="position:relative" class="floatlabel-wrapper">
+          <div style="position: relative;" class="floatlabel-wrapper">
             <label class="block-label b-small-text">Ваш пол</label>
             <input name="gender" type="radio" value="m" data-bind="checked: gender" class="radio"/>
             <label for="gender" class="block-label b-small-text">Мужчина</label>
@@ -70,7 +70,7 @@
             </div><!-- /ko -->
           </div>
         </div>
-        <div style="padding-top:13px" class="input-holder">
+        <div style="padding-top: 13px;" class="input-holder">
           <input id="skip_personal" name="skip_personal" type="checkbox" checked="checked" data-bind="click: SpecifyLater" class="checkbox"/>
           <label for="skip_personal" class="block-label b-small-text">Указать позже</label>
         </div>
@@ -178,7 +178,8 @@
       <h2 class="b-wizard__step-title">Адрес доставки</h2>
       <p>Для доставки покупок требуется указать почтовый адрес</p>
       <div class="input-holder">
-        <select name="country" placeholder="Страна" data-bind="value: idCountry, attr: {id: cssCountryList}"><!-- ko foreach: countryList --><!-- ko if: $parent.country() --><!-- ko if: $parent.country().id  == id -->
+        <select name="address__country" data-bind="value: idCountry, attr: {id: cssCountryList}" data-placeholder="Страна" class="suggestion-input block-input country_list_profile">
+          <option value=""> </option><!-- ko foreach: countryList --><!-- ko if: $parent.country() --><!-- ko if: $parent.country().id  == id -->
           <option data-bind="text: name, value: id" selected="selected"></option><!-- /ko --><!-- ko ifnot: $parent.country().id  == id -->
           <option data-bind="text: name, value: id"></option><!-- /ko --><!-- /ko --><!-- ko ifnot: $parent.country() -->
           <option data-bind="text: name, value: id"></option><!-- /ko --><!-- /ko -->
@@ -223,7 +224,7 @@
           <p data-bind="text: errorContactPhone"></p>
         </div><!-- /ko -->
       </div>
-      <div style="padding-top:13px" class="input-holder">
+      <div style="padding-top: 13px;" class="input-holder">
         <input id="set_main_address" type="checkbox" checked="" data-bind="checked: isDefault" class="checkbox"/>
         <label for="set_main_address" class="block-label b-small-text">Основной адрес</label>
       </div>
@@ -270,7 +271,7 @@
             <td class="b-order-table__action"><!-- ko if: isActive() -->
               <input type="radio" checked="" name="is_default"/><!-- /ko --><!-- ko ifnot: isActive() -->
               <input type="radio" name="is_default"/><!-- /ko -->
-              <label for="tr_11">Выбрать</label>
+              <label for="tr_11">Выбрать </label>
             </td>
           </tr><!-- /ko -->
         </tbody>
@@ -369,7 +370,7 @@
       </table>
       <ul class="b-tech"><!-- ko if: discount -->
         <li class="b-tech__item">
-          <div class="b-tech__char"><span>Скидка: <i>
+          <div class="b-tech__char"><span>Скидка:<i>
                 <!-- ko text: discount-->
                 <!-- /ko--></i></span></div>
           <div class="b-tech__value"><span class="b-price"><span class="b-price__number">-
@@ -383,7 +384,7 @@
           <div class="b-tech__value"><span class="b-price"><span data-bind="text: costShipping" class="b-price__number"></span><span class="b-price__thinsp">&nbsp;</span><span class="b-price__rubl">Р</span></span></div>
         </li><!-- /ko -->
         <li class="b-tech__item">
-          <div class="b-tech__char"><span>Способ оплаты: <i>
+          <div class="b-tech__char"><span>Способ оплаты:<i>
                 <!-- ko text: namePayment-->
                 <!-- /ko--></i></span></div>
           <div data-bind="text: costPayment" class="b-tech__value"></div>
@@ -427,7 +428,7 @@
         </tr>
       </tbody>
     </table><!-- /ko -->
-    <div style="margin-bottom: 60px" class="comment">
+    <div style="margin-bottom: 60px;" class="comment">
       <textarea name="comment" value="" placeholder="Примечания к заказу" width="100%" rows="2" data-bind="value: commentBuyer"></textarea>
     </div>
     <div class="b-wizard__actions"><a href="javascript:void(0);" data-bind="click: Back" class="b-wizard__action btn-prev-step">Назад</a><a href="javascript:void(0);" data-bind="click: ClickDelete" class="b-wizard__action btn-prev-step">Отменить заказ</a><a href="javascript:void(0);" data-bind="click: ClickConfirm" class="b-wizard__action btn-next-step">Подтверждаю</a></div>

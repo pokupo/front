@@ -1,35 +1,38 @@
 include ../../../templates/helpers/knockout
 
-script#emptyCartGoodsTmpl(type="text/html")
+script#emptyCartGoodsTmpl(type='text/html')
     // version 1.0
     p В корзине нет ни одного товара.
 
-        
-script#cartGoodsTmpl(type="text/html")
+
+script#cartGoodsTmpl(type='text/html')
     // version 1.0
     .b-catalog-item
         h1.b-catalog-item__title Моя корзина
         +each('sellerBlock')
-            .b-profile-info.b-profile-info--fullwidth(data-bind="embedWidget :{ widget : 'InfoSellerWidget-1.0', params : {data : sellerInfo, tmpl : {path: 'http://promodev.pokupo.ru/themes/default/tmpl/infoSellerTmpl.html'}}}")
-
+            .b-profile-info.b-profile-info--fullwidth(data-bind='embedWidget :{ widget : \'InfoSellerWidget-1.0\', params : {data : sellerInfo, tmpl : {path: \'http://promodev.pokupo.ru/themes/default/tmpl/infoSellerTmpl.html\'}}}')
+            
             ol.b-order-list
-                //  ko template: { name: 'HeaderBlockTmpl' }
+                // ko template: { name: 'HeaderBlockTmpl' }
                 // /ko
 
                 +each('goods')
                     // ko template: { name: 'GoodsBlockTmpl' }
                     // /ko
-
-            //  ko template: { name: 'FooterBlockTmpl' }
+                
+            // ko template: { name: 'FooterBlockTmpl' }
             // /ko
 
+            #dialog-form-batch(style='display: none', title='Добавить комментарий к избранному товару')
+                textarea(name='comment', rows='10', cols='50', data-bind='value : comment')
+ 
 
-script#HeaderBlockTmpl(type="text/html")
+script#HeaderBlockTmpl(type='text/html')
     // version 1.0
     li.b-order-item.b-thead
         .b-order-item__checkbox
-            input#js-select-all(type="checkbox" data-bind="attr: {id: cssSelectAll}")
-            label(for="js-select-all" data-bind="click: ClickSelectAll")
+            input#js-select-all(type='checkbox', data-bind='attr: {id: cssSelectAll}')
+            label(for='js-select-all', data-bind='click: ClickSelectAll')
         .b-order-item__img
         .b-order-item__name Наименование
         .b-order-item__price Цена
@@ -37,55 +40,56 @@ script#HeaderBlockTmpl(type="text/html")
         .b-order-item__cost Стоимость
 
 
-script#GoodsBlockTmpl(type="text/html")
+script#GoodsBlockTmpl(type='text/html')
     // version 1.0
     li.b-order-item
         .b-order-item__checkbox
-            input(type="checkbox" data-bind="attr: {id: cssCheckboxGoods}")
-            label(for="" data-bind="click: ClickOrder")
+            input(type='checkbox', data-bind='attr: {id: cssCheckboxGoods}') 
+            label(for='', data-bind='click: ClickOrder')
         .b-order-item__img
-            img(src="" data-bind="attr: {src: routeImages, title: fullName }")
+            img(src='', data-bind='attr: {src: routeImages, title: fullName }')
         .b-order-item__name
-            a(href=js0 data-bind="click: ClickGoods")
-                span(data-bind="text: fullName")
+            a(href=js0, data-bind='click: ClickGoods')
+                span(data-bind='text: fullName')
         .b-order-item__price
             span.b-price
-                span.b-price__number(data-bind="text: sellEndCost")
+                span.b-price__number(data-bind='text: sellEndCost')
                 span.b-price__thinsp &nbsp;
                 span.b-price__rubl Р
         .b-order-item__qty
             .limits-wrapper
                 p.b-catalog-item__limits
-                    | На складе: 
-                    span.value(data-bind="text: countReserv")
+                    | На складе:
+                    span.value(data-bind='text: countReserv')
                 .b-increment-input
-                    span.b-increment-input__darr(data-bind="click: ClickMinus")
+                    span.b-increment-input__darr(data-bind='click: ClickMinus')
                     span.b-increment-input__input-wrapper
-                        input.inline-input.b-increment-input__input(type="text" value="1" maxlength="3" autocomplete="off" data-bind="value: ordered")
-                    span.b-increment-input__uarr(data-bind="click: ClickPlus")
+                        input.inline-input.b-increment-input__input(type='text', value='1', maxlength='3', autocomplete='off', data-bind='value: ordered')
+                    span.b-increment-input__uarr(data-bind='click: ClickPlus')
         .b-order-item__cost
             span.b-price
-                span.b-price__number(data-bind="text: endSum")
+                span.b-price__number(data-bind='text: endSum')
                 span.b-price__thinsp &nbsp;
                 span.b-price__rubl Р
         .b-order-item__delay
             +if('IsFavorite')
                 .like_button.active
-                    a.pseudo-link.active(href=js0 data-bind="click: ClickFavorites") Избранный товар
+                    a.pseudo-link.active(href=js0, data-bind='click: ClickFavorites') Избранный товар
             +ifnot('IsFavorite')
                 .like_button
-                    a.pseudo-link(href=js0 data-bind="click: AddFavorites") В избранное
-        .b-order-item__drop.btn-circle.btn-circle--drop(data-bind="click: ClickRemove")
+                    a.pseudo-link(href=js0, data-bind='click: AddFavorites') В избранное
+
+        .b-order-item__drop.btn-circle.btn-circle--drop(data-bind='click: ClickRemove')
 
 
-script#FooterBlockTmpl(type="text/html")
+script#FooterBlockTmpl(type='text/html')
     // version 1.0
     .b-order-list__actions.bordered
         +ifnot('isDisabledButton')
             .like_button
-                span.pseudo-link(data-bind="click: ClickButchFavorites") Отложить выбранные товары
+                span.pseudo-link(data-bind='click: ClickButchFavorites') Отложить выбранные товары
             .drop_button
-                span.pseudo-link(data-bind="click: ClickButchRemove") Удалить выбранные товары
+                span.pseudo-link(data-bind='click: ClickButchRemove') Удалить выбранные товары
 
         +if('isDisabledButton')
             .like_button
@@ -94,23 +98,23 @@ script#FooterBlockTmpl(type="text/html")
                 span.pseudo-link.disabled Удалить выбранные товары
 
         .empty_button
-            span.pseudo-link(data-bind="click: ClickClearCurt") Очистить корзину
+            span.pseudo-link(data-bind='click: ClickClearCurt') Очистить корзину
 
     .b-order-list__results
         p.b-order-list__amount
             | Итог:
             span.b-price
-                span.b-price__number(data-bind="text: tatalForPayment")
+                span.b-price__number(data-bind='text: tatalForPayment')
                 span.b-price__thinsp &nbsp;
                 span.b-price__rubl Р
 
         p.b-order-list__tobepaid
             | К оплате:
             span.b-price
-                span.b-price__number(data-bind="text: tatalForPayment")
+                span.b-price__number(data-bind='text: tatalForPayment')
                 span.b-price__thinsp &nbsp;
                 span.b-price__rubl Р
-
+                
     .b-order-list__buttons
-        a.btn.btn-grey.btn-lg.btn-inline(href=js0 data-bind="click: ClickProceed") Продолжить покупки
-        a.btn.btn-lg(href=js0 data-bind="click: ClickIssueOrder") Оформить заказ
+        a.btn.btn-grey.btn-lg.btn-inline(href=js0, data-bind='click: ClickProceed') Продолжить покупки
+        a.btn.btn-lg(href=js0, data-bind='click: ClickIssueOrder') Оформить заказ

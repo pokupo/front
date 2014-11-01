@@ -2,7 +2,7 @@
 <script id="cartTmpl" type="text/html">
   <!-- version 1.0-->
   <div class="logged-in">
-    <div class="circles-menu"><!-- ko if: isAuthorized -->
+    <div class="circles-menu">
       <div class="circles-menu__item dropdown"><a id="cart_dropdown__trigger" href="javascript:void(0);" data-target="cart" class="with-icon dropdown__trigger icon__cart"><!-- ko if: ShowCount() --><!-- ko if: count() > 0 --><sup data-bind="text: count" class="circles-menu__num"></sup><!-- /ko --><!-- /ko --></a>
         <div id="cart_dropdown__content" data-target="cart" class="b-cart-menu dropdown__content hidden"><!-- ko if: ShowTitle() -->
           <p data-bind="text: title"></p><!-- /ko --><!-- ko if: goods().length > 0 -->
@@ -18,7 +18,7 @@
             <p class="b-cart-menu__results">Итог:<span class="b-cart-menu__amount b-price"><!-- ko if: ShowFinalCost() --><!-- ko if: ShowBaseCost() --><span data-bind="text: finalCost" class="b-price__number"></span><!-- /ko --><!-- ko ifnot: ShowBaseCost() --><span data-bind="text: finalCost" class="b-price__number"></span><!-- /ko --><span class="b-price__thinsp">&nbsp;</span><span class="b-price__rubl">Р</span><!-- /ko --></span></p>
           </div><!-- /ko -->
         </div>
-      </div><!-- /ko -->
+      </div>
     </div>
   </div>
 </script>

@@ -9,13 +9,16 @@
     <h1 class="b-catalog-item__title">Моя корзина</h1><!-- ko foreach: sellerBlock -->
     <div data-bind="embedWidget :{ widget : 'InfoSellerWidget-1.0', params : {data : sellerInfo, tmpl : {path: 'http://promodev.pokupo.ru/themes/default/tmpl/infoSellerTmpl.html'}}}" class="b-profile-info b-profile-info--fullwidth"></div>
     <ol class="b-order-list">
-      <!--  ko template: { name: 'HeaderBlockTmpl' }-->
+      <!-- ko template: { name: 'HeaderBlockTmpl' }-->
       <!-- /ko--><!-- ko foreach: goods -->
       <!-- ko template: { name: 'GoodsBlockTmpl' }-->
       <!-- /ko--><!-- /ko -->
     </ol>
-    <!--  ko template: { name: 'FooterBlockTmpl' }-->
-    <!-- /ko--><!-- /ko -->
+    <!-- ko template: { name: 'FooterBlockTmpl' }-->
+    <!-- /ko-->
+    <div id="dialog-form-batch" style="display: none" title="Добавить комментарий к избранному товару">
+      <textarea name="comment" rows="10" cols="50" data-bind="value : comment"></textarea>
+    </div><!-- /ko -->
   </div>
 </script>
 <script id="HeaderBlockTmpl" type="text/html">
@@ -44,7 +47,7 @@
     <div class="b-order-item__price"><span class="b-price"><span data-bind="text: sellEndCost" class="b-price__number"></span><span class="b-price__thinsp">&nbsp;</span><span class="b-price__rubl">Р</span></span></div>
     <div class="b-order-item__qty">
       <div class="limits-wrapper">
-        <p class="b-catalog-item__limits">На складе: <span data-bind="text: countReserv" class="value"></span></p>
+        <p class="b-catalog-item__limits">На складе:<span data-bind="text: countReserv" class="value"></span></p>
         <div class="b-increment-input"><span data-bind="click: ClickMinus" class="b-increment-input__darr"></span><span class="b-increment-input__input-wrapper">
             <input type="text" value="1" maxlength="3" autocomplete="off" data-bind="value: ordered" class="inline-input b-increment-input__input"/></span><span data-bind="click: ClickPlus" class="b-increment-input__uarr"></span></div>
       </div>
