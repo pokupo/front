@@ -2,7 +2,7 @@ include ../../../templates/helpers/knockout
 
 script#registrationSellerFromStep1Tmpl(type='text/html')
 	// version 1.0 
-	.h1-with-progress-bar
+	.h1-with-progress-bar.seller
 		canvas#progressCircle(width='160', height='160')
 			p Ваш браузер не поддерживает технологию canvas
 		h1 Регистрация продавца
@@ -62,7 +62,7 @@ script#registrationSellerFromStep1Tmpl(type='text/html')
 
 script#registrationSellerFromStep2Tmpl(type='text/html')
 	// version 1.0 
-	.h1-with-progress-bar
+	.h1-with-progress-bar.seller
 		canvas#progressCircle(width='160', height='160')
 			p Ваш браузер не поддерживает технологию canvas
 		h1 Регистрация продавца
@@ -125,7 +125,7 @@ script#registrationSellerFromStep2Tmpl(type='text/html')
 
 script#registrationSellerFromStep3Tmpl(type='text/html')
 	// version 1.0 
-	.h1-with-progress-bar
+	.h1-with-progress-bar.seller
 		canvas#progressCircle(width='160', height='160')
 			p Ваш браузер не поддерживает технологию canvas
 		h1 Регистрация продавца
@@ -176,10 +176,10 @@ script#registrationSellerFromStep3Tmpl(type='text/html')
 
 script#registrationSellerFromStep4Tmpl(type='text/html')
 	// version 1.0 
-	.h1-with-progress-bar
+	.h1-with-progress-bar.seller
 		canvas#progressCircle(width='160', height='160')
 			p Ваш браузер не поддерживает технологию canvas
-		h1 Регистрация нового аккаунта
+		h1 Регистрация продавца
 
 	form(action='')
 		#registerShopWizard.b-wizard

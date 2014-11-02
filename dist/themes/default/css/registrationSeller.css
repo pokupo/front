@@ -1,20 +1,20 @@
 /* Хэлперы и переменные */
-.h1-with-progress-bar {
+.h1-with-progress-bar.seller {
   text-align: center;
 }
-.h1-with-progress-bar h1 {
+.h1-with-progress-bar.seller h1 {
   position: relative;
 }
-.h1-with-progress-bar h1:after {
+.h1-with-progress-bar.seller h1:after {
   background-image: url("../images/sprite.png");
-  background-position: -552px -533px;
-  width: 60px;
+  background-position: -491px -625px;
+  width: 89px;
   height: 75px;
   content: '';
   position: absolute;
-  top: -140px;
+  top: -136px;
   left: 50%;
-  margin: 0 0 0 -30px;
+  margin: 0 0 0 -46px;
 }
 #progressCircle {
   border: 2px solid #ffa800;

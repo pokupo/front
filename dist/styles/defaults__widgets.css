@@ -2154,7 +2154,7 @@ body .b-share-popup__header_first {
 .b-profile-nav .menu__item a.icon__favorites:before {
 	margin-top: -8px;
 	background-image: url("../images/sprite.png");
-	background-position: -778px -174px;
+	background-position: -781px -279px;
 	width: 20px;
 	height: 17px;
 }
@@ -2162,7 +2162,7 @@ body .b-share-popup__header_first {
 .b-profile-nav .menu__item a.icon__cart:before {
 	margin-top: -11px;
 	background-image: url("../images/sprite.png");
-	background-position: -778px -199px;
+	background-position: -781px -304px;
 	width: 20px;
 	height: 17px;
 }
@@ -2170,7 +2170,7 @@ body .b-share-popup__header_first {
 .b-profile-nav .menu__item a.icon__order:before {
 	margin-top: -9px;
 	background-image: url("../images/sprite.png");
-	background-position: -778px -297px;
+	background-position: -781px -402px;
 	width: 20px;
 	height: 16px;
 }
@@ -2178,7 +2178,7 @@ body .b-share-popup__header_first {
 .b-profile-nav .menu__item a.icon__mail:before {
 	margin-top: -7px;
 	background-image: url("../images/sprite.png");
-	background-position: -778px -412px;
+	background-position: -781px -517px;
 	width: 18px;
 	height: 13px;
 }
@@ -2209,28 +2209,28 @@ body .b-share-popup__header_first {
 
 .b-profile-nav .menu__item.active a.icon__favorites:before {
 	background-image: url("../images/sprite.png");
-	background-position: -778px -149px;
+	background-position: -781px -254px;
 	width: 20px;
 	height: 17px;
 }
 
 .b-profile-nav .menu__item.active a.icon__cart:before {
 	background-image: url("../images/sprite.png");
-	background-position: -778px -224px;
+	background-position: -781px -329px;
 	width: 20px;
 	height: 17px;
 }
 
 .b-profile-nav .menu__item.active a.icon__order:before {
 	background-image: url("../images/sprite.png");
-	background-position: -778px -249px;
+	background-position: -781px -354px;
 	width: 20px;
 	height: 16px;
 }
 
 .b-profile-nav .menu__item.active a.icon__mail:before {
 	background-image: url("../images/sprite.png");
-	background-position: -778px -433px;
+	background-position: -781px -538px;
 	width: 18px;
 	height: 13px;
 }
@@ -2715,24 +2715,24 @@ body .b-share-popup__header_first {
 	margin-bottom: 12px;
 }
 
-.h1-with-progress-bar {
+.h1-with-progress-bar.seller {
 	text-align: center;
 }
 
-.h1-with-progress-bar h1 {
+.h1-with-progress-bar.seller h1 {
 	position: relative;
 }
 
-.h1-with-progress-bar h1:after {
+.h1-with-progress-bar.seller h1:after {
 	background-image: url("../images/sprite.png");
-	background-position: -552px -533px;
-	width: 60px;
+	background-position: -491px -625px;
+	width: 89px;
 	height: 75px;
 	content: '';
 	position: absolute;
-	top: -140px;
+	top: -136px;
 	left: 50%;
-	margin: 0 0 0 -30px;
+	margin: 0 0 0 -46px;
 }
 
 #progressCircle {
@@ -2899,14 +2899,14 @@ body .b-share-popup__header_first {
 
 section.subheader .menu-login .not-logged-in a.menu-login__login:before {
 	background-image: url("../images/sprite.png");
-	background-position: -794px -454px;
+	background-position: -804px -472px;
 	width: 8px;
 	height: 11px;
 }
 
 section.subheader .menu-login .not-logged-in a.menu-login__login:hover:before {
 	background-image: url("../images/sprite.png");
-	background-position: -778px -454px;
+	background-position: -804px -426px;
 	width: 8px;
 	height: 11px;
 }

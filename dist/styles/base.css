@@ -930,7 +930,7 @@ span.slidedown__trigger:hover {
 
 .password-control__trigger--show:after {
 	background-image: url("../images/sprite.png");
-	background-position: -778px -273px;
+	background-position: -781px -378px;
 	width: 20px;
 	height: 16px;
 }
@@ -938,7 +938,7 @@ span.slidedown__trigger:hover {
 .password-control__trigger--hide:after {
 	margin: 2px 0 0 -11px;
 	background-image: url("../images/sprite.png");
-	background-position: -778px -511px;
+	background-position: -781px -597px;
 	width: 22px;
 	height: 6px;
 }
@@ -946,7 +946,7 @@ span.slidedown__trigger:hover {
 .password-control__trigger.active:after {
 	margin: 2px 0 0 -11px;
 	background-image: url("../images/sprite.png");
-	background-position: -778px -511px;
+	background-position: -781px -597px;
 	width: 22px;
 	height: 6px;
 }
@@ -1171,7 +1171,7 @@ ul.checked li:before {
 	top: 0;
 	left: -44px;
 	background-image: url("../images/sprite.png");
-	background-position: -778px 0px;
+	background-position: -781px -72px;
 	width: 29px;
 	height: 26px;
 }
@@ -1891,14 +1891,14 @@ i.icon:before {
 
 .icon-back:before {
 	background-image: url("../images/sprite.png");
-	background-position: -778px -473px;
+	background-position: -781px -559px;
 	width: 14px;
 	height: 11px;
 }
 
 .btn:active i.icon.icon-back:before {
 	background-image: url("../images/sprite.png");
-	background-position: -778px -492px;
+	background-position: -781px -578px;
 	width: 14px;
 	height: 11px;
 }
@@ -1909,7 +1909,7 @@ i.icon:before {
 
 .icon-store:before {
 	background-image: url("../images/sprite.png");
-	background-position: -720px -250px;
+	background-position: -720px -398px;
 	width: 44px;
 	height: 40px;
 }
@@ -1921,7 +1921,7 @@ i.icon:before {
 
 .icon-store--small:before {
 	background-image: url("../images/sprite.png");
-	background-position: -778px -94px;
+	background-position: -781px -199px;
 	width: 26px;
 	height: 22px;
 }
@@ -1929,7 +1929,7 @@ i.icon:before {
 .btn:hover i.icon.icon-store:before,
 .btn:active i.icon.icon-store:before {
 	background-image: url("../images/sprite.png");
-	background-position: -720px -346px;
+	background-position: -720px -254px;
 	width: 44px;
 	height: 40px;
 }
@@ -2050,21 +2050,21 @@ i.icon:before {
 
 .footer .contact-icon.copyright {
 	background-image: url("../images/sprite.png");
-	background-position: -778px -390px;
+	background-position: -781px -495px;
 	width: 15px;
 	height: 14px;
 }
 
 .footer .contact-icon.email {
 	background-image: url("../images/sprite.png");
-	background-position: -778px -367px;
+	background-position: -781px -472px;
 	width: 15px;
 	height: 15px;
 }
 
 .footer .contact-icon.skype {
 	background-image: url("../images/sprite.png");
-	background-position: -778px -321px;
+	background-position: -781px -426px;
 	width: 15px;
 	height: 15px;
 }
@@ -2128,56 +2128,56 @@ i.icon:before {
 
 .footer .social .social__icon.vk {
 	background-image: url("../images/sprite.png");
-	background-position: -86px -714px;
+	background-position: 0px -714px;
 	width: 35px;
 	height: 35px;
 }
 
 .footer .social .social__icon.fb {
 	background-image: url("../images/sprite.png");
-	background-position: -215px -714px;
+	background-position: -258px -714px;
 	width: 35px;
 	height: 35px;
 }
 
 .footer .social .social__icon.tw {
 	background-image: url("../images/sprite.png");
-	background-position: -720px -658px;
+	background-position: -129px -714px;
 	width: 35px;
 	height: 35px;
 }
 
 .footer .social .social__icon.lj {
 	background-image: url("../images/sprite.png");
-	background-position: -172px -714px;
+	background-position: -720px -538px;
 	width: 35px;
 	height: 35px;
 }
 
 .footer .social .social__icon.hh {
 	background-image: url("../images/sprite.png");
-	background-position: -473px -714px;
+	background-position: -516px -714px;
 	width: 35px;
 	height: 35px;
 }
 
 .footer .social .social__icon.gp {
 	background-image: url("../images/sprite.png");
-	background-position: -344px -714px;
+	background-position: -387px -714px;
 	width: 35px;
 	height: 35px;
 }
 
 .footer .social .social__icon:hover.vk {
 	background-image: url("../images/sprite.png");
-	background-position: -720px -486px;
+	background-position: -559px -714px;
 	width: 35px;
 	height: 35px;
 }
 
 .footer .social .social__icon:hover.fb {
 	background-image: url("../images/sprite.png");
-	background-position: -301px -714px;
+	background-position: -344px -714px;
 	width: 35px;
 	height: 35px;
 }
@@ -2191,63 +2191,63 @@ i.icon:before {
 
 .footer .social .social__icon:hover.lj {
 	background-image: url("../images/sprite.png");
-	background-position: -720px -615px;
+	background-position: -172px -714px;
 	width: 35px;
 	height: 35px;
 }
 
 .footer .social .social__icon:hover.hh {
 	background-image: url("../images/sprite.png");
-	background-position: -720px -529px;
+	background-position: -720px -667px;
 	width: 35px;
 	height: 35px;
 }
 
 .footer .social .social__icon:hover.gp {
 	background-image: url("../images/sprite.png");
-	background-position: -430px -714px;
+	background-position: -473px -714px;
 	width: 35px;
 	height: 35px;
 }
 
 .footer .social .social__icon:active.vk {
 	background-image: url("../images/sprite.png");
-	background-position: -129px -714px;
+	background-position: -720px -624px;
 	width: 35px;
 	height: 35px;
 }
 
 .footer .social .social__icon:active.fb {
 	background-image: url("../images/sprite.png");
-	background-position: -258px -714px;
+	background-position: -301px -714px;
 	width: 35px;
 	height: 35px;
 }
 
 .footer .social .social__icon:active.tw {
 	background-image: url("../images/sprite.png");
-	background-position: 0px -714px;
+	background-position: -86px -714px;
 	width: 35px;
 	height: 35px;
 }
 
 .footer .social .social__icon:active.lj {
 	background-image: url("../images/sprite.png");
-	background-position: -720px -572px;
+	background-position: -215px -714px;
 	width: 35px;
 	height: 35px;
 }
 
 .footer .social .social__icon:active.hh {
 	background-image: url("../images/sprite.png");
-	background-position: -516px -714px;
+	background-position: -720px -581px;
 	width: 35px;
 	height: 35px;
 }
 
 .footer .social .social__icon:active.gp {
 	background-image: url("../images/sprite.png");
-	background-position: -387px -714px;
+	background-position: -430px -714px;
 	width: 35px;
 	height: 35px;
 }
