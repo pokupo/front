@@ -241,6 +241,10 @@ section.profile .b-tech__value {
 	margin: 0 0 0 793px;
 }
 
+.b-tech.standalone .b-tech__item {
+	margin-bottom: 27px;
+}
+
 .b-order__amount {
 	color: #02903d;
 	font-size: 30px;

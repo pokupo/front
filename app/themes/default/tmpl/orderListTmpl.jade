@@ -244,7 +244,8 @@ script#orderDetailTmpl(type="text/html")
                         +each('goods')
                             // ko template: { name: 'orderDetailGoodsTmpl' }
                             // /ko 
-                ul.b-tech
+                            
+                ul.b-tech.standalone
                     +if('discount > 0')
                         li.b-tech__item
                             .b-tech__char
