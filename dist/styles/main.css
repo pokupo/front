@@ -928,7 +928,7 @@ span.slidedown__trigger:hover {
 
 .password-control__trigger--show:after {
 	background-image: url("../images/sprite.png");
-	background-position: -778px -354px;
+	background-position: -778px -273px;
 	width: 20px;
 	height: 16px;
 }
@@ -936,7 +936,7 @@ span.slidedown__trigger:hover {
 .password-control__trigger--hide:after {
 	margin: 2px 0 0 -11px;
 	background-image: url("../images/sprite.png");
-	background-position: -778px -514px;
+	background-position: -778px -511px;
 	width: 22px;
 	height: 6px;
 }
@@ -944,7 +944,7 @@ span.slidedown__trigger:hover {
 .password-control__trigger.active:after {
 	margin: 2px 0 0 -11px;
 	background-image: url("../images/sprite.png");
-	background-position: -778px -514px;
+	background-position: -778px -511px;
 	width: 22px;
 	height: 6px;
 }
@@ -1169,7 +1169,7 @@ ul.checked li:before {
 	top: 0;
 	left: -44px;
 	background-image: url("../images/sprite.png");
-	background-position: -778px -72px;
+	background-position: -778px 0px;
 	width: 29px;
 	height: 26px;
 }
@@ -1889,14 +1889,14 @@ i.icon:before {
 
 .icon-back:before {
 	background-image: url("../images/sprite.png");
-	background-position: -804px -199px;
+	background-position: -778px -473px;
 	width: 14px;
 	height: 11px;
 }
 
 .btn:active i.icon.icon-back:before {
 	background-image: url("../images/sprite.png");
-	background-position: -804px -472px;
+	background-position: -778px -492px;
 	width: 14px;
 	height: 11px;
 }
@@ -1907,7 +1907,7 @@ i.icon:before {
 
 .icon-store:before {
 	background-image: url("../images/sprite.png");
-	background-position: -720px -298px;
+	background-position: -720px -250px;
 	width: 44px;
 	height: 40px;
 }
@@ -1919,7 +1919,7 @@ i.icon:before {
 
 .icon-store--small:before {
 	background-image: url("../images/sprite.png");
-	background-position: -778px -139px;
+	background-position: -778px -94px;
 	width: 26px;
 	height: 22px;
 }
@@ -1927,7 +1927,7 @@ i.icon:before {
 .btn:hover i.icon.icon-store:before,
 .btn:active i.icon.icon-store:before {
 	background-image: url("../images/sprite.png");
-	background-position: -720px -202px;
+	background-position: -720px -346px;
 	width: 44px;
 	height: 40px;
 }
@@ -2046,21 +2046,21 @@ i.icon:before {
 
 .footer .contact-icon.copyright {
 	background-image: url("../images/sprite.png");
-	background-position: -803px -449px;
+	background-position: -778px -390px;
 	width: 15px;
 	height: 14px;
 }
 
 .footer .contact-icon.email {
 	background-image: url("../images/sprite.png");
-	background-position: -801px -426px;
+	background-position: -778px -367px;
 	width: 15px;
 	height: 15px;
 }
 
 .footer .contact-icon.skype {
 	background-image: url("../images/sprite.png");
-	background-position: -778px -426px;
+	background-position: -778px -321px;
 	width: 15px;
 	height: 15px;
 }
@@ -2124,126 +2124,126 @@ i.icon:before {
 
 .footer .social .social__icon.vk {
 	background-image: url("../images/sprite.png");
-	background-position: -43px -714px;
+	background-position: -86px -714px;
 	width: 35px;
 	height: 35px;
 }
 
 .footer .social .social__icon.fb {
 	background-image: url("../images/sprite.png");
-	background-position: -720px -486px;
+	background-position: -215px -714px;
 	width: 35px;
 	height: 35px;
 }
 
 .footer .social .social__icon.tw {
 	background-image: url("../images/sprite.png");
-	background-position: -720px -615px;
+	background-position: -720px -658px;
 	width: 35px;
 	height: 35px;
 }
 
 .footer .social .social__icon.lj {
 	background-image: url("../images/sprite.png");
-	background-position: -720px -529px;
+	background-position: -172px -714px;
 	width: 35px;
 	height: 35px;
 }
 
 .footer .social .social__icon.hh {
 	background-image: url("../images/sprite.png");
-	background-position: -430px -714px;
+	background-position: -473px -714px;
 	width: 35px;
 	height: 35px;
 }
 
 .footer .social .social__icon.gp {
 	background-image: url("../images/sprite.png");
-	background-position: -301px -714px;
+	background-position: -344px -714px;
 	width: 35px;
 	height: 35px;
 }
 
 .footer .social .social__icon:hover.vk {
 	background-image: url("../images/sprite.png");
-	background-position: -129px -714px;
+	background-position: -720px -486px;
 	width: 35px;
 	height: 35px;
 }
 
 .footer .social .social__icon:hover.fb {
 	background-image: url("../images/sprite.png");
-	background-position: -258px -714px;
+	background-position: -301px -714px;
 	width: 35px;
 	height: 35px;
 }
 
 .footer .social .social__icon:hover.tw {
 	background-image: url("../images/sprite.png");
-	background-position: 0px -714px;
+	background-position: -43px -714px;
 	width: 35px;
 	height: 35px;
 }
 
 .footer .social .social__icon:hover.lj {
 	background-image: url("../images/sprite.png");
-	background-position: -720px -572px;
+	background-position: -720px -615px;
 	width: 35px;
 	height: 35px;
 }
 
 .footer .social .social__icon:hover.hh {
 	background-image: url("../images/sprite.png");
-	background-position: -516px -714px;
+	background-position: -720px -529px;
 	width: 35px;
 	height: 35px;
 }
 
 .footer .social .social__icon:hover.gp {
 	background-image: url("../images/sprite.png");
-	background-position: -387px -714px;
+	background-position: -430px -714px;
 	width: 35px;
 	height: 35px;
 }
 
 .footer .social .social__icon:active.vk {
 	background-image: url("../images/sprite.png");
-	background-position: -86px -714px;
+	background-position: -129px -714px;
 	width: 35px;
 	height: 35px;
 }
 
 .footer .social .social__icon:active.fb {
 	background-image: url("../images/sprite.png");
-	background-position: -215px -714px;
+	background-position: -258px -714px;
 	width: 35px;
 	height: 35px;
 }
 
 .footer .social .social__icon:active.tw {
 	background-image: url("../images/sprite.png");
-	background-position: -720px -658px;
+	background-position: 0px -714px;
 	width: 35px;
 	height: 35px;
 }
 
 .footer .social .social__icon:active.lj {
 	background-image: url("../images/sprite.png");
-	background-position: -172px -714px;
+	background-position: -720px -572px;
 	width: 35px;
 	height: 35px;
 }
 
 .footer .social .social__icon:active.hh {
 	background-image: url("../images/sprite.png");
-	background-position: -473px -714px;
+	background-position: -516px -714px;
 	width: 35px;
 	height: 35px;
 }
 
 .footer .social .social__icon:active.gp {
 	background-image: url("../images/sprite.png");
-	background-position: -344px -714px;
+	background-position: -387px -714px;
 	width: 35px;
 	height: 35px;
 }
@@ -4539,7 +4539,7 @@ ul.clients li i.client.sberbank {
 	bottom: -34px;
 	right: 75px;
 	background-image: url("../images/sprite.png");
-	background-position: -602px -714px;
+	background-position: -645px -714px;
 	width: 35px;
 	height: 34px; /* background url('../images/ui/quote.png') 0 100% no-repeat*/
 }
@@ -4804,7 +4804,7 @@ section.partners {
 	display: inline-block;
 	margin-right: 10px;
 	background-image: url("../images/sprite.png");
-	background-position: -778px -106px;
+	background-position: -50px -757px;
 	width: 31px;
 	height: 25px;
 }
@@ -4909,7 +4909,7 @@ section.partners {
 
 .register .btn-lg.btn-red i.icon-store:before {
 	background-image: url("../images/sprite.png");
-	background-position: -720px -250px;
+	background-position: -720px -298px;
 	width: 44px;
 	height: 40px;
 }
@@ -4927,7 +4927,7 @@ section.partners {
 .register .btn-lg.btn-red:hover i.icon.icon-store:before,
 .register .btn-lg.btn-red:active i.icon.icon-store:before {
 	background-image: url("../images/sprite.png");
-	background-position: -720px -346px;
+	background-position: -720px -202px;
 	width: 44px;
 	height: 40px;
 }
@@ -5004,14 +5004,14 @@ section.partners {
 
 .sign-in .btn-group-item a .icon-vk {
 	background-image: url("../images/sprite.png");
-	background-position: -778px -169px;
+	background-position: -778px -34px;
 	width: 18px;
 	height: 22px;
 }
 
 .sign-in .btn-group-item a .icon-google {
 	background-image: url("../images/sprite.png");
-	background-position: -427px -256px;
+	background-position: -388px -256px;
 	width: 31px;
 	height: 28px;
 }
@@ -5025,14 +5025,14 @@ section.partners {
 
 .sign-in .btn-group-item a:hover .icon-vk {
 	background-image: url("../images/sprite.png");
-	background-position: -778px -199px;
+	background-position: -778px -64px;
 	width: 18px;
 	height: 22px;
 }
 
 .sign-in .btn-group-item a:hover .icon-google {
 	background-image: url("../images/sprite.png");
-	background-position: -466px -256px;
+	background-position: -680px -625px;
 	width: 31px;
 	height: 28px;
 }
@@ -5066,14 +5066,14 @@ section.partners {
 
 .sign-in .btn-group-item.disabled:hover .icon-vk {
 	background-image: url("../images/sprite.png");
-	background-position: -778px -169px;
+	background-position: -778px -34px;
 	width: 18px;
 	height: 22px;
 }
 
 .sign-in .btn-group-item.disabled:hover .icon-google {
 	background-image: url("../images/sprite.png");
-	background-position: -427px -256px;
+	background-position: -388px -256px;
 	width: 31px;
 	height: 28px;
 }
@@ -5168,7 +5168,7 @@ section.partners {
 
 .split__mission blockquote:after {
 	background-image: url("../images/sprite.png");
-	background-position: -645px -714px;
+	background-position: -559px -714px;
 	width: 35px;
 	height: 34px;
 }
@@ -5194,7 +5194,7 @@ section.partners {
 	right: auto;
 	left: 75px;
 	background-image: url("../images/sprite.png");
-	background-position: -559px -714px;
+	background-position: -602px -714px;
 	width: 35px;
 	height: 34px;
 }
@@ -5470,7 +5470,7 @@ section.video {
 	top: 18px;
 	left: 280px;
 	background-image: url("../images/sprite.png");
-	background-position: -322px -208px;
+	background-position: -322px -148px;
 	width: 41px;
 	height: 52px;
 }
@@ -5510,7 +5510,7 @@ section.video {
 	top: 17px;
 	left: -52px;
 	background-image: url("../images/sprite.png");
-	background-position: -322px -148px;
+	background-position: -322px -208px;
 	width: 45px;
 	height: 52px;
 }
@@ -5726,7 +5726,7 @@ body.locked {
 .btn-social__vk i.icon:before {
 	margin: -12px 0 0 -21px;
 	background-image: url("../images/sprite.png");
-	background-position: -50px -757px;
+	background-position: 0px -757px;
 	width: 42px;
 	height: 25px;
 }
@@ -5738,7 +5738,7 @@ body.locked {
 
 .btn-social__vk:hover i.icon:before {
 	background-image: url("../images/sprite.png");
-	background-position: 0px -757px;
+	background-position: -89px -757px;
 	width: 42px;
 	height: 25px;
 }
@@ -5755,7 +5755,7 @@ body.locked {
 .btn-social__gp i.icon:before {
 	margin: -14px 0 0 -16px;
 	background-image: url("../images/sprite.png");
-	background-position: -388px -256px;
+	background-position: -736px -714px;
 	width: 31px;
 	height: 28px;
 }
@@ -5767,7 +5767,7 @@ body.locked {
 
 .btn-social__gp:hover i.icon:before {
 	background-image: url("../images/sprite.png");
-	background-position: -778px -36px;
+	background-position: -475px -256px;
 	width: 31px;
 	height: 28px;
 }
@@ -5784,7 +5784,7 @@ body.locked {
 .btn-social__lj i.icon:before {
 	margin: -21px 0 0 -18px;
 	background-image: url("../images/sprite.png");
-	background-position: -720px -104px;
+	background-position: -720px -153px;
 	width: 35px;
 	height: 41px;
 }
@@ -5796,7 +5796,7 @@ body.locked {
 
 .btn-social__lj:hover i.icon:before {
 	background-image: url("../images/sprite.png");
-	background-position: -720px -153px;
+	background-position: -720px -104px;
 	width: 35px;
 	height: 41px;
 }
@@ -5813,7 +5813,7 @@ body.locked {
 .btn-social__tw i.icon:before {
 	margin: -14px 0 0 -20px;
 	background-image: url("../images/sprite.png");
-	background-position: -688px -714px;
+	background-position: -427px -256px;
 	width: 40px;
 	height: 28px;
 }
@@ -5825,7 +5825,7 @@ body.locked {
 
 .btn-social__tw:hover i.icon:before {
 	background-image: url("../images/sprite.png");
-	background-position: -778px 0px;
+	background-position: -688px -714px;
 	width: 40px;
 	height: 28px;
 }
@@ -6541,7 +6541,7 @@ h1 + .b-inline-actions {
 .popup .signin-with .social-btns .social-btn.vk:before {
 	margin: -11px 0 0 -9px;
 	background-image: url("../images/sprite.png");
-	background-position: -778px -199px;
+	background-position: -778px -64px;
 	width: 18px;
 	height: 22px;
 }
@@ -6552,7 +6552,7 @@ h1 + .b-inline-actions {
 
 .popup .signin-with .social-btns .social-btn.vk:hover:before {
 	background-image: url("../images/sprite.png");
-	background-position: -778px -169px;
+	background-position: -778px -34px;
 	width: 18px;
 	height: 22px;
 }
@@ -6564,7 +6564,7 @@ h1 + .b-inline-actions {
 .popup .signin-with .social-btns .social-btn.gp:before {
 	margin: -14px 0 0 -16px;
 	background-image: url("../images/sprite.png");
-	background-position: -466px -256px;
+	background-position: -680px -625px;
 	width: 31px;
 	height: 28px;
 }
@@ -6575,7 +6575,7 @@ h1 + .b-inline-actions {
 
 .popup .signin-with .social-btns .social-btn.gp:hover:before {
 	background-image: url("../images/sprite.png");
-	background-position: -427px -256px;
+	background-position: -388px -256px;
 	width: 31px;
 	height: 28px;
 }
@@ -7877,7 +7877,7 @@ section.advanced-search label.separator {
 	vertical-align: top;
 	text-align: center;
 	background: #efece7;
-	width: 98px;
+	width: 80px;
 	height: 52px;
 	padding: 0 18px;
 }
@@ -8278,7 +8278,7 @@ section.profile-nav {
 	left: 50%;
 	margin: -8px 0 0 -8px;
 	background-image: url("../images/sprite.png");
-	background-position: -778px -449px;
+	background-position: -778px -344px;
 	width: 17px;
 	height: 15px;
 }
@@ -9869,7 +9869,7 @@ section.profile .b-order-list__tobepaid .b-order-item__discount {
 }
 
 .b-order-item__qty {
-	width: 225px;
+	width: 195px;
 	padding: 0 0 0 20px;
 	text-align: center;
 }
@@ -10586,7 +10586,7 @@ body .b-share-popup__header_first {
 .b-profile-nav .menu__item a.icon__favorites:before {
 	margin-top: -8px;
 	background-image: url("../images/sprite.png");
-	background-position: -778px -329px;
+	background-position: -778px -174px;
 	width: 20px;
 	height: 17px;
 }
@@ -10594,7 +10594,7 @@ body .b-share-popup__header_first {
 .b-profile-nav .menu__item a.icon__cart:before {
 	margin-top: -11px;
 	background-image: url("../images/sprite.png");
-	background-position: -778px -279px;
+	background-position: -778px -199px;
 	width: 20px;
 	height: 17px;
 }
@@ -10602,7 +10602,7 @@ body .b-share-popup__header_first {
 .b-profile-nav .menu__item a.icon__order:before {
 	margin-top: -9px;
 	background-image: url("../images/sprite.png");
-	background-position: -778px -402px;
+	background-position: -778px -297px;
 	width: 20px;
 	height: 16px;
 }
@@ -10610,7 +10610,7 @@ body .b-share-popup__header_first {
 .b-profile-nav .menu__item a.icon__mail:before {
 	margin-top: -7px;
 	background-image: url("../images/sprite.png");
-	background-position: -778px -493px;
+	background-position: -778px -412px;
 	width: 18px;
 	height: 13px;
 }
@@ -10641,28 +10641,28 @@ body .b-share-popup__header_first {
 
 .b-profile-nav .menu__item.active a.icon__favorites:before {
 	background-image: url("../images/sprite.png");
-	background-position: -778px -254px;
+	background-position: -778px -149px;
 	width: 20px;
 	height: 17px;
 }
 
 .b-profile-nav .menu__item.active a.icon__cart:before {
 	background-image: url("../images/sprite.png");
-	background-position: -778px -229px;
+	background-position: -778px -224px;
 	width: 20px;
 	height: 17px;
 }
 
 .b-profile-nav .menu__item.active a.icon__order:before {
 	background-image: url("../images/sprite.png");
-	background-position: -778px -378px;
+	background-position: -778px -249px;
 	width: 20px;
 	height: 16px;
 }
 
 .b-profile-nav .menu__item.active a.icon__mail:before {
 	background-image: url("../images/sprite.png");
-	background-position: -778px -472px;
+	background-position: -778px -433px;
 	width: 18px;
 	height: 13px;
 }
@@ -11331,7 +11331,14 @@ body .b-share-popup__header_first {
 
 section.subheader .menu-login .not-logged-in a.menu-login__login:before {
 	background-image: url("../images/sprite.png");
-	background-position: -804px -169px;
+	background-position: -794px -454px;
+	width: 8px;
+	height: 11px;
+}
+
+section.subheader .menu-login .not-logged-in a.menu-login__login:hover:before {
+	background-image: url("../images/sprite.png");
+	background-position: -778px -454px;
 	width: 8px;
 	height: 11px;
 }

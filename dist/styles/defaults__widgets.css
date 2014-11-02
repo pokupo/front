@@ -1437,7 +1437,7 @@ section.profile .b-order-list__tobepaid .b-order-item__discount {
 }
 
 .b-order-item__qty {
-	width: 225px;
+	width: 195px;
 	padding: 0 0 0 20px;
 	text-align: center;
 }
@@ -2154,7 +2154,7 @@ body .b-share-popup__header_first {
 .b-profile-nav .menu__item a.icon__favorites:before {
 	margin-top: -8px;
 	background-image: url("../images/sprite.png");
-	background-position: -778px -329px;
+	background-position: -778px -174px;
 	width: 20px;
 	height: 17px;
 }
@@ -2162,7 +2162,7 @@ body .b-share-popup__header_first {
 .b-profile-nav .menu__item a.icon__cart:before {
 	margin-top: -11px;
 	background-image: url("../images/sprite.png");
-	background-position: -778px -279px;
+	background-position: -778px -199px;
 	width: 20px;
 	height: 17px;
 }
@@ -2170,7 +2170,7 @@ body .b-share-popup__header_first {
 .b-profile-nav .menu__item a.icon__order:before {
 	margin-top: -9px;
 	background-image: url("../images/sprite.png");
-	background-position: -778px -402px;
+	background-position: -778px -297px;
 	width: 20px;
 	height: 16px;
 }
@@ -2178,7 +2178,7 @@ body .b-share-popup__header_first {
 .b-profile-nav .menu__item a.icon__mail:before {
 	margin-top: -7px;
 	background-image: url("../images/sprite.png");
-	background-position: -778px -493px;
+	background-position: -778px -412px;
 	width: 18px;
 	height: 13px;
 }
@@ -2209,28 +2209,28 @@ body .b-share-popup__header_first {
 
 .b-profile-nav .menu__item.active a.icon__favorites:before {
 	background-image: url("../images/sprite.png");
-	background-position: -778px -254px;
+	background-position: -778px -149px;
 	width: 20px;
 	height: 17px;
 }
 
 .b-profile-nav .menu__item.active a.icon__cart:before {
 	background-image: url("../images/sprite.png");
-	background-position: -778px -229px;
+	background-position: -778px -224px;
 	width: 20px;
 	height: 17px;
 }
 
 .b-profile-nav .menu__item.active a.icon__order:before {
 	background-image: url("../images/sprite.png");
-	background-position: -778px -378px;
+	background-position: -778px -249px;
 	width: 20px;
 	height: 16px;
 }
 
 .b-profile-nav .menu__item.active a.icon__mail:before {
 	background-image: url("../images/sprite.png");
-	background-position: -778px -472px;
+	background-position: -778px -433px;
 	width: 18px;
 	height: 13px;
 }
@@ -2899,7 +2899,14 @@ body .b-share-popup__header_first {
 
 section.subheader .menu-login .not-logged-in a.menu-login__login:before {
 	background-image: url("../images/sprite.png");
-	background-position: -804px -169px;
+	background-position: -794px -454px;
+	width: 8px;
+	height: 11px;
+}
+
+section.subheader .menu-login .not-logged-in a.menu-login__login:hover:before {
+	background-image: url("../images/sprite.png");
+	background-position: -778px -454px;
 	width: 8px;
 	height: 11px;
 }

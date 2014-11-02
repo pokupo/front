@@ -1,3 +1,4 @@
+
 <script id="cartTmpl" type="text/html">
   <!-- version 1.0-->
   <div class="logged-in">
@@ -13,7 +14,7 @@
                 <div class="b-order-item__cost b-price"><span data-bind="text: endSum" class="b-price__number"></span><span class="b-price__thinsp">&nbsp;</span><span class="b-price__rubl">Р</span></div>
                 <div data-bind="click: ClickRemove" class="b-order-item__drop btn-circle btn-circle--drop"></div>
               </li><!-- /ko -->
-            </ol><a href="/shop#/cart/" class="btn btn-md b-cart-menu__order-button">Оформить</a><a href="/shop#/cart/" class="b-cart-menu__cart-button">В корзину</a>
+            </ol><a href="/shop#/cart/" class="btn btn-md b-cart-menu__order-button">Оформить</a>
             <p class="b-cart-menu__results">Итог:<span class="b-cart-menu__amount b-price"><!-- ko if: ShowFinalCost() --><!-- ko if: ShowBaseCost() --><span data-bind="text: finalCost" class="b-price__number"></span><!-- /ko --><!-- ko ifnot: ShowBaseCost() --><span data-bind="text: finalCost" class="b-price__number"></span><!-- /ko --><span class="b-price__thinsp">&nbsp;</span><span class="b-price__rubl">Р</span><!-- /ko --></span></p>
           </div><!-- /ko -->
         </div>

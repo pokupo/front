@@ -41,7 +41,13 @@
 }
 section.subheader .menu-login .not-logged-in a.menu-login__login:before {
   background-image: url("../images/sprite.png");
-  background-position: -804px -169px;
+  background-position: -794px -454px;
+  width: 8px;
+  height: 11px;
+}
+section.subheader .menu-login .not-logged-in a.menu-login__login:hover:before {
+  background-image: url("../images/sprite.png");
+  background-position: -778px -454px;
   width: 8px;
   height: 11px;
 }

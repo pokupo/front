@@ -167,7 +167,7 @@
         </div>
       </div>
       <div class="b-mail">
-        <div class="b-mail__item">b-dialog unread
+        <div class="b-mail__item b-dialog unread">
           <div class="b-dialog__body">
             <div data-bind="html: messageError"></div>
           </div>
@@ -187,7 +187,7 @@
 </script>
 <script id="messageModalFormTmpl" type="text/html">
   <!-- version 1.0-->
-  <div id="modal-message" #message_modal_form="#message_modal_form" class="modal fade">
+  <div id="modal-message" class="modal fade">//- #message_modal_form
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header"><span class="close-modal btn-circle btn-circle--drop btn-circle--orange"></span>
@@ -245,8 +245,8 @@
         <ul class="menu"><!-- ko foreach: paging --><!-- ko if: current -->
           <li class="menu__item active"><!-- ko if: title == '...' -->...<!-- /ko --><!-- ko ifnot: title == '...' --><a href="javascript:void(0);" data-bind="text: title, click: ClickLinkPage"></a><!-- /ko -->
           </li><!-- /ko --><!-- ko ifnot: current --><!-- ko if: cssLink() == "first" -->
-          <li class="menu__item"><a href="javascript:void(0);" data-bind="click: ClickLinkPage"><</a></li><!-- /ko --><!-- ko if: cssLink() == "last" -->
-          <li class="menu__item"><a href="javascript:void(0);" data-bind="click: ClickLinkPage">></a></li><!-- /ko --><!-- /ko --><!-- ko if: cssLink() != "last" && cssLink() != "first" -->
+          <li class="menu__item"><a href="javascript:void(0);" data-bind="click: ClickLinkPage">&larr;</a></li><!-- /ko --><!-- ko if: cssLink() == "last" -->
+          <li class="menu__item"><a href="javascript:void(0);" data-bind="click: ClickLinkPage">&rarr;</a></li><!-- /ko --><!-- /ko --><!-- ko if: cssLink() != "last" && cssLink() != "first" -->
           <li class="menu__item"><a href="javascript:void(0);" data-bind="text: title, click: ClickLinkPage"></a></li><!-- /ko --><!-- /ko -->
         </ul>
       </div>

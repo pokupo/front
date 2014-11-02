@@ -48,28 +48,28 @@
 .b-profile-nav .menu__item a.icon__favorites:before {
   margin-top: -8px;
   background-image: url("../images/sprite.png");
-  background-position: -778px -329px;
+  background-position: -778px -174px;
   width: 20px;
   height: 17px;
 }
 .b-profile-nav .menu__item a.icon__cart:before {
   margin-top: -11px;
   background-image: url("../images/sprite.png");
-  background-position: -778px -279px;
+  background-position: -778px -199px;
   width: 20px;
   height: 17px;
 }
 .b-profile-nav .menu__item a.icon__order:before {
   margin-top: -9px;
   background-image: url("../images/sprite.png");
-  background-position: -778px -402px;
+  background-position: -778px -297px;
   width: 20px;
   height: 16px;
 }
 .b-profile-nav .menu__item a.icon__mail:before {
   margin-top: -7px;
   background-image: url("../images/sprite.png");
-  background-position: -778px -493px;
+  background-position: -778px -412px;
   width: 18px;
   height: 13px;
 }
@@ -94,25 +94,25 @@
 }
 .b-profile-nav .menu__item.active a.icon__favorites:before {
   background-image: url("../images/sprite.png");
-  background-position: -778px -254px;
+  background-position: -778px -149px;
   width: 20px;
   height: 17px;
 }
 .b-profile-nav .menu__item.active a.icon__cart:before {
   background-image: url("../images/sprite.png");
-  background-position: -778px -229px;
+  background-position: -778px -224px;
   width: 20px;
   height: 17px;
 }
 .b-profile-nav .menu__item.active a.icon__order:before {
   background-image: url("../images/sprite.png");
-  background-position: -778px -378px;
+  background-position: -778px -249px;
   width: 20px;
   height: 16px;
 }
 .b-profile-nav .menu__item.active a.icon__mail:before {
   background-image: url("../images/sprite.png");
-  background-position: -778px -472px;
+  background-position: -778px -433px;
   width: 18px;
   height: 13px;
 }

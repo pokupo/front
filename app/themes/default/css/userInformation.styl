@@ -35,8 +35,11 @@
 	.logged-in
 		padding-right 15px
 
-section.subheader .menu-login .not-logged-in a.menu-login__login&:before
-	sprite($icon__login__white)
+section.subheader .menu-login .not-logged-in a.menu-login__login
+		&:before
+			sprite($icon__login__white)
+		&:hover:before
+			sprite($icon__login__orange)
 
 .header
 	.logged-in

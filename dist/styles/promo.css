@@ -573,7 +573,7 @@ ul.clients li i.client.sberbank {
 	bottom: -34px;
 	right: 75px;
 	background-image: url("../images/sprite.png");
-	background-position: -602px -714px;
+	background-position: -645px -714px;
 	width: 35px;
 	height: 34px; /* background url('../images/ui/quote.png') 0 100% no-repeat*/
 }
@@ -838,7 +838,7 @@ section.partners {
 	display: inline-block;
 	margin-right: 10px;
 	background-image: url("../images/sprite.png");
-	background-position: -778px -106px;
+	background-position: -50px -757px;
 	width: 31px;
 	height: 25px;
 }
@@ -943,7 +943,7 @@ section.partners {
 
 .register .btn-lg.btn-red i.icon-store:before {
 	background-image: url("../images/sprite.png");
-	background-position: -720px -250px;
+	background-position: -720px -298px;
 	width: 44px;
 	height: 40px;
 }
@@ -961,7 +961,7 @@ section.partners {
 .register .btn-lg.btn-red:hover i.icon.icon-store:before,
 .register .btn-lg.btn-red:active i.icon.icon-store:before {
 	background-image: url("../images/sprite.png");
-	background-position: -720px -346px;
+	background-position: -720px -202px;
 	width: 44px;
 	height: 40px;
 }
@@ -1038,14 +1038,14 @@ section.partners {
 
 .sign-in .btn-group-item a .icon-vk {
 	background-image: url("../images/sprite.png");
-	background-position: -778px -169px;
+	background-position: -778px -34px;
 	width: 18px;
 	height: 22px;
 }
 
 .sign-in .btn-group-item a .icon-google {
 	background-image: url("../images/sprite.png");
-	background-position: -427px -256px;
+	background-position: -388px -256px;
 	width: 31px;
 	height: 28px;
 }
@@ -1059,14 +1059,14 @@ section.partners {
 
 .sign-in .btn-group-item a:hover .icon-vk {
 	background-image: url("../images/sprite.png");
-	background-position: -778px -199px;
+	background-position: -778px -64px;
 	width: 18px;
 	height: 22px;
 }
 
 .sign-in .btn-group-item a:hover .icon-google {
 	background-image: url("../images/sprite.png");
-	background-position: -466px -256px;
+	background-position: -680px -625px;
 	width: 31px;
 	height: 28px;
 }
@@ -1100,14 +1100,14 @@ section.partners {
 
 .sign-in .btn-group-item.disabled:hover .icon-vk {
 	background-image: url("../images/sprite.png");
-	background-position: -778px -169px;
+	background-position: -778px -34px;
 	width: 18px;
 	height: 22px;
 }
 
 .sign-in .btn-group-item.disabled:hover .icon-google {
 	background-image: url("../images/sprite.png");
-	background-position: -427px -256px;
+	background-position: -388px -256px;
 	width: 31px;
 	height: 28px;
 }
@@ -1202,7 +1202,7 @@ section.partners {
 
 .split__mission blockquote:after {
 	background-image: url("../images/sprite.png");
-	background-position: -645px -714px;
+	background-position: -559px -714px;
 	width: 35px;
 	height: 34px;
 }
@@ -1228,7 +1228,7 @@ section.partners {
 	right: auto;
 	left: 75px;
 	background-image: url("../images/sprite.png");
-	background-position: -559px -714px;
+	background-position: -602px -714px;
 	width: 35px;
 	height: 34px;
 }
@@ -1504,7 +1504,7 @@ section.video {
 	top: 18px;
 	left: 280px;
 	background-image: url("../images/sprite.png");
-	background-position: -322px -208px;
+	background-position: -322px -148px;
 	width: 41px;
 	height: 52px;
 }
@@ -1544,7 +1544,7 @@ section.video {
 	top: 17px;
 	left: -52px;
 	background-image: url("../images/sprite.png");
-	background-position: -322px -148px;
+	background-position: -322px -208px;
 	width: 45px;
 	height: 52px;
 }
@@ -1762,7 +1762,7 @@ body.locked {
 .btn-social__vk i.icon:before {
 	margin: -12px 0 0 -21px;
 	background-image: url("../images/sprite.png");
-	background-position: -50px -757px;
+	background-position: 0px -757px;
 	width: 42px;
 	height: 25px;
 }
@@ -1774,7 +1774,7 @@ body.locked {
 
 .btn-social__vk:hover i.icon:before {
 	background-image: url("../images/sprite.png");
-	background-position: 0px -757px;
+	background-position: -89px -757px;
 	width: 42px;
 	height: 25px;
 }
@@ -1791,7 +1791,7 @@ body.locked {
 .btn-social__gp i.icon:before {
 	margin: -14px 0 0 -16px;
 	background-image: url("../images/sprite.png");
-	background-position: -388px -256px;
+	background-position: -736px -714px;
 	width: 31px;
 	height: 28px;
 }
@@ -1803,7 +1803,7 @@ body.locked {
 
 .btn-social__gp:hover i.icon:before {
 	background-image: url("../images/sprite.png");
-	background-position: -778px -36px;
+	background-position: -475px -256px;
 	width: 31px;
 	height: 28px;
 }
@@ -1820,7 +1820,7 @@ body.locked {
 .btn-social__lj i.icon:before {
 	margin: -21px 0 0 -18px;
 	background-image: url("../images/sprite.png");
-	background-position: -720px -104px;
+	background-position: -720px -153px;
 	width: 35px;
 	height: 41px;
 }
@@ -1832,7 +1832,7 @@ body.locked {
 
 .btn-social__lj:hover i.icon:before {
 	background-image: url("../images/sprite.png");
-	background-position: -720px -153px;
+	background-position: -720px -104px;
 	width: 35px;
 	height: 41px;
 }
@@ -1849,7 +1849,7 @@ body.locked {
 .btn-social__tw i.icon:before {
 	margin: -14px 0 0 -20px;
 	background-image: url("../images/sprite.png");
-	background-position: -688px -714px;
+	background-position: -427px -256px;
 	width: 40px;
 	height: 28px;
 }
@@ -1861,7 +1861,7 @@ body.locked {
 
 .btn-social__tw:hover i.icon:before {
 	background-image: url("../images/sprite.png");
-	background-position: -778px 0px;
+	background-position: -688px -714px;
 	width: 40px;
 	height: 28px;
 }
@@ -2577,7 +2577,7 @@ h1 + .b-inline-actions {
 .popup .signin-with .social-btns .social-btn.vk:before {
 	margin: -11px 0 0 -9px;
 	background-image: url("../images/sprite.png");
-	background-position: -778px -199px;
+	background-position: -778px -64px;
 	width: 18px;
 	height: 22px;
 }
@@ -2588,7 +2588,7 @@ h1 + .b-inline-actions {
 
 .popup .signin-with .social-btns .social-btn.vk:hover:before {
 	background-image: url("../images/sprite.png");
-	background-position: -778px -169px;
+	background-position: -778px -34px;
 	width: 18px;
 	height: 22px;
 }
@@ -2600,7 +2600,7 @@ h1 + .b-inline-actions {
 .popup .signin-with .social-btns .social-btn.gp:before {
 	margin: -14px 0 0 -16px;
 	background-image: url("../images/sprite.png");
-	background-position: -466px -256px;
+	background-position: -680px -625px;
 	width: 31px;
 	height: 28px;
 }
@@ -2611,7 +2611,7 @@ h1 + .b-inline-actions {
 
 .popup .signin-with .social-btns .social-btn.gp:hover:before {
 	background-image: url("../images/sprite.png");
-	background-position: -427px -256px;
+	background-position: -388px -256px;
 	width: 31px;
 	height: 28px;
 }

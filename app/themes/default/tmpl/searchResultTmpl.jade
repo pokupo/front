@@ -350,10 +350,10 @@ script#searchResultPaginatetionTmpl(type="text/html")
                         +ifnot('current')
                             +if('cssLink() == "first"')
                                 li.menu__item
-                                    a(href=js0, data-bind='click: ClickLinkPage')
+                                    a(href=js0, data-bind='click: ClickLinkPage') &larr;
                             +if('cssLink() == "last"')
                                 li.menu__item
-                                    a(href=js0, data-bind='click: ClickLinkPage')
+                                    a(href=js0, data-bind='click: ClickLinkPage') &rarr;
                             +if('cssLink() != "last" && cssLink() != "first"')
                                 li.menu__item
                                     a(href=js0, data-bind='text: title, click: ClickLinkPage')

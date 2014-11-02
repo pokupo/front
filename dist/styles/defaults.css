@@ -834,7 +834,7 @@ section.advanced-search label.separator {
 	vertical-align: top;
 	text-align: center;
 	background: #efece7;
-	width: 98px;
+	width: 80px;
 	height: 52px;
 	padding: 0 18px;
 }
@@ -1237,7 +1237,7 @@ section.profile-nav {
 	left: 50%;
 	margin: -8px 0 0 -8px;
 	background-image: url("../images/sprite.png");
-	background-position: -778px -449px;
+	background-position: -778px -344px;
 	width: 17px;
 	height: 15px;
 }

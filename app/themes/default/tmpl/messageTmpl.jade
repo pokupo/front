@@ -209,7 +209,7 @@ script#messageEmptyListTmpl(type="text/html")
                             i.icon.icon-addmail
                             | Новое сообщение
             .b-mail
-                .b-mail__item b-dialog unread
+                .b-mail__item.b-dialog.unread
                     .b-dialog__body
                         div(data-bind="html: messageError")
                     
@@ -227,7 +227,7 @@ script#messageEmptyListTmpl(type="text/html")
 
 script#messageModalFormTmpl(type="text/html")
     // version 1.0
-    #modal-message.modal.fade(#message_modal_form)
+    #modal-message.modal.fade //- #message_modal_form
         .modal-dialog
             .modal-content
                 .modal-header
@@ -299,11 +299,11 @@ script#messagePaginateTmpl(type="text/html")
                         +ifnot('current')
                             +if('cssLink() == "first"')
                                 li.menu__item
-                                    a(href=js0 data-bind="click: ClickLinkPage") <
+                                    a(href=js0 data-bind="click: ClickLinkPage") &larr;
                             
                             +if('cssLink() == "last"')
                                 li.menu__item
-                                    a(href=js0 data-bind="click: ClickLinkPage") >
+                                    a(href=js0 data-bind="click: ClickLinkPage") &rarr;
                             
                         +if('cssLink() != "last" && cssLink() != "first"')
                             li.menu__item
