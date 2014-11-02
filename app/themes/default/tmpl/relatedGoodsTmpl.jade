@@ -16,10 +16,10 @@ script#relatedGoodsSliderTmpl(type="text/html")
 
 script#relatedGoodsCarouselTmpl(type="text/html")
     // version 1.0 
-    .b-catalog-item__aux
+    .b-catalog-item__aux.b-lastviewed
         +if('countGoods > 0')
             h3 Вместе с этим товаром покупают
-            #related_goods_carousel.b-catalog__items.cards.cards--small
+            #related_goods_carousel.b-catalog__items.cards.cards--small.chain-slider--small
                 +each('content')
                     .b-catalog__item
                         .b-item
