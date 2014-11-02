@@ -244,13 +244,13 @@ script#orderDetailTmpl(type="text/html")
                         +each('goods')
                             // ko template: { name: 'orderDetailGoodsTmpl' }
                             // /ko 
-                            
+
                 ul.b-tech.standalone
                     +if('discount > 0')
                         li.b-tech__item
                             .b-tech__char
                                 span
-                                    | Скидка:
+                                    | Скидка: 
                                     i(data-bind='text: discount')
                             .b-tech__value
                                 span.b-price
@@ -265,7 +265,7 @@ script#orderDetailTmpl(type="text/html")
                         li.b-tech__item
                             .b-tech__char
                                 span
-                                    | Доставка:
+                                    | Доставка: 
                                     i(data-bind='text: nameMethodShipping')
                             .b-tech__value
                                 span.b-price
@@ -276,7 +276,7 @@ script#orderDetailTmpl(type="text/html")
                     li.b-tech__item
                         .b-tech__char
                             span
-                                | Способ оплаты:
+                                | Способ оплаты: 
                                 i(data-bind='text: namePayment')
                         .b-tech__value(data-bind='text: costPayment')
                     li.b-tech__item
