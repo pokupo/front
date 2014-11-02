@@ -278,7 +278,11 @@ script#orderDetailTmpl(type="text/html")
                             span
                                 | Способ оплаты: 
                                 i(data-bind='text: namePayment')
-                        .b-tech__value(data-bind='text: costPayment')
+                        .b-tech__value
+                            span.b-price
+                                    span.b-price__number(data-bind='text: costPayment')
+                                    span.b-price__thinsp &nbsp;
+                                    span.b-price__rubl Р
                     li.b-tech__item
                         .b-tech__char
                             span Всего: 
