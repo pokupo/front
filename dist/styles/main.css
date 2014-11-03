@@ -9391,7 +9391,6 @@ span.fancytree-node.fancytree-error span.fancytree-title {
 .b-catalog-banner {
 	position: relative;
 	margin-bottom: 20px;
-	padding-bottom: 0 !important;
 	border-bottom: none !important;
 	background-color: #fff;
 	border-bottom: 1px solid #e2e2e2;
