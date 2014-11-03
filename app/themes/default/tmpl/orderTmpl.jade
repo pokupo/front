@@ -298,6 +298,14 @@ script#orderFormStep3Tmpl(type='text/html')
                     tbody
                         +each('shipping()')
                             tr.b-order-table__item(data-bind='click: ClickItem')
+                                td.b-order-table__action
+                                    +if('isActive()')
+                                        input#tr_31(type='radio', value='', checked='', name='is_default')
+                                    
+                                    +ifnot('isActive()')
+                                        input#tr_31(type='radio', value='', name='is_default')
+                                    label(for='tr_31', rel="tooltip", title="Выбрать") &nbsp;
+
                                 td.b-order-table__logo
                                     img(src=js0, data-bind='attr: {src: logoShippingCompany}')
                                 td
@@ -311,15 +319,6 @@ script#orderFormStep3Tmpl(type='text/html')
                                             span.b-price__number(data-bind='text: costShipping')
                                             span.b-price__thinsp &nbsp;
                                             span.b-price__rubl Р 
-
-                                td.b-order-table__action
-                                    +if('isActive()')
-                                        input(type='radio', checked='', name='is_default')
-                                    
-                                    +ifnot('isActive()')
-                                        input(type='radio', name='is_default')
-                                    
-                                    label(for='tr_11') Выбрать 
         
         .b-wizard__actions
             a.b-wizard__action.btn-prev-step(href=js0, data-bind='click: Back') Назад
@@ -360,6 +359,15 @@ script#orderFormStep4Tmpl(type='text/html')
                     tbody
                         +each('payment')
                             tr.b-order-table__item(data-bind='click: ClickItem, css: cssActive()')
+                                td.b-order-table__action
+                                    +if('isActive()')
+                                        input#is_default.addrN(type='radio', checked='checked', name='is_default')
+                                    
+                                    +ifnot('isActive()')
+                                        input#is_default.addrN(type='radio', name='is_default')
+                                    
+                                    label(for='is_default', rel="tooltip", title="Выбрать") &nbsp;
+                                    
                                 td.b-order-table__logo
                                     img(src=js0, data-bind='attr: {src: logoPayment }')
 
@@ -376,15 +384,6 @@ script#orderFormStep4Tmpl(type='text/html')
                                         span.b-price__number(data-bind='text: costPayment')
                                         span.b-price__thinsp &nbsp;
                                         span.b-price__rubl Р
-
-                                td.b-order-table__action
-                                    +if('isActive()')
-                                        input#is_default.addrN(type='radio', checked='checked', name='is_default')
-                                    
-                                    +ifnot('isActive()')
-                                        input#is_default.addrN(type='radio', name='is_default')
-                                    
-                                    label(for='is_default') Выбрать
                     
         .b-wizard__actions
             a.b-wizard__action.btn-prev-step(href=js0, data-bind='click: Back') Назад

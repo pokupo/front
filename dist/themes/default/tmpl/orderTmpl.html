@@ -268,17 +268,17 @@
           </thead>
           <tbody><!-- ko foreach: shipping() -->
             <tr data-bind="click: ClickItem" class="b-order-table__item">
+              <td class="b-order-table__action"><!-- ko if: isActive() -->
+                <input id="tr_31" type="radio" value="" checked="" name="is_default"/><!-- /ko --><!-- ko ifnot: isActive() -->
+                <input id="tr_31" type="radio" value="" name="is_default"/><!-- /ko -->
+                <label for="tr_31" rel="tooltip" title="Выбрать">&nbsp;</label>
+              </td>
               <td class="b-order-table__logo"><img src="javascript:void(0);" data-bind="attr: {src: logoShippingCompany}"/></td>
               <td><b data-bind="text: nameMethodShipping"></b><br/>
                 <!-- ko text: descMethodShipping-->
                 <!-- /ko-->
               </td>
               <td class="b-order-table__price"><!-- ko if: costShipping --><span class="b-price"><span data-bind="text: costShipping" class="b-price__number"></span><span class="b-price__thinsp">&nbsp;</span><span class="b-price__rubl">Р </span></span><!-- /ko -->
-              </td>
-              <td class="b-order-table__action"><!-- ko if: isActive() -->
-                <input type="radio" checked="" name="is_default"/><!-- /ko --><!-- ko ifnot: isActive() -->
-                <input type="radio" name="is_default"/><!-- /ko -->
-                <label for="tr_11">Выбрать </label>
               </td>
             </tr><!-- /ko -->
           </tbody>
@@ -318,6 +318,11 @@
           </thead>
           <tbody><!-- ko foreach: payment -->
             <tr data-bind="click: ClickItem, css: cssActive()" class="b-order-table__item">
+              <td class="b-order-table__action"><!-- ko if: isActive() -->
+                <input id="is_default" type="radio" checked="checked" name="is_default" class="addrN"/><!-- /ko --><!-- ko ifnot: isActive() -->
+                <input id="is_default" type="radio" name="is_default" class="addrN"/><!-- /ko -->
+                <label for="is_default" rel="tooltip" title="Выбрать">&nbsp;</label>
+              </td>
               <td class="b-order-table__logo"><img src="javascript:void(0);" data-bind="attr: {src: logoPayment }"/></td>
               <td>
                 <div class="b-order-table__text">
@@ -327,11 +332,6 @@
                 </div>
               </td>
               <td class="b-order-table__price"><span class="b-price"><span data-bind="text: costPayment" class="b-price__number"></span><span class="b-price__thinsp">&nbsp;</span><span class="b-price__rubl">Р</span></span></td>
-              <td class="b-order-table__action"><!-- ko if: isActive() -->
-                <input id="is_default" type="radio" checked="checked" name="is_default" class="addrN"/><!-- /ko --><!-- ko ifnot: isActive() -->
-                <input id="is_default" type="radio" name="is_default" class="addrN"/><!-- /ko -->
-                <label for="is_default">Выбрать</label>
-              </td>
             </tr><!-- /ko -->
           </tbody>
         </table>

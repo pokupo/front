@@ -19,7 +19,7 @@
   <!-- version 1.0 -->
   <div class="b-catalog-item__aux b-lastviewed"><!-- ko if: countGoods > 0 -->
     <h3>Вместе с этим товаром покупают</h3>
-    <div id="related_goods_carousel" class="b-catalog__items cards cards--small chain-slider--small owl-carousel"><!-- ko foreach: content -->
+    <div id="related_goods_carousel" class="b-catalog__items cards chain-slider owl-carousel"><!-- ko foreach: content -->
       <div class="b-catalog__item">
         <div class="b-item">
           <div class="b-item__picture"><a href="javascript:void(0);" data-bind="click: ClickGoods, attr: {href: 'http://pokupo.ru/shop#/goods/id=' + id}"><img src="" data-bind="attr: {src: routeImage, title: chortName, id : cssToCart}"/></a></div>
