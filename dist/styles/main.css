@@ -8214,6 +8214,10 @@ section.profile-nav {
 	font-weight: 700;
 }
 
+.b-catalog-item__seller-info .b-profile-info__characters-list {
+	margin-left: 145px;
+}
+
 .b-fieldset {
 	margin: 0 0 50px;
 	border: none;
