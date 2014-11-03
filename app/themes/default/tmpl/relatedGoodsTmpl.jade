@@ -16,45 +16,46 @@ script#relatedGoodsSliderTmpl(type="text/html")
 
 script#relatedGoodsCarouselTmpl(type="text/html")
     // version 1.0 
-    .b-catalog-item__aux.b-lastviewed
+    .b-catalog-item__aux
         +if('countGoods > 0')
             h3 Вместе с этим товаром покупают
             #related_goods_carousel.b-catalog__items.cards.chain-slider.owl-carousel
                 +each('content')
-                    .b-catalog__item
-                        .b-item
-                            .b-item__picture
-                                a(href=js0, data-bind="click: ClickGoods, attr: {href: 'http://pokupo.ru/shop#/goods/id=' + id}")
-                                    img(src='', data-bind='attr: {src: routeImage, title: chortName, id : cssToCart}')
-                            .responsive-holder
-                                .b-item__description
-                                    h4.b-item__title
-                                        a(href=js0, data-bind="text: chortName, click: ClickGoods, attr: {id : cssTitleToCart, href: 'http://pokupo.ru/shop#/goods/id=' + id}")
-                                    .b-item__info
-                                        p(data-bind='html: description')
-                                .b-item__price
-                                    +if('discount() > 0')
-                                        .b-price.b-item__price--old
-                                            span.b-price__number(data-bind='text: sellGoods')
-                                            span.b-price__thinsp &nbsp;
-                                            span.b-price__rubl Р
-                                        .b-price
-                                            span.b-price__number(data-bind='text: sellCost')
-                                            span.b-price__thinsp &nbsp;
-                                            span.b-price__rubl Р
-                                   
-                                    +if('discount() == 0')
-                                        .b-price
-                                            span.b-price__number(data-bind='text: sellCost')
-                                            span.b-price__thinsp &nbsp;
-                                            span.b-price__rubl Р
-                                    
-                            .b-item__order-button
-                                button.btn(type='button', data-bind='click: ClickBuy')
-                                    i.icon.icon-cart
-                                    | В корзину
-                            .b-item__badges
-                                span.bestseller Хит!
+                    .owl-item
+                        .b-catalog__item
+                            .b-item
+                                .b-item__picture
+                                    a(href=js0, data-bind="click: ClickGoods, attr: {href: 'http://pokupo.ru/shop#/goods/id=' + id}")
+                                        img(src='', data-bind='attr: {src: routeImage, title: chortName, id : cssToCart}')
+                                .responsive-holder
+                                    .b-item__description
+                                        h4.b-item__title
+                                            a(href=js0, data-bind="text: chortName, click: ClickGoods, attr: {id : cssTitleToCart, href: 'http://pokupo.ru/shop#/goods/id=' + id}")
+                                        .b-item__info
+                                            p(data-bind='html: description')
+                                    .b-item__price
+                                        +if('discount() > 0')
+                                            .b-price.b-item__price--old
+                                                span.b-price__number(data-bind='text: sellGoods')
+                                                span.b-price__thinsp &nbsp;
+                                                span.b-price__rubl Р
+                                            .b-price
+                                                span.b-price__number(data-bind='text: sellCost')
+                                                span.b-price__thinsp &nbsp;
+                                                span.b-price__rubl Р
+                                       
+                                        +if('discount() == 0')
+                                            .b-price
+                                                span.b-price__number(data-bind='text: sellCost')
+                                                span.b-price__thinsp &nbsp;
+                                                span.b-price__rubl Р
+                                        
+                                .b-item__order-button
+                                    button.btn(type='button', data-bind='click: ClickBuy')
+                                        i.icon.icon-cart
+                                        | В корзину
+                                .b-item__badges
+                                    span.bestseller Хит!
 
 
 script#relatedGoodsTileTmpl(type="text/html")
