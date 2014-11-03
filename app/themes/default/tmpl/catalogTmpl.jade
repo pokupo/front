@@ -17,7 +17,8 @@ script#catalogTmpl(type="text/html")
                         +ifnot('hasChildren')
                             li.menu__item(data-bind="css : liClass")
                                 u
-                                    span(data-bind="html: titleWithCount, click: ClickItem")
+                                    span(data-bind="html: title, click: ClickItem")
+                                    sup.num(data-bind="text: countGoods")
                             
                         +if('hasChildren')
                             li.menu__item.with-submenu(data-bind="css : liClass")

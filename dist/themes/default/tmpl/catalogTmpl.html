@@ -6,7 +6,7 @@
       <h1 data-bind="text: title, css: tabClass, click: ClickTab" class="b-sidebar__title"></h1><!-- /ko --><!-- ko foreach: tab -->
       <ul data-bind="css: listClass, visible: isActive" class="menu"><!-- ko foreach: children --><!-- ko ifnot: hasChildren -->
         <li data-bind="css : liClass" class="menu__item">
-          <u><span data-bind="html: titleWithCount, click: ClickItem"></span></u>
+          <u><span data-bind="html: title, click: ClickItem"></span><sup data-bind="text: countGoods" class="num"></sup></u>
         </li><!-- /ko --><!-- ko if: hasChildren -->
         <li data-bind="css : liClass" class="menu__item with-submenu">
           <u><span data-bind="html: titleWithCount"></span></u>
