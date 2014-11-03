@@ -64,22 +64,20 @@ script#orderProfileFormStep1Tmpl(type='text/html')
                                 p(data-bind="text: errorMiddleName")
 
                     .input-holder
-                        input.block-input(placeholder='Дата рождения', data-bind='value: birthDay, attr: {id: cssBirthDay}')
+                        input#birthDay.block-input(type='text', placeholder='Дата рождения', data-bind='value: birthDayField, attr: {id: cssBirthDay}')
                         input(name='bdate', type='hidden', data-bind='value: birthDayHiddenField')
                         +if('errorBirthDay')
                             .error__message
                                 p(data-bind="text: errorBirthDay")
 
-                    .input-holder
-                        .floatlabel-wrapper(style='position: relative;')
-                            label.block-label.b-small-text Ваш пол
-                            input.radio(name='gender', type='radio', value='m', data-bind='checked: gender')
-                            label.block-label.b-small-text(for='gender') Мужчина
-                            input.radio(name='gender', type='radio', value='w', data-bind='checked: gender')
-                            label.block-label.b-small-text(for='gender') Женщина
-                            +if('errorGender')
-                                .error__message
-                                    p(data-bind="text: errorGender")
+                    #gender.input-holder
+                        input#gender-male.inline(type="radio", name="gender", value="m", data-bind="checked: gender")
+                        label(for="gender-male") Мужской
+                        input#gender-female.inline(type="radio", name="gender", value="w", data-bind="checked: gender")
+                        label(for="gender-female") Женский
+                        +if('errorGender')
+                            .error__message
+                                p(data-bind="text: errorGender")
 
                     .input-holder(style='padding-top: 13px;')
                         input#skip_personal.checkbox(name='skip_personal', type='checkbox', checked='checked', data-bind='click: SpecifyLater')

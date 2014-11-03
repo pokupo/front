@@ -53,23 +53,20 @@
             </div><!-- /ko -->
           </div>
           <div class="input-holder">
-            <input placeholder="Дата рождения" data-bind="value: birthDay, attr: {id: cssBirthDay}" class="block-input"/>
+            <input id="birthDay" type="text" placeholder="Дата рождения" data-bind="value: birthDayField, attr: {id: cssBirthDay}" class="block-input"/>
             <input name="bdate" type="hidden" data-bind="value: birthDayHiddenField"/><!-- ko if: errorBirthDay -->
             <div class="error__message">
               <p data-bind="text: errorBirthDay"></p>
             </div><!-- /ko -->
           </div>
-          <div class="input-holder">
-            <div style="position: relative;" class="floatlabel-wrapper">
-              <label class="block-label b-small-text">Ваш пол</label>
-              <input name="gender" type="radio" value="m" data-bind="checked: gender" class="radio"/>
-              <label for="gender" class="block-label b-small-text">Мужчина</label>
-              <input name="gender" type="radio" value="w" data-bind="checked: gender" class="radio"/>
-              <label for="gender" class="block-label b-small-text">Женщина</label><!-- ko if: errorGender -->
-              <div class="error__message">
-                <p data-bind="text: errorGender"></p>
-              </div><!-- /ko -->
-            </div>
+          <div id="gender" class="input-holder">
+            <input id="gender-male" type="radio" name="gender" value="m" data-bind="checked: gender" class="inline"/>
+            <label for="gender-male">Мужской</label>
+            <input id="gender-female" type="radio" name="gender" value="w" data-bind="checked: gender" class="inline"/>
+            <label for="gender-female">Женский</label><!-- ko if: errorGender -->
+            <div class="error__message">
+              <p data-bind="text: errorGender"></p>
+            </div><!-- /ko -->
           </div>
           <div style="padding-top: 13px;" class="input-holder">
             <input id="skip_personal" name="skip_personal" type="checkbox" checked="checked" data-bind="click: SpecifyLater" class="checkbox"/>
