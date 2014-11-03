@@ -47,7 +47,7 @@ script#orderListItemTmpl(type="text/html")
                     | Заказ №
                     // ko text: id 
                     // /ko 
-                    | от
+                    |  от 
                     // ko text: dateCreate 
                     // /ko 
            
@@ -55,7 +55,7 @@ script#orderListItemTmpl(type="text/html")
                 | Заказ №
                 // ko text: id 
                 // /ko 
-                | от
+                |  от 
                 // ko text: dateCreate 
                 // /ko 
 
@@ -361,7 +361,7 @@ script#orderDetailGoodsTmpl(type="text/html")
                 +each('EGoods')
                     .b-order-table__info
                         p.b-order-table__label
-                            | Скачиваний
+                            | Скачиваний 
                             b
                                 // ko text: countUpload 
                                 // /ko 
@@ -370,7 +370,7 @@ script#orderDetailGoodsTmpl(type="text/html")
                                 // ko text: maxUpload 
                                 // /ko 
                             +if('expiration')
-                                | , доступно до
+                                | , доступно до 
                                 // ko text: expiration 
                                 // /ko 
                             
