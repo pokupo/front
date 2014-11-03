@@ -53,7 +53,7 @@
             </div><!-- /ko -->
           </div>
           <div class="input-holder">
-            <input id="birthDay" type="text" placeholder="Дата рождения" data-bind="value: birthDayField, attr: {id: cssBirthDay}" class="block-input"/>
+            <input id="birthDay" type="text" placeholder="Дата рождения" data-bind="attr: {id: cssBirthDay}" class="block-input"/>
             <input name="bdate" type="hidden" data-bind="value: birthDayHiddenField"/><!-- ko if: errorBirthDay -->
             <div class="error__message">
               <p data-bind="text: errorBirthDay"></p>

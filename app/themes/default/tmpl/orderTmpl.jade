@@ -64,7 +64,7 @@ script#orderProfileFormStep1Tmpl(type='text/html')
                                 p(data-bind="text: errorMiddleName")
 
                     .input-holder
-                        input#birthDay.block-input(type='text', placeholder='Дата рождения', data-bind='value: birthDayField, attr: {id: cssBirthDay}')
+                        input#birthDay.block-input(type='text', placeholder='Дата рождения', data-bind='attr: {id: cssBirthDay}')
                         input(name='bdate', type='hidden', data-bind='value: birthDayHiddenField')
                         +if('errorBirthDay')
                             .error__message
