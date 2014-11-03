@@ -19,7 +19,7 @@ script#relatedGoodsCarouselTmpl(type="text/html")
     .b-catalog-item__aux
         +if('countGoods > 0')
             h3 Вместе с этим товаром покупают
-            #related_goods_carousel.b-catalog__items.cards.chain-slider.owl-carousel
+            #related_goods_carousel.b-catalog__items.cards.chain-slider.owl-carousel(data-bind="css: cssBlockContainer")
                 +each('content')
                     .b-catalog__item
                         .b-item
