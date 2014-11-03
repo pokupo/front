@@ -1102,7 +1102,7 @@ section.profile-nav {
 }
 
 .b-profile-info__photo img {
-	display: inline-block;
+	display: block;
 	margin: 0 auto;
 	width: 100%;
 	height: auto;
