@@ -6,7 +6,8 @@ script#blockSliderTmpl(type="text/html")
         .b-catalog-banner.promoBlocks(data-bind="css: cssBlockContainer")
             +each('contentBlock')
                 .b-catalog-banner__slide(data-bind="css: cssBlock, attr: {style: backgroundImage}")
-                    a.container.b-catalog-banner__link(href="", data-bind="click: ClickGoods, attr: {href: 'javascript:Routing.SetHash(\'goods\', \''+ chortName +'\', {id : '+ id +'})'}" class="container b-catalog-banner__link")
+                    a.container.b-catalog-banner__link(href="", 
+                        data-bind="click: ClickGoods, attr: {href: 'javascript:Routing.SetHash(\'goods\', \''+ chortName +'\', {id : '+ id +'})'}")
 
 
 script#blockCaruselTmpl(type="text/html")
