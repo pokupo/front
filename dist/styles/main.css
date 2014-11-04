@@ -11292,8 +11292,8 @@ body .b-share-popup__header_first {
 	overflow: hidden;
 }
 
-.selector__options .dropdown__content li a,
-.selector__options .dropdown__content li u {
+.selector__options.b-location__catalog a,
+.selector__options.b-location__catalog u {
 	white-space: normal;
 }
 
