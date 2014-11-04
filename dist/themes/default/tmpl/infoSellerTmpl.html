@@ -20,8 +20,8 @@
         <li><span class="char">Товаров: </span><span data-bind="text: allGoods" class="value"></span></li>
       </ul>
       <ul class="b-profile-info__characters-list"><!-- ko if: siteSupportShop() -->
-        <li><span class="label">Сайт: </span><a href="javascript:void(0);" target="_blank" data-bind="text: siteSupportShop, attr: {href : siteSupportShop}" class="action"></a></li><!-- /ko -->
-        <li><span class="char">E-mail: </span><a href="javascript:void(0);" data-bind="attr: {href: mailtoShop}, text: mailtoShop"></a></li><!-- ko if: skypeSupportShop() -->
+        <li><span class="label">Сайт: </span><a href="javascript:void(0);" target="_blank" data-bind="text: siteLinkTitle, attr: {href : siteSupportShop}" class="action"></a></li><!-- /ko -->
+        <li><span class="char">E-mail: </span><a href="javascript:void(0);" data-bind="attr: {href: mailtoShop}, text: emailLinkTitle"></a></li><!-- ko if: skypeSupportShop() -->
         <li><span class="label">Skype: </span><a href="skype:pokupo?chat" onclick="return skypeCheck()" data-bind="text: skypeSupportShop" class="action"></a></li><!-- /ko -->
       </ul>
       <ul class="b-profile-info__characters-list"><!-- ko if: icqSupportShop() -->

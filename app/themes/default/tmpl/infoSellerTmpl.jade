@@ -37,11 +37,11 @@ script#infoSellerTmpl(type='text/html')
 				+if('siteSupportShop()')
 					li
 						span.label Сайт: 
-						a.action(href=js0, target='_blank', data-bind='text: siteSupportShop, attr: {href : siteSupportShop}')
+						a.action(href=js0, target='_blank', data-bind='text: siteLinkTitle, attr: {href : siteSupportShop}')
 					
 				li
 					span.char E-mail: 
-					a(href=js0, data-bind='attr: {href: mailtoShop}, text: mailtoShop')
+					a(href=js0, data-bind='attr: {href: mailtoShop}, text: emailLinkTitle')
 
 				+if('skypeSupportShop()')
 					li
