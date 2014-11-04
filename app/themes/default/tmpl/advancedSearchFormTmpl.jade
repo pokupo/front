@@ -20,22 +20,21 @@ script#advancedSearchFormTmpl(type='text/html')
 											#multilocation
 												ul
 													+each('categories')
-														li
+														li(data-bind="css: {'selected' : select}, attr: {id: key}")
 															// ko text: title 
 															// /ko
 															+if('children')
 																ul
 																	+each("{ data: children, as: 'children1' }")
-																		li
+																		li(data-bind='css: {\'selected\' : children1.select}, attr: {id: key}')
 																			// ko text: children1.title 
 																			// /ko 
 																			+if('children1.children')
 																				ul
 																					+each("{ data: children1.children, as: 'children2' }")
-																						li
+																						li(data-bind='css: {\'selected\' : children2.select}, attr: {id: key}')
 																							// ko text: children2.title 
-																							// /ko 
-
+																							// /ko
 								.input-holder
 									select#typeSeller.form_select(name='typeSeller', data-bind='css: cssTypeSeller, value: typeSeller')
 										+each('typesSellers')

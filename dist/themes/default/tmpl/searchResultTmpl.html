@@ -3,9 +3,13 @@
   <!-- version 1.0 -->
   <div class="nosidebar">
     <div class="b-catalog">
-      <h1 id="js-nosidebar" class="b-catalog__title">Найдено
+      <h1 id="js-nosidebar" class="b-catalog__title"><!-- ko if: countGoods == 1 -->Найден 
         <!-- ko text: countGoods -->
-        <!-- /ko -->товаров
+        <!-- /ko-->товар<!-- /ko --><!-- ko if: countGoods > 1 && countGoods < 5 -->Найдено 
+        <!-- ko text: countGoods -->
+        <!-- /ko-->товара<!-- /ko --><!-- ko if: countGoods > 4 -->Найдено 
+        <!-- text: countGoods -->
+        <!-- /ko-->товаров<!-- /ko -->
       </h1>
       <!-- ko template: { name: 'searchResultFiletrTmpl', data: filters } -->
       <!-- /ko -->

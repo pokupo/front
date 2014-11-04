@@ -5,10 +5,24 @@ script#searchResultTileTmpl(type="text/html")
     .nosidebar
         .b-catalog
             h1#js-nosidebar.b-catalog__title
-                | Найдено
-                // ko text: countGoods 
-                // /ko 
-                | товаров
+                +if('countGoods == 1')
+                    | Найден 
+                    // ko text: countGoods 
+                    // /ko
+                    | товар
+                
+                +if('countGoods > 1 && countGoods < 5')
+                    | Найдено 
+                    // ko text: countGoods 
+                    // /ko
+                    | товара
+                
+                +if('countGoods > 4')
+                    | Найдено 
+                    // text: countGoods 
+                    // /ko
+                    | товаров
+                
             // ko template: { name: 'searchResultFiletrTmpl', data: filters } 
             // /ko 
             .b-catalog__items.cards

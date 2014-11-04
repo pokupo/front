@@ -14,17 +14,17 @@
                     <div class="b-location__catalog">
                       <div id="multilocation">
                         <ul><!-- ko foreach: categories -->
-                          <li>
+                          <li data-bind="css: {'selected' : select}, attr: {id: key}">
                             <!-- ko text: title -->
                             <!-- /ko--><!-- ko if: children -->
                             <ul><!-- ko foreach: { data: children, as: 'children1' } -->
-                              <li>
+                              <li data-bind="css: {'selected' : children1.select}, attr: {id: key}">
                                 <!-- ko text: children1.title -->
                                 <!-- /ko --><!-- ko if: children1.children -->
                                 <ul><!-- ko foreach: { data: children1.children, as: 'children2' } -->
-                                  <li>
+                                  <li data-bind="css: {'selected' : children2.select}, attr: {id: key}">
                                     <!-- ko text: children2.title -->
-                                    <!-- /ko -->
+                                    <!-- /ko-->
                                   </li><!-- /ko -->
                                 </ul><!-- /ko -->
                               </li><!-- /ko -->
