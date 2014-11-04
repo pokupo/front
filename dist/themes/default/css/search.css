@@ -92,6 +92,13 @@
   width: 273px;
   z-index: 9;
 }
+.selector__options {
+  overflow: hidden;
+}
+.selector__options .dropdown__content li a,
+.selector__options .dropdown__content li u {
+  white-space: normal;
+}
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait), screen and (min-width: 641px) and (max-width: 800px) {
   .b-search {
     border-right-width: 173px;

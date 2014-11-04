@@ -11288,6 +11288,15 @@ body .b-share-popup__header_first {
 	z-index: 9;
 }
 
+.selector__options {
+	overflow: hidden;
+}
+
+.selector__options .dropdown__content li a,
+.selector__options .dropdown__content li u {
+	white-space: normal;
+}
+
 .menu-login {
 	float: right;
 	height: 120px;
