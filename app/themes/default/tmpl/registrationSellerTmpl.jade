@@ -84,7 +84,7 @@ script#registrationSellerFromStep2Tmpl(type='text/html')
 				p Укажите код, высланный на почтовый адрес или телефон
 				.b-wizard__step-content
 					+if('errorConfirmLater')
-						.error_form(data-bind='text: errorConfirmLater')
+						p.error_form(data-bind='text: errorConfirmLater')
 
 					+ifnot('mailConfirmLater')
 						.input-holder

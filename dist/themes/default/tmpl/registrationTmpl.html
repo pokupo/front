@@ -96,7 +96,7 @@
         <div id="step-2" class="content">
           <h2 class="b-wizard__step-title">Активация аккаунта</h2>
           <p>Укажите код, высланный на почтовый адрес или телефон</p><!-- ko if: errorConfirmLater -->
-          <div data-bind="text: errorConfirmLater" class="error_form"></div><!-- /ko --><!-- ko ifnot: mailConfirmLater -->
+          <p data-bind="text: errorConfirmLater" class="error_form"></p><!-- /ko --><!-- ko ifnot: mailConfirmLater -->
           <div class="input-holder">
             <div rel="tooltip" title="Код, высланный на почтовый адрес или телефон" class="tooltip__trigger">?</div>
             <input type="text" name="code" value="" placeholder="Ваш e-mail код" data-bind="value: mailToken" class="block-input"/><!-- ko if: mailIsConfirm  -->

@@ -24,3 +24,6 @@
           box-sizing: border-box;
   margin-bottom: 12px;
 }
+p.error_form {
+  color: #ed1c24;
+}

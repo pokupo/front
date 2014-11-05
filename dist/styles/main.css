@@ -10743,6 +10743,10 @@ body .b-share-popup__header_first {
 	padding-left: 19px;
 }
 
+.b-mail__item.b-dialog.unread {
+	background: #f0dbdb;
+}
+
 .b-dialog {
 	position: relative;
 	cursor: default;
@@ -11152,6 +11156,10 @@ body .b-share-popup__header_first {
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
 	margin-bottom: 12px;
+}
+
+p.error_form {
+	color: #ed1c24;
 }
 
 .h1-with-progress-bar.seller {
