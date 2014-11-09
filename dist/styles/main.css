@@ -1382,6 +1382,11 @@ textarea--small {
 	text-overflow: ellipsis;
 }
 
+.error__message.error__message--big p {
+	white-space: normal;
+	height: 3em;
+}
+
 select {
 	width: 100%;
 	max-width: 450px;
@@ -10247,6 +10252,11 @@ section.profile .b-order-list__tobepaid .b-order-item__discount {
 .nosidebar .b-sidebar .submenu__item.active a:hover {
 	background: #efece7;
 	color: #ffa800;
+}
+
+.owl-item .b-catalog__items.cards .b-item {
+	width: auto;
+	max-width: 242px;
 }
 
 .b-catalog-item {

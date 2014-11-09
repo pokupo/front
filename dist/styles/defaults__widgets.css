@@ -1809,6 +1809,11 @@ section.profile .b-order-list__tobepaid .b-order-item__discount {
 	color: #ffa800;
 }
 
+.owl-item .b-catalog__items.cards .b-item {
+	width: auto;
+	max-width: 242px;
+}
+
 .b-catalog-item {
 	text-align: left; /* Левая */ /* Правая */ /* Самая правая */ /* Дополнительные блоки */
 }

@@ -1384,6 +1384,11 @@ textarea--small {
 	text-overflow: ellipsis;
 }
 
+.error__message.error__message--big p {
+	white-space: normal;
+	height: 3em;
+}
+
 select {
 	width: 100%;
 	max-width: 450px;

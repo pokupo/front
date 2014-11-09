@@ -66,10 +66,10 @@ script#registrationFromStep1Tmpl(type="text/html")
                             a(href="/rules", target='_blank', data-bind='attr:{href: agreement}') пользовательского соглашения
                             | ,<br/>
                             a(href="/police", target='_blank', data-bind='attr:{href: police}') правил конфиденциальности
-                            |  и
+                            |  и 
                             a(href="/refund", target='_blank', data-bind='attr:{href: refund}') политики возврата платежей
                         +if('errorIsChecked')
-                            .error__message
+                            .error__message.error__message--big
                                 p(data-bind='text: errorIsChecked')
                         
             .b-wizard__actions

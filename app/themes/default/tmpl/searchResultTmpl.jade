@@ -9,19 +9,19 @@ script#searchResultTileTmpl(type="text/html")
                     | Найден 
                     // ko text: countGoods 
                     // /ko
-                    | товар
+                    |  товар
                 
                 +if('countGoods > 1 && countGoods < 5')
                     | Найдено 
                     // ko text: countGoods 
                     // /ko
-                    | товара
+                    |  товара
                 
                 +if('countGoods > 4')
                     | Найдено 
                     // text: countGoods 
                     // /ko
-                    | товаров
+                    |  товаров
                 
             // ko template: { name: 'searchResultFiletrTmpl', data: filters } 
             // /ko 

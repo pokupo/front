@@ -199,3 +199,7 @@
   background: #efece7;
   color: #ffa800;
 }
+.owl-item .b-catalog__items.cards .b-item {
+  width: auto;
+  max-width: 242px;
+}
