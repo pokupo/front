@@ -20,7 +20,7 @@
               <div data-bind="embedWidget :{ widget : 'InfoSellerWidget-1.0', params : {data : sellerInfo, tmpl : {path: 'http://promodev.pokupo.ru/themes/default/tmpl/infoSellerTmpl.html'}}}" class="b-profile-info"></div>
             </div>
           </div>
-          <div class="columns triple">
+          <div class="columns triple columns--resp_fix">
             <div class="first double column">
               <div class="content">
                 <div class="b-catalog-item__description">
@@ -28,7 +28,7 @@
                     <div data-bind="attr: {style: 'width:' + blocks.main.ratingGoods + '%'}" class="b-stars__rating"></div>
                   </div><!-- ko foreach: moreBlock --><!-- ko if: key == "opinion" --><!-- ko if: content --><span class="pseudo-link">
                     <!-- ko text: content.params.length -->
-                    <!-- /ko-->отзыва</span><!-- /ko --><!-- /ko --><!-- /ko -->
+                    <!-- /ko--> отзыва</span><!-- /ko --><!-- /ko --><!-- /ko -->
                   <p data-bind="html: blocks.main.fullName"></p>
                   <p>Метки: 
                     <!-- ko text: blocks.main.keyWords -->
@@ -45,7 +45,6 @@
                       <!-- /ko-->
                     </p>
                   </div><!-- /ko -->
-                  <div data-yashareL10n="ru" data-yashareType="link" data-yashareQuickServices="vkontakte,facebook,twitter,odnoklassniki,gplus" class="b-catalog-item__share yashare-auto-init"></div>
                 </div>
               </div>
             </div>
@@ -66,6 +65,7 @@
               </div>
             </div>
           </div>
+          <div data-yashareL10n="ru" data-yashareType="link" data-yashareQuickServices="vkontakte,facebook,twitter,odnoklassniki,gplus" class="b-catalog-item__share yashare-auto-init"></div>
           <div data-bind="template: { name: 'goodsMoreBlockTmpl' }" class="b-catalog-item__aux"></div><!-- ko foreach: moreBlock --><!-- ko if: key == "opinion" --><!-- ko if: content -->
           <div data-bind="template: { name: 'goodsOpinionBlockTmpl' }" class="b-catalog-item__aux b-reviews"></div><!-- /ko --><!-- /ko --><!-- /ko -->
         </div>

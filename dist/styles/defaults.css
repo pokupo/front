@@ -385,6 +385,18 @@ section.advanced-search label.separator {
 	margin-left: 10px;
 }
 
+.radio-circles .menu__item span.ellipsis {
+	display: block;
+	position: relative;
+	width: 100%;
+	height: 100%;
+	text-decoration: none;
+	color: #333;
+	line-height: 36px;
+	text-align: center;
+	font-size: 18px;
+}
+
 .radio-circles .menu__item a {
 	display: block;
 	position: relative;

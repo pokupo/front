@@ -21,7 +21,7 @@ script#goodsTmpl(type="text/html")
                         .slidedown__content.hidden(data-target="info")
                             .b-profile-info(data-bind="embedWidget :{ widget : 'InfoSellerWidget-1.0', params : {data : sellerInfo, tmpl : {path: 'http://promodev.pokupo.ru/themes/default/tmpl/infoSellerTmpl.html'}}}")
 
-                    .columns.triple
+                    .columns.triple.columns--resp_fix
                         .first.double.column
                             .content
                                 .b-catalog-item__description
@@ -34,7 +34,7 @@ script#goodsTmpl(type="text/html")
                                                 span.pseudo-link 
                                                     // ko text: content.params.length 
                                                     // /ko
-                                                    | отзыва
+                                                    |  отзыва
 
                                     p(data-bind="html: blocks.main.fullName")
                                     p 
@@ -66,12 +66,6 @@ script#goodsTmpl(type="text/html")
                                                 | Ваша скидка 
                                                 // ko text: blocks.main.discount 
                                                 // /ko
-
-                                    .b-catalog-item__share.yashare-auto-init(
-                                        data-yashareL10n="ru" 
-                                        data-yashareType="link" 
-                                        data-yashareQuickServices="vkontakte,facebook,twitter,odnoklassniki,gplus")
-
 
                         .third.column
                             .content.b-catalog-item__actions
@@ -107,6 +101,11 @@ script#goodsTmpl(type="text/html")
                                 #dialog-form-batch(style="display: none" title="Добавить комментарий к избранному товару.")
                                     textarea(name="comment" rows="10" cols="50" data-bind="value : blocks.main.comment")
 
+                    .b-catalog-item__share.yashare-auto-init(
+                                        data-yashareL10n="ru" 
+                                        data-yashareType="link" 
+                                        data-yashareQuickServices="vkontakte,facebook,twitter,odnoklassniki,gplus")
+                    
                     .b-catalog-item__aux(data-bind="template: { name: 'goodsMoreBlockTmpl' }")
 
                     +each('moreBlock')
@@ -134,7 +133,7 @@ script#goodsGalleryBlockTmpl(type="text/html")
 
 script#goodsMoreBlockTmpl(type="text/html")
     // version 1.0
-    dl.tabs.tabs--noskin#more_block
+    dl#more_block.tabs.tabs--noskin
         +each('moreBlock')
             +ifnot("key == 'opinion'")
                 +if('content')

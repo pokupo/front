@@ -4,7 +4,31 @@ script#infoSellerTmpl(type='text/html')
 	// version 1.0 
 	div
 		.b-profile-info__actions
-			a.btn.btn-xs(target='_blank', data-bind='attr: {href: mailtoShop}') Задать вопрос
+			a.btn.btn-xs.ask-question(target='_blank', data-bind='attr: {href: mailtoShop}') Задать вопрос
+			.b-support-info.dropdown
+				span.b-support-info__title
+					span.dropdown__trigger(data-target="support")  Поддержка
+				.b-support-info__content.dropdown__content.hidden(data-target="support")
+					p 
+						+if('siteSupportShop()')
+							span.label Посетить сайт
+							a.action(href=js0, target='_blank', data-bind='text: siteLinkTitle, attr: {href : siteSupportShop}')
+
+						span.label Написать
+						a.action(href=js0, data-bind='attr: {href: mailtoShop}, text: emailLinkTitle')
+
+						+if('skypeSupportShop()')
+							span.label Skype консультанта
+							a.action(href='skype:pokupo?chat', onclick='return skypeCheck()', data-bind='text: skypeSupportShop')
+
+						+if('icqSupportShop()')
+							span.label ICQ консультанта
+							span.action(data-bind='text: icqSupportShop')
+
+						+if('phonesSupportShop()')
+							span.label Позвонить
+							a.action(data-bind='text: phonesSupportShop()')
+
 		.b-profile-info__summary
 			.b-profile-info__photo
 				img(src='', data-bind='attr: {src : routeLogoShop, title : nameShop}')
@@ -32,29 +56,3 @@ script#infoSellerTmpl(type='text/html')
 				li
 					span.char Товаров: 
 					span.value(data-bind='text: allGoods')
-
-			ul.b-profile-info__characters-list
-				+if('siteSupportShop()')
-					li
-						span.label Сайт: 
-						a.action(href=js0, target='_blank', data-bind='text: siteLinkTitle, attr: {href : siteSupportShop}')
-					
-				li
-					span.char E-mail: 
-					a(href=js0, data-bind='attr: {href: mailtoShop}, text: emailLinkTitle')
-
-				+if('skypeSupportShop()')
-					li
-						span.label Skype: 
-						a.action(href='skype:pokupo?chat', onclick='return skypeCheck()', data-bind='text: skypeSupportShop')
-				
-			ul.b-profile-info__characters-list
-				+if('icqSupportShop()')
-					li
-						span.label ICQ: 
-						span.action(data-bind='text: icqSupportShop')
-
-				+if('phonesSupportShop()')
-					li
-						span.char Тел.: 
-						span.value(data-bind='text: phonesSupportShop()')

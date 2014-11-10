@@ -356,10 +356,11 @@ script#searchResultPaginatetionTmpl(type="text/html")
                 ul.menu
                     +each('paging')
                         +if('current')
-                            li.menu__item.active
-                                +if("title == '...'")
-                                    | ...
-                                +ifnot("title == '...'")
+                            +if("title == '...'")
+                                li.menu__item
+                                    span.ellipsis ...
+                            +ifnot("title == '...'")
+                                li.menu__item.active
                                     a(href=js0, data-bind='text: title, click: ClickLinkPage')
                         +ifnot('current')
                             +if('cssLink() == "first"')
