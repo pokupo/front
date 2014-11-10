@@ -5,10 +5,10 @@ script#infoSellerTmpl(type='text/html')
 	div
 		.b-profile-info__actions
 			a.btn.btn-xs.ask-question(target='_blank', data-bind='attr: {href: mailtoShop}') Задать вопрос
-			.b-support-info.dropdown
+			.b-support-info.info_seller_dropdown
 				span.b-support-info__title
-					span.dropdown__trigger(data-target="support")  Поддержка
-				.b-support-info__content.dropdown__content.hidden(data-target="support")
+					span.info_seller_dropdown__trigger(data-target="support")  Поддержка
+				.b-support-info__content.info_seller_dropdown__content.hidden(data-target="support")
 					p 
 						+if('siteSupportShop()')
 							span.label Посетить сайт
