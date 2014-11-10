@@ -3,8 +3,8 @@
   <!-- version 1.0 -->
   <div>
     <div class="b-profile-info__actions"><a target="_blank" data-bind="attr: {href: mailtoShop}" class="btn btn-xs ask-question">Задать вопрос</a>
-      <div class="b-support-info info_seller_dropdown"><span class="b-support-info__title"><span data-target="support" class="info_seller_dropdown__trigger"> Поддержка</span></span>
-        <div data-target="support" class="b-support-info__content info_seller_dropdown__content hidden">
+      <div class="b-support-info info_seller_dropdown dropdown"><span class="b-support-info__title"><span data-target="support" class="info_seller_dropdown__trigger dropdown__trigger"> Поддержка</span></span>
+        <div data-target="support" class="b-support-info__content info_seller_dropdown__content dropdown__content hidden">
           <p><!-- ko if: siteSupportShop() --><span class="label">Посетить сайт</span><a href="javascript:void(0);" target="_blank" data-bind="text: siteLinkTitle, attr: {href : siteSupportShop}" class="action"></a><!-- /ko --><span class="label">Написать</span><a href="javascript:void(0);" data-bind="attr: {href: mailtoShop}, text: emailLinkTitle" class="action"></a><!-- ko if: skypeSupportShop() --><span class="label">Skype консультанта</span><a href="skype:pokupo?chat" onclick="return skypeCheck()" data-bind="text: skypeSupportShop" class="action"></a><!-- /ko --><!-- ko if: icqSupportShop() --><span class="label">ICQ консультанта</span><span data-bind="text: icqSupportShop" class="action"></span><!-- /ko --><!-- ko if: phonesSupportShop() --><span class="label">Позвонить</span><a data-bind="text: phonesSupportShop()" class="action"></a><!-- /ko -->
           </p>
         </div>
