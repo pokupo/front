@@ -105,13 +105,13 @@ script#goodsTmpl(type="text/html")
                                         data-yashareL10n="ru" 
                                         data-yashareType="link" 
                                         data-yashareQuickServices="vkontakte,facebook,twitter,odnoklassniki,gplus")
-                    
-                    .b-catalog-item__aux(data-bind="template: { name: 'goodsMoreBlockTmpl' }")
 
-                    +each('moreBlock')
-                        +if('key == "opinion"')
-                            +if('content')
-                                .b-catalog-item__aux.b-reviews(data-bind="template: { name: 'goodsOpinionBlockTmpl' }")
+
+        .b-catalog-item__aux(data-bind="template: { name: 'goodsMoreBlockTmpl' }")
+        +each('moreBlock')
+            +if('key == "opinion"')
+                +if('content')
+                    .b-catalog-item__aux.b-reviews(data-bind="template: { name: 'goodsOpinionBlockTmpl' }")
         div(data-bind="embedWidget :{ widget : 'RelatedGoodsWidget-1.0', params : {id : id, typeView: 'carousel', count: 6, countTile : 6, tmpl : {path: 'http://promodev.pokupo.ru/themes/default/tmpl/relatedGoodsTmpl.html'}}}")
 
 
