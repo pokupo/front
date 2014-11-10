@@ -2687,6 +2687,7 @@ body .b-share-popup__header_first {
 	display: block;
 	position: relative;
 	left: -2px;
+	min-height: 100px;
 }
 
 .b-profile-info--personal .b-profile-info__characters-list {
