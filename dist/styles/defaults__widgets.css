@@ -667,12 +667,13 @@ span.fancytree-node.fancytree-error span.fancytree-title {
 }
 
 .b-catalog__items.magazine .b-item .responsive-holder {
-	width: 230px;
+	width: 560px;
 	left: 265px;
+	padding-right: 100px;
 }
 
 .b-catalog__items.magazine .b-item__order-button {
-	left: 520px;
+	left: 750px;
 }
 
 .b-catalog__items.magazine .b-item__order-button .btn {
@@ -697,7 +698,7 @@ span.fancytree-node.fancytree-error span.fancytree-title {
 
 .b-catalog__items.titles .b-item {
 	width: 100%;
-	min-width: 726px;
+	min-width: 978px;
 }
 
 .b-catalog__items.titles .b-item .responsive-holder {
@@ -732,13 +733,13 @@ span.fancytree-node.fancytree-error span.fancytree-title {
 }
 
 .b-catalog__items.titles .b-item__description {
-	width: 220px;
+	width: 470px;
 	left: 180px;
 }
 
 .b-catalog__items.titles .b-item__price {
 	width: 120px;
-	left: 390px;
+	left: 660px;
 	display: table;
 	min-height: 120px;
 }
@@ -759,7 +760,7 @@ span.fancytree-node.fancytree-error span.fancytree-title {
 }
 
 .b-catalog__items.titles .b-item__order-button {
-	left: 540px;
+	left: 800px;
 	line-height: 120px;
 	height: 120px;
 }
