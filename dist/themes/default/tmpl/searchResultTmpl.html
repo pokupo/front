@@ -206,10 +206,10 @@
       <input type="search" name="quick-filter" placeholder="Быстрый поиск..." data-bind="value: filterName" class="b-catalog__quick-filter__input no-label"/><i data-bind="click: ClickFilterNameGoods" class="b-catalog__quick-filter__icon"></i>
     </aside>
     <div class="b-catalog__controls-item">Сортировать
-      <div class="inline-sorter dropdown selector"><span id="content_sort" data-target="sort" class="selector__current dropdown__trigger"><!-- ko foreach: sort.list --><!-- ko if: isActive -->
+      <div class="inline-sorter dropdown selector"><span id="content_sort" data-target="sort" class="selector__current dropdown__trigger content_filter_sort_dropdown__trigger"><!-- ko foreach: sort.list --><!-- ko if: isActive -->
           <!-- ko text: title -->
           <!-- /ko --><!-- /ko --><!-- /ko --></span>
-        <div data-target="sort" class="dropdown__content selector__options hidden">
+        <div data-target="sort" class="dropdown__content selector__options hidden content_filter_sort_dropdown__content">
           <ul data-bind="foreach: sort.list"><!-- ko if: isActive -->
             <li class="menu__item active"><a href="javascript:void(0);" data-bind="click: ClickSort, text: title">по названию</a></li><!-- /ko --><!-- ko ifnot: isActive -->
             <li class="menu__item"><a href="javascript:void(0);" data-bind="click: ClickSort, text: title">по названию</a></li><!-- /ko -->

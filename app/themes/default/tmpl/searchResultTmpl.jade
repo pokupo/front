@@ -286,66 +286,67 @@ script#searchResultErrorTmpl(type="text/html")
                 p Попробуйте изменить параметры поиска и попробуйте еще раз.
             
 
-script#searchResultFiletrTmpl(type="text/html")
+script#searchResultFiletrTmpl(type='text/html')
     // version 1.0
     .b-catalog__controls
         aside.b-catalog__quick-filter
-                input.b-catalog__quick-filter__input.no-label(type='search', name='quick-filter', placeholder='Быстрый поиск...', data-bind='value: filterName')
-                i.b-catalog__quick-filter__icon(data-bind='click: ClickFilterNameGoods')
-            .b-catalog__controls-item
-                | Сортировать
-                .inline-sorter.dropdown.selector
-                    span#content_sort.selector__current.dropdown__trigger(data-target='sort')
-                        +each('sort.list')
-                            +if('isActive')
-                                // ko text: title 
-                                // /ko 
-                           
-                    .dropdown__content.selector__options.hidden(data-target='sort')
-                        ul(data-bind='foreach: sort.list')
-                            +if('isActive')
-                                li.menu__item.active
-                                    a(href=js0, data-bind='click: ClickSort, text: title') по названию
-                            +ifnot('isActive')
-                                li.menu__item
-                                    a(href=js0, data-bind='click: ClickSort, text: title') по названию
-            .b-catalog__controls-item
-                | Вид:
-                .radio-circles.catalog-layout
-                    ul.menu
-                        +if("typeView == 'tile'")
+            input.b-catalog__quick-filter__input.no-label(type='search', name='quick-filter', placeholder='Быстрый поиск...', data-bind='value: filterName')
+            i.b-catalog__quick-filter__icon(data-bind='click: ClickFilterNameGoods')
+        .b-catalog__controls-item
+            | Сортировать
+            .inline-sorter.dropdown.selector
+                span#content_sort.selector__current.dropdown__trigger.content_filter_sort_dropdown__trigger(data-target='sort')
+                    +each('sort.list')
+                        +if('isActive')
+                            // ko text: title 
+                            // /ko 
+                        
+                .dropdown__content.selector__options.hidden.content_filter_sort_dropdown__content(data-target='sort')
+                    ul(data-bind='foreach: sort.list')
+                        +if('isActive')
                             li.menu__item.active
-                                a(href=js0, data-value='cards', data-bind='click: selectTypeView.ClickTile')
-                                    i.icon.icon__cards
+                                a(href=js0, data-bind='click: ClickSort, text: title') по названию
+                        
+                        +ifnot('isActive')
                             li.menu__item
-                                a(href=js0, data-value='magazine', data-bind='click: selectTypeView.ClickTable')
-                                    i.icon.icon__magazine
-                            li.menu__item
-                                a(href=js0, data-value='titles', data-bind='click: selectTypeView.ClickList')
-                                    i.icon.icon__titles
+                                a(href=js0, data-bind='click: ClickSort, text: title') по названию
+                        
+        .b-catalog__controls-item
+            | Вид:
+            .radio-circles.catalog-layout
+                ul.menu
+                    +if("typeView == 'tile'")
+                        li.menu__item.active
+                            a(href=js0, data-value='cards', data-bind='click: selectTypeView.ClickTile')
+                                i.icon.icon__cards
+                        li.menu__item
+                            a(href=js0, data-value='magazine', data-bind='click: selectTypeView.ClickTable')
+                                i.icon.icon__magazine
+                        li.menu__item
+                            a(href=js0, data-value='titles', data-bind='click: selectTypeView.ClickList')
+                                i.icon.icon__titles
 
-                        +if("typeView == 'table'")
-                            li.menu__item
-                                a(href=js0, data-value='cards', data-bind='click: selectTypeView.ClickTile')
-                                    i.icon.icon__cards
-                            li.menu__item.active
-                                a(href=js0, data-value='magazine', data-bind='click: selectTypeView.ClickTable')
-                                    i.icon.icon__magazine
-                            li.menu__item
-                                a(href=js0, data-value='titles', data-bind='click: selectTypeView.ClickList')
-                                    i.icon.icon__titles
-
-                        +if("typeView == 'list'")
-                            li.menu__item
-                                a(href=js0, data-value='cards', data-bind='click: selectTypeView.ClickTile')
-                                    i.icon.icon__cards
-                            li.menu__item
-                                a(href=js0, data-value='magazine', data-bind='click: selectTypeView.ClickTable')
-                                    i.icon.icon__magazine
-                            li.menu__item.active
-                                a(href=js0, data-value='titles', data-bind='click: selectTypeView.ClickList')
-                                    i.icon.icon__titles
-
+                    +if("typeView == 'table'")
+                        li.menu__item
+                            a(href=js0, data-value='cards', data-bind='click: selectTypeView.ClickTile')
+                                i.icon.icon__cards
+                        li.menu__item.active
+                            a(href=js0, data-value='magazine', data-bind='click: selectTypeView.ClickTable')
+                                i.icon.icon__magazine
+                        li.menu__item
+                            a(href=js0, data-value='titles', data-bind='click: selectTypeView.ClickList')
+                                i.icon.icon__titles
+                    
+                    +if("typeView == 'list'")
+                        li.menu__item
+                            a(href=js0, data-value='cards', data-bind='click: selectTypeView.ClickTile')
+                                i.icon.icon__cards
+                        li.menu__item
+                            a(href=js0, data-value='magazine', data-bind='click: selectTypeView.ClickTable')
+                                i.icon.icon__magazine
+                        li.menu__item.active
+                            a(href=js0, data-value='titles', data-bind='click: selectTypeView.ClickList')
+                                i.icon.icon__titles
 
 
 script#searchResultPaginatetionTmpl(type="text/html")
