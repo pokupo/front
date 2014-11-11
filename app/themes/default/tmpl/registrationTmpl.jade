@@ -169,19 +169,19 @@ script#registrationFromStep3Tmpl(type='text/html')
                     p Укажите свои персональные данные
                     .input-holder
                         .tooltip__trigger(rel="tooltip" title="Введите ваше имя на сайте.") ?
-                        input.block-input(type='text', name='family', value='', placeholder='Фамилия', data-bind='value: lastName')
+                        input.block-input(type='text', name='sname', value='', placeholder='Фамилия', data-bind='value: lastName')
                         +if('errorLastName')
                             .error__message
                                 p(data-bind='text: errorLastName')
                             
                     .input-holder
-                        input.block-input(type='text', name='name', value='', placeholder='Имя', data-bind='value: firstName')
+                        input.block-input(type='text', name='fname', value='', placeholder='Имя', data-bind='value: firstName')
                         +if('errorFirstName')
                             .error__message
                                 p(data-bind='text: errorFirstName')
                             
                     .input-holder
-                        input.block-input(type='text', name='patronymic', value='', placeholder='Отчество', data-bind='value: middleName')
+                        input.block-input(type='text', name='mname', value='', placeholder='Отчество', data-bind='value: middleName')
                         +if('errorMiddleName')
                             .error__message
                                 p(data-bind='text: errorMiddleName')
@@ -205,7 +205,7 @@ script#registrationFromStep3Tmpl(type='text/html')
 
                             
                     .input-holder(style='padding-top: 13px;')
-                        input#skip_personal.checkbox(name='skip_personal', type='checkbox', data-bind='click: SpecifyLater')
+                        input#skip_personal.checkbox(type='checkbox', data-bind='click: SpecifyLater')
                         label.block-label.b-small-text(for='skip_personal') Указать позже
             .b-wizard__actions
                 .b-wizard__loader Loading
@@ -218,7 +218,7 @@ script#registrationFromStep4Tmpl(type='text/html')
         canvas#progressCircle(width='160', height='160')
             p Ваш браузер не поддерживает технологию canvas
         h1 Регистрация нового аккаунта
-    form(action='')
+    form(data-bind="attr: {id: cssRegistrationDataForm}" enctype="multipart/form-data" target="upload_target" method="POST")
         #registerWizard.b-wizard
             ul.b-wizard__steps.anchor
                 li

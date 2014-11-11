@@ -153,19 +153,19 @@
           <p>Укажите свои персональные данные</p>
           <div class="input-holder">
             <div rel="tooltip" title="Введите ваше имя на сайте." class="tooltip__trigger">?</div>
-            <input type="text" name="family" value="" placeholder="Фамилия" data-bind="value: lastName" class="block-input"/><!-- ko if: errorLastName -->
+            <input type="text" name="sname" value="" placeholder="Фамилия" data-bind="value: lastName" class="block-input"/><!-- ko if: errorLastName -->
             <div class="error__message">
               <p data-bind="text: errorLastName"></p>
             </div><!-- /ko -->
           </div>
           <div class="input-holder">
-            <input type="text" name="name" value="" placeholder="Имя" data-bind="value: firstName" class="block-input"/><!-- ko if: errorFirstName -->
+            <input type="text" name="fname" value="" placeholder="Имя" data-bind="value: firstName" class="block-input"/><!-- ko if: errorFirstName -->
             <div class="error__message">
               <p data-bind="text: errorFirstName"></p>
             </div><!-- /ko -->
           </div>
           <div class="input-holder">
-            <input type="text" name="patronymic" value="" placeholder="Отчество" data-bind="value: middleName" class="block-input"/><!-- ko if: errorMiddleName -->
+            <input type="text" name="mname" value="" placeholder="Отчество" data-bind="value: middleName" class="block-input"/><!-- ko if: errorMiddleName -->
             <div class="error__message">
               <p data-bind="text: errorMiddleName"></p>
             </div><!-- /ko -->
@@ -187,7 +187,7 @@
             </div><!-- /ko -->
           </div>
           <div style="padding-top: 13px;" class="input-holder">
-            <input id="skip_personal" name="skip_personal" type="checkbox" data-bind="click: SpecifyLater" class="checkbox"/>
+            <input id="skip_personal" type="checkbox" data-bind="click: SpecifyLater" class="checkbox"/>
             <label for="skip_personal" class="block-label b-small-text">Указать позже</label>
           </div>
         </div>
@@ -206,7 +206,7 @@
     </canvas>
     <h1>Регистрация нового аккаунта</h1>
   </div>
-  <form action="">
+  <form data-bind="attr: {id: cssRegistrationDataForm}" enctype="multipart/form-data" target="upload_target" method="POST">
     <div id="registerWizard" class="b-wizard">
       <ul class="b-wizard__steps anchor">
         <li><a href="#step-1" isdone="1" rel="1" class="done">
