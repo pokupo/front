@@ -6,7 +6,7 @@ script#registrationFromStep1Tmpl(type='text/html')
         canvas#progressCircle(width='160', height='160')
             p Ваш браузер не поддерживает технологию canvas
         h1 Регистрация нового аккаунта
-    form(action='')
+    form(data-bind="attr: {id: cssRegistrationDataForm}" enctype="multipart/form-data" target="upload_target" method="POST")
         #registerWizard.b-wizard
             ul.b-wizard__steps.anchor
                 li
@@ -82,7 +82,7 @@ script#registrationFromStep2Tmpl(type='text/html')
         canvas#progressCircle(width='160', height='160')
             p Ваш браузер не поддерживает технологию canvas
         h1 Регистрация нового аккаунта
-    form(action='')
+    form(data-bind="attr: {id: cssRegistrationDataForm}" enctype="multipart/form-data" target="upload_target" method="POST")
         #registerWizard.b-wizard
             ul.b-wizard__steps.anchor
                 li
@@ -148,7 +148,7 @@ script#registrationFromStep3Tmpl(type='text/html')
         canvas#progressCircle(width='160', height='160')
             p Ваш браузер не поддерживает технологию canvas
         h1 Регистрация нового аккаунта
-    form(action='')
+    form(data-bind="attr: {id: cssRegistrationDataForm}" enctype="multipart/form-data" target="upload_target" method="POST")
         #registerWizard.b-wizard
             ul.b-wizard__steps.anchor
                 li
