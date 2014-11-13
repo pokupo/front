@@ -165,18 +165,7 @@
         </div>
       </div>
       <div class="b-mail">
-        <div class="b-mail__item b-dialog">
-          <div class="b-dialog__body">
-            <div data-bind="html: messageError"></div>
-          </div>
-        </div>
-      </div>
-      <div class="columns triple">
-        <div class="third column">
-          <div class="content">
-            <button type="button" data-target="modal-message" class="btn btn-lg btn-inline b-mail__addbtn open-modal btn_add_message"><i class="icon icon-addmail"></i>Новое сообщение</button>
-          </div>
-        </div>
+        <p data-bind="html: messageError"></p>
       </div>
       <!-- ko template: { name: 'messageModalFormTmpl', data: modalForm } -->
       <!-- /ko -->

@@ -198,15 +198,7 @@ script#messageEmptyListTmpl(type='text/html')
                             i.icon.icon-addmail
                             | Новое сообщение
             .b-mail
-                .b-mail__item.b-dialog
-                    .b-dialog__body
-                        div(data-bind='html: messageError')
-            .columns.triple
-                .third.column
-                    .content
-                        button.btn.btn-lg.btn-inline.b-mail__addbtn.open-modal.btn_add_message(type='button', data-target='modal-message')
-                            i.icon.icon-addmail
-                            | Новое сообщение
+                p(data-bind='html: messageError')
             // ko template: { name: 'messageModalFormTmpl', data: modalForm } 
             // /ko 
 
