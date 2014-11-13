@@ -218,7 +218,7 @@ script#registrationFromStep4Tmpl(type='text/html')
         canvas#progressCircle(width='160', height='160')
             p Ваш браузер не поддерживает технологию canvas
         h1 Регистрация нового аккаунта
-    form(data-bind="attr: {id: cssRegistrationDataForm}" enctype="multipart/form-data" target="upload_target" method="POST")
+    form(enctype="multipart/form-data" method="POST")
         #registerWizard.b-wizard
             ul.b-wizard__steps.anchor
                 li
@@ -241,14 +241,14 @@ script#registrationFromStep4Tmpl(type='text/html')
                         select.suggestion-input.block-input.country_list_profile(name='address__country', data-bind='value: idCountry, attr: {id: cssCountryList}', data-placeholder='Страна')
                             option(value='')
                             +each('countryList')
-                                +if('$parent.country()')
-                                    +if('$parent.country().id  == id')
+                                +if('$parent.idCountry()')
+                                    +if('$parent.idCountry().id  == id')
                                         option(data-bind='text: name, value: id', selected='selected')
 
-                                    +ifnot('$parent.country().id  == id')
+                                    +ifnot('$parent.idCountry().id  == id')
                                         option(data-bind='text: name, value: id') 
 
-                                +ifnot('$parent.country()')
+                                +ifnot('$parent.idCountry()')
                                     option(data-bind='text: name, value: id')
                         +if('errorCountry')
                             .error__message

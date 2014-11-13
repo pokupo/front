@@ -206,7 +206,7 @@
     </canvas>
     <h1>Регистрация нового аккаунта</h1>
   </div>
-  <form data-bind="attr: {id: cssRegistrationDataForm}" enctype="multipart/form-data" target="upload_target" method="POST">
+  <form enctype="multipart/form-data" method="POST">
     <div id="registerWizard" class="b-wizard">
       <ul class="b-wizard__steps anchor">
         <li><a href="#step-1" isdone="1" rel="1" class="done">
@@ -224,9 +224,9 @@
           <p>Для доставки покупок требуется указать почтовый адрес</p>
           <div class="input-holder">
             <select name="address__country" data-bind="value: idCountry, attr: {id: cssCountryList}" data-placeholder="Страна" class="suggestion-input block-input country_list_profile">
-              <option value=""></option><!-- ko foreach: countryList --><!-- ko if: $parent.country() --><!-- ko if: $parent.country().id  == id -->
-              <option data-bind="text: name, value: id" selected="selected"></option><!-- /ko --><!-- ko ifnot: $parent.country().id  == id -->
-              <option data-bind="text: name, value: id"></option><!-- /ko --><!-- /ko --><!-- ko ifnot: $parent.country() -->
+              <option value=""></option><!-- ko foreach: countryList --><!-- ko if: $parent.idCountry() --><!-- ko if: $parent.idCountry().id  == id -->
+              <option data-bind="text: name, value: id" selected="selected"></option><!-- /ko --><!-- ko ifnot: $parent.idCountry().id  == id -->
+              <option data-bind="text: name, value: id"></option><!-- /ko --><!-- /ko --><!-- ko ifnot: $parent.idCountry() -->
               <option data-bind="text: name, value: id"></option><!-- /ko --><!-- /ko -->
             </select><!-- ko if: errorCountry -->
             <div class="error__message">
