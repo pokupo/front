@@ -222,17 +222,13 @@ script#messageModalFormTmpl(type='text/html')
                 .modal-body
                     form(data-bind='attr: {id: cssFormMessage}', method='POST', target='upload_target', enctype='multipart/form-data')
                         .input-holder
-                            .floatlabel-wrapper
-                                input#topic_user.block-input.active-floatlabel(name='dst_user', type='text', placeholder='Адресат', data-bind='value: dstUser, event: { blur: OnBlurEvent }')
-                                label.label-floatlabel(for='') Адресат
-                                +if('dstUserError')
-                                    .error(data-bind='text:dstUserError')
+                            input#topic_user.block-input.active-floatlabel(name='dst_user', type='text', placeholder='Адресат', data-bind='value: dstUser, event: { blur: OnBlurEvent }')
+                            +if('dstUserError')
+                                .error(data-bind='text:dstUserError')
                                 
                         .input-holder
-                            .floatlabel-wrapper
-                                input#topic_name.block-input(name='name_topic', type='text', placeholder='Тема беседы', value='', data-bind='value: topicName')
-                                label.label-floatlabel(for='') Тема беседы
-                                +if('topicNameError')
+                            input#topic_name.block-input(name='name_topic', type='text', placeholder='Тема беседы', value='', data-bind='value: topicName')
+                            +if('topicNameError')
                                     .error(data-bind='text: topicNameError')
                                 
                         .input-holder(style='padding: 0;')

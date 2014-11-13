@@ -194,18 +194,12 @@
         <div class="modal-body">
           <form data-bind="attr: {id: cssFormMessage}" method="POST" target="upload_target" enctype="multipart/form-data">
             <div class="input-holder">
-              <div class="floatlabel-wrapper">
-                <input id="topic_user" name="dst_user" type="text" placeholder="Адресат" data-bind="value: dstUser, event: { blur: OnBlurEvent }" class="block-input active-floatlabel"/>
-                <label for="" class="label-floatlabel">Адресат</label><!-- ko if: dstUserError -->
-                <div data-bind="text:dstUserError" class="error"></div><!-- /ko -->
-              </div>
+              <input id="topic_user" name="dst_user" type="text" placeholder="Адресат" data-bind="value: dstUser, event: { blur: OnBlurEvent }" class="block-input active-floatlabel"/><!-- ko if: dstUserError -->
+              <div data-bind="text:dstUserError" class="error"></div><!-- /ko -->
             </div>
             <div class="input-holder">
-              <div class="floatlabel-wrapper">
-                <input id="topic_name" name="name_topic" type="text" placeholder="Тема беседы" value="" data-bind="value: topicName" class="block-input"/>
-                <label for="" class="label-floatlabel">Тема беседы</label><!-- ko if: topicNameError -->
-                <div data-bind="text: topicNameError" class="error"></div><!-- /ko -->
-              </div>
+              <input id="topic_name" name="name_topic" type="text" placeholder="Тема беседы" value="" data-bind="value: topicName" class="block-input"/><!-- ko if: topicNameError -->
+              <div data-bind="text: topicNameError" class="error"></div><!-- /ko -->
             </div>
             <div style="padding: 0;" class="input-holder">
               <textarea id="topic_text" name="text_message" rows="5" data-bind="value: text"></textarea><!-- ko if: textError -->
