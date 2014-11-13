@@ -206,7 +206,7 @@
     </canvas>
     <h1>Регистрация нового аккаунта</h1>
   </div>
-  <form enctype="multipart/form-data" method="POST">
+  <form action="">
     <div id="registerWizard" class="b-wizard">
       <ul class="b-wizard__steps anchor">
         <li><a href="#step-1" isdone="1" rel="1" class="done">
@@ -235,7 +235,7 @@
           </div>
           <div class="input-holder">
             <div rel="tooltip" title="Введите ваш регион." class="tooltip__trigger">?</div>
-            <input type="text" name="family" value="" placeholder="Регион" data-bind="value: customRegion, attr: {id: cssRegionList}, enable: country" class="block-input"/><!-- ko if: errorRegion -->
+            <input type="text" name="family" value="" placeholder="Регион" data-bind="value: customRegion, attr: {id: cssRegionList}, enable: idCountry" class="block-input"/><!-- ko if: errorRegion -->
             <div class="error__message">
               <p data-bind="text: errorRegion"></p>
             </div><!-- /ko -->

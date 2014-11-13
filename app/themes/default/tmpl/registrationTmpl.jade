@@ -218,7 +218,7 @@ script#registrationFromStep4Tmpl(type='text/html')
         canvas#progressCircle(width='160', height='160')
             p Ваш браузер не поддерживает технологию canvas
         h1 Регистрация нового аккаунта
-    form(enctype="multipart/form-data" method="POST")
+    form(action='')
         #registerWizard.b-wizard
             ul.b-wizard__steps.anchor
                 li
@@ -256,7 +256,7 @@ script#registrationFromStep4Tmpl(type='text/html')
                         
                     .input-holder
                         .tooltip__trigger(rel="tooltip" title="Введите ваш регион.") ?
-                        input.block-input(type='text', name='family', value='', placeholder='Регион', data-bind='value: customRegion, attr: {id: cssRegionList}, enable: country')
+                        input.block-input(type='text', name='family', value='', placeholder='Регион', data-bind='value: customRegion, attr: {id: cssRegionList}, enable: idCountry')
                         +if('errorRegion')
                             .error__message
                                 p(data-bind='text: errorRegion')
