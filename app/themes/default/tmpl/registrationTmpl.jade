@@ -1,4 +1,4 @@
-include ../../../templates/helpers/knockout
+Почтовый индексinclude ../../../templates/helpers/knockout
 
 script#registrationFromStep1Tmpl(type='text/html')
     // version 1.0 
@@ -274,7 +274,7 @@ script#registrationFromStep4Tmpl(type='text/html')
                                 p(data-bind='text: errorAddress')
                             
                     .input-holder
-                        inputblock-input(type='text', name='date', value='', placeholder='Почтовый индекс', data-bind='value: postIndex, attr: {id: cssPostIndex}')
+                        input.block-input(type='text', name='date', value='', placeholder='Почтовый индекс', data-bind='value: postIndex, attr: {id: cssPostIndex}')
                         +if('errorPostIndex')
                             .error__message
                                 p(data-bind='text: errorPostIndex')
