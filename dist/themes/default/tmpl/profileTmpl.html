@@ -153,7 +153,7 @@
           <div class="input-holder"><!-- ko if: emailIsConfirm() -->
             <input id="account__email" type="email" placeholder="Электронная почта" data-bind="value: email" disabled="disabled" class="suggestion-input block-input"/><!-- /ko --><!-- ko ifnot: emailIsConfirm() -->
             <input id="account__email" type="email" placeholder="Электронная почта" data-bind="value: email" name="account__email" class="suggestion-input block-input"/><!-- /ko --><!-- ko if: errorEmail -->
-            <div class="error__message">
+            <div class="error__message error__message--big">
               <p data-bind="text: errorEmail"></p>
             </div><!-- /ko -->
           </div>

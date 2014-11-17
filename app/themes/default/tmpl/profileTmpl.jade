@@ -179,7 +179,7 @@ script#contactsDataFormTmpl(type="text/html")
                             input#account__email.suggestion-input.block-input(type='email', placeholder='Электронная почта', data-bind='value: email', name='account__email')
 
                         +if('errorEmail')
-                            .error__message
+                            .error__message.error__message--big
                                 p(data-bind="text: errorEmail")
                         
                     .b-status.b-status--done(data-bind='visible: emailIsConfirm()') E-mail подтверждён
