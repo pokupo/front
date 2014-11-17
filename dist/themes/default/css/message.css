@@ -31,7 +31,7 @@
 .b-chat__item {
   border-bottom: 1px solid #efece7;
   z-index: 0;
-  min-height: 180px;
+/* min-height 180px */
 }
 .b-mail__item:first-child,
 .b-chat__item:first-child {
@@ -96,7 +96,7 @@
   left: -25px;
 }
 .b-dialog__userpic {
-  margin: -60px 0 0 0;
+  margin: -50px 0 0 0;
   position: absolute;
   left: 0px;
   top: 50%;

@@ -10747,8 +10747,7 @@ body .b-share-popup__header_first {
 .b-mail__item,
 .b-chat__item {
 	border-bottom: 1px solid #efece7;
-	z-index: 0;
-	min-height: 180px;
+	z-index: 0; /* min-height 180px */
 }
 
 .b-mail__item:first-child,
@@ -10825,7 +10824,7 @@ body .b-share-popup__header_first {
 }
 
 .b-dialog__userpic {
-	margin: -60px 0 0 0;
+	margin: -50px 0 0 0;
 	position: absolute;
 	left: 0px;
 	top: 50%;
