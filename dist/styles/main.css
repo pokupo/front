@@ -7734,7 +7734,7 @@ section.advanced-search label.separator {
 
 .circles-menu__item > a:active {
 	top: 1px;
-	background: #ffa800;
+	background-color: #ffa800;
 }
 
 .circles-menu__item > a.active:hover {
@@ -7742,7 +7742,7 @@ section.advanced-search label.separator {
 }
 
 .circles-menu__item > a.active:active {
-	background: #fff;
+	background-color: #fff;
 }
 
 .circles-menu__item > a.active.icon__profile:before {
