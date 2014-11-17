@@ -36,7 +36,7 @@ script#registrationFromStep1Tmpl(type='text/html')
                         .tooltip__trigger(rel="tooltip" title="На этот адрес будут приходить уведомления о статусе вашего заказа.") ?
                         input.block-input(type='email', name='email', value='', placeholder='Ваш e-mail', data-bind='value: email')
                         +if('errorEmail')
-                            .error__message
+                            .error__message.error__message--big
                                 p(data-bind='html: errorEmail')
                         
                     .input-holder
