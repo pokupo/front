@@ -57,35 +57,21 @@
   </div>
   <div class="b-dialog__drop"><span rel="tooltip" title="Удалить" data-target="modal-confirm" data-bind="click:ClickDelete" class="open-modal btn-circle btn-circle--trash"></span></div>
   <div class="b-dialog__body">
-    <div class="b-dialog__userpic"><!-- ko ifnot: logoSrcUser --><a href="javascript:void(0);" data-bind="click: ClickTopic" class="with-icon b-profile-info__photo">
-        <div class="b-dialog__author"><!-- ko ifnot: IsMy -->
-          <!-- ko text: srcUser -->
-          <!-- /ko --><!-- /ko --><!-- ko if: IsMy -->
-          <!-- ko text: dstUser -->
-          <!-- /ko --><!-- /ko --><span class="b-dialog__date">
-            <!-- ko text: FormatDateMessage() -->
-            <!-- /ko --></span>
-        </div>
-        <div class="b-dialog__title"><a href="javascript:void(0);" data-bind="click: ClickTopic, text: nameTopic"></a><span class="b-dialog__title-num">(
-            <!-- ko text: countMessage -->
-            <!-- /ko -->)</span></div>
-        <div class="b-dialog__preview">
-          <p data-bind="html: textMessage"></p>
-        </div></a><!-- /ko --><!-- ko if: logoSrcUser --><a href="javascript:void(0);" data-bind="click: ClickTopic" class="b-profile-info__photo"><!-- ko ifnot: IsMy --><img data-bind="attr: {src: logoSrcUser}" src=""/><!-- /ko --><!-- ko if: IsMy --><img data-bind="attr: {src: logoDstUser}" src=""/><!-- /ko -->
-        <div class="b-dialog__author"><!-- ko ifnot: IsMy -->
-          <!-- ko text: srcUser -->
-          <!-- /ko --><!-- /ko --><!-- ko if: IsMy -->
-          <!-- ko text: dstUser -->
-          <!-- /ko --><!-- /ko --><span class="b-dialog__date">
-            <!-- ko text: FormatDateMessage() -->
-            <!-- /ko --></span>
-        </div>
-        <div class="b-dialog__title"><a href="javascript:void(0);" data-bind="click: ClickTopic, text: nameTopic"></a><span class="b-dialog__title-num">(
-            <!-- ko text: countMessage -->
-            <!-- /ko -->)</span></div>
-        <div class="b-dialog__preview">
-          <p data-bind="html: textMessage"></p>
-        </div></a><!-- /ko -->
+    <div class="b-dialog__userpic"><!-- ko if: logoSrcUser --><a href="javascript:void(0);" data-bind="click: ClickTopic" class="b-profile-info__photo"><!-- ko ifnot: IsMy --><img data-bind="attr: {src: logoSrcUser}" src=""/><!-- /ko --><!-- ko if: IsMy --><img data-bind="attr: {src: logoDstUser}" src=""/><!-- /ko --></a><!-- /ko --><!-- ko ifnot: logoSrcUser --><a href="javascript:void(0);" data-bind="click: ClickTopic" class="with-icon b-profile-info__photo"></a><!-- /ko -->
+    </div>
+    <div class="b-dialog__author"><!-- ko ifnot: IsMy -->
+      <!-- ko text: srcUser -->
+      <!-- /ko --><!-- /ko --><!-- ko if: IsMy -->
+      <!-- ko text: dstUser -->
+      <!-- /ko --><!-- /ko --><span class="b-dialog__date">
+        <!-- ko text: FormatDateMessage() -->
+        <!-- /ko --></span>
+    </div>
+    <div class="b-dialog__title"><a href="javascript:void(0);" data-bind="click: ClickTopic, text: nameTopic"></a><span class="b-dialog__title-num">(
+        <!-- ko text: countMessage -->
+        <!-- /ko -->)</span></div>
+    <div class="b-dialog__preview">
+      <p data-bind="html: textMessage"></p>
     </div>
   </div>
 </script>
