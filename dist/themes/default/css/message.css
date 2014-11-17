@@ -224,6 +224,7 @@
 .b-dialog.closed .b-dialog__userpic .b-profile-info__photo {
   width: 60px;
   height: 60px;
+  line-height: 60px;
 }
 .b-dialog.closed .b-dialog__userpic .b-profile-info__photo:after {
   margin: -10px 0 0 -8px;
