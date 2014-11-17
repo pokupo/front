@@ -600,6 +600,9 @@ section.advanced-search label.separator {
 	border: 4px solid #ffa800;
 	background-color: #fff !important;
 	font-size: 18px;
+	background-size: 100% auto;
+	background-repeat: no-repeat;
+	background-position: center center;
 }
 
 .circles-menu__item > a.disabled {
