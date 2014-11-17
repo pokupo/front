@@ -6,12 +6,12 @@ script#userInformationTmpl(type="text/html")
         .circles-menu
             .circles-menu__item.dropdown
                 +if('iconUser')
-                    a.with-icon.icon__profile.dropdown__trigger.user_information_dropdown__trigger(href=js0, data-target='profile', data-bind='attr: {style: backgroundImage}')
+                    a.icon__profile.dropdown__trigger.user_information_dropdown__trigger(href=js0, data-target='profile', data-bind='attr: {style: backgroundImage}')
                         +if('countNewMessage() > 0')
                             sup.circles-menu__num(data-bind='text: countNewMessage')
                                 
                 +ifnot('iconUser')
-                    a.icon__profile.dropdown__trigger.user_information_dropdown__trigger(href=js0, data-target='profile', data-bind='attr: {style: backgroundImage}')
+                    a.with-icon.icon__profile.dropdown__trigger.user_information_dropdown__trigger(href=js0, data-target='profile')
                         +if('countNewMessage() > 0')
                             sup.circles-menu__num(data-bind='text: countNewMessage')
 
