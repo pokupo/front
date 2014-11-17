@@ -61,61 +61,62 @@ script#messageOneTopicTmpl(type='text/html')
     .b-dialog__drop
         span.open-modal.btn-circle.btn-circle--trash(rel='tooltip', title='Удалить', data-target='modal-confirm', data-bind='click:ClickDelete')
     .b-dialog__body
-.b-dialog__userpic
-    +if('logoSrcUser')
-        a.b-profile-info__photo(href=js0, data-bind='click: ClickTopic')
-            +ifnot('IsMy')
-                img(data-bind='attr: {src: logoSrcUser}', src='')
-                
-            +if('IsMy')
-                img(data-bind='attr: {src: logoDstUser}', src='')
+        .b-dialog__userpic
+            +if('logoSrcUser')
+                a.b-profile-info__photo(href=js0, data-bind='click: ClickTopic')
+                    +ifnot('IsMy')
+                        img(data-bind='attr: {src: logoSrcUser}', src='')
+                        
+                    +if('IsMy')
+                        img(data-bind='attr: {src: logoDstUser}', src='')
 
-            .b-dialog__author
-                +ifnot('IsMy')
-                    // ko text: srcUser 
-                    // /ko 
+                    .b-dialog__author
+                        +ifnot('IsMy')
+                            // ko text: srcUser 
+                            // /ko 
 
-                +if('IsMy')
-                    // ko text: dstUser 
-                    // /ko 
+                        +if('IsMy')
+                            // ko text: dstUser 
+                            // /ko 
 
-                span.b-dialog__date
-                    // ko text: FormatDateMessage() 
-                    // /ko 
+                        span.b-dialog__date
+                            // ko text: FormatDateMessage() 
+                            // /ko 
 
-            .b-dialog__title
-                a(href=js0, data-bind='click: ClickTopic, text: nameTopic')
-                span.b-dialog__title-num
-                    | (
-                    // ko text: countMessage 
-                    // /ko 
-                    | )
-            .b-dialog__preview
-                p(data-bind='html: textMessage')
-    +ifnot('logoSrcUser')
-        a.with-icon.b-profile-info__photo(href=js0, data-bind='click: ClickTopic')
-            .b-dialog__author
-                +ifnot('IsMy')
-                    // ko text: srcUser 
-                    // /ko 
+                    .b-dialog__title
+                        a(href=js0, data-bind='click: ClickTopic, text: nameTopic')
+                        span.b-dialog__title-num
+                            | (
+                            // ko text: countMessage 
+                            // /ko 
+                            | )
+                    .b-dialog__preview
+                        p(data-bind='html: textMessage')
+                            
+            +ifnot('logoSrcUser')
+                a.with-icon.b-profile-info__photo(href=js0, data-bind='click: ClickTopic')
+                    .b-dialog__author
+                        +ifnot('IsMy')
+                            // ko text: srcUser 
+                            // /ko 
 
-                +if('IsMy')
-                    // ko text: dstUser 
-                    // /ko 
+                        +if('IsMy')
+                            // ko text: dstUser 
+                            // /ko 
 
-                span.b-dialog__date
-                    // ko text: FormatDateMessage() 
-                    // /ko 
+                        span.b-dialog__date
+                            // ko text: FormatDateMessage() 
+                            // /ko 
 
-            .b-dialog__title
-                a(href=js0, data-bind='click: ClickTopic, text: nameTopic')
-                span.b-dialog__title-num
-                    | (
-                    // ko text: countMessage 
-                    // /ko 
-                    | )
-            .b-dialog__preview
-                p(data-bind='html: textMessage')
+                    .b-dialog__title
+                        a(href=js0, data-bind='click: ClickTopic, text: nameTopic')
+                        span.b-dialog__title-num
+                            | (
+                            // ko text: countMessage 
+                            // /ko 
+                            | )
+                    .b-dialog__preview
+                        p(data-bind='html: textMessage')
 
 script#messageListTmpl(type='text/html')
     // version 1.0 
