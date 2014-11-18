@@ -11126,7 +11126,7 @@ body .b-share-popup__header_first {
 	position: relative;
 	width: 100px;
 	height: 100px;
-	line-height: 100px;
+	line-height: 92px;
 	border: 4px solid #ffa800;
 	margin: 2px 20px 0 0;
 }
@@ -13179,6 +13179,10 @@ section.catalog-banner {
 
 .b-profile-info--fullwidth .b-profile-info__summary {
 	margin-right: 0;
+}
+
+.b-profile-info--fullwidth .b-profile-info__photo {
+	overflow: visible;
 }
 
 .b-profile-info__summary .b-profile-info__title {
