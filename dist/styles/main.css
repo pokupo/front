@@ -10573,6 +10573,10 @@ body .b-share-popup__header_first {
 	padding: 13px 23px 9px;
 }
 
+.b-profile-info__photo.b-profile-info__photo--square {
+	overflow: visible !important;
+}
+
 .b-profile-nav {
 	font-size: 0;
 	width: 75%;
@@ -13179,10 +13183,6 @@ section.catalog-banner {
 
 .b-profile-info--fullwidth .b-profile-info__summary {
 	margin-right: 0;
-}
-
-.b-profile-info__photo.b-profile-info__photo--square {
-	overflow: visible !important;
 }
 
 .b-profile-info__summary .b-profile-info__title {
