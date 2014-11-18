@@ -3489,7 +3489,7 @@ section.catalog-banner {
 	margin-right: 0;
 }
 
-.b-profile-info--fullwidth .b-profile-info__photo {
+.b-profile-info.b-profile-info--fullwidth .b-profile-info__photo {
 	overflow: visible;
 }
 
