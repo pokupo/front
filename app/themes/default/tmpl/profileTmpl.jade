@@ -28,8 +28,11 @@ script#registrationDataTmpl(type="text/html")
                     span#button_trash_avatar_file.btn-circle.btn-circle--trash(style='display: none;')
 
                 .b-profile-info__summary
-                    .b-profile-info__photo
-                        img(src=js0, data-bind='attr: {src: iconUser}')
+                    +if('iconUser')
+                        .b-profile-info__photo
+                            img(src=js0, data-bind='attr: {src: iconUser}')
+                    +ifnot('iconUser')
+                        .b-profile-info__photo.with-icon
 
                     h2.b-profile__headline.b-profile-info__title(data-bind='text: fullName')
                     ul.b-profile-info__characters-list

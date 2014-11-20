@@ -105,7 +105,7 @@
   position: relative;
   width: 100px;
   height: 100px;
-  line-height: 100px;
+  line-height: 92px;
   border: 4px solid #ffa800;
 }
 .b-dialog__userpic .b-profile-info__photo.with-icon:after {

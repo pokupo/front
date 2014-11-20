@@ -63,10 +63,11 @@ script#messageOneTopicTmpl(type='text/html')
     .b-dialog__body
         .b-dialog__userpic
             +if('logoSrcUser')
-                a.b-profile-info__photo(href=js0, data-bind='click: ClickTopic')
-                    +ifnot('IsMy')
+                +ifnot('IsMy')
+                    a.b-profile-info__photo(href=js0, data-bind='click: ClickTopic')
                         img(data-bind='attr: {src: logoSrcUser}', src='')
-                    +if('IsMy')
+                +if('IsMy')
+                    a.with-icon.b-profile-info__photo(href=js0, data-bind='click: ClickTopic')
                         img(data-bind='attr: {src: logoDstUser}', src='')
             +ifnot('logoSrcUser')
                 a.with-icon.b-profile-info__photo(href=js0, data-bind='click: ClickTopic')
@@ -270,22 +271,21 @@ script#messagePaginateTmpl(type='text/html')
                     +each('paging')
                         +if('current')
                             +if("title == '...'")
-                                li.menu__item.active
+                                li.menu__item
                                     span.ellipsis ...
                             +ifnot("title == '...'")
                                 li.menu__item.active
                                     a(href=js0, data-bind='text: title, click: ClickLinkPage')
-
+                            
                         +ifnot('current')
                             +if('cssLink() == "first"')
                                 li.menu__item
-                                    a(href=js0, data-bind='click: ClickLinkPage') 
+                                    a(href=js0, data-bind='click: ClickLinkPage') &larr;
+                            
                             +if('cssLink() == "last"')
                                 li.menu__item
-                                    a(href=js0, data-bind='click: ClickLinkPage')
+                                    a(href=js0, data-bind='click: ClickLinkPage') &rarr;
+
                             +if('cssLink() != "last" && cssLink() != "first"')
                                 li.menu__item
                                     a(href=js0, data-bind='text: title, click: ClickLinkPage')
-
-
- 

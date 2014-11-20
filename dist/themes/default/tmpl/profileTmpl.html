@@ -21,8 +21,9 @@
       <div class="b-profile-info b-profile-info--personal">
         <div class="b-profile-info__actions"><span id="button_avatar_file" type="button" class="btn btn-xs"><span>Загрузить аватар</span>
             <input id="avatar_file" name="avatar" type="file"/></span><span id="button_trash_avatar_file" style="display: none;" class="btn-circle btn-circle--trash"></span></div>
-        <div class="b-profile-info__summary">
-          <div class="b-profile-info__photo"><img src="javascript:void(0);" data-bind="attr: {src: iconUser}"/></div>
+        <div class="b-profile-info__summary"><!-- ko if: iconUser -->
+          <div class="b-profile-info__photo"><img src="javascript:void(0);" data-bind="attr: {src: iconUser}"/></div><!-- /ko --><!-- ko ifnot: iconUser -->
+          <div class="b-profile-info__photo with-icon"></div><!-- /ko -->
           <h2 data-bind="text: fullName" class="b-profile__headline b-profile-info__title"></h2>
           <ul class="b-profile-info__characters-list"><!-- ko if: dateRegistration -->
             <li><span>На сайте с
