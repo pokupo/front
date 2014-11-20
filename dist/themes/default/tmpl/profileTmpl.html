@@ -91,9 +91,9 @@
   </form>
 </script>
 <script id="postDataTmpl" type="text/html">
-  <!-- version 1.0-->
-  <div data-for="another-fieldset-id" class="b-status b-status--fieldset b-status--done"><!-- ko if: checkInfo() == 'yes' -->Адрес подтверждён<!-- /ko --><!-- ko if: checkInfo() == 'no' -->Адрес не подтверждён<!-- /ko -->
-  </div>
+  <!-- version 1.0--><!-- ko if: checkInfo() == 'yes' -->
+  <div data-for="another-fieldset-id" class="b-status b-status--fieldset b-status--done">Адрес подтверждён</div><!-- /ko --><!-- ko if: checkInfo() == 'no' -->
+  <div data-for="another-fieldset-id" class="b-status b-status--fieldset b-status--warning">Адрес не подтверждён</div><!-- /ko -->
   <h2 class="b-profile__headline with-divider">Почтовый адрес</h2>
   <fieldset class="b-fieldset">
     <!-- input.no-label.block-input#address(type="text" placeholder="Введите адрес в свободной форме" data-label="Адрес в свободной форме")-->

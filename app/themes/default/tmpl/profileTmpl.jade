@@ -112,11 +112,13 @@ script#registrationDataTmpl(type="text/html")
 
 script#postDataTmpl(type="text/html")
     // version 1.0
-    .b-status.b-status--fieldset.b-status--done(data-for='another-fieldset-id')
-        +if("checkInfo() == 'yes'")
+    
+    +if("checkInfo() == 'yes'")
+        .b-status.b-status--fieldset.b-status--done(data-for='another-fieldset-id')
             | Адрес подтверждён
         
-        +if("checkInfo() == 'no'")
+    +if("checkInfo() == 'no'")
+        .b-status.b-status--fieldset.b-status--warning(data-for='another-fieldset-id')
             | Адрес не подтверждён
         
     h2.b-profile__headline.with-divider Почтовый адрес
