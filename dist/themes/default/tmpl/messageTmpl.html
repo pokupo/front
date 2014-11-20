@@ -57,7 +57,7 @@
   </div>
   <div class="b-dialog__drop"><span rel="tooltip" title="Удалить" data-target="modal-confirm" data-bind="click:ClickDelete" class="open-modal btn-circle btn-circle--trash"></span></div>
   <div class="b-dialog__body">
-    <div class="b-dialog__userpic"><!-- ko if: logoSrcUser --><!-- ko ifnot: IsMy --><a href="javascript:void(0);" data-bind="click: ClickTopic" class="b-profile-info__photo"><img data-bind="attr: {src: logoSrcUser}" src=""/></a><!-- /ko --><!-- ko if: IsMy --><a href="javascript:void(0);" data-bind="click: ClickTopic" class="with-icon b-profile-info__photo"><img data-bind="attr: {src: logoDstUser}" src=""/></a><!-- /ko --><!-- /ko --><!-- ko ifnot: logoSrcUser --><a href="javascript:void(0);" data-bind="click: ClickTopic" class="with-icon b-profile-info__photo"></a><!-- /ko -->
+    <div class="b-dialog__userpic"><!-- ko if: logoSrcUser --><!-- ko ifnot: IsMy --><a href="javascript:void(0);" data-bind="click: ClickTopic" class="b-profile-info__photo"><img data-bind="attr: {src: logoSrcUser}" src=""/></a><!-- /ko --><!-- ko if: IsMy --><!-- ko if: logoDstUser --><a href="javascript:void(0);" data-bind="click: ClickTopic" class="b-profile-info__photo"><img data-bind="attr: {src: logoDstUser}" src=""/></a><!-- /ko --><!-- ko ifnot: logoDstUser --><a href="javascript:void(0);" data-bind="click: ClickTopic" class="with-icon b-profile-info__photo"></a><!-- /ko --><!-- /ko --><!-- /ko --><!-- ko ifnot: logoSrcUser --><a href="javascript:void(0);" data-bind="click: ClickTopic" class="with-icon b-profile-info__photo"></a><!-- /ko -->
     </div>
     <div class="b-dialog__author"><!-- ko ifnot: IsMy -->
       <!-- ko text: srcUser -->
