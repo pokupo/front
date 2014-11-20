@@ -36,9 +36,9 @@
           </ul>
         </div>
       </div>
-    </fieldset>
-    <div data-for="fieldset-id" class="b-status b-status--fieldset b-status--done"><!-- ko if: checkInfo() == 'yes' -->Данные проверены<!-- /ko --><!-- ko if: checkInfo() == 'no' -->Данные не проверены<!-- /ko -->
-    </div>
+    </fieldset><!-- ko if: checkInfo() == 'yes' -->
+    <div data-for="fieldset-id" class="b-status b-status--fieldset b-status--done">Данные проверены</div><!-- /ko --><!-- ko if: checkInfo() == 'no' -->
+    <div data-for="fieldset-id" class="b-status b-status--fieldset b-status--warning">Данные не проверены</div><!-- /ko -->
     <h2 class="b-profile__headline with-divider">Персональные данные</h2>
     <fieldset class="b-fieldset">
       <input id="fullname" type="text" placeholder="Введите ФИО в свободной форме" data-label="ФИО в свободной форме" class="block-input"/>

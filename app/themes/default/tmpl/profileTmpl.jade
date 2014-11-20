@@ -54,11 +54,12 @@ script#registrationDataTmpl(type="text/html")
                                 // ko text: rating
                                 // /ko 
 
-        .b-status.b-status--fieldset.b-status--done(data-for='fieldset-id')
-            +if("checkInfo() == 'yes'")
+        +if("checkInfo() == 'yes'")
+            .b-status.b-status--fieldset.b-status--done(data-for='fieldset-id')
                 | Данные проверены
             
-            +if("checkInfo() == 'no'")
+        +if("checkInfo() == 'no'")
+            .b-status.b-status--fieldset.b-status--warning(data-for='fieldset-id')
                 | Данные не проверены
             
         h2.b-profile__headline.with-divider Персональные данные
