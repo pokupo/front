@@ -1575,7 +1575,7 @@ section.profile .b-order-list__tobepaid .b-order-item__discount {
 
 .b-sidebar {
 	position: relative;
-	width: 230px;
+	width: 225px;
 	float: left;
 	text-align: left;
 }
@@ -2379,6 +2379,7 @@ body .b-share-popup__header_first {
 	width: 100px;
 	height: 100px;
 	line-height: 92px;
+	font-size: 0;
 	border: 4px solid #ffa800;
 }
 
@@ -2671,6 +2672,7 @@ body .b-share-popup__header_first {
 	width: 100px;
 	height: 100px;
 	line-height: 92px;
+	font-size: 0;
 	border: 4px solid #ffa800;
 	margin: 2px 20px 0 0;
 }

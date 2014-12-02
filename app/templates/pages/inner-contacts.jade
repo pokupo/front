@@ -1,0 +1,133 @@
+extends ../partials/layouts/store
+
+block head
+	- page.title = 'Контактная информация';
+
+block menu 
+	+menu-list([
+		{text:"Платформа",href:"frontpage.html",submenu:[
+			{text:"О проекте",href:"about.html"},
+			{text:"Торговый портал",href:"http://shop.pokupo.ru/", external:true}
+		]},
+		{text:"Тарифы",href:"rates.html"},
+		{text:"Компания",href:"#", submenu:[
+			{text:"События",href:"events.html"},
+			{text:"О нас",href:"aboutus.html"},
+			{text:"Сообщество",href:"community.html"},
+			{text:"Блог",href:"http://pokupo.livejournal.com/", external:true}
+		]},
+		{text:"Партнёры",href:"partners.html", active: true},
+		
+		{text:"Помощь", href:js0, submenu:[
+			{text:"Вопросы и ответы",href:"faq.html"},	
+			{text:"Техническая поддержка",href:"https://help.pokupo.ru", external:true}
+		]}
+	])(class="b-navigation")
+
+
+block content
+	section.store
+		.container
+			aside.b-sidebar.dropdown
+				a.btn.btn-menu(href=js0 data-target="sidebar") 
+					i.icon.icon-catalog
+					| Каталог
+				.b-sidebar__dropdown(data-target="sidebar")
+					h1.b-sidebar__title Пример каталога
+					+catalog-list([
+					{text:"Компьютерная техника",href:js0, submenu:[
+						{text:"Ноутбуки",href:js0, preview:43},
+						{text:"Моноблоки",href:js0, preview:11},
+						{text:"Планшеты",href:js0, preview:24}
+					]},
+					{text:"Бытовая техника",href:js0, submenu:[
+						{text:"Стиральные машины",href:js0, preview:51},
+						{text:"Телевизоры",href:js0, preview:13},
+						{text:"Кухонная техника",href:js0, preview:104},
+						{text:"Пылесосы",href:js0, preview:8}
+					]},
+					{text:"Телефоны и связь",href:js0, preview:24},
+					{text:"Фото и оптика",href:js0, submenu:[
+						{text:"Фотоаппараты",href:js0, preview:6},
+						{text:"Объективы",href:js0, preview:2},
+						{text:"Средства и химия",href:js0, preview:64}
+					]},
+					{text:"Одежда, обувь, аксессуары",href:js0, submenu:[
+						{text:"Кроссовки",href:js0, preview:19},
+						{text:"Кеды",href:js0, preview:134},
+						{text:"Босоножки",href:js0, preview:245},
+						{text:"Туфли",href:js0, preview:195},
+						{text:"Ботильоны",href:js0, preview:132},
+						{text:"Сандалии",href:js0, preview:72},
+						{text:"Балетки",href:js0, preview:36},
+						{text:"Сапоги",href:js0, preview:56},
+						{text:"Резиновая обувь",href:js0, preview:5}
+						]},
+					{text:"Подарки и праздники",href:js0, submenu:[
+						{text:"Цветы",href:js0, preview:65},
+						{text:"Открытки",href:js0, preview:200},
+						{text:"Игрушки",href:js0, preview:31}
+					]},
+					{text:"Книги, учебники и журналы",href:js0, submenu:[
+						{text:"Цветы",href:js0, preview:65},
+						{text:"Открытки",href:js0, preview:200},
+						{text:"Игрушки",href:js0, preview:31}
+					]},
+					{text:"Мебель, интерьеры и обиход",href:js0, submenu:[
+						{text:"Цветы",href:js0, preview:65},
+						{text:"Открытки",href:js0, preview:200},
+						{text:"Игрушки",href:js0, preview:31}
+					]},
+					{text:"Другое",href:js0, submenu:[
+						{text:"Цветы",href:js0, preview: 65},
+						{text:"Открытки",href:js0, preview: 200},
+						{text:"Игрушки",href:js0, preview: 31}
+					]}])
+
+			.b-catalog
+				.b-thermometer
+					p 
+						a.backwards-arrow(href=js0)
+						span.divider  / 
+						a(href="index.html") Главная
+						span.divider  / 
+						span.current Контактная информация
+
+				h1 Контактная информация
+
+				div(style="overflow:hidden; margin: 20px 0")
+					script(src="//api-maps.yandex.ru/services/constructor/1.0/js/?sid=tAsA6U40uOlhsnTeefykXs95tOnqVVRc&height=350&width=100%" type="text/javascript" charset="utf-8")
+
+				.columns.triple
+					.first.column
+						.content
+							ul.b-profile-info__characters-list
+								li
+									span.char Сайт: 
+									a(href="http://pokupo.ru" target="_blank") pokupo.ru
+								li
+									span.char E-mail: 
+									a(href="mailto:support@pokupo.ru") support@pokupo.ru
+								li
+									span.char Skype: 
+									a(href="skype:pokupo?chat" onclick="return skypeCheck()") pokupo
+
+					.second.column
+						.content
+							ul.b-profile-info__characters-list
+								li
+									span.char ICQ: 
+									a(href="http://pokupo.ru" target="_blank") 14112415151
+								li
+									span.char Тел.: 
+									span.value +7 495 363-63-93
+								li
+									span.char Моб.: 
+									span.value +7 913 790-22-11
+
+					.third.column
+						.content
+							a.btn.btn-xs.btn-contacts(href=js0) Задать вопрос
+
+block scripts
+	+script(['main.js'])

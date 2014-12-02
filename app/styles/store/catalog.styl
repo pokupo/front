@@ -1,0 +1,81 @@
+.btn-contacts
+	margin-top 34px
+	float right
+	margin-right 0
+	
+article.page-content
+	position relative
+
+	h1 
+		margin 0 0 30px	
+	
+	h2
+		margin 30px 0 20px
+		font-size 18px 
+		font-weight 800
+		color #000 
+		
+	.b-order-table__price
+		text-align center
+	
+	.b-review
+		margin 0 0 25px
+		padding-bottom 25px
+		border-bottom 1px solid $grey 
+		
+		&__info
+			font-size 13px
+			line-height 20px
+			margin-bottom 5px
+			
+		&__author
+			font-weight bold
+			display inline-block
+			margin-right 10px
+		&__date
+			color #666 
+			
+		&__icon
+			position relative
+			display inline-block
+			margin-left 10px
+			width 26px
+			height 20px
+
+			&.b-review__icon--up
+				background url('../images/ui/vote-up.png')
+				top 1px
+			&.b-review__icon--dn
+				top 10px
+				background url('../images/ui/vote-dn.png')
+			
+		&__answer
+			position relative
+			background $grey
+			padding 25px 20px 10px
+			margin 20px 0 0 65px
+			border-radius 10px
+			&:before
+				pseudo()
+				width 25px
+				height 42px
+				left -25px
+				top 50%
+				margin-top -21px 
+				background url('../images/ui/review.png') 0 0 no-repeat
+		
+.b-review
+	&__scores
+		font-size 0
+		
+	&__score
+		display inline-block
+		font-size 13px
+		line-height 20px
+		margin-right 40px
+		
+		span
+			color #666
+	
+		&:last-child
+			margin-right 0

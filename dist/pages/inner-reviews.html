@@ -17,7 +17,7 @@
 		<link sizes="57x57" href="images/icons/apple-touch-icon-57x57.png" rel="apple-touch-icon">
 		<link href="images/icons/apple-touch-icon-152x152.png" rel="apple-touch-icon">
 		<!-- Windows 8-->
-		<meta name="application-name" content="Регистрация покупателя">
+		<meta name="application-name" content="Pokupo">
 		<meta name="msapplication-tooltip" content="Description for pokupo">
 		<meta name="msapplication-navbutton-color" content="#ffa800">
 		<meta name="msapplication-TileColor" content="#00883c">
@@ -43,7 +43,7 @@
 		<meta name="format-detection" content="telephone=no">
 		<meta name="format-detection" content="address=no">
 		<!-- SEO-->
-		<title>Корзина</title>
+		<title>Отзывы</title>
 		<meta name="description" content="Description for pokupo">
 		<meta name="keywords" content="pokupo, project">
 		<meta name="copyright" content="©tabrisov">
@@ -91,7 +91,7 @@
 								</li>
 							</ul>
 						</li>
-						<li class="menu__item"><a href="partners.html" target=""><span>Партнёры</span></a>
+						<li class="menu__item active"><a href="partners.html" target=""><span>Партнёры</span></a>
 						</li>
 						<li class="menu__item with-submenu"><a href="javascript:void(0);" target=""><span>Помощь</span></a>
 							<ul class="submenu">
@@ -328,152 +328,216 @@
 			<!-- content -->
 			<section class="store">
 				<div class="container">
-					<div class="b-thermometer">
-						<p><a href="index.html">Главная</a><span class="divider"> / </span><span class="current">Моя корзина</span>
-						</p>
-					</div>
-					<div class="b-catalog-item">
-						<h1 class="b-catalog-item__title">Моя корзина</h1>
-						<div class="b-profile-info">
-							<div class="b-profile-info__actions">
-								<button type="button" class="btn btn-xs btn-inline ask-question">Задать вопрос</button>
-								<div class="b-support-info dropdown"><span class="b-support-info__title"><span data-target="support" class="dropdown__trigger"> Поддержка</span></span>
-									<div data-target="support" class="b-support-info__content dropdown__content hidden">
-										<p><span class="label">Посетить сайт</span><a href="http://pokupo.ru" target="_blank" class="action">pokupo.ru</a><span class="label">Написать</span><a href="mailto:support@pokupo.ru" class="action">support@pokupo.ru</a><span class="label">Skype консультанта</span>
-											<a
-											href="skype:pokupo?chat" onclick="return skypeCheck()" class="action">pokupo</a><span class="label">ICQ консультанта</span><span class="action">14112415151</span><span class="label">Позвонить</span><a href="tel:+74953636393" class="action">+7 495 363-63-93</a>
-										</p>
-									</div>
-								</div>
-							</div>
-							<div class="b-profile-info__summary">
-								<div class="b-profile-info__photo">
-									<img src="/images/pages/catalog/seller-logo.png">
-								</div>
-								<h1 class="b-profile-info__title">Торговая платформа Pokupo</h1>
-								<h2 class="b-profile-info__subtitle">ID 19158495</h2>
-								<ul class="b-profile-info__characters-list">
-									<li><span class="char">Рейтинг: </span><span class="value value--orange">+264</span>
-									</li>
-									<li><span class="char">Отзывы / претензии: </span><span class="value"><span class="value--orange">12 </span>/ <span class="value--red">3</span></span>
-									</li>
-									<li><span class="char">Товаров: </span><span class="value">450</span>
-									</li>
-								</ul>
-							</div>
+					<aside class="b-sidebar dropdown"><a href="javascript:void(0);" data-target="sidebar" class="btn btn-menu"><i class="icon icon-catalog"></i>Каталог</a>
+						<div data-target="sidebar" class="b-sidebar__dropdown">
+							<h1 class="b-sidebar__title">Пример каталога</h1>
+							<ul class="menu">
+								<li class="menu__item with-submenu">
+									<u><span>Компьютерная техника</span></u>
+									<ul class="submenu">
+										<li class="submenu__item"><a href="javascript:void(0);"><span>Ноутбуки</span><sup class="num">43</sup></a>
+										</li>
+										<li class="submenu__item"><a href="javascript:void(0);"><span>Моноблоки</span><sup class="num">11</sup></a>
+										</li>
+										<li class="submenu__item"><a href="javascript:void(0);"><span>Планшеты</span><sup class="num">24</sup></a>
+										</li>
+									</ul>
+								</li>
+								<li class="menu__item with-submenu">
+									<u><span>Бытовая техника</span></u>
+									<ul class="submenu">
+										<li class="submenu__item"><a href="javascript:void(0);"><span>Стиральные машины</span><sup class="num">51</sup></a>
+										</li>
+										<li class="submenu__item"><a href="javascript:void(0);"><span>Телевизоры</span><sup class="num">13</sup></a>
+										</li>
+										<li class="submenu__item"><a href="javascript:void(0);"><span>Кухонная техника</span><sup class="num">104</sup></a>
+										</li>
+										<li class="submenu__item"><a href="javascript:void(0);"><span>Пылесосы</span><sup class="num">8</sup></a>
+										</li>
+									</ul>
+								</li>
+								<li class="menu__item"><a href="javascript:void(0);"><span>Телефоны и связь</span><sup class="num">24</sup></a>
+								</li>
+								<li class="menu__item with-submenu">
+									<u><span>Фото и оптика</span></u>
+									<ul class="submenu">
+										<li class="submenu__item"><a href="javascript:void(0);"><span>Фотоаппараты</span><sup class="num">6</sup></a>
+										</li>
+										<li class="submenu__item"><a href="javascript:void(0);"><span>Объективы</span><sup class="num">2</sup></a>
+										</li>
+										<li class="submenu__item"><a href="javascript:void(0);"><span>Средства и химия</span><sup class="num">64</sup></a>
+										</li>
+									</ul>
+								</li>
+								<li class="menu__item with-submenu">
+									<u><span>Одежда, обувь, аксессуары</span></u>
+									<ul class="submenu">
+										<li class="submenu__item"><a href="javascript:void(0);"><span>Кроссовки</span><sup class="num">19</sup></a>
+										</li>
+										<li class="submenu__item"><a href="javascript:void(0);"><span>Кеды</span><sup class="num">134</sup></a>
+										</li>
+										<li class="submenu__item"><a href="javascript:void(0);"><span>Босоножки</span><sup class="num">245</sup></a>
+										</li>
+										<li class="submenu__item"><a href="javascript:void(0);"><span>Туфли</span><sup class="num">195</sup></a>
+										</li>
+										<li class="submenu__item"><a href="javascript:void(0);"><span>Ботильоны</span><sup class="num">132</sup></a>
+										</li>
+										<li class="submenu__item"><a href="javascript:void(0);"><span>Сандалии</span><sup class="num">72</sup></a>
+										</li>
+										<li class="submenu__item"><a href="javascript:void(0);"><span>Балетки</span><sup class="num">36</sup></a>
+										</li>
+										<li class="submenu__item"><a href="javascript:void(0);"><span>Сапоги</span><sup class="num">56</sup></a>
+										</li>
+										<li class="submenu__item"><a href="javascript:void(0);"><span>Резиновая обувь</span><sup class="num">5</sup></a>
+										</li>
+									</ul>
+								</li>
+								<li class="menu__item with-submenu">
+									<u><span>Подарки и праздники</span></u>
+									<ul class="submenu">
+										<li class="submenu__item"><a href="javascript:void(0);"><span>Цветы</span><sup class="num">65</sup></a>
+										</li>
+										<li class="submenu__item"><a href="javascript:void(0);"><span>Открытки</span><sup class="num">200</sup></a>
+										</li>
+										<li class="submenu__item"><a href="javascript:void(0);"><span>Игрушки</span><sup class="num">31</sup></a>
+										</li>
+									</ul>
+								</li>
+								<li class="menu__item with-submenu">
+									<u><span>Книги, учебники и журналы</span></u>
+									<ul class="submenu">
+										<li class="submenu__item"><a href="javascript:void(0);"><span>Цветы</span><sup class="num">65</sup></a>
+										</li>
+										<li class="submenu__item"><a href="javascript:void(0);"><span>Открытки</span><sup class="num">200</sup></a>
+										</li>
+										<li class="submenu__item"><a href="javascript:void(0);"><span>Игрушки</span><sup class="num">31</sup></a>
+										</li>
+									</ul>
+								</li>
+								<li class="menu__item with-submenu">
+									<u><span>Мебель, интерьеры и обиход</span></u>
+									<ul class="submenu">
+										<li class="submenu__item"><a href="javascript:void(0);"><span>Цветы</span><sup class="num">65</sup></a>
+										</li>
+										<li class="submenu__item"><a href="javascript:void(0);"><span>Открытки</span><sup class="num">200</sup></a>
+										</li>
+										<li class="submenu__item"><a href="javascript:void(0);"><span>Игрушки</span><sup class="num">31</sup></a>
+										</li>
+									</ul>
+								</li>
+								<li class="menu__item with-submenu">
+									<u><span>Другое</span></u>
+									<ul class="submenu">
+										<li class="submenu__item"><a href="javascript:void(0);"><span>Цветы</span><sup class="num">65</sup></a>
+										</li>
+										<li class="submenu__item"><a href="javascript:void(0);"><span>Открытки</span><sup class="num">200</sup></a>
+										</li>
+										<li class="submenu__item"><a href="javascript:void(0);"><span>Игрушки</span><sup class="num">31</sup></a>
+										</li>
+									</ul>
+								</li>
+							</ul>
 						</div>
-						<ol class="b-order-list">
-							<li class="b-order-item b-thead">
-								<div class="b-order-item__checkbox">
-									<input id="js-select-all" type="checkbox">
-									<label for="js-select-all"></label>
-								</div>
-								<div class="b-order-item__img"></div>
-								<div class="b-order-item__name">Наименование</div>
-								<div class="b-order-item__price">Цена</div>
-								<div class="b-order-item__qty">Количество</div>
-								<div class="b-order-item__cost">Стоимость</div>
-							</li>
-							<li class="b-order-item">
-								<div class="b-order-item__checkbox">
-									<input id="input__00" type="checkbox">
-									<label for="input__00"></label>
-								</div>
-								<div class="b-order-item__img">
-									<img src="/images/catalog/goods01.jpg">
-								</div>
-								<div class="b-order-item__name"><span>Converse White</span>
-								</div>
-								<div class="b-order-item__price"><span class="b-price"><span class="b-price__number">1800</span><span class="b-price__thinsp">&nbsp;</span><span class="b-price__rubl">Р</span></span>
-								</div>
-								<div class="b-order-item__qty">
-									<div class="limits-wrapper">
-										<p class="b-catalog-item__limits">На складе: <span class="value">5</span>
-										</p>
-										<div class="b-increment-input"><span class="b-increment-input__darr"></span><span class="b-increment-input__input-wrapper">
-                        <input type="text" data-name="qty" value="5" maxlength="3" autocomplete="off" data-min="1" data-max="5" class="inline-input b-increment-input__input"></span><span class="b-increment-input__uarr"></span>
-										</div>
-									</div>
-								</div>
-								<div class="b-order-item__cost"><span class="b-price"><span class="b-price__number">9000</span><span class="b-price__thinsp">&nbsp;</span><span class="b-price__rubl">Р</span></span>
-								</div>
-								<div class="b-order-item__delay">
-									<div class="like_button active"><span class="pseudo-link">В избранное</span>
-									</div>
-								</div>
-								<div class="b-order-item__drop btn-circle btn-circle--drop"></div>
-							</li>
-							<li class="b-order-item">
-								<div class="b-order-item__checkbox">
-									<input id="input__01" type="checkbox">
-									<label for="input__01"></label>
-								</div>
-								<div class="b-order-item__img">
-									<img src="/images/catalog/goods02.jpg">
-								</div>
-								<div class="b-order-item__name"><span>Converse Red</span>
-								</div>
-								<div class="b-order-item__price"><span class="b-price"><span class="b-price__number">2450</span><span class="b-price__thinsp">&nbsp;</span><span class="b-price__rubl">Р</span></span>
-								</div>
-								<div class="b-order-item__qty">
-									<div class="b-increment-input"><span class="b-increment-input__darr"></span><span class="b-increment-input__input-wrapper">
-                      <input type="text" data-name="qty" value="2" maxlength="3" autocomplete="off" data-min="1" data-max="5" class="inline-input b-increment-input__input"></span><span class="b-increment-input__uarr"></span>
-									</div>
-								</div>
-								<div class="b-order-item__cost"><span class="b-price"><span class="b-price__number">4990</span><span class="b-price__thinsp">&nbsp;</span><span class="b-price__rubl">Р</span></span>
-								</div>
-								<div class="b-order-item__delay">
-									<div class="like_button"><span class="pseudo-link">В избранное</span>
-									</div>
-								</div>
-								<div class="b-order-item__drop btn-circle btn-circle--drop"></div>
-							</li>
-							<li class="b-order-item">
-								<div class="b-order-item__checkbox">
-									<input id="input__02" type="checkbox">
-									<label for="input__02"></label>
-								</div>
-								<div class="b-order-item__img">
-									<img src="/images/catalog/goods03.jpg">
-								</div>
-								<div class="b-order-item__name"><span>Штукатурка гипсовая для&nbsp;наружных работ</span>
-								</div>
-								<div class="b-order-item__price"><span class="b-price"><span class="b-price__number">2990</span><span class="b-price__thinsp">&nbsp;</span><span class="b-price__rubl">Р</span></span>
-								</div>
-								<div class="b-order-item__qty">
-									<div class="limits-wrapper">
-										<p class="b-catalog-item__limits">На складе: <span class="value">11</span>
-										</p>
-										<div class="b-increment-input"><span class="b-increment-input__darr"></span><span class="b-increment-input__input-wrapper">
-                        <input type="text" data-name="qty" value="12" maxlength="3" autocomplete="off" data-min="1" data-max="5" class="inline-input b-increment-input__input"></span><span class="b-increment-input__uarr"></span>
-										</div>
-									</div>
-								</div>
-								<div class="b-order-item__cost"><span class="b-price"><span class="b-price__number">35<i class="b-price__separator"></i>890</span><span class="b-price__thinsp">&nbsp;</span><span class="b-price__rubl">Р</span></span>
-								</div>
-								<div class="b-order-item__delay">
-									<div class="like_button"><span class="pseudo-link">В избранное</span>
-									</div>
-								</div>
-								<div class="b-order-item__drop btn-circle btn-circle--drop"></div>
-							</li>
-						</ol>
-						<div class="b-order-list__actions bordered">
-							<div class="like_button"><span class="pseudo-link">Отложить выбранные товары</span>
-							</div>
-							<div class="drop_button"><span class="pseudo-link">Удалить выбранные товары</span>
-							</div>
-							<div class="empty_button"><span class="pseudo-link">Очистить корзину</span>
-							</div>
-						</div>
-						<div class="b-order-list__results">
-							<p class="b-order-list__amount">Итог:<span class="b-price"><span class="b-price__number">49<i class="b-price__separator"></i>780</span><span class="b-price__thinsp">&nbsp;</span><span class="b-price__rubl">Р</span></span>
-							</p>
-							<p class="b-order-list__tobepaid">К оплате:<span class="b-price"><span class="b-price__number">49<i class="b-price__separator"></i>790</span><span class="b-price__thinsp">&nbsp;</span><span class="b-price__rubl">Р</span></span>
+					</aside>
+					<div class="b-catalog">
+						<div class="b-thermometer">
+							<p>
+								<a href="javascript:void(0);" class="backwards-arrow"></a><span class="divider"> / </span><a href="index.html">Главная</a><span class="divider"> / </span><span class="current">Отзывы</span>
 							</p>
 						</div>
-						<div class="b-order-list__buttons"><a href="javascript:void(0);" class="btn btn-grey btn-lg btn-inline">Продолжить покупки</a><a href="javascript:void(0);" class="btn btn-lg">Оформить заказ</a>
-						</div>
+						<article class="page-content">
+							<h1>Отзывы о магазине</h1>
+							<ol class="reviews-list">
+								<li class="b-review">
+									<div class="b-review__info"><span class="b-review__author">Борис</span><span class="b-review__date">| 18 сентября</span><span class="b-review__icon b-review__icon--up"></span>
+									</div>
+									<div class="b-review__text">
+										<p>Кеды действительно яркие как на фото.38 размера не было ,заказала 37.Думала что не подойдут,но оказалось что чуть-чуть даже большемерят самый раз чтоб носочками носить .А так то все сделано аккуратно,и спасибо вам за быструю доставку.</p>
+									</div>
+									<ul class="b-review__scores">
+										<li class="b-review__score"><span>Качество товаров</span>
+											<br>
+											<div class="b-stars">
+												<div style="width:80%" class="b-stars__rating"></div>
+											</div>
+										</li>
+										<li class="b-review__score"><span>Качество сервиса</span>
+											<br>
+											<div class="b-stars">
+												<div style="width:60%" class="b-stars__rating"></div>
+											</div>
+										</li>
+										<li class="b-review__score"><span>Скорость работы</span>
+											<br>
+											<div class="b-stars">
+												<div style="width:80%" class="b-stars__rating"></div>
+											</div>
+										</li>
+									</ul>
+								</li>
+								<li class="b-review">
+									<div class="b-review__info"><span class="b-review__author">Наталья</span><span class="b-review__date">| 16 сентября</span><span class="b-review__icon b-review__icon--up"></span>
+									</div>
+									<div class="b-review__text">
+										<p>Красные кеды яркие и красивые, очень нравятся, мой размер 36,5, приобрела 36 и оказались несколько свободны, можно было бы и 35 размер купить. Лучше чуть больше, чем маловаты, поэтому всё устраивает. 5 баллов.</p>
+									</div>
+									<ul class="b-review__scores">
+										<li class="b-review__score"><span>Качество товаров</span>
+											<br>
+											<div class="b-stars">
+												<div style="width:30%" class="b-stars__rating"></div>
+											</div>
+										</li>
+										<li class="b-review__score"><span>Качество сервиса</span>
+											<br>
+											<div class="b-stars">
+												<div style="width:50%" class="b-stars__rating"></div>
+											</div>
+										</li>
+										<li class="b-review__score"><span>Скорость работы</span>
+											<br>
+											<div class="b-stars">
+												<div style="width:100%" class="b-stars__rating"></div>
+											</div>
+										</li>
+									</ul>
+									<div class="b-review__answer">
+										<div class="b-review__info"><span class="b-review__author">Ответ администрации</span><span class="b-review__date">| 17 сентября</span>
+										</div>
+										<div class="b-review__text">
+											<p>Спасибо и вам за доверие!!!!1 Будем рады видеть Вас вновь и вновь ни только на праздники, но и на семейные торжества. Тем более их у Вас станет в два раза больше!!!</p>
+										</div>
+									</div>
+								</li>
+								<li class="b-review">
+									<div class="b-review__info"><span class="b-review__author">Аркадий</span><span class="b-review__date">| 9 сентября</span><span class="b-review__icon b-review__icon--dn"></span>
+									</div>
+									<div class="b-review__text">
+										<p>Кеды классные, яркие, но очень большемерят, потому отказ, очень жаль((( подожду, может появится нужный размер.</p>
+									</div>
+									<ul class="b-review__scores">
+										<li class="b-review__score"><span>Качество товаров</span>
+											<br>
+											<div class="b-stars">
+												<div style="width:100%" class="b-stars__rating"></div>
+											</div>
+										</li>
+										<li class="b-review__score"><span>Качество сервиса</span>
+											<br>
+											<div class="b-stars">
+												<div style="width:20%" class="b-stars__rating"></div>
+											</div>
+										</li>
+										<li class="b-review__score"><span>Скорость работы</span>
+											<br>
+											<div class="b-stars">
+												<div style="width:40%" class="b-stars__rating"></div>
+											</div>
+										</li>
+									</ul>
+								</li>
+							</ol>
+						</article>
 					</div>
 				</div>
 			</section>

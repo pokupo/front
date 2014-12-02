@@ -1,0 +1,128 @@
+extends ../partials/layouts/store
+
+block head
+	- page.title = 'Как купить';
+
+block menu 
+	+menu-list([
+		{text:"Платформа",href:"frontpage.html",submenu:[
+			{text:"О проекте",href:"about.html"},
+			{text:"Торговый портал",href:"http://shop.pokupo.ru/", external:true}
+		]},
+		{text:"Тарифы",href:"rates.html"},
+		{text:"Компания",href:"#", submenu:[
+			{text:"События",href:"events.html"},
+			{text:"О нас",href:"aboutus.html"},
+			{text:"Сообщество",href:"community.html"},
+			{text:"Блог",href:"http://pokupo.livejournal.com/", external:true}
+		]},
+		{text:"Партнёры",href:"partners.html", active: true},
+		
+		{text:"Помощь", href:js0, submenu:[
+			{text:"Вопросы и ответы",href:"faq.html"},	
+			{text:"Техническая поддержка",href:"https://help.pokupo.ru", external:true}
+		]}
+	])(class="b-navigation")
+
+
+block content
+	section.store
+		.container
+			aside.b-sidebar.dropdown
+				a.btn.btn-menu(href=js0 data-target="sidebar") 
+					i.icon.icon-catalog
+					| Каталог
+				.b-sidebar__dropdown(data-target="sidebar")
+					h1.b-sidebar__title Пример каталога
+					+catalog-list([
+					{text:"Компьютерная техника",href:js0, submenu:[
+						{text:"Ноутбуки",href:js0, preview:43},
+						{text:"Моноблоки",href:js0, preview:11},
+						{text:"Планшеты",href:js0, preview:24}
+					]},
+					{text:"Бытовая техника",href:js0, submenu:[
+						{text:"Стиральные машины",href:js0, preview:51},
+						{text:"Телевизоры",href:js0, preview:13},
+						{text:"Кухонная техника",href:js0, preview:104},
+						{text:"Пылесосы",href:js0, preview:8}
+					]},
+					{text:"Телефоны и связь",href:js0, preview:24},
+					{text:"Фото и оптика",href:js0, submenu:[
+						{text:"Фотоаппараты",href:js0, preview:6},
+						{text:"Объективы",href:js0, preview:2},
+						{text:"Средства и химия",href:js0, preview:64}
+					]},
+					{text:"Одежда, обувь, аксессуары",href:js0, submenu:[
+						{text:"Кроссовки",href:js0, preview:19},
+						{text:"Кеды",href:js0, preview:134},
+						{text:"Босоножки",href:js0, preview:245},
+						{text:"Туфли",href:js0, preview:195},
+						{text:"Ботильоны",href:js0, preview:132},
+						{text:"Сандалии",href:js0, preview:72},
+						{text:"Балетки",href:js0, preview:36},
+						{text:"Сапоги",href:js0, preview:56},
+						{text:"Резиновая обувь",href:js0, preview:5}
+						]},
+					{text:"Подарки и праздники",href:js0, submenu:[
+						{text:"Цветы",href:js0, preview:65},
+						{text:"Открытки",href:js0, preview:200},
+						{text:"Игрушки",href:js0, preview:31}
+					]},
+					{text:"Книги, учебники и журналы",href:js0, submenu:[
+						{text:"Цветы",href:js0, preview:65},
+						{text:"Открытки",href:js0, preview:200},
+						{text:"Игрушки",href:js0, preview:31}
+					]},
+					{text:"Мебель, интерьеры и обиход",href:js0, submenu:[
+						{text:"Цветы",href:js0, preview:65},
+						{text:"Открытки",href:js0, preview:200},
+						{text:"Игрушки",href:js0, preview:31}
+					]},
+					{text:"Другое",href:js0, submenu:[
+						{text:"Цветы",href:js0, preview: 65},
+						{text:"Открытки",href:js0, preview: 200},
+						{text:"Игрушки",href:js0, preview: 31}
+					]}])
+
+			.b-catalog
+				.b-thermometer
+					p 
+						a.backwards-arrow(href=js0)
+						span.divider  / 
+						a(href="index.html") Главная
+						span.divider  / 
+						span.current Как купить
+
+				article.page-content
+					h1 Как купить наш товар
+
+					p Сегодня у нас Праздник — День рождения Pokupo! Больше года мы шли к этой дате, и вот опубликована первая версия системы, конечно, далеко не всё доступно сейчас и еще многое предстоит сделать, но основной функционал торговой платформы готов.
+
+					h2 Выбор адреса
+
+					p В славном Екатеринбурге на IV Ежегодной конференции Интернет магазин и бизнес on-line. Мы являемся генеральным спонсором этого хорошего и полезного мероприятия для всех интернет предпринимателей. Это наше первое публичное мероприятие, и мы подготовили доклад на тему «Служба поддержки пользователей»
+
+					.columns.triple
+						.first.double.column
+							.content
+								img(src="" alt="" height="220" width="100%")
+						.third.column
+							.content
+								img(src="" alt="" height="220" width="100%")
+
+					h2 Выбор способа доставки
+
+					p Сегодня у нас Праздник — День рождения Pokupo! Больше года мы шли к этой дате, и вот опубликована первая версия системы, конечно, далеко не всё доступно сейчас и еще многое предстоит сделать, но основной функционал торговой платформы готов. Мы очень рады представить наше творение всем интернет предпринимателям. Для всех, кто не в курсе, что такое Pokupo, добро пожаловать в раздел О проекте
+
+					img(src="" alt="" height="220" width="100%")
+					
+					p &nbsp;
+					p Сегодня у нас Праздник — День рождения Pokupo! Больше года мы шли к этой дате, и вот опубликована первая версия системы, конечно, далеко не всё доступно сейчас и еще многое предстоит сделать, но основной функционал торговой платформы готов.
+
+
+
+block scripts
+	+script(['main.js'])
+
+
+

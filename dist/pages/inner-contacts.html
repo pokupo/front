@@ -17,7 +17,7 @@
 		<link sizes="57x57" href="images/icons/apple-touch-icon-57x57.png" rel="apple-touch-icon">
 		<link href="images/icons/apple-touch-icon-152x152.png" rel="apple-touch-icon">
 		<!-- Windows 8-->
-		<meta name="application-name" content="Личный кабинет: Переписка">
+		<meta name="application-name" content="Pokupo">
 		<meta name="msapplication-tooltip" content="Description for pokupo">
 		<meta name="msapplication-navbutton-color" content="#ffa800">
 		<meta name="msapplication-TileColor" content="#00883c">
@@ -43,7 +43,7 @@
 		<meta name="format-detection" content="telephone=no">
 		<meta name="format-detection" content="address=no">
 		<!-- SEO-->
-		<title>Личный кабинет: Заказы</title>
+		<title>Контактная информация</title>
 		<meta name="description" content="Description for pokupo">
 		<meta name="keywords" content="pokupo, project">
 		<meta name="copyright" content="©tabrisov">
@@ -91,7 +91,7 @@
 								</li>
 							</ul>
 						</li>
-						<li class="menu__item"><a href="partners.html" target=""><span>Партнёры</span></a>
+						<li class="menu__item active"><a href="partners.html" target=""><span>Партнёры</span></a>
 						</li>
 						<li class="menu__item with-submenu"><a href="javascript:void(0);" target=""><span>Помощь</span></a>
 							<ul class="submenu">
@@ -196,152 +196,288 @@
 				</div>
 			</section>
 			<!-- /subheader -->
-			<!-- profile-nav -->
-			<section class="profile-nav grey">
+			<!-- search -->
+			<section class="orange search">
 				<div class="container">
-					<ul class="menu b-profile-nav">
-						<li class="menu__item"><a href="profile.html" class="icon__profile"><span>Профиль</span></a>
-						</li>
-						<li class="menu__item active"><a href="profile-favorites.html" class="icon__favorites"><span>Избранное</span></a>
-						</li>
-						<li class="menu__item"><a href="profile-cart.html" class="icon__cart"><span>Корзина</span></a>
-						</li>
-						<li class="menu__item"><a href="profile-orders.html" class="icon__order"><span>Заказы</span></a>
-						</li>
-						<li class="menu__item"><a href="profile-mail.html" class="icon__mail"><span>Сообщения</span><sup class="menu__item__num">25</sup></a>
-						</li>
-					</ul><a href="javascript:void(0);" class="btn btn-sm"><i class="icon icon-store--small"></i>Стать продавцом							</a>
+					<div class="b-search">
+						<div class="b-search-holder">
+							<input type="search" placeholder="Поиск по каталогу..." class="b-search__input">
+						</div>
+						<div class="b-location dropdown selector"><a href="javascript:void(0);" data-target="location" class="b-location__current dropdown__trigger selector__current">Все категории</a>
+							<div data-target="location" class="dropdown__content hidden">
+								<div class="b-location__catalog selector__options">
+									<ul class="menu">
+										<li class="menu__item active"><a href="#"><span>Все разделы</span></a>
+										</li>
+										<li class="menu__item"><a href="#"><span>Компьютерная техника</span></a>
+										</li>
+										<li class="menu__item"><a href="#"><span>Бытовая техника</span></a>
+										</li>
+										<li class="menu__item"><a href="#"><span>Телефоны и связь</span></a>
+										</li>
+										<li class="menu__item"><a href="#"><span>Фото и оптика</span></a>
+										</li>
+										<li class="menu__item with-submenu"><a href="#"><span>Одежда, обувь, акксессуары</span></a>
+											<ul class="submenu">
+												<li class="submenu__item"><a href="#"><span>Кроссовки</span></a>
+												</li>
+												<li class="submenu__item"><a href="#"><span>Кеды</span></a>
+												</li>
+												<li class="submenu__item"><a href="#"><span>Босоножки</span></a>
+												</li>
+												<li class="submenu__item"><a href="#"><span>Туфли</span></a>
+												</li>
+												<li class="submenu__item"><a href="#"><span>Ботильоны</span></a>
+												</li>
+												<li class="submenu__item"><a href="#"><span>Сандалии</span></a>
+												</li>
+												<li class="submenu__item"><a href="#"><span>Балетки</span></a>
+												</li>
+												<li class="submenu__item"><a href="#"><span>Сапоги</span></a>
+												</li>
+												<li class="submenu__item"><a href="#"><span>Резиновая обувь</span></a>
+												</li>
+											</ul>
+										</li>
+										<li class="menu__item"><a href="#"><span>Подарки и праздники</span></a>
+										</li>
+										<li class="menu__item"><a href="#"><span>Книги, учебники и журналы</span></a>
+										</li>
+										<li class="menu__item"><a href="#"><span>Мебель, интерьеры и обиход</span></a>
+										</li>
+										<li class="menu__item"><a href="#"><span>Другое</span></a>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+						<button type="button" class="b-search__button">Найти</button>
+					</div>
 				</div>
 			</section>
-			<!-- /profile-nav -->
-			<!-- content -->
-			<section class="profile">
+			<section class="advanced-search slidedown">
 				<div class="container">
-					<h1 class="b-profile__header">Избранные товары</h1>
-					<div class="b-profile-info b-profile-info--fullwidth">
-						<div class="b-profile-info__actions">
-							<button type="button" class="btn btn-xs">Задать вопрос</button>
-							<div class="b-support-info dropdown hidden"><span class="b-support-info__title"><span data-target="support" class="dropdown__trigger"> Поддержка</span></span>
-								<div data-target="support" class="b-support-info__content dropdown__content">
-									<p><span class="label"></span>
-										<a class="action"></a><span class="label">" Написать</span><span class="label">Skype консультанта</span><a href="skype:pokupo?chat" onclick="return skypeCheck()" class="action">pokupo</a><span class="label">ICQ консультанта</span><span class="action">14112415151</span>
-										<span
-										class="label">Позвонить</span><a href="tel:+74953636393" class="action">+7 495 363-63-93</a>
-									</p>
-								</div>
-							</div>
-						</div>
-						<div class="b-profile-info__summary">
-							<div class="b-profile-info__photo">
-								<img src="/images/pages/catalog/seller-logo.png">
-							</div>
-							<h1 class="b-profile-info__title">Торговая платформа Pokupo</h1>
-							<h2 class="b-profile-info__subtitle">ID 19158495</h2>
-							<ul class="b-profile-info__characters-list">
-								<li><span class="char">Рейтинг: </span><span class="value value--orange">+264</span>
-								</li>
-								<li><span class="char">Отзывы / претензии: </span><span class="value"><span class="value--orange">12</span>/ <span class="value--green">3</span></span>
-								</li>
-								<li><span class="char">Товаров: </span><span class="value">450</span>
-								</li>
-							</ul>
-							<ul class="b-profile-info__characters-list">
-								<li><span class="char">Сайт: </span><a href="http://pokupo.ru" target="_blank">pokupo.ru</a>
-								</li>
-								<li><span class="char">E-mail: </span><a href="mailto:support@pokupo.ru">support@pokupo.ru</a>
-								</li>
-								<li><span class="char">Skype: </span><a href="skype:pokupo?chat" onclick="return skypeCheck()">pokupo</a>
-								</li>
-							</ul>
-							<ul class="b-profile-info__characters-list">
-								<li><span class="char">ICQ: </span><a href="http://pokupo.ru" target="_blank">14112415151</a>
-								</li>
-								<li><span class="char">Тел.: </span><span class="value">+7 495 363-63-93</span>
-								</li>
-								<li><span class="char">Моб.: </span><span class="value">+7 913 790-22-11</span>
-								</li>
-							</ul>
-						</div>
+					<div class="advanced-search-trigger"><span data-target="search" class="advanced-search-trigger__text slidedown__trigger">Расширенный поиск</span>
 					</div>
-					<ol class="b-order-list">
-						<li class="b-order-item b-thead">
-							<div class="b-order-item__checkbox">
-								<input id="js-select-all" type="checkbox">
-								<label for="js-select-all"></label>
-							</div>
-							<div class="b-order-item__img"></div>
-							<div class="b-order-item__name">Наименование</div>
-							<div class="b-order-item__price">Цена</div>
-						</li>
-						<li class="b-order-item">
-							<div class="b-order-item__checkbox">
-								<input id="input__00" type="checkbox">
-								<label for="input__00"></label>
-							</div>
-							<div class="b-order-item__img">
-								<img src="/images/catalog/goods01.jpg">
-							</div>
-							<div class="b-order-item__name"><span>Converse White</span>
-							</div>
-							<div class="b-order-item__price"><span class="b-price"><span class="b-price__number">1800</span><span class="b-price__thinsp">&nbsp;</span><span class="b-price__rubl">Р</span></span>
-							</div>
-							<div class="b-order-item__delay">
-								<div class="drop_button b-order-item__drop"><span class="pseudo-link">Удалить</span>
+					<div data-target="search" class="b-advanced-search slidedown__content hidden">
+						<div class="columns triple">
+							<div class="first column">
+								<div class="content">
+									<div class="b-location dropdown"><a href="javascript:void(0);" data-target="location" class="b-location__current dropdown__trigger"><span id="js-multilocation" class="fancytree-checkbox part"></span>Все категории</a>
+										<div data-target="location" class="dropdown__content hidden">
+											<div class="b-location__catalog">
+												<div id="multilocation" style="text-align:left"></div>
+											</div>
+										</div>
+									</div>
+									<div class="input-holder">
+										<select name="select">
+											<option value="0" selected>Все продавцы</option>
+											<option value="1">Частное лицо</option>
+											<option value="2">Компания</option>
+										</select>
+									</div>
 								</div>
 							</div>
-							<div class="b-order-item__action">
-								<button type="button" class="btn btn-sm"><i class="icon icon-cart--small"></i>В корзину</button>
-								<button type="button" class="btn btn-sm">Купить сразу</button>
-							</div>
-						</li>
-						<li class="b-order-item">
-							<div class="b-order-item__checkbox">
-								<input id="input__01" type="checkbox">
-								<label for="input__01"></label>
-							</div>
-							<div class="b-order-item__img">
-								<img src="/images/catalog/goods02.jpg">
-							</div>
-							<div class="b-order-item__name"><span>Converse Red</span>
-							</div>
-							<div class="b-order-item__price"><span class="b-price"><span class="b-price__number">2450</span><span class="b-price__thinsp">&nbsp;</span><span class="b-price__rubl">Р</span></span>
-							</div>
-							<div class="b-order-item__delay">
-								<div class="drop_button b-order-item__drop"><span class="pseudo-link">Удалить</span>
+							<div class="second column">
+								<div class="content">
+									<div class="input-holder">
+										<input name="login" type="text" placeholder="Ключевые слова" class="no-label inline-input">
+									</div>
+									<div class="input-holder">
+										<input name="login" type="text" placeholder="Исключить слова" class="no-label inline-input">
+									</div>
 								</div>
 							</div>
-							<div class="b-order-item__action">
-								<div class="cart_button"><span class="pseudo-link">Товар в корзине</span>
+							<div class="third column">
+								<div class="content">
+									<div class="input-holder">
+										<select name="select">
+											<option value="0" selected>Любое из слов</option>
+											<option value="1">Все слова</option>
+										</select>
+									</div>
+									<div class="input-holder hidden">
+										<label for="currency">Валюта</label>
+										<div class="radio-circles">
+											<ul class="menu">
+												<li class="menu__item active"><a href="javascript:void(0);"><i class="icon icon__currency--rub"></i></a>
+												</li>
+												<li class="menu__item"><a href="javascript:void(0);"><i class="icon icon__currency--dol"></i></a>
+												</li>
+												<li class="menu__item"><a href="javascript:void(0);"><i class="icon icon__currency--btc"></i></a>
+												</li>
+											</ul>
+										</div>
+									</div>
+									<div class="input-holder">
+										<label for="minPrice">Цена</label>
+										<input id="minPrice" name="minPrice" type="text" placeholder="от" class="no-label inline-input inline-input--small">
+										<label for="maxPrice" class="separator">—</label>
+										<input id="maxPrice" name="maxPrice" type="text" placeholder="до" class="no-label inline-input inline-input--small">
+									</div>
 								</div>
-								<button type="button" class="btn btn-sm">Купить сразу</button>
 							</div>
-						</li>
-						<li class="b-order-item">
-							<div class="b-order-item__checkbox">
-								<input id="input__02" type="checkbox">
-								<label for="input__02"></label>
-							</div>
-							<div class="b-order-item__img">
-								<img src="/images/catalog/goods03.jpg">
-							</div>
-							<div class="b-order-item__name"><span>Штукатурка гипсовая для&nbsp;наружных работ</span>
-							</div>
-							<div class="b-order-item__price"><span class="b-price"><span class="b-price__number">2990</span><span class="b-price__thinsp">&nbsp;</span><span class="b-price__rubl">Р</span></span>
-							</div>
-							<div class="b-order-item__delay">
-								<div class="drop_button b-order-item__drop"><span class="pseudo-link">Удалить</span>
-								</div>
-							</div>
-							<div class="b-order-item__action">
-								<button type="button" class="btn btn-sm"><i class="icon icon-cart--small"></i>В корзину</button>
-								<button type="button" class="btn btn-sm">Купить сразу</button>
-							</div>
-						</li>
-					</ol>
-					<div class="b-order-list__actions">
-						<div class="drop_button"><span class="pseudo-link">Удалить из избранного</span>
+						</div><span class="btn btn-block b-advanced-search__submit">Начать расширенный поиск <i class="icon icon-search"></i></span>
+					</div>
+				</div>
+			</section>
+			<!-- /search -->
+			<!-- content -->
+			<!-- /content -->
+			<!-- content -->
+			<section class="store">
+				<div class="container">
+					<aside class="b-sidebar dropdown"><a href="javascript:void(0);" data-target="sidebar" class="btn btn-menu"><i class="icon icon-catalog"></i>Каталог</a>
+						<div data-target="sidebar" class="b-sidebar__dropdown">
+							<h1 class="b-sidebar__title">Пример каталога</h1>
+							<ul class="menu">
+								<li class="menu__item with-submenu">
+									<u><span>Компьютерная техника</span></u>
+									<ul class="submenu">
+										<li class="submenu__item"><a href="javascript:void(0);"><span>Ноутбуки</span><sup class="num">43</sup></a>
+										</li>
+										<li class="submenu__item"><a href="javascript:void(0);"><span>Моноблоки</span><sup class="num">11</sup></a>
+										</li>
+										<li class="submenu__item"><a href="javascript:void(0);"><span>Планшеты</span><sup class="num">24</sup></a>
+										</li>
+									</ul>
+								</li>
+								<li class="menu__item with-submenu">
+									<u><span>Бытовая техника</span></u>
+									<ul class="submenu">
+										<li class="submenu__item"><a href="javascript:void(0);"><span>Стиральные машины</span><sup class="num">51</sup></a>
+										</li>
+										<li class="submenu__item"><a href="javascript:void(0);"><span>Телевизоры</span><sup class="num">13</sup></a>
+										</li>
+										<li class="submenu__item"><a href="javascript:void(0);"><span>Кухонная техника</span><sup class="num">104</sup></a>
+										</li>
+										<li class="submenu__item"><a href="javascript:void(0);"><span>Пылесосы</span><sup class="num">8</sup></a>
+										</li>
+									</ul>
+								</li>
+								<li class="menu__item"><a href="javascript:void(0);"><span>Телефоны и связь</span><sup class="num">24</sup></a>
+								</li>
+								<li class="menu__item with-submenu">
+									<u><span>Фото и оптика</span></u>
+									<ul class="submenu">
+										<li class="submenu__item"><a href="javascript:void(0);"><span>Фотоаппараты</span><sup class="num">6</sup></a>
+										</li>
+										<li class="submenu__item"><a href="javascript:void(0);"><span>Объективы</span><sup class="num">2</sup></a>
+										</li>
+										<li class="submenu__item"><a href="javascript:void(0);"><span>Средства и химия</span><sup class="num">64</sup></a>
+										</li>
+									</ul>
+								</li>
+								<li class="menu__item with-submenu">
+									<u><span>Одежда, обувь, аксессуары</span></u>
+									<ul class="submenu">
+										<li class="submenu__item"><a href="javascript:void(0);"><span>Кроссовки</span><sup class="num">19</sup></a>
+										</li>
+										<li class="submenu__item"><a href="javascript:void(0);"><span>Кеды</span><sup class="num">134</sup></a>
+										</li>
+										<li class="submenu__item"><a href="javascript:void(0);"><span>Босоножки</span><sup class="num">245</sup></a>
+										</li>
+										<li class="submenu__item"><a href="javascript:void(0);"><span>Туфли</span><sup class="num">195</sup></a>
+										</li>
+										<li class="submenu__item"><a href="javascript:void(0);"><span>Ботильоны</span><sup class="num">132</sup></a>
+										</li>
+										<li class="submenu__item"><a href="javascript:void(0);"><span>Сандалии</span><sup class="num">72</sup></a>
+										</li>
+										<li class="submenu__item"><a href="javascript:void(0);"><span>Балетки</span><sup class="num">36</sup></a>
+										</li>
+										<li class="submenu__item"><a href="javascript:void(0);"><span>Сапоги</span><sup class="num">56</sup></a>
+										</li>
+										<li class="submenu__item"><a href="javascript:void(0);"><span>Резиновая обувь</span><sup class="num">5</sup></a>
+										</li>
+									</ul>
+								</li>
+								<li class="menu__item with-submenu">
+									<u><span>Подарки и праздники</span></u>
+									<ul class="submenu">
+										<li class="submenu__item"><a href="javascript:void(0);"><span>Цветы</span><sup class="num">65</sup></a>
+										</li>
+										<li class="submenu__item"><a href="javascript:void(0);"><span>Открытки</span><sup class="num">200</sup></a>
+										</li>
+										<li class="submenu__item"><a href="javascript:void(0);"><span>Игрушки</span><sup class="num">31</sup></a>
+										</li>
+									</ul>
+								</li>
+								<li class="menu__item with-submenu">
+									<u><span>Книги, учебники и журналы</span></u>
+									<ul class="submenu">
+										<li class="submenu__item"><a href="javascript:void(0);"><span>Цветы</span><sup class="num">65</sup></a>
+										</li>
+										<li class="submenu__item"><a href="javascript:void(0);"><span>Открытки</span><sup class="num">200</sup></a>
+										</li>
+										<li class="submenu__item"><a href="javascript:void(0);"><span>Игрушки</span><sup class="num">31</sup></a>
+										</li>
+									</ul>
+								</li>
+								<li class="menu__item with-submenu">
+									<u><span>Мебель, интерьеры и обиход</span></u>
+									<ul class="submenu">
+										<li class="submenu__item"><a href="javascript:void(0);"><span>Цветы</span><sup class="num">65</sup></a>
+										</li>
+										<li class="submenu__item"><a href="javascript:void(0);"><span>Открытки</span><sup class="num">200</sup></a>
+										</li>
+										<li class="submenu__item"><a href="javascript:void(0);"><span>Игрушки</span><sup class="num">31</sup></a>
+										</li>
+									</ul>
+								</li>
+								<li class="menu__item with-submenu">
+									<u><span>Другое</span></u>
+									<ul class="submenu">
+										<li class="submenu__item"><a href="javascript:void(0);"><span>Цветы</span><sup class="num">65</sup></a>
+										</li>
+										<li class="submenu__item"><a href="javascript:void(0);"><span>Открытки</span><sup class="num">200</sup></a>
+										</li>
+										<li class="submenu__item"><a href="javascript:void(0);"><span>Игрушки</span><sup class="num">31</sup></a>
+										</li>
+									</ul>
+								</li>
+							</ul>
 						</div>
-						<div class="empty_button"><span class="pseudo-link">Очистить избранное от товаров</span>
+					</aside>
+					<div class="b-catalog">
+						<div class="b-thermometer">
+							<p>
+								<a href="javascript:void(0);" class="backwards-arrow"></a><span class="divider"> / </span><a href="index.html">Главная</a><span class="divider"> / </span><span class="current">Контактная информация</span>
+							</p>
+						</div>
+						<h1>Контактная информация</h1>
+						<div style="overflow:hidden; margin: 20px 0">
+							<script src="//api-maps.yandex.ru/services/constructor/1.0/js/?sid=tAsA6U40uOlhsnTeefykXs95tOnqVVRc&amp;height=350&amp;width=100%" type="text/javascript" charset="utf-8"></script>
+						</div>
+						<div class="columns triple">
+							<div class="first column">
+								<div class="content">
+									<ul class="b-profile-info__characters-list">
+										<li><span class="char">Сайт: </span><a href="http://pokupo.ru" target="_blank">pokupo.ru</a>
+										</li>
+										<li><span class="char">E-mail: </span><a href="mailto:support@pokupo.ru">support@pokupo.ru</a>
+										</li>
+										<li><span class="char">Skype: </span><a href="skype:pokupo?chat" onclick="return skypeCheck()">pokupo</a>
+										</li>
+									</ul>
+								</div>
+							</div>
+							<div class="second column">
+								<div class="content">
+									<ul class="b-profile-info__characters-list">
+										<li><span class="char">ICQ: </span><a href="http://pokupo.ru" target="_blank">14112415151</a>
+										</li>
+										<li><span class="char">Тел.: </span><span class="value">+7 495 363-63-93</span>
+										</li>
+										<li><span class="char">Моб.: </span><span class="value">+7 913 790-22-11</span>
+										</li>
+									</ul>
+								</div>
+							</div>
+							<div class="third column">
+								<div class="content"><a href="javascript:void(0);" class="btn btn-xs btn-contacts">Задать вопрос</a>
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>
