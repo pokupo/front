@@ -7,7 +7,7 @@ section.subheader
 	background #333
 	position relative
 	z-index 2
-
+	
 	.logo
 		display inline-block
 		height 100px
@@ -53,6 +53,19 @@ section.subheader
 					border-right-color rgba(#fff,0.3)
 					&:hover
 						color $orange
+						
+	&.subheader--min
+		background #FFF 
+		.logo__title
+			color #000
+		.menu-login
+			.not-logged-in 
+				a
+					&.menu-login__login
+						color #000
+						border-right-color rgba(#000,0.3)
+						&:hover
+							color $orange						
 
 .b-user-navigation
 	text-align left

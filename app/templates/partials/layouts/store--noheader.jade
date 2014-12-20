@@ -1,0 +1,32 @@
+include ../../helpers/variables
+include ../../helpers/mixins
+
+doctype html
+html(lang='ru')
+	include ../head
+	body
+		.main
+			<!-- subheader -->
+			include ../block/subheader--min
+			<!-- /subheader -->
+
+			<!-- search -->
+			include ../store/search
+			<!-- /search -->
+
+			<!-- content -->
+			block banner
+			<!-- /content -->
+
+			<!-- content -->
+			block content
+			<!-- /content -->
+
+
+			.footer-overlay
+
+		<!-- footer -->
+		include ../footer
+		<!-- /footer -->
+
+		include ../scripts

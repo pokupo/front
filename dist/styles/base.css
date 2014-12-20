@@ -2668,6 +2668,23 @@ section.subheader .menu-login .not-logged-in a.menu-login__login:hover {
 	color: #ffa800;
 }
 
+section.subheader.subheader--min {
+	background: #fff;
+}
+
+section.subheader.subheader--min .logo__title {
+	color: #000;
+}
+
+section.subheader.subheader--min .menu-login .not-logged-in a.menu-login__login {
+	color: #000;
+	border-right-color: rgba(0,0,0,0.3);
+}
+
+section.subheader.subheader--min .menu-login .not-logged-in a.menu-login__login:hover {
+	color: #ffa800;
+}
+
 .b-user-navigation {
 	text-align: left;
 	clear: both;

@@ -51,6 +51,12 @@ section.subheader .menu-login .not-logged-in a.menu-login__login:hover:before {
   width: 8px;
   height: 11px;
 }
+section.subheader.subheader--min .menu-login .not-logged-in a.menu-login__login:before {
+  background-image: url("../themes/default/images/sprite.png");
+  background-position: -377px -187px;
+  width: 8px;
+  height: 11px;
+}
 .header .logged-in .btn {
   margin: 40px 0 0 0;
 }

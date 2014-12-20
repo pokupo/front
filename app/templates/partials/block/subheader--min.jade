@@ -1,0 +1,97 @@
+section.subheader.subheader--min
+	.container
+		a.logo(href="../index.html" title="Pokupo.ru")
+			span.logo__title название магазина
+			// img(src="../images/logo/example__white.png" alt="" title="")
+
+		.menu-login
+			.not-logged-in.hidden
+				a#js-login.menu-login__login(href=js0 title="Войти") Вход
+				a.menu-login__register(href=js0 title="Зарегистрироваться") Регистрация
+			.logged-in
+				.circles-menu
+					.circles-menu__item.dropdown
+						a.with-icon.icon__profile.with-userpic.dropdown__trigger(href=js0 data-target="profile")
+							sup.circles-menu__num 4
+						.b-profile-menu.dropdown__content.hidden(data-target="profile")
+							p.b-profile-menu__name Сибилев<br/>Игорь
+							ul.menu
+								li.menu__item
+									a(href="profile.html") Профиль
+								li.menu__item
+									a(href="profile-favorite.html") Избранное
+								li.menu__item
+									a(href="profile-orders.html") Заказы
+								li.menu__item
+									a(href="profile-mail.html") 
+										| Сообщения
+										sup.menu__item__num 4
+								li.menu__item
+									a.b-profile-menu__logout#js-logout(href=js0) Выйти
+
+					.circles-menu__item.dropdown
+						a.with-icon.icon__cart.dropdown__trigger(href=js0 data-target="cart")
+							sup.circles-menu__num 19
+						.b-cart-menu.dropdown__content.hidden(data-target="cart")
+							p Корзина
+							.b-cart-menu__body
+								i.b-cart-menu__patch
+								
+								ol.b-cart-menu__goods
+									li.b-cart-menu__goods-item.b-order-item
+										.b-order-item__name
+											span Converse White
+										.b-order-item__qty
+											span.b-increment-group
+												span.b-increment-group__darr
+												span.b-increment-group__qty 5
+												span.b-increment-group__uarr
+										.b-order-item__cost.b-price
+											span.b-price__number 9000
+											span.b-price__thinsp &nbsp;
+											span.b-price__rubl Р
+										.b-order-item__drop.btn-circle.btn-circle--drop
+
+									li.b-cart-menu__goods-item.b-order-item
+										.b-order-item__name
+											span Converse Red
+										.b-order-item__qty
+											span.b-increment-group
+												span.b-increment-group__darr
+												span.b-increment-group__qty 2
+												span.b-increment-group__uarr
+										.b-order-item__cost.b-price
+											span.b-price__number 4900
+											span.b-price__thinsp &nbsp;
+											span.b-price__rubl Р
+										.b-order-item__drop.btn-circle.btn-circle--drop
+
+									li.b-cart-menu__goods-item.b-order-item
+										.b-order-item__name
+											span Штукатурка гипсовая для&nbsp;наружных работ
+										.b-order-item__qty
+											span.b-increment-group
+												span.b-increment-group__darr
+												span.b-increment-group__qty 12
+												span.b-increment-group__uarr
+										.b-order-item__cost.b-price
+											span.b-price__number
+												| 35
+												i.b-price__separator
+												| 880
+											span.b-price__thinsp &nbsp;
+											span.b-price__rubl Р
+										.b-order-item__drop.btn-circle.btn-circle--drop
+								
+								a.btn.btn-md.b-cart-menu__order-button(href=js0) Оформить
+								a.b-cart-menu__cart-button(href=js0) В корзину
+								p.b-cart-menu__results
+									| Итог:
+									span.b-cart-menu__amount.b-price
+										span.b-price__number 
+											| 49
+											i.b-price__separator
+											| 780
+										span.b-price__thinsp &nbsp;
+										span.b-price__rubl Р
+					
