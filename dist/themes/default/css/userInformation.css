@@ -75,6 +75,7 @@ section.subheader.subheader--min .menu-login .not-logged-in a.menu-login__login:
 .b-profile-menu .menu__item {
   border-top: 1px solid #efece7;
   padding: 0;
+  position: relative;
 }
 .b-profile-menu .menu__item a {
   float: none;
