@@ -2638,6 +2638,7 @@ section.subheader .logo img {
 	line-height: 100px;
 	vertical-align: middle;
 	margin-top: -10px;
+	margin-right: 10px;
 	height: 65px;
 	width: auto;
 }
