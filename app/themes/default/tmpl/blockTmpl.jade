@@ -136,3 +136,11 @@ script#blockTileTmpl(type="text/html")
 
                                     .b-item__badges
                                         span.bestseller Хит!
+
+
+script#blockNoResultsTmpl(type="text/html")
+    // version 1.0
+    .promoBlocks.carouselBlock.b-catalog
+        h1.b-catalog__title(data-bind="text: titleBlock")
+        div
+            | Для выбора товаров используйте рубрикатор магазина

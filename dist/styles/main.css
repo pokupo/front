@@ -356,7 +356,8 @@ body.grey footer.footer {
 }
 
 body.modal-open {
-	overflow: hidden;
+	overflow: hidden !important;
+	width: auto;
 }
 
 .main {
