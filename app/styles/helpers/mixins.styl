@@ -22,7 +22,14 @@ pseudo__center()
 	position absolute
 	left 50%
 	top 50%
-
+	
+centered_icon($icon)
+	position relative
+	&:after
+		pseudo__center()
+		sprite($icon)
+		margin-left -(spriteWidth($icon)/2)
+		margin-top -(spriteHeight($icon)/2)	
 
 drop-shadow()
 	background-color #fff

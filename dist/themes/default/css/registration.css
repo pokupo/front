@@ -7,7 +7,7 @@
 }
 .h1-with-progress-bar h1:after {
   background-image: url("../images/sprite.png");
-  background-position: -552px -533px;
+  background-position: -772px -264px;
   width: 60px;
   height: 75px;
   content: '';

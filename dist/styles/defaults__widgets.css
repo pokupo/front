@@ -2163,7 +2163,7 @@ body .b-share-popup__header_first {
 .b-profile-nav .menu__item a.icon__favorites:before {
 	margin-top: -8px;
 	background-image: url("../images/sprite.png");
-	background-position: -781px -279px;
+	background-position: -858px -613px;
 	width: 20px;
 	height: 17px;
 }
@@ -2171,7 +2171,7 @@ body .b-share-popup__header_first {
 .b-profile-nav .menu__item a.icon__cart:before {
 	margin-top: -11px;
 	background-image: url("../images/sprite.png");
-	background-position: -781px -304px;
+	background-position: -858px -563px;
 	width: 20px;
 	height: 17px;
 }
@@ -2179,7 +2179,7 @@ body .b-share-popup__header_first {
 .b-profile-nav .menu__item a.icon__order:before {
 	margin-top: -9px;
 	background-image: url("../images/sprite.png");
-	background-position: -781px -402px;
+	background-position: -858px -686px;
 	width: 20px;
 	height: 16px;
 }
@@ -2187,7 +2187,7 @@ body .b-share-popup__header_first {
 .b-profile-nav .menu__item a.icon__mail:before {
 	margin-top: -7px;
 	background-image: url("../images/sprite.png");
-	background-position: -781px -517px;
+	background-position: -858px -801px;
 	width: 18px;
 	height: 13px;
 }
@@ -2218,28 +2218,28 @@ body .b-share-popup__header_first {
 
 .b-profile-nav .menu__item.active a.icon__favorites:before {
 	background-image: url("../images/sprite.png");
-	background-position: -781px -254px;
+	background-position: -858px -588px;
 	width: 20px;
 	height: 17px;
 }
 
 .b-profile-nav .menu__item.active a.icon__cart:before {
 	background-image: url("../images/sprite.png");
-	background-position: -781px -329px;
+	background-position: -858px -513px;
 	width: 20px;
 	height: 17px;
 }
 
 .b-profile-nav .menu__item.active a.icon__order:before {
 	background-image: url("../images/sprite.png");
-	background-position: -781px -354px;
+	background-position: -858px -662px;
 	width: 20px;
 	height: 16px;
 }
 
 .b-profile-nav .menu__item.active a.icon__mail:before {
 	background-image: url("../images/sprite.png");
-	background-position: -781px -538px;
+	background-position: -858px -822px;
 	width: 18px;
 	height: 13px;
 }
@@ -2716,7 +2716,7 @@ body .b-share-popup__header_first {
 
 .h1-with-progress-bar h1:after {
 	background-image: url("../images/sprite.png");
-	background-position: -552px -533px;
+	background-position: -772px -264px;
 	width: 60px;
 	height: 75px;
 	content: '';
@@ -2749,7 +2749,7 @@ p.error_form {
 
 .h1-with-progress-bar.seller h1:after {
 	background-image: url("../images/sprite.png");
-	background-position: -491px -625px;
+	background-position: -483px -693px;
 	width: 89px;
 	height: 75px;
 	content: '';
@@ -2935,14 +2935,14 @@ p.error_form {
 
 section.subheader .menu-login .not-logged-in a.menu-login__login:before {
 	background-image: url("../images/sprite.png");
-	background-position: -804px -472px;
+	background-position: -884px -423px;
 	width: 8px;
 	height: 11px;
 }
 
 section.subheader .menu-login .not-logged-in a.menu-login__login:hover:before {
 	background-image: url("../images/sprite.png");
-	background-position: -804px -426px;
+	background-position: -884px -453px;
 	width: 8px;
 	height: 11px;
 }

@@ -931,7 +931,7 @@ span.slidedown__trigger:hover {
 
 .password-control__trigger--show:after {
 	background-image: url("../images/sprite.png");
-	background-position: -781px -378px;
+	background-position: -858px -638px;
 	width: 20px;
 	height: 16px;
 }
@@ -939,7 +939,7 @@ span.slidedown__trigger:hover {
 .password-control__trigger--hide:after {
 	margin: 2px 0 0 -11px;
 	background-image: url("../images/sprite.png");
-	background-position: -781px -597px;
+	background-position: -273px -164px;
 	width: 22px;
 	height: 6px;
 }
@@ -947,7 +947,7 @@ span.slidedown__trigger:hover {
 .password-control__trigger.active:after {
 	margin: 2px 0 0 -11px;
 	background-image: url("../images/sprite.png");
-	background-position: -781px -597px;
+	background-position: -273px -164px;
 	width: 22px;
 	height: 6px;
 }
@@ -1172,7 +1172,7 @@ ul.checked li:before {
 	top: 0;
 	left: -44px;
 	background-image: url("../images/sprite.png");
-	background-position: -781px -72px;
+	background-position: -858px -356px;
 	width: 29px;
 	height: 26px;
 }
@@ -1897,14 +1897,14 @@ i.icon:before {
 
 .icon-back:before {
 	background-image: url("../images/sprite.png");
-	background-position: -781px -559px;
+	background-position: -836px -396px;
 	width: 14px;
 	height: 11px;
 }
 
 .btn:active i.icon.icon-back:before {
 	background-image: url("../images/sprite.png");
-	background-position: -781px -578px;
+	background-position: -814px -396px;
 	width: 14px;
 	height: 11px;
 }
@@ -1915,7 +1915,7 @@ i.icon:before {
 
 .icon-store:before {
 	background-image: url("../images/sprite.png");
-	background-position: -720px -398px;
+	background-position: -511px -782px;
 	width: 44px;
 	height: 40px;
 }
@@ -1927,7 +1927,7 @@ i.icon:before {
 
 .icon-store--small:before {
 	background-image: url("../images/sprite.png");
-	background-position: -781px -199px;
+	background-position: -858px -483px;
 	width: 26px;
 	height: 22px;
 }
@@ -1935,7 +1935,7 @@ i.icon:before {
 .btn:hover i.icon.icon-store:before,
 .btn:active i.icon.icon-store:before {
 	background-image: url("../images/sprite.png");
-	background-position: -720px -254px;
+	background-position: -117px -164px;
 	width: 44px;
 	height: 40px;
 }
@@ -2056,21 +2056,21 @@ i.icon:before {
 
 .footer .contact-icon.copyright {
 	background-image: url("../images/sprite.png");
-	background-position: -781px -495px;
+	background-position: -858px -779px;
 	width: 15px;
 	height: 14px;
 }
 
 .footer .contact-icon.email {
 	background-image: url("../images/sprite.png");
-	background-position: -781px -472px;
+	background-position: -858px -733px;
 	width: 15px;
 	height: 15px;
 }
 
 .footer .contact-icon.skype {
 	background-image: url("../images/sprite.png");
-	background-position: -781px -426px;
+	background-position: -858px -756px;
 	width: 15px;
 	height: 15px;
 }
@@ -2134,126 +2134,126 @@ i.icon:before {
 
 .footer .social .social__icon.vk {
 	background-image: url("../images/sprite.png");
-	background-position: 0px -714px;
+	background-position: -680px -558px;
 	width: 35px;
 	height: 35px;
 }
 
 .footer .social .social__icon.fb {
 	background-image: url("../images/sprite.png");
-	background-position: -258px -714px;
+	background-position: -696px -782px;
 	width: 35px;
 	height: 35px;
 }
 
 .footer .social .social__icon.tw {
 	background-image: url("../images/sprite.png");
-	background-position: -129px -714px;
+	background-position: -729px -282px;
 	width: 35px;
 	height: 35px;
 }
 
 .footer .social .social__icon.lj {
 	background-image: url("../images/sprite.png");
-	background-position: -720px -538px;
+	background-position: -723px -558px;
 	width: 35px;
 	height: 35px;
 }
 
 .footer .social .social__icon.hh {
 	background-image: url("../images/sprite.png");
-	background-position: -516px -714px;
+	background-position: -729px -374px;
 	width: 35px;
 	height: 35px;
 }
 
 .footer .social .social__icon.gp {
 	background-image: url("../images/sprite.png");
-	background-position: -387px -714px;
+	background-position: -858px 0px;
 	width: 35px;
 	height: 35px;
 }
 
 .footer .social .social__icon:hover.vk {
 	background-image: url("../images/sprite.png");
-	background-position: -559px -714px;
+	background-position: -637px -558px;
 	width: 35px;
 	height: 35px;
 }
 
 .footer .social .social__icon:hover.fb {
 	background-image: url("../images/sprite.png");
-	background-position: -344px -714px;
+	background-position: -782px -782px;
 	width: 35px;
 	height: 35px;
 }
 
 .footer .social .social__icon:hover.tw {
 	background-image: url("../images/sprite.png");
-	background-position: -43px -714px;
+	background-position: -729px -509px;
 	width: 35px;
 	height: 35px;
 }
 
 .footer .social .social__icon:hover.lj {
 	background-image: url("../images/sprite.png");
-	background-position: -172px -714px;
+	background-position: -729px -417px;
 	width: 35px;
 	height: 35px;
 }
 
 .footer .social .social__icon:hover.hh {
 	background-image: url("../images/sprite.png");
-	background-position: -720px -667px;
+	background-position: -772px -648px;
 	width: 35px;
 	height: 35px;
 }
 
 .footer .social .social__icon:hover.gp {
 	background-image: url("../images/sprite.png");
-	background-position: -473px -714px;
+	background-position: -653px -782px;
 	width: 35px;
 	height: 35px;
 }
 
 .footer .social .social__icon:active.vk {
 	background-image: url("../images/sprite.png");
-	background-position: -720px -624px;
+	background-position: -729px -466px;
 	width: 35px;
 	height: 35px;
 }
 
 .footer .social .social__icon:active.fb {
 	background-image: url("../images/sprite.png");
-	background-position: -301px -714px;
+	background-position: -739px -782px;
 	width: 35px;
 	height: 35px;
 }
 
 .footer .social .social__icon:active.tw {
 	background-image: url("../images/sprite.png");
-	background-position: -86px -714px;
+	background-position: -815px -648px;
 	width: 35px;
 	height: 35px;
 }
 
 .footer .social .social__icon:active.lj {
 	background-image: url("../images/sprite.png");
-	background-position: -215px -714px;
+	background-position: -729px -239px;
 	width: 35px;
 	height: 35px;
 }
 
 .footer .social .social__icon:active.hh {
 	background-image: url("../images/sprite.png");
-	background-position: -720px -581px;
+	background-position: -729px -325px;
 	width: 35px;
 	height: 35px;
 }
 
 .footer .social .social__icon:active.gp {
 	background-image: url("../images/sprite.png");
-	background-position: -430px -714px;
+	background-position: -858px -43px;
 	width: 35px;
 	height: 35px;
 }

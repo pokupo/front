@@ -203,13 +203,177 @@ section.rates
 		line-height 20px
 		text-align left
 
-		h1
-			font-size 14px
-			font-weight 800
-			margin-bottom 20px
+	&__question
+		display block
+		font-size 14px
+		font-weight 800
+		margin-bottom 20px
 
-		p 
-			color #333
+	&__answer
+		color #333
+		
+
+
+hr.divider
+	border none
+	height 8px
+	position relative
+	margin-bottom 30px
+
+	&:after
+		pseudo__center()
+		sprite($divider)
+
+.seo-faq
+	.with-icon
+		padding-top 30px
+		position relative
+		
+		&:before
+			pseudo()
+			left 50%
+			top -100px
+			margin-left -74px
+			sprite($seo__faq)
+			
+.seo-frontpage
+	.with-icon
+		padding-top 180px
+		position relative
+		
+		&:before
+			pseudo()
+			left 50%
+			top 0px
+			margin-left -95px
+			sprite($seo__clock)
+			
+.seo-instruction	
+	.with-icon
+		padding-top 210px
+		position relative
+		
+		&:before
+			pseudo()
+			left 50%
+			top 0px
+			margin-left -55px
+			sprite($seo__rocket)
+
+.seo-content
+	text-align left
+	margin-bottom 30px
+	&:first-of-type
+		margin-top 60px
+
+.seo-incut
+	font-size 24px
+	font-weight 100 
+
+.subheader
+	font-size 18px
+	font-weight 800
+	line-height 20px
+	margin-bottom 20px 
+
+h1 + .subheader
+	margin-top 20px
+	margin-bottom 40px
+
+.seo-icon
+	margin 45px auto 0
+	width 160px
+	height 160px
+	border-radius 50% 
+	border 2px solid $orange
+	position relative
+
+	&.partners
+		centered_icon($seo__partners)
+		
+	&.design
+		centered_icon($seo__design)
+		
+	&.money
+		centered_icon($seo__money)
+	
+	&.settings
+		centered_icon($seo__settings)
+	
+	&.goods
+		centered_icon($seo__goods)
+
+	&.devices
+		centered_icon($seo__devices)
+		top -23px
+		
+		&.checked
+			&:before
+				pseudo()
+				sprite($seo__checked)
+				top -10px
+				right -30px
+			
+		&.discount
+			&:before
+				pseudo()
+				sprite($seo__discount)
+				top -10px
+				right -10px	
+				
+		&.question
+			&:before
+				pseudo()
+				sprite($seo__question)
+				top -10px
+				right -10px	
+		
+	&.seo__1
+		&:before
+			pseudo()
+			sprite($seo__1)
+			top -10px
+			right -10px	
+	&.seo__2
+		&:before
+			pseudo()
+			sprite($seo__2)
+			top -10px
+			right -10px	
+	&.seo__3
+		&:before
+			pseudo()
+			sprite($seo__3)
+			top -10px
+			right -10px	
+			
+			
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
