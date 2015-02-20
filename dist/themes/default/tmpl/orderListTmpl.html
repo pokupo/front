@@ -151,7 +151,7 @@
     <div class="container"><a href="javascript:void(0);" data-bind="click: Back" class="btn btn-sm btn-thin btn__stepback"><i class="icon icon-back"></i>назад к списку заказов</a>
       <h2 class="b-profile__headline">Заказ №
         <!-- ko text: id -->
-        <!-- /ko -->от
+        <!-- /ko --> от
         <!-- ko text: dateCreate -->
         <!-- /ko -->
       </h2>
@@ -240,10 +240,7 @@
         <div rel="tooltip" title="В корзину" data-bind="click: ClickReturn" class="b-order-item__edit btn-circle btn-circle--cart"></div>
         <div rel="tooltip" title="Отменить" data-bind="click: ClickCancel" class="b-order-item__edit btn-circle btn-circle--cancel"></div>
         <div rel="tooltip" title="Удалить" data-bind="click: ClickDelete" class="b-order-item__drop btn-circle btn-circle--drop"></div><!-- ko if: statusPay() == 'wait_pay' -->
-        <div style="padding: 9px 0 0 13px; top: -10px;" rel="tooltip" title="Обновить" data-bind="click: ClickRefresh" class="b-order-item__edit btn-circle"><i class="icon icon-reload"></i></div><!-- /ko --><!-- /ko --><!-- ko if: statusOrder() == "new" --><!-- ko ifnot: statusPay() == "paid" -->
-        <div style="display: inline;" data-bind="embedWidget :{ widget : 'ButtonPaymentWidget-1.1', params : { title: 'Оплатить заказ', orderId: id(),tmpl : {path: 'http://promodev.pokupo.ru/themes/default/tmpl/buttonPaymentTmpl.html'}}}"></div>
-        <div rel="tooltip" title="Отменить" data-bind="click: ClickCancel" class="b-order-item__edit btn-circle btn-circle--cancel"></div>
-        <div style="padding: 9px 0 0 13px; top: -10px;" rel="tooltip" title="Обновить" data-bind="click: ClickRefresh" class="b-order-item__edit btn-circle"><i class="icon icon-reload"></i></div><!-- /ko --><!-- /ko --><!-- ko if: statusOrder() == "cancel" -->
+        <div style="padding: 9px 0 0 13px; top: -10px;" rel="tooltip" title="Обновить" data-bind="click: ClickRefresh" class="b-order-item__edit btn-circle"><i class="icon icon-reload"></i></div><!-- /ko --><!-- /ko --><!-- ko if: statusOrder() == "new" --><!-- ko ifnot: statusPay() == "paid" --><!-- ko ifnot: statusPay() == "wait_check" --><div style="display: inline;" data-bind="embedWidget :{ widget : 'ButtonPaymentWidget-1.1', params : { title: 'Оплатить заказ', orderId: id(),tmpl : {path: 'http://promodev.pokupo.ru/themes/default/tmpl/buttonPaymentTmpl.html'}}}"></div><!-- /ko --><div rel="tooltip" title="Отменить" data-bind="click: ClickCancel" class="b-order-item__edit btn-circle btn-circle--cancel"></div><div style="padding: 9px 0 0 13px; top: -10px;" rel="tooltip" title="Обновить" data-bind="click: ClickRefresh" class="b-order-item__edit btn-circle"><i class="icon icon-reload"></i></div><!-- /ko --><!-- /ko --><!-- ko if: statusOrder() == "cancel" -->
         <div rel="tooltip" title="Повторить" data-bind="click: ClickRepeat" class="b-order-item__edit btn-circle btn-circle--retry"></div>
         <div rel="tooltip" title="Удалить" data-bind="click: ClickDelete" class="b-order-item__drop btn-circle btn-circle--drop"></div><!-- ko if: statusPay() == 'wait_pay' -->
         <div style="padding: 9px 0 0 13px; top: -10px;" rel="tooltip" title="Обновить" data-bind="click: ClickRefresh" class="b-order-item__edit btn-circle"><i class="icon icon-reload"></i></div><!-- /ko --><!-- /ko --><!-- ko if: statusOrder() == "delivered" || statusOrder() == "send" -->
