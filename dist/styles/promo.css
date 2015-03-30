@@ -1592,6 +1592,7 @@ section.video {
 }
 
 .video-holder {
+	display: none;
 	position: fixed;
 	z-index: 500;
 	top: 0;
@@ -2992,6 +2993,7 @@ hr.divider {
 }
 
 hr.divider:after {
+	margin-left: -43px;
 	content: '';
 	display: block;
 	position: absolute;
@@ -3184,7 +3186,7 @@ h1 + .subheader {
 
 .seo-icon.devices {
 	position: relative;
-	top: -23px;
+	top: 10px;
 }
 
 .seo-icon.devices:after {
@@ -3271,6 +3273,35 @@ h1 + .subheader {
 	height: 64px;
 	top: -10px;
 	right: -10px;
+}
+
+.heading_big {
+	font-size: 45px;
+	font-weight: 100;
+}
+
+.with-icon_big {
+	font-size: 45px;
+}
+
+.with-icon_mod_1 {
+	margin-bottom: 20px;
+}
+
+.subheader_mod_1 {
+	margin: 20px 0 40px;
+}
+
+.rates-img-wrapper {
+	padding: 20px;
+}
+
+.request_form {
+	display: none;
+}
+
+.seo-incut_mod_1 {
+	margin: 40px 0 30px;
 }
 
 section.register-user {
