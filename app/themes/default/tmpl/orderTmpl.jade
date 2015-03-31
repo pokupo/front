@@ -374,8 +374,7 @@ script#orderFormStep4Tmpl(type='text/html')
                                         .tooltip__trigger(rel='tooltip', data-bind='attr:{title: instrPayment}') ?
                                         b(data-bind='text: namePayment')
                                         br
-                                        // ko text: descPayment
-                                        // /ko
+                                        <div data-bind="html: descPayment"></div>
 
                                 td.b-order-table__price
                                     span.b-price
