@@ -323,9 +323,8 @@
               <td class="b-order-table__logo"><img src="javascript:void(0);" data-bind="attr: {src: logoPayment }"/></td>
               <td>
                 <div class="b-order-table__text">
-                  <div rel="tooltip" data-bind="attr:{title: instrPayment}" class="tooltip__trigger">?</div><b data-bind="text: namePayment"></b><br/>
-                  <!-- ko text: descPayment-->
-                  <!-- /ko-->
+                  <div rel="tooltip" data-bind="attr:{title: instrPayment}" class="tooltip__trigger">?</div><b data-bind="text: namePayment"></b>
+                  <div data-bind="html: descPayment"></div>
                 </div>
               </td>
               <td class="b-order-table__price"><span class="b-price"><span data-bind="text: costPayment" class="b-price__number"></span><span class="b-price__thinsp">&nbsp;</span><span class="b-price__rubl">Р</span></span></td>
