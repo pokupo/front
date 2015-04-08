@@ -24,14 +24,14 @@
           <h2 class="b-wizard__step-title">Данные аккаунта</h2>
           <p>Укажите свой уникальный псевдоним, почту и телефон</p>
           <div class="input-holder">
-            <div rel="tooltip" title="Введите ваше имя на сайте." class="tooltip__trigger">?</div>
+            <div rel="tooltip" title="Введите ваш псевдоним на сайте." class="tooltip__trigger">?</div>
             <input type="text" name="nickname" value="" placeholder="Псевдоним" data-bind="value: username" class="block-input"/><!-- ko if: errorUsername -->
             <div class="error__message">
               <p data-bind="text: errorUsername"></p>
             </div><!-- /ko -->
           </div>
           <div class="input-holder">
-            <div rel="tooltip" title="На этот адрес будут приходить уведомления о статусе вашего заказа." class="tooltip__trigger">?</div>
+            <div rel="tooltip" title="Почтовый адрес на который будут приходить уведомления о статусе вашего заказа." class="tooltip__trigger">?</div>
             <input type="email" name="email" value="" placeholder="Ваш e-mail" data-bind="value: email" class="block-input"/><!-- ko if: errorEmail -->
             <div class="error__message error__message--big">
               <p data-bind="html: errorEmail"></p>
@@ -45,7 +45,7 @@
             </div><!-- /ko -->
           </div>
           <div class="input-holder">
-            <div rel="tooltip" title="Ваш пароль должен содержать минимум одну цифру, заглавную букву, спецсимвол, иероглиф, коловрат, число зверя и кровь девственницы." class="tooltip__trigger">?</div>
+            <div rel="tooltip" title="Ваш пароль от 6 до 16 знаков." class="tooltip__trigger">?</div>
             <input type="password" name="password" value="" placeholder="Пароль" data-bind="value: firstPassword, attr : {id: cssFirstPassword}" class="block-input"/><!-- ko if: errorFirstPassword -->
             <div class="error__message">
               <p data-bind="text: errorFirstPassword"></p>
@@ -93,56 +93,34 @@
       <div class="b-wizard__holder">
         <div id="step-2" class="content">
           <h2 class="b-wizard__step-title">Активация аккаунта</h2>
-          <p>Укажите код, высланный на почтовый адрес или телефон</p>
-		  <!-- ko if: errorConfirmLater -->
-            <div class="input-holder">
-			  <div class="error__message">
-				<p data-bind="text: errorConfirmLater"></p>
-			  </div>
-            </div>
-		  <!-- /ko -->
-		  <!-- ko ifnot: mailConfirmLater -->
-			  <div class="input-holder">
-				<div rel="tooltip" title="Код, высланный на почтовый адрес или телефон" class="tooltip__trigger">?</div>
-				<input type="text" name="code" value="" placeholder="Ваш e-mail код" data-bind="value: mailToken" class="block-input"/>
-				<!-- ko if: mailIsConfirm -->
-					<div class="b-status b-status--done">E-mail подтверждён</div>
-				<!-- /ko -->
-				<!-- ko if: errorEmailConfirm -->
-					<div class="error__message">
-					  <p data-bind="text: errorEmailConfirm"></p>
-					</div>
-				<!-- /ko -->
-			  </div>
-		  <!-- /ko -->
-            <!-- ko ifnot: isEmptyPhone -->
-                <div style="padding-top: 13px;" class="input-holder">
-                    <input id="skip-email" name="skip-email" type="checkbox" checked=""
-                           data-bind="checked: mailConfirmLater" class="checkbox"/>
-                    <label for="skip-email" class="block-label b-small-text">Подтвердить почтовый ящик позднее</label>
-                </div>
-                <!-- ko ifnot: phoneConfirmLater -->
-                    <div class="input-holder">
-                        <div rel="tooltip" title="Код, высланный в SMS" class="tooltip__trigger">?</div>
-                        <input type="text" name="code" value="" placeholder="Ваш SMS код" data-bind="value: phoneToken"
-                               class="block-input"/>
-                        <!-- ko if: phoneIsConfirm -->
-                            <div class="b-status b-status--done">Телефон подтверждён</div>
-                        <!-- /ko -->
-                        <!-- ko if: errorPhoneConfirm -->
-                            <div class="error__message">
-                                <p data-bind="text: errorPhoneConfirm"></p>
-                            </div>
-                        <!-- /ko -->
-                    </div>
-                <!-- /ko -->
-
-                <div style="padding-top: 13px;" class="input-holder">
-                    <input id="skip-phone" name="skip-email" type="checkbox" checked=""
-                           data-bind="checked: phoneConfirmLater" class="checkbox"/>
-                    <label for="skip-phone" class="block-label b-small-text">Подтвердить телефон позднее</label>
-                </div>
-            <!-- /ko -->
+          <p>Укажите код, высланный на почтовый адрес или телефон</p><!-- ko if: errorConfirmLater -->
+          <div class="error__message">
+            <p data-bind="text: errorConfirmLater"></p>
+          </div><!-- /ko --><!-- ko ifnot: mailConfirmLater -->
+          <div class="input-holder">
+            <div rel="tooltip" title="Код, высланный на почтовый адрес" class="tooltip__trigger">?</div>
+            <input type="text" name="code" value="" placeholder="Ваш e-mail код" data-bind="value: mailToken" class="block-input"/><!-- ko if: mailIsConfirm -->
+            <div class="b-status b-status--done">E-mail подтверждён</div><!-- /ko --><!-- ko if: errorEmailConfirm -->
+            <div class="error__message">
+              <p data-bind="text: errorEmailConfirm"></p>
+            </div><!-- /ko -->
+          </div><!-- /ko --><!-- ko ifnot: isEmptyPhone -->
+          <div style="padding-top: 13px;" class="input-holder">
+            <input id="skip-email" name="skip-email" type="checkbox" checked="" data-bind="checked: mailConfirmLater" class="checkbox"/>
+            <label for="skip-email" class="block-label b-small-text">Подтвердить почтовый ящик позднее</label>
+          </div><!-- ko ifnot: phoneConfirmLater -->
+          <div class="input-holder">
+            <div rel="tooltip" title="Код, высланный в SMS" class="tooltip__trigger">?</div>
+            <input type="text" name="code" value="" placeholder="Ваш SMS код" data-bind="value: phoneToken" class="block-input"/><!-- ko if: phoneIsConfirm -->
+            <div class="b-status b-status--done">Телефон подтверждён</div><!-- /ko --><!-- ko if: errorPhoneConfirm -->
+            <div class="error__message">
+              <p data-bind="text: errorPhoneConfirm"></p>
+            </div><!-- /ko -->
+          </div><!-- /ko --><!-- /ko -->
+          <div style="padding-top: 13px;" class="input-holder">
+            <input id="skip-phone" name="skip-email" type="checkbox" checked="" data-bind="checked: phoneConfirmLater" class="checkbox"/>
+            <label for="skip-phone" class="block-label b-small-text">Подтвердить телефон позднее</label>
+          </div>
         </div>
       </div>
       <div class="b-wizard__actions"><a href="javascript:void(0);" data-bind="click: SubmitForm" class="b-wizard__action btn-next-step">Продолжить</a></div>

@@ -30,14 +30,14 @@ script#registrationSellerFromStep1Tmpl(type='text/html')
 								p(data-bind='text: errorNameSeller')
 
 					.input-holder
-						.tooltip__trigger(rel='tooltip', title='Для уведомлений о заказах') ?
+						.tooltip__trigger(rel='tooltip', title='Ваш почтовый ящик для связи с покупателями и получения уведомлений о заказах') ?
 						input.block-input(type='email', name='email', value='', placeholder='Ваш e-mail', data-bind='value: email')
 						+if('errorEmail')
 							.error__message
 								p(data-bind='html: errorEmail')
 						
 					.input-holder
-						.tooltip__trigger(rel='tooltip', title='Для связи с курьером') ?
+						.tooltip__trigger(rel='tooltip', title='Номер мобильного телефон для SMS уведомлений, в сети не публикуется') ?
 						input.block-input(type='tel', name='phone', value='', placeholder='Номер телефона', data-bind='value: phone, attr: {id : cssPhone}')
 						+if('errorPhone')
 							.error__message
@@ -88,7 +88,7 @@ script#registrationSellerFromStep2Tmpl(type='text/html')
 
 					+ifnot('mailConfirmLater')
 						.input-holder
-							.tooltip__trigger(rel="tooltip", title="Код, высланный на почтовый адрес или телефон") ?
+							.tooltip__trigger(rel="tooltip", title="Код, высланный на почтовый адрес") ?
 							input.block-input(type='text', name='code', value='', placeholder='Ваш e-mail код', data-bind='value: mailToken')
 
 							input#skip-email.checkbox(name='skip-email', type='checkbox', checked='', data-bind='checked: mailConfirmLater')

@@ -26,14 +26,14 @@ script#registrationFromStep1Tmpl(type='text/html')
                     h2.b-wizard__step-title Данные аккаунта
                     p Укажите свой уникальный псевдоним, почту и телефон
                     .input-holder
-                        .tooltip__trigger(rel="tooltip" title="Введите ваше имя на сайте.") ?
+                        .tooltip__trigger(rel="tooltip" title="Введите ваш псевдоним на сайте.") ?
                         input.block-input(type="text", name="nickname", value="", placeholder="Псевдоним", data-bind="value: username")
                         +if('errorUsername')
                             .error__message
                                 p(data-bind='text: errorUsername')
                         
                     .input-holder
-                        .tooltip__trigger(rel="tooltip" title="На этот адрес будут приходить уведомления о статусе вашего заказа.") ?
+                        .tooltip__trigger(rel="tooltip" title="Почтовый адрес на который будут приходить уведомления о статусе вашего заказа.") ?
                         input.block-input(type='email', name='email', value='', placeholder='Ваш e-mail', data-bind='value: email')
                         +if('errorEmail')
                             .error__message.error__message--big
@@ -47,7 +47,7 @@ script#registrationFromStep1Tmpl(type='text/html')
                                 p(data-bind='html: errorPhone')
 
                     .input-holder
-                        .tooltip__trigger(rel="tooltip" title="Ваш пароль должен содержать минимум одну цифру, заглавную букву, спецсимвол, иероглиф, коловрат, число зверя и кровь девственницы.") ?
+                        .tooltip__trigger(rel="tooltip" title="Ваш пароль от 6 до 16 знаков.") ?
                         input.block-input(type='password', name='password', value='', placeholder='Пароль', data-bind='value: firstPassword, attr : {id: cssFirstPassword}')
                         +if('errorFirstPassword')
                             .error__message
@@ -107,7 +107,7 @@ script#registrationFromStep2Tmpl(type='text/html')
 
                     +ifnot('mailConfirmLater')
                         .input-holder
-                            .tooltip__trigger(rel="tooltip" title="Код, высланный на почтовый адрес или телефон") ?
+                            .tooltip__trigger(rel="tooltip" title="Код, высланный на почтовый адрес") ?
                             input.block-input(type='text', name='code', value='', placeholder='Ваш e-mail код', data-bind='value: mailToken')
 
                             +if('mailIsConfirm')

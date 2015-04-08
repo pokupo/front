@@ -2614,20 +2614,24 @@ section.subheader {
 
 section.subheader .logo {
 	display: inline-block;
-	height: 100px;
-	line-height: 100px;
+	padding-top: 25px;
+	line-height: 24px;
 	margin-left: 30px;
+	max-width: 700px;
+	text-align: left;
 	float: left;
 	text-decoration: none;
 }
 
 section.subheader .logo .logo__title {
-	line-height: 100px;
+	line-height: 24px;
 	vertical-align: middle;
 	font-size: 24px;
 	color: #fff;
 	text-transform: uppercase;
-	white-space: nowrap;
+	float: left;
+	width: 635px;
+	padding-top: 14px;
 }
 
 section.subheader .logo .logo__title br {
@@ -2642,6 +2646,7 @@ section.subheader .logo img {
 	margin-right: 10px;
 	height: 65px;
 	width: auto;
+	float: left;
 }
 
 section.subheader .circles-menu {
