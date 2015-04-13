@@ -7504,8 +7504,9 @@ article.page-content .b-review__answer:before {
 }
 
 .b-tech__char {
-	float: left;
-	width: 60%;
+	display: table-cell;
+	float: none;
+	width: 100%;
 }
 
 .b-tech__char span {
@@ -7524,7 +7525,7 @@ article.page-content .b-review__answer:before {
 	color: #666;
 	margin: 0 0 0 60%;
 	padding: 0 8px;
-	display: block;
+	display: table-cell;
 }
 
 .b-recommended {
@@ -7726,6 +7727,8 @@ article.page-content .b-review__answer:before {
 .b-wizard__holder .b-tech__item,
 section.profile .b-tech__item {
 	margin-bottom: 27px;
+	display: table;
+	width: 100%;
 }
 
 .b-wizard__holder .b-tech__char,
